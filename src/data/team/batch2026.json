@@ -1,0 +1,168 @@
+[
+  {
+    "username": "ritham404",
+    "name": "Amrithraj N",
+    "designation": "Organizer",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/ritham404.png"
+  },
+  {
+    "username": "himanshukt03",
+    "name": "Himanshu Shetty",
+    "designation": "Organizer",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/himanshukt03.png"
+  },
+  {
+    "username": "techshetty",
+    "name": "Pratheek G Shetty",
+    "designation": "Organizer",
+    "email": "pratheekshetty934@gmail.com",
+    "linkedin": "www.linkedin.com/in/techshetty",
+    "skills": ["Competitive Programming", "Backend Development", "JAVA"],
+    "status": "active",
+    "image": "https://github.com/techshetty.png"
+  },
+  {
+    "username": "Shree-Pai",
+    "name": "Shreelakshmi Pai",
+    "designation": "Organizer",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/Shree-Pai.png"
+  },
+  {
+    "username": "askashika",
+    "name": "Ashika",
+    "designation": "SOSWC Representative",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/askashika.png"
+  },
+  {
+    "username": "aaronfernandes21",
+    "name": "Aaron Fernandes",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/aaronfernandes21.png"
+  },
+  {
+    "username": "advaithsshetty",
+    "name": "Advaith S Shetty",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/advaithsshetty.png"
+  },
+  {
+    "username": "anth_hgde",
+    "name": "Ananth Hegde",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "/github_avatar.svg"
+  },
+  {
+    "username": "Apeksha-L-Naik",
+    "name": "Apeksha L Naik",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/Apeksha-L-Naik.png"
+  },
+  {
+    "username": "evitabarboza",
+    "name": "Evita Barboza",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/evitabarboza.png"
+  },
+
+  {
+    "username": "neha-shetty-17",
+    "name": "Neha Shetty",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/neha-shetty-17.png"
+  },
+  {
+    "username": "Nitheshalva",
+    "name": "Nithesh Alva",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/Nitheshalva.png"
+  },
+  {
+    "username": "puvithk",
+    "name": "Puvith kumar",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/puvithk.png"
+  },
+  {
+    "username": "msranjana",
+    "name": "Ranjana M Suvarna",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/msranjana.png"
+  },
+  {
+    "username": "rithuparnaks",
+    "name": "Rithuparna K.S",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/rithuparnaks.png"
+  },
+  {
+    "username": "shreya-shen",
+    "name": "Shreya Shenoy",
+    "designation": "Community Member",
+    "email": "shreya.006@outlook.com",
+    "linkedin": "https://www.linkedin.com/in/shreya-shenoy-0916b4256/",
+    "skills": [
+      "Public Speaking",
+      "Content Writing",
+      "Photography",
+      "web development(basics)"
+    ],
+    "status": "active",
+    "image": "https://github.com/shreya-shen.png"
+  }
+]

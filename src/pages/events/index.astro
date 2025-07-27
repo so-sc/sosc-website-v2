@@ -4,7 +4,7 @@ import Hero from "@/components/Hero.astro";
 import Cover from "@/assets/cover/event.jpg";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
-import EventCard from "@/components/events/EventCard.astro";
+import EventCard from "@/components/cards/EventCard.astro";
 
 const events = await getCollection("events");
 

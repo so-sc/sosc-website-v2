@@ -1,11 +1,110 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import SOSC from "@/assets/sosc_logo.svg";
+import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="bg-background text-foreground py-16">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+    >
+      <div class="max-w-xl space-y-4">
+        <Image src={SOSC} alt={"Logo"} class={"h-12 w-fit"} />
+        <h1 class="text-4xl font-semibold">Sahyadri Open Source Community</h1>
+        <p class="text-muted-foreground text-lg">
+          A community driven by tech enthusiasts and open-source contributors,
+          to help young students become part of the open-source ecosystem
+          through training and skill development.
+        </p>
+        <Button className="rounded-full"> Community Guidelines </Button>
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <div
+          class="aspect-[16/10] bg-muted rounded-xl shadow-inner flex items-center justify-center"
+        >
+          <span class="text-muted-foreground">[ Image Placeholder ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background text-foreground py-16">
+    <div
+      class="reverse max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+    >
+      <div class="max-w-xl space-y-4">
+        <h1 class="text-4xl font-semibold">Get Trained by Experts</h1>
+        <p class="text-muted-foreground text-lg">
+          SOSC is all about helping each other to learn and improve, we conduct
+          workshops and trainings led by speakers from other technical
+          communities, and student experts. Keeping up to date with latest
+          technologies and learning new things is what most of love. Here is
+          your chance to attend workshops, training and even host non-profit
+          events to help others.
+        </p>
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <div
+          class="aspect-[16/10] bg-muted rounded-xl shadow-inner flex items-center justify-center"
+        >
+          <span class="text-muted-foreground">[ Image Placeholder ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background text-foreground py-16">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+    >
+      <div class="max-w-xl space-y-4">
+        <h1 class="text-4xl font-semibold">Explore clubs and Activities</h1>
+        <p class="text-muted-foreground text-lg">
+          SOSC is a conglomeration of clubs and individuals who contribute to
+          the community by helping us conduct events and activities. there are
+          numerous clubs and experts who help shape the community to be
+          pro-active. Mozilla Campus Clubs, Developer Students clubs, and the
+          GitHub Campus Expert are to name a few.
+        </p>
+        <Button className="rounded-full"> Learn More </Button>
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <div
+          class="aspect-[16/10] bg-muted rounded-xl shadow-inner flex items-center justify-center"
+        >
+          <span class="text-muted-foreground">[ Image Placeholder ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background text-foreground py-16">
+    <div
+      class="reverse max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+    >
+      <div class="max-w-xl space-y-4">
+        <h1 class="text-4xl font-semibold">Get Connected !</h1>
+        <p class="text-muted-foreground text-lg">
+          Meet people with similar interest to work together on projects and
+          host events to build a better collaborative environment. We are more
+          than 100 members with interests on various fields of technology here
+          to know each other and get connected. Meet our members to know more
+          about us and build something cool!
+        </p>
+        <Button className="rounded-full"> Learn More </Button>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div
+          class="aspect-[16/10] bg-muted rounded-xl shadow-inner flex items-center justify-center"
+        >
+          <span class="text-muted-foreground">[ Image Placeholder ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

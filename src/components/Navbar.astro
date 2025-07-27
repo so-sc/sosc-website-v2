@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import SOSC from "@/assets/sosc_logo.svg";
+---
+
+<nav class="bg-background/95 text-foreground shadow-sm border-b border-border sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-14 items-center">
+      {/* Logo and Home */}
+      <div class="flex items-center space-x-4">
+        <Image src={SOSC} alt={"Logo"} class={"h-6 w-fit"} />
+      </div>
+
+      {/* Nav Links */}
+      <div class="hidden md:flex items-center space-x-8">
+        <a
+          href="/"
+          class="text-muted-foreground hover:text-primary transition-colors"
+        >
+          Home
+        </a>
+        <a
+          href="/events"
+          class="text-muted-foreground hover:text-primary transition-colors"
+        >
+          Events
+        </a>
+        <a
+          href="#blogs"
+          class="text-muted-foreground hover:text-primary transition-colors"
+        >
+          Blogs
+        </a>
+        <a
+          href="#team"
+          class="text-muted-foreground hover:text-primary transition-colors"
+        >
+          Team
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

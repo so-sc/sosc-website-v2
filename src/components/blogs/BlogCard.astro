@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  tags: string[];
+  highlight?: boolean;
+}
+
+const { title, excerpt, image, date, tags, highlight = false } = Astro.props;
+---
+
+<a
+  class={`bg-card group shadow-md overflow-hidden cursor-pointer transition hover:shadow-lg ${highlight ? "lg:col-span-2" : ""}`}
+>
+  <img src={image} alt={title} class="w-full aspect-[4/3] object-cover" />
+  <div class={`p-4 space-y-1`}>
+    <p class="text-sm text-muted-foreground">{date}</p>
+
+    <h3
+      class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-2xl" : "text-lg"}`}
+    >
+      {title}
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <span class="bg-muted text-xs text-muted-foreground px-2 rounded">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+    <p
+      class={`text-sm text-muted-foreground pt-2 ${highlight ? "line-clamp-6" : "line-clamp-3"}`}
+    >
+      {excerpt}
+    </p>
+  </div>
+</a>

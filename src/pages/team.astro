@@ -1,0 +1,58 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import { Image } from "astro:assets";
+import Cover from "@/assets/cover/team.jpg";
+import { team } from "@/content/team/index";
+---
+
+<Layout>
+    <Hero
+      image={Cover}
+      title="Our Team"
+      subtitle="Meet the passionate individuals driving our community forward."
+    />
+
+    <section
+      class="py-20 max-w-7xl mx-auto px-4 md:px-8 text-foreground space-y-10"
+    >
+      {
+        Object.entries(team).map(([section, members]) => (
+          <div class="space-y-4">
+            <h2 class="text-3xl font-semibold capitalize border-b border-muted">
+              {section.replace(/([A-Z])/g, " $1")}
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pl-4">
+              {members.map((member) => (
+                <a
+                  class="bg-card border border-muted rounded-lg p-2 shadow hover:shadow-md transition"
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="flex items-center gap-4">
+                    <Image
+                      src={`https://github.com/${member.username}.png`}
+                      alt={member.name}
+                      class="w-16 h-16 rounded-full object-cover"
+                      width={64}
+                      height={64}
+                      loading="eager"
+                    />
+                    <div>
+                      <h3 class="text-lg font-semibold">{member.name}</h3>
+                      <p class="text-sm text-muted-foreground">
+                        {member.designation}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </Layout>
+</Layout>

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
 import "@fontsource-variable/baloo-2";
 import font from "@fontsource-variable/baloo-2/files/baloo-2-latin-wght-normal.woff2?url";
+import Footer from "@/components/Footer.astro";
 ---
 
 <!doctype html>
@@ -24,5 +25,6 @@ import font from "@fontsource-variable/baloo-2/files/baloo-2-latin-wght-normal.w
   <body>
     <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>

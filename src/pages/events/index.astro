@@ -1,7 +1,73 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import { Image } from "astro:assets";
+import Cover from "@/assets/cover/event.jpg";
+
+const events = [
+  {
+    slug: "code-blaze-2025",
+    title: "Code Blaze 2025",
+    description:
+      "A hackathon event for aspiring developers to showcase their skills and collaborate on innovative solutions.",
+    date: "August 25, 2025",
+    image: "https://picsum.photos/seed/codeblaze/500/300",
+  },
+  {
+    slug: "open-source-summit",
+    title: "Open Source Summit",
+    description:
+      "Join the summit to learn about contributing to open-source projects, meet maintainers, and get started!",
+    date: "September 10, 2025",
+    image: "https://picsum.photos/seed/oss/500/300",
+  },
+];
 ---
 
 <Layout>
-    
+  <!-- Hero Section -->
+  <Hero
+    image={Cover}
+    title="Our Events"
+    subtitle="Explore upcoming and past events hosted by our community."
+  />
+
+  <!-- Events Listing -->
+  <section
+    class="py-16 bg-background text-foreground px-4 md:px-8 max-w-7xl mx-auto"
+  >
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
+      {
+        events.map((event) => (
+          <a
+            href={`/events/${event.slug}`}
+            class="bg-card flex flex-col md:flex-row gap-6 border border-muted shadow-sm hover:shadow-md transition group"
+          >
+            <Image
+              src={event.image}
+              alt={event.title}
+              width={256}
+              height={192}
+              class="w-full md:w-64 h-48 object-cover"
+              format="webp"
+              loading="lazy"
+            />
+            <div class="flex flex-col justify-between p-4">
+              <div>
+                <h2 class="text-2xl font-semibold group-hover:text-primary">
+                  {event.title}
+                </h2>
+                <p class="mt-2 text-muted-foreground line-clamp-3">
+                  {event.description}
+                </p>
+              </div>
+              <span class="mt-4 text-sm text-muted-foreground">
+                {event.date}
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
 </Layout>

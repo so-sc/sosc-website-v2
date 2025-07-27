@@ -1,42 +1,46 @@
 ---
 import { Image } from "astro:assets";
-import SOSC from "@/assets/sosc_logo.svg";
+import SOSC from "@/assets/sosc_logo_white.svg";
+
+const currentPath = new URL(Astro.request.url).pathname;
+
+const isActive = (path: string) =>
+  currentPath === path || currentPath.startsWith(`${path}/`);
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/events" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Team", href: "/team" },
+];
 ---
 
-<nav class="bg-background/95 text-foreground shadow-sm border-b border-border sticky top-0">
+<nav
+  class="bg-primary text-foreground shadow-sm w-screen fixed top-0 z-50"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-14 items-center">
-      {/* Logo and Home */}
+      <!-- Logo -->
       <div class="flex items-center space-x-4">
-        <Image src={SOSC} alt={"Logo"} class={"h-6 w-fit"} />
+        <Image src={SOSC} alt="Logo" class="h-6 w-fit" loading="eager" />
       </div>
 
-      {/* Nav Links */}
-      <div class="hidden md:flex items-center space-x-8">
-        <a
-          href="/"
-          class="text-muted-foreground hover:text-primary transition-colors"
-        >
-          Home
-        </a>
-        <a
-          href="/events"
-          class="text-muted-foreground hover:text-primary transition-colors"
-        >
-          Events
-        </a>
-        <a
-          href="#blogs"
-          class="text-muted-foreground hover:text-primary transition-colors"
-        >
-          Blogs
-        </a>
-        <a
-          href="#team"
-          class="text-muted-foreground hover:text-primary transition-colors"
-        >
-          Team
-        </a>
+      <!-- Nav Links -->
+      <div class="hidden md:flex items-center space-x-8 h-full">
+        {
+          navLinks.map(({ label, href }) => (
+            <a
+              href={href}
+              class={`h-full flex items-center border-b-3 transition-all duration-300 ${
+                isActive(href)
+                  ? "text-primary-foreground border-primary-foreground"
+                  : "text-primary-foreground border-transparent hover:border-primary-foreground"
+              }`}
+            >
+              {label}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>

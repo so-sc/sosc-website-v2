@@ -1,0 +1,149 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import SOSC from "@/assets/sosc_logo.svg";
+---
+
+<Layout>
+  <div class="bg-background text-foreground py-24">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col space-y-8">
+      <div class="flex justify-center">
+        <Image src={SOSC} alt="sosc logo" class="h-16 object-contain" />
+      </div>
+      <section class="space-y-4">
+        <h1 class="text-3xl font-semibold">Community Guidelines</h1>
+        <p>
+          Welcome to Sahyadri Open-Source Community. We are a community of tech
+          enthusiasts working hard to spread knowledge and strengthen the
+          collaborative culture among young minds. SOSC was born through the
+          convergence of Technical clubs at Sahyadri — Mozilla Campus Club,
+          Developer Students Club, and some aspiring individuals who are keen to
+          share knowledge for the community.
+        </p>
+        <p>
+          SOSC is a community. When you talk, post, or reply, there are people
+          reading what you say. These people have dreams, perspectives,
+          feelings, and experiences just like you. You might meet many through
+          events like Hackathons or conferences. Treat everyone like a potential
+          friend.
+        </p>
+        <p>
+          This document makes SOSC a welcoming place. The rules apply to all
+          core members, volunteers, and participants. This isn't an exhaustive
+          list but a spirit — a guide to be excellent to each other.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Be Considerate</h2>
+        <p>
+          SOSC is a collaboration of clubs and individuals helping conduct
+          events. Mozilla Campus Clubs, Developer Students Clubs, and GitHub
+          Campus Experts are part of this ecosystem.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Be Respectful</h2>
+        <p>
+          Disagreements happen, but poor behavior isn't allowed. A productive
+          community is a safe one. Respect fellow members and outsiders alike.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">Be Collaborative</h2>
+        <p>
+          Collaboration helps us grow beyond individual goals. We celebrate good
+          teamwork and work transparently with others like
+          <a
+            href="https://sahyadri.edu.in/"
+            target="_blank"
+            class="font-medium underline text-primary"
+          >
+            Sahyadri College of Engineering
+          </a>
+          and other open-source communities.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">
+          Be Nice and Do Not Harass Others
+        </h2>
+        <p>
+          Everyone should feel welcome. Any harassment will result in removal.
+          Harassment includes:
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Offensive comments about identity, appearance, or beliefs</li>
+          <li>Unwelcome sexual attention or contact</li>
+          <li>Threats, intimidation, or stalking</li>
+          <li>Deliberate disruption or targeted harassment</li>
+        </ul>
+        <p>
+          If harassment occurs, comply when asked to stop. Report incidents to
+          organizers. They may involve security or take other actions to protect
+          members.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">
+          Communicate Effectively
+        </h2>
+        <p>
+          We all communicate differently. Clear, respectful communication avoids
+          misunderstandings. Ask for clarification when needed. Avoid trolling,
+          flame wars, or personal attacks.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">
+          Unaffiliated Promotions
+        </h2>
+        <p>
+          Don't promote unrelated content without permission. Persistent
+          promotion may result in removal. Contact the listed organizers for
+          approval before promoting anything.
+        </p>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl font-semibold text-primary">
+          Violating the Code of Conduct
+        </h2>
+        <p>
+          Violations may lead to a 6-month suspension or permanent removal,
+          based on severity, as decided by the community leads.
+        </p>
+      </section>
+
+      <p class="italic">
+        The Sahyadri Open-Source Community Code of Conduct is licensed under the
+        <a
+          class="text-primary underline"
+          href="https://creativecommons.org/licenses/by-sa/3.0/"
+          target="_blank"
+          >Creative Commons Attribution-Share Alike 3.0 license</a
+        >. Inspired by
+        <a
+          class="text-primary underline"
+          href="https://github.com/zatech/code-of-conduct"
+          target="_blank">zatech</a
+        >,
+        <a
+          class="text-primary underline"
+          href="https://ubuntu.com/community/ethos/code-of-conduct"
+          target="_blank">Ubuntu</a
+        >, and
+        <a
+          class="text-primary underline"
+          href="https://www.elastic.co/community/codeofconduct"
+          target="_blank">Elastic</a
+        > communities.
+      </p>
+    </div>
+  </div>
+</Layout>

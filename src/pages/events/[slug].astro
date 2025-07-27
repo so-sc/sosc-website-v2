@@ -1,0 +1,61 @@
+---
+// Imports
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import slugify from "slugify";
+
+export async function getStaticPaths() {
+  const events = await getCollection("events");
+  return events.map((event) => ({
+    params: { slug: slugify(event.data.name, { lower: true, strict: true }) },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+const { name, date, location, cover } = event.data;
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout>
+  <main class="py-20 max-w-4xl mx-auto px-4 space-y-10">
+    <!-- Event Banner -->
+    {
+      cover && (
+        <Image
+          src={cover}
+          alt={name}
+          class="w-full h-96 object-cover rounded-xl shadow-md"
+          width={200}
+          height={256}
+        />
+      )
+    }
+
+    <!-- Event Title & Info -->
+    <div class="space-y-2">
+      <h1 class="text-4xl font-bold text-primary">{name}</h1>
+      <div class="text-gray-600 space-x-4 text-sm">
+        <span class="inline-block bg-muted px-3 py-1 rounded-md"
+          >{formattedDate}</span
+        >
+        <span class="inline-block bg-muted px-3 py-1 rounded-md"
+          >{location}</span
+        >
+      </div>
+    </div>
+
+    <!-- Markdown Content -->
+    <article
+      class="prose max-w-none prose-img:rounded-xl prose-img:shadow-md prose-img:my-2 prose-p:my-0 prose-hr:my-2"
+    >
+      <Content />
+    </article>
+  </main>
+</Layout>

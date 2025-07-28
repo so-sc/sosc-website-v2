@@ -3,57 +3,22 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import BlogCard from "@/components/cards/BlogCard.astro";
 import Cover from "@/assets/cover/blog.jpg";
+import { getCollection } from "astro:content";
+import slugify from "slugify";
 
-const blogs = [
-  {
-    id: 1,
-    title: "First Featured Blog",
-    excerpt: "This is the lead article with some special highlights.",
-    image: "https://picsum.photos/id/1015/800/600",
-    date: "2025-07-01",
-    tags: ["Featured", "Community"],
-  },
-  {
-    id: 2,
-    title: "Quick Update",
-    excerpt: "Short summary for this post. Short summary for this post. ",
-    image: "https://picsum.photos/id/1011/400/300",
-    date: "2025-06-25",
-    tags: ["News"],
-  },
-  {
-    id: 3,
-    title: "Tech Roundup",
-    excerpt: "What's new in the tech space?",
-    image: "https://picsum.photos/id/1012/400/300",
-    date: "2025-06-15",
-    tags: ["Tech", "Updates"],
-  },
-  {
-    id: 4,
-    title: "Behind the Scenes",
-    excerpt: "A glimpse into our planning process.",
-    image: "https://picsum.photos/id/1013/400/300",
-    date: "2025-06-10",
-    tags: ["Process"],
-  },
-  {
-    id: 5,
-    title: "Community Wins",
-    excerpt: "Highlights from our members.",
-    image: "https://picsum.photos/id/1014/400/300",
-    date: "2025-05-30",
-    tags: ["Community", "Events"],
-  },
-  {
-    id: 6,
-    title: "Final Thoughts",
-    excerpt: "Wrapping up this season of events.",
-    image: "https://picsum.photos/id/1016/800/600",
-    date: "2025-05-20",
-    tags: ["Reflection"],
-  },
-];
+const blogs = await getCollection("blogs");
+
+const parsedBlogs = blogs
+  .map(({ data }) => ({
+    title: data.title,
+    author: data.author,
+    date: data.date,
+    description: data.description,
+    cover: data.cover,
+    tags: data.tags,
+    link: slugify(data.title, { lower: true, strict: true }),
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <Layout>
@@ -68,16 +33,16 @@ const blogs = [
   >
     <!-- Featured Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      <BlogCard {...blogs[0]} highlight />
+      <BlogCard {...parsedBlogs[0]} highlight />
 
       <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-        {blogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
+        {parsedBlogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
       </div>
     </div>
 
     <!-- Standard 4-column Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {blogs.slice(5).map((blog) => <BlogCard {...blog} />)}
+      {parsedBlogs.slice(5).map((blog) => <BlogCard {...blog} />)}
     </div>
   </section>
 </Layout>

@@ -1,0 +1,81 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import slugify from "slugify";
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blogs");
+  return blogs.map((blog) => ({
+    params: { slug: slugify(blog.data.title, { lower: true, strict: true }) },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { Content } = await render(blog);
+const { title, date, author, cover, description, tags } = blog.data;
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout>
+  <main class="py-20 max-w-4xl mx-auto px-4 space-y-10">
+    <!-- Blog Header -->
+    <div class="space-y-4">
+      <p class="rounded-md text-primary">
+        {tags}
+      </p>
+      <h1 class="text-4xl font-bold">{title}</h1>
+      <p class="text-muted-foreground">{description}</p>
+      <div class="flex items-center gap-3">
+        <img
+          src={`https://github.com/${author}.png`}
+          alt={author}
+          class="w-10 h-10 rounded-full"
+          onerror="this.onerror=null; this.src='/github_avatar.svg';"
+        />
+        <div class="flex flex-col leading-tight">
+          <a
+            class="font-semibold text-primary"
+            href={`https://github.com/${author}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {author}
+          </a>
+          <span class="text-sm text-muted-foreground">{formattedDate}</span>
+        </div>
+      </div>
+
+      <div class="w-20 border-4 border-b border-primary rounded-2xl my-8"></div>
+
+      <!-- Blog Cover -->
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt={title}
+            class="w-full h-72 object-cover rounded-xl shadow-md"
+            width={800}
+            height={400}
+            loading={"eager"}
+            format="webp"
+            quality={80}
+          />
+        )
+      }
+    </div>
+
+    <!-- Blog Markdown Content -->
+    <article
+      class="prose max-w-none prose-img:rounded-xl prose-img:shadow-md prose-img:my-4 prose-p:my-2 prose-hr:my-4"
+    >
+      <Content />
+    </article>
+  </main>
+</Layout>

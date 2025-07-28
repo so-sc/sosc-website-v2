@@ -25,30 +25,29 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
 <Layout>
   <main class="py-20 max-w-4xl mx-auto px-4 space-y-10">
-    <!-- Event Banner -->
-    {
-      cover && (
-        <Image
-          src={cover}
-          alt={name}
-          class="w-full h-96 object-cover rounded-xl shadow-md"
-          width={200}
-          height={256}
-        />
-      )
-    }
-
     <!-- Event Title & Info -->
-    <div class="space-y-2">
-      <h1 class="text-4xl font-bold text-primary">{name}</h1>
-      <div class="text-gray-600 space-x-4 text-sm">
-        <span class="inline-block bg-muted px-3 py-1 rounded-md"
-          >{formattedDate}</span
-        >
-        <span class="inline-block bg-muted px-3 py-1 rounded-md"
-          >{location}</span
-        >
-      </div>
+    <div class="space-y-4">
+      <p class="text-primary">{location}</p>
+      <h1 class="text-4xl font-bold">{name}</h1>
+      <p class="text-sm text-muted-foreground">{formattedDate}</p>
+
+      <div class="w-20 border-4 border-b border-primary rounded-2xl my-4"></div>
+
+      <!-- Event Banner -->
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt={name}
+            class="w-full h-96 object-cover rounded-xl shadow-md"
+            width={200}
+            height={256}
+            loading={"eager"}
+            format="webp"
+            quality={80}
+          />
+        )
+      }
     </div>
 
     <!-- Markdown Content -->

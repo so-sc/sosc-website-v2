@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import slugify from "slugify";
@@ -72,10 +73,8 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
 
     <!-- Blog Markdown Content -->
-    <article
-      class="prose prose-img:rounded-xl prose-img:shadow-md prose-img:my-4 prose-p:my-2 prose-hr:my-4 max-w-none"
-    >
+    <MarkdownLayout>
       <Content />
-    </article>
+    </MarkdownLayout>
   </main>
 </Layout>

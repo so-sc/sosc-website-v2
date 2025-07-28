@@ -20,9 +20,11 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 ## 14th June - Day 1:
 
 ### Inaugural Keynote
+
 **9:00 am - 09:30 am**
 
-### From Passion to Profit: Niveus' Journey from Startup to Scalability  
+### From Passion to Profit: Niveus' Journey from Startup to Scalability
+
 **Talk**  
 **Suyog Shetty**  
 **10:00 am - 11:00 am**  
@@ -30,7 +32,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### The Multiverse of OS: A Deep Dive into Dual Boot, VMs, and Containers  
+### The Multiverse of OS: A Deep Dive into Dual Boot, VMs, and Containers
+
 **Talk**  
 **Nibraz Rehman**  
 **11:15 am - 12:15 pm**  
@@ -38,19 +41,22 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### Open Networking  
+### Open Networking
+
 **Discuss and Interact with the speakers and guests**  
 **12:15 pm - 12:45 pm**  
 **Open Area Lounge**
 
 ---
 
-### Lunch Break  
+### Lunch Break
+
 **12:45 pm - 01:45 pm**
 
 ---
 
-### DevOps Fundamentals: Building a Strong Foundation  
+### DevOps Fundamentals: Building a Strong Foundation
+
 **Master Class**  
 **Rajesh Nayak, Pruthvija Shetty, Roshan Y**  
 **01:45 pm - 04:00 pm**  
@@ -58,7 +64,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### Level Up Your Web3 Game using Smart Contracts  
+### Level Up Your Web3 Game using Smart Contracts
+
 **Master Class**  
 **Subodh**  
 **01:45 pm - 04:00 pm**  
@@ -66,7 +73,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### Open Networking  
+### Open Networking
+
 **Discuss and Interact with the speakers and guests**  
 **04:00 pm - 05:00 pm**  
 **Open Area Lounge**
@@ -75,7 +83,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ## 15th June - Day 2:
 
-### Unlock Your Earning Potential: From Engineering to Corporate  
+### Unlock Your Earning Potential: From Engineering to Corporate
+
 **Talk**  
 **Nikhil Raj**  
 **10:30 am - 11:15 am**  
@@ -83,7 +92,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### From Coastal Town to IT Hub: The Rise of Mangalore's IT Industry  
+### From Coastal Town to IT Hub: The Rise of Mangalore's IT Industry
+
 **Panel Discussion**  
 **Shashir Shetty, Shihab Kalander, John Fernandes**  
 **11:30 am - 12:00 pm**  
@@ -91,19 +101,22 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### Open Networking  
+### Open Networking
+
 **Discuss and Interact with the speakers and guests**  
 **12:15 pm - 12:45 pm**  
 **Open Area Lounge**
 
 ---
 
-### Lunch Break  
+### Lunch Break
+
 **12:45 pm - 01:45 pm**
 
 ---
 
-### Cracking the MAANG Code: What It Takes to Get Hired in Top IT Companies  
+### Cracking the MAANG Code: What It Takes to Get Hired in Top IT Companies
+
 **Panel Discussion**  
 **Nikhil Raj, Prasanna, Ram Balakrishnan**  
 **01:45 pm - 02:15 pm**  
@@ -111,7 +124,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### 10X Your API Productivity: Mastering APIs using Postman  
+### 10X Your API Productivity: Mastering APIs using Postman
+
 **Master Class**  
 **Mohit P. Tahiliani**  
 **02:30 pm - 04:30 pm**  
@@ -119,7 +133,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### GEN AI for Dummies: A Beginner's Guide to LLMS  
+### GEN AI for Dummies: A Beginner's Guide to LLMS
+
 **Master Class**  
 **Akshay Kumar U**  
 **02:30 pm - 04:30 pm**  
@@ -127,51 +142,57 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 
 ---
 
-### Open Networking  
+### Open Networking
+
 **Discuss and Interact with the speakers and guests**  
 **04:30 pm - 05:00 pm**  
 **Open Area Lounge**
 
 ---
 
-### Hackathon Registration / Onboarding  
+### Hackathon Registration / Onboarding
+
 **Ground Floor Seminar Hall**  
 **05:00 pm - 05:30 pm**  
 **20 Teams to be participating offline in the Venue.**
 
 ---
 
-### Hackathon Kick-off  
+### Hackathon Kick-off
+
 **06:00 pm**
 
 ---
 
 ## 16th June - Day 3:
 
-### Mentoring  
+### Mentoring
+
 **Jaison Dias, Amrit Shenava**  
 **12:00 am - 04:00 am**  
 **On their respective places**
 
 ---
 
-### Hackathon Ends + Presentation  
+### Hackathon Ends + Presentation
+
 **02:00 pm - 04:00 pm**  
 **Ground Floor Seminar Hall**
 
 ---
 
-### Keynote by Judges  
+### Keynote by Judges
+
 **04:00 pm - 04:30 pm**  
 **Ground Floor Seminar Hall**
 
 ---
 
-### Valedictory and Prize Distribution   
+### Valedictory and Prize Distribution
+
 **04:30 pm - 05:00 pm**
 
 ---
-
 
 ## Media
 

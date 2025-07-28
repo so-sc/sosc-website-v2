@@ -5,23 +5,23 @@ const { image, name, designation, username } = member;
 ---
 
 <div
-  class="bg-card border border-muted p-4 shadow-md hover:shadow-lg transition flex flex-col items-center text-center"
+  class="bg-card border-muted flex flex-col items-center border p-4 text-center shadow-md transition hover:shadow-lg"
 >
   <Image
     src={image}
     alt={name}
-    class="w-24 h-24 rounded-full object-cover mb-4"
+    class="mb-4 h-24 w-24 rounded-full object-cover"
     width={96}
     height={96}
     loading="eager"
   />
   <h3 class="text-lg font-semibold">{name}</h3>
-  <p class="text-sm text-muted-foreground">{designation}</p>
+  <p class="text-muted-foreground text-sm">{designation}</p>
   {
     username && (
       <a
         href={`https://github.com/${username}`}
-        class="mt-2 text-blue-600 text-sm hover:underline"
+        class="mt-2 text-sm text-blue-600 hover:underline"
         target="_blank"
         rel="noopener noreferrer"
       >

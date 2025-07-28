@@ -11,12 +11,12 @@ const { image, title, subtitle } = Astro.props;
 ---
 
 <section
-  class="relative min-h-[40vh] md:min-h-[70vh] flex items-center justify-center text-white overflow-hidden"
+  class="relative flex min-h-[40vh] items-center justify-center overflow-hidden text-white md:min-h-[70vh]"
 >
   <Image
     src={image}
     alt={title}
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 h-full w-full object-cover"
     width={1600}
     height={900}
     format="webp"
@@ -24,8 +24,8 @@ const { image, title, subtitle } = Astro.props;
     loading="eager"
   />
   <div class="absolute inset-0 bg-black/40"></div>
-  <div class="relative z-10 text-center px-4">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+  <div class="relative z-10 px-4 text-center">
+    <h1 class="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
     {subtitle && <p class="text-lg">{subtitle}</p>}
   </div>
 </section>

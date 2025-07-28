@@ -6,7 +6,6 @@ const {
   description,
   cover,
   date,
-  tags,
   link,
   highlight = false,
   author,
@@ -26,7 +25,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   <Image
     src={cover}
     alt={title}
-    class="w-full aspect-[16/9] object-cover"
+    class="aspect-[16/9] w-full object-cover"
     width={1280}
     height={720}
     format="webp"
@@ -35,7 +34,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   />
 
   <div class={`p-4 space-y-1`}>
-    <p class="text-sm text-muted-foreground">{formattedDate}</p>
+    <p class="text-muted-foreground text-sm">{formattedDate}</p>
 
     <h3
       class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-lg"}`}
@@ -43,12 +42,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       {title}
     </h3>
 
-    <p class="text-xs text-muted-foreground italic">By {author}</p>
+    <p class="text-muted-foreground text-xs italic">By {author}</p>
 
     {
       highlight && (
         <p
-          class={`text-muted-foreground pt-2 ${highlight ? "line-clamp-6 " : "line-clamp-3 text-sm "}`}
+          class={`text-muted-foreground pt-2 ${highlight ? "line-clamp-6" : "line-clamp-3 text-sm"}`}
         >
           {description}
         </p>

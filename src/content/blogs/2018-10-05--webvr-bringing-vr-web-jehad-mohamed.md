@@ -2,12 +2,13 @@
 author: jehadmohamedz
 cover: /content/blogs/2018-10-05--webvr-bringing-vr-web-jehad-mohamed/cover.png
 date: 2018-10-05
-description: How one session on WebVR changed my entire perspective of the web and
+description:
+  How one session on WebVR changed my entire perspective of the web and
   what we can do with it! A memorable session by Prathamesh Chavan.
 name: Jehad Mohammed
 slug: /blog/webvr-bringing-vr-web-jehad-mohamed
 tags: WebVR
-title: 'WebVR : Bringing VR to Web'
+title: "WebVR : Bringing VR to Web"
 ---
 
 There was once a time we saw websites delivering content, then we saw websites delivering services and now we see a rise in using trending tech with web.
@@ -29,5 +30,6 @@ It was an all round session with an interactive audience, an amazing tech speake
 I have got to admit, I really like the way he turned my perspective on the web after which I really got interested in Web and using libraries like Tensorflowjs, Opencvjs etc.
 
 ### Some links to get you started with A-Frame:
+
 - [A Frame - Make WebVR](https://aframe.io)
 - [Bringing virtual reality to web](https://webvr.info)

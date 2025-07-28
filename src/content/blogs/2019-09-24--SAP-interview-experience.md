@@ -24,6 +24,7 @@ First round was the online test which was conducted in Hackerrank. The test had 
 10 students were selected from our college and it gives me great privilege to say that three of them are part of SOSC.🎉
 
 We had to go to Alva's Institute of Engineering and Technology, Moodbidri for the further process. We had to assemble in the campus at 9am. There was a pre-placement talk which was followed by three rounds of interview. The process comprised of two technical interviews and an HR round, all of which were meant to eliminate the candidates.
+
 <p>
 <Img src="https://media.giphy.com/media/xUPGcjKy4Agbb6d928/giphy.gif" alt="Bring It On" width="200" height="200"/>
 </p>
@@ -63,6 +64,7 @@ Being in the SOSC team exposed me to various workshops which helped me in inculc
 4. Be a part of some technical club in your college. It makes a lot of difference!
 
 ## All the best and thanks for reading!🤗
+
 <p>
 <Img src="/content/blogs/2019-09-24--SAP-interview-experience/SAP-Labs-Placed.jpeg" alt="SAP-Labs-Placed" >
 <center>Placed at SAP Labs</center>

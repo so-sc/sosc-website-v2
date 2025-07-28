@@ -6,21 +6,25 @@ cover: "/content/events/Add-Ons/Add-Ons-Cover.png"
 ---
 
 ## Mozilla Add-Ons Workshop
+
 An introduction to the world of Browser Add-Ons, in collaboration with ACM Mozilla Interest Group for Open Source, where participants from different colleges will learn to use, and develop their own Browser Add-ons
 
 ## Time
+
 11:00 AM to 6:00 PM
 
 ## Prerequisites
-* Laptop
+
+- Laptop
 
 ## Speakers
+
 - Adithya Karia
 - Bharath
 
 ## Topics covered:
-* Introduction to Add-On Development
-* Demo and overview of APIs
-* Hands on Session
-* Review & publishing them to AMO
 
+- Introduction to Add-On Development
+- Demo and overview of APIs
+- Hands on Session
+- Review & publishing them to AMO

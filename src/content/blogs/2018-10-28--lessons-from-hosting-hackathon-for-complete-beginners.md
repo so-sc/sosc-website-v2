@@ -2,13 +2,15 @@
 author: haxzie
 cover: /content/blogs/2018-10-28--lessons-from-hosting-hackathon-for-complete-beginners/cover.jpg
 date: 2018-10-29
-description: For years hackathons have been known for huge cash prizes for winners.
+description:
+  For years hackathons have been known for huge cash prizes for winners.
   Sometimes the numbers are just humungous. Having a huge cash prize means, attracting
   more hackers, giving rise to a complete competitive enviroment.
 name: Musthaq Ahamad
 slug: /blog/lessons-from-hosting-hackathon-for-beginners
 tags: Hackathon
-title: Lessons from hosting a hackathon for complete beginners, and why they liked
+title:
+  Lessons from hosting a hackathon for complete beginners, and why they liked
   it.
 ---
 
@@ -16,12 +18,13 @@ Hackathons are fun, interactive and social gathering of like minded people who s
 
 ![](https://media.giphy.com/media/l2YWid1kTJZcw4SRO/giphy.gif)
 
-October 13th, we planned to give it a shot to host a hackathon for complete beginners from our community! So how should we approach it? Well, the plan was quite different in the first place, we had planned for a general hackathon inviting all other Universities and technical institutes nearby and having a pull request party, because why not? It's the month of [hacktoberfest](https://hacktoberfest.digitalocean.com), celebration of Open Source software to welcome new contributors to the projects hosted on [GitHub](https://github.com), the home of open source softwares! So we started looking out for sponsors for our event. Being a [GitHub Campus Expert](https://githubcampus.expert), GitHub was the goto for me to ask for help and support. They are always helpful and generous when it comes to help technical communities to grow and spread the word of open source. When I approached them for sponsorship (our expense estimation included cash prizes for winners), they mentioned that 
-> "The monetory support we provide has to be beneficial to all the participants, not just for a few". 
+October 13th, we planned to give it a shot to host a hackathon for complete beginners from our community! So how should we approach it? Well, the plan was quite different in the first place, we had planned for a general hackathon inviting all other Universities and technical institutes nearby and having a pull request party, because why not? It's the month of [hacktoberfest](https://hacktoberfest.digitalocean.com), celebration of Open Source software to welcome new contributors to the projects hosted on [GitHub](https://github.com), the home of open source softwares! So we started looking out for sponsors for our event. Being a [GitHub Campus Expert](https://githubcampus.expert), GitHub was the goto for me to ask for help and support. They are always helpful and generous when it comes to help technical communities to grow and spread the word of open source. When I approached them for sponsorship (our expense estimation included cash prizes for winners), they mentioned that
+
+> "The monetory support we provide has to be beneficial to all the participants, not just for a few".
 
 This was something we never heard from any of our previous sponsors but this response made a lot sense. So I enquired with GitHub's student program manager and the one and only person who manages the GitHub's Campus Expert Program, [Joe Nash](https://twitter.com/jna_sh) further about hosting a hackathon without having any cash prizes and how will we attract hackers participating in such event. He gave me great examples of hackathons that's being conducted in US and by other technical communities where they concentrate on the hack rather than cash prizes and a really good [article from Major League Hacking](https://news.mlh.io/are-hackathon-prizes-the-worst-thing-since-moldy-sliced-bread-04-18-2014) pointing out the ill practices of motivating hackers for money and why we need to stop it.
 
-We had changed our plan to make the event welcoming for beginners so they don't feel like hacking isn't their cup of tea. Yes, it was a challenging task to get the hackers signup for a no-cash-prize event, but we made sure we had something good to give them back. A best first hackathon experience, prizes for winners as something worth to help them continue learning. We ditched the entire idea of having cash prize and with the help of our sponsors from DSI we were able to get VR kits for the winners. Once we opened the registration forms, we got an overwhelming response from Day 1. We had plans to accomodate 150 students, but after the first day we got around 120 registrations. Looking at the demographics, 85% of the registrants haven't attended a hackathon before, so it was upto us to make sure they get their best first hackathon experience and they'll continue participating in future hackathons.  
+We had changed our plan to make the event welcoming for beginners so they don't feel like hacking isn't their cup of tea. Yes, it was a challenging task to get the hackers signup for a no-cash-prize event, but we made sure we had something good to give them back. A best first hackathon experience, prizes for winners as something worth to help them continue learning. We ditched the entire idea of having cash prize and with the help of our sponsors from DSI we were able to get VR kits for the winners. Once we opened the registration forms, we got an overwhelming response from Day 1. We had plans to accomodate 150 students, but after the first day we got around 120 registrations. Looking at the demographics, 85% of the registrants haven't attended a hackathon before, so it was upto us to make sure they get their best first hackathon experience and they'll continue participating in future hackathons.
 
 <p>
 <image src="/content/blogs/2018-10-28--lessons-from-hosting-hackathon-for-complete-beginners/hacking2.jpg" alt="hacking"/>
@@ -29,6 +32,7 @@ We had changed our plan to make the event welcoming for beginners so they don't 
 </p>
 
 We started inviting mentors but we had the numbers in mind, in total we had around 30 - 35 teams participating in the hackathon, with atleast 2 - 4 members in each team, so our plan was to have a mentor for each team but a mentor can have maximum of 3 teams under them. Ultimately we had around 22 mentors assigned to all the teams. We started sending out mails to the team leads with the details of their mentor 3 days before the event, so that they'll be able to discuss the hackathon themes and ideas with their mentors on how to work together during the hackathon. To be honest, that was the best decision we made, because most of the mentors were too excited to share their knowledge with their mentees and encourage them to give their best shot. We were really happy that we got all our participants with a common goal - No matter what happens, we are gonna do it for gaining experience and test our limits during the hackathon, 18 hours throughout the night!
+
 <p>
 <image src="/content/blogs/2018-10-28--lessons-from-hosting-hackathon-for-complete-beginners/mentors.jpg" alt="mentors"/>
 <center><i>From our team of mentors, Nidarsh, Rumaan, Vasu, Navya and Rashwin</i></center>
@@ -40,7 +44,7 @@ We started inviting mentors but we had the numbers in mind, in total we had arou
 
 ## The event day
 
-The hackathon was scheduled to start at 5 P.M in the evening and end at 9 A.M, the next day morning. We had collected consent letters from most of the participants beforehand because most of them were freshers in our college. We started off the event with workshops on WebVR by our Mozilla Campus Club, and Introduction to Git and GitHub so that our young hackers will be able to collaborate effectively on their projects and open source it at the end. Having introducing them to hacktoberfest gave them an additional benefit of completing the challenge directly during the hackathon!  
+The hackathon was scheduled to start at 5 P.M in the evening and end at 9 A.M, the next day morning. We had collected consent letters from most of the participants beforehand because most of them were freshers in our college. We started off the event with workshops on WebVR by our Mozilla Campus Club, and Introduction to Git and GitHub so that our young hackers will be able to collaborate effectively on their projects and open source it at the end. Having introducing them to hacktoberfest gave them an additional benefit of completing the challenge directly during the hackathon!
 
 <p>
 <image src="/content/blogs/2018-10-28--lessons-from-hosting-hackathon-for-complete-beginners/stickers.jpg" alt="stickers"/>

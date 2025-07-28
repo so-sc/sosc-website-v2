@@ -9,9 +9,9 @@ cover: "/content/events/AMAP/cover.png"
 
 Greetings from SOSC!!
 
-Want to get placed but don't know where to start? 
+Want to get placed but don't know where to start?
 
-Worried about starting too late or not having enough CGPA? 
+Worried about starting too late or not having enough CGPA?
 
 Don’t know how to pick a company that suits you?
 
@@ -24,6 +24,7 @@ They are here to help you grow in your career!
 ### Date and Time: 8th January 2022 10:00 AM IST
 
 ## Outcomes of this session:
+
 - Resume screening and tips
 - Differences between Off-campus and on-campus placements
 - What you can expect for next year placement

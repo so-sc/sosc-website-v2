@@ -24,14 +24,14 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 ---
 
 <Layout>
-  <main class="py-20 max-w-4xl mx-auto px-4 space-y-10">
+  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
     <!-- Event Title & Info -->
     <div class="space-y-4">
       <p class="text-primary">{location}</p>
       <h1 class="text-4xl font-bold">{name}</h1>
-      <p class="text-sm text-muted-foreground">{formattedDate}</p>
+      <p class="text-muted-foreground text-sm">{formattedDate}</p>
 
-      <div class="w-20 border-4 border-b border-primary rounded-2xl my-4"></div>
+      <div class="border-primary my-4 w-20 rounded-2xl border-4 border-b"></div>
 
       <!-- Event Banner -->
       {
@@ -39,7 +39,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           <Image
             src={cover}
             alt={name}
-            class="w-full h-96 object-cover rounded-xl shadow-md"
+            class="h-96 w-full rounded-xl object-cover shadow-md"
             width={200}
             height={256}
             loading={"eager"}
@@ -52,7 +52,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
     <!-- Markdown Content -->
     <article
-      class="prose max-w-none prose-img:rounded-xl prose-img:shadow-md prose-img:my-2 prose-p:my-0 prose-hr:my-2"
+      class="prose prose-img:rounded-xl prose-img:shadow-md prose-img:my-2 prose-p:my-0 prose-hr:my-2 max-w-none"
     >
       <Content />
     </article>

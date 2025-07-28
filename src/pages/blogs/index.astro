@@ -29,19 +29,19 @@ const parsedBlogs = blogs
   />
 
   <section
-    class="py-16 bg-background text-foreground px-4 md:px-8 max-w-7xl mx-auto space-y-6"
+    class="bg-background text-foreground mx-auto max-w-7xl space-y-6 px-4 py-16 md:px-8"
   >
     <!-- Featured Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
       <BlogCard {...parsedBlogs[0]} highlight />
 
-      <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-2">
         {parsedBlogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
       </div>
     </div>
 
     <!-- Standard 4-column Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {parsedBlogs.slice(5).map((blog) => <BlogCard {...blog} />)}
     </div>
   </section>

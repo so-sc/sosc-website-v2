@@ -9,8 +9,8 @@ import { Image } from "astro:assets";
 ---
 
 <Layout>
-  <section class="bg-background text-foreground h-screen flex">
-    <div class="max-w-7xl mx-auto flex flex-row items-center px-6">
+  <section class="bg-background text-foreground flex h-screen">
+    <div class="mx-auto flex max-w-7xl flex-row items-center px-6">
       <div class="max-w-xl space-y-4">
         <Image src={SOSC} alt={"Logo"} class={"h-12 w-fit"} loading={"eager"} />
         <h1 class="text-4xl font-semibold">Sahyadri Open Source Community</h1>
@@ -28,7 +28,7 @@ import { Image } from "astro:assets";
 
   <section class="bg-background text-foreground py-16">
     <div
-      class="reverse max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+      class="reverse mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 md:flex-row [&.reverse]:md:flex-row-reverse"
     >
       <div class="max-w-xl space-y-4">
         <h1 class="text-4xl font-semibold">Get Trained by Experts</h1>
@@ -57,7 +57,7 @@ import { Image } from "astro:assets";
 
     <section class="bg-background text-foreground py-16">
       <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+        class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 md:flex-row [&.reverse]:md:flex-row-reverse"
       >
         <div class="max-w-xl space-y-4">
           <h1 class="text-4xl font-semibold">Explore clubs and Activities</h1>
@@ -86,7 +86,7 @@ import { Image } from "astro:assets";
 
     <section class="bg-background text-foreground py-16">
       <div
-        class="reverse max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10 [&.reverse]:md:flex-row-reverse"
+        class="reverse mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 md:flex-row [&.reverse]:md:flex-row-reverse"
       >
         <div class="max-w-xl space-y-4">
           <h1 class="text-4xl font-semibold">Get Connected !</h1>

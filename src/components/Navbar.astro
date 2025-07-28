@@ -15,26 +15,24 @@ const navLinks = [
 ];
 ---
 
-<nav
-  class="bg-primary text-foreground shadow-sm w-screen fixed top-0 z-50"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-14 items-center">
+<nav class="bg-primary text-foreground fixed top-0 z-50 w-screen shadow-sm">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-14 items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-4">
         <Image src={SOSC} alt="Logo" class="h-6 w-fit" loading="eager" />
       </div>
 
       <!-- Nav Links -->
-      <div class="flex items-center space-x-8 h-full">
+      <div class="flex h-full items-center space-x-8">
         {
           navLinks.map(({ label, href }) => (
             <a
               href={href}
-              class={`h-full flex items-center border-b-3 transition-all duration-300 ${
+              class={`flex h-full items-center border-b-3 transition-all duration-300 ${
                 isActive(href)
                   ? "text-primary-foreground border-primary-foreground"
-                  : "text-primary-foreground border-transparent hover:border-primary-foreground"
+                  : "text-primary-foreground hover:border-primary-foreground border-transparent"
               }`}
             >
               {label}

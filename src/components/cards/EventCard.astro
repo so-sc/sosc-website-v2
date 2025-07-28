@@ -11,7 +11,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
 <a
   href={`/events/${link}`}
-  class="bg-card flex flex-col md:flex-row gap-6 border border-muted shadow-sm hover:shadow-md transition group"
+  class="bg-card border-muted group flex flex-col gap-6 border shadow-sm transition hover:shadow-md md:flex-row"
 >
   {
     cover && (
@@ -20,7 +20,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         alt={"cover"}
         width={256}
         height={192}
-        class="w-full md:w-64 h-48 object-contain"
+        class="h-48 w-full object-contain md:w-64"
         format="webp"
         loading="lazy"
         quality={5}
@@ -30,12 +30,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
   <div class="flex flex-col justify-between p-4">
     <div>
-      <h2 class="text-2xl font-semibold group-hover:text-primary">
+      <h2 class="group-hover:text-primary text-2xl font-semibold">
         {name}
       </h2>
-      {location && <p class="mt-2 text-muted-foreground">{location}</p>}
+      {location && <p class="text-muted-foreground mt-2">{location}</p>}
     </div>
-    <span class="mt-4 text-sm text-muted-foreground">
+    <span class="text-muted-foreground mt-4 text-sm">
       {formattedDate}
     </span>
   </div>

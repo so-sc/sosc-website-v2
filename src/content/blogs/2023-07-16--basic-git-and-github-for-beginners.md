@@ -2,7 +2,8 @@
 author: Deveesh-Shetty
 cover: /content/blogs/2023-07-16--basic-git-and-github-for-beginners/cover.jpg
 date: 2023-07-16
-description: On 14-07-2023 SOSC Conducted a Git and GitHub workshop where Deveesh
+description:
+  On 14-07-2023 SOSC Conducted a Git and GitHub workshop where Deveesh
   Shetty was the speaker. This blog covers the basic Git and GitHub topics that everyone
   needs to know, so they can start showcasing their projects in GitHub and contribute
   to other open source projects

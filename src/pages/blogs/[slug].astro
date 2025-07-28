@@ -24,10 +24,10 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 ---
 
 <Layout>
-  <main class="py-20 max-w-4xl mx-auto px-4 space-y-10">
+  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
     <!-- Blog Header -->
     <div class="space-y-4">
-      <p class="rounded-md text-primary">
+      <p class="text-primary rounded-md">
         {tags}
       </p>
       <h1 class="text-4xl font-bold">{title}</h1>
@@ -36,23 +36,23 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         <img
           src={`https://github.com/${author}.png`}
           alt={author}
-          class="w-10 h-10 rounded-full"
+          class="h-10 w-10 rounded-full"
           onerror="this.onerror=null; this.src='/github_avatar.svg';"
         />
         <div class="flex flex-col leading-tight">
           <a
-            class="font-semibold text-primary"
+            class="text-primary font-semibold"
             href={`https://github.com/${author}`}
             target="_blank"
             rel="noreferrer"
           >
             {author}
           </a>
-          <span class="text-sm text-muted-foreground">{formattedDate}</span>
+          <span class="text-muted-foreground text-sm">{formattedDate}</span>
         </div>
       </div>
 
-      <div class="w-20 border-4 border-b border-primary rounded-2xl my-8"></div>
+      <div class="border-primary my-8 w-20 rounded-2xl border-4 border-b"></div>
 
       <!-- Blog Cover -->
       {
@@ -60,7 +60,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           <Image
             src={cover}
             alt={title}
-            class="w-full h-72 object-cover rounded-xl shadow-md"
+            class="h-72 w-full rounded-xl object-cover shadow-md"
             width={800}
             height={400}
             loading={"eager"}
@@ -73,7 +73,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
     <!-- Blog Markdown Content -->
     <article
-      class="prose max-w-none prose-img:rounded-xl prose-img:shadow-md prose-img:my-4 prose-p:my-2 prose-hr:my-4"
+      class="prose prose-img:rounded-xl prose-img:shadow-md prose-img:my-4 prose-p:my-2 prose-hr:my-4 max-w-none"
     >
       <Content />
     </article>

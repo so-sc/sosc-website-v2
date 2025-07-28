@@ -2,7 +2,8 @@
 author: nathanielmathew
 cover: /content/blogs/2019-06-04--the-smart-india-hackathon-experience/cover.jpeg
 date: 2019-06-04
-description: A Short blog on the experience of being selected for the Grand Final
+description:
+  A Short blog on the experience of being selected for the Grand Final
   of the World's biggest Hackathon, the Smart India Hackathon (SIH), 2019
 name: Nathaniel Ryan M
 slug: /blog/the-sih-experience-nathaniel-mathew
@@ -11,7 +12,7 @@ title: The Smart India Hackathon Experience - SIH 2019
 ---
 
 It all started on a normal, slow day when our Project-mentor told us to assemble in the seminar hall for an announcement, regarding SIH, supposedly the "World's biggest Hackathon", held annually. We were clueless but considered registering for it, only because our Project-mentor told us to do so.
-Next thing I know, I'm added to a WhatsApp group with 5 of my batch-mates: Afroz, Bilal, Akashdeep, Sony and Shashank, all a part of SOSC, preparing to select a few problem statements, which we believed we could provide solutions for. We met up, finalised 3 or 4 problem statements and discussed their solutions, before mailing a presentation to our SPOC. 
+Next thing I know, I'm added to a WhatsApp group with 5 of my batch-mates: Afroz, Bilal, Akashdeep, Sony and Shashank, all a part of SOSC, preparing to select a few problem statements, which we believed we could provide solutions for. We met up, finalised 3 or 4 problem statements and discussed their solutions, before mailing a presentation to our SPOC.
 Long story short, our presentation got selected for the grand final in Punjab; Soon, we found out that our trip to Lovely Professional University, Punjab & the accommodation was completely paid for, by the organisers.
 
 <p>
@@ -36,7 +37,7 @@ Some of us eventually grew tired and had to get some rest, for which there was a
 </p>
 
 There were several breaks during the hackathon, where we provided with refreshments and we also had an interactive web-session with the Indian Prime Minster, Mr Narendra Modi.
-We were getting close to completing a working-solution to the problem; The final Evaluation was coming close and our application was able to send Bulk Mails and SMS' directly via the backend but there was a problem while we tried to connect it to our front-end React app. 
+We were getting close to completing a working-solution to the problem; The final Evaluation was coming close and our application was able to send Bulk Mails and SMS' directly via the backend but there was a problem while we tried to connect it to our front-end React app.
 The Judges entered the Room for the final Evaluation and we demonstrated that our server was able to perform the required task, but the Judges were strict and told us that it isn't a functional portal if that was the case.
 We spoke to a few of the other teams and got to know that most of them were not able to build a fully functional portal by the end of the Hackathon. The results were announced and we were really close, but didn't win.
 Nevertheless, it was an unforgettable experience and we learnt a lot from it; We then moved on, and enjoyed the remaining days we had in Punjab, before returning to Mangalore

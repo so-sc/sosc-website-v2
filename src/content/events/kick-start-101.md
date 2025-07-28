@@ -4,10 +4,13 @@ date: 2021-02-28
 location: Virtual
 cover: "/content/events/kick-start-101/kick-start-101.jpg"
 ---
+
 ## Kick-Start 101
+
 How does one get started with learning any skill? In the coming online workshop "Kick-Start 101", we will be talking about how we got into what we do now, where can you learn more, the amazing communities out there you can ask for help, and give you tips on how you can start your development journey followed by a QnA session where we can clear your doubts. ✨
 
 ## We will be covering "How to start-"
+
 - Contributing to Mozilla SOSC projects?
 - Web Development
 - Game Development
@@ -18,8 +21,11 @@ How does one get started with learning any skill? In the coming online workshop 
 - Get to know about useful stacks like Discord, GitHub, Notion and many more.
 
 ### Time: 10:00 AM IST
+
 ## Venue
+
 28th of February 10:00 AM virtually from your place.
 
 ## Prerequisites
+
 - No prerequisites required, it's an interactive session.

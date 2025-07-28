@@ -33,7 +33,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       <h2 class="text-2xl font-semibold group-hover:text-primary">
         {name}
       </h2>
-      <p class="mt-2 text-muted-foreground">{location}</p>
+      {location && <p class="mt-2 text-muted-foreground">{location}</p>}
     </div>
     <span class="mt-4 text-sm text-muted-foreground">
       {formattedDate}

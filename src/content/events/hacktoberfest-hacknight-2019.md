@@ -47,7 +47,7 @@ Nothing really, atleast one laptop per team. First year engineering participants
    the nature of the image itself (rotation, sizing, etc.) that should be handled, but there are other
    sources of errors that need to be handled, after the image is converted to text. Among the more
    common types of errors are segmentation errors (`too m uc h wh itespac e` or `toolittle
-    whitespace`), `character rnisrecognitioii`, smudges that could cause misrecognition of
+whitespace`), `character rnisrecognitioii`, smudges that could cause misrecognition of
    `pun,ctuation`.
    Your challenge is to train a model to find and correct the types of common issues described
    above to more than 85% accuracy.

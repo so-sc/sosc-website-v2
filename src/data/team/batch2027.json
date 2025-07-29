@@ -1,0 +1,42 @@
+[
+  {
+    "username": "Manas-salian",
+    "name": "Manas S",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/Manas-salian.png"
+  },
+  {
+    "username": "Bhatvighnesh",
+    "name": "Vighnesh bhat",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/Bhatvighnesh.png"
+  },
+  {
+    "username": "VivekNeer",
+    "name": "Vivek Neeralagi",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/VivekNeer.png"
+  },
+  {
+    "username": "JustModo",
+    "name": "Yash Laxman",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "",
+    "skills": [],
+    "status": "active",
+    "image": "https://github.com/JustModo.png"
+  }
+]

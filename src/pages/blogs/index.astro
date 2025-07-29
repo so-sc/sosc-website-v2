@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import BlogCard from "@/components/cards/BlogCard.astro";
+import Cover from "@/assets/cover/blog.jpg";
+import { getCollection } from "astro:content";
+import slugify from "slugify";
+
+const blogs = await getCollection("blogs");
+
+const parsedBlogs = blogs
+  .map(({ data }) => ({
+    title: data.title,
+    author: data.author,
+    date: data.date,
+    description: data.description,
+    cover: data.cover,
+    tags: data.tags,
+    link: slugify(data.title, { lower: true, strict: true }),
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout>
+  <Hero
+    image={Cover}
+    title="Blogs"
+    subtitle="Dive into articles, insights, and updates from our community."
+  />
+
+  <section
+    class="bg-background text-foreground mx-auto max-w-7xl space-y-6 px-4 py-16 md:px-8"
+  >
+    <!-- Featured Grid -->
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
+      <BlogCard {...parsedBlogs[0]} highlight />
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-2">
+        {parsedBlogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
+      </div>
+    </div>
+
+    <!-- Standard 4-column Grid -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {parsedBlogs.slice(5).map((blog) => <BlogCard {...blog} />)}
+    </div>
+  </section>
+</Layout>

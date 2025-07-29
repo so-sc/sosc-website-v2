@@ -1,0 +1,59 @@
+---
+// Imports
+import Layout from "@/layouts/Layout.astro";
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import slugify from "slugify";
+
+export async function getStaticPaths() {
+  const events = await getCollection("events");
+  return events.map((event) => ({
+    params: { slug: slugify(event.data.name, { lower: true, strict: true }) },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+const { name, date, location, cover } = event.data;
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout>
+  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
+    <!-- Event Title & Info -->
+    <div class="space-y-4">
+      <p class="text-primary">{location}</p>
+      <h1 class="text-4xl font-bold">{name}</h1>
+      <p class="text-muted-foreground text-sm">{formattedDate}</p>
+
+      <div class="border-primary my-4 w-20 rounded-2xl border-4 border-b"></div>
+
+      <!-- Event Banner -->
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt={name}
+            class="h-96 w-full rounded-xl object-cover shadow-md"
+            width={200}
+            height={256}
+            loading={"eager"}
+            format="webp"
+            quality={80}
+          />
+        )
+      }
+    </div>
+
+    <!-- Markdown Content -->
+    <MarkdownLayout>
+      <Content />
+    </MarkdownLayout>
+  </main>
+</Layout>

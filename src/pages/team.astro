@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Cover from "@/assets/cover/team.jpg";
+import { team } from "@/data/loader";
+import ProfileCard from "@/components/cards/ProfileCard.astro";
+
+const coordinatorMembers = team.filter((m) => m.status === "coordinator");
+const alumniMembers = team.filter((m) => m.status === "alumni");
+const activeMembers = team.filter((m) => m.status === "active");
+---
+
+<Layout>
+  <Hero
+    image={Cover}
+    title="Our Team"
+    subtitle="Meet the passionate individuals driving our community forward."
+  />
+
+  <section
+    class="text-foreground mx-auto max-w-7xl space-y-16 px-4 py-20 md:px-8"
+  >
+    <div>
+      <h2 class="mb-6 text-3xl font-bold">Co-ordinator</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {coordinatorMembers.map((member) => <ProfileCard member={member} />)}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="mb-6 text-3xl font-bold">Community Member</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {activeMembers.map((member) => <ProfileCard member={member} />)}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="mb-6 text-3xl font-bold">Alumni</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {alumniMembers.map((member) => <ProfileCard member={member} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

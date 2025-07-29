@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+const { member } = Astro.props;
+const { image, name, designation, username } = member;
+---
+
+<div
+  class="bg-card border-muted flex flex-col items-center border p-4 text-center shadow-md transition hover:shadow-lg"
+>
+  <Image
+    src={image}
+    alt={name}
+    class="mb-4 h-24 w-24 rounded-full object-cover"
+    width={96}
+    height={96}
+    loading="eager"
+  />
+  <h3 class="text-lg font-semibold">{name}</h3>
+  <p class="text-muted-foreground text-sm">{designation}</p>
+  {
+    username && (
+      <a
+        href={`https://github.com/${username}`}
+        class="mt-2 text-sm text-blue-600 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @{username}
+      </a>
+    )
+  }
+</div>

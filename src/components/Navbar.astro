@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import SOSC from "@/assets/sosc_logo_white.svg";
+
+const currentPath = new URL(Astro.request.url).pathname;
+
+const isActive = (path: string) =>
+  currentPath === path || currentPath.startsWith(`${path}/`);
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/events" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Team", href: "/team" },
+];
+---
+
+<nav class="bg-primary text-foreground fixed top-0 z-50 w-screen shadow-sm">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-14 items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <Image src={SOSC} alt="Logo" class="h-6 w-fit" loading="eager" />
+      </div>
+
+      <!-- Nav Links -->
+      <div class="flex h-full items-center space-x-8">
+        {
+          navLinks.map(({ label, href }) => (
+            <a
+              href={href}
+              class={`flex h-full items-center border-b-3 transition-all duration-300 ${
+                isActive(href)
+                  ? "text-primary-foreground border-primary-foreground"
+                  : "text-primary-foreground hover:border-primary-foreground border-transparent"
+              }`}
+            >
+              {label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Cover from "@/assets/cover/event.jpg";
+import { getCollection } from "astro:content";
+import slugify from "slugify";
+import EventCard from "@/components/cards/EventCard.astro";
+
+const events = await getCollection("events");
+
+const parsedEvents = events
+  .map(({ data }) => ({
+    name: data.name,
+    date: data.date,
+    location: data.location,
+    cover: data.cover,
+    link: slugify(data.name, { lower: true, strict: true }),
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout>
+  <Hero
+    image={Cover}
+    title="Our Events"
+    subtitle="Explore upcoming and past events hosted by our community."
+  />
+
+  <section
+    class="bg-background text-foreground mx-auto max-w-7xl px-4 py-16 md:px-8"
+  >
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      {parsedEvents.map((event) => <EventCard {...event} />)}
+    </div>
+  </section>
+</Layout>

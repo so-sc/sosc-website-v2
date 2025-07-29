@@ -10,7 +10,7 @@ import Footer from "@/components/Footer.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link
       rel="preload"
@@ -22,6 +22,47 @@ import Footer from "@/components/Footer.astro";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>SOSC</title>
+    <meta
+      name="description"
+      content="SOSC (Sahyadri Open-Source Community) brings together young tech enthusiasts in Mangalore through workshops, DevHost, Hackathons, and open-source collaboration."
+    />
+    <meta
+      name="keywords"
+      content="Sahyadri Open Source Community, SOSC, Mangalore, open-source, student workshops, DevHost, hackathon"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Sahyadri Open-Source Community" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sosc.org.in/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sahyadri Open-Source Community (SOSC)" />
+    <meta
+      property="og:description"
+      content="Tech-enthusiast community in Mangalore empowering students through workshops, hackathons, DevHost and open-source events."
+    />
+    <meta property="og:image" content="https://www.sosc.org.in/og-image.png" />
+    <meta property="og:image:alt" content="Description of SOSC event or logo" />
+    <meta property="og:url" content="https://www.sosc.org.in/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SOSC Mangalore" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sahyadri Open-Source Community (SOSC)"
+    />
+    <meta
+      name="twitter:description"
+      content="Community-driven student group in Mangalore hosting DevHost, Hackathons, workshops & open-source events."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.sosc.org.in/twitter-image.png"
+    />
+    <meta name="twitter:site" content="@sahyadri_osc" />
   </head>
   <body>
     <Navbar />

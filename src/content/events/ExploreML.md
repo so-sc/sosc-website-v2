@@ -47,5 +47,5 @@ Explore ML is an introductory workshop for **ML** and **Neural Networks** organi
 
 - [Suhan Acharya](https://github.com/suhanacharya), ExploreML Facilitator - DSC
 - [Akshay Ram Bhat](https://github.com/akshayrb22), Lead - DSC
-- [Afroz](https://github.com/coderhawk999), PWA Lead - DSC
+- [Afroz](https://github.com/afrzhussain), PWA Lead - DSC
 - [Akashdeep Bhagat](https://github.com/akashdeepb), Android Lead - DSC

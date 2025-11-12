@@ -11,7 +11,7 @@ Open source is changing the world - one pull request at a time.
 
 Hack Night is a 36-hour long hackthon organized by Sahyadri Open Source Community (SOSC) in celebration of Hacktoberfest 2021. Hacktoberfest is open to everyone in our global community. Whether you’re new to development, a student or a long-time contributor, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skills levels are encouraged to complete the challenge.
 
-for more details visit the [hacktoberfest website](https://www.hacknight.sosc.org.in/)
+for more details visit the [hacktoberfest website](https://hacknight.sosc.org.in/)
 
 ### Tracks for the Hackathon
 

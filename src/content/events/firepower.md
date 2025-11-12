@@ -15,4 +15,4 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 
 - Date: December 8th - 9th, 2023
 - Venue: Language Learning Lab - 3
-- Event Head: [Toshan S M](https://www.linkedin.com/in/toshan-sm-2b72891b9/)
+- Event Head: [Toshan S M](https://www.linkedin.com/in/toshan-s-maindan-2b72891b9/)

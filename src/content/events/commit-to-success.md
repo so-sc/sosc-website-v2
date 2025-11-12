@@ -19,7 +19,7 @@ Sahyadri Open Source Community is hosting a workshop on Git and GitHub!
 
 ## Speaker
 
-- [Deveesh Shetty](https://github.com/Deveesh-Shetty), President - SOSC
+- [Deveesh Shetty](https://github.com/dev-shetty), President - SOSC
 
 ## Prerequisite
 

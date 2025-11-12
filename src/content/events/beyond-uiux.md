@@ -18,7 +18,7 @@ To delve deeper into this exciting field, join us for an immersive workshop on t
 ## Speakers
 
 - [Zeliq Zayyan](https://www.linkedin.com/in/zeliq-zayyan-14b313193/), Design Lead - SOSC
-- [Toshan SM](https://www.linkedin.com/in/toshan-sm-2b72891b9/), Design co-lead - SOSC
+- [Toshan SM](https://www.linkedin.com/in/toshan-s-maindan-2b72891b9/), Design co-lead - SOSC
 
 ## Prerequisite
 

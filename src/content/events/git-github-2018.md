@@ -7,7 +7,7 @@ cover: "/content/events/git-github-2018/git_cover.jpg"
 
 ## Git+GitHub Workshop
 
-The workshop will cover basics of using the Version Control System - [Git](https://git-scm.com/) and how to collaborate effectively on your projects using [GitHub](https://github.com). Not just Git push and run but how to tackle difficult situations and how to find help. The workshop will also cover the benefits of being an open source contributor and how to be an open source contributor. We'll be introducing some exciting offers from GitHub education for students, and to use it to build your knowledge on modern technologies, and how open source can shape your career. Read more about [How open source can help shape your career](https://sosc.org.in/blog/how-open-source-can-shape-your-it-career) in our community blog.
+The workshop will cover basics of using the Version Control System - [Git](https://git-scm.com/) and how to collaborate effectively on your projects using [GitHub](https://github.com). Not just Git push and run but how to tackle difficult situations and how to find help. The workshop will also cover the benefits of being an open source contributor and how to be an open source contributor. We'll be introducing some exciting offers from GitHub education for students, and to use it to build your knowledge on modern technologies, and how open source can shape your career. Read more about [How open source can help shape your career](https://sosc.org.in/blogs/how-open-source-can-help-shape-your-it-career) in our community blog.
 
 ### This is a Free community driven workshop 💖
 

@@ -23,7 +23,7 @@ In this session we will be talking about design in general and how it has grown 
 
 #### Speaker
 
-- [Jehad Mohamed](https://jehadmohamedz.wixsite.com/meep/), UI/UX Designer at MobStac
+- [Jehad Mohamed](https://www.linkedin.com/in/jehad-ddx/), UI/UX Designer at MobStac
 
 ---
 

@@ -75,7 +75,7 @@ Your website can speak volumes just through its design. That’s where CSS comes
 
 #### Speaker
 
-- [Rumaan Khalander](https://www.rumaan.tech/), Technical Head at iDeotic
+- [Rumaan Khalander](https://www.linkedin.com/in/rumaan), Technical Head at iDeotic
 
 ---
 

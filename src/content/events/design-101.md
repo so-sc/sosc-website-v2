@@ -78,7 +78,7 @@ The Workshop was conducted by core team members of Sahyadri Open Source Communit
 
 - [Jehad Mohamed](https://github.com/imhighoncoffee), Ex-Club Captain - Mozilla
 - [Nathaniel Ryan Mathew](https://github.com/nathanielmathew), Club Vice-Captain - Mozilla
-- [Dhanush Bangera](https://github.com/Dhanush-Bangera), Co-Design Head - SOSC
+- [Dhanush Bangera](https://github.com/dhanushp), Co-Design Head - SOSC
 
 ## Photos
 

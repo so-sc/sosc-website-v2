@@ -211,7 +211,7 @@ You can copy and paste those commands to your terminal and it should `push` your
 But, I won't let you just copy paste, let's see what each command is doing in here
 
 ```bash
-git remote add origin https://github.com/Deveesh-Shetty/Learn-Git.git
+git remote add origin https://github.com/dev-shetty/Learn-Git.git
 ```
 
 **In your case the URL will be different**
@@ -475,4 +475,4 @@ Thank you for sticking till the end! Until then have a great day and happy learn
 
 **Deveesh Shetty**
 
-[Github](https://github.com/Deveesh-Shetty) | [Twitter](https://twitter.com/shettydeveesh) | [Dev.to](https://dev.to/devshetty)
+[Github](https://github.com/dev-shetty) | [Twitter](https://twitter.com/shettydeveesh) | [Dev.to](https://dev.to/devshetty)

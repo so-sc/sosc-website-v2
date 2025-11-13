@@ -27,7 +27,7 @@ for Mozilla Campus Club: Sahyadri
 ## Speakers
 
 - [Basavarajeshwari Ambi](https://github.com/Basavarajeshwari-Ambi), Club Captain - Mozilla
-- [Dhanush P Bangera](https://github.com/Dhanush-bangera), Design Co-Head - SOSC
+- [Dhanush P Bangera](https://github.com/dhanushp), Design Co-Head - SOSC
 - [Srujan U](https://github.com/creativedreamer), Media team - SOSC
 - [Nathaniel Ryan Mathew](https://github.com/nathanielmathew), Club Vice-Captain - Mozilla
 

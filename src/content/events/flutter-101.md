@@ -56,6 +56,6 @@ For any issues with installation, please drop an email to melwinlobo692@gmail.co
 - [Akashdeep Bhagat](https://github.com/akashdeepb), Android Lead - DSC
 - [Shreyas Baliga](https://github.com/ShreyasBaliga), Flutter Lead - DSC
 - [Melwin Lobo](https://github.com/melwinlobo18), GCP Lead - DSC
-- [Afroz](https://github.com/coderhawk999), PWA Lead - DSC
+- [Afroz](https://github.com/afrzhussain), PWA Lead - DSC
 - [Adithya Suvarna](https://github.com/ekokratos), SOSC Community Lead
 - [Akshay Ram Bhat](https://github.com/akshayrb22), Lead - DSC

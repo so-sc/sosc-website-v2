@@ -21,10 +21,6 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p>
-        <img src="/content/events/techmaze/1.jpg" alt="codeblaze-4" style="width: 100%;">
-    </p>
-    <p> 
-        <img src="/content/events/techmaze/2.jpg" alt="codeblaze-1" style="width: 100%">
-    </p>
+    ![codeblaze-4](./1.jpg)
+    ![codeblaze-1](./2.jpg)
 </div>

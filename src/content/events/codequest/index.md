@@ -19,9 +19,5 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 
 ### Media
 
-<p> 
-    <img src="/content/events/codequest/2.jpg" alt="codeblaze-3" style="width: 100%">
-</p>
-<p>
-    <img src="/content/events/codequest/1.jpg" alt="codeblaze-2" style="width: 100%;">
-</p>
+![codeblaze-3](./2.jpg)
+![codeblaze-2](./1.jpg)

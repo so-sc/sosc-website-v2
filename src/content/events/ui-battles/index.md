@@ -20,10 +20,6 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-        <img src="/content/events/ui-battles/2.jpg" alt="codeblaze-3" style="width: 100%">
-    </p>
-    <p>
-        <img src="/content/events/ui-battles/1.jpg" alt="codeblaze-2" style="width: 100%;">
-    </p>
+    ![codeblaze-3](./2.jpg)
+    ![codeblaze-2](./1.jpg)
 </div>

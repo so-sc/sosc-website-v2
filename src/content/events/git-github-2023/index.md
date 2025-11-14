@@ -31,10 +31,6 @@ Overall, the workshop was highly informative and immersive, leaving a lasting an
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-     <img src="/content/events/git-github-2023/1.jpg" alt="Image 1" style="width: 100%;">
-    </p>
-    <p>
-      <img src="/content/events/git-github-2023/2.jpg" alt="Image 2" style="width: 100%;">
-    </p>
+    ![Image 1](./1.jpg)
+    ![Image 2](./2.jpg)
 </div>

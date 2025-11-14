@@ -23,19 +23,9 @@ Participants present projects to judges, with company-funded or open-themed prob
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p>
-        <img src="/content/events/codeblaze/4.jpg" alt="codeblaze-4" style="width: 100%;">
-    </p>
-    <p> 
-        <img src="/content/events/codeblaze/1.jpg" alt="codeblaze-1" style="width: 100%">
-    </p>
-    <p> 
-        <img src="/content/events/codeblaze/6.jpg" alt="codeblaze-3" style="width: 100%">
-    </p>
-    <p>
-        <img src="/content/events/codeblaze/2.jpg" alt="codeblaze-2" style="width: 100%;">
-    </p>
+    ![codeblaze-4](./4.jpg)
+    ![codeblaze-1](./1.jpg)
+    ![codeblaze-3](./6.jpg)
+    ![codeblaze-2](./2.jpg)
 </div>
-<p>
-    <img src="/content/events/codeblaze/5.jpg" alt="codeblaze-5" style="width: 100%;">
-</p>
+![codeblaze-5](./5.jpg)

@@ -197,19 +197,9 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 ## Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-  <p> 
-    <img src="/content/events/devhost24June/5.jpg" alt="event-1" style="width: 100%">
-  </p>
-  <p> 
-    <img src="/content/events/devhost24June/4.jpg" alt="event-2" style="width: 100%">
-  </p>
-  <p> 
-    <img src="/content/events/devhost24June/3.jpg" alt="event-3" style="width: 100%">
-  </p>
-  <p> 
-    <img src="/content/events/devhost24June/2.jpg" alt="event-4" style="width: 100%">
-  </p>
+  ![event-1](./5.jpg)
+  ![event-2](./4.jpg)
+  ![event-3](./3.jpg)
+  ![event-4](./2.jpg)
 </div>
-<p> 
-  <img src="/content/events/devhost24June/1.jpg" alt="event-5" style="width: 100%">
-</p>
+![event-5](./1.jpg)

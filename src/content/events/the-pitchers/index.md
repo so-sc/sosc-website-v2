@@ -22,16 +22,8 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p>
-        <img src="/content/events/the-pitchers/4.jpg" alt="codeblaze-4" style="width: 100%;">
-    </p>
-    <p> 
-        <img src="/content/events/the-pitchers/2.jpg" alt="codeblaze-1" style="width: 100%">
-    </p>
-    <p> 
-        <img src="/content/events/the-pitchers/3.jpg" alt="codeblaze-1" style="width: 100%">
-    </p>
-    <p> 
-        <img src="/content/events/the-pitchers/1.jpg" alt="codeblaze-1" style="width: 100%">
-    </p>
+    ![codeblaze-4](./4.jpg)
+    ![codeblaze-1](./2.jpg)
+    ![codeblaze-1](./3.jpg)
+    ![codeblaze-1](./1.jpg)
 </div>

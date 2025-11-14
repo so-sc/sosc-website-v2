@@ -34,20 +34,10 @@ Concluding the session on a high note, attendees developed a fundamental underst
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-        <img src="/content/events/API_101-Workshop/1.jpg" alt="API_101-Workshop_1" style="width: 100%;">
-    </p>
-    <p>
-       <img src="/content/events/API_101-Workshop/3.jpg" alt="API_101-Workshop_2" style="width: 100%;">
-    </p>
-    <p>
-        <img src="/content/events/API_101-Workshop/2.jpg" alt="API_101-Workshop_3" style="width: 100%;">
-    </p>
-    <p>
-        <img src="/content/events/API_101-Workshop/4.jpg" alt="API_101-Workshop_4" style="width: 100%;">
-    </p>
+    ![API_101-Workshop_1](./1.jpg)
+    ![API_101-Workshop_2](./3.jpg)
+    ![API_101-Workshop_3](./2.jpg)
+    ![API_101-Workshop_4](./4.jpg)
 
 </div>
-<p>
-  <img src="/content/events/API_101-Workshop/onlineSession.jpg" alt="Online Session" style="width: 100%;">
-</p>
+![Online Session](./onlineSession.jpg)

@@ -50,19 +50,9 @@ For more details visit the [Devhost 2023 Website](https://devhost.sosc.org.in/)
 ## Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-        <img src="/content/events/devhost23/5.png" alt="codeblaze-1" style="width: 100%">
-    </p>
-     <p> 
-        <img src="/content/events/devhost23/2.png" alt="codeblaze-1" style="width: 100%">
-    </p>
-     <p> 
-        <img src="/content/events/devhost23/3.png" alt="codeblaze-1" style="width: 100%">
-    </p>
-     <p> 
-        <img src="/content/events/devhost23/1.png" alt="codeblaze-1" style="width: 100%">
-    </p>
+    ![codeblaze-1](./5.png)
+     ![codeblaze-1](./2.png)
+     ![codeblaze-1](./3.png)
+     ![codeblaze-1](./1.png)
 </div>
-<p> 
-    <img src="/content/events/devhost23/4.png" alt="codeblaze-1" style="width: 100%">
-</p>
+![codeblaze-1](./4.png)

@@ -22,9 +22,9 @@ Saturday, 01-Sep-18 - 2.PM at First Floor Seminar Hall.
 
 - Total Participants: 190
 
-<image src="img4.jpg"/>
-<image src="img6.jpg"/>
-<image src="img2.jpg"/>
-<image src="img5.jpg"/>
-<image src="img3.jpg"/>
-<image src="img1.jpg"/>
+![img4.jpg](./img4.jpg)
+![img6.jpg](./img6.jpg)
+![img2.jpg](./img2.jpg)
+![img5.jpg](./img5.jpg)
+![img3.jpg](./img3.jpg)
+![img1.jpg](./img1.jpg)

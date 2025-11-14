@@ -31,13 +31,7 @@ The event was considered a resounding success, providing students with exposure 
 ## Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-     <img src="/content/events/artificial-intelligence/1.jpg" alt="1" style="width: 100%;">
-    </p>
-    <p>
-      <img src="/content/events/artificial-intelligence/2.jpg" alt="2" style="width: 100%;">
-    </p>
+    ![1](./1.jpg)
+    ![2](./2.jpg)
 </div>
-<p>
-  <img src="/content/events/artificial-intelligence/group.jpg" alt="Group" style="width: 100%;">
-</p>
+![Group](./group.jpg)

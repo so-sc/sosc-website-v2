@@ -50,19 +50,9 @@ We believe that the induction program has set the stage for a productive and col
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-     <img src="/content/events/Synergy/SOSCPresident.jpg" alt="SOSCPresident" style="width: 100%;">
-    </p>
-    <p>
-      <img src="/content/events/Synergy/SOSWCPresident.jpg" alt="SOSWC President" style="width: 100%;">
-    </p>
-    <p>
-      <img src="/content/events/Synergy/Leads.jpg" alt="Tech Leads" style="width: 100%;">
-    </p>
-    <p>
-      <img src="/content/events/Synergy/Interaction.jpg" alt="Interaction" style="width: 100%;">
-    </p>
+    ![SOSCPresident](./SOSCPresident.jpg)
+    ![SOSWC President](./SOSWCPresident.jpg)
+    ![Tech Leads](./Leads.jpg)
+    ![Interaction](./Interaction.jpg)
 </div>
-<p>
-  <img src="/content/events/Synergy/Group.jpg" alt="Group" style="width: 100%;">
-</p>
+![Group](./Group.jpg)

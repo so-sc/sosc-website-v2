@@ -35,25 +35,11 @@ In summary, the Git and GitHub workshop provided developers with a solid foundat
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-        <img src="/content/events/commit-to-success/1.jpg" alt="commit-to-success-1" style="width: 100%">
-    </p>
-    <p>
-        <img src="/content/events/commit-to-success/2.jpg" alt="commit-to-success-2" style="width: 100%;">
-    </p>
-    <p> 
-        <img src="/content/events/commit-to-success/3.jpg" alt="commit-to-success-3" style="width: 100%">
-    </p>
-    <p>
-        <img src="/content/events/commit-to-success/4.jpg" alt="commit-to-success-4" style="width: 100%;">
-    </p>
-    <p>
-       <img src="/content/events/commit-to-success/5.jpg" alt="commit-to-success-5" style="width: 100%;">
-    </p>
-    <p>
-        <img src="/content/events/commit-to-success/7.jpg" alt="commit-to-success-7" style="width: 100%;">
-    </p>
+    ![commit-to-success-1](./1.jpg)
+    ![commit-to-success-2](./2.jpg)
+    ![commit-to-success-3](./3.jpg)
+    ![commit-to-success-4](./4.jpg)
+    ![commit-to-success-5](./5.jpg)
+    ![commit-to-success-7](./7.jpg)
 </div>
-<p>
-    <img src="/content/events/commit-to-success/6.jpg" alt="commit-to-success-6" style="width: 100%;">
-</p>
+![commit-to-success-6](./6.jpg)

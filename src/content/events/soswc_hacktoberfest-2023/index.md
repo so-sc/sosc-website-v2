@@ -32,11 +32,7 @@ The session came to a close on a high note, with participants having gained a st
 ### Media
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <p> 
-        <img src="/content/events/soswc_hacktoberfest-2023/1.jpg" alt="SOSWC_1" style="width: 100%;">
-    </p>
-    <p>
-        <img src="/content/events/soswc_hacktoberfest-2023/2.jpg" alt="SOSWC_2" style="width: 100%;">
-    </p>
+    ![SOSWC_1](./1.jpg)
+    ![SOSWC_2](./2.jpg)
 
 </div>

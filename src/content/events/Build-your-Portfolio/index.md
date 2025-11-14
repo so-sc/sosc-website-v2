@@ -2,7 +2,7 @@
 name: Build your Portfolio
 date: 2020-09-13
 location: Google Meet
-cover: "/content/events/Build-your-Portfolio/cover.png"
+cover: "./cover.png"
 ---
 
 ## Build your Portfolio

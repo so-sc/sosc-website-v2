@@ -2,7 +2,7 @@
 name: Getting started with CP + Kahoot!
 date: 2021-06-20
 location: Virtual
-cover: "/content/events/getting-started-with-cp/cover.png"
+cover: "./cover.png"
 ---
 
 ## Getting Better at Compitetive Programming with CodeChef

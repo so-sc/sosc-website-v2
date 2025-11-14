@@ -2,7 +2,7 @@
 name: Hacktoberfest HackNight 2019
 date: 2019-10-12
 location: Ground Floor, Sahyadri College
-cover: "/content/events/hacktoberfest-hacknight-2019/cover.png"
+cover: "./cover.png"
 ---
 
 ## About the Event

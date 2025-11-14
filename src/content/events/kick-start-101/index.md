@@ -2,7 +2,7 @@
 name: Kick-Start 101
 date: 2021-02-28
 location: Virtual
-cover: "/content/events/kick-start-101/kick-start-101.jpg"
+cover: "./kick-start-101.jpg"
 ---
 
 ## Kick-Start 101

@@ -2,7 +2,7 @@
 name: Codeblaze.
 date: 2023-12-08
 location: Sahyadri Campus
-cover: "/content/events/codeblaze/cover.png"
+cover: "./cover.png"
 ---
 
 ## About the Event

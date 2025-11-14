@@ -2,7 +2,7 @@
 name: API 101 Workshop
 date: 2023-10-15
 location: Online
-cover: "/content/events/API_101-Workshop/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Introduction:

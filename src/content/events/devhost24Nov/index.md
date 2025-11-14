@@ -2,7 +2,7 @@
 name: DevHost 2024 November
 date: 2024-11-07
 location: Sahyadri College of Engineering and Management
-cover: "/content/events/devhost24Nov/dev24banner.png"
+cover: "./dev24banner.png"
 ---
 
 Are you ready to dive into the tech world, explore different domains, and experience one of the most enriching and immersive student-developer meets of the year?

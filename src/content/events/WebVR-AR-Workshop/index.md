@@ -2,7 +2,7 @@
 name: Web VR/AR Workshop
 date: 2019-04-06
 location: Ground Floor Seminar Hall
-cover: "/content/events/WebVR-AR-Workshop/WebVR-AR-Workshop.png"
+cover: "./WebVR-AR-Workshop.png"
 ---
 
 ## Step Into a New World: Web VR/AR Workshop

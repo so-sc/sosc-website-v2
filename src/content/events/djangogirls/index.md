@@ -2,7 +2,7 @@
 name: DjangoGirls
 date: 2019-03-24
 location: GFloor Seminar Hall
-cover: "/content/events/djangogirls/djangogirls.png"
+cover: "./djangogirls.png"
 ---
 
 ## DjangoGirls

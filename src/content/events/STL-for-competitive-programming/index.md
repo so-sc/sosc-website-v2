@@ -2,7 +2,7 @@
 name: STL for Competitive Programming
 date: 2021-08-14
 location: Virtual Online
-cover: "/content/events/STL-for-competitive-programming/cover.png"
+cover: "./cover.png"
 ---
 
 ## STL for Competitive Programming

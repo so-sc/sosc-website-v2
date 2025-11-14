@@ -2,7 +2,7 @@
 name: ABC in Python
 date: 2019-02-16
 location: iwave Lab (tentaive)
-cover: "/content/events/ABC-in-Python/cover.png"
+cover: "./cover.png"
 ---
 
 ## ABC in Python

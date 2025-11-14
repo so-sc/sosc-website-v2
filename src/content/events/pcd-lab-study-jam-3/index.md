@@ -2,7 +2,7 @@
 name: PCD Lab Study Jam 3
 date: 2021-05-17
 location: Sahyadri College
-cover: "/content/events/pcd-lab-study-jam-3/cover.png"
+cover: "./cover.png"
 ---
 
 ## PCD Lab Study Jam

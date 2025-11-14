@@ -2,7 +2,7 @@
 name: GitHub Webinar
 date: 2020-05-02
 location: Learn From Home
-cover: "/content/events/github-webinar/git_cover.jpg"
+cover: "./git_cover.jpg"
 ---
 
 # GitHub Webinar

@@ -2,7 +2,7 @@
 name: Kick Off CyberSec
 date: 2021-07-11
 location: Virtual
-cover: "/content/events/kick-off-cybersec/cover.png"
+cover: "./cover.png"
 ---
 
 ## Kick Off CyberSec

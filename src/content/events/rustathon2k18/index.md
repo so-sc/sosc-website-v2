@@ -2,7 +2,7 @@
 name: Rustathon 2k18
 date: 2018-02-10
 location: Seminar Hall
-cover: "/content/events/rustathon2k18/cover.png"
+cover: "./cover.png"
 ---
 
 ## Rustathon 2K18

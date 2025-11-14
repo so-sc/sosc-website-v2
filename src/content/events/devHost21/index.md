@@ -2,7 +2,7 @@
 name: DevHost:21
 date: 2021-05-15
 location: Virtual
-cover: "/content/events/devHost21/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## About the event

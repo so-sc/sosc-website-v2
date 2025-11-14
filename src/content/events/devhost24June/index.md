@@ -2,7 +2,7 @@
 name: DevHost 2024 June
 date: 2024-06-14
 location: Sahyadri College of Engineering and Management
-cover: "/content/events/devhost24June/dev24banner.png"
+cover: "./dev24banner.png"
 ---
 
 Are you ready to dive into the tech world, explore different domains, and experience one of the most enriching and immersive student-developer meets of the year?

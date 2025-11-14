@@ -2,7 +2,7 @@
 name: Code Quest
 date: 2023-12-09
 location: Sahyadri Campus
-cover: "/content/events/codequest/code-quest.png"
+cover: "./code-quest.png"
 ---
 
 ## About the Event

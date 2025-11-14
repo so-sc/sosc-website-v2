@@ -2,7 +2,7 @@
 name: Hacktoberfest HackNight 2020
 date: 2020-10-03
 location: Online
-cover: "/content/events/hacktoberfest-hacknight-2020/cover.png"
+cover: "./cover.png"
 ---
 
 ### About the Event

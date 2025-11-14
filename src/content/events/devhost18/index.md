@@ -2,7 +2,7 @@
 name: devhost:18
 date: 2018-05-04
 location: Seminar Hall
-cover: "/content/events/devhost18/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## devhost:18

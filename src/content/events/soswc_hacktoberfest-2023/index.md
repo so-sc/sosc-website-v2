@@ -2,7 +2,7 @@
 name: Open Source & Hacktoberfest
 date: 2023-10-21
 location: Online
-cover: "/content/events/soswc_hacktoberfest-2023/cover.png"
+cover: "./cover.png"
 ---
 
 ## Introduction

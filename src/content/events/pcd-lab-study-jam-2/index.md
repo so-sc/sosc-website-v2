@@ -2,7 +2,7 @@
 name: PCD Lab Study Jam 2
 date: 2019-12-14
 location: Intel iWave Lab, 2nd Floor Sahyadri College
-cover: "/content/events/pcd-lab-study-jam-2/cover.png"
+cover: "./cover.png"
 ---
 
 ## PCD Lab programs Study Jam

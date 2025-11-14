@@ -2,7 +2,7 @@
 name: Workshop on Artificial Intelligence
 date: 2024-01-29
 location: Ground Floor Seminar Hall
-cover: "/content/events/artificial-intelligence/cover.png"
+cover: "./cover.png"
 ---
 
 ## Workshop on Artificial Intelligence and Machine Learning

@@ -2,7 +2,7 @@
 name: Mozilla Add-Ons
 date: 2019-04-27
 location: Ground Floor Seminar Hall
-cover: "/content/events/Add-Ons/Add-Ons-Cover.png"
+cover: "./Add-Ons-Cover.png"
 ---
 
 ## Mozilla Add-Ons Workshop

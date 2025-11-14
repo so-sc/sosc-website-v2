@@ -2,7 +2,7 @@
 name: Decode
 date: 2023-12-09
 location: Sahyadri Campus
-cover: "/content/events/decode/decode.png"
+cover: "./decode.png"
 ---
 
 ## About the Event

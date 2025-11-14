@@ -2,7 +2,7 @@
 name: Design 101
 date: 2019-08-31
 location: Second Floor Seminar Hall
-cover: "/content/events/design-101/mozilla.png"
+cover: "./mozilla.png"
 ---
 
 ## Design 101

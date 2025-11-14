@@ -2,7 +2,7 @@
 name: The Wolf Of Dalal Street
 date: 2023-12-07
 location: Online
-cover: "/content/events/wolf-of-dalal-street/wolf-of-dalal-street.jpg"
+cover: "./wolf-of-dalal-street.jpg"
 ---
 
 ## About the Event

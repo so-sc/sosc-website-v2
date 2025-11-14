@@ -2,7 +2,7 @@
 name: Flutter Workshop
 date: 2019-02-02
 location: Microsoft Lab
-cover: "/content/events/flutter-workshop-02-2019/cover.png"
+cover: "./cover.png"
 ---
 
 ## Flutter Workshop

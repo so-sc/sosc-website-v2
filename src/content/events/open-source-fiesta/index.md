@@ -2,7 +2,7 @@
 name: Open Source Fiesta
 date: 2023-12-06
 location: Online
-cover: "/content/events/open-source-fiesta/open-source.png"
+cover: "./open-source.png"
 ---
 
 ## About the Event

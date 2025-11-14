@@ -2,7 +2,7 @@
 name: Beyond UI/UX
 date: 2023-06-26
 location: 1st floor Seminar Hall
-cover: "/content/events/beyond-uiux/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Beyond UI/UX

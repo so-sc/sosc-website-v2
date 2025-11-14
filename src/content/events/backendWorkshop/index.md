@@ -2,7 +2,7 @@
 name: Backend Workshop
 date: 2023-03-31
 location: First Floor Seminar Hall - Mechanical Block
-cover: "/content/events/backendWorkshop/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Backend Workshop on Node.js and ExpressJS

@@ -2,7 +2,7 @@
 name: ExploreML
 date: 2020-02-22
 location: IS LAB V, Room 219, 2nd Floor, SCEM
-cover: "/content/events/ExploreML/cover.png"
+cover: "./cover.png"
 ---
 
 ## Explore ML

@@ -2,7 +2,7 @@
 name: DS Speedrun
 date: 2021-01-23
 location: Second Floor Lab
-cover: "/content/events/ds-speedrun/cover.png"
+cover: "./cover.png"
 ---
 
 ## DS Speedrun

@@ -2,7 +2,7 @@
 name: Git & GitHub
 date: 2023-10-08
 location: Online
-cover: "/content/events/git-github-2023/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Introduction:

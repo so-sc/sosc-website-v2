@@ -2,7 +2,7 @@
 name: Commit to Success
 date: 2023-07-14
 location: 2nd floor Seminar Hall
-cover: "/content/events/commit-to-success/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Commit to Success

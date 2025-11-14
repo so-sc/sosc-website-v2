@@ -2,7 +2,7 @@
 name: Problem Solving 101
 date: 2018-09-01
 location: First Floor seminar hall
-cover: "/content/events/problem-solving-101/cover.png"
+cover: "./cover.png"
 ---
 
 ## Problem Solving 101

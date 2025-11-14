@@ -2,7 +2,7 @@
 name: Quarantine Hacks 2020
 date: 2020-06-27
 location: Build From Home
-cover: "/content/events/quarantine-hacks-2020/cover.png"
+cover: "./cover.png"
 ---
 
 ## About the Event

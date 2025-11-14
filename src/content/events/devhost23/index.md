@@ -2,7 +2,7 @@
 name: Devhost 2023
 date: 2023-12-23
 location: Online
-cover: "/content/events/devhost23/devhost.png"
+cover: "./devhost.png"
 ---
 
 Are you ready to dive into the tech world, explore different domains and experience one of the most enriching and immersive student-developer meet of the year?

@@ -2,7 +2,7 @@
 name: NodeSchool - JavaScript Workshop
 date: 2019-04-21
 location: GFloor Seminar Hall
-cover: "/content/events/NodeSchool-19/cover.png"
+cover: "./cover.png"
 ---
 
 # JavaScript Sunday!

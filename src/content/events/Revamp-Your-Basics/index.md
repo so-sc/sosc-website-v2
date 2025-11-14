@@ -2,7 +2,7 @@
 name: Revamp Your Basics
 date: 2020-02-22
 location: Seminar Hall,1st Floor, SCEM
-cover: "/content/events/Revamp-Your-Basics/cover.png"
+cover: "./cover.png"
 ---
 
 ## Revamp Your Club

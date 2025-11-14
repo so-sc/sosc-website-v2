@@ -2,7 +2,7 @@
 name: Hacktoberfest HackNight 2021
 date: 2021-10-22
 location: Ground Floor, Sahyadri College
-cover: "/content/events/hacktoberfest-hacknight-2021/cover.jpeg"
+cover: "./cover.jpeg"
 ---
 
 ## About the Event

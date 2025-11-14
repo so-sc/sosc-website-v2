@@ -2,7 +2,7 @@
 name: Git + GitHub Workshop 2021
 date: 2021-10-09
 location: Virtual
-cover: "/content/events/git-github-2021/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Git+GitHub Workshop

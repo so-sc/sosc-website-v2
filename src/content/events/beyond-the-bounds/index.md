@@ -2,7 +2,7 @@
 name: Beyond the Bounds
 date: 2023-07-28
 location: 2nd Floor Seminar Hall
-cover: "/content/events/beyond-the-bounds/cover.png"
+cover: "./cover.png"
 ---
 
 ## Beyond the Bounds: A dive into Computer Vulnerabilities

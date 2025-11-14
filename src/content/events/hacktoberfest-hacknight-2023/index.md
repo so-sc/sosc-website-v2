@@ -2,7 +2,7 @@
 name: Hacktoberfest HackNight 2023
 date: 2023-10-28
 location: Online
-cover: "/content/events/hacktoberfest-hacknight-2023/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## About the Event

@@ -2,7 +2,7 @@
 name: UI Battles
 date: 2023-12-08
 location: Sahyadri Campus
-cover: "/content/events/ui-battles/ui-battles.png"
+cover: "./ui-battles.png"
 ---
 
 ## About the Event

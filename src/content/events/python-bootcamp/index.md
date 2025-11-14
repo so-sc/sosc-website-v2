@@ -2,7 +2,7 @@
 name: Python BootCamp
 date: 2018-05-09
 location: Seminar Hall / Classroom
-cover: "/content/events/python-bootcamp/cover.png"
+cover: "./cover.png"
 ---
 
 ## Python BootCamp

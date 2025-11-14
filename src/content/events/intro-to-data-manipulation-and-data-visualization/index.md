@@ -2,7 +2,7 @@
 name: Intro to Data Science
 date: 2018-11-17
 location: iWave Lab
-cover: "/content/events/intro-to-data-manipulation-and-data-visualization/cover.png"
+cover: "./cover.png"
 ---
 
 ## Introduction to Data Manipulation and Data Visualization

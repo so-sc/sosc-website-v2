@@ -2,7 +2,7 @@
 name: devhost:20
 date: 2020-10-01
 location: Online
-cover: "/content/events/devhost20/cover.png"
+cover: "./cover.png"
 ---
 
 ## devhost:20

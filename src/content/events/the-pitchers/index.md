@@ -2,7 +2,7 @@
 name: Pitchers
 date: 2023-12-08
 location: Sahyadri Campus
-cover: "/content/events/the-pitchers/pitchers.png"
+cover: "./pitchers.png"
 ---
 
 ## About the Event

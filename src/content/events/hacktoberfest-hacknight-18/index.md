@@ -2,7 +2,7 @@
 name: Hacktoberfest HackNight
 date: 2018-10-13
 location: G Floor Sahyadri Collge
-cover: "/content/events/hacktoberfest-hacknight-18/cover.png"
+cover: "./cover.png"
 ---
 
 Hacktoberfest Hacknight - A 12 hour hackathon starting oct-13th to 14th overnight at Sahyadri College of Engineering and Management Mangalore. In association with Ktech Innovation Hub Karnataka and Powered by GitHub.

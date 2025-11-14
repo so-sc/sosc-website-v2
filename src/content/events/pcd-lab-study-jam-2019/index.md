@@ -2,7 +2,7 @@
 name: PCD Lab Study Jam
 date: 2019-01-19
 location: Intel Lab
-cover: "/content/events/pcd-lab-study-jam-2019/cover.png"
+cover: "./cover.png"
 ---
 
 ## PCD Lab programs Study Jam

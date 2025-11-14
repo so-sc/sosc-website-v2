@@ -2,7 +2,7 @@
 name: Coursera for Campus
 date: 2020-09-30
 location: Learn From Home
-cover: "/content/events/coursera-for-campus/cover.png"
+cover: "./cover.png"
 ---
 
 # Coursera for Campus

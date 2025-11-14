@@ -2,7 +2,7 @@
 name: Image Processing
 date: 2018-07-28
 location: Microsoft Lab
-cover: "/content/events/ImageProcessing/cover.png"
+cover: "./cover.png"
 ---
 
 ## Image Processing

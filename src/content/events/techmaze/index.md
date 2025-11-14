@@ -2,7 +2,7 @@
 name: Techmaze
 date: 2023-12-08
 location: Sahyadri Campus
-cover: "/content/events/techmaze/techmaze.png"
+cover: "./techmaze.png"
 ---
 
 ## About the Event

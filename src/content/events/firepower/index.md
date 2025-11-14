@@ -2,7 +2,7 @@
 name: Firepower
 date: 2023-12-08
 location: Sahyadri Campus
-cover: "/content/events/firepower/firepower.png"
+cover: "./firepower.png"
 ---
 
 ## About the Event

@@ -2,7 +2,7 @@
 name: DevHost:22
 date: 2022-10-28
 location: Sahyadri College
-cover: "/content/events/devHost22/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Website

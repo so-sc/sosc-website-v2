@@ -2,7 +2,7 @@
 name: Cloud Study Jam
 date: 2019-08-17
 location: First Floor Seminar Hall
-cover: "/content/events/cloud-study-jam/cloud-study-jam-cover.png"
+cover: "./cloud-study-jam-cover.png"
 ---
 
 ## Cloud Study Jam

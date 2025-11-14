@@ -2,7 +2,7 @@
 name: Getting started with Quantum Computing
 date: 2021-06-26
 location: Virtual
-cover: "/content/events/quantum-computing-1/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## SOSC -|Q>

@@ -2,7 +2,7 @@
 name: Ask Me Anything About Placements
 date: 2022-01-08
 location: Netravati Auditorium
-cover: "/content/events/AMAP/cover.png"
+cover: "./cover.png"
 ---
 
 ## Ask Me Anything About Placements

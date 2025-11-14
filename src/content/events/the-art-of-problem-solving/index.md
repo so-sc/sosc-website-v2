@@ -2,7 +2,7 @@
 name: The Art of Problem Solving
 date: 2020-12-04
 location: Virtual
-cover: "/content/events/the-art-of-problem-solving/cover.jpg"
+cover: "./cover.jpg"
 # link: https://forms.gle/dXVfgUL7c83ES1W89
 # feedback_link: https://forms.gle/pLtxaBNAitPujMrr5
 ---

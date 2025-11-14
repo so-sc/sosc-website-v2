@@ -2,7 +2,7 @@
 name: Android 101
 date: 2019-03-30
 location: LH 201
-cover: "/content/events/android-101/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## Android 101

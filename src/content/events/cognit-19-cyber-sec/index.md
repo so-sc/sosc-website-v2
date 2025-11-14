@@ -2,7 +2,7 @@
 name: COGNIT - Cyber Security Workshop
 date: 2019-05-04
 location: Second Floor Seminar Hall
-cover: "/content/events/cognit-19-cyber-sec/cyber.jpg"
+cover: "./cyber.jpg"
 ---
 
 ## COGNIT - Cyber Security Workshop

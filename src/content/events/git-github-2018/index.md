@@ -2,7 +2,7 @@
 name: Git + GitHub Workshop 2018
 date: 2018-09-30
 location: GFloor seminar hall
-cover: "/content/events/git-github-2018/git_cover.jpg"
+cover: "./git_cover.jpg"
 ---
 
 ## Git+GitHub Workshop

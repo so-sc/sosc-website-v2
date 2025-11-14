@@ -2,7 +2,7 @@
 name: Flutter 101
 date: 2019-09-29
 location: 2nd Floor Seminar Hall
-cover: "/content/events/flutter-101/cover.png"
+cover: "./cover.png"
 ---
 
 ## Flutter 101

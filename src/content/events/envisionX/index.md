@@ -2,7 +2,7 @@
 name: EnvisionX x IEEE
 date: 2023-08-01
 location: Ground Floor Seminar Hall
-cover: "/content/events/envisionX/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 ## EnvisionX: Exploring the world of Computer Vision

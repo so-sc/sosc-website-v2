@@ -2,7 +2,7 @@
 name: Designathon 2020
 date: 2020-09-05
 location: Build From Home
-cover: "/content/events/designathon/cover.png"
+cover: "./cover.png"
 ---
 
 ## About the Event

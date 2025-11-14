@@ -2,7 +2,7 @@
 name: Code Init()
 date: 2021-02-13
 location: Ground-Floor Seminar hall
-cover: "/content/events/code_init/cover.png"
+cover: "./cover.png"
 ---
 
 ## Code Init()

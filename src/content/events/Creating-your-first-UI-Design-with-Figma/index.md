@@ -2,7 +2,7 @@
 name: Creating your first UI Design with Figma
 date: 2021-06-05
 location: Google Meet
-cover: "/content/events/Creating-your-first-UI-Design-with-Figma/cover.png"
+cover: "./cover.png"
 ---
 
 # DESIGN WORKSHOP!🖌️

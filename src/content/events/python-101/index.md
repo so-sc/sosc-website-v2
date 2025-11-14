@@ -2,7 +2,7 @@
 name: Python 101
 date: 2022-04-09
 location: Ground Floor Seminar Hall
-cover: "/content/events/python-101/cover.jpg"
+cover: "./cover.jpg"
 ---
 
 # Python 101

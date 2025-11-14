@@ -2,7 +2,7 @@
 name: Blind Bytes
 date: 2023-12-09
 location: Sahyadri Campus
-cover: "/content/events/blind-bytes/blindb.png"
+cover: "./blindb.png"
 ---
 
 ## About the Event

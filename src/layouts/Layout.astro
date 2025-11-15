@@ -4,10 +4,11 @@ import "../styles/global.css";
 import "@fontsource-variable/baloo-2";
 import font from "@fontsource-variable/baloo-2/files/baloo-2-latin-wght-normal.woff2?url";
 import Footer from "@/components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,6 +64,7 @@ import Footer from "@/components/Footer.astro";
       content="https://www.sosc.org.in/twitter-image.png"
     />
     <meta name="twitter:site" content="@sahyadri_osc" />
+    <ClientRouter />
   </head>
   <body>
     <Navbar />

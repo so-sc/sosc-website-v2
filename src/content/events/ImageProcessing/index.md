@@ -40,7 +40,7 @@ Image Processing-301
 - [Jehad Mohamed](https://github.com/jehadmohamedz), Vice Chairperson - SOSC
 - [Akshay Ram Bhat](https://github.com/akshayrb22), Co-Technical Head - SOSC
 
-![/content/events/ImageProcessing/1.jpg](.//content/events/ImageProcessing/1.jpg)
-![/content/events/ImageProcessing/2.jpg](.//content/events/ImageProcessing/2.jpg)
-![/content/events/ImageProcessing/3.jpg](.//content/events/ImageProcessing/3.jpg)
-![/content/events/ImageProcessing/4.jpg](.//content/events/ImageProcessing/4.jpg)
+![/content/events/ImageProcessing/1.jpg](./1.jpg)
+![/content/events/ImageProcessing/2.jpg](./2.jpg)
+![/content/events/ImageProcessing/3.jpg](./3.jpg)
+![/content/events/ImageProcessing/4.jpg](./4.jpg)

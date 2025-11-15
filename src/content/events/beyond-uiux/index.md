@@ -33,11 +33,8 @@ In summary, the UI/UX workshop provided an immersive learning experience, empowe
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![beyond-uiux-1](./1.jpg)
-    ![beyond-uiux-2](./2.jpg)
-    ![beyond-uiux-3](./3.jpg)
-    ![beyond-uiux-4](./4.jpg)
-
-</div>
+![beyond-uiux-1](./1.jpg)
+![beyond-uiux-2](./2.jpg)
+![beyond-uiux-3](./3.jpg)
+![beyond-uiux-4](./4.jpg)
 ![beyond-uiux-5](./5.jpg)

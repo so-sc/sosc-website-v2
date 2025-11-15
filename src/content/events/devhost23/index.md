@@ -49,10 +49,8 @@ For more details visit the [Devhost 2023 Website](https://devhost.sosc.org.in/)
 
 ## Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![codeblaze-1](./5.png)
-     ![codeblaze-1](./2.png)
-     ![codeblaze-1](./3.png)
-     ![codeblaze-1](./1.png)
-</div>
+![codeblaze-1](./5.png)
+![codeblaze-1](./2.png)
+![codeblaze-1](./3.png)
+![codeblaze-1](./1.png)
 ![codeblaze-1](./4.png)

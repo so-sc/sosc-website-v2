@@ -19,8 +19,6 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 - Event Head: [Akkil M G](https://www.linkedin.com/in/akkilmg/), [Rishabh L](https://www.linkedin.com/in/rishabhlaxmikanth/)
 
 ### Media
+![codeblaze-4](./1.jpg)
+![codeblaze-1](./2.jpg)
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![codeblaze-4](./1.jpg)
-    ![codeblaze-1](./2.jpg)
-</div>

@@ -19,7 +19,5 @@ for more events visit the [codeblaze website](https://codeblaze.sosc.org.in/)
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![codeblaze-3](./2.jpg)
-    ![codeblaze-2](./1.jpg)
-</div>
+![codeblaze-3](./2.jpg)
+![codeblaze-2](./1.jpg)

@@ -195,11 +195,8 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 ---
 
 ## Media
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-  ![event-1](./5.jpg)
-  ![event-2](./4.jpg)
-  ![event-3](./3.jpg)
-  ![event-4](./2.jpg)
-</div>
+![event-1](./5.jpg)
+![event-2](./4.jpg)
+![event-3](./3.jpg)
+![event-4](./2.jpg)
 ![event-5](./1.jpg)

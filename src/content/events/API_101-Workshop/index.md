@@ -33,11 +33,8 @@ Concluding the session on a high note, attendees developed a fundamental underst
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![API_101-Workshop_1](./1.jpg)
-    ![API_101-Workshop_2](./3.jpg)
-    ![API_101-Workshop_3](./2.jpg)
-    ![API_101-Workshop_4](./4.jpg)
-
-</div>
+![API_101-Workshop_1](./1.jpg)
+![API_101-Workshop_2](./3.jpg)
+![API_101-Workshop_3](./2.jpg)
+![API_101-Workshop_4](./4.jpg)
 ![Online Session](./onlineSession.jpg)

@@ -75,18 +75,8 @@ We were able to cover most of the data structure topics in this speedrun and del
 
 ## Glimpse of the workshop 😛
 
-<p align="center" >
-<img width="500px" src="/content/events/ds-speedrun/5.jpeg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/ds-speedrun/1.jpeg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/ds-speedrun/3.jpeg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/ds-speedrun/4.jpeg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/ds-speedrun/2.jpeg"/>
-</p>
+![1](./5,jpeg)
+![2](./1,jpeg)
+![3](./3.jpeg)
+![4](./4.jpeg)
+![5](./2.jpeg)

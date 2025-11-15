@@ -31,8 +31,6 @@ The session came to a close on a high note, with participants having gained a st
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![SOSWC_1](./1.jpg)
-    ![SOSWC_2](./2.jpg)
+![SOSWC_1](./1.jpg)
+![SOSWC_2](./2.jpg)
 
-</div>

@@ -151,11 +151,8 @@ Since this is a community driven event, there is no fee to attend the workshop b
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![devhost22_1](./1.jpg)
-    ![devhost22_2](./2.jpeg)
-    ![devhost22_3](./3.jpg)
-    ![devhost22_4](./4.jpg)
-
-</div>
+![devhost22_1](./1.jpg)
+![devhost22_2](./2.jpeg)
+![devhost22_3](./3.jpg)
+![devhost22_4](./4.jpg)
 ![devhost22_5](./5.jpg)

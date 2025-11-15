@@ -22,10 +22,8 @@ Participants present projects to judges, with company-funded or open-themed prob
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![codeblaze-4](./4.jpg)
-    ![codeblaze-1](./1.jpg)
-    ![codeblaze-3](./6.jpg)
-    ![codeblaze-2](./2.jpg)
-</div>
+![codeblaze-4](./4.jpg)
+![codeblaze-1](./1.jpg)
+![codeblaze-3](./6.jpg)
+![codeblaze-2](./2.jpg)
 ![codeblaze-5](./5.jpg)

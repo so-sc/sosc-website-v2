@@ -82,6 +82,5 @@ The Workshop was conducted by core team members of Sahyadri Open Source Communit
 
 ## Photos
 
-<img src="attendees.jpg" alt="Design-101 attendees">
-<br />
-<img src="post-event.jpg" alt="Post-Event Group Picture">
+![design-101-1](./attendees.jpg)
+![design-101-2](./post-event.jpg)

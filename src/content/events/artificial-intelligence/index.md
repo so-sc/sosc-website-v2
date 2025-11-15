@@ -30,8 +30,6 @@ The event was considered a resounding success, providing students with exposure 
 
 ## Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![1](./1.jpg)
-    ![2](./2.jpg)
-</div>
+![1](./1.jpg)
+![2](./2.jpg)
 ![Group](./group.jpg)

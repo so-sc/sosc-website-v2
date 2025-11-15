@@ -34,12 +34,12 @@ In summary, the Git and GitHub workshop provided developers with a solid foundat
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![commit-to-success-1](./1.jpg)
-    ![commit-to-success-2](./2.jpg)
-    ![commit-to-success-3](./3.jpg)
-    ![commit-to-success-4](./4.jpg)
-    ![commit-to-success-5](./5.jpg)
-    ![commit-to-success-7](./7.jpg)
-</div>
+![commit-to-success-1](./1.jpg)
+![commit-to-success-2](./2.jpg)
+![commit-to-success-3](./3.jpg)
+![commit-to-success-4](./4.jpg)
+![commit-to-success-5](./5.jpg)
+![commit-to-success-7](./7.jpg)
+
+
 ![commit-to-success-6](./6.jpg)

@@ -16,3 +16,9 @@ Various students from different years and branches attended the event which star
 
 The Speakers of the Event, Krishna Kumar and Mr Jayesh Katta Ramalingaiah, A Mozilla Representative and Full Stack Developer explained to the audience that Rust, being a systems programming language, is important to the future of the web and that it runs blazingly fast, prevents segfaults, and guarantees thread safety. He explained thato wnership is Rust’s most unique feature, and it enables Rust to make memory safety guarantees without needing a garbage collector. Hence, by using Rust, we can make the web better and more secure.
 The event ended at around 5:00 PM and event swags were distributed to the participants, courtesy of Mozilla.
+
+## Media
+
+![2](./2.jpg)
+![2](./7.jpg)
+![9](./9.jpg)

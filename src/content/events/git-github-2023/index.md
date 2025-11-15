@@ -30,7 +30,5 @@ Overall, the workshop was highly informative and immersive, leaving a lasting an
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![Image 1](./1.jpg)
-    ![Image 2](./2.jpg)
-</div>
+![Image 1](./1.jpg)
+![Image 2](./2.jpg)

@@ -48,18 +48,8 @@ We collected the feedback from the participants via a google form. This was by f
 
 ### Media
 
-<p align="center" >
-<img width="500px" src="/content/events/hacktoberfest-hacknight-2021/5.jpg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/hacktoberfest-hacknight-2021/4.jpg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/hacktoberfest-hacknight-2021/3.jpg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/hacktoberfest-hacknight-2021/2.jpg"/>
-</p>
-<p align="center" >
-<img width="500px" src="/content/events/hacktoberfest-hacknight-2021/1.jpg"/>
-</p>
+![1](./5.jpg)
+![2](./4.jpg)
+![3](./3.jpg)
+![4](./2.jpg)
+![5](./1.jpg)

@@ -49,10 +49,8 @@ We believe that the induction program has set the stage for a productive and col
 
 ### Media
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    ![SOSCPresident](./SOSCPresident.jpg)
-    ![SOSWC President](./SOSWCPresident.jpg)
-    ![Tech Leads](./Leads.jpg)
-    ![Interaction](./Interaction.jpg)
-</div>
+![SOSCPresident](./SOSCPresident.jpg)
+![SOSWC President](./SOSWCPresident.jpg)
+![Tech Leads](./Leads.jpg)
+![Interaction](./Interaction.jpg)
 ![Group](./Group.jpg)

@@ -1,6 +1,6 @@
 ---
 author: RachithaRai
-cover: /src/content/blogs/2020-10-21--organizing-our-first-virtual-event\blog_cover.jpg
+cover: ./blog_cover.jpg
 date: 2020-10-21
 description: Organizing devHost:20 & Hacktoberfest Hacknight Virtually
 name: Rachitha Rai

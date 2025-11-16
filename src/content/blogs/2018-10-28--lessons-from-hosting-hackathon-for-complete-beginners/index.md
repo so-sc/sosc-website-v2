@@ -1,6 +1,6 @@
 ---
 author: haxzie
-cover: /src/content/blogs/2018-10-28--lessons-from-hosting-hackathon-for-complete-beginners/cover.jpg
+cover: ./cover.jpg
 date: 2018-10-29
 description:
   For years hackathons have been known for huge cash prizes for winners.

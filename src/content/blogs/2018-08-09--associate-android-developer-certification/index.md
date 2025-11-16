@@ -1,6 +1,6 @@
 ---
 author: rumaan
-cover: /src/content/blogs/2018-08-09--associate-android-developer-certification/aad_cert_1.png
+cover: ./aad_cert_1.png
 date: 2018-08-09
 description:
   My Experience of getting certified and recognised as an Associate Android

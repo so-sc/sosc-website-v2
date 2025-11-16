@@ -1,6 +1,6 @@
 ---
 author: melwinlobo18
-cover: /src/content/blogs/2019-09-24--SAP-interview-experience/SAP-logo.png
+cover: ./SAP-logo.png
 date: 2019-09-24
 description: My experience of clearing the SAP Labs interview.
 name: Melwin Lobo

@@ -1,6 +1,6 @@
 ---
 author: nathanielmathew
-cover: /src/content/blogs/2019-06-04--the-smart-india-hackathon-experience/cover.jpeg
+cover: ./cover.jpeg
 date: 2019-06-04
 description:
   A Short blog on the experience of being selected for the Grand Final

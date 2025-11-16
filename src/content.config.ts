@@ -6,12 +6,13 @@ const events = defineCollection({
     pattern: "**/*.{md,mdx}",
     base: "./src/content/events",
   }),
-  schema: z.object({
-    name: z.string(),
-    date: z.coerce.date(),
-    location: z.string(),
-    cover: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      date: z.coerce.date(),
+      location: z.string(),
+      cover: image().optional(),
+    }),
 });
 
 const blogs = defineCollection({
@@ -19,15 +20,16 @@ const blogs = defineCollection({
     pattern: "**/*.{md,mdx}",
     base: "./src/content/blogs",
   }),
-  schema: z.object({
-    author: z.string(),
-    cover: z.string().optional(),
-    date: z.coerce.date(),
-    description: z.string(),
-    name: z.string(),
-    tags: z.string().optional(),
-    title: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      author: z.string(),
+      cover: image().optional(),
+      date: z.coerce.date(),
+      description: z.string(),
+      name: z.string(),
+      tags: z.string().optional(),
+      title: z.string(),
+    }),
 });
 
 export const collections = {

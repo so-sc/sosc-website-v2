@@ -80,4 +80,14 @@ https://www.instagram.com/p/BvZTGpjFzco/
 
 The excecution of the workshop of was really well done by our women's community. They were really hard at work preparing for their very first workshop delivered to the community. The contents and resources helped the participants a lot and we had got a lot of positive feedback. I had chance talk about opensource, version control and how git and GitHub will help throughout their academic and professional career in IT. Overall it was a great event.
 
-<blockquote><img src="https://scontent-iad3-1.cdninstagram.com/vp/1382722d0989e4fc8d3b32ca6b168e23/5D3D0ADC/t51.2885-15/e35/53709453_378775246056631_7326394655963390437_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com" width="48" align="right"><div><img src="/static/images/ico/favicon-192.png/68d99ba29cc8.png" height="14"> Instagram</div><div><strong><a href="https://www.instagram.com/p/BvZTGpjFzco/">Sahyadri Open Source Community on Instagram: “It was an amazing day with some of the most talented and enthusiastic girls from our Women's community, #SOSWC taking up the First ever…”</a></strong></div><div>141 Likes, 1 Comments - Sahyadri Open Source Community (@sosc.sahyadri) on Instagram: “It was an amazing day with some of the most talented and enthusiastic girls from our Women's…”</div></blockquote>
+<blockquote>
+  <p>
+    <a href="https://www.instagram.com/p/BvZTGpjFzco/">
+      Sahyadri Open Source Community on Instagram: “It was an amazing day with some of the most talented and enthusiastic girls from our Women's community, #SOSWC taking up the First ever…”
+    </a>
+  </p>
+  <p>
+    141 Likes, 1 Comment — Sahyadri Open Source Community (@sosc.sahyadri):<br/>
+    “It was an amazing day with some of the most talented and enthusiastic girls from our Women's…
+  </p>
+</blockquote>

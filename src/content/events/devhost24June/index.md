@@ -9,194 +9,192 @@ Are you ready to dive into the tech world, explore different domains, and experi
 
 Join us for a series of talks, workshops, competitions, and a thrilling hackathon!
 
+---
+
 ## About the Event
 
-DevHost is the annual flagship event of SOSC. Our prime goal is to bring young and skilled developers from in and around Karnataka under the same umbrella. This event aims to create a platform to collaborate with various clubs and organizations, discuss the newest technologies and trends in the IT industry, and train students for the same.
+DevHost is the annual flagship event of SOSC. Our goal is to bring young and skilled developers from in and around Karnataka under one roof.  
+The event provides a platform to collaborate with clubs and organizations, discuss the newest trends in the IT industry, and help students build their technical foundation.
 
-For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/).
-
-## Schedule
-
-## 14th June - Day 1:
-
-### Inaugural Keynote
-
-**9:00 am - 09:30 am**
-
-### From Passion to Profit: Niveus' Journey from Startup to Scalability
-
-**Talk**  
-**Suyog Shetty**  
-**10:00 am - 11:00 am**  
-**Ground Floor Seminar Hall**
+For more details, visit the **[DevHost 2024 Website](https://devhost.sosc.org.in/)**.
 
 ---
 
-### The Multiverse of OS: A Deep Dive into Dual Boot, VMs, and Containers
-
-**Talk**  
-**Nibraz Rehman**  
-**11:15 am - 12:15 pm**  
-**Ground Floor Seminar Hall**
+# Schedule
 
 ---
 
-### Open Networking
+# **14th June — Day 1**
 
-**Discuss and Interact with the speakers and guests**  
-**12:15 pm - 12:45 pm**  
-**Open Area Lounge**
+### **Inaugural Keynote**
 
----
-
-### Lunch Break
-
-**12:45 pm - 01:45 pm**
+**9:00 AM – 9:30 AM**
 
 ---
 
-### DevOps Fundamentals: Building a Strong Foundation
+### **From Passion to Profit: Niveus' Journey from Startup to Scalability**
 
-**Master Class**  
-**Rajesh Nayak, Pruthvija Shetty, Roshan Y**  
-**01:45 pm - 04:00 pm**  
-**Skill Lab - 1**
-
----
-
-### Level Up Your Web3 Game using Smart Contracts
-
-**Master Class**  
-**Subodh**  
-**01:45 pm - 04:00 pm**  
-**Skill Lab - 2**
+**Talk — Suyog Shetty**  
+**10:00 AM – 11:00 AM**  
+_Ground Floor Seminar Hall_
 
 ---
 
-### Open Networking
+### **The Multiverse of OS: A Deep Dive into Dual Boot, VMs, and Containers**
 
-**Discuss and Interact with the speakers and guests**  
-**04:00 pm - 05:00 pm**  
-**Open Area Lounge**
-
----
-
-## 15th June - Day 2:
-
-### Unlock Your Earning Potential: From Engineering to Corporate
-
-**Talk**  
-**Nikhil Raj**  
-**10:30 am - 11:15 am**  
-**Ground Floor Seminar Hall**
+**Talk — Nibraz Rehman**  
+**11:15 AM – 12:15 PM**  
+_Ground Floor Seminar Hall_
 
 ---
 
-### From Coastal Town to IT Hub: The Rise of Mangalore's IT Industry
+### **Open Networking**
 
-**Panel Discussion**  
-**Shashir Shetty, Shihab Kalander, John Fernandes**  
-**11:30 am - 12:00 pm**  
-**Ground Floor Seminar Hall**
-
----
-
-### Open Networking
-
-**Discuss and Interact with the speakers and guests**  
-**12:15 pm - 12:45 pm**  
-**Open Area Lounge**
+_Discuss and interact with the speakers and guests_  
+**12:15 PM – 12:45 PM**  
+_Open Area Lounge_
 
 ---
 
-### Lunch Break
+### **Lunch Break**
 
-**12:45 pm - 01:45 pm**
-
----
-
-### Cracking the MAANG Code: What It Takes to Get Hired in Top IT Companies
-
-**Panel Discussion**  
-**Nikhil Raj, Prasanna, Ram Balakrishnan**  
-**01:45 pm - 02:15 pm**  
-**Ground Floor Seminar Hall**
+**12:45 PM – 1:45 PM**
 
 ---
 
-### 10X Your API Productivity: Mastering APIs using Postman
+### **DevOps Fundamentals: Building a Strong Foundation**
 
-**Master Class**  
-**Mohit P. Tahiliani**  
-**02:30 pm - 04:30 pm**  
-**Skill Lab 1**
-
----
-
-### GEN AI for Dummies: A Beginner's Guide to LLMS
-
-**Master Class**  
-**Akshay Kumar U**  
-**02:30 pm - 04:30 pm**  
-**Skill Lab 2**
+**Master Class — Rajesh Nayak, Pruthvija Shetty, Roshan Y**  
+**1:45 PM – 4:00 PM**  
+_Skill Lab 1_
 
 ---
 
-### Open Networking
+### **Level Up Your Web3 Game Using Smart Contracts**
 
-**Discuss and Interact with the speakers and guests**  
-**04:30 pm - 05:00 pm**  
-**Open Area Lounge**
-
----
-
-### Hackathon Registration / Onboarding
-
-**Ground Floor Seminar Hall**  
-**05:00 pm - 05:30 pm**  
-**20 Teams to be participating offline in the Venue.**
+**Master Class — Subodh**  
+**1:45 PM – 4:00 PM**  
+_Skill Lab 2_
 
 ---
 
-### Hackathon Kick-off
+### **Open Networking**
 
-**06:00 pm**
+_Discuss and interact with the speakers and guests_  
+**4:00 PM – 5:00 PM**  
+_Open Area Lounge_
 
 ---
 
-## 16th June - Day 3:
+# **15th June — Day 2**
 
-### Mentoring
+### **Unlock Your Earning Potential: From Engineering to Corporate**
+
+**Talk — Nikhil Raj**  
+**10:30 AM – 11:15 AM**  
+_Ground Floor Seminar Hall_
+
+---
+
+### **From Coastal Town to IT Hub: The Rise of Mangalore's IT Industry**
+
+**Panel Discussion — Shashir Shetty, Shihab Kalander, John Fernandes**  
+**11:30 AM – 12:00 PM**  
+_Ground Floor Seminar Hall_
+
+---
+
+### **Open Networking**
+
+_Discuss and interact with the speakers and guests_  
+**12:15 PM – 12:45 PM**  
+_Open Area Lounge_
+
+---
+
+### **Lunch Break**
+
+**12:45 PM – 1:45 PM**
+
+---
+
+### **Cracking the MAANG Code: What It Takes to Get Hired in Top IT Companies**
+
+**Panel Discussion — Nikhil Raj, Prasanna, Ram Balakrishnan**  
+**1:45 PM – 2:15 PM**  
+_Ground Floor Seminar Hall_
+
+---
+
+### **10X Your API Productivity: Mastering APIs Using Postman**
+
+**Master Class — Mohit P. Tahiliani**  
+**2:30 PM – 4:30 PM**  
+_Skill Lab 1_
+
+---
+
+### **GEN AI for Dummies: A Beginner's Guide to LLMs**
+
+**Master Class — Akshay Kumar U**  
+**2:30 PM – 4:30 PM**  
+_Skill Lab 2_
+
+---
+
+### **Open Networking**
+
+_Discuss and interact with the speakers and guests_  
+**4:30 PM – 5:00 PM**  
+_Open Area Lounge_
+
+---
+
+### **Hackathon Registration / Onboarding**
+
+**5:00 PM – 5:30 PM**  
+_Ground Floor Seminar Hall_  
+20 teams participating offline at the venue.
+
+---
+
+### **Hackathon Kick-off**
+
+**6:00 PM**
+
+---
+
+# **16th June — Day 3**
+
+### **Mentoring**
 
 **Jaison Dias, Amrit Shenava**  
-**12:00 am - 04:00 am**  
-**On their respective places**
+**12:00 AM – 4:00 AM**
 
 ---
 
-### Hackathon Ends + Presentation
+### **Hackathon Ends + Presentations**
 
-**02:00 pm - 04:00 pm**  
-**Ground Floor Seminar Hall**
-
----
-
-### Keynote by Judges
-
-**04:00 pm - 04:30 pm**  
-**Ground Floor Seminar Hall**
+**2:00 PM – 4:00 PM**  
+_Ground Floor Seminar Hall_
 
 ---
 
-### Valedictory and Prize Distribution
+### **Keynote by Judges**
 
-**04:30 pm - 05:00 pm**
+**4:00 PM – 4:30 PM**  
+_Ground Floor Seminar Hall_
 
 ---
 
-## Media
-![event-1](./5.jpg)
-![event-2](./4.jpg)
-![event-3](./3.jpg)
-![event-4](./2.jpg)
+### **Valedictory & Prize Distribution**
+
+**4:30 PM – 5:00 PM**
+
+---
+
+![event-1](./5.jpg)  
+![event-2](./4.jpg)  
+![event-3](./3.jpg)  
+![event-4](./2.jpg)  
 ![event-5](./1.jpg)

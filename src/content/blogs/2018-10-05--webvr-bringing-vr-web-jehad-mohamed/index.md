@@ -1,6 +1,6 @@
 ---
 author: jehadmohamedz
-cover: /src/content/blogs/2018-10-05--webvr-bringing-vr-web-jehad-mohamed/cover.png
+cover: ./cover.png
 date: 2018-10-05
 description:
   How one session on WebVR changed my entire perspective of the web and

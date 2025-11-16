@@ -1,6 +1,6 @@
 ---
 author: haxzie
-cover: /src/content/blogs/2018-08-28--how-open-source-can-shape-your-it-career/cover.png
+cover: ./cover.png
 date: 2018-08-28
 description:
   A beginner's guide to open source, the benefits of being part of the

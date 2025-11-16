@@ -1,6 +1,6 @@
 ---
 author: haxzie
-cover: /src/content/blogs/2019-01-11--fostering-dev-communitites-devrelconf/cover.png
+cover: ./cover.png
 date: 2019-01-11
 description:
   Developer Relation Conferences are events aimed at assimilation of developer

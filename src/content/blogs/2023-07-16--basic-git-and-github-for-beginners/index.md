@@ -1,6 +1,6 @@
 ---
 author: Deveesh-Shetty
-cover: /src/content/blogs/2023-07-16--basic-git-and-github-for-beginners/cover.jpg
+cover: ./cover.jpg
 date: 2023-07-16
 description:
   On 14-07-2023 SOSC Conducted a Git and GitHub workshop where Deveesh

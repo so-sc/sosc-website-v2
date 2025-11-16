@@ -1,6 +1,6 @@
 ---
 author: haxzie
-cover: /src/content/blogs/2018-08-08--winning-our-first-ever-game-dev-hackathon/cover.jpg
+cover: ./cover.jpg
 date: 2018-08-08
 description:
   Our Experience on participating in GameJam 2018 conducted by Juego studios

@@ -1,8 +1,6 @@
 ---
 import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
-import "@fontsource-variable/baloo-2";
-import font from "@fontsource-variable/baloo-2/files/baloo-2-latin-wght-normal.woff2?url";
 import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 ---
@@ -16,8 +14,8 @@ import { ClientRouter } from "astro:transitions";
     <link
       rel="preload"
       as="font"
-      type="font/woff2"
-      href={font}
+      type="font/ttf"
+      href="/fonts/Inter_Font.ttf"
       crossorigin="anonymous"
     />
     <link rel="sitemap" href="/sitemap-index.xml" />

@@ -64,7 +64,7 @@
   --background: oklch(1 0 0);
   --foreground: oklch(32.109% 0.00004 271.152);
 
-  --primary:oklch(78.419% 0.23837 145.933);
+  --primary: oklch(78.419% 0.23837 145.933);
   --primary-foreground: oklch(1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0 0);
@@ -99,7 +99,7 @@
   --background: oklch(0.15 0 0);
   --foreground: oklch(1 0 0);
 
-  --primary:oklch(78.419% 0.23837 145.933);
+  --primary: oklch(78.419% 0.23837 145.933);
   --primary-foreground: oklch(1 0 0);
 
   --card: oklch(0.2 0 0);
@@ -137,5 +137,15 @@
   }
   body {
     @apply bg-background text-foreground overflow-y-scroll;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

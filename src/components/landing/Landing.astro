@@ -1,0 +1,64 @@
+---
+import Hero from "@/components/landing/Hero.astro";
+---
+
+<div id="sticky-container" class="relative h-[200vh] w-full">
+  <section class="justify-cente sticky top-0 flex h-screen w-full items-center">
+    <div class="absolute top-14 w-full">
+      <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
+        <li class="cursor-pointer">/ HOME</li>
+        <li class="cursor-pointer">/ ABOUT</li>
+        <li class="cursor-pointer">/ HIGHLIGHTS</li>
+        <li class="cursor-pointer">/ TEAM</li>
+      </ul>
+    </div>
+    <Hero />
+    <!-- <div class="absolute bottom-4 w-full overflow-hidden">
+      <ul
+        class="scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4"
+      >
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
+      </ul>
+    </div> -->
+    <div
+      id="scroll-gradient"
+      class="absolute bottom-0 -z-10 w-full"
+      style="--gradient-stop: 10%; background: linear-gradient(to top, var(--primary) var(--gradient-stop), transparent); height: 10vh;"
+    >
+    </div>
+  </section>
+</div>
+
+<script>
+  import { animate, onScroll } from "animejs";
+
+  animate("#scroll-gradient", {
+    height: ["30vh", "100vh"],
+    "--gradient-stop": ["10%", "10%"],
+
+    autoplay: onScroll({
+      container: document.body,
+
+      axis: "y",
+      target: "#sticky-container",
+
+      enter: "top top",
+      leave: "bottom bottom",
+
+      sync: true,
+    }),
+  });
+</script>

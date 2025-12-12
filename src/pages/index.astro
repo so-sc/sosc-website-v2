@@ -1,41 +1,10 @@
 ---
-import Hero from "@/components/landing/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import Landing from "@/components/landing/Landing.astro";
 ---
 
 <Layout>
-  <section class="relative flex h-screen w-full items-center justify-center">
-    <div class="absolute top-14 w-full">
-      <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
-        <li class="cursor-pointer">/ HOME</li>
-        <li class="cursor-pointer">/ ABOUT</li>
-        <li class="cursor-pointer">/ HIGHLIGHTS</li>
-        <li class="cursor-pointer">/ TEAM</li>
-      </ul>
-    </div>
-    <Hero />
-    <div class="absolute bottom-4 w-full overflow-hidden">
-      <ul
-        class="scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4"
-      >
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-      </ul>
-    </div>
-    <div class="w-full h-1/2 absolute bottom-0 bg-linear-to-t from-primary from-10% to-transparent -z-10"/>
-  </section>
+  <Landing client:load/>
   <section
     class="bg-primary relative flex h-screen w-full items-center justify-center"
   >

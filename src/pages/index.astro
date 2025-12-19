@@ -4,9 +4,20 @@ import Landing from "@/components/landing/Landing.astro";
 ---
 
 <Layout>
-  <Landing client:load/>
+  <Landing />
+  <section class="relative flex h-screen w-full items-center justify-center">
+  </section>
   <section
     class="bg-primary relative flex h-screen w-full items-center justify-center"
   >
   </section>
 </Layout>
+
+<script>
+  import Lenis from "lenis";
+
+  new Lenis({
+    autoRaf: true,
+    syncTouch: true,
+  });
+</script>

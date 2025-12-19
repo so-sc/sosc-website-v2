@@ -7,8 +7,9 @@
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter_Font.ttf") format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 @font-face {
@@ -64,7 +65,7 @@
   --background: oklch(1 0 0);
   --foreground: oklch(32.109% 0.00004 271.152);
 
-  --primary: oklch(78.419% 0.23837 145.933);
+  --primary: oklch(81.214% 0.21096 148.577);
   --primary-foreground: oklch(1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0 0);

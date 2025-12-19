@@ -1,9 +1,15 @@
 ---
-import Hero from "@/components/landing/Hero.astro";
+import { Image } from "astro:assets";
+import HeroImg from "../../assets/sosc_hero.svg";
+import SOSC from "@/assets/sosc_logo.svg";
 ---
 
 <div id="sticky-container" class="relative h-[200vh] w-full">
-  <section class="justify-cente sticky top-0 flex h-screen w-full items-center">
+  <section class="sticky top-0 flex h-screen w-full items-center">
+    <div class="absolute top-4 left-4 -z-10 md:left-8">
+      <Image src={SOSC} alt="Logo" class="h-6 w-fit" loading="eager" />
+    </div>
+
     <div class="absolute top-14 w-full">
       <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
         <li class="cursor-pointer">/ HOME</li>
@@ -12,32 +18,40 @@ import Hero from "@/components/landing/Hero.astro";
         <li class="cursor-pointer">/ TEAM</li>
       </ul>
     </div>
-    <Hero />
-    <!-- <div class="absolute bottom-4 w-full overflow-hidden">
-      <ul
-        class="scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4"
-      >
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-        <li class="bg-secondary h-40 w-56 shrink-0 snap-start rounded-xl"></li>
-      </ul>
-    </div> -->
+
     <div
-      id="scroll-gradient"
-      class="absolute bottom-0 -z-10 w-full"
-      style="--gradient-stop: 10%; background: linear-gradient(to top, var(--primary) var(--gradient-stop), transparent); height: 10vh;"
+      class="pointer-events-none absolute -z-10 flex h-full w-full items-center justify-center select-none"
+      style={{ scale: "clamp(0.25, calc(100vw / 1500px), 1)" }}
     >
+      <Image
+        src={HeroImg}
+        alt="HeroImage"
+        width={1047}
+        height={288}
+        class="absolute max-w-none shrink-0"
+      />
+    </div>
+
+    <div class="absolute bottom-14 w-full">
+      <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
+        <li>MANGALORE, INDIA: (GMT+3) 13:25</li>
+        <li>#OPENSOURCE</li>
+      </ul>
+    </div>
+
+    <div
+      id="scroll-div"
+      class="bg-primary absolute bottom-0 -z-10 h-screen w-full overflow-hidden"
+      style="clip-path: inset(var(--clip-top) 0 0 0); --clip-top: 100%;"
+    >
+      <div
+        class="pointer-events-none absolute flex h-full w-full items-center justify-center select-none"
+        style={{ scale: "clamp(0.25, calc(100vw / 1500px), 1)" }}
+      >
+        <h1 class="text-foreground absolute z-10 text-[82px] whitespace-nowrap">
+          MAY THE <span class="font-bold">SOURCE</span> BE WITH YOU
+        </h1>
+      </div>
     </div>
   </section>
 </div>
@@ -45,19 +59,15 @@ import Hero from "@/components/landing/Hero.astro";
 <script>
   import { animate, onScroll } from "animejs";
 
-  animate("#scroll-gradient", {
-    height: ["30vh", "100vh"],
-    "--gradient-stop": ["10%", "10%"],
+  animate("#scroll-div", {
+    "--clip-top": ["100%", "0%"],
 
     autoplay: onScroll({
       container: document.body,
-
       axis: "y",
       target: "#sticky-container",
-
-      enter: "top top",
-      leave: "bottom bottom",
-
+      enter: { target: "top", container: "top" },
+      leave: { target: "bottom", container: "bottom" },
       sync: true,
     }),
   });

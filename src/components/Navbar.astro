@@ -1,12 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import SOSC from "@/assets/sosc_logo.svg";
 import { Menu } from "lucide-react";
 ---
 
 <nav class="text-foreground fixed top-0 z-20 w-full">
-  <div class="flex h-14 w-full items-center justify-between px-4 md:px-8">
-    <Image src={SOSC} alt="Logo" class="h-6 w-fit" loading="eager" />
+  <div class="flex h-14 w-full items-center justify-end px-4 md:px-8">
     <Menu className="cursor-pointer" />
   </div>
 </nav>

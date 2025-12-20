@@ -19,14 +19,14 @@ const parsedProjects = projects
     category: data.category,
     tags: data.tags,
     github: data.github,
-    featured: data.featured,
+    community: data.community,
     date: data.date,
     link: slugify(data.title, { lower: true, strict: true }),
   }))
   .sort((a, b) => {
-    // Featured projects first, then by date
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
+    // Community projects first, then by date
+    if (a.community && !b.community) return -1;
+    if (!a.community && b.community) return 1;
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
@@ -35,8 +35,8 @@ const allCategories = [...new Set(parsedProjects.map((p) => p.category))];
 const allTechStack = [...new Set(parsedProjects.flatMap((p) => p.techStack))];
 const allStatuses = [...new Set(parsedProjects.map((p) => p.status))];
 
-const featuredProjects = parsedProjects.filter((p) => p.featured);
-const regularProjects = parsedProjects.filter((p) => !p.featured);
+const communityProjects = parsedProjects.filter((p) => p.community);
+const regularProjects = parsedProjects.filter((p) => !p.community);
 ---
 
 <Layout>
@@ -51,7 +51,7 @@ const regularProjects = parsedProjects.filter((p) => !p.featured);
   >
     <!-- Filters Section -->
     <div class="space-y-4">
-      <div class="flex flex-wrap items-center gap-4">
+      <div class="flex flex-wrap items-center justify-end gap-4">
         <!-- Category Filter -->
         <div class="flex items-center gap-2">
           <label for="category-filter" class="text-sm font-medium">Category:</label>
@@ -102,19 +102,14 @@ const regularProjects = parsedProjects.filter((p) => !p.featured);
           Clear Filters
         </button>
       </div>
-
-      <!-- Results Count -->
-      <p class="text-sm text-muted-foreground">
-        Showing <span id="visible-count" class="font-semibold">{parsedProjects.length}</span> of <span class="font-semibold">{parsedProjects.length}</span> projects
-      </p>
     </div>
 
-    <!-- Featured Projects Section -->
-    {featuredProjects.length > 0 && (
+    <!-- Community Projects Section -->
+    {communityProjects.length > 0 && (
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold">Featured Projects</h2>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
+        <h2 class="text-2xl font-bold">Community Projects</h2>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
+          {communityProjects.map((project) => (
             <div
               class="project-card"
               data-category={project.category}
@@ -128,11 +123,11 @@ const regularProjects = parsedProjects.filter((p) => !p.featured);
       </div>
     )}
 
-    <!-- All Projects Grid -->
+    <!-- Member Projects Grid -->
     <div class="space-y-4">
-      <h2 class="text-2xl font-bold">All Projects</h2>
-      <div id="projects-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {parsedProjects.map((project) => (
+      <h2 class="text-2xl font-bold">Member Projects</h2>
+      <div id="projects-grid" class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
+        {regularProjects.map((project) => (
           <div
             class="project-card"
             data-category={project.category}
@@ -228,3 +223,49 @@ const regularProjects = parsedProjects.filter((p) => !p.featured);
   techFilter.addEventListener("change", filterProjects);
   clearFiltersBtn.addEventListener("click", clearFilters);
 </script>
+
+<style>
+  /* Mobile: horizontal separator between cards */
+  .projects-grid-separators > :global(.project-card) {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    padding-bottom: 1.5rem;
+  }
+  .projects-grid-separators > :global(.project-card:last-child) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Tablet (2 columns): vertical separator */
+  @media (min-width: 640px) {
+    .projects-grid-separators > :global(.project-card) {
+      border-bottom: none;
+      padding-bottom: 0;
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    /* Remove right border on every 2nd item (last in row) and last item */
+    .projects-grid-separators > :global(.project-card:nth-child(2n)),
+    .projects-grid-separators > :global(.project-card:last-child) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  /* Desktop (3 columns): vertical separator */
+  @media (min-width: 1024px) {
+    .projects-grid-separators > :global(.project-card) {
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    .projects-grid-separators > :global(.project-card:nth-child(2n)) {
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    /* Remove right border on every 3rd item (last in row) and last item */
+    .projects-grid-separators > :global(.project-card:nth-child(3n)),
+    .projects-grid-separators > :global(.project-card:last-child) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+</style>

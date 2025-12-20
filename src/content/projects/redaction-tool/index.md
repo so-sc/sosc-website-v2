@@ -19,7 +19,7 @@ tags:
   - nlp
 github: https://github.com/so-sc/redaction-tool
 documentation: https://github.com/so-sc/redaction-tool#readme
-featured: false
+community: false
 ---
 
 ## About

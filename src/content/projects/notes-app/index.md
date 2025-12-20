@@ -15,7 +15,7 @@ tags:
   - app
   - productivity
 github: https://github.com/so-sc/notes-app
-featured: false
+community: false
 ---
 
 ## About

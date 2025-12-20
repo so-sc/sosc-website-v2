@@ -20,7 +20,7 @@ tags:
 github: https://github.com/so-sc/sosc-website
 demo: https://sosc.org.in
 documentation: https://github.com/so-sc/sosc-website#readme
-featured: true
+community: true
 ---
 
 ## About the Project

@@ -12,7 +12,7 @@ interface Props {
   tags?: string[];
   github?: string;
   link: string;
-  featured?: boolean;
+  community?: boolean;
 }
 
 const {
@@ -26,7 +26,7 @@ const {
   tags = [],
   github,
   link,
-  featured = false,
+  community = false,
 } = Astro.props;
 
 const statusColors: Record<string, string> = {
@@ -39,11 +39,11 @@ const statusColors: Record<string, string> = {
 ---
 
 <a
-  class={`bg-card group rounded-lg shadow-md overflow-hidden cursor-pointer transition hover:shadow-lg flex flex-col ${featured ? "lg:col-span-2" : ""}`}
+  class={`bg-card group overflow-hidden cursor-pointer transition flex flex-col`}
   href={`/projects/${link}`}
 >
   <!-- Cover Image with Title Overlay -->
-  <div class="relative aspect-[16/9] bg-muted">
+  <div class="relative aspect-[16/9] bg-muted rounded-sm overflow-hidden">
     {
       cover ? (
         <Image
@@ -66,47 +66,20 @@ const statusColors: Record<string, string> = {
     }
     <!-- Status Badge -->
     <span
-      class={`absolute bottom-3 right-3 px-3 py-1 text-xs font-medium rounded-full ${statusColors[status]}`}
+      class={`absolute bottom-3 right-3 px-2 py-0 text-xs font-medium rounded-sm ${statusColors[status]}`}
     >
       {status}
     </span>
   </div>
 
   <!-- Content -->
-  <div class="p-4 space-y-3 flex-1 flex flex-col">
-    <h3
-      class={`font-semibold transition-colors group-hover:text-primary ${featured ? "text-2xl" : "text-lg"}`}
-    >
-      {title}
-    </h3>
-
-    <!-- Tags -->
-    <div class="flex flex-wrap gap-1.5">
-      {
-        [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
-          <span class="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded">
-            {tag}
-          </span>
-        ))
-      }
-      {
-        techStack.length + (tags?.length || 0) > 7 && (
-          <span class="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded">
-            +{techStack.length + (tags?.length || 0) - 7}
-          </span>
-        )
-      }
-    </div>
-
-    <!-- Description -->
-    <p
-      class={`text-muted-foreground flex-1 ${featured ? "line-clamp-4" : "line-clamp-2 text-sm"}`}
-    >
-      {description}
-    </p>
-
-    <!-- Footer with maintainers -->
-    <div class="flex items-center justify-between pt-2 border-t border-border">
+  <div class="py-4 pr-0 pl-0 space-y-3 flex-1 flex flex-col">
+    <div class="flex items-center justify-between">
+      <h3
+        class={`font-semibold transition-colors group-hover:text-primary`}
+      >
+        {title}
+      </h3>
       <div class="flex -space-x-2">
         {
           maintainers.slice(0, 3).map((maintainer) => (
@@ -120,34 +93,39 @@ const statusColors: Record<string, string> = {
         }
         {
           maintainers.length > 3 && (
-            <span class="w-6 h-6 rounded-full border-2 border-card bg-muted flex items-center justify-center text-[10px] text-muted-foreground">
+            <span class="w-6 h-6 rounded-sm border-2 border-card bg-muted flex items-center justify-center text-[10px] text-muted-foreground">
               +{maintainers.length - 3}
             </span>
           )
         }
       </div>
+    </div>
 
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-1">
       {
-        github && (
-          <span
-            class="text-muted-foreground hover:text-primary"
-            title="View on GitHub"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clip-rule="evenodd"
-              />
-            </svg>
+        [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
+          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+            {tag}
+          </span>
+        ))
+      }
+      {
+        techStack.length + (tags?.length || 0) > 7 && (
+          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+            +{techStack.length + (tags?.length || 0) - 7}
           </span>
         )
       }
     </div>
+
+    <!-- Description -->
+    <p
+      class={`text-muted-foreground flex-1`}
+    >
+      {description}
+    </p>
+
+    
   </div>
 </a>

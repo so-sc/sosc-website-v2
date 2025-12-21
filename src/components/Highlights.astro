@@ -1,0 +1,207 @@
+---
+import CommunityCard from './cards/CommunityCard.astro';
+
+interface EventItem {
+  title: string;
+  category: string;
+  date: string;
+  image: string;
+  shortDesc: string;
+  fullDesc: string;
+}
+
+const events: EventItem[] = [
+  {
+    title: "DevHost 2025",
+    category: "Flagship",
+    date: "May 2024",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
+    shortDesc: "The annual convergence of code, culture, and community. A flagship gathering of minds.",
+    fullDesc: "DevHost is the flagship event of SOSC. It acts as a bridge between students and the industry. For two days, we host multiple speakers from top tech companies, conduct hands-on workshops on cutting-edge stacks, and run networking sessions that have jumpstarted countless careers."
+  },
+  {
+    title: "HackHarbor",
+    category: "SOMETHING? NO IDEA",
+    date: "August 2025",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200",
+    shortDesc: "A peer-to-peer learning program helping first-year students transition smoothly into their second year.",
+    fullDesc: "HackHarbor is an SOSC-led peer-to-peer learning initiative created for first-year students preparing to enter their second year. The program focuses on strengthening fundamentals, exposing participants to real development workflows, and encouraging collaborative learning through guided sessions led by senior students. HackHarbor creates a supportive environment where juniors learn by building, asking questions freely, and growing alongside their peers."
+  }
+];
+---
+
+<section class="relative w-full bg-white py-12 md:py-24 overflow-hidden">
+  <!-- Added: Subtle Grid Background -->
+  <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+  <!-- Header -->
+  <div class="container relative mx-auto mb-10 md:mb-16 px-4 md:px-6 z-10">
+    <!-- Added: System Log -->
+    <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
+      <span class="animate-pulse">●</span>
+      <span>SYSTEM_EVENTS_LOG</span>
+    </div>
+
+    <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+      <div>
+        <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tighter text-gray-900">
+          Community
+          <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Highlights</span>
+        </h2>
+      </div>
+      <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+        <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Since 2018</p>
+        <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
+          Our impact is measured in code deployed, skills learned, and connections made.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Area -->
+  <div class="relative w-full overflow-hidden border-b border-gray-100 pb-12 md:pb-24 z-10">
+    <div class="flex w-max animate-marquee gap-6 md:gap-10 py-6 md:py-10 pl-4 md:pl-6 hover:pause">
+      {[...events, ...events].map((event) => (
+        <CommunityCard {...event} />
+      ))}
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <dialog 
+    id="flat-modal" 
+    class="m-auto w-[95%] max-w-5xl max-h-[85vh] bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm md:w-[90%] overflow-hidden z-50"
+  >
+    <div class="flex h-full flex-col md:flex-row overflow-y-auto md:overflow-hidden">
+      <!-- Image Side -->
+      <div class="relative h-48 w-full shrink-0 md:h-auto md:w-1/2">
+        <img id="modal-img" src="" alt="" class="h-full w-full object-cover" />
+        <!-- Red Accent Tag -->
+        <span id="modal-category" class="absolute left-0 top-0 bg-red-600 px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white shadow-sm">
+          Category
+        </span>
+      </div>
+
+      <div class="relative flex flex-1 flex-col p-6 md:p-12">
+        <!-- Close Button -->
+        <button 
+          id="close-modal" 
+          class="absolute right-0 top-0 z-10 bg-gray-100 p-3 md:p-4 text-gray-900 transition-colors hover:bg-red-600 hover:text-white"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Meta -->
+        <div class="mb-4 mt-2 flex items-center gap-4 border-b border-gray-100 pb-4 md:mt-0 md:mb-6 md:pb-6">
+          <span id="modal-date" class="font-mono text-[10px] md:text-xs font-bold text-gray-400">DATE</span>
+          <span class="h-px w-6 md:w-8 bg-primary"></span>
+        </div>
+
+        <!-- Title -->
+        <h3 id="modal-title" class="mb-4 md:mb-8 text-2xl md:text-6xl font-black uppercase leading-none text-gray-900">
+          Title
+        </h3>
+
+        <!-- Scrollable Desc -->
+        <div class="flex-1 overflow-y-auto pr-2 md:pr-4">
+          <p id="modal-desc" class="text-sm md:text-lg font-light leading-relaxed text-gray-600 pb-8 md:pb-0">
+            Description text...
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<style>
+  /* Linear Infinite Scroll */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.33%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  
+  @media (max-width: 768px) {
+    .animate-marquee {
+      animation-duration: 30s; 
+    }
+  }
+
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+
+  /* Modal Animation */
+  dialog[open] {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Reset default dialog styles */
+  dialog {
+    border: none;
+    margin: auto;
+    position: fixed;
+    inset: 0;
+  }
+  
+  /* Ensure backdrop works nicely */
+  dialog::backdrop {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById('flat-modal') as HTMLDialogElement | null;
+  const closeBtn = document.getElementById('close-modal');
+  const cards = document.querySelectorAll('[data-community-card]');
+
+  // Bindings
+  const mTitle = document.getElementById('modal-title');
+  const mCategory = document.getElementById('modal-category');
+  const mImage = document.getElementById('modal-img') as HTMLImageElement | null;
+  const mDate = document.getElementById('modal-date');
+  const mDesc = document.getElementById('modal-desc');
+
+  if (dialog) {
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const data = (card as HTMLElement).dataset;
+        
+        if(mTitle) mTitle.textContent = data.title || '';
+        if(mCategory) mCategory.textContent = data.category || '';
+        if(mImage) mImage.src = data.image || '';
+        if(mDate) mDate.textContent = data.date || '';
+        if(mDesc) mDesc.textContent = data.desc || '';
+
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const close = () => {
+      dialog.close();
+      document.body.style.overflow = '';
+    };
+
+    if(closeBtn) closeBtn.addEventListener('click', close);
+    
+    dialog.addEventListener('click', (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+      if (!isInDialog) close();
+    });
+  }
+</script>

@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  image: string;
+  date: string;
+  shortDesc: string;
+  fullDesc: string;
+}
+
+const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
+---
+
+<button
+  type="button"
+  class="group relative flex h-full w-[300px] md:w-[450px] flex-shrink-0 flex-col gap-6 bg-white text-left transition-colors focus:outline-none"
+  data-community-card
+  data-title={title}
+  data-category={category}
+  data-image={image}
+  data-date={date}
+  data-desc={fullDesc}
+>
+  <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100">
+    <img 
+      src={image} 
+      alt={title} 
+      class="h-full w-full object-cover grayscale transition-all duration-500 will-change-transform group-hover:scale-105 group-hover:grayscale-0"
+      loading="lazy"
+    />
+    <!-- Hover Overlay: Subtle green tint -->
+    <div class="absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/10"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col pr-4">
+    <!-- Meta Row: Red Accent for Category -->
+    <div class="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-widest">
+      <span class="text-red-600">{category}</span>
+      <span class="text-gray-300">/</span>
+      <span class="text-gray-500">{date}</span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="mb-4 text-3xl font-black uppercase leading-[0.9] text-gray-900 transition-colors duration-300 group-hover:text-primary md:text-4xl">
+      {title}
+    </h3>
+
+    <!-- Description -->
+    <p class="mb-6 line-clamp-3 text-sm leading-relaxed text-gray-500">
+      {shortDesc}
+    </p>
+
+    <!-- Interactive Link: Simple text with arrow -->
+    <div class="mt-auto flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-900 group-hover:text-primary">
+      <span class="border-b border-gray-200 pb-1 transition-colors group-hover:border-primary">Read Entry</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Decorative Border: Right side separator -->
+  <div class="absolute right-[-2rem] top-0 h-full w-px bg-gray-100 hidden md:block"></div>
+</button>

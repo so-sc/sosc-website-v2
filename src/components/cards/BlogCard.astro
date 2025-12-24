@@ -13,42 +13,56 @@ const {
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
   year: "numeric",
-  month: "long",
+  month: "short",
   day: "numeric",
 });
+
+// Calculate estimated read time (assuming 200 words per minute)
+const wordCount = description?.split(' ').length || 100;
+const readTime = Math.max(1, Math.ceil(wordCount / 200));
 ---
 
 <a
-  class={`bg-card group shadow-md overflow-hidden cursor-pointer transition hover:shadow-lg ${highlight ? "lg:col-span-2" : ""}`}
+  class={`group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
   href={`/blogs/${link}`}
 >
-  <Image
-    src={cover}
-    alt={title}
-    class="aspect-[16/9] w-full object-cover"
-    width={1280}
-    height={720}
-    format="webp"
-    loading="lazy"
-    quality={80}
-  />
+  <!-- Image with overlay -->
+  <div class={`relative ${highlight ? "h-[600px]" : "h-[400px]"}`}>
+    <Image
+      src={cover}
+      alt={title}
+      class="h-full w-full object-cover"
+      width={1280}
+      height={720}
+      format="webp"
+      loading="lazy"
+      quality={80}
+    />
+    
+    <!-- Dark gradient overlay at bottom for text visibility -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+  </div>
 
-  <div class={`p-4 space-y-1`}>
-    <p class="text-muted-foreground text-sm">{formattedDate}</p>
+  <!-- Text overlay content -->
+  <div class={`absolute bottom-0 left-0 right-0 p-6 text-white ${highlight ? "p-8" : ""}`}>
+    <!-- Date and read time -->
+    <div class="flex items-center gap-2 text-sm mb-3">
+      <span>{formattedDate}</span>
+      <span>•</span>
+      <span>{readTime} min read</span>
+    </div>
 
+    <!-- Title -->
     <h3
-      class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-lg"}`}
+      class={`font-bold leading-tight mb-2 transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-2xl"}`}
     >
       {title}
     </h3>
 
-    <p class="text-muted-foreground text-xs italic">By {author}</p>
-
+    <!-- Description (only for highlighted cards) -->
     {
       highlight && (
-        <p
-          class={`text-muted-foreground pt-2 ${highlight ? "line-clamp-6" : "line-clamp-3 text-sm"}`}
-        >
+        <p class="text-gray-200 text-base line-clamp-3 mb-2">
           {description}
         </p>
       )

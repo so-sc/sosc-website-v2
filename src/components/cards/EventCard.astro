@@ -4,37 +4,50 @@ import { Image } from "astro:assets";
 const { name, date, location, cover, link } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
   year: "numeric",
-  month: "long",
+  month: "short",
   day: "numeric",
 });
 ---
 
 <a
   href={`/events/${link}`}
-  class="bg-card border-muted group flex flex-col gap-6 border shadow-sm transition hover:shadow-md md:flex-row"
+  class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4"
 >
-  {
-    cover && (
-      <Image
-        src={cover}
-        alt={"cover"}
-        class="h-48 w-full object-contain md:w-64"
-        format="webp"
-        loading="lazy"
-        quality={60}
-      />
-    )
-  }
+  <!-- Image with overlay -->
+  <div class="relative">
+    {
+      cover && (
+        <Image
+          src={cover}
+          alt={name}
+          class="w-full h-auto object-contain bg-gray-100 rounded-t-lg"
+          format="webp"
+          loading="lazy"
+          quality={80}
+        />
+      )
+    }
+    
+    <!-- Dark gradient overlay at bottom for text visibility -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+  </div>
 
-  <div class="flex flex-col justify-between p-4">
-    <div>
-      <h2 class="group-hover:text-primary text-2xl font-semibold">
-        {name}
-      </h2>
-      {location && <p class="text-muted-foreground mt-2">{location}</p>}
+  <!-- Text overlay content -->
+  <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+    <!-- Date and location -->
+    <div class="flex items-center gap-2 text-sm mb-3">
+      <span>{formattedDate}</span>
+      {location && (
+        <>
+          <span>•</span>
+          <span>{location}</span>
+        </>
+      )}
     </div>
-    <span class="text-muted-foreground mt-4 text-sm">
-      {formattedDate}
-    </span>
+
+    <!-- Event name -->
+    <h2 class="text-2xl font-bold leading-tight transition-colors group-hover:text-primary">
+      {name}
+    </h2>
   </div>
 </a>

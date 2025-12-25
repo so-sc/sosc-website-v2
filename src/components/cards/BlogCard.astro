@@ -23,46 +23,55 @@ const readTime = Math.max(1, Math.ceil(wordCount / 200));
 ---
 
 <a
-  class={`group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
   href={`/blogs/${link}`}
+  class={`group overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4 bg-card shadow-md hover:shadow-lg ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
 >
-  <!-- Image with overlay -->
-  <div class={`relative ${highlight ? "h-[600px]" : "h-[400px]"}`}>
-    <Image
-      src={cover}
-      alt={title}
-      class="h-full w-full object-cover"
-      width={1280}
-      height={720}
-      format="webp"
-      loading="lazy"
-      quality={80}
-    />
-    
-    <!-- Dark gradient overlay at bottom for text visibility -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+  <!-- Image without overlay -->
+  <div class="relative">
+    {
+      cover && (
+        <Image
+          src={cover}
+          alt={title}
+          class="w-full h-auto object-contain bg-gray-100"
+          width={1280}
+          height={720}
+          format="webp"
+          loading="lazy"
+          quality={80}
+        />
+      )
+    }
   </div>
 
-  <!-- Text overlay content -->
-  <div class={`absolute bottom-0 left-0 right-0 p-6 text-white ${highlight ? "p-8" : ""}`}>
+  <!-- Text section below image -->
+  <div class={`p-4 space-y-2 ${highlight ? "p-6" : ""}`}>
     <!-- Date and read time -->
-    <div class="flex items-center gap-2 text-sm mb-3">
+    <div class="flex items-center gap-2 text-sm text-muted-foreground">
       <span>{formattedDate}</span>
       <span>•</span>
       <span>{readTime} min read</span>
+      {
+        author && (
+          <>
+            <span>•</span>
+            <span>{author}</span>
+          </>
+        )
+      }
     </div>
 
     <!-- Title -->
-    <h3
-      class={`font-bold leading-tight mb-2 transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-2xl"}`}
+    <h2
+      class={`font-bold leading-tight transition-colors group-hover:text-primary ${highlight ? "text-2xl" : "text-xl"}`}
     >
       {title}
-    </h3>
+    </h2>
 
     <!-- Description (only for highlighted cards) -->
     {
-      highlight && (
-        <p class="text-gray-200 text-base line-clamp-3 mb-2">
+      highlight && description && (
+        <p class="text-muted-foreground text-sm line-clamp-3">
           {description}
         </p>
       )

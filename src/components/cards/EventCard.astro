@@ -11,9 +11,8 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
 <a
   href={`/events/${link}`}
-  class="group overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4 bg-card shadow-md hover:shadow-lg"
+  class="group overflow-hidden cursor-pointer transition-all duration-200 hover:scale-[1.005] block break-inside-avoid mb-4 bg-card shadow-md"
 >
-  <!-- Image without overlay -->
   <div class="relative">
     {
       cover && (
@@ -29,9 +28,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     }
   </div>
 
-  <!-- Text section below image -->
   <div class="p-4 space-y-2">
-    <!-- Date and location -->
     <div class="flex items-center gap-2 text-sm text-muted-foreground">
       <span>{formattedDate}</span>
       {location && (
@@ -42,7 +39,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       )}
     </div>
 
-    <!-- Event name -->
     <h2 class="text-xl font-bold leading-tight transition-colors group-hover:text-primary">
       {name}
     </h2>

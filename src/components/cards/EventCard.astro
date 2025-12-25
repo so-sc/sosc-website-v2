@@ -11,31 +11,28 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
 <a
   href={`/events/${link}`}
-  class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4"
+  class="group overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4 bg-card shadow-md hover:shadow-lg"
 >
-  <!-- Image with overlay -->
+  <!-- Image without overlay -->
   <div class="relative">
     {
       cover && (
         <Image
           src={cover}
           alt={name}
-          class="w-full h-auto object-contain bg-gray-100 rounded-t-lg"
+          class="w-full h-auto object-contain bg-gray-100"
           format="webp"
           loading="lazy"
           quality={80}
         />
       )
     }
-    
-    <!-- Dark gradient overlay at bottom for text visibility -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
   </div>
 
-  <!-- Text overlay content -->
-  <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+  <!-- Text section below image -->
+  <div class="p-4 space-y-2">
     <!-- Date and location -->
-    <div class="flex items-center gap-2 text-sm mb-3">
+    <div class="flex items-center gap-2 text-sm text-muted-foreground">
       <span>{formattedDate}</span>
       {location && (
         <>
@@ -46,7 +43,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
 
     <!-- Event name -->
-    <h2 class="text-2xl font-bold leading-tight transition-colors group-hover:text-primary">
+    <h2 class="text-xl font-bold leading-tight transition-colors group-hover:text-primary">
       {name}
     </h2>
   </div>

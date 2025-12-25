@@ -17,16 +17,14 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   day: "numeric",
 });
 
-// Calculate estimated read time (assuming 200 words per minute)
 const wordCount = description?.split(' ').length || 100;
 const readTime = Math.max(1, Math.ceil(wordCount / 200));
 ---
 
 <a
   href={`/blogs/${link}`}
-  class={`group overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02] block break-inside-avoid mb-4 bg-card shadow-md hover:shadow-lg ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
+  class={`group overflow-hidden cursor-pointer transition-all duration-200 hover:scale-[1.005] block break-inside-avoid mb-4 bg-card shadow-md ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
 >
-  <!-- Image without overlay -->
   <div class="relative">
     {
       cover && (
@@ -44,9 +42,7 @@ const readTime = Math.max(1, Math.ceil(wordCount / 200));
     }
   </div>
 
-  <!-- Text section below image -->
   <div class={`p-4 space-y-2 ${highlight ? "p-6" : ""}`}>
-    <!-- Date and read time -->
     <div class="flex items-center gap-2 text-sm text-muted-foreground">
       <span>{formattedDate}</span>
       <span>•</span>
@@ -61,14 +57,12 @@ const readTime = Math.max(1, Math.ceil(wordCount / 200));
       }
     </div>
 
-    <!-- Title -->
     <h2
       class={`font-bold leading-tight transition-colors group-hover:text-primary ${highlight ? "text-2xl" : "text-xl"}`}
     >
       {title}
     </h2>
 
-    <!-- Description (only for highlighted cards) -->
     {
       highlight && description && (
         <p class="text-muted-foreground text-sm line-clamp-3">

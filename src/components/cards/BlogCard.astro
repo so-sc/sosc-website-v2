@@ -13,59 +13,42 @@ const {
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
   year: "numeric",
-  month: "short",
+  month: "long",
   day: "numeric",
 });
-
-const wordCount = description?.split(' ').length || 100;
-const readTime = Math.max(1, Math.ceil(wordCount / 200));
 ---
 
 <a
+  class={`bg-card group shadow-md overflow-hidden cursor-pointer transition hover:shadow-lg ${highlight ? "lg:col-span-2" : ""}`}
   href={`/blogs/${link}`}
-  class={`group overflow-hidden cursor-pointer transition-all duration-200 hover:scale-[1.005] block break-inside-avoid mb-4 bg-card shadow-md ${highlight ? "lg:col-span-2 lg:row-span-2" : ""}`}
 >
-  <div class="relative">
-    {
-      cover && (
-        <Image
-          src={cover}
-          alt={title}
-          class="w-full h-auto object-contain bg-gray-100"
-          width={1280}
-          height={720}
-          format="webp"
-          loading="lazy"
-          quality={80}
-        />
-      )
-    }
-  </div>
+  <Image
+    src={cover}
+    alt={title}
+    class="aspect-[16/9] w-full object-cover"
+    width={1280}
+    height={720}
+    format="webp"
+    loading="lazy"
+    quality={80}
+  />
 
-  <div class={`p-4 space-y-2 ${highlight ? "p-6" : ""}`}>
-    <div class="flex items-center gap-2 text-sm text-muted-foreground">
-      <span>{formattedDate}</span>
-      <span>•</span>
-      <span>{readTime} min read</span>
-      {
-        author && (
-          <>
-            <span>•</span>
-            <span>{author}</span>
-          </>
-        )
-      }
-    </div>
+  <div class={`p-4 space-y-1`}>
+    <p class="text-muted-foreground text-sm">{formattedDate}</p>
 
-    <h2
-      class={`font-bold leading-tight transition-colors group-hover:text-primary ${highlight ? "text-2xl" : "text-xl"}`}
+    <h3
+      class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-lg"}`}
     >
       {title}
-    </h2>
+    </h3>
+
+    <p class="text-muted-foreground text-xs italic">By {author}</p>
 
     {
-      highlight && description && (
-        <p class="text-muted-foreground text-sm line-clamp-3">
+      highlight && (
+        <p
+          class={`text-muted-foreground pt-2 ${highlight ? "line-clamp-6" : "line-clamp-3 text-sm"}`}
+        >
           {description}
         </p>
       )

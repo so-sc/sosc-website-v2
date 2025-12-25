@@ -31,14 +31,18 @@ const parsedBlogs = blogs
   <section
     class="bg-background text-foreground mx-auto max-w-7xl space-y-6 px-4 py-16 md:px-8"
   >
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-      {parsedBlogs.slice(0, 6).map((blog, index) => (
-        <BlogCard {...blog} highlight={index === 0} />
-      ))}
+    <!-- Featured Grid -->
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
+      <BlogCard {...parsedBlogs[0]} highlight />
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-2">
+        {parsedBlogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {parsedBlogs.slice(6).map((blog) => <BlogCard {...blog} />)}
+    <!-- Standard 4-column Grid -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {parsedBlogs.slice(5).map((blog) => <BlogCard {...blog} />)}
     </div>
   </section>
 </Layout>

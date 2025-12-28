@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import SOSC from "@/assets/sosc_logo.svg";
+---
+
+<section
+  id="about"
+  class="relative w-full overflow-hidden bg-white py-12 md:py-24"
+>
+  <!-- Grid Background -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
+  >
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4 md:px-6">
+    <!-- System Log -->
+    <div
+      class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
+    >
+      <span class="animate-pulse">●</span>
+      <span>SYSTEM_ACTIVE</span>
+    </div>
+
+    <!-- Header -->
+    <div
+      class="mb-12 flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+    >
+      <div>
+        <h2
+          class="text-4xl leading-none font-black tracking-tighter text-gray-900 uppercase md:text-8xl"
+        >
+          WHO WE ARE
+        </h2>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="grid gap-12 md:grid-cols-2">
+      <div class="space-y-6 text-lg leading-relaxed font-light text-gray-600">
+        <p>
+          Sahyadri Open Source Community (SOSC) is a vibrant hub of open source
+          enthusiasts, driven by the passion to learn, share, and grow together.
+          We are a collective of students, developers, and creators who believe
+          in the power of collaboration.
+        </p>
+        <p>
+          Based in Mangalore, we aim to cultivate a culture of innovation,
+          empowering students to contribute to real-world projects, organize
+          technical events, and build a future where technology is accessible to
+          everyone.
+        </p>
+        <div class="pt-4">
+          <a
+            href="https://github.com/so-sc"
+            target="_blank"
+            class="hover:bg-primary inline-flex h-12 items-center justify-center bg-gray-900 px-8 text-sm font-medium tracking-wider text-white uppercase transition-colors"
+          >
+            Join our Community
+          </a>
+        </div>
+      </div>
+
+      <div class="relative hidden p-8 md:block">
+        <Image src={SOSC} alt="About Us" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,108 +2,51 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-primary text-primary-foreground border-muted border-t">
-  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-    <div class="py-5 md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
-        <div class="pb-5">
-          <a href="/" class="flex w-fit items-center pt-5">
-            <span class="self-center text-xl font-semibold whitespace-nowrap">
-              Sahyadri Open Source Community
-            </span>
-          </a>
-          <p class="pt-2">
-            Sahyadri College of Engineering and Management, Adyar, Mangalore -
-            575007 IN
-          </p>
-          <a
-            href="mailto:sosc@sahyadri.edu.in"
-            target="_blank"
-            class="pt-2 underline underline-offset-2"
-          >
-            sosc@sahyadri.edu.in
-          </a>
-          <p class="pt-2">+91 79941 34420</p>
+<footer class="bg-foreground text-background py-16 md:py-24 border-t border-border/10">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      
+      <div class="space-y-6 lg:col-span-2">
+        <a href="/" class="block">
+          <span class="font-righteous text-4xl md:text-5xl font-bold tracking-tight">SOSC</span>
+        </a>
+        <p class="text-white/60 max-w-md text-lg leading-relaxed">
+          Sahyadri Open Source Community.<br />
+          Sahyadri College of Engineering and Management,<br /> 
+          Adyar, Mangalore - 575007 IN
+        </p>
+        <div class="flex flex-col space-y-2 text-white/80">
+           <a href="mailto:sosc@sahyadri.edu.in" class="hover:text-primary transition-colors">sosc@sahyadri.edu.in</a>
+           <span>+91 79941 34420</span>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 sm:gap-6">
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase">Follow us</h2>
-          <ul class="flex flex-col gap-4 font-medium">
-            <li>
-              <a
-                href="https://github.com/so-sc"
-                target="_blank"
-                class="font-light underline underline-offset-2">GitHub</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/sosc.sahyadri"
-                target="_blank"
-                class="font-light underline underline-offset-2">Instagram</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/sosc-sahyadri"
-                target="_blank"
-                class="font-light underline underline-offset-2">LinkedIn</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/sahyadri_osc"
-                target="_blank"
-                class="font-light underline underline-offset-2">X</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/channel/UCk8nlSMwUT-jhEtamMF-V-w"
-                target="_blank"
-                class="font-light underline underline-offset-2">YouTube</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase">Others</h2>
-          <ul class="flex flex-col gap-4 font-medium">
-            <li>
-              <a
-                href="https://www.sosc.org.in"
-                target="_blank"
-                class="font-light underline underline-offset-2">Website</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.sosc.org.in/guidelines"
-                target="_blank"
-                class="font-light underline underline-offset-2"
-                >Community Guidelines</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/so-sc/code-of-conduct"
-                target="_blank"
-                class="font-light underline underline-offset-2"
-                >Code of Conduct</a
-              >
-            </li>
-          </ul>
-        </div>
+      <div>
+        <h3 class="font-righteous text-xl mb-6 text-primary">FOLLOW US</h3>
+        <ul class="space-y-4">
+          <li><a href="https://github.com/so-sc" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">GitHub</a></li>
+          <li><a href="https://www.instagram.com/sosc.sahyadri" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/sosc-sahyadri" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">LinkedIn</a></li>
+          <li><a href="https://twitter.com/sahyadri_osc" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">X (Twitter)</a></li>
+          <li><a href="https://www.youtube.com/channel/UCk8nlSMwUT-jhEtamMF-V-w" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">YouTube</a></li>
+        </ul>
       </div>
+
+      <div>
+        <h3 class="font-righteous text-xl mb-6 text-primary">COMMUNITY</h3>
+        <ul class="space-y-4">
+           <li><a href="https://www.sosc.org.in" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Website</a></li>
+           <li><a href="/guidelines" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Guidelines</a></li>
+           <li><a href="https://github.com/so-sc/code-of-conduct" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Code of Conduct</a></li>
+           <li><a href="/team" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Team</a></li>
+        </ul>
+      </div>
+    
     </div>
 
-    <div class="flex items-center justify-center">
-      <span class="text-sm">
-        SOSC © {currentYear} All Rights Reserved.
-      </span>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
+      <p>&copy; {currentYear} SOSC. All Rights Reserved.</p>
+      <p class="font-righteous tracking-widest uppercase">Made with ❤️ in Mangalore</p>
     </div>
   </div>
 </footer>

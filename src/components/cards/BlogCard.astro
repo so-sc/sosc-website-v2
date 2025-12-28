@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Calendar, User } from "@lucide/astro";
 
 const {
   title,
@@ -34,7 +35,10 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   />
 
   <div class={`p-4 space-y-1`}>
-    <p class="text-muted-foreground text-sm">{formattedDate}</p>
+    <div class="text-muted-foreground text-sm flex items-center gap-2">
+      <Calendar size={16} />
+      <span>{formattedDate}</span>
+    </div>
 
     <h3
       class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-lg"}`}
@@ -42,7 +46,10 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       {title}
     </h3>
 
-    <p class="text-muted-foreground text-xs italic">By {author}</p>
+    <div class="text-muted-foreground text-xs italic flex items-center gap-2">
+      <User size={14} />
+      <span>{author}</span>
+    </div>
 
     {
       highlight && (

@@ -143,58 +143,12 @@
   }
 
   .prose {
-    & h1 {
-      font-size: 2.25rem; /* 36px */
-      line-height: 2.5rem;
-      font-weight: 800;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    & h2 {
-      font-size: 1.875rem; /* 30px */
-      line-height: 2.25rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    & h3 {
-      font-size: 1.5rem; /* 24px */
-      line-height: 2rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    & h4 {
-      font-size: 1.25rem; /* 20px */
-      line-height: 1.75rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    & h5 {
-      font-size: 1.125rem; /* 18px */
-      line-height: 1.75rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    & h6 {
-      font-size: 1rem; /* 16px */
-      line-height: 1.5rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Consistent spacing for paragraphs */
-    & p {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    
+    /* Reduce break tag spacing */
+    & br {
+      display: block;
+      content: "";
+      margin-top: 0.25rem;
     }
 
     /* Lists */
@@ -265,6 +219,13 @@
 
     & th, & td {
       padding: 0.5rem 0.75rem;
+    }
+
+    /* Images - no rounding */
+    & img {
+      border-radius: 0;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 

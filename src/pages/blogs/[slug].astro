@@ -60,7 +60,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           <Image
             src={cover}
             alt={title}
-            class="h-auto w-full rounded-xl object-cover shadow-md"
+            class="h-auto w-full object-cover"
             loading={"eager"}
             format="webp"
             quality={80}
@@ -75,3 +75,46 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </MarkdownLayout>
   </main>
 </Layout>
+
+<style>
+  /* Override prose styles for better heading spacing */
+  :global(.prose h1) {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose h2) {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose h4) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose h5) {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose h6) {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  :global(.prose p) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Hide duplicate H1 if title already shown in header */
+  :global(.prose > h1:first-child) {
+    display: none;
+  }
+</style>

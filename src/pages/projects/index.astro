@@ -1,0 +1,259 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import Cover from "@/assets/cover/blog.jpg";
+import { getCollection } from "astro:content";
+import slugify from "slugify";
+import { Icon } from "astro-icon/components";
+
+const projects = await getCollection("projects");
+
+const parsedProjects = projects
+  .map(({ data }) => ({
+    title: data.title,
+    description: data.description,
+    cover: data.cover,
+    techStack: data.techStack,
+    maintainers: data.maintainers,
+    status: data.status,
+    category: data.category,
+    tags: data.tags,
+    github: data.github,
+    community: data.community,
+    date: data.date,
+    link: slugify(data.title, { lower: true, strict: true }),
+  }))
+  .sort((a, b) => {
+    // Community projects first, then by date
+    if (a.community && !b.community) return -1;
+    if (!a.community && b.community) return 1;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
+// Extract unique values for filters
+const allCategories = [...new Set(parsedProjects.map((p) => p.category))];
+const allTechStack = [...new Set(parsedProjects.flatMap((p) => p.techStack))];
+const allStatuses = [...new Set(parsedProjects.map((p) => p.status))];
+
+const communityProjects = parsedProjects.filter((p) => p.community);
+const regularProjects = parsedProjects.filter((p) => !p.community);
+---
+
+<Layout>
+  <Hero
+    image={Cover}
+    title="Projects"
+    subtitle="Explore community projects and initiatives developed by our members."
+  />
+
+  <section
+    class="bg-background text-foreground mx-auto max-w-7xl space-y-8 px-4 py-16 md:px-8"
+  >
+    <!-- Filters Section -->
+    <div class="space-y-4">
+      <div class="flex flex-wrap items-center justify-end gap-4">
+        <!-- Category Filter -->
+        <div class="flex items-center gap-2">
+          <label for="category-filter" class="text-sm font-medium">Category:</label>
+          <select
+            id="category-filter"
+            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">All Categories</option>
+            {allCategories.map((category) => (
+              <option value={category}>{category}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Status Filter -->
+        <div class="flex items-center gap-2">
+          <label for="status-filter" class="text-sm font-medium">Status:</label>
+          <select
+            id="status-filter"
+            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">All Statuses</option>
+            {allStatuses.map((status) => (
+              <option value={status}>{status}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Tech Stack Filter -->
+        <div class="flex items-center gap-2">
+          <label for="tech-filter" class="text-sm font-medium">Tech Stack:</label>
+          <select
+            id="tech-filter"
+            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">All Technologies</option>
+            {allTechStack.map((tech) => (
+              <option value={tech}>{tech}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Clear Filters -->
+        <button
+          id="clear-filters"
+          class="text-sm text-primary hover:underline hidden"
+        >
+          Clear Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Community Projects Section -->
+    {communityProjects.length > 0 && (
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold">Community Projects</h2>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
+          {communityProjects.map((project) => (
+            <div
+              class="project-card"
+              data-category={project.category}
+              data-status={project.status}
+              data-tech={project.techStack.join(",")}
+            >
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Member Projects Grid -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold">Member Projects</h2>
+      <div id="projects-grid" class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
+        {regularProjects.map((project) => (
+          <div
+            class="project-card"
+            data-category={project.category}
+            data-status={project.status}
+            data-tech={project.techStack.join(",")}
+          >
+            <ProjectCard {...project} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-12">
+      <svg class="mx-auto h-12 w-12 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <h3 class="mt-4 text-lg font-semibold">No projects found</h3>
+      <p class="mt-2 text-muted-foreground">Try adjusting your filters to find what you're looking for.</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const categoryFilter = document.getElementById("category-filter") as HTMLSelectElement;
+  const statusFilter = document.getElementById("status-filter") as HTMLSelectElement;
+  const techFilter = document.getElementById("tech-filter") as HTMLSelectElement;
+  const clearFiltersBtn = document.getElementById("clear-filters") as HTMLButtonElement;
+  const emptyState = document.getElementById("empty-state") as HTMLDivElement;
+  const projectCards = document.querySelectorAll(".project-card") as NodeListOf<HTMLDivElement>;
+
+  function filterProjects() {
+    const category = categoryFilter.value;
+    const status = statusFilter.value;
+    const tech = techFilter.value;
+
+    let visibleProjects = 0;
+
+    projectCards.forEach((card) => {
+      const cardCategory = card.dataset.category || "";
+      const cardStatus = card.dataset.status || "";
+      const cardTech = card.dataset.tech || "";
+
+      const matchesCategory = !category || cardCategory === category;
+      const matchesStatus = !status || cardStatus === status;
+      const matchesTech = !tech || cardTech.split(",").includes(tech);
+
+      if (matchesCategory && matchesStatus && matchesTech) {
+        card.classList.remove("hidden");
+        visibleProjects++;
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+    
+    // Show/hide empty state
+    if (visibleProjects === 0) {
+      emptyState.classList.remove("hidden");
+    } else {
+      emptyState.classList.add("hidden");
+    }
+
+    // Show/hide clear filters button
+    if (category || status || tech) {
+      clearFiltersBtn.classList.remove("hidden");
+    } else {
+      clearFiltersBtn.classList.add("hidden");
+    }
+  }
+
+  function clearFilters() {
+    categoryFilter.value = "";
+    statusFilter.value = "";
+    techFilter.value = "";
+    filterProjects();
+  }
+
+  categoryFilter.addEventListener("change", filterProjects);
+  statusFilter.addEventListener("change", filterProjects);
+  techFilter.addEventListener("change", filterProjects);
+  clearFiltersBtn.addEventListener("click", clearFilters);
+</script>
+
+<style>
+  /* Mobile: horizontal separator between cards */
+  .projects-grid-separators > :global(.project-card) {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    padding-bottom: 1.5rem;
+  }
+  .projects-grid-separators > :global(.project-card:last-child) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Tablet (2 columns): vertical separator */
+  @media (min-width: 640px) {
+    .projects-grid-separators > :global(.project-card) {
+      border-bottom: none;
+      padding-bottom: 0;
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    /* Remove right border on every 2nd item (last in row) and last item */
+    .projects-grid-separators > :global(.project-card:nth-child(2n)),
+    .projects-grid-separators > :global(.project-card:last-child) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  /* Desktop (3 columns): vertical separator */
+  @media (min-width: 1024px) {
+    .projects-grid-separators > :global(.project-card) {
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    .projects-grid-separators > :global(.project-card:nth-child(2n)) {
+      border-right: 1px solid rgba(128, 128, 128, 0.15);
+      padding-right: 1.5rem;
+    }
+    /* Remove right border on every 3rd item (last in row) and last item */
+    .projects-grid-separators > :global(.project-card:nth-child(3n)),
+    .projects-grid-separators > :global(.project-card:last-child) {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+</style>

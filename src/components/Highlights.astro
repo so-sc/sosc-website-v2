@@ -13,19 +13,59 @@ interface EventItem {
 const events: EventItem[] = [
   {
     title: "DevHost 2025",
-    category: "Flagship",
-    date: "May 2024",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
+    category: "Flagship event",
+    date: "Nov 2025",
+    image: "/highlights/devhost.jpeg",
     shortDesc: "The annual convergence of code, culture, and community. A flagship gathering of minds.",
-    fullDesc: "DevHost is the flagship event of SOSC. It acts as a bridge between students and the industry. For two days, we host multiple speakers from top tech companies, conduct hands-on workshops on cutting-edge stacks, and run networking sessions that have jumpstarted countless careers."
+    fullDesc: "Devhost, the flagship event is a remarkable tech convergence, is set to be an exhilarating experience with an exciting mix of technical and non-technical events. It seeks to equip participants with knowledge and skills, while encouraging curiosity and fostering innovation. With a variety of tech and non-tech battles and events featuring dev talks and workshops led by industry experts"
   },
   {
-    title: "HackHarbor",
-    category: "SOMETHING? NO IDEA",
+    title: "HackHarbor 3.0",
+    category: "Mentoring",
     date: "August 2025",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200",
+    image: "/highlights/hackharbor.jpeg",
     shortDesc: "A peer-to-peer learning program helping first-year students transition smoothly into their second year.",
     fullDesc: "HackHarbor is an SOSC-led peer-to-peer learning initiative created for first-year students preparing to enter their second year. The program focuses on strengthening fundamentals, exposing participants to real development workflows, and encouraging collaborative learning through guided sessions led by senior students. HackHarbor creates a supportive environment where juniors learn by building, asking questions freely, and growing alongside their peers."
+  },
+  {
+    title: "SOSC Podcast",
+    category: "Media",
+    date: "",
+    image: "/highlights/sosc-podcast.jpg",
+    shortDesc: "Dive into the stories behind SOSC’s journey, challenges, and discussions with industry experts",
+    fullDesc: "The SOSC Podcast brings listeners closer to the minds behind the community. Each episode features insightful conversations with founding members and industry experts, exploring technical journeys, leadership lessons, and the evolution of open-source initiatives. It’s a platform to understand how innovation, mentorship, and collaboration drive SOSC’s impact in the tech ecosystem."
+  },
+  {
+    title: "Tech Week",
+    category: "Technical Event",
+    date: "March-April 2025",
+    image: "/highlights/techweek.jpeg",
+    shortDesc: "A week of sessions on trending tech topics and practical workflows.",
+    fullDesc: "Tech Week, featured a series of sessions led by community members on topics like Serverless Unleashed, Tux101: Linux for Everyone, GCP Accelerate, Self-Hosting Essentials and GOFR workshop. Attendees gained hands-on experience, practical insights, and guidance on modern development practices. The event fostered collaboration, curiosity, and skill-building, highlighting SOSC’s role in promoting tech education and empowering students with open-source knowledge."
+  },
+  {
+    title: "SOSC at IndiaFOSS",
+    category: "Outreach",
+    date: "Jan 2026",
+    image: "/highlights/indiafoss.jpeg",
+    shortDesc: "Showcasing SOSC at IndiaFOSS, engaging with attendees, and sharing open-source stories.",
+    fullDesc: "SOSC participated in IndiaFOSS with an interactive booth, connecting with tech enthusiasts, students, and professionals. The team shared insights about community-driven projects, open-source initiatives, and ongoing programs, answering questions and inspiring attendees to contribute and collaborate. It was an opportunity to showcase SOSC’s impact, exchange ideas, and strengthen the community’s presence in the larger tech ecosystem."
+  },
+  {
+    title: "Go and GoFr Workshop",
+    category: "Workshop",
+    date: "Apr 2025",
+    image: "/highlights/go-gofr.jpeg",
+    shortDesc: "Hands-on Go programming workshop by the GoFr team during Tech Week.",
+    fullDesc: "The Go and GoFr Workshop, conducted by the GoFr team during SOSC’s Tech Week, introduced participants to Go programming fundamentals and practical applications. Attendees engaged in interactive sessions, coding exercises, and real-world problem solving, gaining insights into efficient development practices and modern software workflows. The workshop encouraged collaboration, experimentation, and skill-building for budding developers."
+  },
+  {
+    title: "DevHack 2025",
+    category: "Hackathon",
+    date: "Nov 2025",
+    image: "/highlights/DevHackFinal.png",
+    shortDesc: "A 36-hour hackathon during DevHost 2025 with expert mentorship and guidance.",
+    fullDesc: "DevHack 2025, a 36-hour hackathon held as part of DevHost, brought together students to build innovative projects. SOSC members organized the event with mentors, including professionals from EG, providing guidance, feedback, and technical insights. Participants collaborated intensely, learned from experts, and showcased their solutions, making it a platform for creativity, skill-building, and community-driven innovation."
   }
 ];
 ---
@@ -69,51 +109,76 @@ const events: EventItem[] = [
 
   <!-- Modal -->
   <dialog 
-    id="flat-modal" 
-    class="m-auto w-[95%] max-w-5xl max-h-[85vh] bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm md:w-[90%] overflow-hidden z-50"
-  >
-    <div class="flex h-full flex-col md:flex-row overflow-y-auto md:overflow-hidden">
-      <!-- Image Side -->
-      <div class="relative h-48 w-full shrink-0 md:h-auto md:w-1/2">
-        <img id="modal-img" src="" alt="" class="h-full w-full object-cover" />
-        <!-- Red Accent Tag -->
-        <span id="modal-category" class="absolute left-0 top-0 bg-red-600 px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white shadow-sm">
+  id="flat-modal"
+  class="m-auto w-[95%] max-w-6xl bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm z-50"
+>
+  <!-- Modal Container -->
+  <div class="flex max-h-[85vh] flex-col md:flex-row overflow-hidden">
+    
+    <!-- Image Panel -->
+    <div class="relative w-full md:w-1/2 bg-gray-100">
+      <div class="relative h-56 md:h-full">
+        <img
+          id="modal-img"
+          src=""
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <!-- Category Tag -->
+        <span
+          id="modal-category"
+          class="absolute left-0 top-0 bg-red-600 px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white"
+        >
           Category
         </span>
       </div>
+    </div>
 
-      <div class="relative flex flex-1 flex-col p-6 md:p-12">
-        <!-- Close Button -->
-        <button 
-          id="close-modal" 
-          class="absolute right-0 top-0 z-10 bg-gray-100 p-3 md:p-4 text-gray-900 transition-colors hover:bg-red-600 hover:text-white"
-          aria-label="Close"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <!-- Content Panel -->
+    <div class="relative flex w-full md:w-1/2 flex-col">
+      
+      <!-- Close Button -->
+      <button
+        id="close-modal"
+        class="absolute right-4 top-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors hover:bg-red-600 hover:text-white"
+        aria-label="Close"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
 
-        <!-- Meta -->
-        <div class="mb-4 mt-2 flex items-center gap-4 border-b border-gray-100 pb-4 md:mt-0 md:mb-6 md:pb-6">
-          <span id="modal-date" class="font-mono text-[10px] md:text-xs font-bold text-gray-400">DATE</span>
-          <span class="h-px w-6 md:w-8 bg-primary"></span>
+      <!-- Static Header -->
+      <div class="shrink-0 border-b border-gray-100 px-6 pb-6 pt-10 md:px-12">
+        <div class="mb-4 flex items-center gap-4">
+          <span id="modal-date" class="font-mono text-[10px] md:text-xs font-bold text-gray-400">
+            DATE
+          </span>
+          <span class="h-px w-8 bg-primary"></span>
         </div>
 
-        <!-- Title -->
-        <h3 id="modal-title" class="mb-4 md:mb-8 text-2xl md:text-6xl font-black uppercase leading-none text-gray-900">
+        <h3
+          id="modal-title"
+          class="text-2xl md:text-5xl font-black uppercase leading-tight text-gray-900"
+        >
           Title
         </h3>
+      </div>
 
-        <!-- Scrollable Desc -->
-        <div class="flex-1 overflow-y-auto pr-2 md:pr-4">
-          <p id="modal-desc" class="text-sm md:text-lg font-light leading-relaxed text-gray-600 pb-8 md:pb-0">
-            Description text...
-          </p>
-        </div>
+      <!-- Scrollable Body -->
+      <div class="flex-1 overflow-y-auto px-6 py-6 md:px-12 md:py-8">
+        <p
+          id="modal-desc"
+          class="whitespace-pre-line text-sm md:text-lg font-light leading-relaxed text-gray-600"
+        >
+          Description text...
+        </p>
       </div>
     </div>
-  </dialog>
+  </div>
+</dialog>
+
 </section>
 
 <style>

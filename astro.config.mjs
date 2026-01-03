@@ -9,6 +9,8 @@ import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.sosc.org.in",
@@ -18,5 +20,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), mdx(), sitemap({})],
+  integrations: [react(), mdx(), sitemap({}), icon()],
 });

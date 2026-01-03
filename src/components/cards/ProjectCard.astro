@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  cover?: ImageMetadata;
+  techStack: string[];
+  maintainers: string[];
+  status: "active" | "maintained" | "archived" | "completed" | "in-progress";
+  category: string;
+  tags?: string[];
+  github?: string;
+  link: string;
+  community?: boolean;
+}
+
+const {
+  title,
+  description,
+  cover,
+  techStack,
+  maintainers,
+  status,
+  category,
+  tags = [],
+  github,
+  link,
+  community = false,
+} = Astro.props;
+
+const statusColors: Record<string, string> = {
+  active: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+  maintained: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+  archived: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
+  completed: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
+  "in-progress": "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
+};
+---
+
+<a
+  class={`bg-card group overflow-hidden cursor-pointer transition flex flex-col`}
+  href={`/projects/${link}`}
+>
+  <!-- Cover Image with Title Overlay -->
+  <div class="relative aspect-[16/9] bg-muted rounded-sm overflow-hidden">
+    {
+      cover ? (
+        <Image
+          src={cover}
+          alt={title}
+          class="w-full h-full object-cover"
+          width={1280}
+          height={720}
+          format="webp"
+          loading="lazy"
+          quality={80}
+        />
+      ) : (
+        <div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+          <span class="text-2xl font-semibold text-primary/60 text-center px-4">
+            {title}
+          </span>
+        </div>
+      )
+    }
+    <!-- Status Badge -->
+    <span
+      class={`absolute bottom-3 right-3 px-2 py-0 text-xs font-medium rounded-sm ${statusColors[status]}`}
+    >
+      {status}
+    </span>
+  </div>
+
+  <!-- Content -->
+  <div class="py-4 pr-0 pl-0 space-y-3 flex-1 flex flex-col">
+    <div class="flex items-center justify-between">
+      <h3
+        class={`font-semibold transition-colors group-hover:text-primary`}
+      >
+        {title}
+      </h3>
+      <div class="flex -space-x-2">
+        {
+          maintainers.slice(0, 3).map((maintainer) => (
+            <img
+              src={`https://github.com/${maintainer}.png`}
+              alt={maintainer}
+              class="w-6 h-6 rounded-full border-2 border-card"
+              onerror="this.onerror=null; this.src='/github_avatar.svg';"
+            />
+          ))
+        }
+        {
+          maintainers.length > 3 && (
+            <span class="w-6 h-6 rounded-sm border-2 border-card bg-muted flex items-center justify-center text-[10px] text-muted-foreground">
+              +{maintainers.length - 3}
+            </span>
+          )
+        }
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-1">
+      {
+        [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
+          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+            {tag}
+          </span>
+        ))
+      }
+      {
+        techStack.length + (tags?.length || 0) > 7 && (
+          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+            +{techStack.length + (tags?.length || 0) - 7}
+          </span>
+        )
+      }
+    </div>
+
+    <!-- Description -->
+    <p
+      class={`text-muted-foreground flex-1`}
+    >
+      {description}
+    </p>
+
+    
+  </div>
+</a>

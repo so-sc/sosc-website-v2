@@ -1,0 +1,233 @@
+---
+import { Search, ExternalLink } from "lucide-react";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    resources: CollectionEntry<"resources">[];
+}
+
+const { resources } = Astro.props;
+const CATEGORIES = [
+    "All",
+    "Development",
+    "Design",
+    "DevOps",
+    "AI/ML",
+    "Open Source",
+    "Misc",
+];
+---
+
+<div class="mx-auto w-full max-w-7xl px-4 py-8 font-sans">
+    <div
+        class="mb-12 flex flex-col items-center justify-between gap-4 md:flex-row"
+    >
+        <div class="relative w-full md:max-w-md">
+            <Search
+                className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-zinc-500"
+            />
+            <input
+                type="text"
+                id="resource-search"
+                placeholder="Search resources..."
+                class="w-full rounded-none border-b border-zinc-200 bg-transparent py-2 pr-4 pl-10 text-sm transition-colors placeholder:text-zinc-500 focus:border-zinc-500 focus:outline-none dark:border-zinc-800"
+            />
+        </div>
+
+        <div
+            class="no-scrollbar flex w-full gap-2 overflow-x-auto pb-2 md:w-auto"
+            id="category-filters"
+        >
+            {
+                CATEGORIES.map((cat) => (
+                    <button
+                        data-category={cat}
+                        class:list={[
+                            "category-btn px-3 py-1 text-sm whitespace-nowrap transition-colors",
+                            cat === "All"
+                                ? "active font-medium text-black dark:text-white"
+                                : "text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300",
+                        ]}
+                    >
+                        {cat}
+                    </button>
+                ))
+            }
+        </div>
+    </div>
+
+    <div class="flex flex-col" id="resource-list">
+        <div
+            class="hidden grid-cols-12 gap-4 border-b border-zinc-100 pb-4 font-mono text-xs tracking-wider text-zinc-400 uppercase md:grid dark:border-zinc-800"
+        >
+            <div class="col-span-4">Resource</div>
+            <div class="col-span-3">Description</div>
+            <div class="col-span-2">Category</div>
+            <div class="col-span-1">Date</div>
+            <div class="col-span-1">Tags</div>
+            <div class="col-span-1 text-right">Link</div>
+        </div>
+
+        {
+            resources.map((resource) => (
+                <a
+                    href={resource.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group resource-item grid grid-cols-1 items-start gap-4 border-b border-zinc-100 py-6 transition-colors hover:bg-zinc-50/50 md:grid-cols-12 dark:border-zinc-800 dark:hover:bg-zinc-900/50"
+                    data-title={resource.data.title.toLowerCase()}
+                    data-desc={resource.data.description.toLowerCase()}
+                    data-category={resource.data.category}
+                    data-tags={
+                        resource.data.tags?.join(" ").toLowerCase() || ""
+                    }
+                >
+                    <div class="col-span-4">
+                        <h3 class="text-base font-medium text-zinc-900 transition-colors group-hover:text-blue-600 dark:text-zinc-100 dark:group-hover:text-blue-400">
+                            {resource.data.title}
+                        </h3>
+                        <div class="mt-2 line-clamp-2 text-sm text-zinc-500 md:hidden">
+                            {resource.data.description}
+                        </div>
+                        <div class="mt-2 flex flex-wrap items-center gap-2 md:mt-1">
+                            <span class="rounded-sm border border-zinc-200 px-1.5 py-0.5 font-mono text-[10px] text-zinc-500 uppercase dark:border-zinc-700">
+                                {resource.data.type}
+                            </span>
+                            {/* Mobile only meta */}
+                            <span class="text-xs text-zinc-400 md:hidden">
+                                {resource.data.date
+                                    ? new Date(
+                                          resource.data.date,
+                                      ).toLocaleDateString("en-US", {
+                                          month: "short",
+                                          day: "numeric",
+                                          year: "numeric",
+                                      })
+                                    : ""}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-3 line-clamp-2 hidden pr-4 text-sm text-zinc-500 md:block">
+                        {resource.data.description}
+                    </div>
+
+                    <div class="col-span-2 hidden items-center md:flex">
+                        <span class="text-sm text-zinc-600 dark:text-zinc-400">
+                            {resource.data.category}
+                        </span>
+                    </div>
+
+                    <div class="col-span-1 hidden items-center md:flex">
+                        <span class="font-mono text-xs text-zinc-500">
+                            {resource.data.date
+                                ? new Date(
+                                      resource.data.date,
+                                  ).toLocaleDateString("en-US", {
+                                      month: "short",
+                                      day: "numeric",
+                                  })
+                                : "-"}
+                        </span>
+                    </div>
+
+                    <div class="col-span-1 hidden flex-wrap content-start gap-1 md:flex">
+                        {resource.data.tags?.slice(0, 2).map((tag: string) => (
+                            <span class="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-400 dark:bg-zinc-800/50">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div class="col-span-1 hidden items-center justify-end md:flex">
+                        <ExternalLink className="w-4 h-4 text-zinc-300 group-hover:text-zinc-500 transition-colors" />
+                    </div>
+                </a>
+            ))
+        }
+
+        <div id="no-results" class="hidden py-20 text-center text-zinc-400">
+            No resources found matching your criteria.
+        </div>
+    </div>
+</div>
+
+<script>
+    function setupBoard() {
+        const searchInput = document.getElementById(
+            "resource-search",
+        ) as HTMLInputElement;
+        const items = document.querySelectorAll(".resource-item");
+        const categoryBtns = document.querySelectorAll(".category-btn");
+        const noResults = document.getElementById("no-results");
+
+        let currentSearch = "";
+        let currentCategory = "All";
+
+        function filterItems() {
+            let visibleCount = 0;
+
+            items.forEach((item: Element) => {
+                const el = item as HTMLElement;
+                const title = el.dataset.title || "";
+                const desc = el.dataset.desc || "";
+                const tags = el.dataset.tags || "";
+                const category = el.dataset.category || "";
+
+                const matchesSearch =
+                    title.includes(currentSearch) ||
+                    desc.includes(currentSearch) ||
+                    tags.includes(currentSearch);
+
+                const matchesCategory =
+                    currentCategory === "All" || category === currentCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    el.style.display = "grid";
+                    visibleCount++;
+                } else {
+                    el.style.display = "none";
+                }
+            });
+
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 ? "block" : "none";
+            }
+        }
+
+        searchInput?.addEventListener("input", (e) => {
+            currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
+            filterItems();
+        });
+
+        categoryBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update active state
+                categoryBtns.forEach((b) => {
+                    b.classList.remove(
+                        "text-black",
+                        "dark:text-white",
+                        "font-medium",
+                        "active",
+                    );
+                    b.classList.add("text-zinc-500");
+                });
+                btn.classList.remove("text-zinc-500");
+                btn.classList.add(
+                    "text-black",
+                    "dark:text-white",
+                    "font-medium",
+                    "active",
+                );
+
+                currentCategory =
+                    (btn as HTMLElement).dataset.category || "All";
+                filterItems();
+            });
+        });
+    }
+
+    // Run on load and after view transitions
+    setupBoard();
+    document.addEventListener("astro:page-load", setupBoard);
+</script>

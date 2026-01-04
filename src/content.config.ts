@@ -55,8 +55,33 @@ const projects = defineCollection({
     }),
 });
 
+export const resources = defineCollection({
+  loader: glob({
+    pattern: "**/*.json",
+    base: "./src/content/resources",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    type: z.enum(["guide", "article", "video", "roadmap", "tools", "repo", "misc"]),
+    category: z.enum([
+      "Development",
+      "Design",
+      "DevOps",
+      "AI/ML",
+      "Open Source",
+      "Misc",
+    ]),
+    tags: z.array(z.string()).optional(),
+    link: z.string().url(),
+    contributor: z.string().optional(),
+    date: z.string().optional(), // Using string for simple date format in JSON
+  }),
+});
+
 export const collections = {
   events,
   blogs,
   projects,
+  resources,
 };

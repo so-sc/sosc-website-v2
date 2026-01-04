@@ -27,5 +27,6 @@ const { image, title, subtitle } = Astro.props;
   <div class="relative z-10 px-4 text-center">
     <h1 class="mb-4 text-4xl font-bold md:text-5xl">{title}</h1>
     {subtitle && <p class="text-lg">{subtitle}</p>}
+    <slot />
   </div>
 </section>

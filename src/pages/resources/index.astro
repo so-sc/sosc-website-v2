@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ResourceBoard from "../../components/resources/ResourceBoard.astro";
+import { Button } from "@/components/ui/button";
+import Hero from "@/components/Hero.astro";
+import Cover from "@/assets/cover/blog.jpg"; // Using blog cover as a placeholder/shared cover
+
+const resources = await getCollection("resources");
+
+// Sort resources by date (newest first) but can be changed based on need
+const sortedResources = resources.sort((a, b) => {
+    if (!a.data.date || !b.data.date) return 0;
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+---
+
+<Layout>
+    <div class="flex min-h-screen flex-col">
+        <Hero
+            image={Cover}
+            title="Community Resources"
+            subtitle="A curated collection of guides, tools, and references contributed by the SOSC community. Find what you need or share what you know."
+        >
+            <div class="mt-6 flex justify-center gap-4">
+                <Button className="rounded-full" variant="secondary">
+                    <a
+                        href="https://github.com/so-sc/sosc-website-v2/tree/main/src/content/resources"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Submit a Resource
+                    </a>
+                </Button>
+            </div>
+        </Hero>
+
+        <main class="bg-background relative z-0 flex-1">
+            <div class="bg-background text-foreground py-8">
+                <ResourceBoard resources={sortedResources} />
+            </div>
+        </main>
+    </div>
+</Layout>

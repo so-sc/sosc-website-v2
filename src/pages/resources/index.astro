@@ -3,8 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ResourceBoard from "../../components/resources/ResourceBoard.astro";
 import { Button } from "@/components/ui/button";
-import Hero from "@/components/Hero.astro";
-import Cover from "@/assets/cover/blog.jpg"; // Using blog cover as a placeholder/shared cover
 
 const resources = await getCollection("resources");
 
@@ -17,23 +15,32 @@ const sortedResources = resources.sort((a, b) => {
 
 <Layout>
     <div class="flex min-h-screen flex-col">
-        <Hero
-            image={Cover}
-            title="Community Resources"
-            subtitle="A curated collection of guides, tools, and references contributed by the SOSC community. Find what you need or share what you know."
+        <section
+            class="relative flex min-h-[40vh] items-center justify-center overflow-hidden pt-24 md:min-h-[50vh] md:pt-0"
         >
-            <div class="mt-6 flex justify-center gap-4">
-                <Button className="rounded-full" variant="secondary">
-                    <a
-                        href="https://github.com/so-sc/sosc-website-v2/tree/main/src/content/resources"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Submit a Resource
-                    </a>
-                </Button>
+            <div class="absolute inset-0"></div>
+            <div class="relative z-10 px-4 text-center text-zinc-900">
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+                    Community Resources
+                </h1>
+                <p class="text-lg">
+                    A curated collection of guides, tools, and references
+                    contributed by the SOSC community. Find what you need or
+                    share what you know.
+                </p>
+                <div class="mt-6 flex justify-center gap-4">
+                    <Button className="rounded-full" variant="secondary">
+                        <a
+                            href="https://github.com/so-sc/sosc-website-v2/tree/main/src/content/resources"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Submit a Resource
+                        </a>
+                    </Button>
+                </div>
             </div>
-        </Hero>
+        </section>
 
         <main class="bg-background relative z-0 flex-1">
             <div class="bg-background text-foreground py-8">

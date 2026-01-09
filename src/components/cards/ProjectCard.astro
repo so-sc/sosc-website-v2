@@ -87,6 +87,8 @@ const statusColors: Record<string, string> = {
               src={`https://github.com/${maintainer}.png`}
               alt={maintainer}
               class="w-6 h-6 rounded-full border-2 border-card"
+              loading="lazy"
+              decoding="async"
               onerror="this.onerror=null; this.src='/github_avatar.svg';"
             />
           ))

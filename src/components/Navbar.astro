@@ -7,9 +7,10 @@ import SOSC from "@/assets/sosc_logo.svg";
 <nav class="text-foreground fixed top-0 z-50 w-full" id="main-navbar">
   <div class="flex h-14 w-full items-center justify-between px-4 md:px-8">
     <div class="z-50 relative transition-opacity duration-300 font-bold text-xl" id="nav-logo">
-      <Image src={SOSC} alt="SOSC Logo" class="h-6 w-fit" loading="eager" />
+      <a href="/" aria-label="Go to home">
+        <Image src={SOSC} alt="SOSC Logo" class="h-6 w-fit" loading="eager" />
+      </a>
     </div>
-    
     <!-- Fixed Toggle Button -->
     <button id="menu-toggle" class="cursor-pointer z-[100] relative" aria-label="Toggle menu">
       <Menu id="menu-icon" className="w-6 h-6 block transition-transform duration-300" />
@@ -59,6 +60,18 @@ import SOSC from "@/assets/sosc_logo.svg";
             <a href="/team" class="horizontal-link" data-index="4">
               <span class="link-number">04</span>
               <span class="link-text">TEAM</span>
+            </a>
+          </div>
+          <div class="embla__slide">
+            <a href="/resources" class="horizontal-link" data-index="5">
+              <span class="link-number">05</span>
+              <span class="link-text">RESOURCES</span>
+            </a>
+          </div>
+          <div class="embla__slide">
+            <a href="/projects" class="horizontal-link" data-index="6">
+              <span class="link-number">06</span>
+              <span class="link-text">PROJECTS</span>
             </a>
           </div>
         </div>

@@ -61,7 +61,7 @@ const rowPadding = "20px";
             - Modify width/height here to change image size
           -->
           <div class="row-image-container">
-             <img src={member.image} alt={member.name} />
+             <img src={member.image} alt={member.name} loading="lazy" decoding="async" />
           </div>
 
           <div class="name-column">

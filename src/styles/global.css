@@ -101,6 +101,7 @@
   --foreground: oklch(1 0 0);
 
   --primary: oklch(78.419% 0.23837 145.933);
+  --primary: oklch(78.419% 0.23837 145.933);
   --primary-foreground: oklch(1 0 0);
 
   --card: oklch(0.2 0 0);
@@ -134,7 +135,8 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklch, var(--color-ring), transparent 50%);
   }
   html {
     scrollbar-gutter: stable;

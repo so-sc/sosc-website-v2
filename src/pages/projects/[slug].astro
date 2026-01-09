@@ -1,0 +1,175 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import slugify from "slugify";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: slugify(project.data.title, { lower: true, strict: true }) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { 
+  title, 
+  date, 
+  cover, 
+  description, 
+  techStack, 
+  maintainers, 
+  status, 
+  category, 
+  tags = [], 
+  github, 
+  demo, 
+  documentation 
+} = project.data;
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const statusColors: Record<string, string> = {
+  active: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+  maintained: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+  archived: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
+  completed: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
+  "in-progress": "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
+};
+---
+
+<Layout>
+  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
+    <!-- Project Header -->
+    <div class="space-y-6">
+      <!-- Category and Status -->
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-primary text-sm font-medium">{category}</span>
+        <span class={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[status]}`}>
+          {status}
+        </span>
+      </div>
+
+      <h1 class="text-4xl font-bold">{title}</h1>
+      <p class="text-muted-foreground text-lg">{description}</p>
+
+      <!-- Tech Stack Tags -->
+      <div class="flex flex-wrap gap-2">
+        {techStack.map((tech) => (
+          <span class="px-3 py-1 text-sm bg-muted text-muted-foreground rounded-md">
+            {tech}
+          </span>
+        ))}
+        {tags.map((tag) => (
+          <span class="px-3 py-1 text-sm bg-primary/10 text-primary rounded-md">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap items-center gap-4">
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Icon name="mdi:github" class="w-5 h-5" />
+            GitHub Repository
+          </a>
+        )}
+        {demo && (
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Icon name="mdi:open-in-new" class="w-5 h-5" />
+            Live Demo
+          </a>
+        )}
+        {documentation && (
+          <a
+            href={documentation}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Icon name="mdi:file-document" class="w-5 h-5" />
+            Documentation
+          </a>
+        )}
+      </div>
+
+      <!-- Maintainers -->
+      <div class="flex items-center gap-4 pt-4 border-t border-border">
+        <span class="text-sm font-medium">Maintainers:</span>
+        <div class="flex flex-wrap items-center gap-3">
+          {maintainers.map((maintainer) => (
+            <a
+              href={`https://github.com/${maintainer}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 group"
+            >
+              <img
+                src={`https://github.com/${maintainer}.png`}
+                alt={maintainer}
+                class="w-8 h-8 rounded-full border-2 border-card"
+                onerror="this.onerror=null; this.src='/github_avatar.svg';"
+              />
+              <span class="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                @{maintainer}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <p class="text-sm text-muted-foreground">Last updated: {formattedDate}</p>
+
+      <div class="border-primary my-8 w-20 rounded-2xl border-4 border-b"></div>
+
+      <!-- Project Cover -->
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt={title}
+            class="h-auto w-full rounded-xl object-cover shadow-md"
+            loading={"eager"}
+            format="webp"
+            quality={80}
+          />
+        )
+      }
+    </div>
+
+    <!-- Project Markdown Content -->
+    <MarkdownLayout>
+      <Content />
+    </MarkdownLayout>
+
+    <!-- Back to Projects Link -->
+    <div class="pt-8 border-t border-border">
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 text-primary hover:underline"
+      >
+        <Icon name="mdi:chevron-left" class="w-4 h-4" />
+        Back to all projects
+      </a>
+    </div>
+  </main>
+</Layout>

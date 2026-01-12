@@ -4,134 +4,187 @@ import HeroImg from "../../assets/sosc_hero.svg";
 ---
 
 <div id="sticky-container" class="relative h-[250vh] w-full bg-white">
-  <div class="sticky top-0 h-screen w-full overflow-hidden">
-    <div
-      id="base-grid"
-      class="absolute inset-0 opacity-10"
-      style="
-        background-size: 50px 50px;
-        background-image:
-          linear-gradient(to right, #000 1px, transparent 1px),
-          linear-gradient(to bottom, #000 1px, transparent 1px);
-        mask-image: radial-gradient(ellipse 90% 50% at center, transparent 30%, black 100%);
-      "
-    >
-    </div>
-
-    <div id="grid-flash-container" class="pointer-events-none absolute inset-0">
-    </div>
-  </div>
-
   <section
     id="hero-section"
-    class="sticky top-0 -mt-[100vh] flex h-screen w-full flex-col items-center justify-center transition-all duration-100"
+    class="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
   >
     <div
-      class="pointer-events-none absolute -z-10 flex h-full w-full items-center justify-center select-none"
-      style={{ scale: "clamp(0.35, calc(100vw / 1500px), 1)" }}
+      class="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+      style={{ transform: "scale(clamp(0.35, calc(100vw / 1500px), 1))" }}
     >
       <Image
         src={HeroImg}
         alt="HeroImage"
         width={733}
         height={202}
-        class="absolute max-w-none shrink-0 top-1/4"
+        class="absolute top-1/4 max-w-none shrink-0"
       />
+    </div>
+
+    <div
+      id="hero-text"
+      class="pointer-events-none absolute inset-0 z-50 flex items-center justify-center opacity-0 select-none"
+      style={{ transform: "scale(clamp(0.25, calc(100vw / 1500px), 1))" }}
+    >
+      <h1 class="text-foreground absolute z-10 text-[82px] whitespace-nowrap">
+        MAY THE <span class="font-bold text-white">SOURCE</span> BE WITH YOU
+      </h1>
+    </div>
+
+    <div
+      id="grid-flash-container"
+      class="pointer-events-none absolute inset-0 z-10"
+    >
     </div>
   </section>
 </div>
 
 <script>
-  const container = document.getElementById("grid-flash-container");
-  const baseGrid = document.getElementById("base-grid");
+  function init() {
+    const container = document.getElementById("grid-flash-container");
+    const stickyContainer = document.getElementById("sticky-container");
+    const heroText = document.getElementById("hero-text");
 
-  // --- CONFIGURATION ---
-  const THEME_COLOR = "#3ce56e";
+    if (!container || !stickyContainer) return;
 
-  let GRID_SIZE = 50;
-  let offsetX = 0;
-  let offsetY = 0;
+    const THEME_COLOR = "#3ce56e";
+    let BLOCK_SIZE = 50;
 
-  function syncGrid() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    GRID_SIZE = w < 768 ? 40 : 50;
-
-    offsetX = (w % GRID_SIZE) / 2;
-    offsetY = (h % GRID_SIZE) / 2;
-
-    if (baseGrid) {
-      baseGrid.style.backgroundSize = `${GRID_SIZE}px ${GRID_SIZE}px`;
-      baseGrid.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
-    }
-    renderStaticFloor();
-  }
-
-  function renderStaticFloor() {
-    if (!container) return;
-    container.innerHTML = ""; // Clear existing blocks
-
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const cols = Math.floor(w / GRID_SIZE);
-    const rows = Math.floor(h / GRID_SIZE);
-
-    // 1. Render TWO SOLID ROWS (including partial edges)
-    // Targeting the very bottom row (overflow) and the one above it
-    for (let r = rows; r >= rows - 1; r--) {
-      for (let c = -1; c <= cols; c++) {
-        createPixel(c, r, THEME_COLOR, 0.9);
-      }
+    interface Block {
+      el: HTMLDivElement;
+      r: number;
+      seed: number;
+      roughness: number;
     }
 
-    // 2. Render the SMOOTH FRAGMENTED PATTERN
-    // Reduced height: now goes up 5 rows from the solid base (rows-2 to rows-6)
-    for (let r = rows - 2; r >= rows - 6; r--) {
-      const distFromSolid = rows - 2 - r;
+    let blocks: Block[] = [];
 
-      // Density starts very high (0.95) so there are no "hidden blocks" (holes) near the bottom
-      const density = 0.95 - distFromSolid * 0.22;
+    function initGrid() {
+      if (!container) return;
+      container.innerHTML = "";
+      blocks = [];
 
-      for (let c = -1; c <= cols; c++) {
-        if (Math.random() < density) {
-          // Opacity fades out linearly as we go up
-          const op = 0.8 - distFromSolid * 0.15;
-          createPixel(c, r, THEME_COLOR, op);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      // Responsive block sizing
+      BLOCK_SIZE = w < 768 ? 40 : 50;
+
+      const cols = Math.ceil(w / BLOCK_SIZE);
+      const rows = Math.ceil(h / BLOCK_SIZE);
+
+      // Calculate offsets to center the grid of blocks
+      const offsetX = (w % BLOCK_SIZE) / 2;
+      const offsetY = (h % BLOCK_SIZE) / 2;
+
+      for (let r = -1; r <= rows; r++) {
+        for (let c = -1; c <= cols; c++) {
+          const pixel = document.createElement("div");
+          pixel.className = "flash-block";
+
+          // We add +1px to width/height to ensure no sub-pixel gaps (white lines)
+          pixel.style.width = `${BLOCK_SIZE + 1}px`;
+          pixel.style.height = `${BLOCK_SIZE + 1}px`;
+          pixel.style.left = `${offsetX + c * BLOCK_SIZE}px`;
+          pixel.style.top = `${offsetY + r * BLOCK_SIZE}px`;
+          pixel.style.backgroundColor = THEME_COLOR;
+
+          container.appendChild(pixel);
+
+          blocks.push({
+            el: pixel,
+            r,
+            seed: Math.random(),
+            roughness: (Math.random() - 0.5) * 3, // Increased roughness for a more organic feel
+          });
         }
       }
+      updateBlocks();
     }
+
+    function updateBlocks() {
+      if (!stickyContainer || !blocks.length) return;
+
+      const rect = stickyContainer.getBoundingClientRect();
+      const h = window.innerHeight;
+      const rows = Math.floor(h / BLOCK_SIZE);
+
+      const totalScrollable = rect.height - h;
+      const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
+
+      // Finish the "climb" slightly before the scroll ends (at 85% progress)
+      const animationProgress = Math.min(1, progress * 1.18);
+
+      // Starting state: bottom 2 rows are filled
+      const currentBaseRow = rows - 1.5 - animationProgress * (rows + 10);
+
+      // Animate text opacity: start at 0.85, full at 1.0
+      if (heroText) {
+        const textOpacity = Math.max(0, (animationProgress - 0.60) / 0.15);
+        heroText.style.opacity = textOpacity.toString();
+      }
+
+      blocks.forEach((block) => {
+        // Apply roughness to create the jagged rising edge
+        const effectiveRow =
+          block.r + block.roughness * (1 - animationProgress);
+        const distFromFloor = effectiveRow - currentBaseRow;
+
+        if (distFromFloor >= 0) {
+          // SOLID ZONE: Below the floor
+          block.el.style.opacity = "1";
+        } else if (distFromFloor > -4) {
+          // FRAGMENTED ZONE: Just above the floor (4 rows high)
+          const distIndex = Math.abs(distFromFloor);
+          const density = 0.9 - (distIndex - 1) * 0.25;
+
+          if (block.seed < density) {
+            const op = 0.8 - (distIndex - 1) * 0.2;
+            block.el.style.opacity = op.toString();
+          } else {
+            block.el.style.opacity = "0";
+          }
+        } else {
+          // EMPTY ZONE: Far above the floor
+          block.el.style.opacity = "0";
+        }
+      });
+    }
+
+    window.addEventListener("resize", initGrid);
+    window.addEventListener("scroll", updateBlocks);
+    initGrid();
+
+    return () => {
+      window.removeEventListener("resize", initGrid);
+      window.removeEventListener("scroll", updateBlocks);
+    };
   }
 
-  function createPixel(gridX, gridY, color, opacity) {
-    const pixel = document.createElement("div");
-    pixel.className = "flash-block static-pixel";
-
-    pixel.style.width = `${GRID_SIZE}px`;
-    pixel.style.height = `${GRID_SIZE}px`;
-    pixel.style.left = `${offsetX + gridX * GRID_SIZE}px`;
-    pixel.style.top = `${offsetY + gridY * GRID_SIZE}px`;
-    pixel.style.backgroundColor = color;
-    pixel.style.opacity = opacity.toString();
-
-    container.appendChild(pixel);
-  }
-
-  window.addEventListener("resize", syncGrid);
-  syncGrid();
+  let cleanup: () => void;
+  // Initialize on both direct load and view transitions
+  document.addEventListener("astro:page-load", () => {
+    if (cleanup) cleanup();
+    cleanup = init() as () => void;
+  });
 </script>
 
 <style is:global>
   .flash-block {
     position: absolute;
     pointer-events: none;
-    z-index: -1;
-    /* Clean definition for the pixel grid */
-    outline: 1px solid rgba(255, 255, 255, 0.05);
+    /* Use will-change for smooth scrolling performance */
+    will-change: opacity;
+    /* This makes the rise look snappy but not flickering */
+    transition: opacity 0.12s linear;
   }
 
-  .static-pixel {
-    clip-path: inset(0.5px);
-    /* Subtle glow for the green blocks */
-    box-shadow: 0 0 5px rgba(60, 229, 110, 0.1);
+  /* Optional: adds a very subtle highlight between blocks to maintain a techy feel */
+  .flash-block::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 </style>

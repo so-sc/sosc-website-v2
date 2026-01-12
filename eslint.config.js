@@ -22,7 +22,7 @@ export default [
       ],
       "no-debugger": "warn",
       eqeqeq: ["error", "always"],
-      curly: ["error", "all"],
+      curly: "off",
       semi: ["error", "always"],
       "comma-dangle": ["error", "only-multiline"],
       "object-shorthand": ["error", "always"],

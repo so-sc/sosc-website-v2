@@ -1,72 +1,137 @@
-
-
 ---
 import { Image } from "astro:assets";
 import HeroImg from "../../assets/sosc_hero.svg";
 ---
 
-<div id="sticky-container" class="relative h-[200vh] w-full">
-  <section class="sticky top-0 flex h-screen w-full items-center">
-
-    <div class="absolute top-14 w-full">
-      <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
-        <li class="cursor-pointer">/ HOME</li>
-        <li class="cursor-pointer">/ ABOUT</li>
-        <li class="cursor-pointer">/ HIGHLIGHTS</li>
-        <li class="cursor-pointer">/ TEAM</li>
-      </ul>
+<div id="sticky-container" class="relative h-[250vh] w-full bg-white">
+  <div class="sticky top-0 h-screen w-full overflow-hidden">
+    <div
+      id="base-grid"
+      class="absolute inset-0 opacity-10"
+      style="
+        background-size: 50px 50px;
+        background-image:
+          linear-gradient(to right, #000 1px, transparent 1px),
+          linear-gradient(to bottom, #000 1px, transparent 1px);
+        mask-image: radial-gradient(ellipse 90% 50% at center, transparent 30%, black 100%);
+      "
+    >
     </div>
 
+    <div id="grid-flash-container" class="pointer-events-none absolute inset-0">
+    </div>
+  </div>
+
+  <section
+    id="hero-section"
+    class="sticky top-0 -mt-[100vh] flex h-screen w-full flex-col items-center justify-center transition-all duration-100"
+  >
     <div
       class="pointer-events-none absolute -z-10 flex h-full w-full items-center justify-center select-none"
-      style={{ scale: "clamp(0.25, calc(100vw / 1500px), 1)" }}
+      style={{ scale: "clamp(0.35, calc(100vw / 1500px), 1)" }}
     >
       <Image
         src={HeroImg}
         alt="HeroImage"
-        width={1047}
-        height={288}
-        class="absolute max-w-none shrink-0"
+        width={733}
+        height={202}
+        class="absolute max-w-none shrink-0 top-1/4"
       />
-    </div>
-
-    <div class="absolute bottom-14 w-full">
-      <ul class="flex w-full justify-between p-4 text-xs md:px-8 md:text-sm">
-        <li>MANGALORE, INDIA: (GMT+3) 13:25</li>
-        <li>#OPENSOURCE</li>
-      </ul>
-    </div>
-
-    <div
-      id="scroll-div"
-      class="bg-primary absolute bottom-0 -z-10 h-screen w-full overflow-hidden"
-      style="clip-path: inset(var(--clip-top) 0 0 0); --clip-top: 100%;"
-    >
-      <div
-        class="pointer-events-none absolute flex h-full w-full items-center justify-center select-none"
-        style={{ scale: "clamp(0.25, calc(100vw / 1500px), 1)" }}
-      >
-        <h1 class="text-foreground absolute z-10 text-[82px] whitespace-nowrap">
-          MAY THE <span class="font-bold">SOURCE</span> BE WITH YOU
-        </h1>
-      </div>
     </div>
   </section>
 </div>
 
 <script>
-  import { animate, onScroll } from "animejs";
+  const container = document.getElementById("grid-flash-container");
+  const baseGrid = document.getElementById("base-grid");
 
-  animate("#scroll-div", {
-    "--clip-top": ["100%", "0%"],
+  // --- CONFIGURATION ---
+  const THEME_COLOR = "#3ce56e";
 
-    autoplay: onScroll({
-      container: document.body,
-      axis: "y",
-      target: "#sticky-container",
-      enter: { target: "top", container: "top" },
-      leave: { target: "bottom", container: "bottom" },
-      sync: true,
-    }),
-  });
+  let GRID_SIZE = 50;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  function syncGrid() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    GRID_SIZE = w < 768 ? 40 : 50;
+
+    offsetX = (w % GRID_SIZE) / 2;
+    offsetY = (h % GRID_SIZE) / 2;
+
+    if (baseGrid) {
+      baseGrid.style.backgroundSize = `${GRID_SIZE}px ${GRID_SIZE}px`;
+      baseGrid.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
+    }
+    renderStaticFloor();
+  }
+
+  function renderStaticFloor() {
+    if (!container) return;
+    container.innerHTML = ""; // Clear existing blocks
+
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const cols = Math.floor(w / GRID_SIZE);
+    const rows = Math.floor(h / GRID_SIZE);
+
+    // 1. Render TWO SOLID ROWS (including partial edges)
+    // Targeting the very bottom row (overflow) and the one above it
+    for (let r = rows; r >= rows - 1; r--) {
+      for (let c = -1; c <= cols; c++) {
+        createPixel(c, r, THEME_COLOR, 0.9);
+      }
+    }
+
+    // 2. Render the SMOOTH FRAGMENTED PATTERN
+    // Reduced height: now goes up 5 rows from the solid base (rows-2 to rows-6)
+    for (let r = rows - 2; r >= rows - 6; r--) {
+      const distFromSolid = rows - 2 - r;
+
+      // Density starts very high (0.95) so there are no "hidden blocks" (holes) near the bottom
+      const density = 0.95 - distFromSolid * 0.22;
+
+      for (let c = -1; c <= cols; c++) {
+        if (Math.random() < density) {
+          // Opacity fades out linearly as we go up
+          const op = 0.8 - distFromSolid * 0.15;
+          createPixel(c, r, THEME_COLOR, op);
+        }
+      }
+    }
+  }
+
+  function createPixel(gridX, gridY, color, opacity) {
+    const pixel = document.createElement("div");
+    pixel.className = "flash-block static-pixel";
+
+    pixel.style.width = `${GRID_SIZE}px`;
+    pixel.style.height = `${GRID_SIZE}px`;
+    pixel.style.left = `${offsetX + gridX * GRID_SIZE}px`;
+    pixel.style.top = `${offsetY + gridY * GRID_SIZE}px`;
+    pixel.style.backgroundColor = color;
+    pixel.style.opacity = opacity.toString();
+
+    container.appendChild(pixel);
+  }
+
+  window.addEventListener("resize", syncGrid);
+  syncGrid();
 </script>
+
+<style is:global>
+  .flash-block {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    /* Clean definition for the pixel grid */
+    outline: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .static-pixel {
+    clip-path: inset(0.5px);
+    /* Subtle glow for the green blocks */
+    box-shadow: 0 0 5px rgba(60, 229, 110, 0.1);
+  }
+</style>

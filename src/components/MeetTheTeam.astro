@@ -42,7 +42,27 @@ const rowPadding = "20px";
 
 <section class="team-section">
   <div class="container">
-    <h2 class="section-title">Our Team</h2>
+    <div class="mb-10 md:mb-16">
+      <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
+        <span class="animate-pulse">●</span>
+        <span>SYSTEM_TEAM_LOG</span>
+      </div>
+
+      <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+        <div>
+          <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
+            Our
+            <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Team</span>
+          </h2>
+        </div>
+        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+          <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Community</p>
+          <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
+            People who build, mentor, and ship together.
+          </p>
+        </div>
+      </div>
+    </div>
     
     <div class="team-list">
       {teamMembers.map((member) => (
@@ -105,7 +125,7 @@ const rowPadding = "20px";
   }
 
   .team-list {
-    border-top: 1px solid #000;
+    border-top: none;
   }
 
   .team-item {

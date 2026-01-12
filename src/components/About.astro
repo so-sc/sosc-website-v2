@@ -1,64 +1,88 @@
 ---
-import { Image } from "astro:assets";
-import SOSC from "@/assets/sosc_logo.svg";
+import { ArrowRight, Code2, Users } from "@lucide/astro";
 ---
 
 <section
   id="about"
   class="relative w-full overflow-hidden bg-white py-12 md:py-24"
 >
+  <script>
+    import "@lottiefiles/dotlottie-wc";
+  </script>
 
+  <!-- Background accents (soft grid + glow) -->
+  <div class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute inset-0 opacity-[0.35]"
+      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+    ></div>
+    <div class="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-primary/20 blur-3xl"></div>
+    <div class="absolute -left-24 bottom-0 h-[340px] w-[340px] rounded-full bg-primary/10 blur-3xl"></div>
+  </div>
 
   <div class="relative z-10 container mx-auto px-4 md:px-6">
-    <!-- System Log -->
-    <div
-      class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
-    >
-      <span class="animate-pulse">●</span>
-      <span>SYSTEM_ACTIVE</span>
-    </div>
-
-    <!-- Header -->
-    <div
-      class="mb-12 flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
-    >
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <!-- Left: copy -->
       <div>
-        <h2
-          class="text-4xl leading-none font-black tracking-tighter text-gray-900 uppercase md:text-8xl"
-        >
-          WHO WE ARE
-        </h2>
-      </div>
-    </div>
+        <div class="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-gray-500">
+          <span class="text-primary">●</span>
+          <span>OPEN</span>
+          <span class="text-gray-300">•</span>
+          <span>COMMUNITY</span>
+          <span class="text-gray-300">•</span>
+          <span>MANGALORE</span>
+        </div>
 
-    <!-- Content -->
-    <div class="grid gap-12 md:grid-cols-2">
-      <div class="space-y-6 text-lg leading-relaxed font-light text-gray-600">
-        <p>
-          Sahyadri Open Source Community (SOSC) is a vibrant hub of open source
-          enthusiasts, driven by the passion to learn, share, and grow together.
-          We are a collective of students, developers, and creators who believe
-          in the power of collaboration.
+        <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
+          Open Source,
+          <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Together.</span>
+        </h2>
+
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
+          Sahyadri Open Source Community is a student-driven collective where everyone learns,
+          collaborates, and builds real-world open source solutions.
         </p>
-        <p>
-          Based in Mangalore, we aim to cultivate a culture of innovation,
-          empowering students to contribute to real-world projects, organize
-          technical events, and build a future where technology is accessible to
-          everyone.
-        </p>
-        <div class="pt-4">
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l border-primary pl-4">
+            <p class="text-sm font-semibold text-gray-900">Real-world Projects</p>
+            <p class="mt-1 text-sm leading-snug text-gray-600">
+              Build and contribute to impactful open source software.
+            </p>
+          </div>
+
+          <div class="border-l border-primary pl-4">
+            <p class="text-sm font-semibold text-gray-900">Community First</p>
+            <p class="mt-1 text-sm leading-snug text-gray-600">
+              Learn together through collaboration and mentorship.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
-            href="https://github.com/so-sc"
-            target="_blank"
-            class="hover:bg-primary inline-flex h-12 items-center justify-center bg-gray-900 px-8 text-sm font-medium tracking-wider text-white uppercase transition-colors"
+            href="/projects"
+            class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-50"
           >
-            Join our Community
+            Explore Our Work
+            <ArrowRight class="h-4 w-4" />
           </a>
         </div>
       </div>
 
-      <div class="relative hidden p-8 md:block">
-        <Image src={SOSC} alt="About Us" class="h-full w-full object-cover" />
+      <!-- Right: logo/visual -->
+      <div class="relative hidden md:block">
+        <div class="absolute -inset-6 rounded-[2.5rem] bg-linear-to-br from-primary/20 via-transparent to-transparent blur-2xl"></div>
+        <div class="relative aspect-4/3 w-full mx-auto max-w-[520px] scale-[1.4]">
+          <dotlottie-wc
+            src="/About Us Team.json"
+            autoplay
+            loop
+            class="h-full w-full"
+            style="width: 100%; height: 100%;"
+            aria-label="SOSC animation"
+          ></dotlottie-wc>
+        </div>
       </div>
     </div>
   </div>

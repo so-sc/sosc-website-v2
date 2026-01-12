@@ -127,6 +127,8 @@ const statusColors: Record<string, string> = {
                 src={`https://github.com/${maintainer}.png`}
                 alt={maintainer}
                 class="w-8 h-8 rounded-full border-2 border-card"
+                loading="lazy"
+                decoding="async"
                 onerror="this.onerror=null; this.src='/github_avatar.svg';"
               />
               <span class="text-sm text-muted-foreground group-hover:text-primary transition-colors">

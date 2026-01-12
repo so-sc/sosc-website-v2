@@ -21,24 +21,33 @@ import { ArrowRight, Code2, Users } from "@lucide/astro";
   </div>
 
   <div class="relative z-10 container mx-auto px-4 md:px-6">
+    <!-- Header Section -->
+    <div class="mb-10 md:mb-16">
+      <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
+        <span class="animate-pulse">●</span>
+        <span>SYSTEM_ABOUT_LOG</span>
+      </div>
+
+      <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+        <div>
+          <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
+            Open Source,
+            <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Together.</span>
+          </h2>
+        </div>
+        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+          <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Open • Community • Mangalore</p>
+          <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
+            A student-driven collective building real-world solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div class="grid items-center gap-12 md:grid-cols-2">
       <!-- Left: copy -->
       <div>
-        <div class="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-gray-500">
-          <span class="text-primary">●</span>
-          <span>OPEN</span>
-          <span class="text-gray-300">•</span>
-          <span>COMMUNITY</span>
-          <span class="text-gray-300">•</span>
-          <span>MANGALORE</span>
-        </div>
-
-        <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
-          Open Source,
-          <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Together.</span>
-        </h2>
-
-        <p class="mt-5 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
+        <p class="max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
           Sahyadri Open Source Community is a student-driven collective where everyone learns,
           collaborates, and builds real-world open source solutions.
         </p>

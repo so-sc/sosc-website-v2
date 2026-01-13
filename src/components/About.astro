@@ -2,97 +2,340 @@
 import { ArrowRight, Code2, Users } from "@lucide/astro";
 ---
 
-<section
-  id="about"
-  class="relative w-full overflow-hidden bg-white py-12 md:py-24 px-20"
->
-  <script>
-    import "@lottiefiles/dotlottie-wc";
-  </script>
-
-  <!-- Background accents (soft grid + glow) -->
-  <div class="pointer-events-none absolute inset-0">
-    <div
-      class="absolute inset-0 opacity-[0.35]"
-      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
-    ></div>
-    <div class="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-primary/20 blur-3xl"></div>
-    <div class="absolute -left-24 bottom-0 h-[340px] w-[340px] rounded-full bg-primary/10 blur-3xl"></div>
+<div id="about-sticky-container" class="relative h-[250vh] w-full bg-white">
+  <div
+    id="about-grid-flash-container"
+    class="pointer-events-none absolute inset-0 z-30"
+  >
   </div>
+  <section
+    id="about"
+    class="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden bg-white py-12 md:py-24 px-20"
+  >
+    <script>
+      import "@lottiefiles/dotlottie-wc";
+    </script>
 
-  <div class="relative z-10 container mx-auto px-4 md:px-6">
-    <!-- Header Section -->
-    <div class="mb-10 md:mb-16">
-      <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
-        <span class="animate-pulse">●</span>
-        <span>SYSTEM_ABOUT_LOG</span>
+    <!-- Background accents (soft grid + glow) -->
+    <div class="pointer-events-none absolute inset-0">
+      <div
+        class="absolute inset-0 opacity-[0.35]"
+        style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+      >
+      </div>
+      <div
+        class="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-primary/20 blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute -left-24 bottom-0 h-[340px] w-[340px] rounded-full bg-primary/10 blur-3xl"
+      >
+      </div>
+    </div>
+
+    <div id="about-content" class="relative z-10 container mx-auto px-4 md:px-6 opacity-0">
+      <!-- Header Section -->
+      <div class="mb-10 md:mb-16">
+        <div
+          class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary"
+        >
+          <span class="animate-pulse">●</span>
+          <span>SYSTEM_ABOUT_LOG</span>
+        </div>
+
+        <div
+          class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end"
+        >
+          <div>
+            <h2
+              class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900"
+            >
+              Open Source,
+              <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0"
+                >Together.</span
+              >
+            </h2>
+          </div>
+          <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+            <p
+              class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2"
+            >
+              Open • Community • Mangalore
+            </p>
+            <p
+              class="text-xs md:text-sm font-medium leading-relaxed text-gray-900"
+            >
+              A student-driven collective building real-world solutions.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <!-- Left: copy -->
         <div>
-          <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
-            Open Source,
-            <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Together.</span>
-          </h2>
-        </div>
-        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-          <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Open • Community • Mangalore</p>
-          <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
-            A student-driven collective building real-world solutions.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid items-center gap-12 md:grid-cols-2">
-      <!-- Left: copy -->
-      <div>
-        <p class="max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
-          Sahyadri Open Source Community is a student-driven collective where everyone learns,
-          collaborates, and builds real-world open source solutions.
-        </p>
-
-        <div class="mt-8 space-y-6">
-          <div class="border-l border-primary pl-4">
-            <p class="text-sm font-semibold text-gray-900">Real-world Projects</p>
-            <p class="mt-1 text-sm leading-snug text-gray-600">
-              Build and contribute to impactful open source software.
-            </p>
-          </div>
-
-          <div class="border-l border-primary pl-4">
-            <p class="text-sm font-semibold text-gray-900">Community First</p>
-            <p class="mt-1 text-sm leading-snug text-gray-600">
-              Learn together through collaboration and mentorship.
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            href="/projects"
-            class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-50"
+          <p
+            class="max-w-xl text-base leading-relaxed text-gray-600 md:text-lg"
           >
-            Explore Our Work
-            <ArrowRight class="h-4 w-4" />
-          </a>
-        </div>
-      </div>
+            Sahyadri Open Source Community is a student-driven collective where
+            everyone learns, collaborates, and builds real-world open source
+            solutions.
+          </p>
 
-      <!-- Right: logo/visual -->
-      <div class="relative hidden md:block">
-        <div class="absolute -inset-6 rounded-[2.5rem] bg-linear-to-br from-primary/20 via-transparent to-transparent blur-2xl"></div>
-        <div class="relative aspect-4/3 w-full mx-auto max-w-[520px] scale-[1.4]">
-          <dotlottie-wc
-            src="/About Us Team.json"
-            autoplay
-            loop
-            class="h-full w-full"
-            style="width: 100%; height: 100%;"
-            aria-label="SOSC animation"
-          ></dotlottie-wc>
+          <div class="mt-8 space-y-6">
+            <div class="border-l border-primary pl-4">
+              <p class="text-sm font-semibold text-gray-900">
+                Real-world Projects
+              </p>
+              <p class="mt-1 text-sm leading-snug text-gray-600">
+                Build and contribute to impactful open source software.
+              </p>
+            </div>
+
+            <div class="border-l border-primary pl-4">
+              <p class="text-sm font-semibold text-gray-900">
+                Community First
+              </p>
+              <p class="mt-1 text-sm leading-snug text-gray-600">
+                Learn together through collaboration and mentorship.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="/projects"
+              class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-50"
+            >
+              Explore Our Work
+              <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: logo/visual -->
+        <div class="relative hidden md:block">
+          <div
+            class="absolute -inset-6 rounded-[2.5rem] bg-linear-to-br from-primary/20 via-transparent to-transparent blur-2xl"
+          >
+          </div>
+          <div
+            class="relative aspect-4/3 w-full mx-auto max-w-[520px] scale-[1.4]"
+          >
+            <dotlottie-wc
+              src="/About Us Team.json"
+              autoplay
+              loop
+              class="h-full w-full"
+              style="width: 100%; height: 100%;"
+              aria-label="SOSC animation"></dotlottie-wc>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
+
+<script>
+  function initAboutAnimation() {
+    const container = document.getElementById("about-grid-flash-container");
+    const stickyContainer = document.getElementById("about-sticky-container");
+    const aboutContent = document.getElementById("about-content");
+
+    if (!container || !stickyContainer) return;
+
+    const THEME_COLOR = "#3ce56e"; // Same green as landing
+    let BLOCK_SIZE = 50;
+
+    interface Block {
+      el: HTMLDivElement;
+      r: number;
+      seed: number;
+      roughness: number;
+    }
+
+    let blocks: Block[] = [];
+
+    function initGrid() {
+      if (!container) return;
+      container.innerHTML = "";
+      blocks = [];
+
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      // Responsive block sizing
+      BLOCK_SIZE = w < 768 ? 40 : 50;
+
+      const cols = Math.ceil(w / BLOCK_SIZE);
+      const rows = Math.ceil(h / BLOCK_SIZE);
+
+      // Calculate offsets to center the grid
+      const offsetX = (w % BLOCK_SIZE) / 2;
+      const offsetY = (h % BLOCK_SIZE) / 2;
+
+      for (let r = -1; r <= rows; r++) {
+        for (let c = -1; c <= cols; c++) {
+          const pixel = document.createElement("div");
+          pixel.className = "about-flash-block";
+
+          pixel.style.width = `${BLOCK_SIZE + 1}px`;
+          pixel.style.height = `${BLOCK_SIZE + 1}px`;
+          pixel.style.left = `${offsetX + c * BLOCK_SIZE}px`;
+          pixel.style.top = `${offsetY + r * BLOCK_SIZE}px`;
+          pixel.style.backgroundColor = THEME_COLOR;
+          // Initial opacity 1 (covering the white content)
+          pixel.style.opacity = "1";
+
+          container.appendChild(pixel);
+
+          blocks.push({
+            el: pixel,
+            r,
+            seed: Math.random(),
+            roughness: (Math.random() - 0.5) * 3,
+          });
+        }
+      }
+      updateBlocks();
+    }
+
+    function updateBlocks() {
+      if (!stickyContainer || !blocks.length) return;
+
+      const rect = stickyContainer.getBoundingClientRect();
+      const h = window.innerHeight;
+      const rows = Math.floor(h / BLOCK_SIZE);
+
+      const totalScrollable = rect.height - h;
+      // progress goes from 0 to 1 as we scroll down the sticky container
+      const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
+
+      // As progress increases (0->1), we want the Green to disappear from Bottom to Top.
+      // In Landing, Green appeared from Bottom to Top.
+      // Landing Logic:
+      // const currentBaseRow = rows - 1.5 - animationProgress * (rows + 10);
+      // distFromFloor = effectiveRow - currentBaseRow;
+      // if (distFromFloor >= 0) -> Green (Below line)
+
+      // About Logic (Inverse):
+      // We want Green ABOVE the line.
+      // As progress increases, the line moves from Bottom (rows) to Top (-10).
+      // If we use the SAME line movement logic:
+      const animationProgress = Math.min(1, progress * 1.18);
+      const currentBaseRow = rows - 1.5 - animationProgress * (rows + 10);
+
+      if (aboutContent) {
+        const opacity = Math.max(0, Math.min(1, (animationProgress - 0.1) / 0.6));
+        aboutContent.style.opacity = opacity.toString();
+      }
+
+      blocks.forEach((block) => {
+        // Use same roughness
+        const effectiveRow =
+          block.r + block.roughness * (1 - animationProgress);
+        const distFromFloor = effectiveRow - currentBaseRow;
+
+        // In Landing: distFromFloor >= 0 was Green (Below line).
+        // Here we want Green to be ABOVE the line, so distFromFloor < 0.
+        // But we want it to fade "Upwards".
+        
+        // If Green is ABOVE the line:
+        // As line moves UP (currentBaseRow decreases), the "Above" area shrinks.
+        // This creates a "Curtain rising" effect if looking at the Green.
+        // Or "White rising" if looking at the revealed part.
+        
+        // Let's swap the zones from Landing:
+        
+        if (distFromFloor < -4) {
+           // SOLID ZONE (Green): Far above the floor
+           block.el.style.opacity = "1";
+        } else if (distFromFloor <= 0) {
+            // FRAGMENTED ZONE: Just above the floor 
+            // We need to invert the density logic to make it look like the edge is breaking upwards?
+            
+            // In Landing:
+            // distFromFloor > -4 && < 0 was the "FRAGMENTED ZONE" above the solid green floor?
+            // Wait, Landing logic:
+            // if (distFromFloor >= 0) -> SOLID GREEN (Below floor)
+            // else if (distFromFloor > -4) -> SCATTERED GREEN (Just above floor)
+            // else -> EMPTY (Far above floor)
+            
+            // So Landing had:
+            // [Empty]
+            // [Scattered]
+            // [Solid Green] (Bottom)
+            
+            // For About, we want:
+            // [Solid Green] (Top)
+            // [Scattered]
+            // [Empty/Revealed White] (Bottom)
+            
+            // So we want the exact INVERSE of the zones relative to the line.
+            // If distFromFloor < -4: This is the "Top" zone (since distFromFloor = row - big_number is negative).
+            // So Far Above line -> Solid Green.
+            
+            block.el.style.opacity = "1";
+            
+        } else if (distFromFloor < 4) {
+             // The boundary zone.
+             // Landing used distFromFloor > -4 (so range -4 to 0 relative to line).
+             // We want a range near 0.
+             // Let's say range 0 to 4 is the scattering zone as the green retreats upwards.
+             
+             const distIndex = Math.abs(distFromFloor); // This logic might need adjustment
+             
+             // We want opacity to fade as we go DOWN (increasing row index, increasing distFromFloor).
+             // At distFromFloor = 0, opacity should be high/mixed.
+             // At distFromFloor = 4, opacity should be 0.
+             
+             // Landing density: 0.9 - (distIndex - 1) * 0.25 (where distIndex was abs val of negative numbers, so 1..4)
+             // Here distFromFloor is roughly 0..4 positive.
+             // Let's try:
+             const density = 0.9 - (distFromFloor) * 0.25;
+             if (block.seed < density) {
+                 const op = 0.8 - (distFromFloor) * 0.2;
+                 block.el.style.opacity = op.toString();
+             } else {
+                 block.el.style.opacity = "0";
+             }
+        } else {
+            // REVEALED ZONE (White): Far below the floor
+            block.el.style.opacity = "0";
+        }
+      });
+    }
+
+    window.addEventListener("resize", initGrid);
+    window.addEventListener("scroll", updateBlocks);
+    initGrid();
+
+    return () => {
+      window.removeEventListener("resize", initGrid);
+      window.removeEventListener("scroll", updateBlocks);
+    };
+  }
+
+  let cleanupAbout: () => void;
+  document.addEventListener("astro:page-load", () => {
+    if (cleanupAbout) cleanupAbout();
+    cleanupAbout = initAboutAnimation() as () => void;
+  });
+</script>
+
+<style is:global>
+  .about-flash-block {
+    position: absolute;
+    pointer-events: none;
+    will-change: opacity;
+    transition: opacity 0.12s linear;
+  }
+  
+  .about-flash-block::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>

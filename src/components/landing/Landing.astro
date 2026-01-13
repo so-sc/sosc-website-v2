@@ -3,13 +3,25 @@ import { Image } from "astro:assets";
 import HeroImg from "../../assets/sosc_hero.svg";
 ---
 
-<div id="sticky-container" class="relative h-[250vh] w-full bg-white">
+<div class="relative w-full">
+  <!-- Spacer for scroll height, pulls next section up by 350vh to allow overlap -->
+  <div
+    id="landing-spacer"
+    class="pointer-events-none -mb-[350vh] h-[350vh] w-full"
+  >
+  </div>
+
+  <!-- Fixed Overlay containing all visuals -->
   <section
     id="hero-section"
-    class="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+    class="pointer-events-none fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
   >
+    <!-- White Background Layer -->
+    <div id="landing-bg" class="absolute inset-0 -z-10 bg-white"></div>
+
     <div
-      class="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+      id="hero-img-container"
+      class="absolute inset-0 flex items-center justify-center select-none"
       style={{ transform: "scale(clamp(0.35, calc(100vw / 1500px), 1))" }}
     >
       <Image
@@ -23,7 +35,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
 
     <div
       id="hero-text"
-      class="pointer-events-none absolute inset-0 z-50 flex items-center justify-center opacity-0 select-none"
+      class="absolute inset-0 z-50 flex items-center justify-center opacity-0 select-none"
       style={{ transform: "scale(clamp(0.25, calc(100vw / 1500px), 1))" }}
     >
       <h1 class="text-foreground absolute z-10 text-[82px] whitespace-nowrap">
@@ -31,21 +43,20 @@ import HeroImg from "../../assets/sosc_hero.svg";
       </h1>
     </div>
 
-    <div
-      id="grid-flash-container"
-      class="pointer-events-none absolute inset-0 z-10"
-    >
-    </div>
+    <div id="grid-flash-container" class="absolute inset-0 z-10"></div>
   </section>
 </div>
 
 <script>
   function init() {
     const container = document.getElementById("grid-flash-container");
-    const stickyContainer = document.getElementById("sticky-container");
+    const spacer = document.getElementById("landing-spacer");
     const heroText = document.getElementById("hero-text");
+    const heroImg = document.getElementById("hero-img-container");
+    const landingBg = document.getElementById("landing-bg");
+    const heroSection = document.getElementById("hero-section");
 
-    if (!container || !stickyContainer) return;
+    if (!container || !spacer) return;
 
     const THEME_COLOR = "#3ce56e";
     let BLOCK_SIZE = 50;
@@ -103,51 +114,166 @@ import HeroImg from "../../assets/sosc_hero.svg";
     }
 
     function updateBlocks() {
-      if (!stickyContainer || !blocks.length) return;
+      if (!spacer || !blocks.length) return;
 
-      const rect = stickyContainer.getBoundingClientRect();
+      const rect = spacer.getBoundingClientRect();
       const h = window.innerHeight;
       const rows = Math.floor(h / BLOCK_SIZE);
 
-      const totalScrollable = rect.height - h;
+      // Total travel distance of the spacer
+      // Spacer is 350vh.
+      // It starts at top=0. Ends when bottom passes bottom of screen?
+      // Since it has -100vh margin, the *layout* ends at 250vh.
+      // But getBoundingClientRect tracks the physical element (350vh).
+      // We want mapping 0..1 to cover the significant part of the scroll.
+      // We want Exit to end when visual "About" is fully covered? No, when Landing is done.
+
+      const totalScrollable = rect.height - h; // 350vh - 100vh = 250vh of scrollable area
       const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
 
-      // Finish the "climb" slightly before the scroll ends (at 85% progress)
-      const animationProgress = Math.min(1, progress * 1.18);
-
-      // Starting state: bottom 2 rows are filled
-      const currentBaseRow = rows - 1.5 - animationProgress * (rows + 10);
-
-      // Animate text opacity: start at 0.85, full at 1.0
-      if (heroText) {
-        const textOpacity = Math.max(0, (animationProgress - 0.60) / 0.15);
-        heroText.style.opacity = textOpacity.toString();
+      // Hide the fixed overlay completely if we are past the Landing section
+      if (-rect.top > rect.height) {
+        if (heroSection) heroSection.style.display = "none";
+        return;
+      } else {
+        if (heroSection) heroSection.style.display = "flex";
       }
 
-      blocks.forEach((block) => {
-        // Apply roughness to create the jagged rising edge
-        const effectiveRow =
-          block.r + block.roughness * (1 - animationProgress);
-        const distFromFloor = effectiveRow - currentBaseRow;
+      // PHASES
+      // 1. Entrance: 0.0 -> 0.35
+      // 2. Hold:     0.35 -> 0.65
+      // 3. Exit:     0.65 -> 1.0
 
-        if (distFromFloor >= 0) {
-          // SOLID ZONE: Below the floor
-          block.el.style.opacity = "1";
-        } else if (distFromFloor > -4) {
-          // FRAGMENTED ZONE: Just above the floor (4 rows high)
-          const distIndex = Math.abs(distFromFloor);
-          const density = 0.9 - (distIndex - 1) * 0.25;
+      let entranceProgress = 0;
+      let exitProgress = 0;
 
-          if (block.seed < density) {
-            const op = 0.8 - (distIndex - 1) * 0.2;
-            block.el.style.opacity = op.toString();
-          } else {
-            block.el.style.opacity = "0";
-          }
+      if (progress < 0.35) {
+        // Entrance phase
+        entranceProgress = progress / 0.35;
+      } else if (progress < 0.65) {
+        // Hold phase
+        entranceProgress = 1;
+      } else {
+        // Exit phase
+        entranceProgress = 1;
+        exitProgress = (progress - 0.65) / 0.35;
+      }
+
+      // ---------------------
+      // BG & IMG VISIBILITY
+      // ---------------------
+      // If we are in Exit phase, Hide White BG and Hero Image to reveal content behind
+      if (progress >= 0.65) {
+        if (landingBg) landingBg.style.opacity = "0";
+        if (heroImg) heroImg.style.opacity = "0";
+      } else {
+        if (landingBg) landingBg.style.opacity = "1";
+        if (heroImg) heroImg.style.opacity = "1";
+      }
+
+      // ---------------------
+      // TEXT OPACITY LOGIC
+      // ---------------------
+      if (heroText) {
+        let textOp = 0;
+        if (progress < 0.35) {
+          // Fade IN (last 40% of entrance)
+          textOp = Math.max(0, (entranceProgress - 0.6) / 0.4);
+        } else if (progress < 0.65) {
+          textOp = 1;
         } else {
-          // EMPTY ZONE: Far above the floor
-          block.el.style.opacity = "0";
+          // Fade OUT (first 40% of exit) - Mirrors the entrance timing
+          textOp = Math.max(0, 1 - exitProgress / 0.4);
         }
+        heroText.style.opacity = Math.max(0, Math.min(1, textOp)).toString();
+      }
+
+      // ---------------------
+      // BLOCK LOGIC
+      // ---------------------
+      // Base row for Entrance (rising)
+      const entranceBaseRow = rows - 1.5 - entranceProgress * (rows + 10);
+
+      // Base row for Exit (leaving from bottom to top)
+      const exitBaseRow = rows + 2 - exitProgress * (rows + 15);
+
+      blocks.forEach((block) => {
+        // 1. Calculate Presence based on ENTRANCE
+        //    (Green if BELOW the entrance line)
+        const entranceRow = block.r + block.roughness * (1 - entranceProgress);
+        const distFromEntrance = entranceRow - entranceBaseRow;
+
+        // 2. Calculate Removal based on EXIT
+        //    (Clear/White if BELOW the exit line)
+        const exitRow = block.r + block.roughness * (1 - exitProgress);
+        const distFromExit = exitRow - exitBaseRow;
+
+        // Logic:
+        // By default, we are dependent on Entrance.
+        // But if Exit is active, it overrides Entrance (turns things transparent).
+
+        // Determine raw input opacity from Entrance
+        let entranceAlpha = 0;
+
+        if (distFromEntrance >= 0) {
+          // Fully entered (Solid Green)
+          entranceAlpha = 1;
+        } else if (distFromEntrance > -4) {
+          // Fragmented top edge
+          const dist = Math.abs(distFromEntrance);
+          const density = 0.9 - (dist - 1) * 0.25;
+          if (block.seed < density) {
+            entranceAlpha = 0.8 - (dist - 1) * 0.2;
+          }
+        }
+
+        // Apply Exit Mask
+        // As exitProgress increases, limit goes UP from bottom.
+        // Anything BELOW the exit line is cleared (White).
+        // Anything ABOVE is kept (Green), until the line passes it.
+
+        // Is distFromExit positive (below) or negative (above)?
+        // exitBaseRow is decreasing (moving UP) or increasing?
+        // rows + 2 ... minus ...
+        // So exitBaseRow DECREASES (starts high, goes low/negative).
+        // So line moves DOWN?
+        // No. "rows" is bottom. "-10" is top.
+        // Start: rows (Bottom). End: -10 (Top).
+        // So exitBaseRow moves Bottom to Top.
+        // block.r is constant.
+
+        // We want to clear stuff BELOW the line?
+        // No, we want to clear stuff that the line has "passed" (if line is "eraser").
+        // Or if the line is the "top of the white wave".
+        // White wave rises from Bottom.
+        // So anything BELOW the line (r > line) should be White (0).
+        // Anything ABOVE the line (r < line) should be Green (1).
+
+        // distFromExit = props.r (approx) - line.
+        // if r > line (Below) -> distFromExit > 0.
+        // So if distFromExit > 0 -> Clear.
+
+        // Let's add the fragmented edge to the Exit too.
+
+        if (distFromExit > 4) {
+          // Deep in the cleared zone
+          entranceAlpha = 0;
+        } else if (distFromExit > 0) {
+          // Fragmented edge of the clearing wave
+          const dist = distFromExit;
+          const density = 0.9 - dist * 0.2;
+
+          if (block.seed > density) {
+            // Remove pixel
+            entranceAlpha = 0;
+          } else {
+            // Keep pixel, but apply varying opacity to match "fragmented" look
+            const fade = 1 - dist / 4;
+            entranceAlpha = Math.min(entranceAlpha, fade);
+          }
+        }
+
+        block.el.style.opacity = entranceAlpha.toString();
       });
     }
 

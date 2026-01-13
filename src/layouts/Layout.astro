@@ -64,6 +64,14 @@ import "lenis/dist/lenis.css";
     />
     <meta name="twitter:site" content="@sahyadri_osc" />
     <ClientRouter />
+    <script>
+      import Lenis from "lenis";
+
+      new Lenis({
+        autoRaf: true,
+        syncTouch: true,
+      });
+    </script>
   </head>
   <body>
     <Navbar />

@@ -1,5 +1,5 @@
 ---
-import CommunityCard from "./cards/CommunityCard.astro";
+import CommunityCard from "../cards/CommunityCard.astro";
 
 interface EventItem {
   title: string;
@@ -92,45 +92,49 @@ const events: EventItem[] = [
   </div>
 
   <!-- Header -->
-  <div class="relative z-10 container mx-auto mb-10 px-20 md:mb-16">
-    <!-- Added: System Log -->
-    <div
-      class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
-    >
-      <span class="animate-pulse">●</span>
-      <span>SYSTEM_EVENTS_LOG</span>
-    </div>
-
-    <div
-      class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
-    >
-      <div>
-        <h2
-          class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
-        >
-          Community
-          <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
-            >Highlights</span
-          >
-        </h2>
+  <div class="relative z-10 w-full px-20">
+    <div class="container mx-auto mb-10 px-4 md:mb-16 md:px-6">
+      <!-- Added: System Log -->
+      <div
+        class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
+      >
+        <span class="animate-pulse">●</span>
+        <span>SYSTEM_EVENTS_LOG</span>
       </div>
-      <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-        <p
-          class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
-        >
-          Since 2018
-        </p>
-        <p class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm">
-          Our impact is measured in code deployed, skills learned, and
-          connections made.
-        </p>
+
+      <div
+        class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+      >
+        <div>
+          <h2
+            class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
+          >
+            Community
+            <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
+              >Highlights</span
+            >
+          </h2>
+        </div>
+        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+          <p
+            class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
+          >
+            Since 2018
+          </p>
+          <p
+            class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
+          >
+            Our impact is measured in code deployed, skills learned, and
+            connections made.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Scroll Area -->
   <div
-    class="relative z-10 w-full overflow-hidden border-b border-gray-100 pb-12 md:pb-24"
+    class="relative z-10 w-full overflow-hidden border-b border-gray-100"
   >
     <div
       class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-4 md:gap-10 md:py-10 md:pl-6"

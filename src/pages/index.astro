@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Landing from "@/components/landing/Landing.astro";
-import About from "@/components/About.astro";
-import MeetTheTeam from "@/components/MeetTheTeam.astro";
-import Highlights from "@/components/Highlights.astro";
+import About from "@/components/landing/About.astro";
+import MeetTheTeam from "@/components/landing/MeetTheTeam.astro";
+import Highlights from "@/components/landing/Highlights.astro";
 ---
 
 <Layout>
@@ -12,12 +12,3 @@ import Highlights from "@/components/Highlights.astro";
   <Highlights />
   <MeetTheTeam />
 </Layout>
-
-<script>
-  import Lenis from "lenis";
-
-  new Lenis({
-    autoRaf: true,
-    syncTouch: true,
-  });
-</script>

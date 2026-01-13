@@ -22,23 +22,30 @@ import HeroImg from "../../assets/sosc_hero.svg";
     <div
       id="hero-img-container"
       class="absolute inset-0 flex items-center justify-center select-none"
-      style={{ transform: "scale(clamp(0.35, calc(100vw / 1500px), 1))" }}
     >
-      <Image
-        src={HeroImg}
-        alt="HeroImage"
-        width={733}
-        height={202}
-        class="absolute top-1/4 max-w-none shrink-0"
-      />
+      <div
+        class="absolute top-1/4 flex w-full justify-center"
+        style="width: clamp(300px, 60vw, 733px);"
+      >
+        <Image
+          src={HeroImg}
+          alt="HeroImage"
+          width={733}
+          height={202}
+          class="h-auto w-full max-w-none shrink-0"
+          loading="eager"
+        />
+      </div>
     </div>
 
     <div
       id="hero-text"
       class="absolute inset-0 z-50 flex items-center justify-center opacity-0 select-none"
-      style={{ transform: "scale(clamp(0.25, calc(100vw / 1500px), 1))" }}
     >
-      <h1 class="text-foreground absolute z-10 text-[82px] whitespace-nowrap">
+      <h1
+        class="text-foreground z-10 whitespace-nowrap"
+        style="font-size: clamp(20px, 5.46vw, 82px); line-height: 1;"
+      >
         MAY THE <span class="font-bold text-white">SOURCE</span> BE WITH YOU
       </h1>
     </div>

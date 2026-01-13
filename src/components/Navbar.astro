@@ -17,7 +17,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     <!-- Fixed Toggle Button -->
     <button
       id="menu-toggle"
-      class="relative z-[100] cursor-pointer"
+      class="relative z-100 cursor-pointer"
       aria-label="Toggle menu"
     >
       <Menu
@@ -50,19 +50,13 @@ import SOSC from "@/assets/sosc_logo.svg";
     <div class="menu-pagination">
       <div class="pagination-container" id="pagination-list">
         {
-          [
-            "HOME",
-            "BLOGS",
-            "EVENTS",
-            "GUIDELINES",
-            "TEAM",
-            "RESOURCES",
-            "PROJECTS",
-          ].map((item, index) => (
-            <button class="pagination-item" data-index={index}>
-              {item}
-            </button>
-          ))
+          ["HOME", "BLOGS", "EVENTS", "PROJECTS", "RESOURCES", "TEAM"].map(
+            (item, index) => (
+              <button class="pagination-item" data-index={index}>
+                {item}
+              </button>
+            ),
+          )
         }
       </div>
     </div>
@@ -90,31 +84,21 @@ import SOSC from "@/assets/sosc_logo.svg";
             </a>
           </div>
           <div class="embla__slide">
-            <a
-              href="/guidelines"
-              class="horizontal-link"
-              data-path="/guidelines"
-            >
+            <a href="/projects" class="horizontal-link" data-path="/projects">
               <span class="link-number">04</span>
-              <span class="link-text">GUIDELINES</span>
-            </a>
-          </div>
-          <div class="embla__slide">
-            <a href="/team" class="horizontal-link" data-path="/team">
-              <span class="link-number">05</span>
-              <span class="link-text">TEAM</span>
+              <span class="link-text">PROJECTS</span>
             </a>
           </div>
           <div class="embla__slide">
             <a href="/resources" class="horizontal-link" data-path="/resources">
-              <span class="link-number">06</span>
+              <span class="link-number">05</span>
               <span class="link-text">RESOURCES</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/projects" class="horizontal-link" data-path="/projects">
-              <span class="link-number">07</span>
-              <span class="link-text">PROJECTS</span>
+            <a href="/team" class="horizontal-link" data-path="/team">
+              <span class="link-number">06</span>
+              <span class="link-text">TEAM</span>
             </a>
           </div>
         </div>
@@ -536,5 +520,9 @@ import SOSC from "@/assets/sosc_logo.svg";
   }
 
   initNavbar();
-  document.addEventListener("astro:page-load", initNavbar);
+  document.addEventListener("astro:page-load", () => {
+    initNavbar();
+    // Safety: always unlock scroll on new page load
+    toggleScrollLock(false);
+  });
 </script>

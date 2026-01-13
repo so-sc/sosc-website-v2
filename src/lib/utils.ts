@@ -12,8 +12,6 @@ export function cn(...inputs: ClassValue[]) {
 export function toggleScrollLock(lock: boolean) {
   if (typeof document === "undefined") return;
 
-  console.log("LCOK")
-
   const lenis = (window as any).lenis;
 
   if (lock) {

@@ -67,10 +67,13 @@ import "lenis/dist/lenis.css";
     <script>
       import Lenis from "lenis";
 
-      new Lenis({
+      const lenis = new Lenis({
         autoRaf: true,
         syncTouch: true,
       });
+
+      // Expose lenis to window for global access (e.g. scroll locking)
+      (window as any).lenis = lenis;
     </script>
   </head>
   <body>

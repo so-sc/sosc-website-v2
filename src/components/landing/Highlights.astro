@@ -133,9 +133,7 @@ const events: EventItem[] = [
   </div>
 
   <!-- Scroll Area -->
-  <div
-    class="relative z-10 w-full overflow-hidden border-b border-gray-100"
-  >
+  <div class="relative z-10 w-full overflow-hidden border-b border-gray-100">
     <div
       class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-4 md:gap-10 md:py-10 md:pl-6"
     >
@@ -284,6 +282,8 @@ const events: EventItem[] = [
 </style>
 
 <script>
+  import { toggleScrollLock } from "@/lib/utils";
+
   const dialog = document.getElementById(
     "flat-modal",
   ) as HTMLDialogElement | null;
@@ -311,13 +311,13 @@ const events: EventItem[] = [
         if (mDesc) mDesc.textContent = data.desc || "";
 
         dialog.showModal();
-        document.body.style.overflow = "hidden";
+        toggleScrollLock(true);
       });
     });
 
     const close = () => {
       dialog.close();
-      document.body.style.overflow = "";
+      toggleScrollLock(false);
     };
 
     if (closeBtn) closeBtn.addEventListener("click", close);

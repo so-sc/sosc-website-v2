@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import SOSC from "@/assets/sosc_logo.svg";
 ---
 
-<nav class="text-foreground fixed top-0 z-[99] w-full" id="main-navbar">
+<nav class="text-foreground fixed top-0 z-99 w-full" id="main-navbar">
   <div class="flex h-14 w-full items-center justify-between px-4 md:px-8">
     <div
       class="relative z-50 text-xl font-bold transition-opacity duration-300"
@@ -35,7 +35,7 @@ import SOSC from "@/assets/sosc_logo.svg";
   <div id="fullpage-menu" class="fullpage-menu">
     <div class="menu-background"></div>
 
-    <!-- Top Section: Tech text ONLY (Close button removed) -->
+    <!-- Top Section -->
     <div class="menu-top">
       <div class="tech-text">
         <span class="tech-label">OPEN SOURCE</span>
@@ -46,44 +46,74 @@ import SOSC from "@/assets/sosc_logo.svg";
       </div>
     </div>
 
-    <!-- Middle Section: Horizontal Infinite Scroll -->
+    <!-- Pagination Row (Refined) -->
+    <div class="menu-pagination">
+      <div class="pagination-container" id="pagination-list">
+        {
+          [
+            "HOME",
+            "BLOGS",
+            "EVENTS",
+            "GUIDELINES",
+            "TEAM",
+            "RESOURCES",
+            "PROJECTS",
+          ].map((item, index) => (
+            <button class="pagination-item" data-index={index}>
+              {item}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
     <!-- Middle Section: Horizontal Infinite Scroll -->
     <div class="menu-middle">
       <div class="embla" id="embla-node">
         <div class="embla__container">
           <div class="embla__slide">
-            <a href="/blogs" class="horizontal-link" data-index="1">
+            <a href="/" class="horizontal-link" data-path="/">
               <span class="link-number">01</span>
+              <span class="link-text">HOME</span>
+            </a>
+          </div>
+          <div class="embla__slide">
+            <a href="/blogs" class="horizontal-link" data-path="/blogs">
+              <span class="link-number">02</span>
               <span class="link-text">BLOGS</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/events" class="horizontal-link" data-index="2">
-              <span class="link-number">02</span>
+            <a href="/events" class="horizontal-link" data-path="/events">
+              <span class="link-number">03</span>
               <span class="link-text">EVENTS</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/guidelines" class="horizontal-link" data-index="3">
-              <span class="link-number">03</span>
+            <a
+              href="/guidelines"
+              class="horizontal-link"
+              data-path="/guidelines"
+            >
+              <span class="link-number">04</span>
               <span class="link-text">GUIDELINES</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/team" class="horizontal-link" data-index="4">
-              <span class="link-number">04</span>
+            <a href="/team" class="horizontal-link" data-path="/team">
+              <span class="link-number">05</span>
               <span class="link-text">TEAM</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/resources" class="horizontal-link" data-index="5">
-              <span class="link-number">05</span>
+            <a href="/resources" class="horizontal-link" data-path="/resources">
+              <span class="link-number">06</span>
               <span class="link-text">RESOURCES</span>
             </a>
           </div>
           <div class="embla__slide">
-            <a href="/projects" class="horizontal-link" data-index="6">
-              <span class="link-number">06</span>
+            <a href="/projects" class="horizontal-link" data-path="/projects">
+              <span class="link-number">07</span>
               <span class="link-text">PROJECTS</span>
             </a>
           </div>
@@ -115,6 +145,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(10px);
     transform: translateY(-100%);
+    pointer-events: none;
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 60;
     overflow: hidden;
@@ -124,6 +155,7 @@ import SOSC from "@/assets/sosc_logo.svg";
 
   .fullpage-menu.active {
     transform: translateY(0);
+    pointer-events: auto;
   }
 
   .menu-background {
@@ -140,12 +172,11 @@ import SOSC from "@/assets/sosc_logo.svg";
     z-index: 0;
   }
 
-  /* Top Section */
   .menu-top {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 4rem 3rem 2rem;
+    padding: 3rem 3rem 1.5rem;
     position: relative;
     z-index: 10;
     opacity: 0;
@@ -167,16 +198,86 @@ import SOSC from "@/assets/sosc_logo.svg";
   }
 
   .tech-label {
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
   }
 
   .tech-separator {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+  }
+
+  /* Pagination Row (Refined) */
+  .menu-pagination {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .fullpage-menu.active .menu-pagination {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    width: fit-content;
+    max-width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .pagination-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .pagination-item {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    padding: 0.25rem 0;
+  }
+
+  .pagination-item::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: #00ff88;
+    transition: width 0.3s ease;
+  }
+
+  .pagination-item.is-active {
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  .pagination-item.is-active::after {
+    width: 100%;
   }
 
   /* Middle Section */
@@ -195,7 +296,6 @@ import SOSC from "@/assets/sosc_logo.svg";
     cursor: grabbing;
   }
 
-  /* Embla Carousel */
   .embla {
     overflow: hidden;
     width: 100%;
@@ -203,20 +303,23 @@ import SOSC from "@/assets/sosc_logo.svg";
     display: flex;
     align-items: center;
   }
+
   .embla__container {
     display: flex;
     width: 100%;
     height: 100%;
     touch-action: pan-y pinch-zoom;
   }
+
   .embla__slide {
-    flex: 0 0 85%;
+    flex: 0 0 100%;
     min-width: 0;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .horizontal-link {
     display: flex;
     flex-direction: column;
@@ -231,44 +334,26 @@ import SOSC from "@/assets/sosc_logo.svg";
     transition:
       opacity 0.5s ease,
       transform 0.5s ease;
-    position: relative;
     cursor: pointer;
     user-select: none;
-    -webkit-user-drag: none;
   }
+
   .fullpage-menu.active .horizontal-link {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* Stagger animations for first visible set generally */
-  /* Stagger animations for set */
-  .fullpage-menu.active .embla__slide:nth-child(1) .horizontal-link {
-    transition-delay: 0.1s;
-  }
-  .fullpage-menu.active .embla__slide:nth-child(2) .horizontal-link {
-    transition-delay: 0.2s;
-  }
-  .fullpage-menu.active .embla__slide:nth-child(3) .horizontal-link {
-    transition-delay: 0.3s;
-  }
-  .fullpage-menu.active .embla__slide:nth-child(4) .horizontal-link {
-    transition-delay: 0.4s;
-  }
-
   .link-number {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
     color: rgba(255, 255, 255, 0.4);
     font-weight: 300;
-    transition: color 0.3s ease;
   }
 
   .link-text {
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
     font-weight: 700;
     color: white;
     letter-spacing: 0.05em;
-    transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
     position: relative;
   }
 
@@ -276,19 +361,12 @@ import SOSC from "@/assets/sosc_logo.svg";
     content: "";
     position: absolute;
     bottom: -10px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 4px;
     background: linear-gradient(90deg, #00ff88, #00ccff);
     transition: width 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-
-  .horizontal-link:hover .link-number {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .horizontal-link:hover .link-text {
-    transform: translateX(10px);
   }
 
   .horizontal-link:hover .link-text::after {
@@ -314,87 +392,107 @@ import SOSC from "@/assets/sosc_logo.svg";
   .ideals-text {
     font-size: clamp(0.75rem, 1.2vw, 1rem);
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.5);
     max-width: 100%;
     margin: 0;
     letter-spacing: 0.05em;
   }
 
-  @media (max-width: 1024px) {
-    .menu-top,
-    .menu-bottom {
-      padding: 2rem;
-    }
-    .scroll-set {
-      gap: 0;
-      padding-right: 0;
-    }
-  }
-
   @media (max-width: 768px) {
-    .menu-top,
+    .menu-top {
+      padding: 4rem 2rem 1rem;
+    }
+    .menu-pagination {
+      padding: 0 2rem;
+    }
     .menu-bottom {
-      padding: 1.5rem;
+      padding: 1.5rem 2rem 3rem;
     }
-    .tech-text {
-      gap: 0.5rem;
-    }
-    .scroll-set {
-      gap: 0;
-      padding-right: 0;
-    }
-    .link-text {
-      font-size: clamp(2rem, 8vw, 6rem);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .menu-top,
-    .menu-bottom {
-      padding: 1rem;
-    }
-    .tech-label {
-      font-size: 0.625rem;
-    }
-    .scroll-set {
-      gap: 0;
-      padding-right: 0;
-    }
-    .link-text {
-      font-size: 3rem;
+    .pagination-container {
+      gap: 1rem;
     }
   }
 </style>
 
 <script>
   import EmblaCarousel from "embla-carousel";
+  import { toggleScrollLock } from "@/lib/utils";
 
   function initNavbar() {
-    const navbar = document.getElementById("main-navbar");
     const menuToggle = document.getElementById("menu-toggle");
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
     const fullpageMenu = document.getElementById("fullpage-menu");
     const emblaNode = document.getElementById("embla-node");
-    const horizontalLinks = document.querySelectorAll(".horizontal-link");
+    const paginationList = document.getElementById("pagination-list");
 
     if (
-      !navbar ||
       !menuToggle ||
       !fullpageMenu ||
       !emblaNode ||
+      !paginationList ||
       !menuIcon ||
       !closeIcon
     )
       return;
 
-    // Initialize Embla
-    const emblaApi = EmblaCarousel(emblaNode, {
+    // 1. Main Carousel
+    const emblaApi = EmblaCarousel(emblaNode as HTMLElement, {
       loop: true,
       align: "center",
       dragFree: false,
     });
 
+    // 2. Pagination Logic
+    const paginationItems = paginationList.querySelectorAll(".pagination-item");
+
+    const updateActivePagination = () => {
+      const selectedIndex = emblaApi.selectedScrollSnap();
+      paginationItems.forEach((item, index) => {
+        if (index === selectedIndex) {
+          item.classList.add("is-active");
+          item.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        } else {
+          item.classList.remove("is-active");
+        }
+      });
+    };
+
+    emblaApi.on("select", updateActivePagination);
+    emblaApi.on("reInit", updateActivePagination);
+    updateActivePagination();
+
+    paginationItems.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const indexAttr = btn.getAttribute("data-index");
+        const index = parseInt(indexAttr || "0");
+        emblaApi.scrollTo(index);
+      });
+    });
+
+    // 3. Current Route Selection Logic
+    const findIndexByPath = () => {
+      const currentPath = window.location.pathname;
+      const slides = emblaNode.querySelectorAll(".horizontal-link");
+      let targetIndex = 0;
+
+      slides.forEach((slide, index) => {
+        const path = (slide as HTMLElement).getAttribute("data-path");
+        if (path && currentPath === path) {
+          targetIndex = index;
+        } else if (path && path !== "/" && currentPath.startsWith(path)) {
+          // Secondary check for sub-routes if needed, prioritize exact match
+          targetIndex = index;
+        }
+      });
+      return targetIndex;
+    };
+
+    // 4. Menu Toggle
     let isMenuOpen = false;
 
     function openMenu() {
@@ -402,9 +500,13 @@ import SOSC from "@/assets/sosc_logo.svg";
       fullpageMenu?.classList.add("active");
       menuIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
-      document.body.style.overflow = "hidden";
-      // Re-init or resize embla if needed, usually auto-handles
+      toggleScrollLock(true);
+
       emblaApi.reInit();
+      // On open, scroll to the current page's index
+      const initialIndex = findIndexByPath();
+      emblaApi.scrollTo(initialIndex, true); // true for jump without animation if preferred, or false for smooth
+      updateActivePagination();
     }
 
     function closeMenu() {
@@ -412,31 +514,22 @@ import SOSC from "@/assets/sosc_logo.svg";
       fullpageMenu?.classList.remove("active");
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
-      document.body.style.overflow = "";
+      toggleScrollLock(false);
     }
 
-    // Toggle click
     menuToggle.onclick = () => {
       isMenuOpen ? closeMenu() : openMenu();
     };
 
-    // Link click (Embla handles drag click suppression naturally, but we force check)
-    emblaApi.on("pointerUp", () => {
-      // Embla internal click suppression is good, but we can prevent default if dragging happened
-      // Actually, just standard click listeners on links work fine with Embla
-    });
-
+    const horizontalLinks = emblaNode.querySelectorAll(".horizontal-link");
     horizontalLinks.forEach((link: any) => {
-      link.addEventListener("click", (e: any) => {
-        if (emblaApi.clickAllowed()) {
+      link.addEventListener("click", () => {
+        if ((emblaApi as any).clickAllowed()) {
           closeMenu();
-        } else {
-          e.preventDefault();
         }
       });
     });
 
-    // Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isMenuOpen) closeMenu();
     });

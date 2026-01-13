@@ -4,24 +4,37 @@ import { Image } from "astro:assets";
 import SOSC from "@/assets/sosc_logo.svg";
 ---
 
-<nav class="text-foreground fixed top-0 z-50 w-full" id="main-navbar">
+<nav class="text-foreground fixed top-0 z-[99] w-full" id="main-navbar">
   <div class="flex h-14 w-full items-center justify-between px-4 md:px-8">
-    <div class="z-50 relative transition-opacity duration-300 font-bold text-xl" id="nav-logo">
+    <div
+      class="relative z-50 text-xl font-bold transition-opacity duration-300"
+      id="nav-logo"
+    >
       <a href="/" aria-label="Go to home">
         <Image src={SOSC} alt="SOSC Logo" class="h-6 w-fit" loading="eager" />
       </a>
     </div>
     <!-- Fixed Toggle Button -->
-    <button id="menu-toggle" class="cursor-pointer z-[100] relative" aria-label="Toggle menu">
-      <Menu id="menu-icon" className="w-6 h-6 block transition-transform duration-300" />
-      <X id="close-icon" className="w-6 h-6 hidden transition-transform duration-300" />
+    <button
+      id="menu-toggle"
+      class="relative z-[100] cursor-pointer"
+      aria-label="Toggle menu"
+    >
+      <Menu
+        id="menu-icon"
+        className="block h-6 w-6 transition-transform duration-300"
+      />
+      <X
+        id="close-icon"
+        className="hidden h-6 w-6 transition-transform duration-300"
+      />
     </button>
   </div>
 
   <!-- Full-page dropdown menu -->
   <div id="fullpage-menu" class="fullpage-menu">
     <div class="menu-background"></div>
-    
+
     <!-- Top Section: Tech text ONLY (Close button removed) -->
     <div class="menu-top">
       <div class="tech-text">
@@ -80,8 +93,13 @@ import SOSC from "@/assets/sosc_logo.svg";
 
     <!-- Bottom Section: SOSC ideals -->
     <div class="menu-bottom">
-      <p class="ideals-text font-mono text-justify">
-        At Sahyadri Open-Source Community, we believe in breeding innovation through collaboration, empowering students with cutting-edge technology, and building a vibrant ecosystem where ideas transform into impactful solutions. We champion open-source principles, encourage knowledge sharing, and create opportunities for growth through workshops, hackathons, and community-driven projects.
+      <p class="ideals-text text-justify font-mono">
+        At Sahyadri Open-Source Community, we believe in breeding innovation
+        through collaboration, empowering students with cutting-edge technology,
+        and building a vibrant ecosystem where ideas transform into impactful
+        solutions. We champion open-source principles, encourage knowledge
+        sharing, and create opportunities for growth through workshops,
+        hackathons, and community-driven projects.
       </p>
     </div>
   </div>
@@ -114,7 +132,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/navbar-bg.png');
+    background-image: url("/navbar-bg.png");
     background-size: cover;
     background-position: center;
     filter: grayscale(100%) contrast(1.2);
@@ -210,7 +228,9 @@ import SOSC from "@/assets/sosc_logo.svg";
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     position: relative;
     cursor: pointer;
     user-select: none;
@@ -223,10 +243,18 @@ import SOSC from "@/assets/sosc_logo.svg";
 
   /* Stagger animations for first visible set generally */
   /* Stagger animations for set */
-  .fullpage-menu.active .embla__slide:nth-child(1) .horizontal-link { transition-delay: 0.1s; }
-  .fullpage-menu.active .embla__slide:nth-child(2) .horizontal-link { transition-delay: 0.2s; }
-  .fullpage-menu.active .embla__slide:nth-child(3) .horizontal-link { transition-delay: 0.3s; }
-  .fullpage-menu.active .embla__slide:nth-child(4) .horizontal-link { transition-delay: 0.4s; }
+  .fullpage-menu.active .embla__slide:nth-child(1) .horizontal-link {
+    transition-delay: 0.1s;
+  }
+  .fullpage-menu.active .embla__slide:nth-child(2) .horizontal-link {
+    transition-delay: 0.2s;
+  }
+  .fullpage-menu.active .embla__slide:nth-child(3) .horizontal-link {
+    transition-delay: 0.3s;
+  }
+  .fullpage-menu.active .embla__slide:nth-child(4) .horizontal-link {
+    transition-delay: 0.4s;
+  }
 
   .link-number {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -245,7 +273,7 @@ import SOSC from "@/assets/sosc_logo.svg";
   }
 
   .link-text::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 0;
@@ -293,43 +321,77 @@ import SOSC from "@/assets/sosc_logo.svg";
   }
 
   @media (max-width: 1024px) {
-    .menu-top, .menu-bottom { padding: 2rem; }
-    .scroll-set { gap: 0; padding-right: 0; }
+    .menu-top,
+    .menu-bottom {
+      padding: 2rem;
+    }
+    .scroll-set {
+      gap: 0;
+      padding-right: 0;
+    }
   }
 
   @media (max-width: 768px) {
-    .menu-top, .menu-bottom { padding: 1.5rem; }
-    .tech-text { gap: 0.5rem; }
-    .scroll-set { gap: 0; padding-right: 0; }
-    .link-text { font-size: clamp(2rem, 8vw, 6rem); }
+    .menu-top,
+    .menu-bottom {
+      padding: 1.5rem;
+    }
+    .tech-text {
+      gap: 0.5rem;
+    }
+    .scroll-set {
+      gap: 0;
+      padding-right: 0;
+    }
+    .link-text {
+      font-size: clamp(2rem, 8vw, 6rem);
+    }
   }
 
   @media (max-width: 480px) {
-    .menu-top, .menu-bottom { padding: 1rem; }
-    .tech-label { font-size: 0.625rem; }
-    .scroll-set { gap: 0; padding-right: 0; }
-    .link-text { font-size: 3rem; }
+    .menu-top,
+    .menu-bottom {
+      padding: 1rem;
+    }
+    .tech-label {
+      font-size: 0.625rem;
+    }
+    .scroll-set {
+      gap: 0;
+      padding-right: 0;
+    }
+    .link-text {
+      font-size: 3rem;
+    }
   }
 </style>
 
 <script>
-  import EmblaCarousel from 'embla-carousel';
+  import EmblaCarousel from "embla-carousel";
 
   function initNavbar() {
-    const navbar = document.getElementById('main-navbar');
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-    const fullpageMenu = document.getElementById('fullpage-menu');
-    const emblaNode = document.getElementById('embla-node');
-    const horizontalLinks = document.querySelectorAll('.horizontal-link');
+    const navbar = document.getElementById("main-navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const fullpageMenu = document.getElementById("fullpage-menu");
+    const emblaNode = document.getElementById("embla-node");
+    const horizontalLinks = document.querySelectorAll(".horizontal-link");
 
-    if (!navbar || !menuToggle || !fullpageMenu || !emblaNode || !menuIcon || !closeIcon) return;
+    if (
+      !navbar ||
+      !menuToggle ||
+      !fullpageMenu ||
+      !emblaNode ||
+      !menuIcon ||
+      !closeIcon
+    )
+      return;
 
     // Initialize Embla
     const emblaApi = EmblaCarousel(emblaNode, {
       loop: true,
-      align: 'center',
+      align: "center",
       dragFree: false,
     });
 
@@ -337,49 +399,49 @@ import SOSC from "@/assets/sosc_logo.svg";
 
     function openMenu() {
       isMenuOpen = true;
-      fullpageMenu?.classList.add('active');
-      menuIcon?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      fullpageMenu?.classList.add("active");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
       // Re-init or resize embla if needed, usually auto-handles
       emblaApi.reInit();
     }
 
     function closeMenu() {
       isMenuOpen = false;
-      fullpageMenu?.classList.remove('active');
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-      document.body.style.overflow = '';
+      fullpageMenu?.classList.remove("active");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      document.body.style.overflow = "";
     }
 
     // Toggle click
     menuToggle.onclick = () => {
-        isMenuOpen ? closeMenu() : openMenu();
+      isMenuOpen ? closeMenu() : openMenu();
     };
 
     // Link click (Embla handles drag click suppression naturally, but we force check)
-    emblaApi.on('pointerUp', () => {
-        // Embla internal click suppression is good, but we can prevent default if dragging happened
-        // Actually, just standard click listeners on links work fine with Embla
+    emblaApi.on("pointerUp", () => {
+      // Embla internal click suppression is good, but we can prevent default if dragging happened
+      // Actually, just standard click listeners on links work fine with Embla
     });
 
     horizontalLinks.forEach((link: any) => {
-      link.addEventListener('click', (e: any) => {
-          if (emblaApi.clickAllowed()) {
-              closeMenu();
-          } else {
-              e.preventDefault();
-          }
+      link.addEventListener("click", (e: any) => {
+        if (emblaApi.clickAllowed()) {
+          closeMenu();
+        } else {
+          e.preventDefault();
+        }
       });
     });
 
     // Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isMenuOpen) closeMenu();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isMenuOpen) closeMenu();
     });
   }
 
   initNavbar();
-  document.addEventListener('astro:page-load', initNavbar);
+  document.addEventListener("astro:page-load", initNavbar);
 </script>

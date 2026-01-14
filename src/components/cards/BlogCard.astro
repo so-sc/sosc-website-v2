@@ -10,6 +10,7 @@ const {
   link,
   highlight = false,
   author,
+  tags,
 } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -20,45 +21,63 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 ---
 
 <a
-  class={`bg-card group shadow-md overflow-hidden cursor-pointer transition hover:shadow-lg ${highlight ? "lg:col-span-2" : ""}`}
   href={`/blogs/${link}`}
+  class="group block border-b border-gray-100 py-10 transition-colors last:border-b-0 hover:border-primary/20"
 >
-  <Image
-    src={cover}
-    alt={title}
-    class="aspect-[16/9] w-full object-cover"
-    width={1280}
-    height={720}
-    format="webp"
-    loading="lazy"
-    quality={80}
-  />
-
-  <div class={`p-4 space-y-1`}>
-    <div class="text-muted-foreground text-sm flex items-center gap-2">
-      <Calendar size={16} />
+  <!-- Author Row -->
+  <div class="mb-4 flex items-center gap-4">
+    <img
+      src={`https://github.com/${author}.png`}
+      alt={author}
+      class="h-12 w-12 rounded-full border border-gray-100 bg-gray-50"
+      loading="lazy"
+      decoding="async"
+      onerror="this.onerror=null; this.src='/github_avatar.svg';"
+    />
+    <div class="flex flex-col">
+      <span class="text-sm font-bold text-gray-900">{author}</span>
+      <span class="text-[10px] italic text-gray-400">Contributor & Member</span>
+    </div>
+    <div class="ml-auto text-[10px] font-medium text-gray-400">
       <span>{formattedDate}</span>
+      <span class="mx-2">in</span>
+      <span class="underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary">
+        {tags}
+      </span>
     </div>
+  </div>
 
-    <h3
-      class={`font-semibold transition-colors group-hover:text-primary ${highlight ? "text-4xl" : "text-lg"}`}
-    >
-      {title}
-    </h3>
+  <!-- Title -->
+  <h3 class="mb-6 text-2xl font-black leading-tight text-gray-900 transition-colors group-hover:text-primary md:text-3xl">
+    {title}
+  </h3>
 
-    <div class="text-muted-foreground text-xs italic flex items-center gap-2">
-      <User size={14} />
-      <span>{author}</span>
+  <!-- Content Row -->
+  <div class="flex flex-col gap-6 md:flex-row">
+    {cover && (
+      <div class="h-32 w-full flex-shrink-0 overflow-hidden bg-gray-50 md:h-40 md:w-64">
+        <Image
+          src={cover}
+          alt={title}
+          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          width={400}
+          height={250}
+          format="webp"
+        />
+      </div>
+    )}
+    
+    <div class="flex flex-col justify-between">
+      <p class="line-clamp-4 text-sm leading-relaxed text-gray-500">
+        {description}
+      </p>
+      
+      <div class="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-900 transition-colors group-hover:text-primary">
+        <span>View This Article</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </div>
     </div>
-
-    {
-      highlight && (
-        <p
-          class={`text-muted-foreground pt-2 ${highlight ? "line-clamp-6" : "line-clamp-3 text-sm"}`}
-        >
-          {description}
-        </p>
-      )
-    }
   </div>
 </a>

@@ -25,103 +25,117 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 ---
 
 <Layout>
-  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
-    <!-- Blog Header -->
-    <div class="space-y-4">
-      <p class="text-primary rounded-md">
-        {tags}
-      </p>
-      <h1 class="text-4xl font-bold">{title}</h1>
-      <div class="flex items-center gap-3">
+  <main class="mx-auto max-w-4xl px-4 py-20 md:px-8">
+    <!-- Blog Header (Reference Style) -->
+    <div class="mb-10 border-b border-gray-100 pb-10">
+      <div class="mb-6 flex items-center gap-4">
         <img
           src={`https://github.com/${author}.png`}
           alt={author}
-          class="h-10 w-10 rounded-full"
-          loading="lazy"
+          class="h-16 w-16 rounded-full border border-gray-100 bg-gray-50"
+          loading="eager"
           decoding="async"
           onerror="this.onerror=null; this.src='/github_avatar.svg';"
         />
-        <div class="flex flex-col leading-tight">
-          <a
-            class="text-primary font-semibold"
+        <div class="flex flex-col">
+          <a 
             href={`https://github.com/${author}`}
             target="_blank"
-            rel="noreferrer"
+            class="text-lg font-bold text-gray-900 transition-colors hover:text-primary"
           >
             {author}
           </a>
-          <span class="text-muted-foreground text-sm">{formattedDate}</span>
+          <span class="text-xs italic text-gray-400">Contributor & Member</span>
+        </div>
+        <div class="ml-auto text-xs font-medium text-gray-400">
+          <span>{formattedDate}</span>
+          <span class="mx-2">in</span>
+          <span class="underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary">
+            {tags}
+          </span>
         </div>
       </div>
 
-      <div class="border-primary my-4 w-20 rounded-2xl border-4 border-b"></div>
-
-      <!-- Blog Cover -->
-      {
-        cover && (
-          <Image
-            src={cover}
-            alt={title}
-            class="h-auto w-full object-cover"
-            loading={"eager"}
-            format="webp"
-            quality={80}
-          />
-        )
-      }
+      <h1 class="text-4xl font-black leading-tight text-gray-900 md:text-6xl">
+        {title}
+      </h1>
     </div>
 
-    <!-- Blog Markdown Content -->
+    <!-- Blog Cover -->
+    {cover && (
+      <div class="mb-12 overflow-hidden bg-gray-50">
+        <Image
+          src={cover}
+          alt={title}
+          class="h-auto w-full object-cover"
+          loading="eager"
+          format="webp"
+          quality={80}
+        />
+      </div>
+    )}
+
+    <!-- Content -->
     <MarkdownLayout>
-      <Content />
+      <div class="prose-blog">
+        <Content />
+      </div>
     </MarkdownLayout>
   </main>
 </Layout>
 
 <style>
-  /* Override prose styles for better heading spacing */
-  :global(.prose h1) {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+  /* Blog Prose Styling */
+  .prose-blog {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
   }
 
-  :global(.prose h2) {
-    margin-top: 1.75rem;
-    margin-bottom: 0.5rem;
+  .prose-blog :global(h2) {
+    font-size: 1.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111827;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3ce56e; /* primary color */
+    padding-left: 1.5rem;
+    line-height: 1;
   }
 
-  :global(.prose h3) {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+  .prose-blog :global(h3) {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 
-  :global(.prose h4) {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+  .prose-blog :global(p) {
+    margin-bottom: 1.5rem;
   }
 
-  :global(.prose h5) {
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+  .prose-blog :global(img) {
+    margin: 3rem 0;
+    border: 1px solid #f3f4f6;
   }
 
-  :global(.prose h6) {
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+  .prose-blog :global(pre) {
+    background: #111827 !important;
+    padding: 2rem !important;
+    margin: 2.5rem 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875rem !important;
   }
 
-  :global(.prose p) {
-    margin-top: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Hide duplicate H1 if title already shown in header */
+  /* Hide duplicate H1 */
   :global(.prose > h1:first-child) {
     display: none;
   }
 
-  :global(.prose hr) {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  /* Utility for vertical text */
+  [writing-mode="vertical-lr"] {
+    writing-mode: vertical-lr;
   }
 </style>

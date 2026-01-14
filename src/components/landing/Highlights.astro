@@ -1,15 +1,6 @@
 ---
 import CommunityCard from "../cards/CommunityCard.astro";
 import events from "../../data/highlights.json";
-
-interface EventItem {
-  title: string;
-  category: string;
-  date: string;
-  image: string;
-  shortDesc: string;
-  fullDesc: string;
-}
 ---
 
 <section class="relative w-full overflow-hidden bg-white px-0 py-12 md:py-24">
@@ -23,7 +14,7 @@ interface EventItem {
   </div>
 
   <!-- Header -->
-  <div class="relative z-10 w-full px-20">
+  <div class="relative z-10 w-full px-6 md:px-20">
     <div class="container mx-auto mb-10 px-4 md:mb-16 md:px-6">
       <!-- Added: System Log -->
       <div
@@ -220,7 +211,7 @@ interface EventItem {
   import { toggleScrollLock } from "@/lib/utils";
 
   const dialog = document.getElementById(
-    "flat-modal"
+    "flat-modal",
   ) as HTMLDialogElement | null;
   const closeBtn = document.getElementById("close-modal");
   const cards = document.querySelectorAll("[data-community-card]");
@@ -229,7 +220,7 @@ interface EventItem {
   const mTitle = document.getElementById("modal-title");
   const mCategory = document.getElementById("modal-category");
   const mImage = document.getElementById(
-    "modal-img"
+    "modal-img",
   ) as HTMLImageElement | null;
   const mDate = document.getElementById("modal-date");
   const mDesc = document.getElementById("modal-desc");

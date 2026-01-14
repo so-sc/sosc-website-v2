@@ -1,5 +1,4 @@
 ---
-const hoverImage = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80";
 
 
 
@@ -40,7 +39,7 @@ const teamMembers = [
 const rowPadding = "20px"; 
 ---
 
-<section class="team-section relative w-full bg-white pb-12 md:pb-24 px-20">
+<section class="team-section relative w-full bg-white pb-12 md:pb-24 px-6 md:px-20">
 
     <!-- Added: Subtle Grid Background -->
   <div class="pointer-events-none absolute inset-0">
@@ -169,6 +168,7 @@ const rowPadding = "20px";
   /* TAGS (Left Side) */
   .tags-column {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     flex: 1; /* Takes up available space on left */
     z-index: 2; /* Keeps text above image */
@@ -184,8 +184,14 @@ const rowPadding = "20px";
   }
 
   .member-name {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 400;
+  }
+
+  @media (min-width: 768px) {
+    .member-name {
+      font-size: 2rem;
+    }
   }
 
   /* 

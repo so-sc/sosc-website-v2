@@ -1,5 +1,6 @@
 ---
 import CommunityCard from "../cards/CommunityCard.astro";
+import events from "../../data/highlights.json";
 
 interface EventItem {
   title: string;
@@ -9,79 +10,6 @@ interface EventItem {
   shortDesc: string;
   fullDesc: string;
 }
-
-const events: EventItem[] = [
-  {
-    title: "DevHost 2025",
-    category: "Flagship event",
-    date: "Nov 2025",
-    image: "/highlights/devhost.jpeg",
-    shortDesc:
-      "The annual convergence of code, culture, and community. A flagship gathering of minds.",
-    fullDesc:
-      "Devhost, the flagship event is a remarkable tech convergence, is set to be an exhilarating experience with an exciting mix of technical and non-technical events. It seeks to equip participants with knowledge and skills, while encouraging curiosity and fostering innovation. With a variety of tech and non-tech battles and events featuring dev talks and workshops led by industry experts",
-  },
-  {
-    title: "HackHarbor 3.0",
-    category: "Mentoring",
-    date: "August 2025",
-    image: "/highlights/hackharbor.jpeg",
-    shortDesc:
-      "A peer-to-peer learning program helping first-year students transition smoothly into their second year.",
-    fullDesc:
-      "HackHarbor is an SOSC-led peer-to-peer learning initiative created for first-year students preparing to enter their second year. The program focuses on strengthening fundamentals, exposing participants to real development workflows, and encouraging collaborative learning through guided sessions led by senior students. HackHarbor creates a supportive environment where juniors learn by building, asking questions freely, and growing alongside their peers.",
-  },
-  {
-    title: "SOSC Podcast",
-    category: "Media",
-    date: "",
-    image: "/highlights/sosc-podcast.jpg",
-    shortDesc:
-      "Dive into the stories behind SOSC’s journey, challenges, and discussions with industry experts",
-    fullDesc:
-      "The SOSC Podcast brings listeners closer to the minds behind the community. Each episode features insightful conversations with founding members and industry experts, exploring technical journeys, leadership lessons, and the evolution of open-source initiatives. It’s a platform to understand how innovation, mentorship, and collaboration drive SOSC’s impact in the tech ecosystem.",
-  },
-  {
-    title: "Tech Week",
-    category: "Technical Event",
-    date: "March-April 2025",
-    image: "/highlights/techweek.jpeg",
-    shortDesc:
-      "A week of sessions on trending tech topics and practical workflows.",
-    fullDesc:
-      "Tech Week, featured a series of sessions led by community members on topics like Serverless Unleashed, Tux101: Linux for Everyone, GCP Accelerate, Self-Hosting Essentials and GOFR workshop. Attendees gained hands-on experience, practical insights, and guidance on modern development practices. The event fostered collaboration, curiosity, and skill-building, highlighting SOSC’s role in promoting tech education and empowering students with open-source knowledge.",
-  },
-  {
-    title: "SOSC at IndiaFOSS",
-    category: "Outreach",
-    date: "Jan 2026",
-    image: "/highlights/indiafoss.jpeg",
-    shortDesc:
-      "Showcasing SOSC at IndiaFOSS, engaging with attendees, and sharing open-source stories.",
-    fullDesc:
-      "SOSC participated in IndiaFOSS with an interactive booth, connecting with tech enthusiasts, students, and professionals. The team shared insights about community-driven projects, open-source initiatives, and ongoing programs, answering questions and inspiring attendees to contribute and collaborate. It was an opportunity to showcase SOSC’s impact, exchange ideas, and strengthen the community’s presence in the larger tech ecosystem.",
-  },
-  {
-    title: "Go and GoFr Workshop",
-    category: "Workshop",
-    date: "Apr 2025",
-    image: "/highlights/go-gofr.jpeg",
-    shortDesc:
-      "Hands-on Go programming workshop by the GoFr team during Tech Week.",
-    fullDesc:
-      "The Go and GoFr Workshop, conducted by the GoFr team during SOSC’s Tech Week, introduced participants to Go programming fundamentals and practical applications. Attendees engaged in interactive sessions, coding exercises, and real-world problem solving, gaining insights into efficient development practices and modern software workflows. The workshop encouraged collaboration, experimentation, and skill-building for budding developers.",
-  },
-  {
-    title: "DevHack 2025",
-    category: "Hackathon",
-    date: "Nov 2025",
-    image: "/highlights/DevHackFinal.png",
-    shortDesc:
-      "A 36-hour hackathon during DevHost 2025 with expert mentorship and guidance.",
-    fullDesc:
-      "DevHack 2025, a 36-hour hackathon held as part of DevHost, brought together students to build innovative projects. SOSC members organized the event with mentors, including professionals from EG, providing guidance, feedback, and technical insights. Participants collaborated intensely, learned from experts, and showcased their solutions, making it a platform for creativity, skill-building, and community-driven innovation.",
-  },
-];
 ---
 
 <section class="relative w-full overflow-hidden bg-white px-0 py-12 md:py-24">
@@ -135,9 +63,9 @@ const events: EventItem[] = [
   <!-- Scroll Area -->
   <div class="relative z-10 w-full overflow-hidden border-b border-gray-100">
     <div
-      class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-4 md:gap-10 md:py-10 md:pl-6"
+      class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-0 md:gap-10 md:py-10 md:pl-0"
     >
-      {[...events, ...events].map((event) => <CommunityCard {...event} />)}
+      {[...events, ...events, ...events].map((event) => <CommunityCard {...event} />)}
     </div>
   </div>
 
@@ -161,7 +89,7 @@ const events: EventItem[] = [
           <!-- Category Tag -->
           <span
             id="modal-category"
-            class="absolute top-0 left-0 bg-red-600 px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase md:text-xs"
+            class="absolute top-0 left-0 bg-primary px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase md:text-xs"
           >
             Category
           </span>
@@ -173,7 +101,7 @@ const events: EventItem[] = [
         <!-- Close Button -->
         <button
           id="close-modal"
-          class="absolute top-4 right-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors hover:bg-red-600 hover:text-white"
+          class="absolute top-4 right-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors hover:bg-primary hover:text-white"
           aria-label="Close"
         >
           <svg
@@ -232,7 +160,7 @@ const events: EventItem[] = [
       transform: translateX(0);
     }
     to {
-      transform: translateX(-33.33%);
+      transform: translateX(-33.33333%);
     }
   }
 

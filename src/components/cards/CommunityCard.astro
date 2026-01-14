@@ -34,9 +34,9 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
 
   <!-- Content -->
   <div class="flex flex-col pr-4">
-    <!-- Meta Row: Red Accent for Category -->
+   
     <div class="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-widest">
-      <span class="text-red-600">{category}</span>
+      <span class="text-primary transition-colors duration-300 group-hover:text-gray-900">{category}</span>
       <span class="text-gray-300">/</span>
       <span class="text-gray-500">{date}</span>
     </div>

@@ -1,11 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
-import Cover from "@/assets/cover/event.jpg";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
 import EventCard from "@/components/cards/EventCard.astro";
-
 const events = await getCollection("events");
 
 const parsedEvents = events
@@ -19,18 +16,47 @@ const parsedEvents = events
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
-<Layout>
-  <Hero
-    image={Cover}
-    title="Our Events"
-    subtitle="Explore upcoming and past events hosted by our community."
-  />
+<Layout title="Events - SOSC">
+  <main class="mx-auto max-w-7xl px-4 py-12 md:px-8">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 min-h-screen">
+      
+      <aside class="relative lg:col-span-4">
+        <div class="sticky top-24 space-y-8">
+          <div>
+            <h1 class="text-8xl font-black uppercase tracking-tighter text-gray-900 dark:text-white leading-[0.8]">
+              Events
+            </h1>
+            <div class="mt-6 flex items-center gap-4">
+              <span class="h-px flex-1 bg-gray-900 dark:bg-white"></span>
+              <span class="font-mono text-sm font-bold uppercase tracking-widest text-primary">
+                {parsedEvents.length} Total
+              </span>
+            </div>
+          </div>
 
-  <section
-    class="bg-background text-foreground mx-auto max-w-7xl px-4 py-16 md:px-8"
-  >
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max">
-      {parsedEvents.map((event) => <EventCard {...event} />)}
+          <div class="space-y-6 text-sm font-medium leading-relaxed text-gray-500 dark:text-gray-400 max-w-xs">
+            <p>
+              A curated collection of workshops, hackathons, and tech talks. 
+              Join us to learn, build, and connect with the community.
+            </p>
+
+          </div>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-8">
+        <div class="flex flex-col gap-12 pb-12">
+          {parsedEvents.map((event) => <EventCard {...event} />)}
+        </div>
+        
+        {parsedEvents.length === 0 && (
+          <div class="flex h-64 items-center justify-center border border-dashed border-gray-200 dark:border-gray-800">
+            <p class="font-mono text-sm text-gray-500">No events found.</p>
+          </div>
+        )}
+      </div>
+
     </div>
-  </section>
+  </main>
 </Layout>
+```

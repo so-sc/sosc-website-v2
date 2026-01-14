@@ -47,7 +47,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     </div>
 
     <!-- Pagination Row (Refined) -->
-    <div class="menu-pagination">
+    <div class="menu-pagination hidden md:flex">
       <div class="pagination-container" id="pagination-list">
         {
           ["HOME", "BLOGS", "EVENTS", "PROJECTS", "RESOURCES", "TEAM"].map(
@@ -61,8 +61,8 @@ import SOSC from "@/assets/sosc_logo.svg";
       </div>
     </div>
 
-    <!-- Middle Section: Horizontal Infinite Scroll -->
-    <div class="menu-middle">
+    <!-- Middle Section: Desktop Horizontal Infinite Scroll -->
+    <div class="menu-middle hidden md:flex">
       <div class="embla" id="embla-node">
         <div class="embla__container">
           <div class="embla__slide">
@@ -105,8 +105,31 @@ import SOSC from "@/assets/sosc_logo.svg";
       </div>
     </div>
 
+    <!-- Middle Section: Mobile Vertical List -->
+    <div class="mobile-menu flex flex-col items-start justify-start flex-1 w-full md:hidden gap-8 overflow-y-auto px-12 pt-8">
+      {
+         [
+          { name: "HOME", path: "/", num: "01" },
+          { name: "BLOGS", path: "/blogs", num: "02" },
+          { name: "EVENTS", path: "/events", num: "03" },
+          { name: "PROJECTS", path: "/projects", num: "04" },
+          { name: "RESOURCES", path: "/resources", num: "05" },
+          { name: "TEAM", path: "/team", num: "06" },
+         ].map((item, index) => (
+          <a
+            href={item.path}
+            class="vertical-link group relative flex items-center gap-4"
+            style={`--delay: ${index * 100}ms`}
+          >
+             <span class="text-xs font-mono text-white/40">{item.num}</span>
+             <span class="text-4xl font-bold text-white tracking-widest group-hover:text-[#00ff88] transition-colors">{item.name}</span>
+          </a>
+         ))
+      }
+    </div>
+
     <!-- Bottom Section: SOSC ideals -->
-    <div class="menu-bottom">
+    <div class="menu-bottom hidden md:block">
       <p class="ideals-text text-justify font-mono">
         At Sahyadri Open-Source Community, we believe in breeding innovation
         through collaboration, empowering students with cutting-edge technology,
@@ -155,9 +178,16 @@ import SOSC from "@/assets/sosc_logo.svg";
     opacity: 0.15;
     z-index: 0;
   }
+  
+  /* Hide background on mobile as requested */
+  @media (max-width: 768px) {
+    .menu-background {
+      display: none;
+    }
+  }
 
   .menu-top {
-    display: flex;
+    display: flex; /* Kept for desktop, hidden via class on mobile */
     justify-content: flex-start;
     align-items: center;
     padding: 3rem 3rem 1.5rem;
@@ -200,7 +230,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     z-index: 20;
     width: 100%;
     padding: 0 3rem;
-    display: flex;
+    /* display: flex;  <-- Removed to let utility classes control display */
     justify-content: center;
     margin-bottom: 1rem;
     opacity: 0;
@@ -267,13 +297,21 @@ import SOSC from "@/assets/sosc_logo.svg";
   /* Middle Section */
   .menu-middle {
     flex: 1;
-    display: flex;
+    /* Removed display: flex to allow hidden class to work, 
+       but added flex to the element itself via class if needed 
+       or re-add via md media query */
     align-items: center;
     position: relative;
     z-index: 10;
     width: 100%;
     overflow: hidden;
     cursor: grab;
+  }
+  
+  @media (min-width: 768px) {
+    .menu-middle {
+        display: flex;
+    }
   }
 
   .menu-middle:active {
@@ -395,6 +433,20 @@ import SOSC from "@/assets/sosc_logo.svg";
     .pagination-container {
       gap: 1rem;
     }
+  }
+  
+  /* Mobile Vertical Link Animation */
+  .vertical-link {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Use CSS variable for delay */
+    transition-delay: var(--delay, 0ms);
+  }
+  
+  .fullpage-menu.active .vertical-link {
+    opacity: 1;
+    transform: translateX(0);
   }
 </style>
 

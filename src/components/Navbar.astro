@@ -55,7 +55,7 @@ import SOSC from "@/assets/sosc_logo.svg";
               <button class="pagination-item" data-index={index}>
                 {item}
               </button>
-            ),
+            )
           )
         }
       </div>
@@ -106,25 +106,29 @@ import SOSC from "@/assets/sosc_logo.svg";
     </div>
 
     <!-- Middle Section: Mobile Vertical List -->
-    <div class="mobile-menu flex flex-col items-start justify-start flex-1 w-full md:hidden gap-8 overflow-y-auto px-12 pt-8">
+    <div
+      class="mobile-menu flex w-full flex-1 flex-col items-start justify-start gap-8 overflow-y-auto px-12 pt-8 md:hidden"
+    >
       {
-         [
+        [
           { name: "HOME", path: "/", num: "01" },
           { name: "BLOGS", path: "/blogs", num: "02" },
           { name: "EVENTS", path: "/events", num: "03" },
           { name: "PROJECTS", path: "/projects", num: "04" },
           { name: "RESOURCES", path: "/resources", num: "05" },
           { name: "TEAM", path: "/team", num: "06" },
-         ].map((item, index) => (
+        ].map((item, index) => (
           <a
             href={item.path}
             class="vertical-link group relative flex items-center gap-4"
             style={`--delay: ${index * 100}ms`}
           >
-             <span class="text-xs font-mono text-white/40">{item.num}</span>
-             <span class="text-4xl font-bold text-white tracking-widest group-hover:text-[#00ff88] transition-colors">{item.name}</span>
+            <span class="font-mono text-xs text-white/40">{item.num}</span>
+            <span class="text-4xl font-bold tracking-widest text-white transition-colors group-hover:text-[#00ff88]">
+              {item.name}
+            </span>
           </a>
-         ))
+        ))
       }
     </div>
 
@@ -178,7 +182,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     opacity: 0.15;
     z-index: 0;
   }
-  
+
   /* Hide background on mobile as requested */
   @media (max-width: 768px) {
     .menu-background {
@@ -307,10 +311,10 @@ import SOSC from "@/assets/sosc_logo.svg";
     overflow: hidden;
     cursor: grab;
   }
-  
+
   @media (min-width: 768px) {
     .menu-middle {
-        display: flex;
+      display: flex;
     }
   }
 
@@ -434,16 +438,18 @@ import SOSC from "@/assets/sosc_logo.svg";
       gap: 1rem;
     }
   }
-  
+
   /* Mobile Vertical Link Animation */
   .vertical-link {
     opacity: 0;
     transform: translateX(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     /* Use CSS variable for delay */
     transition-delay: var(--delay, 0ms);
   }
-  
+
   .fullpage-menu.active .vertical-link {
     opacity: 1;
     transform: translateX(0);

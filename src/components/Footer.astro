@@ -2,51 +2,196 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-foreground text-background py-16 md:py-24 border-t border-border/10">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      
-      <div class="space-y-6 lg:col-span-2">
-        <a href="/" class="block">
-          <span class="font-righteous text-4xl md:text-5xl font-bold tracking-tight">SOSC</span>
-        </a>
-        <p class="text-white/60 max-w-md text-lg leading-relaxed">
-          Sahyadri Open Source Community.<br />
-          Sahyadri College of Engineering and Management,<br /> 
-          Adyar, Mangalore - 575007 IN
-        </p>
-        <div class="flex flex-col space-y-2 text-white/80">
-           <a href="mailto:sosc@sahyadri.edu.in" class="hover:text-primary transition-colors">sosc@sahyadri.edu.in</a>
-           <span>+91 79941 34420</span>
+<footer
+  class="relative overflow-hidden bg-zinc-950 pt-20 pb-10 font-sans text-zinc-300 selection:text-white"
+>
+  <div
+    class="bg-primary/20 pointer-events-none absolute top-0 left-1/2 h-[500px] w-full -translate-x-1/2 rounded-full opacity-20 blur-[120px]"
+  >
+  </div>
+
+  <div
+    class="font-righteous pointer-events-none absolute -right-12 -bottom-24 z-0 text-[15rem] leading-none font-black text-white/3 select-none md:right-10 md:text-[20rem]"
+  >
+    SOSC
+  </div>
+
+  <div
+    class="pointer-events-none absolute inset-0 z-0 opacity-[0.03] mix-blend-overlay"
+    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+  >
+  </div>
+
+  <div class="relative z-10 container mx-auto px-6">
+    <div
+      class="grid grid-cols-1 gap-12 border-b border-white/10 pb-16 lg:grid-cols-12 lg:gap-16"
+    >
+      <div class="flex h-full flex-col justify-between lg:col-span-5">
+        <div>
+          <a href="/" class="group mb-8 inline-block">
+            <span
+              class="font-righteous group-hover:text-primary text-6xl font-bold text-white transition-colors duration-500 md:text-7xl"
+            >
+              SOSC<span class="text-primary">.</span>
+            </span>
+          </a>
+
+          <div class="border-primary/50 border-l-2 pl-1">
+            <p
+              class="pl-6 text-lg leading-relaxed font-light text-zinc-400 md:text-xl"
+            >
+              Sahyadri Open Source Community.<br />
+              Fueling innovation through collaboration.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 space-y-4">
+          <div
+            class="flex items-center gap-4 font-mono text-sm tracking-widest text-zinc-500 uppercase"
+          >
+            <span>Coordinates</span>
+            <div class="h-px flex-1 bg-white/10"></div>
+          </div>
+          <address class="text-zinc-300 not-italic">
+            Sahyadri College of Engineering,<br />
+            Adyar, Mangalore - 575007 IN
+          </address>
+          <div class="mt-4 flex flex-col gap-6 sm:flex-row">
+            <a
+              href="mailto:sosc@sahyadri.edu.in"
+              class="group flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <span
+                class="bg-primary h-2 w-2 rounded-full transition-transform group-hover:scale-150"
+              ></span>
+              sosc@sahyadri.edu.in
+            </a>
+            <span class="hidden text-zinc-700 sm:block">|</span>
+            <a
+              href="tel:+917994134420"
+              class="group flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <span
+                class="bg-primary h-2 w-2 rounded-full transition-transform group-hover:scale-150"
+              ></span>
+              +91 79941 34420
+            </a>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h3 class="font-righteous text-xl mb-6 text-primary">FOLLOW US</h3>
-        <ul class="space-y-4">
-          <li><a href="https://github.com/so-sc" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">GitHub</a></li>
-          <li><a href="https://www.instagram.com/sosc.sahyadri" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/sosc-sahyadri" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">LinkedIn</a></li>
-          <li><a href="https://twitter.com/sahyadri_osc" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">X (Twitter)</a></li>
-          <li><a href="https://www.youtube.com/channel/UCk8nlSMwUT-jhEtamMF-V-w" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">YouTube</a></li>
-        </ul>
-      </div>
+      <div
+        class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:col-span-7 lg:pl-12"
+      >
+        <div class="space-y-8">
+          <h3
+            class="font-righteous flex items-center gap-3 text-2xl text-white"
+          >
+            <span class="text-primary text-base">01.</span> CONNECT
+          </h3>
+          <ul class="space-y-2">
+            {
+              [
+                { name: "GitHub", url: "https://github.com/so-sc" },
+                {
+                  name: "Instagram",
+                  url: "https://www.instagram.com/sosc.sahyadri",
+                },
+                {
+                  name: "LinkedIn",
+                  url: "https://www.linkedin.com/company/sosc-sahyadri",
+                },
+                {
+                  name: "X (Twitter)",
+                  url: "https://twitter.com/sahyadri_osc",
+                },
+                {
+                  name: "YouTube",
+                  url: "https://www.youtube.com/channel/UCk8nlSMwUT-jhEtamMF-V-w",
+                },
+              ].map((link) => (
+                <li>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    class="group hover:border-primary/50 flex items-center justify-between border-b border-white/5 py-3 transition-all duration-300"
+                  >
+                    <span class="text-zinc-400 transition-transform duration-300 group-hover:text-white">
+                      {link.name}
+                    </span>
+                    <span class="text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      ↗
+                    </span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
 
-      <div>
-        <h3 class="font-righteous text-xl mb-6 text-primary">COMMUNITY</h3>
-        <ul class="space-y-4">
-           <li><a href="https://www.sosc.org.in" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Website</a></li>
-           <li><a href="/guidelines" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Guidelines</a></li>
-           <li><a href="https://github.com/so-sc/code-of-conduct" target="_blank" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Code of Conduct</a></li>
-           <li><a href="/team" class="text-white/60 hover:text-white hover:pl-2 transition-all duration-300">Team</a></li>
-        </ul>
+        <div class="space-y-8">
+          <h3
+            class="font-righteous flex items-center gap-3 text-2xl text-white"
+          >
+            <span class="text-primary text-base">02.</span> EXPLORE
+          </h3>
+          <ul class="space-y-2">
+            {
+              [
+                {
+                  name: "Official Website",
+                  url: "https://www.sosc.org.in",
+                  external: true,
+                },
+                {
+                  name: "Community Guidelines",
+                  url: "/guidelines",
+                  external: false,
+                },
+                {
+                  name: "Code of Conduct",
+                  url: "https://github.com/so-sc/code-of-conduct",
+                  external: true,
+                },
+                { name: "Meet the Team", url: "/team", external: false },
+              ].map((link) => (
+                <li>
+                  <a
+                    href={link.url}
+                    target={link.external ? "_blank" : "_self"}
+                    class="group hover:border-primary/50 flex items-center justify-between border-b border-white/5 py-3 transition-all duration-300"
+                  >
+                    <span class="text-zinc-400 transition-transform duration-300 group-hover:text-white">
+                      {link.name}
+                    </span>
+                    <span class="text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      {link.external ? "↗" : "→"}
+                    </span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
-    
     </div>
 
-    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
-      <p>&copy; {currentYear} SOSC. All Rights Reserved.</p>
-      <p class="font-righteous tracking-widest uppercase">Made with ❤️ in Mangalore</p>
+    <div
+      class="flex flex-col items-start justify-between gap-6 pt-8 md:flex-row md:items-center"
+    >
+      <div class="flex flex-col gap-1">
+        <p class="font-mono text-sm text-zinc-500">
+          &copy; {currentYear} SOSC. All Rights Reserved.
+        </p>
+      </div>
+
+      <div
+        class="flex cursor-default items-center gap-2 text-sm font-medium"
+      >
+        <span>MADE BY SOSC</span>
+        <span class="text-primary">❤</span>
+      </div>
     </div>
   </div>
 </footer>

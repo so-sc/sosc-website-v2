@@ -1,38 +1,60 @@
 ---
 import { Image } from "astro:assets";
 import HeroImg from "../../assets/sosc_hero.svg";
+import { MapPin, Hexagon } from "@lucide/astro";
 ---
 
 <div class="relative w-full">
-  <!-- Spacer for scroll height, pulls next section up by 350vh to allow overlap -->
   <div
     id="landing-spacer"
     class="pointer-events-none -mb-[350vh] h-[350vh] w-full"
   >
   </div>
 
-  <!-- Fixed Overlay containing all visuals -->
   <section
     id="hero-section"
-    class="pointer-events-none fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+    class="fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
   >
-    <!-- White Background Layer -->
     <div id="landing-bg" class="absolute inset-0 -z-10 bg-white"></div>
 
     <div
       id="hero-img-container"
-      class="absolute inset-0 flex items-center justify-center select-none"
+      class="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
     >
       <div
-        class="absolute top-1/4 flex w-full justify-center"
-        style="width: clamp(300px, 60vw, 733px);"
+        class="absolute scale-[0.4] sm:scale-[0.6] md:scale-[0.8] lg:top-1/7 xl:scale-100 2xl:scale-100"
       >
+        <div
+          class="text-foreground/40 absolute -right-8 -bottom-16 flex flex-col items-end font-mono text-sm"
+        >
+          <div class="flex items-center gap-2">
+            <span>STATUS: ACTIVE</span>
+            <Hexagon size={12} class="text-primary animate-pulse" />
+          </div>
+          <span class="tracking-[0.2em] uppercase opacity-50"
+            >Core_Sys // Terminal_01</span
+          >
+        </div>
+
+        <div
+          class="text-foreground/70 font-righteous absolute -bottom-16 -left-8 z-10 flex items-center gap-3 text-3xl uppercase italic"
+        >
+          <MapPin size={24} class="text-primary not-italic" />
+          <div class="flex flex-col leading-none not-italic">
+            <span
+              class="text-foreground/40 font-mono text-[9px] font-bold tracking-[0.3em]"
+              >LOC_DATA</span
+            >
+            <span>Mangalore, IN</span>
+          </div>
+        </div>
+
         <Image
           src={HeroImg}
-          alt="HeroImage"
+          alt="SOSC Logo"
           width={733}
           height={202}
-          class="h-auto w-full max-w-none shrink-0"
+          class="relative z-10 max-w-none shrink-0"
           loading="eager"
         />
       </div>
@@ -52,273 +74,212 @@ import HeroImg from "../../assets/sosc_hero.svg";
 
     <div id="grid-flash-container" class="absolute inset-0 z-10"></div>
   </section>
-</div>
 
-<script>
-  function init() {
-    const container = document.getElementById("grid-flash-container");
-    const spacer = document.getElementById("landing-spacer");
-    const heroText = document.getElementById("hero-text");
-    const heroImg = document.getElementById("hero-img-container");
-    const landingBg = document.getElementById("landing-bg");
-    const heroSection = document.getElementById("hero-section");
+  <script>
+    function init() {
+      const container = document.getElementById("grid-flash-container");
+      const spacer = document.getElementById("landing-spacer");
+      const heroText = document.getElementById("hero-text");
+      const heroImg = document.getElementById("hero-img-container");
+      const landingBg = document.getElementById("landing-bg");
+      const heroSection = document.getElementById("hero-section");
 
-    if (!container || !spacer) return;
+      if (!container || !spacer) return;
 
-    const THEME_COLOR = "#3ce56e";
-    let BLOCK_SIZE = 50;
+      const THEME_COLOR = "#3ce56e";
+      let BLOCK_SIZE = 50;
 
-    interface Block {
-      el: HTMLDivElement;
-      r: number;
-      seed: number;
-      roughness: number;
-    }
+      interface Block {
+        el: HTMLDivElement;
+        r: number;
+        seed: number;
+        roughness: number;
+      }
 
-    let blocks: Block[] = [];
+      let blocks: Block[] = [];
 
-    function initGrid() {
-      if (!container) return;
-      container.innerHTML = "";
-      blocks = [];
+      function initGrid() {
+        if (!container) return;
+        container.innerHTML = "";
+        blocks = [];
 
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+        const w = window.innerWidth;
+        const h = window.innerHeight;
 
-      // Responsive block sizing
-      BLOCK_SIZE = w < 768 ? 40 : 50;
+        // Responsive block sizing
+        BLOCK_SIZE = w < 768 ? 40 : 50;
 
-      const cols = Math.ceil(w / BLOCK_SIZE);
-      const rows = Math.ceil(h / BLOCK_SIZE);
+        const cols = Math.ceil(w / BLOCK_SIZE);
+        const rows = Math.ceil(h / BLOCK_SIZE);
 
-      // Calculate offsets to center the grid of blocks
-      const offsetX = (w % BLOCK_SIZE) / 2;
-      const offsetY = (h % BLOCK_SIZE) / 2;
+        const offsetX = (w % BLOCK_SIZE) / 2;
+        const offsetY = (h % BLOCK_SIZE) / 2;
 
-      for (let r = -1; r <= rows; r++) {
-        for (let c = -1; c <= cols; c++) {
-          const pixel = document.createElement("div");
-          pixel.className = "flash-block";
+        for (let r = -1; r <= rows; r++) {
+          for (let c = -1; c <= cols; c++) {
+            const pixel = document.createElement("div");
+            pixel.className = "flash-block";
 
-          // We add +1px to width/height to ensure no sub-pixel gaps (white lines)
-          pixel.style.width = `${BLOCK_SIZE + 1}px`;
-          pixel.style.height = `${BLOCK_SIZE + 1}px`;
-          pixel.style.left = `${offsetX + c * BLOCK_SIZE}px`;
-          pixel.style.top = `${offsetY + r * BLOCK_SIZE}px`;
-          pixel.style.backgroundColor = THEME_COLOR;
-          pixel.style.opacity = "0";
+            pixel.style.width = `${BLOCK_SIZE + 1}px`;
+            pixel.style.height = `${BLOCK_SIZE + 1}px`;
+            pixel.style.left = `${offsetX + c * BLOCK_SIZE}px`;
+            pixel.style.top = `${offsetY + r * BLOCK_SIZE}px`;
+            pixel.style.backgroundColor = THEME_COLOR;
+            pixel.style.opacity = "0";
 
-          container.appendChild(pixel);
+            container.appendChild(pixel);
 
-          blocks.push({
-            el: pixel,
-            r,
-            seed: Math.random(),
-            roughness: (Math.random() - 0.5) * 3, // Increased roughness for a more organic feel
-          });
+            blocks.push({
+              el: pixel,
+              r,
+              seed: Math.random(),
+              roughness: (Math.random() - 0.5) * 3,
+            });
+          }
         }
-      }
-      updateBlocks();
-    }
-
-    function updateBlocks() {
-      if (!spacer || !blocks.length) return;
-
-      const rect = spacer.getBoundingClientRect();
-      const h = window.innerHeight;
-      const rows = Math.floor(h / BLOCK_SIZE);
-
-      // Total travel distance of the spacer
-      // Spacer is 350vh.
-      // It starts at top=0. Ends when bottom passes bottom of screen?
-      // Since it has -100vh margin, the *layout* ends at 250vh.
-      // But getBoundingClientRect tracks the physical element (350vh).
-      // We want mapping 0..1 to cover the significant part of the scroll.
-      // We want Exit to end when visual "About" is fully covered? No, when Landing is done.
-
-      const totalScrollable = rect.height - h; // 350vh - 100vh = 250vh of scrollable area
-      const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
-
-      // Hide the fixed overlay completely if we are past the Landing section
-      if (-rect.top > rect.height) {
-        if (heroSection) heroSection.style.display = "none";
-        return;
-      } else {
-        if (heroSection) heroSection.style.display = "flex";
+        updateBlocks();
       }
 
-      // PHASES
-      // 1. Entrance: 0.0 -> 0.35
-      // 2. Hold:     0.35 -> 0.65
-      // 3. Exit:     0.65 -> 1.0
+      function updateBlocks() {
+        if (!spacer || !blocks.length) return;
 
-      let entranceProgress = 0;
-      let exitProgress = 0;
+        const rect = spacer.getBoundingClientRect();
+        const h = window.innerHeight;
+        const rows = Math.floor(h / BLOCK_SIZE);
 
-      if (progress < 0.35) {
-        // Entrance phase
-        entranceProgress = progress / 0.35;
-      } else if (progress < 0.65) {
-        // Hold phase
-        entranceProgress = 1;
-      } else {
-        // Exit phase
-        entranceProgress = 1;
-        exitProgress = (progress - 0.65) / 0.35;
-      }
+        const totalScrollable = rect.height - h; // 350vh - 100vh = 250vh of scrollable area
+        const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
 
-      // ---------------------
-      // BG & IMG VISIBILITY
-      // ---------------------
-      // If we are in Exit phase, Hide White BG and Hero Image to reveal content behind
-      if (progress >= 0.65) {
-        if (landingBg) landingBg.style.opacity = "0";
-        if (heroImg) heroImg.style.opacity = "0";
-      } else {
-        if (landingBg) landingBg.style.opacity = "1";
-        if (heroImg) heroImg.style.opacity = "1";
-      }
-
-      // ---------------------
-      // TEXT OPACITY LOGIC
-      // ---------------------
-      if (heroText) {
-        let textOp = 0;
-        if (progress < 0.35) {
-          // Fade IN (last 40% of entrance)
-          textOp = Math.max(0, (entranceProgress - 0.6) / 0.4);
-        } else if (progress < 0.65) {
-          textOp = 1;
+        // Hide the fixed overlay completely if we are past the Landing section
+        if (-rect.top > rect.height) {
+          if (heroSection) heroSection.style.display = "none";
+          return;
         } else {
-          // Fade OUT (first 40% of exit) - Mirrors the entrance timing
-          textOp = Math.max(0, 1 - exitProgress / 0.4);
+          if (heroSection) heroSection.style.display = "flex";
         }
-        heroText.style.opacity = Math.max(0, Math.min(1, textOp)).toString();
+
+        let entranceProgress = 0;
+        let exitProgress = 0;
+
+        if (progress < 0.35) {
+          // Entrance phase
+          entranceProgress = progress / 0.35;
+        } else if (progress < 0.65) {
+          // Hold phase
+          entranceProgress = 1;
+        } else {
+          // Exit phase
+          entranceProgress = 1;
+          exitProgress = (progress - 0.65) / 0.35;
+        }
+
+        // ---------------------
+        // BG & IMG VISIBILITY
+        // ---------------------
+        if (progress >= 0.65) {
+          if (landingBg) landingBg.style.opacity = "0";
+          if (heroImg) heroImg.style.opacity = "0";
+        } else {
+          if (landingBg) landingBg.style.opacity = "1";
+          if (heroImg) heroImg.style.opacity = "1";
+        }
+
+        // ---------------------
+        // TEXT OPACITY LOGIC
+        // ---------------------
+        if (heroText) {
+          let textOp = 0;
+          if (progress < 0.35) {
+            // Fade IN (last 40% of entrance)
+            textOp = Math.max(0, (entranceProgress - 0.6) / 0.4);
+          } else if (progress < 0.65) {
+            textOp = 1;
+          } else {
+            // Fade OUT (first 40% of exit) - Mirrors the entrance timing
+            textOp = Math.max(0, 1 - exitProgress / 0.4);
+          }
+          heroText.style.opacity = Math.max(0, Math.min(1, textOp)).toString();
+        }
+
+        // ---------------------
+        // BLOCK LOGIC
+        // ---------------------
+        // Base row for Entrance (rising)
+        const entranceBaseRow = rows - 1.5 - entranceProgress * (rows + 10);
+
+        const exitBaseRow = rows + 2 - exitProgress * (rows + 15);
+
+        blocks.forEach((block) => {
+          const entranceRow =
+            block.r + block.roughness * (1 - entranceProgress);
+          const distFromEntrance = entranceRow - entranceBaseRow;
+
+          const exitRow = block.r + block.roughness * (1 - exitProgress);
+          const distFromExit = exitRow - exitBaseRow;
+
+          let entranceAlpha = 0;
+
+          if (distFromEntrance >= 0) {
+            // Fully entered (Solid Green)
+            entranceAlpha = 1;
+          } else if (distFromEntrance > -4) {
+            // Fragmented top edge
+            const dist = Math.abs(distFromEntrance);
+            const density = 0.9 - (dist - 1) * 0.25;
+            if (block.seed < density) {
+              entranceAlpha = 0.8 - (dist - 1) * 0.2;
+            }
+          }
+
+          if (distFromExit > 4) {
+            entranceAlpha = 0;
+          } else if (distFromExit > 0) {
+            const dist = distFromExit;
+            const density = 0.9 - dist * 0.2;
+
+            if (block.seed > density) {
+              entranceAlpha = 0;
+            } else {
+              const fade = 1 - dist / 4;
+              entranceAlpha = Math.min(entranceAlpha, fade);
+            }
+          }
+
+          block.el.style.opacity = entranceAlpha.toString();
+        });
       }
 
-      // ---------------------
-      // BLOCK LOGIC
-      // ---------------------
-      // Base row for Entrance (rising)
-      const entranceBaseRow = rows - 1.5 - entranceProgress * (rows + 10);
+      window.addEventListener("resize", initGrid);
+      window.addEventListener("scroll", updateBlocks);
+      initGrid();
 
-      // Base row for Exit (leaving from bottom to top)
-      const exitBaseRow = rows + 2 - exitProgress * (rows + 15);
-
-      blocks.forEach((block) => {
-        // 1. Calculate Presence based on ENTRANCE
-        //    (Green if BELOW the entrance line)
-        const entranceRow = block.r + block.roughness * (1 - entranceProgress);
-        const distFromEntrance = entranceRow - entranceBaseRow;
-
-        // 2. Calculate Removal based on EXIT
-        //    (Clear/White if BELOW the exit line)
-        const exitRow = block.r + block.roughness * (1 - exitProgress);
-        const distFromExit = exitRow - exitBaseRow;
-
-        // Logic:
-        // By default, we are dependent on Entrance.
-        // But if Exit is active, it overrides Entrance (turns things transparent).
-
-        // Determine raw input opacity from Entrance
-        let entranceAlpha = 0;
-
-        if (distFromEntrance >= 0) {
-          // Fully entered (Solid Green)
-          entranceAlpha = 1;
-        } else if (distFromEntrance > -4) {
-          // Fragmented top edge
-          const dist = Math.abs(distFromEntrance);
-          const density = 0.9 - (dist - 1) * 0.25;
-          if (block.seed < density) {
-            entranceAlpha = 0.8 - (dist - 1) * 0.2;
-          }
-        }
-
-        // Apply Exit Mask
-        // As exitProgress increases, limit goes UP from bottom.
-        // Anything BELOW the exit line is cleared (White).
-        // Anything ABOVE is kept (Green), until the line passes it.
-
-        // Is distFromExit positive (below) or negative (above)?
-        // exitBaseRow is decreasing (moving UP) or increasing?
-        // rows + 2 ... minus ...
-        // So exitBaseRow DECREASES (starts high, goes low/negative).
-        // So line moves DOWN?
-        // No. "rows" is bottom. "-10" is top.
-        // Start: rows (Bottom). End: -10 (Top).
-        // So exitBaseRow moves Bottom to Top.
-        // block.r is constant.
-
-        // We want to clear stuff BELOW the line?
-        // No, we want to clear stuff that the line has "passed" (if line is "eraser").
-        // Or if the line is the "top of the white wave".
-        // White wave rises from Bottom.
-        // So anything BELOW the line (r > line) should be White (0).
-        // Anything ABOVE the line (r < line) should be Green (1).
-
-        // distFromExit = props.r (approx) - line.
-        // if r > line (Below) -> distFromExit > 0.
-        // So if distFromExit > 0 -> Clear.
-
-        // Let's add the fragmented edge to the Exit too.
-
-        if (distFromExit > 4) {
-          // Deep in the cleared zone
-          entranceAlpha = 0;
-        } else if (distFromExit > 0) {
-          // Fragmented edge of the clearing wave
-          const dist = distFromExit;
-          const density = 0.9 - dist * 0.2;
-
-          if (block.seed > density) {
-            // Remove pixel
-            entranceAlpha = 0;
-          } else {
-            // Keep pixel, but apply varying opacity to match "fragmented" look
-            const fade = 1 - dist / 4;
-            entranceAlpha = Math.min(entranceAlpha, fade);
-          }
-        }
-
-        block.el.style.opacity = entranceAlpha.toString();
-      });
+      return () => {
+        window.removeEventListener("resize", initGrid);
+        window.removeEventListener("scroll", updateBlocks);
+      };
     }
 
-    window.addEventListener("resize", initGrid);
-    window.addEventListener("scroll", updateBlocks);
-    initGrid();
+    let cleanup: () => void;
+    document.addEventListener("astro:page-load", () => {
+      if (cleanup) cleanup();
+      cleanup = init() as () => void;
+    });
+  </script>
 
-    return () => {
-      window.removeEventListener("resize", initGrid);
-      window.removeEventListener("scroll", updateBlocks);
-    };
-  }
+  <style is:global>
+    .flash-block {
+      position: absolute;
+      pointer-events: none;
+      will-change: opacity;
+      transition: opacity 0.12s linear;
+    }
 
-  let cleanup: () => void;
-  // Initialize on both direct load and view transitions
-  document.addEventListener("astro:page-load", () => {
-    if (cleanup) cleanup();
-    cleanup = init() as () => void;
-  });
-</script>
-
-<style is:global>
-  .flash-block {
-    position: absolute;
-    pointer-events: none;
-    /* Use will-change for smooth scrolling performance */
-    will-change: opacity;
-    /* This makes the rise look snappy but not flickering */
-    transition: opacity 0.12s linear;
-  }
-
-  /* Optional: adds a very subtle highlight between blocks to maintain a techy feel */
-  .flash-block::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-</style>
+    .flash-block::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</div>

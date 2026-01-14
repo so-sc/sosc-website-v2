@@ -1,7 +1,7 @@
 {
     "title": "GitHub Student Developer Pack",
     "description": "The best developer tools, free for students. Includes offers from DigitalOcean, JetBrains, Namecheap, and many more to help you learn and build.",
-    "type": "collection",
+    "type": "tools",
     "category": "Development",
     "tags": [
         "students",

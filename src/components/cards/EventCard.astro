@@ -28,10 +28,10 @@ if (eventDate.toDateString() === today.toDateString()) {
 
 <a
   href={`/events/${link}`}
-  class="group grid grid-cols-1 md:grid-cols-12 gap-8 items-center p-6 rounded-3xl bg-gray-100 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+  class="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center py-6 md:py-12 border-b border-gray-300 dark:border-gray-100 last:border-0"
 >
   <!-- Graphical Date (Left) -->
-  <div class="hidden md:flex flex-col md:col-span-2 items-center justify-center border-r border-gray-200 dark:border-gray-800 pr-6 h-full">
+  <div class="hidden md:flex flex-col md:col-span-2 items-center justify-center pr-6 h-full">
     <span class="text-5xl font-black text-gray-400 group-hover:text-primary transition-colors duration-500 leading-none">
       {new Date(date).getDate().toString().padStart(2, '0')}
     </span>
@@ -41,7 +41,7 @@ if (eventDate.toDateString() === today.toDateString()) {
   </div>
 
   <!-- Image (Middle - Wider) -->
-  <div class="relative aspect-video w-full md:col-span-5 overflow-hidden rounded-2xl bg-gray-200 dark:bg-gray-800 shadow-sm">
+  <div class="relative aspect-video w-full md:col-span-5 overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-sm">
     {
       cover && (
         <Image
@@ -73,7 +73,7 @@ if (eventDate.toDateString() === today.toDateString()) {
         )}
       </div>
 
-      <h2 class="mb-3 text-3xl font-black leading-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+      <h2 class="mb-3 text-xl md:text-3xl font-black leading-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
         {name}
       </h2>
 

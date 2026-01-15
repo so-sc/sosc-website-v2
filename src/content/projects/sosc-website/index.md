@@ -1,16 +1,16 @@
 ---
+id: sosc-website
 title: SOSC Website
-description: The official website for Sahyadri Open Source Community built with Astro, featuring blogs, events, projects, and team information.
-cover: ./cover.jpg
-date: 2024-01-15
+description: The official website of Sahyadri Open Source Community, built with Astro to showcase blogs, events, projects, and the team.
+cover: ./cover.webp
+date: 2026-01-14
 techStack:
   - Astro
   - TypeScript
   - TailwindCSS
   - React
 maintainers:
-  - haxzie
-  - manutdmohit
+  - so-sc
 status: active
 category: Community
 tags:
@@ -23,59 +23,60 @@ documentation: https://github.com/so-sc/sosc-website#readme
 community: true
 ---
 
-## About the Project
+# SOSC Website 
 
-The SOSC Website serves as the central hub for our community, showcasing our events, blog posts, projects, and team members. Built with modern web technologies, it provides a fast and responsive experience for all visitors.
+The **SOSC Website** is the official digital presence of the **Sahyadri Open Source Community**.  
+It acts as a central platform to share community activities, publish blogs, highlight open-source projects, and introduce the people behind the community.
 
-## Features
+The website is designed with a strong focus on **performance, accessibility, and clean UI**, ensuring a smooth experience across devices.
 
-- **Blogs**: Read articles and insights from community members
-- **Events**: Stay updated with upcoming and past events
-- **Projects**: Explore community-developed projects
-- **Team**: Meet our amazing community members
+---
+
+## Key Features
+
+- **Blogs** – Articles, tutorials, and insights written by community members  
+- **Events** – Information about upcoming, ongoing, and past events  
+- **Projects** – Showcase of open-source projects built within the community  
+- **Resources** – Curated learning materials, tools, and references shared by community members  
+- **Team** – Profiles of contributors and core members of SOSC  
+  
+
+---
 
 ## Tech Stack
 
-The website is built using:
+The SOSC Website is built using modern web technologies:
 
-- **Astro** - Static site generator for lightning-fast performance
-- **TypeScript** - Type-safe JavaScript for better developer experience
-- **TailwindCSS** - Utility-first CSS framework
-- **React** - For interactive components
+- **Astro** – Static site generation for excellent performance  
+- **TypeScript** – Type-safe development and maintainability  
+- **Tailwind CSS** – Utility-first styling for consistent UI  
+- **React** – Interactive components where needed  
 
-## Getting Started
+---
 
-### Prerequisites
+## Project Goals
 
-- Node.js 18+
-- npm or pnpm
+- Serve as the central hub for SOSC’s online presence  
+- Promote open-source culture within the community  
+- Highlight projects, events, and contributors  
+- Maintain a fast, accessible, and scalable website  
 
-### Installation
+---
 
-```bash
-# Clone the repository
-git clone https://github.com/so-sc/sosc-website.git
+## Open Source & Community
 
-# Navigate to project directory
-cd sosc-website
+The SOSC Website is an **open-source project** maintained by the **Sahyadri Open Source Community**.  
+It reflects the community’s values of collaboration, learning, and transparency.
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
+---
 
 ## Contributing
 
-We welcome contributions! Please read our contributing guidelines before submitting a pull request.
+Contributions are welcome.  
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+---
 
 ## License
 
-This project is licensed under the MIT License.
+The SOSC Website is licensed under the [MIT License](https://opensource.org/licenses/MIT).

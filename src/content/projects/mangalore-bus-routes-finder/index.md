@@ -1,5 +1,5 @@
 ---
-name: Mangalore Bus Routes Finder
+title: Mangalore Bus Routes Finder
 description: An intelligent bus route finder for Mangalore city, designed to provide smart route suggestions and journey planning using advanced graph traversal algorithms.
 cover: ./mangalore-bus-routes-finder.webp
 date: 2026-01-15

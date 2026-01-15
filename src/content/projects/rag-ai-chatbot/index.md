@@ -37,6 +37,9 @@ echo "GROQ_API_KEY=your_groq_api_key_here" > .env
 
 **Multilingual AI Chat System** is a fully open-source, cross-platform AI chat application supporting both text and voice, built with modern, high-performance open-source technologies.
 
+
+**Supports 4 Languages:** English, Hindi, Tamil, and Telugu — users can interact in any of these languages via text or voice.
+
 This application features a robust Retrieval Augmented Generation (RAG) system that enables users to get answers directly from PDF and PPTX files placed in the `backend/documents` directory. Users can ask questions in English, Hindi, Tamil, or Telugu, using either text or audio input, and receive a text response based on the content of the documents. If the requested information is not found in the files, the system responds with "this information is not there in the documents." This makes the application ideal for multilingual, document-based Q&A scenarios in both research and community settings.
 
 The project focuses on **multilingual support, extensibility, and developer experience**, making it suitable for research, learning, and community-driven AI chat applications.

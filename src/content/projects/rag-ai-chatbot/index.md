@@ -1,7 +1,7 @@
 ---
 title: Multilingual AI Chat System
 description: A fully open-source, cross-platform AI chat application supporting both text and voice, built with modern, high-performance open-source technologies.
-cover: ./assets/images/adk-cover.webp
+cover: ./ai-chatbot.webp
 date: 2026-01-14
 techStack:
   - Groq (Llama 3.3-70b)

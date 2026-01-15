@@ -26,13 +26,15 @@ import SOSC from "@/assets/sosc_logo.svg";
       />
       <X
         id="close-icon"
-        className="hidden h-6 w-6 transition-transform duration-300"
+        className="hidden h-6 w-6 transition-transform duration-300 text-white"
       />
     </button>
   </div>
 
-  <!-- Full-page dropdown menu -->
-  <div id="fullpage-menu" class="fullpage-menu">
+  <!-- ========================================= -->
+  <!-- DESKTOP MENU (Existing Embla Implementation) -->
+  <!-- ========================================= -->
+  <div id="desktop-menu" class="fullpage-menu hidden md:flex">
     <div class="menu-background"></div>
 
     <!-- Top Section -->
@@ -46,8 +48,8 @@ import SOSC from "@/assets/sosc_logo.svg";
       </div>
     </div>
 
-    <!-- Pagination Row (Refined) -->
-    <div class="menu-pagination hidden md:flex">
+    <!-- Pagination Row -->
+    <div class="menu-pagination">
       <div class="pagination-container" id="pagination-list">
         {
           ["HOME", "BLOGS", "EVENTS", "PROJECTS", "RESOURCES", "TEAM"].map(
@@ -55,14 +57,14 @@ import SOSC from "@/assets/sosc_logo.svg";
               <button class="pagination-item" data-index={index}>
                 {item}
               </button>
-            )
+            ),
           )
         }
       </div>
     </div>
 
     <!-- Middle Section: Desktop Horizontal Infinite Scroll -->
-    <div class="menu-middle hidden md:flex">
+    <div class="menu-middle">
       <div class="embla" id="embla-node">
         <div class="embla__container">
           <div class="embla__slide">
@@ -105,35 +107,8 @@ import SOSC from "@/assets/sosc_logo.svg";
       </div>
     </div>
 
-    <!-- Middle Section: Mobile Vertical List -->
-    <div
-      class="mobile-menu flex w-full flex-1 flex-col items-start justify-start gap-8 overflow-y-auto px-12 pt-8 md:hidden"
-    >
-      {
-        [
-          { name: "HOME", path: "/", num: "01" },
-          { name: "BLOGS", path: "/blogs", num: "02" },
-          { name: "EVENTS", path: "/events", num: "03" },
-          { name: "PROJECTS", path: "/projects", num: "04" },
-          { name: "RESOURCES", path: "/resources", num: "05" },
-          { name: "TEAM", path: "/team", num: "06" },
-        ].map((item, index) => (
-          <a
-            href={item.path}
-            class="vertical-link group relative flex items-center gap-4"
-            style={`--delay: ${index * 100}ms`}
-          >
-            <span class="font-mono text-xs text-white/40">{item.num}</span>
-            <span class="text-4xl font-bold tracking-widest text-white transition-colors group-hover:text-[#00ff88]">
-              {item.name}
-            </span>
-          </a>
-        ))
-      }
-    </div>
-
-    <!-- Bottom Section: SOSC ideals -->
-    <div class="menu-bottom hidden md:block">
+    <!-- Bottom Section -->
+    <div class="menu-bottom">
       <p class="ideals-text text-justify font-mono">
         At Sahyadri Open-Source Community, we believe in breeding innovation
         through collaboration, empowering students with cutting-edge technology,
@@ -144,9 +119,39 @@ import SOSC from "@/assets/sosc_logo.svg";
       </p>
     </div>
   </div>
+
+  <!-- ========================================= -->
+  <!-- MOBILE MENU (New Design) -->
+  <!-- ========================================= -->
+  <div id="mobile-menu" class="mobile-menu-overlay md:hidden">
+    <!-- Close button logic is handled by the fixed toggle button z-index -->
+    <div class="mobile-content-container">
+       {
+          [
+           { name: "Home", path: "/" },
+           { name: "Blogs", path: "/blogs" },
+           { name: "Events", path: "/events" },
+           { name: "Projects", path: "/projects" },
+           { name: "Resources", path: "/resources" },
+           { name: "Team", path: "/team" },
+          ].map((item, index) => (
+           <a
+             href={item.path}
+             class="mobile-link"
+             style={`--delay: ${index * 50}ms`}
+           >
+             {item.name}
+           </a>
+          ))
+       }
+    </div>
+  </div>
 </nav>
 
 <style>
+  /* ========================================= */
+  /* DESKTOP / SHARED STYLES */
+  /* ========================================= */
   .fullpage-menu {
     position: fixed;
     top: 0;
@@ -160,7 +165,6 @@ import SOSC from "@/assets/sosc_logo.svg";
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 60;
     overflow: hidden;
-    display: flex;
     flex-direction: column;
   }
 
@@ -183,15 +187,9 @@ import SOSC from "@/assets/sosc_logo.svg";
     z-index: 0;
   }
 
-  /* Hide background on mobile as requested */
-  @media (max-width: 768px) {
-    .menu-background {
-      display: none;
-    }
-  }
-
+  /* Desktop Top */
   .menu-top {
-    display: flex; /* Kept for desktop, hidden via class on mobile */
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 3rem 3rem 1.5rem;
@@ -228,13 +226,13 @@ import SOSC from "@/assets/sosc_logo.svg";
     font-size: 0.8rem;
   }
 
-  /* Pagination Row (Refined) */
+  /* Pagination */
   .menu-pagination {
     position: relative;
     z-index: 20;
     width: 100%;
     padding: 0 3rem;
-    /* display: flex;  <-- Removed to let utility classes control display */
+    display: flex;
     justify-content: center;
     margin-bottom: 1rem;
     opacity: 0;
@@ -251,15 +249,15 @@ import SOSC from "@/assets/sosc_logo.svg";
     align-items: center;
     gap: 1.5rem;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     width: fit-content;
     max-width: 100%;
     padding: 0.5rem 0;
   }
 
   .pagination-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
   }
 
   .pagination-item {
@@ -298,24 +296,16 @@ import SOSC from "@/assets/sosc_logo.svg";
     width: 100%;
   }
 
-  /* Middle Section */
+  /* Desktop Middle */
   .menu-middle {
     flex: 1;
-    /* Removed display: flex to allow hidden class to work, 
-       but added flex to the element itself via class if needed 
-       or re-add via md media query */
+    display: flex;
     align-items: center;
     position: relative;
     z-index: 10;
     width: 100%;
     overflow: hidden;
     cursor: grab;
-  }
-
-  @media (min-width: 768px) {
-    .menu-middle {
-      display: flex;
-    }
   }
 
   .menu-middle:active {
@@ -357,9 +347,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     cursor: pointer;
     user-select: none;
   }
@@ -399,7 +387,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     width: 100%;
   }
 
-  /* Bottom Section */
+  /* Desktop Bottom */
   .menu-bottom {
     padding: 2rem 3rem 3rem;
     position: relative;
@@ -424,35 +412,65 @@ import SOSC from "@/assets/sosc_logo.svg";
     letter-spacing: 0.05em;
   }
 
+  /* ========================================= */
+  /* MOBILE STYLE (Refined) */
+  /* ========================================= */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Dark green color matching theme */
+    background-color: #09090b; 
+    z-index: 55; /* Just below the navbar toggle which is z-100 */
+    transform: translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+    
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Right align */
+    padding-right: 2rem;
+  }
+
   @media (max-width: 768px) {
-    .menu-top {
-      padding: 4rem 2rem 1rem;
-    }
-    .menu-pagination {
-      padding: 0 2rem;
-    }
-    .menu-bottom {
-      padding: 1.5rem 2rem 3rem;
-    }
-    .pagination-container {
-      gap: 1rem;
+    .mobile-menu-overlay {
+        display: flex;
     }
   }
 
-  /* Mobile Vertical Link Animation */
-  .vertical-link {
+  .mobile-menu-overlay.active {
+    transform: translateY(0);
+  }
+
+  .mobile-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: right;
+  }
+
+  .mobile-link {
+    color: #fff;
+    font-size: 2.5rem; /* Large text */
+    font-family: 'Inter', sans-serif; /* Keep consistent font if possible, or utility class */
+    font-weight: 500;
+    text-decoration: none;
     opacity: 0;
-    transform: translateX(-20px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-    /* Use CSS variable for delay */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
     transition-delay: var(--delay, 0ms);
   }
+  
+  .mobile-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
 
-  .fullpage-menu.active .vertical-link {
+  /* On active, animate links in */
+  .mobile-menu-overlay.active .mobile-link {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 </style>
 
@@ -464,60 +482,74 @@ import SOSC from "@/assets/sosc_logo.svg";
     const menuToggle = document.getElementById("menu-toggle");
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
-    const fullpageMenu = document.getElementById("fullpage-menu");
+    
+    // Select BOTH menus
+    const desktopMenu = document.getElementById("desktop-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    
     const emblaNode = document.getElementById("embla-node");
     const paginationList = document.getElementById("pagination-list");
 
-    if (
-      !menuToggle ||
-      !fullpageMenu ||
-      !emblaNode ||
-      !paginationList ||
-      !menuIcon ||
-      !closeIcon
-    )
-      return;
+    if (!menuToggle || !menuIcon || !closeIcon) return;
 
-    // 1. Main Carousel
-    const emblaApi = EmblaCarousel(emblaNode as HTMLElement, {
-      loop: true,
-      align: "center",
-      dragFree: false,
-    });
+    // --- Embla Setup (Only runs if elements exist) ---
+    let emblaApi: any;
+    if (emblaNode && paginationList) {
+        emblaApi = EmblaCarousel(emblaNode as HTMLElement, {
+          loop: true,
+          align: "center",
+          dragFree: false,
+        });
 
-    // 2. Pagination Logic
-    const paginationItems = paginationList.querySelectorAll(".pagination-item");
+        const paginationItems = paginationList.querySelectorAll(".pagination-item");
 
-    const updateActivePagination = () => {
-      const selectedIndex = emblaApi.selectedScrollSnap();
-      paginationItems.forEach((item, index) => {
-        if (index === selectedIndex) {
-          item.classList.add("is-active");
-          item.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
+        const updateActivePagination = () => {
+          if(!emblaApi) return;
+          const selectedIndex = emblaApi.selectedScrollSnap();
+          paginationItems.forEach((item, index) => {
+            if (index === selectedIndex) {
+              item.classList.add("is-active");
+              item.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "center",
+              });
+            } else {
+              item.classList.remove("is-active");
+            }
           });
-        } else {
-          item.classList.remove("is-active");
-        }
-      });
-    };
+        };
 
-    emblaApi.on("select", updateActivePagination);
-    emblaApi.on("reInit", updateActivePagination);
-    updateActivePagination();
+        emblaApi.on("select", updateActivePagination);
+        emblaApi.on("reInit", updateActivePagination);
+        updateActivePagination();
 
-    paginationItems.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const indexAttr = btn.getAttribute("data-index");
-        const index = parseInt(indexAttr || "0");
-        emblaApi.scrollTo(index);
-      });
-    });
+        paginationItems.forEach((btn) => {
+          btn.addEventListener("click", () => {
+              const indexAttr = btn.getAttribute("data-index");
+              const index = parseInt(indexAttr || "0");
+              emblaApi?.scrollTo(index);
+          });
+        });
+        
+        // Link click closure
+        const horizontalLinks = emblaNode.querySelectorAll(".horizontal-link");
+        horizontalLinks.forEach((link: any) => {
+            link.addEventListener("click", () => {
+                // Check if click is valid (not dragging)
+                if (emblaApi.clickAllowed()) {
+                    closeMenu();
+                }
+            });
+        });
+    }
 
-    // 3. Current Route Selection Logic
+    // 3. Current Route Selection Logic (Preserved)
     const findIndexByPath = () => {
+      // Safety: if emblaNode doesn't exist (e.g. strict mobile if we unmounted it, but we use display:none so it exists), 
+      // but let's check
+      if (!emblaNode) return 0;
+      
       const currentPath = window.location.pathname;
       const slides = emblaNode.querySelectorAll(".horizontal-link");
       let targetIndex = 0;
@@ -534,26 +566,34 @@ import SOSC from "@/assets/sosc_logo.svg";
       return targetIndex;
     };
 
-    // 4. Menu Toggle
+
+    // --- Menu Toggle Logic ---
     let isMenuOpen = false;
 
     function openMenu() {
       isMenuOpen = true;
-      fullpageMenu?.classList.add("active");
+      // Activate both - CSS media queries hide the irrelevant one
+      desktopMenu?.classList.add("active");
+      mobileMenu?.classList.add("active");
+      
       menuIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       toggleScrollLock(true);
 
-      emblaApi.reInit();
-      // On open, scroll to the current page's index
-      const initialIndex = findIndexByPath();
-      emblaApi.scrollTo(initialIndex, true); // true for jump without animation if preferred, or false for smooth
-      updateActivePagination();
+      // Re-init desktop if visible/exists and scroll to current page
+      if (emblaApi) {
+          emblaApi.reInit();
+          // On open, scroll to the current page's index
+          const initialIndex = findIndexByPath();
+          emblaApi.scrollTo(initialIndex, true); // true = jump
+      }
     }
 
     function closeMenu() {
       isMenuOpen = false;
-      fullpageMenu?.classList.remove("active");
+      desktopMenu?.classList.remove("active");
+      mobileMenu?.classList.remove("active");
+      
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
       toggleScrollLock(false);
@@ -563,13 +603,13 @@ import SOSC from "@/assets/sosc_logo.svg";
       isMenuOpen ? closeMenu() : openMenu();
     };
 
-    const horizontalLinks = emblaNode.querySelectorAll(".horizontal-link");
-    horizontalLinks.forEach((link: any) => {
-      link.addEventListener("click", () => {
-        if ((emblaApi as any).clickAllowed()) {
-          closeMenu();
-        }
-      });
+    // Mobile specific link closure
+    const mobileLinks = mobileMenu?.querySelectorAll(".mobile-link");
+    mobileLinks?.forEach(link => {
+        link.addEventListener("click", () => {
+             // Delay slightly for visual feedback if needed, currently immediate
+            closeMenu();
+        });
     });
 
     document.addEventListener("keydown", (e) => {
@@ -577,10 +617,10 @@ import SOSC from "@/assets/sosc_logo.svg";
     });
   }
 
+  // Init on load + transition
   initNavbar();
   document.addEventListener("astro:page-load", () => {
     initNavbar();
-    // Safety: always unlock scroll on new page load
     toggleScrollLock(false);
   });
 </script>

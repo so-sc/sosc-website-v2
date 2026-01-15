@@ -1,0 +1,36 @@
+[
+    {
+        "id": "soswc",
+        "name": "SOSWC",
+        "tagline": "Women Leading Change",
+        "description": "SOSWC is a focused initiative aimed at encouraging women to explore technology, build confidence through hands-on learning, and contribute meaningfully to open-source projects.",
+        "points": [
+            {
+                "title": "Inclusive Learning",
+                "content": "A safe and supportive space for women to explore technology and open-source together."
+            },
+            {
+                "title": "Community & Growth",
+                "content": "Encouraging confidence, collaboration, leadership and active participation in open-source ecosystems."
+            }
+        ],
+        "logo": "/soswc.png"
+    },
+    {
+        "id": "gdgoc",
+        "name": "GDGoC",
+        "tagline": "Developers Together",
+        "description": "Google Developer Group on Campus (GDGoC) is a student-led university community supported by Google Developer Groups. It connects students passionate about technology with Google’s tools, resources, and industry mentors, enabling them to learn, collaborate, and build real-world projects using technologies like Android, Flutter, Firebase, Cloud, and AI.",
+        "points": [
+            {
+                "title": "Learn Google Technologies",
+                "content": "Hands-on learning through workshops, study jams, and technical sessions focused on Google’s developer ecosystem."
+            },
+            {
+                "title": "Build & Collaborate",
+                "content": "A platform for students from all majors to collaborate, build projects, and gain real-world development experience."
+            }
+        ],
+        "logo": "/gdgoc.png"
+    }
+]

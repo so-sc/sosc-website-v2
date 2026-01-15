@@ -1,0 +1,181 @@
+---
+author: "JustModo"
+cover: "./cover.webp"
+date: "2026-01-15"
+description: "We need a website revamp, so I wondered how hard can it be? Migrating everything from Gatsby to Astro is something everyone was dreading but with a hint of joblessness, you can achieve it in just 2 days. So let's talk about all the ups and downs I faced while building it"
+name: "Yash"
+tags: "Astro | Frontend"
+title: "How I Migrated the SOSC Website"
+---
+
+import Cool from "./Cool.tsx";
+
+# The Great Migration
+
+"Guyysss we need a revamp ASAP" -Some Senior. Let's do it in Astro JS someone else says, and that's where it began-
+
+An empty repo and a dream .✦ ݁˖
+
+Well it did stay empty for quite a while.. But how does one even begin to migrate the legacy website to the new one? Do I know Gatsby? Nope. Do I know Astro? Nope. But you know what I did have? A little something called joblessness and it's quite the motivator XD
+
+All the history of SOSC in one place since 2017, now it would be a real shame if I were to _accidentally_ delete something important. But how did I manage to keep it intact and feature-rich?
+
+Well stay tuned to find out-
+
+## The Planning Phase
+
+(aka staring outside the bus window until I figured out something)
+First things first, I gotta figure out all the pages there are and what better method is there than randomly clicking about until you found everything.
+
+Interestingly I found several pages I've never seen like the [Clubs Page](https://legacy.sosc.org.in/clubs) and [Code of Conduct](https://github.com/so-sc/code-of-conduct) (we had one?) .
+
+Importantly there were a tonne of dynamically generated pages like Blogs and Events which were all written in Markdown. Now I had to figure out a way to convert that to Astro ToT.
+
+## The Research Phase
+
+Now I started wondering why are we actually using Astro? Lemme give you a rundown
+
+- One of the fastest static web frameworks
+- Pre-renders everything on the server first
+- Zero JS bundle by default
+- Islands Architecture - Support for your fav UI frameworks
+
+And lastly **Content Collections**
+
+Basically an in-built type-safe manager for content which can organize and query your content set which amazingly has support for many formats like
+Markdown, MDX, Markdoc, YAML, TOML, or JSON O.O
+
+The whole page routing is intuitive as well. Similar to Next.js the whole app is routed using the file naming convention in the `/pages` directory. Where `index.astro` is the main entry point to the app.
+
+Layout files are also handled similarly using `<slot/>` tags
+
+```astro
+---
+// src/layouts/Layout.astro
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>...</nav>
+    <slot />
+    <footer>...</footer>
+  </body>
+</html>
+```
+
+## Content Collections
+
+Setting up a content collection is easy as defining a `content.config.ts`. Here you just gotta define the path along with loaders and zod schema for frontmatter typing.
+
+```typescript
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
+
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    author: z.string(),
+    tags: z.array(z.string()),
+  }),
+});
+
+export const collections = { blog };
+```
+
+| Feature         | Description                                                                                                |
+| :-------------- | :--------------------------------------------------------------------------------------------------------- |
+| **Zod**         | A schema declaration and validation library to ensure your content matches the expected format.            |
+| **Loaders**     | Tools that handle fetching your data, whether it's from local files (glob) or an external API.             |
+| **Frontmatter** | The metadata block at the top of your markdown files (YAML style) defining properties like title and date. |
+
+Now you just gotta define a `[slug].astro` file with `getStaticPaths`
+
+```js
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: {
+      slug: slugify(project.data.title, { lower: true, strict: true }),
+    },
+    props: { project },
+  }));
+}
+```
+
+Now you might've noticed the `slugify()` function and wondered and what it does?
+Well to get the fancy SEO optimized and Accessible URLS we need a slug that represents the title, however these titles contains some illegal characters for a URL like **spaces, emojis, or symbols like '?' and '&'**... so what slugify does is normalize to a safe URL string.
+
+So the whole content system is basically directories of .md files that dynamically create all your pages, neat.
+
+Now since we are on the topic of **MD** files lets talk about a cool new feature I added called **MD** _drumroll_ **X**
+
+It lets me do cool things like this:
+
+<Cool client:load />
+
+Fancy right? It just lets me add any UI component I want on here (obviously I picked a fancy one)
+
+And this concludes all the interesting parts.. now for the boring stuff XoX
+
+## Boring Stuff
+
+Sadly speedran through all the cool features, now off to the boring stuff... actually recreating the website to a T.
+
+Obviously no way I'm sitting and learning Gatsby just so I can figure out how to convert the pages to Astro. So I just used my handy unpaid best friend developer to do it for me.
+
+![grin](https://c.tenor.com/27QHSkEXfdEAAAAC/tenor.gif)
+
+A drop of ChatGPT, a dash of Gemini and a hint of Perplexity and whooshh you have all your HTML and CSS which I wasn't gonna write myself. A job well done if I do say so myself.
+
+![sad-bot](https://c.tenor.com/Hbsk-khvGI0AAAAC/tenor.gif)
+
+Next up was actually getting the MD files to follow the content schema. For this I found the most common and relevant frontmatter keys along with a few of my own to define a backwards compatible schema and that should've been it right? righhttt?
+
+Well relative pathing had me dead. Most of the old MD files actually relied on HTML tags in the MD files for design and especially images and Gatsby supported relative path translation for `<img/>` tags, but guess what doesn't? Astro.
+
+Now came the massive rabbit hole of deciding between converting every single post to MDX or changing each and every path of each tag to an image in the `/public` directory. And ofc I chose the latter. Fast forward after a lot of Regex x Python scripting I finally managed to fix _ALL_ (I missed some) of the paths.
+
+And with that I have finished migrating the website......
+
+_2 months later:_
+
+- Hey the site links are broken
+- The site is so slow
+- Why hasn't the design changed?
+
+![sad](https://media1.tenor.com/m/PoFrT-7wlGkAAAAd/taraterrorful-tara-terrorful.gif)
+
+So obviously I closed my laptop, took a nap, and pretended the website did not exist.
+
+## Until Now That Is
+
+So by the time you are reading this I'm pretty sure the whole design revamp of the website should be complete and it's gonna look amaaziinggg. trust.
+
+I'm not gonna go through all the changes done because it's all UI related but we got new additions like [/projects](https://sosc.org.in/projects) and [/resources](https://sosc.org.in/resources)
+
+Hearty thanks to all the contributors for the UI revamp:
+
+- [@HithaBadikillaya](https://github.com/HithaBadikillaya)
+- [@VivekNeer](https://github.com/VivekNeer)
+- [@Manas-salian](https://github.com/Manas-salian)
+- [@mrkushalsm](https://github.com/mrkushalsm)
+- [@Rajaykumar12](https://github.com/Rajaykumar12)
+
+## Closing Note
+
+It's been quite a journey, but with this I'll be handing over the torch for this website. To the upcoming folk, don't let your mind confine your creativity. Anything is possible with enough joblessness and time so keep at it XD. I'll be eagerly waiting to see what y'all have planned, till then peace out.
+
+## Bonus
+
+For those wondering what I did with the image paths for the content, well here you go
+
+So apparently there is a fix to this. Astro will handle internal path resolution if you use the native MD image tag `![alt](https://example.com)` (which again I didn't know existed)
+
+But why did I swap to this? Performance that's what. Keeping images in your `/public` directory makes them get served unoptimized. But having your images in the `src/` folder lets Astro run its built-in asset compression which really helps on load times :D

@@ -63,7 +63,38 @@ export const resources = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    type: z.enum(["guide", "article", "video", "roadmap", "tools", "repo", "misc"]),
+    type: z
+      .union([
+        z.enum([
+          "guide",
+          "article",
+          "video",
+          "roadmap",
+          "tools",
+          "repo",
+          "misc",
+          "course",
+          "book",
+          "cheatsheet",
+          "podcast",
+        ]),
+        z.array(
+          z.enum([
+            "guide",
+            "article",
+            "video",
+            "roadmap",
+            "tools",
+            "repo",
+            "misc",
+            "course",
+            "book",
+            "cheatsheet",
+            "podcast",
+          ])
+        ),
+      ])
+      .transform((v) => (Array.isArray(v) ? v : [v])),
     category: z.enum([
       "Development",
       "Design",
@@ -71,6 +102,15 @@ export const resources = defineCollection({
       "AI/ML",
       "Open Source",
       "Misc",
+      "Computer Science",
+      "Competitive Programming",
+      "Web Dev",
+      "App Dev",
+      "Game Dev",
+      "Cybersecurity",
+      "Data Science",
+      "Cloud",
+      "Blockchain",
     ]),
     tags: z.array(z.string()).optional(),
     link: z.string().url(),

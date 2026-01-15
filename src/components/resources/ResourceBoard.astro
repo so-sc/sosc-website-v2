@@ -14,6 +14,15 @@ const CATEGORIES = [
     "DevOps",
     "AI/ML",
     "Open Source",
+    "Computer Science",
+    "Competitive Programming",
+    "Web Dev",
+    "App Dev",
+    "Game Dev",
+    "Cybersecurity",
+    "Data Science",
+    "Cloud",
+    "Blockchain",
     "Misc",
 ];
 ---
@@ -90,9 +99,11 @@ const CATEGORIES = [
                             {resource.data.description}
                         </div>
                         <div class="mt-2 flex flex-wrap items-center gap-2 md:mt-1">
-                            <span class="rounded-sm border border-zinc-200 px-1.5 py-0.5 font-mono text-[10px] text-zinc-500 uppercase dark:border-zinc-700">
-                                {resource.data.type}
-                            </span>
+                            {resource.data.type.map((t) => (
+                                <span class="rounded-sm border border-zinc-200 px-1.5 py-0.5 font-mono text-[10px] text-zinc-500 uppercase dark:border-zinc-700">
+                                    {t}
+                                </span>
+                            ))}
                             {/* Mobile only meta */}
                             <span class="text-xs text-zinc-400 md:hidden">
                                 {resource.data.date

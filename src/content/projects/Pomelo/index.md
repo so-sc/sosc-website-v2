@@ -18,8 +18,8 @@ tags:
   - competitive-programming
   - full-stack
   - open-source
-github: https://github.com/your-org/pomelo
-documentation: https://github.com/your-org/pomelo#readme
+github: https://github.com/so-sc/scem-evMan
+documentation: https://github.com/so-sc/scem-evMan/blob/master/README.md
 community: true
 ---
 

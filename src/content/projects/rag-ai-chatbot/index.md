@@ -1,5 +1,4 @@
 ---
----
 title: Multilingual AI Chat System
 description: A fully open-source, cross-platform AI chat application supporting both text and voice, built with modern, high-performance open-source technologies.
 cover: ./assets/images/adk-cover.webp

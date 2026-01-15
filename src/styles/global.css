@@ -135,13 +135,13 @@
   * {
     border-color: var(--color-border);
     outline-color: color-mix(in oklch, var(--color-ring), transparent 50%);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    /* scrollbar-width: none;
+    -ms-overflow-style: none; */
   }
 
-  *::-webkit-scrollbar {
+  /* *::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
   html {
     scrollbar-gutter: stable;

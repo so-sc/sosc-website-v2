@@ -162,7 +162,9 @@ src/content/resources/
 
 ### Field Rules
 
-- **type**: `video` | `article` | `documentation` | `tool` | `course`
+- **type**: `guide` | `article` | `video` | `roadmap` | `tools` | `repo` | `misc` | `course` | `book` | `cheatsheet` | `podcast` | `community` | `challenge` | `job-board`.
+  - You can specify a single string or an array of strings (e.g. | `["course", "video"]`).
+- **category**: `AI/ML` | `App Dev` | `Blockchain` | `Cloud` | `Competitive Programming` | `Computer Science` | `Cybersecurity` | `Data Science` | `Design` | `Development` | `DevOps` | `Game Dev` | `Open Source` | `Web Dev` | `Misc`.
 - **contributor**: `community` | `external`
 - **date**: Must follow the format `YYYY-MM-DD`.
 - One resource per file.

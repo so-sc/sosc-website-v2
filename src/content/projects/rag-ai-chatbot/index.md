@@ -77,7 +77,19 @@ Multilingual AI Chat System is built using modern AI and web technologies:
 
 ---
 
-## Open Source & Community
+## Contributing
 
-Multilingual AI Chat System is an **open-source project** built for the AI and developer community.
-We welcome contributors, researchers, and open-source enthusiasts to use, extend, and improve the project.
+Contributions are welcome! 
+Check the [GitHub repository](https://github.com/Rajaykumar12/AI-chat) for details on how to contribute.
+
+Note: CONTRIBUTING.md is coming soon!
+
+Here is how you can contribute:
+
+1. **Fork the project**
+2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+This project is under the [MIT License](https://github.com/Rajaykumar12/AI-chat/blob/main/LICENSE)

@@ -1,0 +1,285 @@
+---
+import { Image } from "astro:assets";
+import HeroImg from "../../assets/sosc_hero.svg";
+import { MapPin, Hexagon } from "@lucide/astro";
+---
+
+<div class="relative w-full">
+  <div
+    id="landing-spacer"
+    class="pointer-events-none -mb-[350vh] h-[350vh] w-full"
+  >
+  </div>
+
+  <section
+    id="hero-section"
+    class="fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+  >
+    <div id="landing-bg" class="absolute inset-0 -z-10 bg-white"></div>
+
+    <div
+      id="hero-img-container"
+      class="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+    >
+      <div
+        class="absolute scale-[0.4] sm:scale-[0.6] md:scale-[0.8] lg:top-1/7 xl:scale-100 2xl:scale-100"
+      >
+        <div
+          class="text-foreground/40 absolute -right-8 -bottom-16 flex flex-col items-end font-mono text-sm"
+        >
+          <div class="flex items-center gap-2">
+            <span>STATUS: ACTIVE</span>
+            <Hexagon size={12} class="text-primary animate-pulse" />
+          </div>
+          <span class="tracking-[0.2em] uppercase opacity-50"
+            >Core_Sys // Terminal_01</span
+          >
+        </div>
+
+        <div
+          class="text-foreground/70 font-righteous absolute -bottom-16 -left-8 z-10 flex items-center gap-3 text-3xl uppercase italic"
+        >
+          <MapPin size={24} class="text-primary not-italic" />
+          <div class="flex flex-col leading-none not-italic">
+            <span
+              class="text-foreground/40 font-mono text-[9px] font-bold tracking-[0.3em]"
+              >LOC_DATA</span
+            >
+            <span>Mangalore, IN</span>
+          </div>
+        </div>
+
+        <Image
+          src={HeroImg}
+          alt="SOSC Logo"
+          width={733}
+          height={202}
+          class="relative z-10 max-w-none shrink-0"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <div
+      id="hero-text"
+      class="absolute inset-0 z-50 flex items-center justify-center opacity-0 select-none"
+    >
+      <h1
+        class="text-foreground z-10 whitespace-nowrap"
+        style="font-size: clamp(20px, 5.46vw, 82px); line-height: 1;"
+      >
+        MAY THE <span class="font-bold text-white">SOURCE</span> BE WITH YOU
+      </h1>
+    </div>
+
+    <div id="grid-flash-container" class="absolute inset-0 z-10"></div>
+  </section>
+
+  <script>
+    function init() {
+      const container = document.getElementById("grid-flash-container");
+      const spacer = document.getElementById("landing-spacer");
+      const heroText = document.getElementById("hero-text");
+      const heroImg = document.getElementById("hero-img-container");
+      const landingBg = document.getElementById("landing-bg");
+      const heroSection = document.getElementById("hero-section");
+
+      if (!container || !spacer) return;
+
+      const THEME_COLOR = "#3ce56e";
+      let BLOCK_SIZE = 50;
+
+      interface Block {
+        el: HTMLDivElement;
+        r: number;
+        seed: number;
+        roughness: number;
+      }
+
+      let blocks: Block[] = [];
+
+      function initGrid() {
+        if (!container) return;
+        container.innerHTML = "";
+        blocks = [];
+
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        // Responsive block sizing
+        BLOCK_SIZE = w < 768 ? 40 : 50;
+
+        const cols = Math.ceil(w / BLOCK_SIZE);
+        const rows = Math.ceil(h / BLOCK_SIZE);
+
+        const offsetX = (w % BLOCK_SIZE) / 2;
+        const offsetY = (h % BLOCK_SIZE) / 2;
+
+        for (let r = -1; r <= rows; r++) {
+          for (let c = -1; c <= cols; c++) {
+            const pixel = document.createElement("div");
+            pixel.className = "flash-block";
+
+            pixel.style.width = `${BLOCK_SIZE + 1}px`;
+            pixel.style.height = `${BLOCK_SIZE + 1}px`;
+            pixel.style.left = `${offsetX + c * BLOCK_SIZE}px`;
+            pixel.style.top = `${offsetY + r * BLOCK_SIZE}px`;
+            pixel.style.backgroundColor = THEME_COLOR;
+            pixel.style.opacity = "0";
+
+            container.appendChild(pixel);
+
+            blocks.push({
+              el: pixel,
+              r,
+              seed: Math.random(),
+              roughness: (Math.random() - 0.5) * 3,
+            });
+          }
+        }
+        updateBlocks();
+      }
+
+      function updateBlocks() {
+        if (!spacer || !blocks.length) return;
+
+        const rect = spacer.getBoundingClientRect();
+        const h = window.innerHeight;
+        const rows = Math.floor(h / BLOCK_SIZE);
+
+        const totalScrollable = rect.height - h; // 350vh - 100vh = 250vh of scrollable area
+        const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
+
+        // Hide the fixed overlay completely if we are past the Landing section
+        if (-rect.top > rect.height) {
+          if (heroSection) heroSection.style.display = "none";
+          return;
+        } else {
+          if (heroSection) heroSection.style.display = "flex";
+        }
+
+        let entranceProgress = 0;
+        let exitProgress = 0;
+
+        if (progress < 0.35) {
+          // Entrance phase
+          entranceProgress = progress / 0.35;
+        } else if (progress < 0.65) {
+          // Hold phase
+          entranceProgress = 1;
+        } else {
+          // Exit phase
+          entranceProgress = 1;
+          exitProgress = (progress - 0.65) / 0.35;
+        }
+
+        // ---------------------
+        // BG & IMG VISIBILITY
+        // ---------------------
+        if (progress >= 0.65) {
+          if (landingBg) landingBg.style.opacity = "0";
+          if (heroImg) heroImg.style.opacity = "0";
+        } else {
+          if (landingBg) landingBg.style.opacity = "1";
+          if (heroImg) heroImg.style.opacity = "1";
+        }
+
+        // ---------------------
+        // TEXT OPACITY LOGIC
+        // ---------------------
+        if (heroText) {
+          let textOp = 0;
+          if (progress < 0.35) {
+            // Fade IN (last 40% of entrance)
+            textOp = Math.max(0, (entranceProgress - 0.6) / 0.4);
+          } else if (progress < 0.65) {
+            textOp = 1;
+          } else {
+            // Fade OUT (first 40% of exit) - Mirrors the entrance timing
+            textOp = Math.max(0, 1 - exitProgress / 0.4);
+          }
+          heroText.style.opacity = Math.max(0, Math.min(1, textOp)).toString();
+        }
+
+        // ---------------------
+        // BLOCK LOGIC
+        // ---------------------
+        // Base row for Entrance (rising)
+        const entranceBaseRow = rows - 1.5 - entranceProgress * (rows + 10);
+
+        const exitBaseRow = rows + 2 - exitProgress * (rows + 15);
+
+        blocks.forEach((block) => {
+          const entranceRow =
+            block.r + block.roughness * (1 - entranceProgress);
+          const distFromEntrance = entranceRow - entranceBaseRow;
+
+          const exitRow = block.r + block.roughness * (1 - exitProgress);
+          const distFromExit = exitRow - exitBaseRow;
+
+          let entranceAlpha = 0;
+
+          if (distFromEntrance >= 0) {
+            // Fully entered (Solid Green)
+            entranceAlpha = 1;
+          } else if (distFromEntrance > -4) {
+            // Fragmented top edge
+            const dist = Math.abs(distFromEntrance);
+            const density = 0.9 - (dist - 1) * 0.25;
+            if (block.seed < density) {
+              entranceAlpha = 0.8 - (dist - 1) * 0.2;
+            }
+          }
+
+          if (distFromExit > 4) {
+            entranceAlpha = 0;
+          } else if (distFromExit > 0) {
+            const dist = distFromExit;
+            const density = 0.9 - dist * 0.2;
+
+            if (block.seed > density) {
+              entranceAlpha = 0;
+            } else {
+              const fade = 1 - dist / 4;
+              entranceAlpha = Math.min(entranceAlpha, fade);
+            }
+          }
+
+          block.el.style.opacity = entranceAlpha.toString();
+        });
+      }
+
+      window.addEventListener("resize", initGrid);
+      window.addEventListener("scroll", updateBlocks);
+      initGrid();
+
+      return () => {
+        window.removeEventListener("resize", initGrid);
+        window.removeEventListener("scroll", updateBlocks);
+      };
+    }
+
+    let cleanup: () => void;
+    document.addEventListener("astro:page-load", () => {
+      if (cleanup) cleanup();
+      cleanup = init() as () => void;
+    });
+  </script>
+
+  <style is:global>
+    .flash-block {
+      position: absolute;
+      pointer-events: none;
+      will-change: opacity;
+      transition: opacity 0.12s linear;
+    }
+
+    .flash-block::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</div>

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
 import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import "lenis/dist/lenis.css";
 ---
 
 <!doctype html>
@@ -13,9 +14,9 @@ import { ClientRouter } from "astro:transitions";
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link
       rel="preload"
+      href="/fonts/Inter_Font.ttf"
       as="font"
       type="font/ttf"
-      href="/fonts/Inter_Font.ttf"
       crossorigin="anonymous"
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -63,6 +64,17 @@ import { ClientRouter } from "astro:transitions";
     />
     <meta name="twitter:site" content="@sahyadri_osc" />
     <ClientRouter />
+    <script>
+      import Lenis from "lenis";
+
+      const lenis = new Lenis({
+        autoRaf: true,
+        syncTouch: true,
+      });
+
+      // Expose lenis to window for global access (e.g. scroll locking)
+      (window as any).lenis = lenis;
+    </script>
   </head>
   <body>
     <Navbar />

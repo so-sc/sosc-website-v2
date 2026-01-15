@@ -1,0 +1,261 @@
+---
+import CommunityCard from "../cards/CommunityCard.astro";
+import events from "../../data/highlights.json";
+---
+
+<section class="relative w-full overflow-hidden bg-white px-0 py-12 md:py-24">
+  <!-- Added: Subtle Grid Background -->
+  <div class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute inset-0 opacity-[0.35]"
+      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+    >
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="relative z-10 w-full px-6 md:px-20">
+    <div class="container mx-auto mb-10 px-4 md:mb-16 md:px-6">
+      <!-- Added: System Log -->
+      <div
+        class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
+      >
+        <span class="animate-pulse">●</span>
+        <span>SYSTEM_EVENTS_LOG</span>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+      >
+        <div>
+          <h2
+            class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
+          >
+            Community
+            <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
+              >Highlights</span
+            >
+          </h2>
+        </div>
+        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+          <p
+            class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
+          >
+            Since 2018
+          </p>
+          <p
+            class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
+          >
+            Our impact is measured in code deployed, skills learned, and
+            connections made.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Area -->
+  <div class="relative z-10 w-full overflow-hidden border-b border-gray-100">
+    <div
+      class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-0 md:gap-10 md:py-10 md:pl-0"
+    >
+      {
+        [...events, ...events, ...events].map((event) => (
+          <CommunityCard {...event} />
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <dialog
+    id="flat-modal"
+    class="z-50 m-auto h-[90vh] w-[95%] max-w-6xl overflow-hidden bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm md:h-auto md:max-h-[85vh]"
+  >
+    <!-- Modal Container -->
+    <div class="flex h-full max-h-full flex-col overflow-hidden md:flex-row">
+      <!-- Image Panel -->
+      <div class="relative w-full shrink-0 bg-gray-100 md:w-1/2">
+        <div class="relative h-48 md:h-full">
+          <img
+            id="modal-img"
+            src=""
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+
+          <!-- Category Tag -->
+          <span
+            id="modal-category"
+            class="bg-primary absolute top-0 left-0 px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase md:text-xs"
+          >
+            Category
+          </span>
+        </div>
+      </div>
+
+      <!-- Content Panel -->
+      <div class="relative flex w-full flex-1 flex-col overflow-hidden md:w-1/2">
+        <!-- Close Button -->
+        <button
+          id="close-modal"
+          class="hover:bg-primary absolute top-4 right-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors hover:text-white"
+          aria-label="Close"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Static Header -->
+        <div class="shrink-0 border-b border-gray-100 px-6 pt-10 pb-6 md:px-12">
+          <div class="mb-4 flex items-center gap-4">
+            <span
+              id="modal-date"
+              class="font-mono text-[10px] font-bold text-gray-400 md:text-xs"
+            >
+              DATE
+            </span>
+            <span class="bg-primary h-px w-8"></span>
+          </div>
+
+          <h3
+            id="modal-title"
+            class="text-2xl leading-tight font-black text-gray-900 uppercase md:text-5xl"
+          >
+            Title
+          </h3>
+        </div>
+
+        <!-- Scrollable Body -->
+        <div class="flex-1 overflow-y-auto px-6 py-6 md:px-12 md:py-8">
+          <p
+            id="modal-desc"
+            class="text-sm leading-relaxed font-light whitespace-pre-line text-gray-600 md:text-lg"
+          >
+            Description text...
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<style>
+  /* Linear Infinite Scroll */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.33333%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  @media (max-width: 768px) {
+    .animate-marquee {
+      animation-duration: 30s;
+    }
+  }
+
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+
+  /* Modal Animation */
+  dialog[open] {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Reset default dialog styles */
+  dialog {
+    border: none;
+    margin: auto;
+    position: fixed;
+    inset: 0;
+  }
+
+  /* Ensure backdrop works nicely */
+  dialog::backdrop {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
+</style>
+
+<script>
+  import { toggleScrollLock } from "@/lib/utils";
+
+  const dialog = document.getElementById(
+    "flat-modal",
+  ) as HTMLDialogElement | null;
+  const closeBtn = document.getElementById("close-modal");
+  const cards = document.querySelectorAll("[data-community-card]");
+
+  // Bindings
+  const mTitle = document.getElementById("modal-title");
+  const mCategory = document.getElementById("modal-category");
+  const mImage = document.getElementById(
+    "modal-img",
+  ) as HTMLImageElement | null;
+  const mDate = document.getElementById("modal-date");
+  const mDesc = document.getElementById("modal-desc");
+
+  if (dialog) {
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const data = (card as HTMLElement).dataset;
+
+        if (mTitle) mTitle.textContent = data.title || "";
+        if (mCategory) mCategory.textContent = data.category || "";
+        if (mImage) mImage.src = data.image || "";
+        if (mDate) mDate.textContent = data.date || "";
+        if (mDesc) mDesc.textContent = data.desc || "";
+
+        dialog.showModal();
+        toggleScrollLock(true);
+      });
+    });
+
+    const close = () => {
+      dialog.close();
+      toggleScrollLock(false);
+    };
+
+    if (closeBtn) closeBtn.addEventListener("click", close);
+
+    dialog.addEventListener("click", (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width;
+      if (!isInDialog) close();
+    });
+  }
+</script>

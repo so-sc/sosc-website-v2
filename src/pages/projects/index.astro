@@ -1,11 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
 import ProjectCard from "@/components/cards/ProjectCard.astro";
-import Cover from "@/assets/cover/blog.jpg";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
-import { Icon } from "astro-icon/components";
+import { ChevronDown, RotateCcw, Search } from "@lucide/astro";
 
 const projects = await getCollection("projects");
 
@@ -41,76 +39,168 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
 ---
 
 <Layout>
-  <Hero
-    image={Cover}
-    title="Projects"
-    subtitle="Explore community projects and initiatives developed by our members."
-  />
-
   <section
     class="bg-background text-foreground mx-auto max-w-7xl space-y-8 px-4 py-16 md:px-8"
   >
-    <!-- Filters Section -->
-    <div class="space-y-4">
-      <div class="flex flex-wrap items-center justify-end gap-4">
-        <!-- Category Filter -->
-        <div class="flex items-center gap-2">
-          <label for="category-filter" class="text-sm font-medium">Category:</label>
-          <select
-            id="category-filter"
-            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="">All Categories</option>
-            {allCategories.map((category) => (
-              <option value={category}>{category}</option>
-            ))}
-          </select>
+    <div class="bg-background w-full py-3">
+      <div class="flex flex-wrap items-center gap-6">
+        <div class="flex min-w-[200px] flex-1 items-center gap-3">
+          <Search class="text-muted-foreground h-4 w-4" />
+          <input
+            type="text"
+            placeholder="SEARCH PROJECTS..."
+            class="placeholder:text-muted-foreground/40 w-full border-none bg-transparent text-xs tracking-widest uppercase outline-none focus:ring-0"
+          />
         </div>
 
-        <!-- Status Filter -->
-        <div class="flex items-center gap-2">
-          <label for="status-filter" class="text-sm font-medium">Status:</label>
-          <select
-            id="status-filter"
-            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="">All Statuses</option>
-            {allStatuses.map((status) => (
-              <option value={status}>{status}</option>
-            ))}
-          </select>
-        </div>
+        <div class="bg-border hidden h-6 w-px md:block"></div>
 
-        <!-- Tech Stack Filter -->
-        <div class="flex items-center gap-2">
-          <label for="tech-filter" class="text-sm font-medium">Tech Stack:</label>
-          <select
-            id="tech-filter"
-            class="bg-card border border-border rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+        <div class="flex flex-wrap items-center gap-8">
+          <button
+            id="clear-filters"
+            class="text-destructive hidden items-center gap-1.5 text-[11px] font-bold tracking-widest transition-opacity hover:opacity-70"
           >
-            <option value="">All Technologies</option>
-            {allTechStack.map((tech) => (
-              <option value={tech}>{tech}</option>
-            ))}
-          </select>
-        </div>
+            <RotateCcw class="h-3.5 w-3.5" />
+          </button>
 
-        <!-- Clear Filters -->
-        <button
-          id="clear-filters"
-          class="text-sm text-primary hover:underline hidden"
-        >
-          Clear Filters
-        </button>
+          <div class="group custom-dropdown relative">
+            <button class="flex items-center gap-3 py-1 focus:outline-none">
+              <span
+                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
+                >Category</span
+              >
+              <span
+                class="selected-label min-w-10 text-left text-sm font-medium uppercase"
+                >All</span
+              >
+              <ChevronDown
+                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
+              />
+            </button>
+
+            <div
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+            >
+              <button
+                class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                data-value="">All</button
+              >
+              {
+                allCategories.map((category) => (
+                  <button
+                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                    data-value={category}
+                  >
+                    {category}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="group custom-dropdown relative">
+            <button class="flex items-center gap-3 py-1 focus:outline-none">
+              <span
+                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
+                >Status</span
+              >
+              <span
+                class="selected-label min-w-10 text-left text-sm font-medium uppercase"
+                >All</span
+              >
+              <ChevronDown
+                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
+              />
+            </button>
+
+            <div
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+            >
+              <button
+                class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                data-value="">All</button
+              >
+              {
+                allStatuses.map((status) => (
+                  <button
+                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                    data-value={status}
+                  >
+                    {status}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="group custom-dropdown relative">
+            <button class="flex items-center gap-3 py-1 focus:outline-none">
+              <span
+                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
+                >Tech</span
+              >
+              <span
+                class="selected-label min-w-[40px] text-left text-sm font-medium uppercase"
+                >All</span
+              >
+              <ChevronDown
+                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
+              />
+            </button>
+
+            <div
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+            >
+              <button
+                class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                data-value="">All</button
+              >
+              {
+                allTechStack.map((tech) => (
+                  <button
+                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                    data-value={tech}
+                  >
+                    {tech}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Community Projects Section -->
-    {communityProjects.length > 0 && (
-      <div class="space-y-4">
-        <h2 class="text-2xl font-bold">Community Projects</h2>
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
-          {communityProjects.map((project) => (
+    {
+      communityProjects.length > 0 && (
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">Community Projects</h2>
+          <div class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+            {communityProjects.map((project) => (
+              <div
+                class="project-card"
+                data-category={project.category}
+                data-status={project.status}
+                data-tech={project.techStack.join(",")}
+              >
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Member Projects Grid -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold">Member Projects</h2>
+      <div
+        id="projects-grid"
+        class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {
+          regularProjects.map((project) => (
             <div
               class="project-card"
               data-category={project.category}
@@ -119,97 +209,132 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             >
               <ProjectCard {...project} />
             </div>
-          ))}
-        </div>
-      </div>
-    )}
-
-    <!-- Member Projects Grid -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-bold">Member Projects</h2>
-      <div id="projects-grid" class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 projects-grid-separators">
-        {regularProjects.map((project) => (
-          <div
-            class="project-card"
-            data-category={project.category}
-            data-status={project.status}
-            data-tech={project.techStack.join(",")}
-          >
-            <ProjectCard {...project} />
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
 
     <!-- Empty State -->
-    <div id="empty-state" class="hidden text-center py-12">
-      <svg class="mx-auto h-12 w-12 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <div id="empty-state" class="hidden py-12 text-center">
+      <svg
+        class="text-muted-foreground mx-auto h-12 w-12"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
       </svg>
       <h3 class="mt-4 text-lg font-semibold">No projects found</h3>
-      <p class="mt-2 text-muted-foreground">Try adjusting your filters to find what you're looking for.</p>
+      <p class="text-muted-foreground mt-2">
+        Try adjusting your filters to find what you're looking for.
+      </p>
     </div>
   </section>
 </Layout>
 
 <script>
-  const categoryFilter = document.getElementById("category-filter") as HTMLSelectElement;
-  const statusFilter = document.getElementById("status-filter") as HTMLSelectElement;
-  const techFilter = document.getElementById("tech-filter") as HTMLSelectElement;
-  const clearFiltersBtn = document.getElementById("clear-filters") as HTMLButtonElement;
+  const searchInput = document.querySelector(
+    'input[type="text"]'
+  ) as HTMLInputElement;
+  const dropdowns = document.querySelectorAll(".custom-dropdown");
+  const clearFiltersBtn = document.getElementById(
+    "clear-filters"
+  ) as HTMLButtonElement;
   const emptyState = document.getElementById("empty-state") as HTMLDivElement;
-  const projectCards = document.querySelectorAll(".project-card") as NodeListOf<HTMLDivElement>;
+  const projectCards = document.querySelectorAll(
+    ".project-card"
+  ) as NodeListOf<HTMLDivElement>;
+
+  const filters = {
+    search: "",
+    category: "",
+    status: "",
+    tech: "",
+  };
 
   function filterProjects() {
-    const category = categoryFilter.value;
-    const status = statusFilter.value;
-    const tech = techFilter.value;
-
-    let visibleProjects = 0;
+    let visibleCount = 0;
 
     projectCards.forEach((card) => {
+      const cardTitle =
+        card.querySelector("h3")?.textContent?.toLowerCase() || "";
       const cardCategory = card.dataset.category || "";
       const cardStatus = card.dataset.status || "";
       const cardTech = card.dataset.tech || "";
 
-      const matchesCategory = !category || cardCategory === category;
-      const matchesStatus = !status || cardStatus === status;
-      const matchesTech = !tech || cardTech.split(",").includes(tech);
+      const matchesSearch =
+        !filters.search || cardTitle.includes(filters.search.toLowerCase());
+      const matchesCategory =
+        !filters.category || cardCategory === filters.category;
+      const matchesStatus = !filters.status || cardStatus === filters.status;
+      const matchesTech =
+        !filters.tech || cardTech.split(",").includes(filters.tech);
 
-      if (matchesCategory && matchesStatus && matchesTech) {
+      if (matchesSearch && matchesCategory && matchesStatus && matchesTech) {
         card.classList.remove("hidden");
-        visibleProjects++;
+        visibleCount++;
       } else {
         card.classList.add("hidden");
       }
     });
-    
-    // Show/hide empty state
-    if (visibleProjects === 0) {
-      emptyState.classList.remove("hidden");
-    } else {
-      emptyState.classList.add("hidden");
-    }
 
-    // Show/hide clear filters button
-    if (category || status || tech) {
-      clearFiltersBtn.classList.remove("hidden");
-    } else {
-      clearFiltersBtn.classList.add("hidden");
-    }
+    emptyState.classList.toggle("hidden", visibleCount > 0);
+    const hasActiveFilters =
+      filters.search || filters.category || filters.status || filters.tech;
+    clearFiltersBtn.classList.toggle("hidden", !hasActiveFilters);
   }
 
-  function clearFilters() {
-    categoryFilter.value = "";
-    statusFilter.value = "";
-    techFilter.value = "";
+  dropdowns.forEach((dropdown) => {
+    const label = dropdown.querySelector(".selected-label") as HTMLSpanElement;
+    const buttons = dropdown.querySelectorAll("button[data-value]");
+    const filterType = dropdown
+      .querySelector("span:first-child")
+      ?.textContent?.toLowerCase()
+      .trim();
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const value = (btn as HTMLButtonElement).dataset.value || "";
+        const text = btn.textContent?.trim() || "All";
+
+        label.textContent = text;
+
+        if (filterType === "category") filters.category = value;
+        if (filterType === "status") filters.status = value;
+        if (filterType === "tech") filters.tech = value;
+
+        (document.activeElement as HTMLElement)?.blur();
+
+        filterProjects();
+      });
+    });
+  });
+
+  searchInput?.addEventListener("input", (e) => {
+    filters.search = (e.target as HTMLInputElement).value;
     filterProjects();
-  }
+  });
 
-  categoryFilter.addEventListener("change", filterProjects);
-  statusFilter.addEventListener("change", filterProjects);
-  techFilter.addEventListener("change", filterProjects);
-  clearFiltersBtn.addEventListener("click", clearFilters);
+  clearFiltersBtn.addEventListener("click", () => {
+    filters.search = "";
+    filters.category = "";
+    filters.status = "";
+    filters.tech = "";
+
+    if (searchInput) searchInput.value = "";
+    dropdowns.forEach((d) => {
+      const label = d.querySelector(".selected-label");
+      if (label) label.textContent = "All";
+    });
+
+    filterProjects();
+  });
 </script>
 
 <style>

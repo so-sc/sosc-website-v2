@@ -1,0 +1,125 @@
+---
+import { ArrowRight } from "@lucide/astro";
+---
+
+<div class="relative z-0 h-[350vh] w-full bg-white">
+  <section
+    id="about"
+    class="sticky top-0 flex min-h-screen w-full flex-col justify-center overflow-hidden bg-white px-6 py-12 md:px-20 md:py-24"
+  >
+    <script>
+      import "@lottiefiles/dotlottie-wc";
+    </script>
+    <!-- Background accents (soft grid + glow) -->
+    <div class="pointer-events-none absolute inset-0">
+      <div
+        class="absolute inset-0 opacity-[0.35]"
+        style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+      >
+      </div>
+      <div
+        class="bg-primary/20 absolute top-10 -right-40 h-[520px] w-[520px] rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="bg-primary/10 absolute bottom-0 -left-24 h-[340px] w-[340px] rounded-full blur-3xl"
+      >
+      </div>
+    </div>
+    <div
+      id="about-content"
+      class="relative z-10 container mx-auto px-4 md:px-6"
+    >
+      <!-- Header Section -->
+      <div class="mb-10 md:mb-16">
+        <div
+          class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
+        >
+          <span class="animate-pulse">●</span>
+          <span>SYSTEM_ABOUT_LOG</span>
+        </div>
+        <div
+          class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+        >
+          <div>
+            <h2
+              class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
+            >
+              Open Source,
+              <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
+                >Together.</span
+              >
+            </h2>
+          </div>
+          <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+            <p
+              class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
+            >
+              Open • Community • Mangalore
+            </p>
+            <p
+              class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
+            >
+              A student-driven collective building real-world solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <!-- Left: copy -->
+        <div>
+          <p
+            class="max-w-xl text-base leading-relaxed text-gray-600 md:text-lg"
+          >
+            Sahyadri Open Source Community is a student-driven collective where
+            everyone learns, collaborates, and builds real-world open source
+            solutions.
+          </p>
+          <div class="mt-8 space-y-6">
+            <div class="border-primary border-l pl-4">
+              <p class="text-sm font-semibold text-gray-900">
+                Real-world Projects
+              </p>
+              <p class="mt-1 text-sm leading-snug text-gray-600">
+                Build and contribute to impactful open source software.
+              </p>
+            </div>
+            <div class="border-primary border-l pl-4">
+              <p class="text-sm font-semibold text-gray-900">Community First</p>
+              <p class="mt-1 text-sm leading-snug text-gray-600">
+                Learn together through collaboration and mentorship.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="/projects"
+              class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-50"
+            >
+              Explore Our Work
+              <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+        <!-- Right: logo/visual -->
+        <div class="relative hidden md:block">
+          <div
+            class="from-primary/20 absolute -inset-6 rounded-[2.5rem] bg-linear-to-br via-transparent to-transparent blur-2xl"
+          >
+          </div>
+          <div
+            class="relative mx-auto aspect-4/3 w-full max-w-[520px] scale-[1.4]"
+          >
+            <dotlottie-wc
+              src="/About Us Team.json"
+              autoplay
+              loop
+              class="h-full w-full"
+              style="width: 100%; height: 100%;"
+              aria-label="SOSC animation"></dotlottie-wc>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

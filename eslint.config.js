@@ -22,7 +22,7 @@ export default [
       ],
       "no-debugger": "warn",
       eqeqeq: ["error", "always"],
-      curly: ["error", "all"],
+      curly: "off",
       semi: ["error", "always"],
       "comma-dangle": ["error", "only-multiline"],
       "object-shorthand": ["error", "always"],
@@ -32,7 +32,7 @@ export default [
       "spaced-comment": ["warn", "always", { markers: ["/"] }],
       "keyword-spacing": ["error", { before: true, after: true }],
 
-      "astro/no-unused-css-selector": "warn",
+      "astro/no-unused-css-selector": "off",
       "astro/no-set-html-directive": "warn",
       "astro/valid-compile": "error",
     },

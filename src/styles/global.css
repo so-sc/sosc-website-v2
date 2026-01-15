@@ -135,6 +135,16 @@
   * {
     border-color: var(--color-border);
     outline-color: color-mix(in oklch, var(--color-ring), transparent 50%);
+    /* scrollbar-width: none;
+    -ms-overflow-style: none; */
+  }
+
+  /* *::-webkit-scrollbar {
+    display: none;
+  } */
+
+  html {
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -230,5 +240,79 @@
     & :not(pre)>code {
       background-color: oklch(0.25 0.01 140);
     }
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) white;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 999px;
+    border: 2px solid white;
+  }
+
+  .dark *::-webkit-scrollbar-track {
+    background: oklch(0.15 0 0);
+  }
+
+  .dark *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-color: oklch(0.15 0 0);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) white;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 999px;
+    border: 2px solid white;
+  }
+
+  .dark * {
+    scrollbar-color: var(--primary) oklch(0.15 0 0);
+  }
+
+  .dark *::-webkit-scrollbar-track {
+    background: oklch(0.15 0 0);
+  }
+
+  .dark *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-color: oklch(0.15 0 0);
+  }
+
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
 }

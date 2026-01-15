@@ -1,0 +1,232 @@
+---
+
+
+
+
+const teamMembers = [
+  { name: "Arvind", tags: ["Development", "Backend"], image: "/team/arvind.webp" },
+  { name: "Deepthi", tags: ["Frontend", "Design"], image: "/team/deepthi.webp" },
+  { name: "Hitha Badikillaya S U", tags: ["Development", "AI/ML"], image: "/team/hitha_badikillaya_s_u.webp" },
+  { name: "Josvita Concessao", tags: ["Design", "UX"], image: "/team/josvita_concessao.webp" },
+  { name: "Koshin", tags: ["Development", "Frontend"], image: "/team/placeholder.png" },
+  { name: "Kushal SM", tags: ["Backend", "DevOps"], image: "/team/kushal_sm.webp" },
+  { name: "Manas S", tags: ["Development", "Full Stack"], image: "/team/manas_s.webp" },
+  { name: "Manvitha", tags: ["Frontend", "Design"], image: "/team/manvitha.webp" },
+  { name: "Mariyam Heena", tags: ["Design", "Creative"], image: "/team/mariyam_heena.webp" },
+  { name: "Meghna", tags: ["Development", "Frontend"], image: "/team/meghna.webp" },
+  { name: "Minhaz Ahmed Mustak", tags: ["Backend", "Systems"], image: "/team/minhaz_ahmed_mustak.webp" },
+  { name: "Mukasshaf Ahmed", tags: ["Development", "Mobile"], image: "/team/mukasshaf_ahmed.webp" },
+  { name: "Nithin K", tags: ["Full Stack", "Development"], image: "/team/nithin_k.webp" },
+  { name: "Pranam N Kotian", tags: ["Design", "UI/UX"], image: "/team/pranam_n_kotian.webp" },
+  { name: "Prathyusha K", tags: ["Frontend", "Reactivity"], image: "/team/prathyusha_k.webp" },
+  { name: "Priyadarshini M", tags: ["Management", "Outreach"], image: "/team/priyadarshini_m.webp" },
+  { name: "Rajath", tags: ["Development", "Backend"], image: "/team/placeholder.png" },
+  { name: "R Ajay Kumar", tags: ["Technical", "Hardware"], image: "/team/r_ajay_kumar.webp" },
+  { name: "Salman Najah", tags: ["Development", "Frontend"], image: "/team/salman_najah.webp" },
+  { name: "Savinay", tags: ["Full Stack", "Cloud"], image: "/team/savinay.webp" },
+  { name: "Siddu B G R", tags: ["Development", "Cybersecurity"], image: "/team/placeholder.png" },
+  { name: "Soniya Kolvekar", tags: ["Design", "Art"], image: "/team/soniya_kolvekar.webp" },
+  { name: "Sthuthi Poojary", tags: ["Management", "Events"], image: "/team/sthuthi_poojary.webp" },
+  { name: "Varsha", tags: ["Development", "Frontend"], image: "/team/varsha.webp" },
+  { name: "Varun Suvarna", tags: ["Backend", "Infrastructure"], image: "/team/varun_suvarna.webp" },
+  { name: "Vivek Neeralagi", tags: ["Development", "Code"], image: "/team/vivek_neeralagi.webp" },
+  { name: "Yash Laxman", tags: ["Development", "Code"], image: "/team/yash_laxman.webp" },
+  { name: "Zaynah Anjum", tags: ["Design", "Creative"], image: "/team/zaynah_anjum.webp" },
+];
+
+// Parameter for row height
+const rowPadding = "20px"; 
+---
+
+<section class="team-section relative w-full bg-white pb-12 md:pb-24 px-6 md:px-20">
+
+    <!-- Added: Subtle Grid Background -->
+  <div class="pointer-events-none absolute inset-0">
+    <div
+      class="absolute inset-0 opacity-[0.35]"
+      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="mb-10 md:mb-16">
+      <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
+        <span class="animate-pulse">●</span>
+        <span>SYSTEM_TEAM_LOG</span>
+      </div>
+
+      <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+        <div>
+          <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
+            Community
+            <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Members</span>
+          </h2>
+        </div>
+        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
+          <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Community</p>
+          <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
+            People who build, mentor, and ship together.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-list">
+      {teamMembers.map((member) => (
+        <div class="team-item" style={`padding: ${rowPadding} 0;`}>
+          <div class="tags-column">
+            {member.tags.map(tag => (
+              <span class="tag-pill">
+                <span class="tag-text">{tag}</span>
+              </span>
+            ))}
+          </div>
+
+          <!-- 
+            IMAGE CONFIGURATION 
+            - Centered in the row
+            - Modify width/height here to change image size
+          -->
+          <div class="row-image-container">
+             <img src={member.image} alt={member.name} loading="lazy" decoding="async" />
+          </div>
+
+          <div class="name-column">
+            <span class="member-name">{member.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- No script needed for this CSS-only approach! -->
+
+<style>
+  /* 
+    LAYOUT CONFIGURATION 
+    Adjust these variables to control spacing and sizing 
+  */
+  :root {
+    --row-height: 150px; /* Approximate minimum height */
+    --name-indent: 26vw; /* Dynamic padding for name column to ensure scaling */
+    
+    /* Dynamic Image Dimensions */
+    --image-width: 25vw;
+    --image-height: 32vw;
+    
+    --tag-spacing: 24px; /* Space between tags and left edge/other elements */
+    --name-spacing: 24px; /* Space between name and right edge */
+  }
+
+  .team-section {
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+
+  .section-title {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .team-list {
+    border-top: none;
+  }
+
+  .team-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    cursor: default;
+    position: relative;
+    min-height: 100px; 
+  }
+
+  /* TAG FILL EFFECT */
+  .tag-pill {
+    padding: 4px 15px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    color: #000;
+  }
+
+  .team-item:hover .tag-pill {
+    background-color: #ff5046;
+    color: #fff;
+    border-color: #ff5046;
+  }
+
+  /* TAGS (Left Side) */
+  .tags-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1; /* Takes up available space on left */
+    z-index: 2; /* Keeps text above image */
+    padding-right: var(--tag-spacing);
+  }
+
+  /* NAME (Right Side) */
+  .name-column {
+    flex: 1; /* Takes up available space on right */
+    text-align: left; /* Aligns names to the start of the column */
+    padding-left: var(--name-indent); /* Dynamic Indent */
+    z-index: 2; /* Keeps text above image */
+  }
+
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  @media (min-width: 768px) {
+    .member-name {
+      font-size: 2rem;
+    }
+  }
+
+  /* 
+    CENTERED IMAGE 
+    Appears only on hover 
+  */
+  .row-image-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: var(--image-width);
+    height: var(--image-height);
+    pointer-events: none; 
+    z-index: 1;
+    opacity: 0;
+    display: none; 
+  }
+  
+  .team-item:hover .row-image-container {
+    opacity: 1;
+    display: block;
+  }
+
+  .row-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 768px) {
+    .team-item { flex-direction: column-reverse; align-items: flex-start; gap: 10px; }
+    .name-column { text-align: left; padding-left: 0; }
+    .row-image-container { display: none !important; }
+  }
+</style>

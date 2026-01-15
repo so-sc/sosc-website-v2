@@ -1,8 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/Hero.astro";
+import { Image } from "astro:assets";
 import BlogCard from "@/components/cards/BlogCard.astro";
-import Cover from "@/assets/cover/blog.jpg";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
 
@@ -19,30 +18,133 @@ const parsedBlogs = blogs
     link: slugify(data.title, { lower: true, strict: true }),
   }))
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
 ---
 
 <Layout>
-  <Hero
-    image={Cover}
-    title="Blogs"
-    subtitle="Dive into articles, insights, and updates from our community."
-  />
-
-  <section
-    class="bg-background text-foreground mx-auto max-w-7xl space-y-6 px-4 py-16 md:px-8"
-  >
-    <!-- Featured Grid -->
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
-      <BlogCard {...parsedBlogs[0]} highlight />
-
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-2">
-        {parsedBlogs.slice(1, 5).map((blog) => <BlogCard {...blog} />)}
+  <main>
+    <!-- Featured Banner -->
+    <div
+      class="relative mb-8 h-[300px] w-full overflow-hidden bg-gray-900 md:h-[450px]"
+    >
+      <Image
+        src={parsedBlogs[0].cover}
+        alt="Featured Post"
+        class="h-full w-full object-cover"
+        width={1920}
+        height={1080}
+      />
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      <div class="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-16">
+        <div class="border-primary max-w-3xl border-l-4 pl-6">
+          <p
+            class="text-primary mb-2 text-[10px] font-bold tracking-widest uppercase md:text-xs"
+          >
+            Featured Article
+          </p>
+          <h2 class="text-2xl font-black text-white uppercase md:text-5xl">
+            {parsedBlogs[0].title}
+          </h2>
+        </div>
       </div>
     </div>
 
-    <!-- Standard 4-column Grid -->
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {parsedBlogs.slice(5).map((blog) => <BlogCard {...blog} />)}
+    <div class="mx-auto max-w-7xl px-4 pb-10 md:px-8">
+      <!-- Main Section -->
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
+        <!-- Posts List -->
+        <div class="lg:col-span-3">
+          <div class="flex flex-col">
+            {parsedBlogs.map((blog) => <BlogCard {...blog} />)}
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-12">
+          <div class="space-y-4">
+            <h4
+              class="border-b border-gray-900 pb-2 text-xs font-black tracking-widest uppercase"
+            >
+              Tags
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              {
+                [
+                  ...new Set(
+                    parsedBlogs.flatMap(
+                      (b) => b.tags?.split("|").map((t) => t.trim()) || []
+                    )
+                  ),
+                ]
+                  .slice(0, 15)
+                  .map((tag) => (
+                    <span class="hover:border-primary hover:text-primary cursor-pointer border border-gray-100 bg-white px-2 py-1 text-[10px] text-gray-400 transition-colors">
+                      {tag}
+                    </span>
+                  ))
+              }
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h4
+              class="border-b border-gray-900 pb-2 text-xs font-black tracking-widest uppercase"
+            >
+              All Authors
+            </h4>
+            <div class="flex flex-wrap gap-4">
+              {
+                allAuthors.map((author) => (
+                  <a
+                    href={`https://github.com/${author}`}
+                    target="_blank"
+                    class="group flex shrink-0 items-center gap-2"
+                  >
+                    <img
+                      src={`https://github.com/${author}.png`}
+                      alt={author}
+                      class="h-6 w-6 rounded-full border border-gray-200 transition-transform group-hover:scale-110"
+                      onerror="this.onerror=null; this.src='/github_avatar.svg';"
+                    />
+                    <span class="group-hover:text-primary text-[10px] font-bold text-gray-400 transition-colors">
+                      {author}
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Highlights Sections -->
+          {
+            [
+              {
+                title: "About Our Blog",
+                content:
+                  "A collection of insights, tutorials, and stories from our community. We cover web development, open source contributions, tech events, and everything that drives innovation in the digital world.",
+              },
+              {
+                title: "Weekly Updates",
+                content:
+                  "Fresh content published regularly featuring technical deep-dives, project showcases, and community highlights. Stay informed about the latest trends and best practices in software development.",
+              },
+              {
+                title: "Join The Discussion",
+                content:
+                  "Every article sparks conversation. Read, learn, and engage with fellow developers. Your perspective matters and helps build a stronger, more knowledgeable community.",
+              },
+            ].map(({ title, content }) => (
+              <div class="space-y-4">
+                <h4 class="border-b border-gray-900 pb-2 text-xs font-black tracking-widest uppercase">
+                  {title}
+                </h4>
+                <p class="text-xs leading-relaxed text-gray-500">{content}</p>
+              </div>
+            ))
+          }
+        </aside>
+      </div>
     </div>
-  </section>
+  </main>
 </Layout>

@@ -43,7 +43,7 @@ const statusColors: Record<string, string> = {
   href={`/projects/${link}`}
 >
   <!-- Cover Image with Title Overlay -->
-  <div class="relative aspect-[16/9] bg-muted rounded-sm overflow-hidden">
+  <div class="relative bg-muted overflow-hidden h-48 lg:h-56">
     {
       cover ? (
         <Image
@@ -87,6 +87,8 @@ const statusColors: Record<string, string> = {
               src={`https://github.com/${maintainer}.png`}
               alt={maintainer}
               class="w-6 h-6 rounded-full border-2 border-card"
+              loading="lazy"
+              decoding="async"
               onerror="this.onerror=null; this.src='/github_avatar.svg';"
             />
           ))

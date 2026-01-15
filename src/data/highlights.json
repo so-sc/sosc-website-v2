@@ -29,7 +29,7 @@
         "date": "March-April 2025",
         "image": "/highlights/techweek.jpeg",
         "shortDesc": "A week of sessions on trending tech topics and practical workflows.",
-        "fullDesc": "Tech Week, featured a series of sessions led by community members on topics like Serverless Unleashed, Tux101: Linux for Everyone, GCP Accelerate, Self-Hosting Essentials and GOFR workshop. Attendees gained hands-on experience, practical insights, and guidance on modern development practices. The event fostered collaboration, curiosity, and skill-building, highlighting SOSC’s role in promoting tech education and empowering students with open-source knowledge."
+        "fullDesc": "Tech Week, featured a series of sessions led by community members on topics like Serverless Unleashed, Tux101: Linux for Everyone, GCP Accelerate, Self-Hosting Essentials and GOFR workshop. Attendees gained hands-on experience, practical insights, and guidance on modern development practices. The event fostered collaboration, curiosity, and skill-building, highlighting SOSC’s role in empowering students with open-source knowledge."
     },
     {
         "title": "SOSC at IndiaFOSS",
@@ -45,7 +45,7 @@
         "date": "Apr 2025",
         "image": "/highlights/go-gofr.jpeg",
         "shortDesc": "Hands-on Go programming workshop by the GoFr team during Tech Week.",
-        "fullDesc": "The Go and GoFr Workshop, conducted by the GoFr team during SOSC’s Tech Week, introduced participants to Go programming fundamentals and practical applications. Attendees engaged in interactive sessions, coding exercises, and real-world problem solving, gaining insights into efficient development practices and modern software workflows. The workshop encouraged collaboration, experimentation, and skill-building for budding developers."
+        "fullDesc": "The Go and GoFr Workshop, conducted by the GoFr team during SOSC’s Tech Week, introduced participants to Go programming fundamentals and practical applications. Attendees engaged in interactive sessions, coding exercises, and real-world problem solving, gaining insights into efficient development practices and modern software workflows."
     },
     {
         "title": "DevHack 2025",

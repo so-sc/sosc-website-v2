@@ -70,13 +70,13 @@ import events from "../../data/highlights.json";
   <!-- Modal -->
   <dialog
     id="flat-modal"
-    class="z-50 m-auto w-[95%] max-w-6xl bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm"
+    class="z-50 m-auto h-[90vh] w-[95%] max-w-6xl overflow-hidden bg-white p-0 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] outline-none backdrop:bg-white/90 backdrop:backdrop-blur-sm md:h-auto md:max-h-[85vh]"
   >
     <!-- Modal Container -->
-    <div class="flex max-h-[85vh] flex-col overflow-hidden md:flex-row">
+    <div class="flex h-full max-h-full flex-col overflow-hidden md:flex-row">
       <!-- Image Panel -->
-      <div class="relative w-full bg-gray-100 md:w-1/2">
-        <div class="relative h-56 md:h-full">
+      <div class="relative w-full shrink-0 bg-gray-100 md:w-1/2">
+        <div class="relative h-48 md:h-full">
           <img
             id="modal-img"
             src=""
@@ -95,7 +95,7 @@ import events from "../../data/highlights.json";
       </div>
 
       <!-- Content Panel -->
-      <div class="relative flex w-full flex-col md:w-1/2">
+      <div class="relative flex w-full flex-1 flex-col overflow-hidden md:w-1/2">
         <!-- Close Button -->
         <button
           id="close-modal"

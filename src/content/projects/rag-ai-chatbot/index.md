@@ -13,7 +13,7 @@ techStack:
   - TypeScript
   - Python
 maintainers:
-  - Rajaykumar12
+  - [Rajaykumar12](https://github.com/Rajaykumar12)
 status: active
 category: Platform
 tags:

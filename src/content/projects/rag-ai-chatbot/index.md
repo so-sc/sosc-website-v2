@@ -23,9 +23,9 @@ tags:
   - rag
   - full-stack
   - open-source
-github: https://github.com/Rajaykumar12/rag-ai-chatbot
-documentation: https://github.com/Rajaykumar12/rag-ai-chatbot#readme
-community: true
+github: https://github.com/Rajaykumar12/AI-chat
+documentation: https://github.com/Rajaykumar12/AI-chat/blob/main/README.md
+community: false
 ---
 ---
 

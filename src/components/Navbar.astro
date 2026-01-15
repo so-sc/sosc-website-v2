@@ -504,7 +504,7 @@ import SOSC from "@/assets/sosc_logo.svg";
         const paginationItems = paginationList.querySelectorAll(".pagination-item");
 
         const updateActivePagination = () => {
-          if(!emblaApi) return;
+          if (!emblaApi) return;
           const selectedIndex = emblaApi.selectedScrollSnap();
           paginationItems.forEach((item, index) => {
             if (index === selectedIndex) {

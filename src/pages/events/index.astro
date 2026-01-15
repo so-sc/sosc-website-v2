@@ -17,45 +17,50 @@ const parsedEvents = events
 ---
 
 <Layout title="Events - SOSC">
-  <main class="mx-auto max-w-7xl px-4 py-12 md:px-8 min-h-[calc(100vh-4rem)]">
+  <main class="mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-4 py-24 md:px-8">
     <div class="grid grid-cols-1 gap-8 md:gap-16 lg:grid-cols-12">
-      
       <aside class="relative lg:col-span-4">
         <div class="sticky top-24 space-y-8">
           <div>
-            <h1 class="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-gray-900 dark:text-white leading-[0.8]">
+            <h1
+              class="text-4xl leading-[0.8] font-black tracking-tighter text-gray-900 uppercase md:text-6xl lg:text-8xl dark:text-white"
+            >
               Events
             </h1>
             <div class="mt-6 flex items-center gap-4">
               <span class="h-px flex-1 bg-gray-900 dark:bg-white"></span>
-              <span class="font-mono text-sm font-bold uppercase tracking-widest text-primary">
+              <span
+                class="text-primary font-mono text-sm font-bold tracking-widest uppercase"
+              >
                 {parsedEvents.length} Total
               </span>
             </div>
           </div>
 
-          <div class="space-y-6 text-sm font-medium leading-relaxed text-gray-500 dark:text-gray-400 max-w-xs">
+          <div
+            class="max-w-xs space-y-6 text-sm leading-relaxed font-medium text-gray-500 dark:text-gray-400"
+          >
             <p>
-              A curated collection of workshops, hackathons, and tech talks. 
+              A curated collection of workshops, hackathons, and tech talks.
               Join us to learn, build, and connect with the community.
             </p>
-
           </div>
         </div>
       </aside>
 
-      <div class="lg:col-span-8 md:pl-4 lg:pl-20">
+      <div class="md:pl-4 lg:col-span-8 lg:pl-20">
         <div class="flex flex-col pb-12">
           {parsedEvents.map((event) => <EventCard {...event} />)}
         </div>
-        
-        {parsedEvents.length === 0 && (
-          <div class="flex h-64 items-center justify-center border border-dashed border-gray-200 dark:border-gray-800">
-            <p class="font-mono text-sm text-gray-500">No events found.</p>
-          </div>
-        )}
-      </div>
 
+        {
+          parsedEvents.length === 0 && (
+            <div class="flex h-64 items-center justify-center border border-dashed border-gray-200 dark:border-gray-800">
+              <p class="font-mono text-sm text-gray-500">No events found.</p>
+            </div>
+          )
+        }
+      </div>
     </div>
   </main>
 </Layout>

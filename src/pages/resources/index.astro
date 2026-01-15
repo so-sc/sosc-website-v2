@@ -8,33 +8,17 @@ const resources = await getCollection("resources");
 
 // Sort resources by newest first
 const sortedResources = resources.sort((a, b) => {
-    if (!a.data.date || !b.data.date) return 0;
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  if (!a.data.date || !b.data.date) return 0;
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 });
 ---
 
 <Layout>
-    <div class="flex min-h-screen flex-col">
-        <section
-            class="relative flex min-h-[40vh] md:min-h-[35vh] items-center justify-center overflow-hidden pt-24 md:pt-0"
-        >
-            <div class="absolute inset-0"></div>
-            <div class="relative z-10 px-4 text-center text-zinc-900">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">
-                    Community Resources
-                </h1>
-                <p class="text-lg">
-                    A curated collection of guides, tools, and references
-                    contributed by the SOSC community. Find what you need or
-                    share what you know.
-                </p>
-            </div>
-        </section>
-
-        <main class="bg-background relative z-0 flex-1">
-            <div class="bg-background text-foreground py-8">
-                <ResourceBoard resources={sortedResources} />
-            </div>
-        </main>
-    </div>
+  <div class="flex min-h-screen flex-col">
+    <main class="bg-background relative z-0 flex-1">
+      <div class="bg-background text-foreground py-8">
+        <ResourceBoard resources={sortedResources} />
+      </div>
+    </main>
+  </div>
 </Layout>

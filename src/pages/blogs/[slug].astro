@@ -4,6 +4,7 @@ import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import slugify from "slugify";
+import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blogs");
@@ -26,6 +27,17 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
 <Layout>
   <main class="mx-auto max-w-4xl px-4 py-20 md:px-8">
+    <!-- Top Back Button -->
+    <div class="mb-8">
+      <a
+        href="/blogs"
+        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+      >
+        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        Back to all blogs
+      </a>
+    </div>
+
     <!-- Blog Header (Reference Style) -->
     <div class="mb-10 border-b border-gray-100 pb-10">
       <div class="mb-6 flex items-center gap-4">
@@ -81,6 +93,17 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         <Content />
       </div>
     </MarkdownLayout>
+
+    <!-- Back to Blogs Link -->
+    <div class="mt-16 border-t border-gray-200 pt-8">
+      <a
+        href="/blogs"
+        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+      >
+        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        Back to all blogs
+      </a>
+    </div>
   </main>
 </Layout>
 

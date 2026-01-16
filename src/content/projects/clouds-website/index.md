@@ -18,9 +18,6 @@ github: https://github.com/so-sc/CLOUDS
 live: https://clouds-cse.netlify.app/
 community: true
 maintainers:
-  - Skandaganesh
-  - himanshukt03
-  - techshetty
   - so-sc
 ---
 
@@ -53,4 +50,4 @@ The CLOUDS website serves as a central hub for showcasing the association’s of
 
 ## Open Source & Community
 
-CLOUDS is maintained by student volunteers under the **Sahyadri Open Source Community (SOSC)**. Contributions from students and developers are highly encouraged.
+CLOUDS is maintained by student volunteers under the **Sahyadri Open Source Community (SOSC)**. Contributions from students developers are highly encouraged.

@@ -21,7 +21,6 @@ demo: https://sankalp.sosc.org.in
 documentation: https://github.com/so-sc/Sankalp/blob/master/README.md
 community: true
 maintainers:
-  - AkkilMG
   - so-sc
 ---
 # Sankalp

@@ -37,55 +37,118 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   day: "numeric",
 });
 
-const statusColors: Record<string, string> = {
-  active: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
-  maintained: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
-  archived: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
-  completed: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
-  "in-progress": "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
+const statusLabels: Record<string, string> = {
+  active: "Active",
+  maintained: "Maintained",
+  archived: "Archived",
+  completed: "Completed",
+  "in-progress": "In Progress",
 };
 ---
 
 <Layout>
-  <main class="mx-auto max-w-4xl space-y-10 px-4 py-20">
+  <main class="mx-auto max-w-4xl px-4 py-20 md:px-8">
     <!-- Project Header -->
-    <div class="space-y-6">
-      <!-- Category and Status -->
-      <div class="flex flex-wrap items-center gap-3">
-        <span class="text-primary text-sm font-medium">{category}</span>
-        <span class={`px-3 py-1 text-xs font-medium rounded-full ${statusColors[status]}`}>
-          {status}
-        </span>
+    <div class="mb-10 border-b border-gray-100 pb-10">
+      <!-- Maintainers & Meta Row -->
+      <div class="mb-6 flex flex-wrap items-center gap-4">
+        <div class="flex items-center">
+          {maintainers.slice(0, 3).map((maintainer, i) => (
+            <a
+              href={`https://github.com/${maintainer}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative"
+              style={i > 0 ? "margin-left: -0.75rem;" : ""}
+            >
+              <img
+                src={`https://github.com/${maintainer}.png`}
+                alt={maintainer}
+                class="h-12 w-12 rounded-full border-2 border-white bg-gray-50 transition-transform group-hover:scale-105 group-hover:z-10"
+                loading="eager"
+                decoding="async"
+                onerror="this.onerror=null; this.src='/github_avatar.svg';"
+              />
+            </a>
+          ))}
+          {maintainers.length > 3 && (
+            <span class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-xs font-medium text-gray-500" style="margin-left: -0.75rem;">
+              +{maintainers.length - 3}
+            </span>
+          )}
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            {maintainers.slice(0, 2).map((maintainer, i) => (
+              <>
+                <a 
+                  href={`https://github.com/${maintainer}`}
+                  target="_blank"
+                  class="text-sm font-bold text-gray-900 transition-colors hover:text-primary"
+                >
+                  @{maintainer}
+                </a>
+                {i < Math.min(maintainers.length, 2) - 1 && <span class="text-gray-300">|</span>}
+              </>
+            ))}
+            {maintainers.length > 2 && (
+              <span class="text-xs text-gray-400">+{maintainers.length - 2} more</span>
+            )}
+          </div>
+          <span class="text-xs italic text-gray-400">Maintainers</span>
+        </div>
+        <div class="ml-auto flex flex-wrap items-center gap-3 text-xs text-gray-400">
+          <span class="font-medium">{formattedDate}</span>
+          <span class="text-gray-200">|</span>
+          <span class="underline decoration-primary/30 underline-offset-2">{category}</span>
+          <span 
+            class:list={[
+              "rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider",
+              status === "active" && "bg-green-50 text-green-600",
+              status === "maintained" && "bg-blue-50 text-blue-600",
+              status === "archived" && "bg-gray-100 text-gray-500",
+              status === "completed" && "bg-yellow-50 text-yellow-600",
+              status === "in-progress" && "bg-orange-50 text-orange-600",
+            ]}
+          >
+            {statusLabels[status]}
+          </span>
+        </div>
       </div>
 
-      <h1 class="text-4xl font-bold">{title}</h1>
-      <p class="text-muted-foreground text-lg">{description}</p>
+      <!-- Title -->
+      <h1 class="text-4xl font-black leading-tight text-gray-900 md:text-6xl">
+        {title}
+      </h1>
+      
+      <!-- Description -->
+      <p class="mt-4 text-lg text-gray-500">{description}</p>
 
-      <!-- Tech Stack Tags -->
-      <div class="flex flex-wrap gap-2">
+      <!-- Tech Stack & Tags -->
+      <div class="mt-6 flex flex-wrap gap-2">
         {techStack.map((tech) => (
-          <span class="px-3 py-1 text-sm bg-muted text-muted-foreground rounded-md">
+          <span class="border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-primary hover:text-primary">
             {tech}
           </span>
         ))}
         {tags.map((tag) => (
-          <span class="px-3 py-1 text-sm bg-primary/10 text-primary rounded-md">
+          <span class="bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
             {tag}
           </span>
         ))}
       </div>
 
-      <!-- Links -->
-      <div class="flex flex-wrap items-center gap-4">
+      <!-- Action Links -->
+      <div class="mt-6 flex flex-wrap items-center gap-4">
         {github && (
           <a
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            class="group inline-flex items-center gap-2 border border-gray-900 bg-gray-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-gray-900"
           >
-            <Icon name="mdi:github" class="w-5 h-5" />
-            GitHub Repository
+            <Icon name="mdi:github" class="h-4 w-4" />
+            View on GitHub
           </a>
         )}
         {demo && (
@@ -93,9 +156,9 @@ const statusColors: Record<string, string> = {
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            class="group inline-flex items-center gap-2 border border-primary bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-primary"
           >
-            <Icon name="mdi:open-in-new" class="w-5 h-5" />
+            <Icon name="mdi:open-in-new" class="h-4 w-4" />
             Live Demo
           </a>
         )}
@@ -104,74 +167,164 @@ const statusColors: Record<string, string> = {
             href={documentation}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 transition-colors hover:text-primary"
           >
-            <Icon name="mdi:file-document" class="w-5 h-5" />
+            <Icon name="mdi:file-document" class="h-4 w-4" />
             Documentation
           </a>
         )}
       </div>
-
-      <!-- Maintainers -->
-      <div class="flex items-center gap-4 pt-4 border-t border-border">
-        <span class="text-sm font-medium">Maintainers:</span>
-        <div class="flex flex-wrap items-center gap-3">
-          {maintainers.map((maintainer) => (
-            <a
-              href={`https://github.com/${maintainer}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 group"
-            >
-              <img
-                src={`https://github.com/${maintainer}.png`}
-                alt={maintainer}
-                class="w-8 h-8 rounded-full border-2 border-card"
-                loading="lazy"
-                decoding="async"
-                onerror="this.onerror=null; this.src='/github_avatar.svg';"
-              />
-              <span class="text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                @{maintainer}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <p class="text-sm text-muted-foreground">Last updated: {formattedDate}</p>
-
-      <div class="border-primary my-8 w-20 rounded-2xl border-4 border-b"></div>
-
-      <!-- Project Cover -->
-      {
-        cover && (
-          <Image
-            src={cover}
-            alt={title}
-            class="h-auto w-full rounded-xl object-cover shadow-md"
-            loading={"eager"}
-            format="webp"
-            quality={80}
-          />
-        )
-      }
     </div>
+
+    <!-- Project Cover -->
+    {cover && (
+      <div class="mb-12 overflow-hidden bg-gray-50">
+        <Image
+          src={cover}
+          alt={title}
+          class="h-auto w-full object-cover"
+          loading="eager"
+          format="webp"
+          quality={80}
+        />
+      </div>
+    )}
 
     <!-- Project Markdown Content -->
     <MarkdownLayout>
-      <Content />
+      <div class="prose-project">
+        <Content />
+      </div>
     </MarkdownLayout>
 
     <!-- Back to Projects Link -->
-    <div class="pt-8 border-t border-border">
+    <div class="mt-16 border-t border-gray-100 pt-8">
       <a
         href="/projects"
-        class="inline-flex items-center gap-2 text-primary hover:underline"
+        class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 transition-colors hover:text-primary"
       >
-        <Icon name="mdi:chevron-left" class="w-4 h-4" />
+        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
         Back to all projects
       </a>
     </div>
   </main>
 </Layout>
+
+<style>
+  /* Project Prose Styling */
+  .prose-project {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .prose-project :global(h1:first-child) {
+    display: none;
+  }
+
+  .prose-project :global(h2) {
+    font-size: 1.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111827;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3ce56e;
+    padding-left: 1.5rem;
+    line-height: 1;
+  }
+
+  .prose-project :global(h3) {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-project :global(h4) {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-project :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-project :global(ul),
+  .prose-project :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose-project :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-project :global(img) {
+    margin: 3rem 0;
+    border: 1px solid #f3f4f6;
+  }
+
+  .prose-project :global(pre) {
+    background: #111827 !important;
+    padding: 2rem !important;
+    margin: 2.5rem 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875rem !important;
+  }
+
+  .prose-project :global(code:not(pre code)) {
+    background: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    color: #111827;
+  }
+
+  .prose-project :global(a) {
+    color: #3ce56e;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+
+  .prose-project :global(a:hover) {
+    color: #2cb557;
+  }
+
+  .prose-project :global(hr) {
+    margin: 3rem 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .prose-project :global(blockquote) {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #6b7280;
+  }
+
+  .prose-project :global(table) {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+  }
+
+  .prose-project :global(th),
+  .prose-project :global(td) {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  .prose-project :global(th) {
+    background: #f9fafb;
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,16 @@
+{
+    "title": "CyberChef",
+    "description": "A simple, intuitive web app for carrying out all manner of ‘cyber’ operations within a web browser. CyberChef allows you to perform encoding, decoding, encryption, analysis and data transformation operations on text or files.",
+    "type": "tools",
+    "category": "Cybersecurity",
+    "tags": [
+        "data-analysis",
+        "security",
+        "forensics",
+        "encode-decode",
+        "web-tool"
+    ],
+    "link": "https://gchq.github.io/CyberChef/",
+    "contributor": "external",
+    "date": "2026-01-15"
+}

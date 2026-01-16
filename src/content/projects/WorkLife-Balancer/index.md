@@ -11,7 +11,7 @@ techStack:
   - MongoDB
   - JWT
 maintainers:
-  - nithi
+  - Nithin K
 status: active
 category: Platform
 tags:
@@ -72,3 +72,4 @@ WorkLife Balancer is built using modern web technologies:
 ## Contributing
 
 Contributions are welcome
+

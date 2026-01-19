@@ -13,7 +13,7 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
 
 <button
   type="button"
-  class="group relative flex h-full w-[300px] md:w-[450px] flex-shrink-0 flex-col gap-6 bg-white text-left transition-colors focus:outline-none"
+  class="group relative flex h-full w-[280px] sm:w-[320px] md:w-[450px] flex-shrink-0 flex-col gap-6 bg-white text-left transition-colors focus:outline-none"
   data-community-card
   data-title={title}
   data-category={category}
@@ -35,14 +35,14 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
   <!-- Content -->
   <div class="flex flex-col pr-4">
    
-    <div class="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-widest">
+    <div class="mb-3 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest md:text-xs">
       <span class="text-primary transition-colors duration-300 group-hover:text-gray-900">{category}</span>
       <span class="text-gray-300">/</span>
       <span class="text-gray-500">{date}</span>
     </div>
 
     <!-- Title -->
-    <h3 class="mb-4 text-3xl font-black uppercase leading-[0.9] text-gray-900 transition-colors duration-300 group-hover:text-primary md:text-4xl">
+    <h3 class="mb-4 text-2xl font-black uppercase leading-[0.9] text-gray-900 transition-colors duration-300 group-hover:text-primary md:text-4xl">
       {title}
     </h3>
 

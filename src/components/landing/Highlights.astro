@@ -267,62 +267,80 @@ import events from "../../data/highlights.json";
 
   if (scrollContainer && inner) {
     let isPaused = false;
-    let scrollAmount = 0.5; // pixels per frame
+    let scrollAmount = 0.7; 
     let frameId: number;
     let resumeTimeout: ReturnType<typeof setTimeout>;
 
+    // The core animation loop
     const step = () => {
       if (!isPaused) {
         scrollContainer.scrollLeft += scrollAmount;
-        if (inner && scrollContainer.scrollLeft >= inner.scrollWidth / 3) {
-          scrollContainer.scrollLeft -= inner.scrollWidth / 3;
-        }
       }
       frameId = requestAnimationFrame(step);
     };
 
+    // Handle the infinite loop reset
+    // This is better in a scroll listener as it handles ALL scroll types (JS, swipe, wheel)
+    const handleInfiniteLoop = () => {
+      const oneThird = inner.scrollWidth / 3;
+      if (scrollContainer.scrollLeft >= oneThird * 2) {
+        scrollContainer.scrollLeft -= oneThird;
+      } else if (scrollContainer.scrollLeft <= 0) {
+        scrollContainer.scrollLeft += oneThird;
+      }
+    };
+    
+    scrollContainer.addEventListener("scroll", handleInfiniteLoop, { passive: true });
+
     const pause = () => {
       isPaused = true;
-      clearTimeout(resumeTimeout);
+      if (resumeTimeout) clearTimeout(resumeTimeout);
     };
 
     const resume = () => {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
       resumeTimeout = setTimeout(() => {
         isPaused = false;
-      }, 2000);
+      }, 1000); 
     };
 
+    // Interaction Listeners
     scrollContainer.addEventListener("mouseenter", pause);
     scrollContainer.addEventListener("mouseleave", resume);
-    scrollContainer.addEventListener("touchstart", pause);
+    scrollContainer.addEventListener("touchstart", pause, { passive: true });
     scrollContainer.addEventListener("touchend", resume);
 
-    // Mouse drag for desktop manual scroll
     let isDragging = false;
     let startX: number;
     let scrollLeft: number;
 
-    scrollContainer.addEventListener("mousedown", (e) => {
+    const startDragging = (e: MouseEvent) => {
       isDragging = true;
       pause();
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
-    });
+    };
 
-    window.addEventListener("mouseup", () => {
+    const stopDragging = () => {
       if (isDragging) {
         isDragging = false;
         resume();
       }
-    });
+    };
 
-    scrollContainer.addEventListener("mousemove", (e) => {
+    const moveDragging = (e: MouseEvent) => {
       if (!isDragging) return;
       e.preventDefault();
       const x = e.pageX - scrollContainer.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX) * 1.5; // Sensitivity
       scrollContainer.scrollLeft = scrollLeft - walk;
-    });
+    };
+
+    scrollContainer.addEventListener("mousedown", startDragging);
+    window.addEventListener("mouseup", stopDragging);
+    scrollContainer.addEventListener("mousemove", moveDragging);
+
+    scrollContainer.scrollLeft = inner.scrollWidth / 3;
 
     frameId = requestAnimationFrame(step);
   }

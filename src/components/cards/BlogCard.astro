@@ -3,20 +3,20 @@ import { Image } from "astro:assets";
 import { Calendar, User } from "@lucide/astro";
 
 const {
-  title,
-  description,
-  cover,
-  date,
-  link,
-  highlight = false,
-  author,
-  tags,
+	title,
+	description,
+	cover,
+	date,
+	link,
+	highlight = false,
+	author,
+	tags,
 } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
 });
 ---
 

@@ -1,17 +1,17 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
-import slugify from "slugify";
 import { Icon } from "astro-icon/components";
+import slugify from "slugify";
+import Layout from "@/layouts/Layout.astro";
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 
 export async function getStaticPaths() {
-  const blogs = await getCollection("blogs");
-  return blogs.map((blog) => ({
-    params: { slug: slugify(blog.data.title, { lower: true, strict: true }) },
-    props: { blog },
-  }));
+	const blogs = await getCollection("blogs");
+	return blogs.map((blog) => ({
+		params: { slug: slugify(blog.data.title, { lower: true, strict: true }) },
+		props: { blog },
+	}));
 }
 
 const { blog } = Astro.props;
@@ -19,9 +19,9 @@ const { Content } = await render(blog);
 const { title, date, author, cover, description, tags } = blog.data;
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
 });
 ---
 

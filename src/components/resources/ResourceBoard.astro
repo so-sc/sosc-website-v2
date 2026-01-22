@@ -1,29 +1,29 @@
 ---
-import { Search, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import type { CollectionEntry } from "astro:content";
+import { ChevronLeft, ChevronRight, ExternalLink, Search } from "lucide-react";
 
 interface Props {
-    resources: CollectionEntry<"resources">[];
+	resources: CollectionEntry<"resources">[];
 }
 
 const { resources } = Astro.props;
 const CATEGORIES = [
-    "All",
-    "AI/ML",
-    "App Dev",
-    "Blockchain",
-    "Cloud",
-    "Competitive Programming",
-    "Computer Science",
-    "Cybersecurity",
-    "Data Science",
-    "Design",
-    "Development",
-    "DevOps",
-    "Game Dev",
-    "Open Source",
-    "Web Dev",
-    "Misc",
+	"All",
+	"AI/ML",
+	"App Dev",
+	"Blockchain",
+	"Cloud",
+	"Competitive Programming",
+	"Computer Science",
+	"Cybersecurity",
+	"Data Science",
+	"Design",
+	"Development",
+	"DevOps",
+	"Game Dev",
+	"Open Source",
+	"Web Dev",
+	"Misc",
 ];
 ---
 

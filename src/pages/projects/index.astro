@@ -1,33 +1,33 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import ProjectCard from "@/components/cards/ProjectCard.astro";
 import { getCollection } from "astro:content";
-import slugify from "slugify";
 import { ChevronDown, RotateCcw, Search } from "@lucide/astro";
+import slugify from "slugify";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const projects = await getCollection("projects");
 
 const parsedProjects = projects
-  .map(({ data }) => ({
-    title: data.title,
-    description: data.description,
-    cover: data.cover,
-    techStack: data.techStack,
-    maintainers: data.maintainers,
-    status: data.status,
-    category: data.category,
-    tags: data.tags,
-    github: data.github,
-    community: data.community,
-    date: data.date,
-    link: slugify(data.title, { lower: true, strict: true }),
-  }))
-  .sort((a, b) => {
-    // Community projects first, then by date
-    if (a.community && !b.community) return -1;
-    if (!a.community && b.community) return 1;
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+	.map(({ data }) => ({
+		title: data.title,
+		description: data.description,
+		cover: data.cover,
+		techStack: data.techStack,
+		maintainers: data.maintainers,
+		status: data.status,
+		category: data.category,
+		tags: data.tags,
+		github: data.github,
+		community: data.community,
+		date: data.date,
+		link: slugify(data.title, { lower: true, strict: true }),
+	}))
+	.sort((a, b) => {
+		// Community projects first, then by date
+		if (a.community && !b.community) return -1;
+		if (!a.community && b.community) return 1;
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
 
 // Extract unique values for filters
 const allCategories = [...new Set(parsedProjects.map((p) => p.category))];

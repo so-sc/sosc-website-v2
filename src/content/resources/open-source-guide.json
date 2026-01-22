@@ -1,15 +1,10 @@
 {
-    "title": "Open Source Guide",
-    "description": "Comprehensive guide to open source best practices and community building.",
-    "type": "guide",
-    "category": "Open Source",
-    "tags": [
-        "collaboration",
-        "community",
-        "best practices",
-        "contribution"
-    ],
-    "link": "https://opensource.guide/",
-    "contributor": "community",
-    "date": "2026-01-15"
+	"title": "Open Source Guide",
+	"description": "Comprehensive guide to open source best practices and community building.",
+	"type": "guide",
+	"category": "Open Source",
+	"tags": ["collaboration", "community", "best practices", "contribution"],
+	"link": "https://opensource.guide/",
+	"contributor": "community",
+	"date": "2026-01-15"
 }

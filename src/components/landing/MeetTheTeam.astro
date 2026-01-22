@@ -4,38 +4,150 @@
 
 
 const teamMembers = [
-  { name: "Arvind", tags: ["Development", "Backend"], image: "/team/arvind.webp" },
-  { name: "Deepthi", tags: ["Frontend", "Design"], image: "/team/deepthi.webp" },
-  { name: "Hitha Badikillaya S U", tags: ["Development", "AI/ML"], image: "/team/hitha_badikillaya_s_u.webp" },
-  { name: "Josvita Concessao", tags: ["Design", "UX"], image: "/team/josvita_concessao.webp" },
-  { name: "Koshin", tags: ["Development", "Frontend"], image: "/team/placeholder.png" },
-  { name: "Kushal SM", tags: ["Backend", "DevOps"], image: "/team/kushal_sm.webp" },
-  { name: "Manas S", tags: ["Development", "Full Stack"], image: "/team/manas_s.webp" },
-  { name: "Manvitha", tags: ["Frontend", "Design"], image: "/team/manvitha.webp" },
-  { name: "Mariyam Heena", tags: ["Design", "Creative"], image: "/team/mariyam_heena.webp" },
-  { name: "Meghna", tags: ["Development", "Frontend"], image: "/team/meghna.webp" },
-  { name: "Minhaz Ahmed Mustak", tags: ["Backend", "Systems"], image: "/team/minhaz_ahmed_mustak.webp" },
-  { name: "Mukasshaf Ahmed", tags: ["Development", "Mobile"], image: "/team/mukasshaf_ahmed.webp" },
-  { name: "Nithin K", tags: ["Full Stack", "Development"], image: "/team/nithin_k.webp" },
-  { name: "Pranam N Kotian", tags: ["Design", "UI/UX"], image: "/team/pranam_n_kotian.webp" },
-  { name: "Prathyusha K", tags: ["Frontend", "Reactivity"], image: "/team/prathyusha_k.webp" },
-  { name: "Priyadarshini M", tags: ["Management", "Outreach"], image: "/team/priyadarshini_m.webp" },
-  { name: "Rajath", tags: ["Development", "Backend"], image: "/team/placeholder.png" },
-  { name: "R Ajay Kumar", tags: ["Technical", "Hardware"], image: "/team/r_ajay_kumar.webp" },
-  { name: "Salman Najah", tags: ["Development", "Frontend"], image: "/team/salman_najah.webp" },
-  { name: "Savinay", tags: ["Full Stack", "Cloud"], image: "/team/savinay.webp" },
-  { name: "Siddu B G R", tags: ["Development", "Cybersecurity"], image: "/team/placeholder.png" },
-  { name: "Soniya Kolvekar", tags: ["Design", "Art"], image: "/team/soniya_kolvekar.webp" },
-  { name: "Sthuthi Poojary", tags: ["Management", "Events"], image: "/team/sthuthi_poojary.webp" },
-  { name: "Varsha", tags: ["Development", "Frontend"], image: "/team/varsha.webp" },
-  { name: "Varun Suvarna", tags: ["Backend", "Infrastructure"], image: "/team/varun_suvarna.webp" },
-  { name: "Vivek Neeralagi", tags: ["Development", "Code"], image: "/team/vivek_neeralagi.webp" },
-  { name: "Yash Laxman", tags: ["Development", "Code"], image: "/team/yash_laxman.webp" },
-  { name: "Zaynah Anjum", tags: ["Design", "Creative"], image: "/team/zaynah_anjum.webp" },
+	{
+		name: "Arvind",
+		tags: ["Development", "Backend"],
+		image: "/team/arvind.webp",
+	},
+	{
+		name: "Deepthi",
+		tags: ["Frontend", "Design"],
+		image: "/team/deepthi.webp",
+	},
+	{
+		name: "Hitha Badikillaya S U",
+		tags: ["Development", "AI/ML"],
+		image: "/team/hitha_badikillaya_s_u.webp",
+	},
+	{
+		name: "Josvita Concessao",
+		tags: ["Design", "UX"],
+		image: "/team/josvita_concessao.webp",
+	},
+	{
+		name: "Koshin",
+		tags: ["Development", "Frontend"],
+		image: "/team/placeholder.png",
+	},
+	{
+		name: "Kushal SM",
+		tags: ["Backend", "DevOps"],
+		image: "/team/kushal_sm.webp",
+	},
+	{
+		name: "Manas S",
+		tags: ["Development", "Full Stack"],
+		image: "/team/manas_s.webp",
+	},
+	{
+		name: "Manvitha",
+		tags: ["Frontend", "Design"],
+		image: "/team/manvitha.webp",
+	},
+	{
+		name: "Mariyam Heena",
+		tags: ["Design", "Creative"],
+		image: "/team/mariyam_heena.webp",
+	},
+	{
+		name: "Meghna",
+		tags: ["Development", "Frontend"],
+		image: "/team/meghna.webp",
+	},
+	{
+		name: "Minhaz Ahmed Mustak",
+		tags: ["Backend", "Systems"],
+		image: "/team/minhaz_ahmed_mustak.webp",
+	},
+	{
+		name: "Mukasshaf Ahmed",
+		tags: ["Development", "Mobile"],
+		image: "/team/mukasshaf_ahmed.webp",
+	},
+	{
+		name: "Nithin K",
+		tags: ["Full Stack", "Development"],
+		image: "/team/nithin_k.webp",
+	},
+	{
+		name: "Pranam N Kotian",
+		tags: ["Design", "UI/UX"],
+		image: "/team/pranam_n_kotian.webp",
+	},
+	{
+		name: "Prathyusha K",
+		tags: ["Frontend", "Reactivity"],
+		image: "/team/prathyusha_k.webp",
+	},
+	{
+		name: "Priyadarshini M",
+		tags: ["Management", "Outreach"],
+		image: "/team/priyadarshini_m.webp",
+	},
+	{
+		name: "Rajath",
+		tags: ["Development", "Backend"],
+		image: "/team/placeholder.png",
+	},
+	{
+		name: "R Ajay Kumar",
+		tags: ["Technical", "Hardware"],
+		image: "/team/r_ajay_kumar.webp",
+	},
+	{
+		name: "Salman Najah",
+		tags: ["Development", "Frontend"],
+		image: "/team/salman_najah.webp",
+	},
+	{
+		name: "Savinay",
+		tags: ["Full Stack", "Cloud"],
+		image: "/team/savinay.webp",
+	},
+	{
+		name: "Siddu B G R",
+		tags: ["Development", "Cybersecurity"],
+		image: "/team/placeholder.png",
+	},
+	{
+		name: "Soniya Kolvekar",
+		tags: ["Design", "Art"],
+		image: "/team/soniya_kolvekar.webp",
+	},
+	{
+		name: "Sthuthi Poojary",
+		tags: ["Management", "Events"],
+		image: "/team/sthuthi_poojary.webp",
+	},
+	{
+		name: "Varsha",
+		tags: ["Development", "Frontend"],
+		image: "/team/varsha.webp",
+	},
+	{
+		name: "Varun Suvarna",
+		tags: ["Backend", "Infrastructure"],
+		image: "/team/varun_suvarna.webp",
+	},
+	{
+		name: "Vivek Neeralagi",
+		tags: ["Development", "Code"],
+		image: "/team/vivek_neeralagi.webp",
+	},
+	{
+		name: "Yash Laxman",
+		tags: ["Development", "Code"],
+		image: "/team/yash_laxman.webp",
+	},
+	{
+		name: "Zaynah Anjum",
+		tags: ["Design", "Creative"],
+		image: "/team/zaynah_anjum.webp",
+	},
 ];
 
 // Parameter for row height
-const rowPadding = "20px"; 
+const rowPadding = "20px";
 ---
 
 <section class="team-section relative w-full bg-white pb-12 md:pb-24 px-6 md:px-20">

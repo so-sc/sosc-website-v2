@@ -1,19 +1,20 @@
 ---
-import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
 import EventCard from "@/components/cards/EventCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
 const events = await getCollection("events");
 
 const parsedEvents = events
-  .map(({ data }) => ({
-    name: data.name,
-    date: data.date,
-    location: data.location,
-    cover: data.cover,
-    link: slugify(data.name, { lower: true, strict: true }),
-  }))
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	.map(({ data }) => ({
+		name: data.name,
+		date: data.date,
+		location: data.location,
+		cover: data.cover,
+		link: slugify(data.name, { lower: true, strict: true }),
+	}))
+	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <Layout title="Events - SOSC">

@@ -1,16 +1,16 @@
 {
-    "title": "HackTricks",
-    "description": "A comprehensive open-source cheat sheet and knowledge base for penetration testing and cybersecurity, covering various offensive techniques, tools, and methodologies.",
-    "type": "cheatsheet",
-    "category": "Cybersecurity",
-    "tags": [
-        "penetration-testing",
-        "cybersecurity",
-        "cheat-sheet",
-        "ethical-hacking",
-        "knowledge-base"
-    ],
-    "link": "https://book.hacktricks.wiki/en/index.html",
-    "contributor": "external",
-    "date": "2026-01-15"
+	"title": "HackTricks",
+	"description": "A comprehensive open-source cheat sheet and knowledge base for penetration testing and cybersecurity, covering various offensive techniques, tools, and methodologies.",
+	"type": "cheatsheet",
+	"category": "Cybersecurity",
+	"tags": [
+		"penetration-testing",
+		"cybersecurity",
+		"cheat-sheet",
+		"ethical-hacking",
+		"knowledge-base"
+	],
+	"link": "https://book.hacktricks.wiki/en/index.html",
+	"contributor": "external",
+	"date": "2026-01-15"
 }

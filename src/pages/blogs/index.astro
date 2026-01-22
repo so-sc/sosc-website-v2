@@ -1,23 +1,23 @@
 ---
-import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import BlogCard from "@/components/cards/BlogCard.astro";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
+import BlogCard from "@/components/cards/BlogCard.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const blogs = await getCollection("blogs");
 
 const parsedBlogs = blogs
-  .map(({ data }) => ({
-    title: data.title,
-    author: data.author,
-    date: data.date,
-    description: data.description,
-    cover: data.cover,
-    tags: data.tags,
-    link: slugify(data.title, { lower: true, strict: true }),
-  }))
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	.map(({ data }) => ({
+		title: data.title,
+		author: data.author,
+		date: data.date,
+		description: data.description,
+		cover: data.cover,
+		tags: data.tags,
+		link: slugify(data.title, { lower: true, strict: true }),
+	}))
+	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
 ---

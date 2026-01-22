@@ -1,27 +1,27 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import slugify from "slugify";
 // Imports
 import Layout from "@/layouts/Layout.astro";
 import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
-import { Image } from "astro:assets";
-import { getCollection, render } from "astro:content";
-import slugify from "slugify";
-import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
-  const events = await getCollection("events");
-  return events.map((event) => ({
-    params: { slug: slugify(event.data.name, { lower: true, strict: true }) },
-    props: { event },
-  }));
+	const events = await getCollection("events");
+	return events.map((event) => ({
+		params: { slug: slugify(event.data.name, { lower: true, strict: true }) },
+		props: { event },
+	}));
 }
 
 const { event } = Astro.props;
 const { Content } = await render(event);
 const { name, date, location, cover } = event.data;
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
 });
 ---
 

@@ -1,13 +1,10 @@
 {
-    "title": "Roadmap.sh",
-    "description": "Interactive developer roadmaps to guide your learning path.",
-    "type": "roadmap",
-    "category": "Development",
-    "tags": [
-        "career",
-        "guides"
-    ],
-    "link": "https://roadmap.sh",
-    "contributor": "community",
-    "date": "2024-03-20"
+	"title": "Roadmap.sh",
+	"description": "Interactive developer roadmaps to guide your learning path.",
+	"type": "roadmap",
+	"category": "Development",
+	"tags": ["career", "guides"],
+	"link": "https://roadmap.sh",
+	"contributor": "community",
+	"date": "2024-03-20"
 }

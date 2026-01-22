@@ -1,48 +1,50 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
-import slugify from "slugify";
 import { Icon } from "astro-icon/components";
+import slugify from "slugify";
+import Layout from "@/layouts/Layout.astro";
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
-  return projects.map((project) => ({
-    params: { slug: slugify(project.data.title, { lower: true, strict: true }) },
-    props: { project },
-  }));
+	const projects = await getCollection("projects");
+	return projects.map((project) => ({
+		params: {
+			slug: slugify(project.data.title, { lower: true, strict: true }),
+		},
+		props: { project },
+	}));
 }
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { 
-  title, 
-  date, 
-  cover, 
-  description, 
-  techStack, 
-  maintainers, 
-  status, 
-  category, 
-  tags = [], 
-  github, 
-  demo, 
-  documentation 
+const {
+	title,
+	date,
+	cover,
+	description,
+	techStack,
+	maintainers,
+	status,
+	category,
+	tags = [],
+	github,
+	demo,
+	documentation,
 } = project.data;
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+	year: "numeric",
+	month: "long",
+	day: "numeric",
 });
 
 const statusLabels: Record<string, string> = {
-  active: "Active",
-  maintained: "Maintained",
-  archived: "Archived",
-  completed: "Completed",
-  "in-progress": "In Progress",
+	active: "Active",
+	maintained: "Maintained",
+	archived: "Archived",
+	completed: "Completed",
+	"in-progress": "In Progress",
 };
 ---
 

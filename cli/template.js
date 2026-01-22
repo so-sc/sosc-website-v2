@@ -9,7 +9,7 @@ title: "${title}"
 ---
 `;
 
-export const eventFrontmatter = ({ name,  date }) => `---
+export const eventFrontmatter = ({ name, date }) => `---
 name: "${name}"
 date: "${date}"
 location: ""

@@ -73,8 +73,8 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
                 [
                   ...new Set(
                     parsedBlogs.flatMap(
-                      (b) => b.tags?.split("|").map((t) => t.trim()) || []
-                    )
+                      (b) => b.tags?.split("|").map((t) => t.trim()) || [],
+                    ),
                   ),
                 ]
                   .slice(0, 15)

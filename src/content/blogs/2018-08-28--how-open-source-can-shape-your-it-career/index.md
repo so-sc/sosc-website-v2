@@ -20,7 +20,6 @@ _Photo by: [Tran Mau Tri Tam](https://dribbble.com/shots/4813890-SPACE) on dribb
 
 It's everywhere! The world's largest encyclopedia which is driven by the content contributed by individuals is a good example for open collaborative effort. The ability of humans to come forward to solve problems for the community is what driving the modern open-source culture. Talking about Open source softwares as Engineers its worth knowing the fact that most of the technologies we use today is vastly built by the lines written by millions of engineers around the world. Even the giants in the tech industry rely on these softwares built by people who contributed to open source for a better future.
 
-
 ![1](./linux.png)
 
 <center><i>The Linux kernel source on <a href="https://github.com/torvalds/linux">GitHub</a></i></center>
@@ -38,7 +37,6 @@ These are the valuable rewards to you from open source throughout your journey. 
 ![pepe silvia](https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif)
 
 Let's start simple. Open sourcing your project on GitHub means opening the ugly lines of code you wrote to the world. Feels bad? Well, open source projects are a good way of improving your programming skills and adhering to best practices. It's a constant reminder of improving your programming patterns and skills. The best tip given to early adopters is to start open sourcing even the silliest project you have built. It doesn't necessarily need to be an operating system, or the next Machine Learning library. It can be anything, maybe a project you built for fun, a project you worked to solve a common problem, even if it doesn't sound helpful to others, it's a good habit to put it up on GitHub. Fun fact: this [JavaScript library](https://www.npmjs.com/package/is-even) which checks whether a given number is even has more than a million downloads in [npm](https://npmjs.org)
-
 
 ![2](./iseven.png)
 
@@ -58,7 +56,6 @@ Your contributions to open source projects is more of fun or contribution to com
 This might be hard for many people since most of us have our imposter syndrome kicking in whenever we start to do something. But the fact is most of the open source projects are beginner friendly and supportive for new contributors. Having your line of code land in to some of the largest and famous code base might be hard. But that's not the only way to become an open source contributor. Supporting the development, giving feedback, helping others with the issues regarding an open source software, or even open sourcing your project to others can be a little step towards becoming an open source contributor.
 
 [GitHub](https://github.com) is a great place to start this journey, which is indeed one of the largest developers community and home for largest number of open source projects. Found a bug while using a software? If the software is open source, you can likely submit issues and start working on a fix, this is the most common way of entering into a project. Some projects might be complex, or some of your favorite softwares need a good amount of programming skill to make a contribution, but there's always a way to be part of it. From fixing typos to adding or updating documentation can be one way to contribute. Finding issues in a repository with labels `need-help` or `good-first-issue` might be the right place to start as a beginner.
-
 
 ![4](./gatsby.png)
 

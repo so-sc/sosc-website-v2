@@ -34,12 +34,12 @@ It runs a small local web server on your machine, generates a QR code, and provi
 
 ## Key Features
 
-* **Wireless Slide Control** – Navigate slides from any device on the same network
-* **QR Code Access** – Instant connection via a terminal-generated QR code
-* **PWA Support** – Installable as a Progressive Web App on mobile devices
-* **Lightweight & Fast** – Minimal setup with simple CLI usage
-* **Self-Hostable** – Runs entirely on your local machine
-* **Open Source** – Community-driven and extensible
+- **Wireless Slide Control** – Navigate slides from any device on the same network
+- **QR Code Access** – Instant connection via a terminal-generated QR code
+- **PWA Support** – Installable as a Progressive Web App on mobile devices
+- **Lightweight & Fast** – Minimal setup with simple CLI usage
+- **Self-Hostable** – Runs entirely on your local machine
+- **Open Source** – Community-driven and extensible
 
 ---
 
@@ -57,21 +57,21 @@ It runs a small local web server on your machine, generates a QR code, and provi
 
 SlideX is built using:
 
-* **Node.js** – Runtime environment
-* **Express.js** – Web server and API
-* **Socket.io** – Real-time communication between devices
-* **node-key-sender** – Simulates keyboard inputs for slide navigation
-* **ip** – Local network IP detection
-* **qrcode-terminal** – Generates scannable QR codes in the terminal
+- **Node.js** – Runtime environment
+- **Express.js** – Web server and API
+- **Socket.io** – Real-time communication between devices
+- **node-key-sender** – Simulates keyboard inputs for slide navigation
+- **ip** – Local network IP detection
+- **qrcode-terminal** – Generates scannable QR codes in the terminal
 
 ---
 
 ## Project Goals
 
-* Remove dependency on physical presentation remotes
-* Provide a simple, reliable, and local-first solution
-* Keep setup minimal and beginner-friendly
-* Enable easy customization and extension
+- Remove dependency on physical presentation remotes
+- Provide a simple, reliable, and local-first solution
+- Keep setup minimal and beginner-friendly
+- Enable easy customization and extension
 
 ---
 
@@ -85,5 +85,5 @@ SlideX is maintained within the **Sahyadri Open Source Community (SOSC)** and is
 
 Pull requests are welcome. Please:
 
-* Work on issues labeled **help wanted** or **good first issue**, or
-* Open an issue to propose new features before implementing them.
+- Work on issues labeled **help wanted** or **good first issue**, or
+- Open an issue to propose new features before implementing them.

@@ -36,7 +36,7 @@ The platform supports resumes in multiple formats and enables recruiters to quic
 - **Automated Resume Parsing** – Extracts candidate information from PDF and document formats
 - **Structured Candidate Profiles** – Organizes data into standardized fields for easy review
 - **Information Extraction** – Identifies and processes:
-  - Personal and contact details  
+  - Personal and contact details
   - Matched skills
 - **Fast Screening** – Helps recruiters shortlist candidates efficiently
 - **Scalable Design** – Handles large volumes of resumes with consistent accuracy
@@ -57,13 +57,13 @@ Resume Parser is built using modern backend and NLP tools:
 
 ## Project Goals
 
-- Automate resume screening and data extraction  
-- Reduce manual effort in recruitment pipelines  
-- Improve consistency and accuracy of candidate evaluation  
-- Provide a reusable open-source base for HR tech solutions  
+- Automate resume screening and data extraction
+- Reduce manual effort in recruitment pipelines
+- Improve consistency and accuracy of candidate evaluation
+- Provide a reusable open-source base for HR tech solutions
 
 ---
 
 ## Contributing
 
-Contributions are welcome 
+Contributions are welcome

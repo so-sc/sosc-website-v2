@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to the **Sahyadri OpenSource Community (SOSC) Website**  
 
-All contributions — content, documentation, or code — are made **via Pull Requests**.
+All contributions - content, documentation, or code are made **via Pull Requests**.
 
 This document explains **how to contribute** and **what is expected** so your PR can be reviewed and merged smoothly.
 
@@ -39,26 +39,19 @@ We follow a prefix-based commit format.
 
 Use only one prefix per commit:
 
-ADD: Added files or content
-
-FEAT: New feature
-
-FIX: Bug fix
-
-SFIX: Security fix
-
-TYPO: Typo or documentation fix
-
-RFT: Refactored code
-
-WIP: Work in progress
-
-INIT: Initial setup
+- ADD: Added files or content
+- FEAT: New feature
+- FIX: Bug fix
+- SFIX: Security fix
+- TYPO: Typo or documentation fix
+- RFT: Refactored code
+- WIP: Work in progress
+- INIT: Initial setup
 
  Example
 git commit -m "ADD: docker resource for beginners"
 
-**Content Contributions**
+## Content Contributions
 
 All website content is written in Markdown or JSON and lives inside:
 

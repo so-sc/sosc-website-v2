@@ -1,8 +1,8 @@
 ---
 import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
-import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/Footer.astro";
 import "lenis/dist/lenis.css";
 ---
 
@@ -11,7 +11,6 @@ import "lenis/dist/lenis.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <link
       rel="preload"
       href="/fonts/Inter_Font.ttf"
@@ -19,6 +18,14 @@ import "lenis/dist/lenis.css";
       type="font/ttf"
       crossorigin="anonymous"
     />
+    <link
+      rel="preload"
+      href="/fonts/Righteous_Font.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>SOSC</title>

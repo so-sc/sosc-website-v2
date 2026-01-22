@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Sahyadri OpenSource Community</h1>
 
-The official website for **Sahyadri OpenSource Community (SOSC)** - a student-driven community dedicated to promoting open-source culture, collaborative learning, and technical innovation.
+The official website for **Sahyadri OpenSource Community (SOSC)** - a student-driven community dedicated to promoting open-source culture and collaborative learning.
 
 All contribution to this website including contents are made through Pull Requests. If you are new to Git and GitHub and don't know how to submit a Pull Request, please refer our friendly guide on submitting your first pull request at [gitme.js.org](https://gitme.js.org).
 
@@ -117,9 +117,7 @@ For detailed guidelines, please read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-## Contributors
-
-Meet our contributors:
+## Meet Our Contributors
 
 - [**JustModo**](https://github.com/JustModo)
 - [**R Ajay Kumar**](https://github.com/Rajaykumar12)

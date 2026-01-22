@@ -122,14 +122,15 @@ For detailed guidelines, please read [CONTRIBUTING.md](CONTRIBUTING.md).
 Meet our contributors:
 
 - [**JustModo**](https://github.com/JustModo)
-- [**Kushal SM**](https://github.com/kushal-sm)
-- [**Manas S**](https://github.com/manas-s)
+- [**R Ajay Kumar**](https://github.com/Rajaykumar12)
 - [**Hitha Badikillaya S U**](https://github.com/HithaBadikillaya)
-- [**Meghna Suresh**](https://github.com/Meghna-Suresh104)
-- [**Nithin K**](https://github.com/nithin-k)
-- [**Pratheek G Shetty**](https://github.com/pratheek-g-shetty)
+- [**Kushal SM**](https://github.com/mrkushalsm)
+- [**Vivek Neeralagi**](https://github.com/VivekNeer)
+- [**Manas S**](https://github.com/Manas-salian)
+- [**Pratheek G Shetty**](https://github.com/techshetty)
 - [**Prathyusha K**](https://github.com/Prathyusha-K-05)
-- [**R Ajay Kumar**](https://github.com/rajaykumar)
-- [**Soniya Kolvekar**](https://github.com/soniya-kolvekar)
-- [**Vivek Neeralagi**](https://github.com/vivek-neeralagi)
+-  [**Soniya Kolvekar**](https://github.com/soniya-kolvekar)
+- [**Meghna Suresh**](https://github.com/Meghna-Suresh104)
+- [**Nithin K**](https://github.com/nithink-code)
 
+---

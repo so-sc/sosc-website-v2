@@ -30,11 +30,15 @@ const {
 } = Astro.props;
 
 const statusColors: Record<string, string> = {
-  active: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
-  maintained: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+  active:
+    "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+  maintained:
+    "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
   archived: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
-  completed: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
-  "in-progress": "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
+  completed:
+    "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
+  "in-progress":
+    "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
 };
 ---
 
@@ -43,13 +47,13 @@ const statusColors: Record<string, string> = {
   href={`/projects/${link}`}
 >
   <!-- Cover Image with Title Overlay -->
-  <div class="relative bg-muted overflow-hidden h-48 lg:h-56">
+  <div class="bg-muted relative h-48 overflow-hidden lg:h-56">
     {
       cover ? (
         <Image
           src={cover}
           alt={title}
-          class="w-full h-full object-cover"
+          class="h-full w-full object-cover"
           width={1280}
           height={720}
           format="webp"
@@ -57,8 +61,8 @@ const statusColors: Record<string, string> = {
           quality={80}
         />
       ) : (
-        <div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-          <span class="text-2xl font-semibold text-primary/60 text-center px-4">
+        <div class="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
+          <span class="text-primary/60 px-4 text-center text-2xl font-semibold">
             {title}
           </span>
         </div>
@@ -73,29 +77,29 @@ const statusColors: Record<string, string> = {
   </div>
 
   <!-- Content -->
-  <div class="py-4 pr-0 pl-0 space-y-3 flex-1 flex flex-col">
+  <div class="flex flex-1 flex-col space-y-3 py-4 pr-0 pl-0">
     <div class="flex items-center justify-between">
-      <h3
-        class={`font-semibold transition-colors group-hover:text-primary`}
-      >
+      <h3 class={`font-semibold transition-colors group-hover:text-primary`}>
         {title}
       </h3>
       <div class="flex -space-x-2">
         {
-          maintainers.slice(0, 3).map((maintainer) => (
-            <img
-              src={`https://github.com/${maintainer}.png`}
-              alt={maintainer}
-              class="w-6 h-6 rounded-full border-2 border-card"
-              loading="lazy"
-              decoding="async"
-              onerror="this.onerror=null; this.src='/github_avatar.svg';"
-            />
-          ))
+          maintainers
+            .slice(0, 3)
+            .map((maintainer) => (
+              <img
+                src={`https://github.com/${maintainer}.png`}
+                alt={maintainer}
+                class="border-card h-6 w-6 rounded-full border-2"
+                loading="lazy"
+                decoding="async"
+                onerror="this.onerror=null; this.src='/github_avatar.svg';"
+              />
+            ))
         }
         {
           maintainers.length > 3 && (
-            <span class="w-6 h-6 rounded-sm border-2 border-card bg-muted flex items-center justify-center text-[10px] text-muted-foreground">
+            <span class="border-card bg-muted text-muted-foreground flex h-6 w-6 items-center justify-center rounded-sm border-2 text-[10px]">
               +{maintainers.length - 3}
             </span>
           )
@@ -107,14 +111,14 @@ const statusColors: Record<string, string> = {
     <div class="flex flex-wrap gap-1">
       {
         [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
-          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[10px]">
             {tag}
           </span>
         ))
       }
       {
         techStack.length + (tags?.length || 0) > 7 && (
-          <span class="px-1.5 py-0.5 text-[10px] bg-muted text-muted-foreground rounded">
+          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[10px]">
             +{techStack.length + (tags?.length || 0) - 7}
           </span>
         )
@@ -122,12 +126,8 @@ const statusColors: Record<string, string> = {
     </div>
 
     <!-- Description -->
-    <p
-      class={`text-muted-foreground flex-1`}
-    >
+    <p class={`text-muted-foreground flex-1`}>
       {description}
     </p>
-
-    
   </div>
 </a>

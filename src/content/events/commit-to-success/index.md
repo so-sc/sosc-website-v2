@@ -41,5 +41,4 @@ In summary, the Git and GitHub workshop provided developers with a solid foundat
 ![commit-to-success-5](./5.jpg)
 ![commit-to-success-7](./7.jpg)
 
-
 ![commit-to-success-6](./6.jpg)

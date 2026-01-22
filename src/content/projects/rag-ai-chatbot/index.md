@@ -57,9 +57,9 @@ The system is built using high-performance modern tools:
 
 ## Project Goals
 
-- Deliver a robust, multilingual AI chat experience  
-- Enable seamless text and voice input for all users  
-- Provide an open-source base for experimentation and learning  
+- Deliver a robust, multilingual AI chat experience
+- Enable seamless text and voice input for all users
+- Provide an open-source base for experimentation and learning
 - Maintain a clean and extensible architecture for future growth
 
 ---

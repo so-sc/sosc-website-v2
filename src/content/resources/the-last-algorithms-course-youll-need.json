@@ -1,15 +1,10 @@
 {
-    "title": "The Last Algorithms Course You'll Need",
-    "description": "The last algorithms course you'll need to pass tough interview questions that use arrays, lists, trees, graphs, maps, and searching and sorting algorithms. Taught by ThePrimeagen.",
-    "type": "course",
-    "category": "Computer Science",
-    "tags": [
-        "algorithms",
-        "data-structures",
-        "interview-prep",
-        "typescript"
-    ],
-    "link": "https://frontendmasters.com/courses/algorithms/",
-    "contributor": "external",
-    "date": "2026-01-15"
+  "title": "The Last Algorithms Course You'll Need",
+  "description": "The last algorithms course you'll need to pass tough interview questions that use arrays, lists, trees, graphs, maps, and searching and sorting algorithms. Taught by ThePrimeagen.",
+  "type": "course",
+  "category": "Computer Science",
+  "tags": ["algorithms", "data-structures", "interview-prep", "typescript"],
+  "link": "https://frontendmasters.com/courses/algorithms/",
+  "contributor": "external",
+  "date": "2026-01-15"
 }

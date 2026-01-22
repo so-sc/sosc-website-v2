@@ -9,26 +9,28 @@ import { Icon } from "astro-icon/components";
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
-    params: { slug: slugify(project.data.title, { lower: true, strict: true }) },
+    params: {
+      slug: slugify(project.data.title, { lower: true, strict: true }),
+    },
     props: { project },
   }));
 }
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { 
-  title, 
-  date, 
-  cover, 
-  description, 
-  techStack, 
-  maintainers, 
-  status, 
-  category, 
-  tags = [], 
-  github, 
-  demo, 
-  documentation 
+const {
+  title,
+  date,
+  cover,
+  description,
+  techStack,
+  maintainers,
+  status,
+  category,
+  tags = [],
+  github,
+  demo,
+  documentation,
 } = project.data;
 
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -53,57 +55,76 @@ const statusLabels: Record<string, string> = {
       <!-- Maintainers & Meta Row -->
       <div class="mb-6 flex flex-wrap items-center gap-4">
         <div class="flex items-center">
-          {maintainers.slice(0, 3).map((maintainer, i) => (
-            <a
-              href={`https://github.com/${maintainer}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group relative"
-              style={i > 0 ? "margin-left: -0.75rem;" : ""}
-            >
-              <img
-                src={`https://github.com/${maintainer}.png`}
-                alt={maintainer}
-                class="h-12 w-12 rounded-full border-2 border-white bg-gray-50 transition-transform group-hover:scale-105 group-hover:z-10"
-                loading="eager"
-                decoding="async"
-                onerror="this.onerror=null; this.src='/github_avatar.svg';"
-              />
-            </a>
-          ))}
-          {maintainers.length > 3 && (
-            <span class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-xs font-medium text-gray-500" style="margin-left: -0.75rem;">
-              +{maintainers.length - 3}
-            </span>
-          )}
+          {
+            maintainers.slice(0, 3).map((maintainer, i) => (
+              <a
+                href={`https://github.com/${maintainer}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative"
+                style={i > 0 ? "margin-left: -0.75rem;" : ""}
+              >
+                <img
+                  src={`https://github.com/${maintainer}.png`}
+                  alt={maintainer}
+                  class="h-12 w-12 rounded-full border-2 border-white bg-gray-50 transition-transform group-hover:z-10 group-hover:scale-105"
+                  loading="eager"
+                  decoding="async"
+                  onerror="this.onerror=null; this.src='/github_avatar.svg';"
+                />
+              </a>
+            ))
+          }
+          {
+            maintainers.length > 3 && (
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-xs font-medium text-gray-500"
+                style="margin-left: -0.75rem;"
+              >
+                +{maintainers.length - 3}
+              </span>
+            )
+          }
         </div>
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
-            {maintainers.slice(0, 2).map((maintainer, i) => (
-              <>
-                <a 
-                  href={`https://github.com/${maintainer}`}
-                  target="_blank"
-                  class="text-sm font-bold text-gray-900 transition-colors hover:text-primary"
-                >
-                  @{maintainer}
-                </a>
-                {i < Math.min(maintainers.length, 2) - 1 && <span class="text-gray-300">|</span>}
-              </>
-            ))}
-            {maintainers.length > 2 && (
-              <span class="text-xs text-gray-400">+{maintainers.length - 2} more</span>
-            )}
+            {
+              maintainers.slice(0, 2).map((maintainer, i) => (
+                <>
+                  <a
+                    href={`https://github.com/${maintainer}`}
+                    target="_blank"
+                    class="hover:text-primary text-sm font-bold text-gray-900 transition-colors"
+                  >
+                    @{maintainer}
+                  </a>
+                  {i < Math.min(maintainers.length, 2) - 1 && (
+                    <span class="text-gray-300">|</span>
+                  )}
+                </>
+              ))
+            }
+            {
+              maintainers.length > 2 && (
+                <span class="text-xs text-gray-400">
+                  +{maintainers.length - 2} more
+                </span>
+              )
+            }
           </div>
-          <span class="text-xs italic text-gray-400">Maintainers</span>
+          <span class="text-xs text-gray-400 italic">Maintainers</span>
         </div>
-        <div class="ml-auto flex flex-wrap items-center gap-3 text-xs text-gray-400">
+        <div
+          class="ml-auto flex flex-wrap items-center gap-3 text-xs text-gray-400"
+        >
           <span class="font-medium">{formattedDate}</span>
           <span class="text-gray-200">|</span>
-          <span class="underline decoration-primary/30 underline-offset-2">{category}</span>
-          <span 
+          <span class="decoration-primary/30 underline underline-offset-2"
+            >{category}</span
+          >
+          <span
             class:list={[
-              "rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider",
+              "rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase",
               status === "active" && "bg-green-50 text-green-600",
               status === "maintained" && "bg-blue-50 text-blue-600",
               status === "archived" && "bg-gray-100 text-gray-500",
@@ -117,78 +138,90 @@ const statusLabels: Record<string, string> = {
       </div>
 
       <!-- Title -->
-      <h1 class="text-4xl font-black leading-tight text-gray-900 md:text-6xl">
+      <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
         {title}
       </h1>
-      
+
       <!-- Description -->
       <p class="mt-4 text-lg text-gray-500">{description}</p>
 
       <!-- Tech Stack & Tags -->
       <div class="mt-6 flex flex-wrap gap-2">
-        {techStack.map((tech) => (
-          <span class="border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors hover:border-primary hover:text-primary">
-            {tech}
-          </span>
-        ))}
-        {tags.map((tag) => (
-          <span class="bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            {tag}
-          </span>
-        ))}
+        {
+          techStack.map((tech) => (
+            <span class="hover:border-primary hover:text-primary border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors">
+              {tech}
+            </span>
+          ))
+        }
+        {
+          tags.map((tag) => (
+            <span class="bg-primary/10 text-primary px-3 py-1 text-xs font-medium">
+              {tag}
+            </span>
+          ))
+        }
       </div>
 
       <!-- Action Links -->
       <div class="mt-6 flex flex-wrap items-center gap-4">
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center gap-2 border border-gray-900 bg-gray-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-gray-900"
-          >
-            <Icon name="mdi:github" class="h-4 w-4" />
-            View on GitHub
-          </a>
-        )}
-        {demo && (
-          <a
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center gap-2 border border-primary bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-primary"
-          >
-            <Icon name="mdi:open-in-new" class="h-4 w-4" />
-            Live Demo
-          </a>
-        )}
-        {documentation && (
-          <a
-            href={documentation}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 transition-colors hover:text-primary"
-          >
-            <Icon name="mdi:file-document" class="h-4 w-4" />
-            Documentation
-          </a>
-        )}
+        {
+          github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group inline-flex items-center gap-2 border border-gray-900 bg-gray-900 px-4 py-2 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-transparent hover:text-gray-900"
+            >
+              <Icon name="mdi:github" class="h-4 w-4" />
+              View on GitHub
+            </a>
+          )
+        }
+        {
+          demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group border-primary bg-primary hover:text-primary inline-flex items-center gap-2 border px-4 py-2 text-xs font-bold tracking-wider text-white uppercase transition-all hover:bg-transparent"
+            >
+              <Icon name="mdi:open-in-new" class="h-4 w-4" />
+              Live Demo
+            </a>
+          )
+        }
+        {
+          documentation && (
+            <a
+              href={documentation}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-primary inline-flex items-center gap-2 text-xs font-bold tracking-wider text-gray-400 uppercase transition-colors"
+            >
+              <Icon name="mdi:file-document" class="h-4 w-4" />
+              Documentation
+            </a>
+          )
+        }
       </div>
     </div>
 
     <!-- Project Cover -->
-    {cover && (
-      <div class="mb-12 overflow-hidden bg-gray-50">
-        <Image
-          src={cover}
-          alt={title}
-          class="h-auto w-full object-cover"
-          loading="eager"
-          format="webp"
-          quality={80}
-        />
-      </div>
-    )}
+    {
+      cover && (
+        <div class="mb-12 overflow-hidden bg-gray-50">
+          <Image
+            src={cover}
+            alt={title}
+            class="h-auto w-full object-cover"
+            loading="eager"
+            format="webp"
+            quality={80}
+          />
+        </div>
+      )
+    }
 
     <!-- Project Markdown Content -->
     <MarkdownLayout>
@@ -201,9 +234,12 @@ const statusLabels: Record<string, string> = {
     <div class="mt-16 border-t border-gray-100 pt-8">
       <a
         href="/projects"
-        class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 transition-colors hover:text-primary"
+        class="group hover:text-primary inline-flex items-center gap-2 text-xs font-bold tracking-wider text-gray-400 uppercase transition-colors"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        <Icon
+          name="mdi:chevron-left"
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+        />
         Back to all projects
       </a>
     </div>

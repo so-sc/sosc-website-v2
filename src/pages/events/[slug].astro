@@ -31,9 +31,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     <div class="mb-8">
       <a
         href="/events"
-        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        <Icon
+          name="mdi:chevron-left"
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+        />
         Back to all events
       </a>
     </div>
@@ -52,7 +55,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           <Image
             src={cover}
             alt={name}
-            class="h-auto w-full object-contain bg-gray-100"
+            class="h-auto w-full bg-gray-100 object-contain"
             loading={"eager"}
             format="webp"
             quality={80}
@@ -70,9 +73,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     <div class="mt-16 border-t border-gray-200 pt-8">
       <a
         href="/events"
-        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        <Icon
+          name="mdi:chevron-left"
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+        />
         Back to all events
       </a>
     </div>

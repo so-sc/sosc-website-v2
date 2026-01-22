@@ -31,9 +31,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     <div class="mb-8">
       <a
         href="/blogs"
-        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        <Icon
+          name="mdi:chevron-left"
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+        />
         Back to all blogs
       </a>
     </div>
@@ -50,42 +53,46 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           onerror="this.onerror=null; this.src='/github_avatar.svg';"
         />
         <div class="flex flex-col">
-          <a 
+          <a
             href={`https://github.com/${author}`}
             target="_blank"
-            class="text-lg font-bold text-gray-900 transition-colors hover:text-primary"
+            class="hover:text-primary text-lg font-bold text-gray-900 transition-colors"
           >
             {author}
           </a>
-          <span class="text-xs italic text-gray-400">Contributor & Member</span>
+          <span class="text-xs text-gray-400 italic">Contributor & Member</span>
         </div>
         <div class="ml-auto text-xs font-medium text-gray-400">
           <span>{formattedDate}</span>
           <span class="mx-2">in</span>
-          <span class="underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary">
+          <span
+            class="decoration-primary/30 hover:text-primary underline underline-offset-2 transition-colors"
+          >
             {tags}
           </span>
         </div>
       </div>
 
-      <h1 class="text-4xl font-black leading-tight text-gray-900 md:text-6xl">
+      <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
         {title}
       </h1>
     </div>
 
     <!-- Blog Cover -->
-    {cover && (
-      <div class="mb-12 overflow-hidden bg-gray-50">
-        <Image
-          src={cover}
-          alt={title}
-          class="h-auto w-full object-cover"
-          loading="eager"
-          format="webp"
-          quality={80}
-        />
-      </div>
-    )}
+    {
+      cover && (
+        <div class="mb-12 overflow-hidden bg-gray-50">
+          <Image
+            src={cover}
+            alt={title}
+            class="h-auto w-full object-cover"
+            loading="eager"
+            format="webp"
+            quality={80}
+          />
+        </div>
+      )
+    }
 
     <!-- Content -->
     <MarkdownLayout>
@@ -98,9 +105,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     <div class="mt-16 border-t border-gray-200 pt-8">
       <a
         href="/blogs"
-        class="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gray-500 transition-colors hover:text-primary"
+        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        <Icon
+          name="mdi:chevron-left"
+          class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+        />
         Back to all blogs
       </a>
     </div>

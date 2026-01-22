@@ -33,4 +33,3 @@ The session came to a close on a high note, with participants having gained a st
 
 ![SOSWC_1](./1.jpg)
 ![SOSWC_2](./2.jpg)
-

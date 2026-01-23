@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { member } = Astro.props;
+const { image, name, designation, username, linkedin } = member;
+
+const isNoBg = image.includes("team-nobg");
+---
+
+<div
+    class="group relative flex w-full flex-col items-center rounded bg-[#F0FFF4] px-4 py-8 text-center"
+>
+    <!-- Social Icons -->
+    <div class="absolute top-4 right-4 z-50 flex flex-col gap-2">
+        {
+            username && (
+                <a
+                    href={`https://github.com/${username}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+                >
+                    <Icon name="mdi:github" class="h-5 w-5" />
+                </a>
+            )
+        }
+        {
+            linkedin && (
+                <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+                >
+                    <Icon name="mdi:linkedin" class="h-5 w-5" />
+                </a>
+            )
+        }
+    </div>
+
+    <!-- Image Container with Fixed Height -->
+    <div
+        class="mt-4 mb-4 flex h-48 w-full items-end justify-center overflow-hidden"
+    >
+        <Image
+            src={image}
+            alt={name}
+            class={isNoBg
+                ? "h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
+                : "h-32 w-32 rounded-full object-cover mb-8"}
+            width={isNoBg ? 200 : 128}
+            height={isNoBg ? 200 : 128}
+        />
+    </div>
+
+    <div class="w-full space-y-1">
+        <h3 class="text-lg font-bold tracking-wider text-[#3ce56e] uppercase">
+            {name}
+        </h3>
+        <p class="text-sm font-medium text-gray-600">{designation}</p>
+    </div>
+</div>

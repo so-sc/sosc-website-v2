@@ -12,8 +12,8 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 const rehypeLazyImages = () => {
-  return (tree) => {
-    const visit = (node) => {
+  return (/** @type {any} */ tree) => {
+    const visit = (/** @type {any} */ node) => {
       if (!node || typeof node !== "object") return;
       if (Array.isArray(node)) {
         node.forEach(visit);

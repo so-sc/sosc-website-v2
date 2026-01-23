@@ -9,7 +9,7 @@ const isNoBg = image.includes("team-nobg");
 ---
 
 <div
-    class="group relative flex w-full flex-col items-center rounded bg-[#F0FFF4] px-4 py-8 text-center"
+    class="group relative flex w-full flex-col items-center overflow-hidden rounded bg-[#F0FFF4] pb-6 text-center"
 >
     <!-- Social Icons -->
     <div class="absolute top-4 right-4 z-50 flex flex-col gap-2">
@@ -41,20 +41,20 @@ const isNoBg = image.includes("team-nobg");
 
     <!-- Image Container with Fixed Height -->
     <div
-        class="mt-4 mb-4 flex h-48 w-full items-end justify-center overflow-hidden"
+        class="relative mt-0 mb-0 flex h-64 w-full items-end justify-center overflow-hidden"
     >
         <Image
             src={image}
             alt={name}
             class={isNoBg
-                ? "h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
-                : "h-32 w-32 rounded-full object-cover mb-8"}
-            width={isNoBg ? 200 : 128}
-            height={isNoBg ? 200 : 128}
+                ? "h-full w-full object-contain object-bottom mix-blend-multiply"
+                : "h-32 w-32 rounded-full object-cover mb-8 z-10"}
+            width={isNoBg ? 400 : 128}
+            height={isNoBg ? 400 : 128}
         />
     </div>
 
-    <div class="w-full space-y-1">
+    <div class={`z-20 w-full space-y-1 px-4 ${!isNoBg ? "-mt-6" : ""}`}>
         <h3 class="text-lg font-bold tracking-wider text-[#3ce56e] uppercase">
             {name}
         </h3>

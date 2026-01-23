@@ -1,6 +1,6 @@
 ---
 title: STUDYVAULT
-description: description: A high-performance academic resource-sharing platform designed for students to share, discover, and engage with learning resources through smooth interactions and modern animations.
+description:  A high-performance academic resource-sharing platform designed for students to share, discover, and engage with learning resources through smooth interactions and modern animations.
 cover: ./StudyVault.webp
 date: 2026-01-15
 techStack:
@@ -30,8 +30,7 @@ community: false
 
 # STUDYVAULT
 
-STUDYVAULT is a high-performance, interactive academic resource-sharing platform designed for students to collaboratively share, discover, and manage academic materials.
-It enables seamless contribution and engagement through a modern, animated, and highly user-friendly experience.
+STUDYVAULT is a high-performance, interactive academic resource-sharing platform designed for students to collaboratively share, discover, and manage academic materials.It enables seamless contribution and engagement through a modern, animated, and highly user-friendly experience.
 
 The platform is designed to feel **fluid, alive, and community-driven**, transforming static notes into a collaborative learning vault.
 

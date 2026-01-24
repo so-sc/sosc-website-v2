@@ -55,9 +55,13 @@ import events from "../../data/highlights.json";
   </div>
 
   <!-- Scroll Area -->
-  <div class="relative z-10 w-full overflow-hidden border-b border-gray-100">
+  <div 
+    id="highlights-scroll-container"
+    class="relative z-10 w-full overflow-x-auto no-scrollbar border-b border-gray-100"
+  >
     <div
-      class="animate-marquee hover:pause flex w-max gap-6 py-6 pl-0 md:gap-10 md:py-10 md:pl-0"
+      id="highlights-inner"
+      class="flex w-max gap-6 py-6 pl-6 md:gap-10 md:py-10 md:pl-20 pr-6 md:pr-20"
     >
       {
         [...events, ...events, ...events].map((event) => (
@@ -152,28 +156,26 @@ import events from "../../data/highlights.json";
 </section>
 
 <style>
-  /* Linear Infinite Scroll */
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-33.33333%);
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
-  .animate-marquee {
-    animation: marquee 40s linear infinite;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
   }
 
-  @media (max-width: 768px) {
-    .animate-marquee {
-      animation-duration: 30s;
-    }
+  /* Ensure smooth user scrolling */
+  #highlights-scroll-container {
+    scroll-behavior: auto;
+    cursor: grab;
   }
 
-  .hover\:pause:hover {
-    animation-play-state: paused;
+  #highlights-scroll-container:active {
+    cursor: grabbing;
   }
 
   /* Modal Animation */
@@ -257,5 +259,89 @@ import events from "../../data/highlights.json";
         e.clientX <= rect.left + rect.width;
       if (!isInDialog) close();
     });
+  }
+
+  // Highlights Hybrid Scroll (Autoplay + Manual)
+  const scrollContainer = document.getElementById("highlights-scroll-container");
+  const inner = document.getElementById("highlights-inner");
+
+  if (scrollContainer && inner) {
+    let isPaused = false;
+    let scrollAmount = 0.7; 
+    let frameId: number;
+    let resumeTimeout: ReturnType<typeof setTimeout>;
+
+    // The core animation loop
+    const step = () => {
+      if (!isPaused) {
+        scrollContainer.scrollLeft += scrollAmount;
+      }
+      frameId = requestAnimationFrame(step);
+    };
+
+    // Handle the infinite loop reset
+    // This is better in a scroll listener as it handles ALL scroll types (JS, swipe, wheel)
+    const handleInfiniteLoop = () => {
+      const oneThird = inner.scrollWidth / 3;
+      if (scrollContainer.scrollLeft >= oneThird * 2) {
+        scrollContainer.scrollLeft -= oneThird;
+      } else if (scrollContainer.scrollLeft <= 0) {
+        scrollContainer.scrollLeft += oneThird;
+      }
+    };
+    
+    scrollContainer.addEventListener("scroll", handleInfiniteLoop, { passive: true });
+
+    const pause = () => {
+      isPaused = true;
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+    };
+
+    const resume = () => {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isPaused = false;
+      }, 1000); 
+    };
+
+    // Interaction Listeners
+    scrollContainer.addEventListener("mouseenter", pause);
+    scrollContainer.addEventListener("mouseleave", resume);
+    scrollContainer.addEventListener("touchstart", pause, { passive: true });
+    scrollContainer.addEventListener("touchend", resume);
+
+    let isDragging = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    const startDragging = (e: MouseEvent) => {
+      isDragging = true;
+      pause();
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+    };
+
+    const stopDragging = () => {
+      if (isDragging) {
+        isDragging = false;
+        resume();
+      }
+    };
+
+    const moveDragging = (e: MouseEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 1.5; // Sensitivity
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    };
+
+    scrollContainer.addEventListener("mousedown", startDragging);
+    window.addEventListener("mouseup", stopDragging);
+    scrollContainer.addEventListener("mousemove", moveDragging);
+
+    scrollContainer.scrollLeft = inner.scrollWidth / 3;
+
+    frameId = requestAnimationFrame(step);
   }
 </script>

@@ -8,14 +8,14 @@
   font-family: "Inter";
   src: url("/fonts/Inter_Font.ttf") format("truetype");
   font-weight: 100 900;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: "Righteous";
   src: url("/fonts/Righteous_Font.ttf") format("truetype");
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @theme inline {

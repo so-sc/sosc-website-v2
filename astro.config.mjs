@@ -47,5 +47,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), mdx({ rehypePlugins: [rehypeLazyImages] }), sitemap({}), icon()],
+  integrations: [
+    react(),
+    mdx({ rehypePlugins: [rehypeLazyImages] }),
+    sitemap({}),
+    icon(),
+  ],
 });

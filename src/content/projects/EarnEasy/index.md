@@ -57,9 +57,9 @@ EarnEasy is built using modern web technologies:
 
 ## Project Goals
 
-- Provide a scalable platform for e-commerce businesses  
-- Demonstrate best practices in web security and authentication  
-- Offer an open-source codebase for learning and development  
+- Provide a scalable platform for e-commerce businesses
+- Demonstrate best practices in web security and authentication
+- Offer an open-source codebase for learning and development
 - Maintain a clean and modular architecture
 
 ---

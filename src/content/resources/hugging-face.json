@@ -1,13 +1,10 @@
 {
-    "title": "Hugging Face",
-    "description": "The AI community building the future. Build, train and deploy state of the art models powered by the reference open source in machine learning.",
-    "type": "tools",
-    "category": "AI/ML",
-    "tags": [
-        "models",
-        "datasets"
-    ],
-    "link": "https://huggingface.co/",
-    "contributor": "community",
-    "date": "2024-03-23"
+  "title": "Hugging Face",
+  "description": "The AI community building the future. Build, train and deploy state of the art models powered by the reference open source in machine learning.",
+  "type": "tools",
+  "category": "AI/ML",
+  "tags": ["models", "datasets"],
+  "link": "https://huggingface.co/",
+  "contributor": "community",
+  "date": "2024-03-23"
 }

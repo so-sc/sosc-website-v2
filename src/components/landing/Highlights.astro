@@ -55,13 +55,13 @@ import events from "../../data/highlights.json";
   </div>
 
   <!-- Scroll Area -->
-  <div 
+  <div
     id="highlights-scroll-container"
-    class="relative z-10 w-full overflow-x-auto no-scrollbar border-b border-gray-100"
+    class="no-scrollbar relative z-10 w-full overflow-x-auto border-b border-gray-100"
   >
     <div
       id="highlights-inner"
-      class="flex w-max gap-6 py-6 pl-6 md:gap-10 md:py-10 md:pl-20 pr-6 md:pr-20"
+      class="flex w-max gap-6 py-6 pr-6 pl-6 md:gap-10 md:py-10 md:pr-20 md:pl-20"
     >
       {
         [...events, ...events, ...events].map((event) => (
@@ -99,7 +99,9 @@ import events from "../../data/highlights.json";
       </div>
 
       <!-- Content Panel -->
-      <div class="relative flex w-full flex-1 flex-col overflow-hidden md:w-1/2">
+      <div
+        class="relative flex w-full flex-1 flex-col overflow-hidden md:w-1/2"
+      >
         <!-- Close Button -->
         <button
           id="close-modal"
@@ -262,21 +264,21 @@ import events from "../../data/highlights.json";
   }
 
   // Highlights Hybrid Scroll (Autoplay + Manual)
-  const scrollContainer = document.getElementById("highlights-scroll-container");
+  const scrollContainer = document.getElementById(
+    "highlights-scroll-container",
+  );
   const inner = document.getElementById("highlights-inner");
 
   if (scrollContainer && inner) {
     let isPaused = false;
-    let scrollAmount = 0.7; 
-    let frameId: number;
     let resumeTimeout: ReturnType<typeof setTimeout>;
 
     // The core animation loop
     const step = () => {
       if (!isPaused) {
-        scrollContainer.scrollLeft += scrollAmount;
+        scrollContainer.scrollLeft += 0.7;
       }
-      frameId = requestAnimationFrame(step);
+      requestAnimationFrame(step);
     };
 
     // Handle the infinite loop reset
@@ -289,8 +291,10 @@ import events from "../../data/highlights.json";
         scrollContainer.scrollLeft += oneThird;
       }
     };
-    
-    scrollContainer.addEventListener("scroll", handleInfiniteLoop, { passive: true });
+
+    scrollContainer.addEventListener("scroll", handleInfiniteLoop, {
+      passive: true,
+    });
 
     const pause = () => {
       isPaused = true;
@@ -301,7 +305,7 @@ import events from "../../data/highlights.json";
       if (resumeTimeout) clearTimeout(resumeTimeout);
       resumeTimeout = setTimeout(() => {
         isPaused = false;
-      }, 1000); 
+      }, 1000);
     };
 
     // Interaction Listeners
@@ -342,6 +346,6 @@ import events from "../../data/highlights.json";
 
     scrollContainer.scrollLeft = inner.scrollWidth / 3;
 
-    frameId = requestAnimationFrame(step);
+    requestAnimationFrame(step);
   }
 </script>

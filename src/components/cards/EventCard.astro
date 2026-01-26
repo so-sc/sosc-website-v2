@@ -13,14 +13,11 @@ const today = new Date();
 today.setHours(0, 0, 0, 0);
 
 let status = "";
-let statusColor = "";
 
 if (eventDate.toDateString() === today.toDateString()) {
   status = "Today";
-  statusColor = "bg-primary text-white";
 } else if (eventDate > today) {
   status = "Upcoming";
-  statusColor = "bg-blue-600 text-white";
 } else {
   status = "";
 }
@@ -28,20 +25,28 @@ if (eventDate.toDateString() === today.toDateString()) {
 
 <a
   href={`/events/${link}`}
-  class="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center py-6 md:py-12 border-b border-gray-300 dark:border-gray-100 last:border-0"
+  class="group grid grid-cols-1 items-center gap-4 border-b border-gray-300 py-6 last:border-0 md:grid-cols-12 md:gap-8 md:py-12 dark:border-gray-100"
 >
   <!-- Graphical Date (Left) -->
-  <div class="hidden md:flex flex-col md:col-span-2 items-center justify-center pr-6 h-full">
-    <span class="text-5xl font-black text-gray-400 group-hover:text-primary transition-colors duration-500 leading-none">
-      {new Date(date).getDate().toString().padStart(2, '0')}
+  <div
+    class="hidden h-full flex-col items-center justify-center pr-6 md:col-span-2 md:flex"
+  >
+    <span
+      class="group-hover:text-primary text-5xl leading-none font-black text-gray-400 transition-colors duration-500"
+    >
+      {new Date(date).getDate().toString().padStart(2, "0")}
     </span>
-    <span class="text-sm font-bold uppercase tracking-widest text-gray-500 mt-2">
-      {new Date(date).toLocaleString('default', { month: 'short' })}
+    <span
+      class="mt-2 text-sm font-bold tracking-widest text-gray-500 uppercase"
+    >
+      {new Date(date).toLocaleString("default", { month: "short" })}
     </span>
   </div>
 
   <!-- Image (Middle - Wider) -->
-  <div class="relative aspect-video w-full md:col-span-5 overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-sm">
+  <div
+    class="relative aspect-video w-full overflow-hidden bg-gray-200 shadow-sm md:col-span-5 dark:bg-gray-800"
+  >
     {
       cover && (
         <Image
@@ -57,36 +62,51 @@ if (eventDate.toDateString() === today.toDateString()) {
   </div>
 
   <!-- Content (Right) -->
-  <div class="flex flex-col md:col-span-5 py-2 gap-6">
+  <div class="flex flex-col gap-6 py-2 md:col-span-5">
     <div>
-      <div class="flex items-center justify-between mb-3">
+      <div class="mb-3 flex items-center justify-between">
         <!-- New Date for Mobile -->
-        <div class="md:hidden flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+        <div
+          class="text-primary flex items-center gap-2 text-xs font-bold tracking-widest uppercase md:hidden"
+        >
           <Calendar size={14} />
           <span>{formattedDate}</span>
         </div>
-        
-        {status && (
-           <span class={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full ${status === 'Upcoming' ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-500 dark:bg-white/10 dark:text-gray-400'}`}>
-            {status}
-           </span>
-        )}
+
+        {
+          status && (
+            <span
+              class={`rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${status === "Upcoming" ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-500 dark:bg-white/10 dark:text-gray-400"}`}
+            >
+              {status}
+            </span>
+          )
+        }
       </div>
 
-      <h2 class="mb-3 text-xl md:text-3xl font-black leading-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+      <h2
+        class="group-hover:text-primary mb-3 text-xl leading-tight font-black text-gray-900 transition-colors md:text-3xl dark:text-white"
+      >
         {name}
       </h2>
 
-      {location && (
-        <div class="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-          <MapPin size={16} />
-          <span>{location}</span>
-        </div>
-      )}
+      {
+        location && (
+          <div class="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+            <MapPin size={16} />
+            <span>{location}</span>
+          </div>
+        )
+      }
     </div>
 
-    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-      Read More <ArrowRight size={14} class="transition-transform duration-300 group-hover:translate-x-2" />
+    <div
+      class="group-hover:text-primary flex items-center gap-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition-colors dark:text-white"
+    >
+      Read More <ArrowRight
+        size={14}
+        class="transition-transform duration-300 group-hover:translate-x-2"
+      />
     </div>
   </div>
 </a>

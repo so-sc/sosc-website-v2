@@ -132,4 +132,3 @@ The day ended with a thank you speech by SOSC president Akashdeep Bhagat to the 
 ![devhost21-2](./3.jpeg)
 ![devhost21-3](./2.jpeg)
 ![devhost21-4](./1,jpeg)
-

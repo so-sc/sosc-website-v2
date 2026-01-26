@@ -37,7 +37,7 @@ Upload recordings from meetings, podcasts, or spoken content and convert them in
 
 ## Key Features
 
-- **Meeting Minutes (MoM)** – Automatically generate clean, structured meeting notes 
+- **Meeting Minutes (MoM)** – Automatically generate clean, structured meeting notes
 - **Caption Generation** – Create captions for Instagram, X (Twitter), LinkedIn, YouTube descriptions, and WhatsApp promotions with multiple tone options
 - **Letter Generation** – Generate formal letters, invitations, sponsorship requests, and follow-ups using customizable templates
 - **Template-Based Workflow** – Use predefined or custom templates to maintain consistent yet flexible outputs
@@ -63,10 +63,10 @@ D.A.S.H is built using modern web and AI tooling:
 
 ## Project Goals
 
-- Simplify documentation from spoken content  
-- Enable privacy-first, local-first AI workflows  
-- Reduce manual effort in meetings and content creation  
-- Provide an open-source base for experimentation and customization  
+- Simplify documentation from spoken content
+- Enable privacy-first, local-first AI workflows
+- Reduce manual effort in meetings and content creation
+- Provide an open-source base for experimentation and customization
 
 ---
 
@@ -79,4 +79,4 @@ We welcome contributors, learners, and open-source enthusiasts to explore and im
 
 ## Contributing
 
-Contributions are welcome.  
+Contributions are welcome.

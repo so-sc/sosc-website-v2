@@ -1,13 +1,10 @@
 {
-    "title": "Docker for Beginners",
-    "description": "A comprehensive guide to understanding and using Docker.",
-    "type": "video",
-    "category": "DevOps",
-    "tags": [
-        "docker",
-        "containers"
-    ],
-    "link": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
-    "contributor": "community",
-    "date": "2024-03-22"
+  "title": "Docker for Beginners",
+  "description": "A comprehensive guide to understanding and using Docker.",
+  "type": "video",
+  "category": "DevOps",
+  "tags": ["docker", "containers"],
+  "link": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
+  "contributor": "community",
+  "date": "2024-03-22"
 }

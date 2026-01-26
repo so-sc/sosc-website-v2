@@ -21,8 +21,8 @@ Unlike most of the professions out there today, software engineers or developers
 > Developer Relations can be defined as building relationships with the developer communities.
 
 Let's break down the other terminologies associated with developer marketing. Developer Evangelists and Developer Advocates are the fancy job roles everyone excited about today. So what exactly are those? Well, if you look at the meaning of Evangelism and Advocacy it gives a clear picture of what the job role is all about.
->
-![1](./evangelist.png)
+
+> ![1](./evangelist.png)
 
 Speaking of developer evangelists, A developer evangelist is a spokesperson, mediator and translator between a company and both its technical staff and outside developers. It's the same with developer advocacy or advocates, they represent the developers of the company, they get in touch with the users/customers, gain feedback in a way developers can't and help shape the product what it needs to be.
 
@@ -39,6 +39,7 @@ Looking at humans in this era, we can clearly say that software developers are t
 <p>
 
 ![3](./julia-aslamov.jpg)
+
 <center><i>Julia Aslamov at Hackference India</i></center>
 
 </p>
@@ -48,6 +49,7 @@ One of my favorite talk at Hackference was by [Karan M. V](https://www.linkedin.
 <p>
 
 ![4](./karan-mv.png)
+
 <center><i>Karan M.V. at Hackference India</i></center>
 
 </p>
@@ -57,6 +59,7 @@ The Elastic community have had inspired us a lot at [SOSC](https://sosc.org.in) 
 <p>
 
 ![5](./aravind-potrevu.png)
+
 <center><i>Aravind Putrevu at Hackference India</i></center>
 
 </p>
@@ -66,6 +69,7 @@ There were more interesting talks at hackference by some of amazing people repre
 <p>
 
 ![6](./speakers.png)
+
 <center><i>Hackference DevRel Conf Speakers</i></center>
 
 </p>
@@ -77,6 +81,7 @@ Being a [GitHub Campus Expert](https://githubcampus.expert), it was indeed a pro
 <p>
 
 ![7](./campus-experts-hackference.jpeg)
+
 <center><i>Talking about GitHub at Hackference by Campus Experts</i></center>
 
 </p>
@@ -86,6 +91,7 @@ The best part about being at [Hackference](https://hackference.in) was meeting o
 <p>
 
 ![8](./mentoring-at-hackference.JPG)
+
 <center><i>Campus Experts doing their thing :p</i></center>
 
 </p>
@@ -93,6 +99,7 @@ The best part about being at [Hackference](https://hackference.in) was meeting o
 <p>
 
 ![9](./GCEs-at-hackference.jpg)
+
 <center><i>Campus Experts at Hackference</i></center>
 
 </p>
@@ -100,6 +107,7 @@ The best part about being at [Hackference](https://hackference.in) was meeting o
 <p>
 
 ![10](./cs-selfie.jpg)
+
 <center><i>Selfie with the Campus Experts</i></center>
 
 </p>
@@ -112,6 +120,7 @@ In all aspects Hackference was a such an amazing event with every tiny thing man
 
 ![11](./kstart-1.png)
 ![12](./kstart-2.png)
+
 <center><i>KStart Capital</i></center>
 
 </p>
@@ -119,6 +128,7 @@ In all aspects Hackference was a such an amazing event with every tiny thing man
 <p>
 
 ![13](./kstart-3.jpg)
+
 <center><i>Hackathon Arena</i></center>
 
 </p>
@@ -126,6 +136,7 @@ In all aspects Hackference was a such an amazing event with every tiny thing man
 <p>
 
 ![14](./final-groupie.jpg)
+
 <center><i>Happy Endings*</i></center>
 
 </p>

@@ -1,8 +1,8 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-
-import { team } from "@/data/loader";
 import ProfileCard from "@/components/cards/ProfileCard.astro";
+import Hero from "@/components/Hero.astro";
+import { team } from "@/data/loader";
+import Layout from "@/layouts/Layout.astro";
 
 const coordinatorMembers = team.filter((m) => m.status === "coordinator");
 const alumniMembers = team.filter((m) => m.status === "alumni");

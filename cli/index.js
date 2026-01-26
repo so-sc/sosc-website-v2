@@ -1,7 +1,7 @@
-import inquirer from "inquirer";
-import slugify from "slugify";
 import fs from "fs-extra";
+import inquirer from "inquirer";
 import path from "path";
+import slugify from "slugify";
 import { fileURLToPath } from "url";
 import { blogFrontmatter, eventFrontmatter } from "./template.js";
 

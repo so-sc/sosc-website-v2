@@ -8,9 +8,12 @@
     "preview": "astro preview",
     "astro": "astro",
     "add": "node cli/index.js",
-    "lint": "eslint src .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
+    "check": "biome check . && prettier --check .",
+    "check:fix": "biome check --write . && prettier --write .",
     "type-check": "tsc --noEmit",
     "prepare": "husky || true"
   },
@@ -49,6 +52,7 @@
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.11",
     "@tailwindcss/typography": "^0.5.19",
     "@typescript-eslint/parser": "^8.49.0",
     "eslint": "^9.39.1",

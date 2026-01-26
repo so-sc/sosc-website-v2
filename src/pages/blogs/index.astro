@@ -1,9 +1,9 @@
 ---
-import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import BlogCard from "@/components/cards/BlogCard.astro";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
+import BlogCard from "@/components/cards/BlogCard.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const blogs = await getCollection("blogs");
 

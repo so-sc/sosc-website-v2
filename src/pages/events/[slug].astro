@@ -1,11 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import slugify from "slugify";
 // Imports
 import Layout from "@/layouts/Layout.astro";
 import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
-import { Image } from "astro:assets";
-import { getCollection, render } from "astro:content";
-import slugify from "slugify";
-import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");

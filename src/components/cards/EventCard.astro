@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Calendar, MapPin, ArrowRight } from "@lucide/astro";
+import { ArrowRight, Calendar, MapPin } from "@lucide/astro";
+
 const { name, date, location, cover, link } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-US", {
   year: "numeric",

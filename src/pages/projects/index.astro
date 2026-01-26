@@ -1,9 +1,9 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import ProjectCard from "@/components/cards/ProjectCard.astro";
 import { getCollection } from "astro:content";
-import slugify from "slugify";
 import { ChevronDown, RotateCcw, Search } from "@lucide/astro";
+import slugify from "slugify";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const projects = await getCollection("projects");
 

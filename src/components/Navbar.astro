@@ -26,7 +26,7 @@ import SOSC from "@/assets/sosc_logo.svg";
       />
       <X
         id="close-icon"
-        className="hidden h-6 w-6 transition-transform duration-300 text-white"
+        className="hidden h-6 w-6 text-white transition-transform duration-300"
       />
     </button>
   </div>
@@ -126,24 +126,24 @@ import SOSC from "@/assets/sosc_logo.svg";
   <div id="mobile-menu" class="mobile-menu-overlay md:hidden">
     <!-- Close button logic is handled by the fixed toggle button z-index -->
     <div class="mobile-content-container">
-       {
-          [
-           { name: "Home", path: "/" },
-           { name: "Blogs", path: "/blogs" },
-           { name: "Events", path: "/events" },
-           { name: "Projects", path: "/projects" },
-           { name: "Resources", path: "/resources" },
-           { name: "Team", path: "/team" },
-          ].map((item, index) => (
-           <a
-             href={item.path}
-             class="mobile-link"
-             style={`--delay: ${index * 50}ms`}
-           >
-             {item.name}
-           </a>
-          ))
-       }
+      {
+        [
+          { name: "Home", path: "/" },
+          { name: "Blogs", path: "/blogs" },
+          { name: "Events", path: "/events" },
+          { name: "Projects", path: "/projects" },
+          { name: "Resources", path: "/resources" },
+          { name: "Team", path: "/team" },
+        ].map((item, index) => (
+          <a
+            href={item.path}
+            class="mobile-link"
+            style={`--delay: ${index * 50}ms`}
+          >
+            {item.name}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
@@ -347,7 +347,9 @@ import SOSC from "@/assets/sosc_logo.svg";
     white-space: nowrap;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     cursor: pointer;
     user-select: none;
   }
@@ -422,11 +424,11 @@ import SOSC from "@/assets/sosc_logo.svg";
     width: 100%;
     height: 100vh;
     /* Dark green color matching theme */
-    background-color: #09090b; 
+    background-color: #09090b;
     z-index: 55; /* Just below the navbar toggle which is z-100 */
     transform: translateY(-100%);
     transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
-    
+
     display: none; /* Hidden by default on desktop */
     flex-direction: column;
     justify-content: center;
@@ -436,7 +438,7 @@ import SOSC from "@/assets/sosc_logo.svg";
 
   @media (max-width: 768px) {
     .mobile-menu-overlay {
-        display: flex;
+      display: flex;
     }
   }
 
@@ -454,15 +456,18 @@ import SOSC from "@/assets/sosc_logo.svg";
   .mobile-link {
     color: #fff;
     font-size: 2.5rem; /* Large text */
-    font-family: 'Inter', sans-serif; /* Keep consistent font if possible, or utility class */
+    font-family:
+      "Inter", sans-serif; /* Keep consistent font if possible, or utility class */
     font-weight: 500;
     text-decoration: none;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-delay: var(--delay, 0ms);
   }
-  
+
   .mobile-link:hover {
     color: rgba(255, 255, 255, 0.8);
   }
@@ -482,11 +487,11 @@ import SOSC from "@/assets/sosc_logo.svg";
     const menuToggle = document.getElementById("menu-toggle");
     const menuIcon = document.getElementById("menu-icon");
     const closeIcon = document.getElementById("close-icon");
-    
+
     // Select BOTH menus
     const desktopMenu = document.getElementById("desktop-menu");
     const mobileMenu = document.getElementById("mobile-menu");
-    
+
     const emblaNode = document.getElementById("embla-node");
     const paginationList = document.getElementById("pagination-list");
 
@@ -495,61 +500,62 @@ import SOSC from "@/assets/sosc_logo.svg";
     // --- Embla Setup (Only runs if elements exist) ---
     let emblaApi: any;
     if (emblaNode && paginationList) {
-        emblaApi = EmblaCarousel(emblaNode as HTMLElement, {
-          loop: true,
-          align: "center",
-          dragFree: false,
-        });
+      emblaApi = EmblaCarousel(emblaNode as HTMLElement, {
+        loop: true,
+        align: "center",
+        dragFree: false,
+      });
 
-        const paginationItems = paginationList.querySelectorAll(".pagination-item");
+      const paginationItems =
+        paginationList.querySelectorAll(".pagination-item");
 
-        const updateActivePagination = () => {
-          if (!emblaApi) return;
-          const selectedIndex = emblaApi.selectedScrollSnap();
-          paginationItems.forEach((item, index) => {
-            if (index === selectedIndex) {
-              item.classList.add("is-active");
-              item.scrollIntoView({
-                  behavior: "smooth",
-                  block: "nearest",
-                  inline: "center",
-              });
-            } else {
-              item.classList.remove("is-active");
-            }
-          });
-        };
-
-        emblaApi.on("select", updateActivePagination);
-        emblaApi.on("reInit", updateActivePagination);
-        updateActivePagination();
-
-        paginationItems.forEach((btn) => {
-          btn.addEventListener("click", () => {
-              const indexAttr = btn.getAttribute("data-index");
-              const index = parseInt(indexAttr || "0");
-              emblaApi?.scrollTo(index);
-          });
-        });
-        
-        // Link click closure
-        const horizontalLinks = emblaNode.querySelectorAll(".horizontal-link");
-        horizontalLinks.forEach((link: any) => {
-            link.addEventListener("click", () => {
-                // Check if click is valid (not dragging)
-                if (emblaApi.clickAllowed()) {
-                    closeMenu();
-                }
+      const updateActivePagination = () => {
+        if (!emblaApi) return;
+        const selectedIndex = emblaApi.selectedScrollSnap();
+        paginationItems.forEach((item, index) => {
+          if (index === selectedIndex) {
+            item.classList.add("is-active");
+            item.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "center",
             });
+          } else {
+            item.classList.remove("is-active");
+          }
         });
+      };
+
+      emblaApi.on("select", updateActivePagination);
+      emblaApi.on("reInit", updateActivePagination);
+      updateActivePagination();
+
+      paginationItems.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const indexAttr = btn.getAttribute("data-index");
+          const index = parseInt(indexAttr || "0");
+          emblaApi?.scrollTo(index);
+        });
+      });
+
+      // Link click closure
+      const horizontalLinks = emblaNode.querySelectorAll(".horizontal-link");
+      horizontalLinks.forEach((link: any) => {
+        link.addEventListener("click", () => {
+          // Check if click is valid (not dragging)
+          if (emblaApi.clickAllowed()) {
+            closeMenu();
+          }
+        });
+      });
     }
 
     // 3. Current Route Selection Logic (Preserved)
     const findIndexByPath = () => {
-      // Safety: if emblaNode doesn't exist (e.g. strict mobile if we unmounted it, but we use display:none so it exists), 
+      // Safety: if emblaNode doesn't exist (e.g. strict mobile if we unmounted it, but we use display:none so it exists),
       // but let's check
       if (!emblaNode) return 0;
-      
+
       const currentPath = window.location.pathname;
       const slides = emblaNode.querySelectorAll(".horizontal-link");
       let targetIndex = 0;
@@ -566,7 +572,6 @@ import SOSC from "@/assets/sosc_logo.svg";
       return targetIndex;
     };
 
-
     // --- Menu Toggle Logic ---
     let isMenuOpen = false;
 
@@ -575,17 +580,17 @@ import SOSC from "@/assets/sosc_logo.svg";
       // Activate both - CSS media queries hide the irrelevant one
       desktopMenu?.classList.add("active");
       mobileMenu?.classList.add("active");
-      
+
       menuIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       toggleScrollLock(true);
 
       // Re-init desktop if visible/exists and scroll to current page
       if (emblaApi) {
-          emblaApi.reInit();
-          // On open, scroll to the current page's index
-          const initialIndex = findIndexByPath();
-          emblaApi.scrollTo(initialIndex, true); // true = jump
+        emblaApi.reInit();
+        // On open, scroll to the current page's index
+        const initialIndex = findIndexByPath();
+        emblaApi.scrollTo(initialIndex, true); // true = jump
       }
     }
 
@@ -593,7 +598,7 @@ import SOSC from "@/assets/sosc_logo.svg";
       isMenuOpen = false;
       desktopMenu?.classList.remove("active");
       mobileMenu?.classList.remove("active");
-      
+
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
       toggleScrollLock(false);
@@ -605,11 +610,11 @@ import SOSC from "@/assets/sosc_logo.svg";
 
     // Mobile specific link closure
     const mobileLinks = mobileMenu?.querySelectorAll(".mobile-link");
-    mobileLinks?.forEach(link => {
-        link.addEventListener("click", () => {
-             // Delay slightly for visual feedback if needed, currently immediate
-            closeMenu();
-        });
+    mobileLinks?.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Delay slightly for visual feedback if needed, currently immediate
+        closeMenu();
+      });
     });
 
     document.addEventListener("keydown", (e) => {

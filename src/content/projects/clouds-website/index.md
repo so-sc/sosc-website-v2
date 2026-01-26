@@ -31,20 +31,20 @@ The CLOUDS website serves as a central hub for showcasing the association’s of
 
 ## Key Features
 
-* **Office Bearers Section** – Displays current CLOUDS representatives and their roles
-* **Events Tab** – Lists upcoming departmental events with details
-* **Clean & Minimal UI** – Lightweight, fast, and easy to navigate
-* **Community-Driven** – Built and maintained by SOSC members
-* **Open Source** – Contributions are welcome from the student developer community
+- **Office Bearers Section** – Displays current CLOUDS representatives and their roles
+- **Events Tab** – Lists upcoming departmental events with details
+- **Clean & Minimal UI** – Lightweight, fast, and easy to navigate
+- **Community-Driven** – Built and maintained by SOSC members
+- **Open Source** – Contributions are welcome from the student developer community
 
 ---
 
 ## Project Goals
 
-* Provide a digital identity for the CLOUDS association
-* Keep students informed about upcoming technical events
-* Encourage student participation in open-source development
-* Maintain a simple, lightweight, and maintainable codebase
+- Provide a digital identity for the CLOUDS association
+- Keep students informed about upcoming technical events
+- Encourage student participation in open-source development
+- Maintain a simple, lightweight, and maintainable codebase
 
 ---
 

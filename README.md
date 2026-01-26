@@ -7,7 +7,6 @@ The official website for **Sahyadri OpenSource Community (SOSC)** - a student-dr
 
 All contribution to this website including contents are made through Pull Requests. If you are new to Git and GitHub and don't know how to submit a Pull Request, please refer our friendly guide on submitting your first pull request at [gitme.js.org](https://gitme.js.org).
 
-
 **Live Website**: [www.sosc.org.in](https://www.sosc.org.in)
 
 ---
@@ -15,6 +14,7 @@ All contribution to this website including contents are made through Pull Reques
 ## About
 
 This website serves as a central hub for:
+
 - Community events and workshops
 - Technical blog posts and insights
 - Project showcases from our members
@@ -23,6 +23,7 @@ This website serves as a central hub for:
 ## Getting Started
 
 1. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -34,7 +35,7 @@ This website serves as a central hub for:
 
 ## Creating Content
 
-## Using the CLI 
+## Using the CLI
 
 The easiest way to create new content is using our CLI tool:
 
@@ -53,6 +54,7 @@ If you prefer to create content manually, ensure you follow the structure and fr
 Create a folder in `src/content/blogs/` with your slug name (e.g., `my-first-blog`). Inside, create `index.md`.
 
 **Frontmatter Example:**
+
 ```yaml
 ---
 title: "Getting Started with Open Source"
@@ -69,6 +71,7 @@ tags: "opensource, git"
 Create a folder in `src/content/events/` with the event slug. Inside, create `index.md`.
 
 **Frontmatter Example:**
+
 ```yaml
 ---
 name: "DevHost 2023"
@@ -78,7 +81,7 @@ cover: "./event-banner.png"
 ---
 ```
 
-*Note: Place image assets in the same folder as the markdown file and reference them relatively.*
+_Note: Place image assets in the same folder as the markdown file and reference them relatively._
 
 For complete details on all content types including Projects and Resources, refer to [CONTENT_GUIDELINES.md](CONTENT_GUIDELINES.md).
 
@@ -127,7 +130,7 @@ For detailed guidelines, please read [CONTRIBUTING.md](CONTRIBUTING.md).
 - [**Manas S**](https://github.com/Manas-salian)
 - [**Pratheek G Shetty**](https://github.com/techshetty)
 - [**Prathyusha K**](https://github.com/Prathyusha-K-05)
--  [**Soniya Kolvekar**](https://github.com/soniya-kolvekar)
+- [**Soniya Kolvekar**](https://github.com/soniya-kolvekar)
 - [**Meghna Suresh**](https://github.com/Meghna-Suresh104)
 - [**Nithin K**](https://github.com/nithink-code)
 

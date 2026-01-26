@@ -1,9 +1,7 @@
-
 ---
 # Content Contribution Guidelines for SOSC Website
 
 This document defines **what content to write**, **where it belongs**, and **how it must be formatted**. Following these guidelines ensures consistency across the SOSC website.
-
 ---
 
 ## Project Structure
@@ -26,6 +24,7 @@ src/content/
 ```
 
 ### General Rules
+
 - Use **kebab-case** for all folder and file names.
 - Each blog, event, or project must be in its **own folder**.
 - Each folder must contain an `index.md` file.
@@ -56,8 +55,8 @@ author: haxzie
 name: Musthaq Ahamad
 title: Second blog post
 tags: ["blog", "post"]
-cover: './cover.jpg'
-description: 'Short, single-line description of the blog.'
+cover: "./cover.jpg"
+description: "Short, single-line description of the blog."
 ---
 ```
 
@@ -92,7 +91,7 @@ src/content/events/<event-slug>/
 name: devhost:18
 date: 2018-12-02
 location: Seminar Hall
-cover: './cover.png'
+cover: "./cover.png"
 ---
 ```
 
@@ -122,15 +121,19 @@ status: active
 ### Recommended Structure
 
 #### Overview
+
 Provide a short summary of what the project is, the problem it solves, and who it is intended for. This section should help readers quickly understand the purpose and scope of the project.
 
 #### Features
+
 List the key functionalities or capabilities of the project. Use bullet points and focus on user-facing features rather than technical implementation details.
 
 #### Tech Stack
+
 Mention the main technologies, frameworks, languages, and tools used to build the project. This helps contributors understand the technical environment before getting started.
 
 #### How to Contribute
+
 Explain how others can contribute to the project. Include a link to the repository, brief setup or contribution steps, and a reference to `CONTRIBUTING.md` if available.
 
 ---

@@ -61,11 +61,11 @@ WorkLife Balancer is built using modern web technologies:
 
 ## Project Goals
 
-- Help users maintain sustainable productivity levels  
-- Promote mental health awareness through mood tracking  
-- Reduce burnout with structured breaks and time management  
-- Provide actionable insights based on work patterns  
-- Build healthy habits through consistent tracking and gamification  
+- Help users maintain sustainable productivity levels
+- Promote mental health awareness through mood tracking
+- Reduce burnout with structured breaks and time management
+- Provide actionable insights based on work patterns
+- Build healthy habits through consistent tracking and gamification
 
 ---
 

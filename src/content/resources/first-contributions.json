@@ -1,13 +1,10 @@
 {
-    "title": "First Contributions",
-    "description": "Help beginners to contribute to open source projects.",
-    "type": "repo",
-    "category": "Open Source",
-    "tags": [
-        "git",
-        "github"
-    ],
-    "link": "https://github.com/firstcontributions/first-contributions",
-    "contributor": "community",
-    "date": "2024-03-24"
+  "title": "First Contributions",
+  "description": "Help beginners to contribute to open source projects.",
+  "type": "repo",
+  "category": "Open Source",
+  "tags": ["git", "github"],
+  "link": "https://github.com/firstcontributions/first-contributions",
+  "contributor": "community",
+  "date": "2024-03-24"
 }

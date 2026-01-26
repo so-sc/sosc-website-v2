@@ -14,6 +14,14 @@
     "format:write": "prettier --write .",
     "check": "biome check . && prettier --check .",
     "check:fix": "biome check --write . && prettier --write ."
+    "type-check": "tsc --noEmit",
+    "prepare": "husky || true"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,astro,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.12",
@@ -47,6 +55,10 @@
     "@biomejs/biome": "2.3.11",
     "@tailwindcss/typography": "^0.5.19",
     "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",

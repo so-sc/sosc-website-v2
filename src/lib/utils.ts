@@ -18,7 +18,8 @@ export function toggleScrollLock(lock: boolean) {
     if (lenis) lenis.stop();
     document.body.style.overflow = "hidden";
     // Optional: handle padding to prevent layout shift
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const scrollBarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${scrollBarWidth}px`;
   } else {
     if (lenis) lenis.start();

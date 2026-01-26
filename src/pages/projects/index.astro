@@ -240,15 +240,15 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
 
 <script>
   const searchInput = document.querySelector(
-    'input[type="text"]'
+    'input[type="text"]',
   ) as HTMLInputElement;
   const dropdowns = document.querySelectorAll(".custom-dropdown");
   const clearFiltersBtn = document.getElementById(
-    "clear-filters"
+    "clear-filters",
   ) as HTMLButtonElement;
   const emptyState = document.getElementById("empty-state") as HTMLDivElement;
   const projectCards = document.querySelectorAll(
-    ".project-card"
+    ".project-card",
   ) as NodeListOf<HTMLDivElement>;
 
   const filters = {

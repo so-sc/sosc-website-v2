@@ -10,8 +10,8 @@ import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 
 const rehypeLazyImages = () => {
-  return (tree) => {
-    const visit = (node) => {
+  return (/** @type {any} */ tree) => {
+    const visit = (/** @type {any} */ node) => {
       if (!node || typeof node !== "object") return;
       if (Array.isArray(node)) {
         node.forEach(visit);
@@ -45,5 +45,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), mdx({ rehypePlugins: [rehypeLazyImages] }), sitemap({}), icon()],
+  integrations: [
+    react(),
+    mdx({ rehypePlugins: [rehypeLazyImages] }),
+    sitemap({}),
+    icon(),
+  ],
 });

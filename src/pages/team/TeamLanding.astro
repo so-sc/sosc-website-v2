@@ -1,72 +1,91 @@
-<section class="rounded-xl bg-[#E6FDE2] px-10 md:pt-0 pt-12 lg:h-screen">
-  <div
-    class="mx-auto grid max-w-7xl h-full grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16"
-  >
-    <div class="w-full pt-16 self-center max-w-[550px] flex-col justify-center md:flex">
-      <div class="lg:text-7xl text-5xl sm:text-6xl flex flex-col lg:gap-3">
-        <h2 class="w-full max-w-[550px] font-black">MEET THE</h2>
-        <h2 class="text-primary w-full max-w-[550px] font-black">
-          MINDS BEHIND
-        </h2>
-        <h2 class="w-full max-w-[550px] font-black">THE CODE</h2>
+---
+import ExecutiveImpactCarousel, {
+  type TeamMember,
+} from "../../components/ui/executive-impact-carousel";
+import FadeIn from "../../components/ui/fade-in";
+import TextBlockAnimation from "../../components/ui/text-block-animation";
+
+const members: TeamMember[] = [
+  {
+    id: "1",
+    name: "Varsha",
+    role: "Community Member",
+    image: "/team-nobg/varsha.jpg",
+  },
+  {
+    id: "2",
+    name: "Manas",
+    role: "Community Member",
+    image: "/team-nobg/manas_s.jpg",
+  },
+  {
+    id: "3",
+    name: "Hitha",
+    role: "Community Member",
+    image: "/team-nobg/hitha_badikillaya_s_u.jpg",
+  },
+  {
+    id: "4",
+    name: "Yash Laxman",
+    role: "Community Member",
+    image: "/team-nobg/yash_laxman.jpg",
+  },
+  {
+    id: "5",
+    name: "Mustafa",
+    role: "Community Member",
+    image: "/team-nobg/mustafa_asthikodi.jpg",
+  },
+  {
+    id: "6",
+    name: "Vivek",
+    role: "Community Member",
+    image: "/team-nobg/vivek_neeralagi.jpg",
+  },
+];
+---
+
+<section
+  class="relative w-full overflow-hidden bg-[#E6FDE2] pt-12 md:pt-0 lg:h-screen"
+>
+  <div class="grid h-full w-full grid-cols-1 md:grid-cols-2">
+    <!-- Left Column: Text -->
+    <div
+      class="w-full flex-col justify-center self-center px-10 pl-16 pt-16 md:flex lg:pl-32"
+    >
+      <div class="flex flex-col text-5xl sm:text-6xl lg:gap-3 lg:text-7xl">
+        <TextBlockAnimation client:load blockColor="#0ade4a">
+          <h2 class="w-full font-black">MEET THE</h2>
+        </TextBlockAnimation>
+
+        <TextBlockAnimation client:load delay={0.2} blockColor="#000">
+          <h2
+            class="text-primary w-full font-black whitespace-nowrap"
+          >
+            MINDS BEHIND
+          </h2>
+        </TextBlockAnimation>
+
+        <TextBlockAnimation client:load delay={0.45} blockColor="#0ade4a">
+          <h2 class="w-full font-black">THE CODE</h2>
+        </TextBlockAnimation>
       </div>
-      <div class="text-md my-10 w-full max-w-[420px] font-medium text-gray-800">
-        <p>
-          From ideation to deployment, get to know the team building the future
-          at SOSC
-        </p>
+
+      <div class="my-10 w-full max-w-[500px] text-xl font-medium text-gray-800">
+        <FadeIn client:load delay={0.65}>
+          <p>
+            From ideation to deployment, get to know the team building the
+            future at SOSC
+          </p>
+        </FadeIn>
       </div>
     </div>
-    <div class="flex flex-row gap-4 lg:gap-8">
-      <div class="flex flex-col gap-4 lg:gap-8 py-6">
-        <div class="rounded-lg bg-[#A8D7A5] flex-1">
-          <img
-            class="h-full w-full rounded-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/varsha.jpg"
-            alt="Team Member 1"
-          />
-        </div>
-        <div class="rounded-lg bg-[#A8D7A5] flex-1 ">
-          <img
-            class="h-full w-full rounded-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/manas_s.jpg"
-            alt="Team Member 2"
-          />
-        </div>
-      </div>
-      <div class="flex flex-col gap-4 lg:gap-8">
-        <div class="md:rounded-b-lg rounded-lg bg-[#A8D7A5] flex-4">
-          <img
-            class="h-full w-full md:rounded-b-lg rounded-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/yash_laxman.jpg"
-            alt="Team Member 3"
-          />
-        </div>
-        <div class="rounded-lg bg-[#A8D7A5] flex-4">
-          <img
-            class="h-full w-full rounded-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/mustafa_asthikodi.jpg"
-            alt="Team Member 4"
-          />
-        </div>
-        <div class="rounded-t-lg bg-[#A8D7A5] flex-1"></div>
-      </div>
-      <div class="flex flex-col gap-4 lg:gap-8 pt-8 md:pt-16">
-        <div class="rounded-lg bg-[#A8D7A5] flex-1">
-          <img
-            class="h-full w-full rounded-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/hitha_badikillaya_s_u.jpg"
-            alt="Team Member 5"
-          />
-        </div>
-        <div class="rounded-t-lg bg-[#A8D7A5] flex-1">
-          <img
-            class="h-full w-full rounded-t-lg object-cover object-bottom mix-blend-darken"
-            src="/team-nobg/vivek_neeralagi.jpg"
-            alt="Team Member 6"
-          />
-        </div>
-      </div>
+
+    <!-- Right Column: Images Carousel -->
+    <div
+      class="flex h-full w-full items-center justify-center overflow-hidden bg-[#0ade4a] px-4 md:px-8 xl:px-12"
+    >
+      <ExecutiveImpactCarousel client:load members={members} />
     </div>
   </div>
 </section>

@@ -2,103 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 
 import { team } from "../../data/loader";
-import ProfileCard from "../../components/cards/ProfileCard.astro";
-import TeamsCard from "../../components/cards/TeamsCard.astro";
 import TeamLanding from "./TeamLanding.astro";
+import TeamView from "../../components/team/TeamView";
 
-const coordinatorMembers = team.filter((m) => m.status === "coordinator");
-const alumniMembers = team.filter((m) => m.status === "alumni");
-
-// Filter active members into categories
-const communityLeads = team.filter(
-  (m) => m.status === "active" && m.designation === "Community Lead",
-);
-const executiveMembers = team.filter(
-  (m) =>
-    m.status === "active" &&
-    (m.designation === "Executive Member" ||
-      m.designation === "SOSWC Representative"),
-);
-const communityMembers = team.filter(
-  (m) =>
-    m.status === "active" &&
-    m.designation !== "Community Lead" &&
-    m.designation !== "Executive Member" &&
-    m.designation !== "SOSWC Representative",
-);
-
-const themeGreen = "text-[#3ce56e]";
 ---
 
 <Layout>
   <TeamLanding />
   <section
-    class="text-foreground mx-auto max-w-7xl space-y-16 px-4 py-20 md:px-8"
+    class="text-foreground mx-auto max-w-7xl px-4 py-20 md:px-8"
   >
-    {/* Row 1: Coordinator and Community Lead */}
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div>
-        <h2
-          class="mb-8 text-center text-3xl font-extrabold tracking-wide uppercase"
-        >
-          <span class={themeGreen}>CO-ORDINATOR</span> FACULTY
-        </h2>
-        <div class="flex justify-center">
-          {
-            coordinatorMembers.map((member) => (
-              <div class="w-full max-w-sm">
-                <TeamsCard member={member} />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-      <div>
-        <h2
-          class="mb-8 text-center text-3xl font-extrabold tracking-wide uppercase"
-        >
-          <span class={themeGreen}>COMMUNITY</span> LEAD
-        </h2>
-        <div class="flex justify-center">
-          {
-            communityLeads.map((member) => (
-              <div class="w-full max-w-sm">
-                <TeamsCard member={member} />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-
-    {/* Row 2: Executive Members */}
-    <div>
-      <h2 class="mb-8 text-3xl font-extrabold tracking-wide uppercase">
-        <span class={themeGreen}>EXECUTIVE</span> MEMBER
-      </h2>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {executiveMembers.map((member) => <TeamsCard member={member} />)}
-      </div>
-    </div>
-
-    {/* Row 3: Community Members */}
-    <div>
-      <h2 class="mb-8 text-3xl font-extrabold tracking-wide uppercase">
-        <span class={themeGreen}>COMMUNITY</span> MEMBER
-      </h2>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {communityMembers.map((member) => <TeamsCard member={member} />)}
-      </div>
-    </div>
-
-    {/* Row 4: Alumni */}
-    <div>
-      <h2 class="mb-8 text-3xl font-extrabold tracking-wide uppercase">
-        <span class={themeGreen}>ALUMNI</span>
-      </h2>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {alumniMembers.map((member) => <TeamsCard member={member} />)}
-      </div>
-    </div>
+    <TeamView client:load team={team} />
   </section>
 </Layout>

@@ -9,6 +9,7 @@ export const teamMemberSchema = z.object({
   skills: z.array(z.string()).default([]).optional(),
   status: z.enum(["coordinator", "alumni", "active"]),
   image: z.string(),
+  year: z.string().default("-"),
 });
 
 export const teamArraySchema = z.array(teamMemberSchema);

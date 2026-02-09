@@ -7,7 +7,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/ritham404.png"
+    "image": "https://github.com/ritham404.png",
+    "year": "2024-25"
   },
   {
     "username": "himanshukt03",
@@ -17,7 +18,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/himanshukt03.png"
+    "image": "https://github.com/himanshukt03.png",
+    "year": "2024-25"
   },
   {
     "username": "techshetty",
@@ -27,7 +29,8 @@
     "linkedin": "www.linkedin.com/in/techshetty",
     "skills": ["Competitive Programming", "Backend Development", "JAVA"],
     "status": "alumni",
-    "image": "https://github.com/techshetty.png"
+    "image": "https://github.com/techshetty.png",
+    "year": "2024-25"
   },
   {
     "username": "Shree-Pai",
@@ -37,7 +40,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/Shree-Pai.png"
+    "image": "https://github.com/Shree-Pai.png",
+    "year": "2024-25"
   },
   {
     "username": "askashika",
@@ -47,7 +51,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/askashika.png"
+    "image": "https://github.com/askashika.png",
+    "year": "2024-25"
   },
   {
     "username": "aaronfernandes21",
@@ -57,7 +62,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/aaronfernandes21.png"
+    "image": "https://github.com/aaronfernandes21.png",
+    "year": "2024-25"
   },
   {
     "username": "advaithsshetty",
@@ -67,7 +73,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/advaithsshetty.png"
+    "image": "https://github.com/advaithsshetty.png",
+    "year": "2024-25"
   },
   {
     "username": "anth_hgde",
@@ -77,7 +84,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "/github_avatar.svg"
+    "image": "/github_avatar.svg",
+    "year": "2024-25"
   },
   {
     "username": "Apeksha-L-Naik",
@@ -87,7 +95,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/Apeksha-L-Naik.png"
+    "image": "https://github.com/Apeksha-L-Naik.png",
+    "year": "2024-25"
   },
   {
     "username": "evitabarboza",
@@ -97,9 +106,9 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/evitabarboza.png"
+    "image": "https://github.com/evitabarboza.png",
+    "year": "2024-25"
   },
-
   {
     "username": "neha-shetty-17",
     "name": "Neha Shetty",
@@ -108,7 +117,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/neha-shetty-17.png"
+    "image": "https://github.com/neha-shetty-17.png",
+    "year": "2024-25"
   },
   {
     "username": "Nitheshalva",
@@ -118,7 +128,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/Nitheshalva.png"
+    "image": "https://github.com/Nitheshalva.png",
+    "year": "2024-25"
   },
   {
     "username": "puvithk",
@@ -128,7 +139,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/puvithk.png"
+    "image": "https://github.com/puvithk.png",
+    "year": "2024-25"
   },
   {
     "username": "msranjana",
@@ -138,7 +150,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/msranjana.png"
+    "image": "https://github.com/msranjana.png",
+    "year": "2024-25"
   },
   {
     "username": "rithuparnaks",
@@ -148,7 +161,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/rithuparnaks.png"
+    "image": "https://github.com/rithuparnaks.png",
+    "year": "2024-25"
   },
   {
     "username": "shreya-shen",
@@ -163,6 +177,7 @@
       "web development(basics)"
     ],
     "status": "alumni",
-    "image": "https://github.com/shreya-shen.png"
+    "image": "https://github.com/shreya-shen.png",
+    "year": "2024-25"
   }
 ]

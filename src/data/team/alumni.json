@@ -7,7 +7,8 @@
     "linkedin": "www.linkedin.com/in/abhiigatty",
     "skills": ["Net Sec", "System Architecture design", "Python", "Ruby"],
     "status": "alumni",
-    "image": "https://github.com/AbhiiGatty.png"
+    "image": "https://github.com/AbhiiGatty.png",
+    "year": "-"
   },
   {
     "username": "Achal",
@@ -17,7 +18,8 @@
     "linkedin": "",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/Achal.png"
+    "image": "https://github.com/Achal.png",
+    "year": "-"
   },
   {
     "username": "AchalVenkatesh",
@@ -27,7 +29,8 @@
     "linkedin": "https://www.linkedin.com/in/achal-venkatesh-k-366502220",
     "skills": ["Public Speaking", "Problem Solving", "Math"],
     "status": "alumni",
-    "image": "https://github.com/AchalVenkatesh.png"
+    "image": "https://github.com/AchalVenkatesh.png",
+    "year": "2023-24"
   },
   {
     "username": "kalopsiaa",
@@ -43,7 +46,8 @@
       "Wordpress"
     ],
     "status": "alumni",
-    "image": "https://github.com/kalopsiaa.png"
+    "image": "https://github.com/kalopsiaa.png",
+    "year": "-"
   },
   {
     "username": "printAdityasn",
@@ -53,7 +57,8 @@
     "linkedin": "https://www.linkedin.com/in/aditya-sunil-nadiger-a10132229",
     "skills": ["Photography", "Videography", "etc", "."],
     "status": "alumni",
-    "image": "https://github.com/printAdityasn.png"
+    "image": "https://github.com/printAdityasn.png",
+    "year": "2023-24"
   },
   {
     "username": "coderhawk999",
@@ -63,7 +68,8 @@
     "linkedin": "",
     "skills": ["design", "video editing", "web."],
     "status": "alumni",
-    "image": "/github_avatar.svg"
+    "image": "/github_avatar.svg",
+    "year": "-"
   },
   {
     "username": "akashdeepb",
@@ -73,7 +79,8 @@
     "linkedin": "https://www.linkedin.com/in/akashdeep-bhagat-689b0b159/",
     "skills": ["Android", "Web", "Public Speaking"],
     "status": "alumni",
-    "image": "https://github.com/akashdeepb.png"
+    "image": "https://github.com/akashdeepb.png",
+    "year": "-"
   },
   {
     "username": "AkkilMG",
@@ -83,7 +90,8 @@
     "linkedin": "https://linkedin.com/in/akkilmg",
     "skills": ["Python", "Android", "Web"],
     "status": "alumni",
-    "image": "https://github.com/AkkilMG.png"
+    "image": "https://github.com/AkkilMG.png",
+    "year": "2023-24"
   },
   {
     "username": "akshayrb22",
@@ -93,7 +101,8 @@
     "linkedin": "www.linkedin.com/in/akshayrb22",
     "skills": ["Python", "Machine Learning", "Data Science"],
     "status": "alumni",
-    "image": "https://github.com/akshayrb22.png"
+    "image": "https://github.com/akshayrb22.png",
+    "year": "-"
   },
   {
     "username": "ambx",
@@ -103,7 +112,8 @@
     "linkedin": "https://linkedin.com/in/ambx",
     "skills": ["Public Speaking", "Technical Writing", "Java"],
     "status": "alumni",
-    "image": "https://github.com/ambx.png"
+    "image": "https://github.com/ambx.png",
+    "year": "-"
   },
   {
     "username": "Ananyapk25",
@@ -113,7 +123,8 @@
     "linkedin": "https://www.linkedin.com/in/ananya-pk-52409522b",
     "skills": ["Public speaking", "Web"],
     "status": "alumni",
-    "image": "https://github.com/Ananyapk25.png"
+    "image": "https://github.com/Ananyapk25.png",
+    "year": "2023-24"
   },
   {
     "username": "BhatAnkush",
@@ -123,7 +134,8 @@
     "linkedin": "https://www.linkedin.com/in/ankush-bhat-2507b6203",
     "skills": ["power point", "programming c&c++"],
     "status": "alumni",
-    "image": "https://github.com/BhatAnkush.png"
+    "image": "https://github.com/BhatAnkush.png",
+    "year": "-"
   },
   {
     "username": "anmolsoni1",
@@ -133,7 +145,8 @@
     "linkedin": "",
     "skills": ["Arduino", "Drones", "Design", "C"],
     "status": "alumni",
-    "image": "https://github.com/anmolsoni1.png"
+    "image": "https://github.com/anmolsoni1.png",
+    "year": "-"
   },
   {
     "username": "arjunsuvarna1",
@@ -143,7 +156,8 @@
     "linkedin": "https://www.linkedin.com/in/arjun-suvarana-094299121",
     "skills": ["Devops", "Automation", "Data Science", "Public Speaking"],
     "status": "alumni",
-    "image": "https://github.com/arjunsuvarna1.png"
+    "image": "https://github.com/arjunsuvarna1.png",
+    "year": "-"
   },
   {
     "username": "aswykp",
@@ -153,7 +167,8 @@
     "linkedin": "",
     "skills": ["design", "video editing", "game devlopment"],
     "status": "alumni",
-    "image": "https://github.com/aswykp.png"
+    "image": "https://github.com/aswykp.png",
+    "year": "-"
   },
   {
     "username": "Basavarajeshwari-Ambi",
@@ -163,7 +178,8 @@
     "linkedin": "https://www.linkedin.com/in/basavarajeshwari-ambi-1b223016a",
     "skills": ["AR/VR", "Product Development", "Marketing", "C", "C++", "Html"],
     "status": "alumni",
-    "image": "https://github.com/Basavarajeshwari-Ambi.png"
+    "image": "https://github.com/Basavarajeshwari-Ambi.png",
+    "year": "-"
   },
   {
     "username": "bhavishassai",
@@ -173,7 +189,8 @@
     "linkedin": "",
     "skills": ["C++ Dart Flutter"],
     "status": "alumni",
-    "image": "https://github.com/bhavishassai.png"
+    "image": "https://github.com/bhavishassai.png",
+    "year": "-"
   },
   {
     "username": "Bhavishhh",
@@ -183,7 +200,8 @@
     "linkedin": "https://www.linkedin.com/in/bhavishsshetty",
     "skills": ["design"],
     "status": "alumni",
-    "image": "https://github.com/Bhavishhh.png"
+    "image": "https://github.com/Bhavishhh.png",
+    "year": "-"
   },
   {
     "username": "bhumikhokhani",
@@ -193,7 +211,8 @@
     "linkedin": "https://www.linkedin.com/in/bhumikhokhani/",
     "skills": ["Design", "Web", "Android", "Technical Writing"],
     "status": "alumni",
-    "image": "https://github.com/bhumikhokhani.png"
+    "image": "https://github.com/bhumikhokhani.png",
+    "year": "-"
   },
   {
     "username": "carbonxx",
@@ -203,7 +222,8 @@
     "linkedin": "",
     "skills": ["C", "C++", "Python", "Web"],
     "status": "alumni",
-    "image": "https://github.com/carbonxx.png"
+    "image": "https://github.com/carbonxx.png",
+    "year": "-"
   },
   {
     "username": "chaman-k",
@@ -213,7 +233,8 @@
     "linkedin": "https://www.linkedin.com/in/chaman-k-34610583/",
     "skills": ["Web", "VR"],
     "status": "alumni",
-    "image": "https://github.com/chaman-k.png"
+    "image": "https://github.com/chaman-k.png",
+    "year": "-"
   },
   {
     "username": "charmy11",
@@ -223,7 +244,8 @@
     "linkedin": "https://www.linkedin.com/in/charmi-meswani-a91395158/",
     "skills": ["YOUR_SKILLS c", "c++", "c#", "java", "public speaking"],
     "status": "alumni",
-    "image": "https://github.com/charmy11.png"
+    "image": "https://github.com/charmy11.png",
+    "year": "-"
   },
   {
     "username": "chiragak",
@@ -233,7 +255,8 @@
     "linkedin": "https://www.linkedin.com/in/chiragak/",
     "skills": ["Web", "IOT"],
     "status": "alumni",
-    "image": "https://github.com/chiragak.png"
+    "image": "https://github.com/chiragak.png",
+    "year": "-"
   },
   {
     "username": "dev-shetty",
@@ -243,7 +266,8 @@
     "linkedin": "https://www.linkedin.com/in/deveesh-shetty-908539214/",
     "skills": ["Web Development", "Public Speaking", "Sketching"],
     "status": "alumni",
-    "image": "https://github.com/dev-shetty.png"
+    "image": "https://github.com/dev-shetty.png",
+    "year": "2023-24"
   },
   {
     "username": "Dhanushp",
@@ -253,7 +277,8 @@
     "linkedin": "https://www.linkedin.com/in/dhanush-bangera/",
     "skills": ["Design", "Photography", "Web Development"],
     "status": "alumni",
-    "image": "https://github.com/Dhanushp.png"
+    "image": "https://github.com/Dhanushp.png",
+    "year": "-"
   },
   {
     "username": "ekokratos",
@@ -263,7 +288,8 @@
     "linkedin": "https:www.linkedin.com/in/adithya-suvarna",
     "skills": ["Python", "Game development", "Arduino"],
     "status": "alumni",
-    "image": "https://github.com/ekokratos.png"
+    "image": "https://github.com/ekokratos.png",
+    "year": "-"
   },
   {
     "username": "faiqc",
@@ -273,7 +299,8 @@
     "linkedin": "https://www.linkedin.com/in/faiqchilmi",
     "skills": ["Video Editing", "Pytyhon"],
     "status": "alumni",
-    "image": "https://github.com/faiqc.png"
+    "image": "https://github.com/faiqc.png",
+    "year": "-"
   },
   {
     "username": "fauwara",
@@ -283,7 +310,8 @@
     "linkedin": "",
     "skills": ["web", "python", "design."],
     "status": "alumni",
-    "image": "https://github.com/fauwara.png"
+    "image": "https://github.com/fauwara.png",
+    "year": "-"
   },
   {
     "username": "gauravraoj",
@@ -293,7 +321,8 @@
     "linkedin": "https://www.linkedin.com/in/gaurav-rao-j-78849b206",
     "skills": [],
     "status": "alumni",
-    "image": "https://github.com/gauravraoj.png"
+    "image": "https://github.com/gauravraoj.png",
+    "year": "-"
   },
   {
     "username": "GowthamPB",
@@ -303,7 +332,8 @@
     "linkedin": "",
     "skills": ["Python", "C", "C++", "HTML", "CSS", "Javascript."],
     "status": "alumni",
-    "image": "https://github.com/GowthamPB.png"
+    "image": "https://github.com/GowthamPB.png",
+    "year": "-"
   },
   {
     "username": "MHAROON18",
@@ -313,17 +343,19 @@
     "linkedin": "https://www.linkedin.com/in/mohammedharun/",
     "skills": ["C", "Python", "SQL", "Photography", "Video Editing"],
     "status": "alumni",
-    "image": "https://github.com/MHAROON18.png"
+    "image": "https://github.com/MHAROON18.png",
+    "year": "-"
   },
   {
     "username": "happyhuman13",
     "name": "Harsha S Rao",
     "designation": "Alumni",
     "email": "harshas.is19@sahyadri.edu.in",
-    "linkedin": "https://www.linkedin.com/in/harshasrao/",
+    "linkedin": "https://www.linkedin.com/in/happyhuman13.png",
     "skills": ["Video Editing", "Word", "Management", "Organization"],
     "status": "alumni",
-    "image": "https://github.com/happyhuman13.png"
+    "image": "https://github.com/happyhuman13.png",
+    "year": "-"
   },
   {
     "username": "haxzie",
@@ -333,7 +365,8 @@
     "linkedin": "https://www.linkedin.com/in/haxzie/",
     "skills": ["Android", "Node.JS", "React.JS", "Python", "Design"],
     "status": "alumni",
-    "image": "https://github.com/haxzie.png"
+    "image": "https://github.com/haxzie.png",
+    "year": "-"
   },
   {
     "username": "hebbaaaa",
@@ -343,7 +376,8 @@
     "linkedin": "https://www.linkedin.com/in/heba-bashir-a51227265",
     "skills": ["Public Speaking", "Event Management"],
     "status": "alumni",
-    "image": "https://github.com/hebbaaaa.png"
+    "image": "https://github.com/hebbaaaa.png",
+    "year": "2023-24"
   },
   {
     "username": "muhammad-wego",
@@ -353,7 +387,8 @@
     "linkedin": "",
     "skills": ["Web", ".Net", "DBMS"],
     "status": "alumni",
-    "image": "https://github.com/muhammad-wego.png"
+    "image": "https://github.com/muhammad-wego.png",
+    "year": "-"
   },
   {
     "username": "imhighoncoffee",
@@ -363,7 +398,8 @@
     "linkedin": "https://www.linkedin.com/in/jehad-ddx/",
     "skills": ["Computer vision", "Design Thinking", "AR/VR"],
     "status": "alumni",
-    "image": "https://github.com/imhighoncoffee.png"
+    "image": "https://github.com/imhighoncoffee.png",
+    "year": "-"
   },
   {
     "username": "Krxshna",
@@ -373,7 +409,8 @@
     "linkedin": "https://www.linkedin.com/in/krishnanand-bhat-344198191",
     "skills": ["power_point", "Reading books"],
     "status": "alumni",
-    "image": "https://github.com/Krxshna.png"
+    "image": "https://github.com/Krxshna.png",
+    "year": "-"
   },
   {
     "username": "kshiteeshdesai",
@@ -383,7 +420,8 @@
     "linkedin": "https://www.linkedin.com/in/kshiteesh-desai-123966135/",
     "skills": ["abstract designing and 3d modelling"],
     "status": "alumni",
-    "image": "/github_avatar.svg"
+    "image": "/github_avatar.svg",
+    "year": "-"
   },
   {
     "username": "Livyapereira08",
@@ -393,7 +431,8 @@
     "linkedin": "https://www.linkedin.com/in/livya-pereira/",
     "skills": ["C", "Python", "WordPress"],
     "status": "alumni",
-    "image": "https://github.com/Livyapereira08.png"
+    "image": "https://github.com/Livyapereira08.png",
+    "year": "-"
   },
   {
     "username": "maithrivh",
@@ -403,7 +442,8 @@
     "linkedin": "linkedin.com/in/maithri-vishnu-hebbar-ab57911a4",
     "skills": ["C", "python", "html", "css"],
     "status": "alumni",
-    "image": "https://github.com/maithrivh.png"
+    "image": "https://github.com/maithrivh.png",
+    "year": "-"
   },
   {
     "username": "thatcodechap",
@@ -413,7 +453,8 @@
     "linkedin": "https://www.linkedin.com/in/manjunath-bhat-802b401b0",
     "skills": ["Fullstack"],
     "status": "alumni",
-    "image": "https://github.com/thatcodechap.png"
+    "image": "https://github.com/thatcodechap.png",
+    "year": "2023-24"
   },
   {
     "username": "melwinlobo18",
@@ -423,7 +464,8 @@
     "linkedin": "www.linkedin.com/in/melwin-l-6356a413a",
     "skills": ["Deep Learning", "Python"],
     "status": "alumni",
-    "image": "https://github.com/melwinlobo18.png"
+    "image": "https://github.com/melwinlobo18.png",
+    "year": "-"
   },
   {
     "username": "michelrego",
@@ -433,7 +475,8 @@
     "linkedin": "https://www.linkedin.com/in/michel-rego-b2439a195/",
     "skills": ["C", "Python", "HTML", "Public Speaking"],
     "status": "alumni",
-    "image": "https://github.com/michelrego.png"
+    "image": "https://github.com/michelrego.png",
+    "year": "-"
   },
   {
     "username": "alpha-oss",
@@ -443,7 +486,8 @@
     "linkedin": "https://www.linkedin.com/in/monish-shetty-357392191",
     "skills": ["Python", "C"],
     "status": "alumni",
-    "image": "https://github.com/alpha-oss.png"
+    "image": "https://github.com/alpha-oss.png",
+    "year": "-"
   },
   {
     "username": "monisha16",
@@ -453,7 +497,8 @@
     "linkedin": "https://www.linkedin.com/in/monisha-tarkar/",
     "skills": ["C", "C++", "Java", "Blockchain", "Adobe Photoshop"],
     "status": "alumni",
-    "image": "https://github.com/monisha16.png"
+    "image": "https://github.com/monisha16.png",
+    "year": "-"
   },
   {
     "username": "nathanielmathew",
@@ -463,7 +508,8 @@
     "linkedin": "https://www.linkedin.com/in/nathaniel-ryan-mathew-618058164/",
     "skills": ["Design", "Web", "Public Speaking", "ML"],
     "status": "alumni",
-    "image": "https://github.com/nathanielmathew.png"
+    "image": "https://github.com/nathanielmathew.png",
+    "year": "-"
   },
   {
     "username": "mnavneethkrishna",
@@ -478,7 +524,8 @@
       "Presentation and Strategy"
     ],
     "status": "alumni",
-    "image": "https://github.com/mnavneethkrishna.png"
+    "image": "https://github.com/mnavneethkrishna.png",
+    "year": "-"
   },
   {
     "username": "navyabhat98",
@@ -497,7 +544,8 @@
       "python."
     ],
     "status": "alumni",
-    "image": "https://github.com/navyabhat98.png"
+    "image": "https://github.com/navyabhat98.png",
+    "year": "-"
   },
   {
     "username": "NiharaPadil",
@@ -507,7 +555,8 @@
     "linkedin": "https://www.linkedin.com/in/nihara-padil-6177aa228",
     "skills": ["Communication", "Problem solving", "Web", "Organising"],
     "status": "alumni",
-    "image": "https://github.com/NiharaPadil.png"
+    "image": "https://github.com/NiharaPadil.png",
+    "year": "2023-24"
   },
   {
     "username": "Prakyath98",
@@ -517,7 +566,8 @@
     "linkedin": "",
     "skills": ["c", "c++", "java", "marketing"],
     "status": "alumni",
-    "image": "https://github.com/Prakyath98.png"
+    "image": "https://github.com/Prakyath98.png",
+    "year": "-"
   },
   {
     "username": "PratheekshaS",
@@ -527,7 +577,8 @@
     "linkedin": "https://www.linkedin.com/in/pratheeksha-s-bangera-8a4a1a22a/",
     "skills": ["Public Speaking", "Content Writing", "SEO", "Marketing"],
     "status": "alumni",
-    "image": "https://github.com/PratheekshaS.png"
+    "image": "https://github.com/PratheekshaS.png",
+    "year": "2023-24"
   },
   {
     "username": "Breathedude",
@@ -537,7 +588,8 @@
     "linkedin": "https://www.linkedin.com/in/rachitha-bayar-2746ab13a/",
     "skills": ["C", "Java", "Python", "Content Writing", "Public Speaking."],
     "status": "alumni",
-    "image": "https://github.com/Breathedude.png"
+    "image": "https://github.com/Breathedude.png",
+    "year": "-"
   },
   {
     "username": "RachithaRai",
@@ -547,7 +599,8 @@
     "linkedin": "https://linkedin.com/",
     "skills": ["C", "Public speaking", "Content writing"],
     "status": "alumni",
-    "image": "https://github.com/RachithaRai.png"
+    "image": "https://github.com/RachithaRai.png",
+    "year": "-"
   },
   {
     "username": "rahul-nl",
@@ -557,7 +610,8 @@
     "linkedin": "",
     "skills": ["Graphic designing", "Video editing", "Basic electronics"],
     "status": "alumni",
-    "image": "https://github.com/rahul-nl.png"
+    "image": "https://github.com/rahul-nl.png",
+    "year": "-"
   },
   {
     "username": "Rakshith9591",
@@ -567,7 +621,8 @@
     "linkedin": "https://www.linkedin.com/in/rakshith-a-s-44b867214",
     "skills": ["Videography", "content creation"],
     "status": "alumni",
-    "image": "https://github.com/Rakshith9591.png"
+    "image": "https://github.com/Rakshith9591.png",
+    "year": "-"
   },
   {
     "username": "rashafathima",
@@ -583,7 +638,8 @@
       "Presentation"
     ],
     "status": "alumni",
-    "image": "https://github.com/rashafathima.png"
+    "image": "https://github.com/rashafathima.png",
+    "year": "-"
   },
   {
     "username": "Rashmithakulal",
@@ -593,7 +649,8 @@
     "linkedin": "https://www.linkedin.com/in/rashmitha-kulal-01",
     "skills": ["Web"],
     "status": "alumni",
-    "image": "https://github.com/Rashmithakulal.png"
+    "image": "https://github.com/Rashmithakulal.png",
+    "year": "-"
   },
   {
     "username": "CodereaperXE",
@@ -603,7 +660,8 @@
     "linkedin": "https://www.linkedin.com/in/rishab-budale",
     "skills": ["Cybersecurity and Hardware"],
     "status": "alumni",
-    "image": "https://github.com/CodereaperXE.png"
+    "image": "https://github.com/CodereaperXE.png",
+    "year": "2023-24"
   },
   {
     "username": "siliconvolley",
@@ -613,7 +671,8 @@
     "linkedin": "https://www.linkedin.com/in/rishabh-laxmikanth-789541270/",
     "skills": ["Web", "Machine Learning", "Python", "C++"],
     "status": "alumni",
-    "image": "https://github.com/siliconvolley.png"
+    "image": "https://github.com/siliconvolley.png",
+    "year": "2023-24"
   },
   {
     "username": "riiyabatra",
@@ -623,7 +682,8 @@
     "linkedin": "https://linkedin.com/in/riya-batra/",
     "skills": ["c", "c++", "java", "machine learning"],
     "status": "alumni",
-    "image": "https://github.com/riiyabatra.png"
+    "image": "https://github.com/riiyabatra.png",
+    "year": "-"
   },
   {
     "username": "rumaan",
@@ -633,7 +693,8 @@
     "linkedin": "https://www.linkedin.com/in/rumaan/",
     "skills": ["Android", "Web", "Python", "Public speaking"],
     "status": "alumni",
-    "image": "https://github.com/rumaan.png"
+    "image": "https://github.com/rumaan.png",
+    "year": "-"
   },
   {
     "username": "samanvitha-k",
@@ -643,7 +704,8 @@
     "linkedin": "https://www.linkedin.com/in/samanvitha-k-0209bb2a",
     "skills": ["Leadership", "Problem Solving", "Communication"],
     "status": "alumni",
-    "image": "https://github.com/samanvitha-k.png"
+    "image": "https://github.com/samanvitha-k.png",
+    "year": "2023-24"
   },
   {
     "username": "SankshipthShetty",
@@ -659,7 +721,8 @@
       "Web3"
     ],
     "status": "alumni",
-    "image": "https://github.com/SankshipthShetty.png"
+    "image": "https://github.com/SankshipthShetty.png",
+    "year": "2023-24"
   },
   {
     "username": "sapnakg",
@@ -669,7 +732,8 @@
     "linkedin": "YOUR_LINKEDIN_PROFILE_URL (optional)",
     "skills": ["c", "c++", "java", "marketting"],
     "status": "alumni",
-    "image": "https://github.com/sapnakg.png"
+    "image": "https://github.com/sapnakg.png",
+    "year": "-"
   },
   {
     "username": "Shamanthshetty7",
@@ -684,7 +748,8 @@
       "Project development"
     ],
     "status": "alumni",
-    "image": "https://github.com/Shamanthshetty7.png"
+    "image": "https://github.com/Shamanthshetty7.png",
+    "year": "-"
   },
   {
     "username": "Shanky1199",
@@ -694,7 +759,8 @@
     "linkedin": "YOUR_LINKEDIN_PROFILE_URL (optional)",
     "skills": ["Leadership", "Public speaking", "OpenSource contributor."],
     "status": "alumni",
-    "image": "https://github.com/Shanky1199.png"
+    "image": "https://github.com/Shanky1199.png",
+    "year": "-"
   },
   {
     "username": "Shishiralva20",
@@ -704,7 +770,8 @@
     "linkedin": "https://www.linkedin.com/in/shishir-alva-s-ab4519173",
     "skills": ["Android", "Design", "Web"],
     "status": "alumni",
-    "image": "/github_avatar.svg"
+    "image": "/github_avatar.svg",
+    "year": "-"
   },
   {
     "username": "shravan1998",
@@ -714,7 +781,8 @@
     "linkedin": "https://www.linkedin.com/in/shravan-kumar-368a7b119/",
     "skills": ["Web", "Public Speaking"],
     "status": "alumni",
-    "image": "https://github.com/shravan1998.png"
+    "image": "https://github.com/shravan1998.png",
+    "year": "-"
   },
   {
     "username": "ShreyasBaliga",
@@ -724,7 +792,8 @@
     "linkedin": "https://www.linkedin.co/in/shreyas-baliga",
     "skills": ["Android", "Computer Vision"],
     "status": "alumni",
-    "image": "https://github.com/ShreyasBaliga.png"
+    "image": "https://github.com/ShreyasBaliga.png",
+    "year": "-"
   },
   {
     "username": "snbharadhwaj",
@@ -734,7 +803,8 @@
     "linkedin": "",
     "skills": ["designing", "C", "C++", "python"],
     "status": "alumni",
-    "image": "https://github.com/snbharadhwaj.png"
+    "image": "https://github.com/snbharadhwaj.png",
+    "year": "-"
   },
   {
     "username": "srajankumar",
@@ -744,7 +814,8 @@
     "linkedin": "https://www.linkedin.com/in/kumarsrajan/",
     "skills": ["C", "C++", "Web Development", "Design"],
     "status": "alumni",
-    "image": "https://github.com/srajankumar.png"
+    "image": "https://github.com/srajankumar.png",
+    "year": "2023-24"
   },
   {
     "username": "SRUJALL",
@@ -759,7 +830,8 @@
       "event management"
     ],
     "status": "alumni",
-    "image": "https://github.com/SRUJALL.png"
+    "image": "https://github.com/SRUJALL.png",
+    "year": "2023-24"
   },
   {
     "username": "Srujan-rai",
@@ -769,7 +841,8 @@
     "linkedin": "https://www.linkedin.com/in/srujan-rai-8371551ba",
     "skills": ["IOT", "Computer Vision"],
     "status": "alumni",
-    "image": "https://github.com/Srujan-rai.png"
+    "image": "https://github.com/Srujan-rai.png",
+    "year": "2023-24"
   },
   {
     "username": "srujan-u",
@@ -779,7 +852,8 @@
     "linkedin": "https://www.linkedin.com/in/srujanu/",
     "skills": ["Video editing", "Graphic designing", "Aerial robotics"],
     "status": "alumni",
-    "image": "https://github.com/srujan-u.png"
+    "image": "https://github.com/srujan-u.png",
+    "year": "-"
   },
   {
     "username": "suhanacharya",
@@ -789,7 +863,8 @@
     "linkedin": "https://www.linkedin.com/in/suhan-acharya-64a09a170/",
     "skills": ["Machine Learning", "Python", "GNU Octave"],
     "status": "alumni",
-    "image": "https://github.com/suhanacharya.png"
+    "image": "https://github.com/suhanacharya.png",
+    "year": "-"
   },
   {
     "username": "SushruthRao",
@@ -799,7 +874,8 @@
     "linkedin": "https://www.linkedin.com/in/sushruth-rao-396342221/",
     "skills": ["Cybersecurity"],
     "status": "alumni",
-    "image": "https://github.com/SushruthRao.png"
+    "image": "https://github.com/SushruthRao.png",
+    "year": "2023-24"
   },
   {
     "username": "swaaz",
@@ -809,7 +885,8 @@
     "linkedin": "https://www.linkedin.com/in/swasthik-shetty-b50928174/",
     "skills": ["C", "C++", "Python", "HTML", "CSS", "JS", "JAVA", "Design"],
     "status": "alumni",
-    "image": "https://github.com/swaaz.png"
+    "image": "https://github.com/swaaz.png",
+    "year": "-"
   },
   {
     "username": "tejas-gk",
@@ -819,7 +896,8 @@
     "linkedin": "https://www.linkedin.com/in/tejas-gk/",
     "skills": ["Web development"],
     "status": "alumni",
-    "image": "https://github.com/tejas-gk.png"
+    "image": "https://github.com/tejas-gk.png",
+    "year": "2023-24"
   },
   {
     "username": "tejasnayak1",
@@ -829,7 +907,8 @@
     "linkedin": "",
     "skills": ["Public Speaking", "Event Management", "Organizing"],
     "status": "alumni",
-    "image": "https://github.com/tejasnayak1.png"
+    "image": "https://github.com/tejasnayak1.png",
+    "year": "2023-24"
   },
   {
     "username": "UttamkiniH",
@@ -839,7 +918,8 @@
     "linkedin": "https://www.linkedin.com/in/uttam-kini/",
     "skills": ["Flutter", "Google cloud", "and App design"],
     "status": "alumni",
-    "image": "https://github.com/UttamkiniH.png"
+    "image": "https://github.com/UttamkiniH.png",
+    "year": "-"
   },
   {
     "username": "shettyvarshaa",
@@ -857,7 +937,8 @@
       "touch typing"
     ],
     "status": "alumni",
-    "image": "https://github.com/shettyvarshaa.png"
+    "image": "https://github.com/shettyvarshaa.png",
+    "year": "2023-24"
   },
   {
     "username": "VasuHansalia",
@@ -867,7 +948,8 @@
     "linkedin": "https://www.linkedin.com/in/vasuhansalia-109773136/",
     "skills": ["Android", "unity 3d", "python"],
     "status": "alumni",
-    "image": "https://github.com/VasuHansalia.png"
+    "image": "https://github.com/VasuHansalia.png",
+    "year": "-"
   },
   {
     "username": "vinolchris",
@@ -877,7 +959,8 @@
     "linkedin": " content writing",
     "skills": ["content writing"],
     "status": "alumni",
-    "image": "https://github.com/vinolchris.png"
+    "image": "https://github.com/vinolchris.png",
+    "year": "-"
   },
   {
     "username": "mrvee-qC",
@@ -887,7 +970,8 @@
     "linkedin": " Quantum Algorithms",
     "skills": ["Quantum Algorithms"],
     "status": "alumni",
-    "image": "https://github.com/mrvee-qC.png"
+    "image": "https://github.com/mrvee-qC.png",
+    "year": "-"
   },
   {
     "username": "Zeliq",
@@ -897,6 +981,7 @@
     "linkedin": "https://www.linkedin.com/in/zeliq-zayyan-14b313193",
     "skills": ["Data Analytics", "C-Programming", "Design", "UI/UX"],
     "status": "alumni",
-    "image": "https://github.com/Zeliq.png"
+    "image": "https://github.com/Zeliq.png",
+    "year": "2023-24"
   }
 ]

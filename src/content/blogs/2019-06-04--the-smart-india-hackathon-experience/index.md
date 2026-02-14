@@ -43,6 +43,7 @@ Nevertheless, it was an unforgettable experience and we learnt a lot from it; We
 <p>
 
 ![2](./team.jpg)
+
 <center>Team DSOSC</center>
 
 </p>

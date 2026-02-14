@@ -57,9 +57,9 @@ Pomelo is built using modern web and infrastructure tools:
 
 ## Project Goals
 
-- Provide a simple platform for hosting coding contests  
-- Encourage competitive programming and problem solving  
-- Offer an open-source base for experimentation and learning  
+- Provide a simple platform for hosting coding contests
+- Encourage competitive programming and problem solving
+- Offer an open-source base for experimentation and learning
 - Maintain a clean and extensible architecture
 
 ---
@@ -75,5 +75,3 @@ We welcome contributors, learners, and open-source enthusiasts to explore and im
 
 Contributions are welcome.  
 Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-

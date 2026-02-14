@@ -23,7 +23,7 @@ documentation: https://github.com/so-sc/sosc-website#readme
 community: true
 ---
 
-# SOSC Website 
+# SOSC Website
 
 The **SOSC Website** is the official digital presence of the **Sahyadri Open Source Community**.  
 It acts as a central platform to share community activities, publish blogs, highlight open-source projects, and introduce the people behind the community.
@@ -34,12 +34,11 @@ The website is designed with a strong focus on **performance, accessibility, and
 
 ## Key Features
 
-- **Blogs** – Articles, tutorials, and insights written by community members  
-- **Events** – Information about upcoming, ongoing, and past events  
-- **Projects** – Showcase of open-source projects built within the community  
-- **Resources** – Curated learning materials, tools, and references shared by community members  
-- **Team** – Profiles of contributors and core members of SOSC  
-  
+- **Blogs** – Articles, tutorials, and insights written by community members
+- **Events** – Information about upcoming, ongoing, and past events
+- **Projects** – Showcase of open-source projects built within the community
+- **Resources** – Curated learning materials, tools, and references shared by community members
+- **Team** – Profiles of contributors and core members of SOSC
 
 ---
 
@@ -47,19 +46,19 @@ The website is designed with a strong focus on **performance, accessibility, and
 
 The SOSC Website is built using modern web technologies:
 
-- **Astro** – Static site generation for excellent performance  
-- **TypeScript** – Type-safe development and maintainability  
-- **Tailwind CSS** – Utility-first styling for consistent UI  
-- **React** – Interactive components where needed  
+- **Astro** – Static site generation for excellent performance
+- **TypeScript** – Type-safe development and maintainability
+- **Tailwind CSS** – Utility-first styling for consistent UI
+- **React** – Interactive components where needed
 
 ---
 
 ## Project Goals
 
-- Serve as the central hub for SOSC’s online presence  
-- Promote open-source culture within the community  
-- Highlight projects, events, and contributors  
-- Maintain a fast, accessible, and scalable website  
+- Serve as the central hub for SOSC’s online presence
+- Promote open-source culture within the community
+- Highlight projects, events, and contributors
+- Maintain a fast, accessible, and scalable website
 
 ---
 

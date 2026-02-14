@@ -23,6 +23,7 @@ community: true
 maintainers:
   - so-sc
 ---
+
 # Sankalp
 
 **Sankalp** is a user-friendly, full-stack registration platform built by the **Sahyadri Open Source Community (SOSC)** to streamline event and hackathon registrations.
@@ -35,21 +36,21 @@ It serves as a unified system for participant onboarding, real-time administrati
 
 ### For Participants
 
-* **Email-verified accounts** with secure authentication
-* **Event & Talk Registration** from a single dashboard
-* **Hackathon Team Formation** (2–4 members) with problem statement submission
-* **Personal Dashboard** to track registrations
-* **Unique QR Codes** for fast check-in
-* **Secure password recovery** via OTP
+- **Email-verified accounts** with secure authentication
+- **Event & Talk Registration** from a single dashboard
+- **Hackathon Team Formation** (2–4 members) with problem statement submission
+- **Personal Dashboard** to track registrations
+- **Unique QR Codes** for fast check-in
+- **Secure password recovery** via OTP
 
 ### For Administrators
 
-* **QR Scanner** for instant check-in verification
-* **Live Statistics Dashboard** (gender, student/employee, year, etc.)
-* **Participant & Team Management** interface
-* **Bulk Emailing** to specific groups
-* **Role-based Access Control** (Maintainer, Admin, Marketing, Leads, Volunteers)
-* **Excel Exports** for offline processing
+- **QR Scanner** for instant check-in verification
+- **Live Statistics Dashboard** (gender, student/employee, year, etc.)
+- **Participant & Team Management** interface
+- **Bulk Emailing** to specific groups
+- **Role-based Access Control** (Maintainer, Admin, Marketing, Leads, Volunteers)
+- **Excel Exports** for offline processing
 
 ---
 
@@ -57,29 +58,29 @@ It serves as a unified system for participant onboarding, real-time administrati
 
 ### Frontend
 
-* **Next.js (App Router)** + **React 18**
-* **TypeScript**
-* **Tailwind CSS**
-* **shadcn/ui + Radix UI**
-* **TanStack Table**
-* **Axios**
-* **react-qr-reader**
+- **Next.js (App Router)** + **React 18**
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui + Radix UI**
+- **TanStack Table**
+- **Axios**
+- **react-qr-reader**
 
 ### Backend
 
-* **Express.js (TypeScript)**
-* **MongoDB + Mongoose**
-* **JWT Authentication**
-* **AES Encryption (crypto-js)**
-* **Nodemailer**
-* **xlsx for exports**
-* **nodemon (dev)**
+- **Express.js (TypeScript)**
+- **MongoDB + Mongoose**
+- **JWT Authentication**
+- **AES Encryption (crypto-js)**
+- **Nodemailer**
+- **xlsx for exports**
+- **nodemon (dev)**
 
 ### DevOps
 
-* **pnpm**
-* **Monorepo with Concurrently**
-* **Google Cloud App Engine**
+- **pnpm**
+- **Monorepo with Concurrently**
+- **Google Cloud App Engine**
 
 ---
 
@@ -87,9 +88,9 @@ It serves as a unified system for participant onboarding, real-time administrati
 
 Sankalp follows a clear separation of concerns:
 
-* **`web/client`** → Next.js frontend (user dashboard, admin panel, forms, QR display)
-* **`web/api`** → Express backend (auth, registration, admin, email, QR generation)
-* **MongoDB** → Stores users, events, hackathon teams, and admin roles
+- **`web/client`** → Next.js frontend (user dashboard, admin panel, forms, QR display)
+- **`web/api`** → Express backend (auth, registration, admin, email, QR generation)
+- **MongoDB** → Stores users, events, hackathon teams, and admin roles
 
 Communication happens via REST APIs with JWT-based authentication.
 
@@ -103,11 +104,11 @@ Communication happens via REST APIs with JWT-based authentication.
 
 ## Project Goals
 
-* Provide a **single source of truth** for SOSC registrations
-* Reduce manual paperwork and chaos at events
-* Enable **fast, reliable QR-based check-ins**
-* Deliver real-time insights for organizers
-* Maintain an **open-source, extensible platform**
+- Provide a **single source of truth** for SOSC registrations
+- Reduce manual paperwork and chaos at events
+- Enable **fast, reliable QR-based check-ins**
+- Deliver real-time insights for organizers
+- Maintain an **open-source, extensible platform**
 
 ---
 
@@ -115,9 +116,9 @@ Communication happens via REST APIs with JWT-based authentication.
 
 Sankalp can be deployed on:
 
-* Google Cloud App Engine (current setup)
-* Any Node.js + MongoDB environment
-* Local development using `pnpm start`
+- Google Cloud App Engine (current setup)
+- Any Node.js + MongoDB environment
+- Local development using `pnpm start`
 
 ---
 

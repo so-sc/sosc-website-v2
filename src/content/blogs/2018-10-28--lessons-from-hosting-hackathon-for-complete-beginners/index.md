@@ -29,6 +29,7 @@ We had changed our plan to make the event welcoming for beginners so they don't 
 <p>
 
 ![1](./hacking2.jpg)
+
 <center><i>Shot from the quadrangle during the HackNight</i></center>
 
 </p>
@@ -38,6 +39,7 @@ We started inviting mentors but we had the numbers in mind, in total we had arou
 <p>
 
 ![2](./mentors.jpg)
+
 <center><i>From our team of mentors, Nidarsh, Rumaan, Vasu, Navya and Rashwin</i></center>
 
 </p>
@@ -45,6 +47,7 @@ We started inviting mentors but we had the numbers in mind, in total we had arou
 <p>
 
 ![3](./hacking.jpg)
+
 <center><i>Keeping the night awake! Shot from Microsoft lab during HackNight</i></center>
 
 </p>
@@ -56,6 +59,7 @@ The hackathon was scheduled to start at 5 P.M in the evening and end at 9 A.M, t
 <p>
 
 ![4](./stickers.jpg)
+
 <center><i>Stickers from Mozilla and GitHub</i></center>
 
 </p>
@@ -73,6 +77,7 @@ Themes were chosen based on the ease of finding ideas to build on it and we had 
 <p>
 
 ![5](./crowd.jpg)
+
 <center><i>Time for presentations! Judging panel on the front row.</i></center>
 
 </p>
@@ -82,6 +87,7 @@ This was by far one of the successfull event conducted by our community. Huge sh
 <p>
 
 ![6](./group.jpg)
+
 <center><i>And that's the happy ending!</i></center>
 
 </p>

@@ -38,21 +38,21 @@ Designed with automation and usability in mind, Certify eliminates manual certif
 
 ### Smart Certificate Generation
 
-* **Template-Based System** – Generate certificates from uploaded `.pptx` templates
-* **URL-Based Templates** – Use remote PowerPoint templates via direct links
-* **Dynamic Personalization** – Automatically replaces `{name}` and `{id}` placeholders
-* **PPTX to PDF Conversion** – Produces high-quality, shareable certificates
+- **Template-Based System** – Generate certificates from uploaded `.pptx` templates
+- **URL-Based Templates** – Use remote PowerPoint templates via direct links
+- **Dynamic Personalization** – Automatically replaces `{name}` and `{id}` placeholders
+- **PPTX to PDF Conversion** – Produces high-quality, shareable certificates
 
 ### Template Management
 
-* **Drag-and-Drop Uploads** – Simple UI for adding new certificate templates
-* **Template Registry** – Local mapping of template IDs for quick access
+- **Drag-and-Drop Uploads** – Simple UI for adding new certificate templates
+- **Template Registry** – Local mapping of template IDs for quick access
 
 ### Automated Email Delivery
 
-* **Gmail SMTP Integration** – Direct certificate delivery to recipients
-* **Custom HTML Emails** – Professionally styled and customizable templates
-* **Personalized Messaging** – Dynamic subject lines and email content
+- **Gmail SMTP Integration** – Direct certificate delivery to recipients
+- **Custom HTML Emails** – Professionally styled and customizable templates
+- **Personalized Messaging** – Dynamic subject lines and email content
 
 ---
 
@@ -62,21 +62,21 @@ Certify is built using modern web tooling:
 
 ### Frontend
 
-* **Next.js** – Server-rendered React application
-* **TypeScript** – Type-safe development
-* **Tailwind CSS & Bootstrap** – Responsive and clean UI design
+- **Next.js** – Server-rendered React application
+- **TypeScript** – Type-safe development
+- **Tailwind CSS & Bootstrap** – Responsive and clean UI design
 
 ### Backend
 
-* **FastAPI** – High-performance Python backend
-* **Uvicorn** – ASGI server for API hosting
-* **python-pptx** – PowerPoint manipulation
-* **Spire.Presentation** – PPTX to PDF conversion
-* **Jinja2** – Email templating
+- **FastAPI** – High-performance Python backend
+- **Uvicorn** – ASGI server for API hosting
+- **python-pptx** – PowerPoint manipulation
+- **Spire.Presentation** – PPTX to PDF conversion
+- **Jinja2** – Email templating
 
 ### Infrastructure
 
-* **Cloudflare Workers** – CDN for template and certificate storage
+- **Cloudflare Workers** – CDN for template and certificate storage
 
 ---
 
@@ -84,16 +84,16 @@ Certify is built using modern web tooling:
 
 Certify exposes a clean REST API under `/api/v1`, including:
 
-* Uploading templates
-* Generating certificates from local or remote templates
-* Sending generated certificates via email
-* Health check and interactive API documentation via Swagger
+- Uploading templates
+- Generating certificates from local or remote templates
+- Sending generated certificates via email
+- Health check and interactive API documentation via Swagger
 
 ---
 
 ## Project Goals
 
-* Automate certificate generation for events and workshops
-* Reduce manual effort for organizers
-* Ensure high-quality, branded certificate outputs
-* Provide an open-source foundation for further enhancements
+- Automate certificate generation for events and workshops
+- Reduce manual effort for organizers
+- Ensure high-quality, branded certificate outputs
+- Provide an open-source foundation for further enhancements

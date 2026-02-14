@@ -45,7 +45,13 @@ const projects = defineCollection({
       date: z.coerce.date(),
       techStack: z.array(z.string()),
       maintainers: z.array(z.string()),
-      status: z.enum(["active", "maintained", "archived", "completed", "in-progress"]),
+      status: z.enum([
+        "active",
+        "maintained",
+        "archived",
+        "completed",
+        "in-progress",
+      ]),
       category: z.string(),
       tags: z.array(z.string()).optional(),
       github: z.string().optional(),
@@ -91,7 +97,7 @@ export const resources = defineCollection({
             "book",
             "cheatsheet",
             "podcast",
-          ])
+          ]),
         ),
       ])
       .transform((v) => (Array.isArray(v) ? v : [v])),

@@ -1,19 +1,17 @@
 // @ts-check
-import { defineConfig } from "astro/config";
 
-import tailwindcss from "@tailwindcss/vite";
-
-import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
-
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
 
 import icon from "astro-icon";
 
 const rehypeLazyImages = () => {
-  return (tree) => {
-    const visit = (node) => {
+  return (/** @type {any} */ tree) => {
+    const visit = (/** @type {any} */ node) => {
       if (!node || typeof node !== "object") return;
       if (Array.isArray(node)) {
         node.forEach(visit);
@@ -47,5 +45,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), mdx({ rehypePlugins: [rehypeLazyImages] }), sitemap({}), icon()],
+  integrations: [
+    react(),
+    mdx({ rehypePlugins: [rehypeLazyImages] }),
+    sitemap({}),
+    icon(),
+  ],
 });

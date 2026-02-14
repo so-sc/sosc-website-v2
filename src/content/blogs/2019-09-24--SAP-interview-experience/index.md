@@ -68,6 +68,7 @@ Being in the SOSC team exposed me to various workshops which helped me in inculc
 <p>
 
 ![1](./SAP-Labs-Placed.jpeg)
+
 <center>Placed at SAP Labs</center>
 
 </p>

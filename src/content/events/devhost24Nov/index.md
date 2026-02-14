@@ -143,5 +143,3 @@ For more details, visit the [DevHost 2024 Website](https://devhost.sosc.org.in/)
 ![event-4](./2.jpg)
 ![event-5](./5.jpg)
 ![event-5](./6.jpg)
-
-

@@ -1,46 +1,147 @@
 ---
-
-
-
-
 const teamMembers = [
-  { name: "Arvind", tags: ["Development", "Backend"], image: "/team/arvind.webp" },
+  {
+    name: "Arvind",
+    tags: ["Development", "Backend"],
+    image: "/team/arvind.webp",
+  },
   { name: "Deepthi", tags: ["Web Dev", "Java"], image: "/team/deepthi.webp" },
-  { name: "Hitha Badikillaya S U", tags: ["Full Stack", "UI/UX"], image: "/team/hitha_badikillaya_s_u.webp" },
-  { name: "Josvita Concessao", tags: ["Web Dev", "Frontend"], image: "/team/josvita_concessao.webp" },
-  { name: "Koshin", tags: ["Development", "Frontend"], image: "/team/placeholder.png" },
-  { name: "Kushal SM", tags: ["Linux", "Full Stack"], image: "/team/kushal_sm.webp" },
-  { name: "Manas S", tags: ["Cybersecurity", "Linux"], image: "/team/manas_s.webp" },
-  { name: "Manvitha", tags: ["Game Dev", "Full Stack"], image: "/team/manvitha.webp" },
-  { name: "Mariyam Heena", tags: ["Web Dev", "Frontend"], image: "/team/mariyam_heena.webp" },
-  { name: "Meghna", tags: ["Web Dev", "Social Media Management"], image: "/team/meghna.webp" },
-  { name: "Minhaz Ahmed Mustak", tags: ["Web Dev", "Systems"], image: "/team/minhaz_ahmed_mustak.webp" },
-  { name: "Mukasshaf Ahmed", tags: ["Automations", "Agentic AI"], image: "/team/mukasshaf_ahmed.webp" },
-  { name: "Nithin K", tags: ["Web Dev", "Generative AI"], image: "/team/nithin_k.webp" },
-  { name: "Pranam N Kotian", tags: ["Generative AI", "Full Stack"], image: "/team/pranam_n_kotian.webp" },
-  { name: "Prathyusha K", tags: ["Design", "Full Stack"], image: "/team/prathyusha_k.webp" },
-  { name: "Priyadarshini M", tags: ["Web Dev", "Java"], image: "/team/priyadarshini_m.webp" },
-  { name: "Rajath", tags: ["Development", "Backend"], image: "/team/placeholder.png" },
-  { name: "R Ajay Kumar", tags: ["Machine Learning", "Dev"], image: "/team/r_ajay_kumar.webp" },
-  { name: "Salman Najah", tags: ["Open Source", "Full Stack"], image: "/team/salman_najah.webp" },
+  {
+    name: "Hitha Badikillaya S U",
+    tags: ["Full Stack", "UI/UX"],
+    image: "/team/hitha_badikillaya_s_u.webp",
+  },
+  {
+    name: "Josvita Concessao",
+    tags: ["Web Dev", "Frontend"],
+    image: "/team/josvita_concessao.webp",
+  },
+  {
+    name: "Koshin",
+    tags: ["Development", "Frontend"],
+    image: "/team/placeholder.png",
+  },
+  {
+    name: "Kushal SM",
+    tags: ["Linux", "Full Stack"],
+    image: "/team/kushal_sm.webp",
+  },
+  {
+    name: "Manas S",
+    tags: ["Cybersecurity", "Linux"],
+    image: "/team/manas_s.webp",
+  },
+  {
+    name: "Manvitha",
+    tags: ["Game Dev", "Full Stack"],
+    image: "/team/manvitha.webp",
+  },
+  {
+    name: "Mariyam Heena",
+    tags: ["Web Dev", "Frontend"],
+    image: "/team/mariyam_heena.webp",
+  },
+  {
+    name: "Meghna",
+    tags: ["Web Dev", "Social Media Management"],
+    image: "/team/meghna.webp",
+  },
+  {
+    name: "Minhaz Ahmed Mustak",
+    tags: ["Web Dev", "Systems"],
+    image: "/team/minhaz_ahmed_mustak.webp",
+  },
+  {
+    name: "Mukasshaf Ahmed",
+    tags: ["Automations", "Agentic AI"],
+    image: "/team/mukasshaf_ahmed.webp",
+  },
+  {
+    name: "Nithin K",
+    tags: ["Web Dev", "Generative AI"],
+    image: "/team/nithin_k.webp",
+  },
+  {
+    name: "Pranam N Kotian",
+    tags: ["Generative AI", "Full Stack"],
+    image: "/team/pranam_n_kotian.webp",
+  },
+  {
+    name: "Prathyusha K",
+    tags: ["Design", "Full Stack"],
+    image: "/team/prathyusha_k.webp",
+  },
+  {
+    name: "Priyadarshini M",
+    tags: ["Web Dev", "Java"],
+    image: "/team/priyadarshini_m.webp",
+  },
+  {
+    name: "Rajath",
+    tags: ["Development", "Backend"],
+    image: "/team/placeholder.png",
+  },
+  {
+    name: "R Ajay Kumar",
+    tags: ["Machine Learning", "Dev"],
+    image: "/team/r_ajay_kumar.webp",
+  },
+  {
+    name: "Salman Najah",
+    tags: ["Open Source", "Full Stack"],
+    image: "/team/salman_najah.webp",
+  },
   { name: "Savinay", tags: ["Media", "Visuals"], image: "/team/savinay.webp" },
-  { name: "Siddu B G R", tags: ["Full Stack", "Machine Learning"], image: "/team/placeholder.png" },
-  { name: "Soniya Kolvekar", tags: ["Full Stack", "Gen AI"], image: "/team/soniya_kolvekar.webp" },
-  { name: "Sthuthi Poojary", tags: ["Programming", "AI/ML"], image: "/team/sthuthi_poojary.webp" },
-  { name: "Varsha", tags: ["Web Dev", "Content Writing"], image: "/team/varsha.webp" },
-  { name: "Varun Suvarna", tags: ["Web Dev", "Design"], image: "/team/varun_suvarna.webp" },
-  { name: "Vivek Neeralagi", tags: ["Full Stack", "Design"], image: "/team/vivek_neeralagi.webp" },
-  { name: "Yash Laxman", tags: ["Software Dev", "Infrastructure"], image: "/team/yash_laxman.webp" },
-  { name: "Zaynah Anjum", tags: ["Web Dev", "Frontend"], image: "/team/zaynah_anjum.webp" },
+  {
+    name: "Siddu B G R",
+    tags: ["Full Stack", "Machine Learning"],
+    image: "/team/placeholder.png",
+  },
+  {
+    name: "Soniya Kolvekar",
+    tags: ["Full Stack", "Gen AI"],
+    image: "/team/soniya_kolvekar.webp",
+  },
+  {
+    name: "Sthuthi Poojary",
+    tags: ["Programming", "AI/ML"],
+    image: "/team/sthuthi_poojary.webp",
+  },
+  {
+    name: "Varsha",
+    tags: ["Web Dev", "Content Writing"],
+    image: "/team/varsha.webp",
+  },
+  {
+    name: "Varun Suvarna",
+    tags: ["Web Dev", "Design"],
+    image: "/team/varun_suvarna.webp",
+  },
+  {
+    name: "Vivek Neeralagi",
+    tags: ["Full Stack", "Design"],
+    image: "/team/vivek_neeralagi.webp",
+  },
+  {
+    name: "Yash Laxman",
+    tags: ["Software Dev", "Infrastructure"],
+    image: "/team/yash_laxman.webp",
+  },
+  {
+    name: "Zaynah Anjum",
+    tags: ["Web Dev", "Frontend"],
+    image: "/team/zaynah_anjum.webp",
+  },
 ];
 
 // Parameter for row height
-const rowPadding = "20px"; 
+const rowPadding = "20px";
 ---
 
-<section class="team-section relative w-full bg-white pb-12 md:pb-24 px-6 md:px-20">
-
-    <!-- Added: Subtle Grid Background -->
+<section
+  class="team-section relative w-full bg-white px-6 pb-12 md:px-20 md:pb-24"
+>
+  <!-- Added: Subtle Grid Background -->
   <div class="pointer-events-none absolute inset-0">
     <div
       class="absolute inset-0 opacity-[0.35]"
@@ -51,52 +152,71 @@ const rowPadding = "20px";
 
   <div class="container mx-auto px-4 md:px-6">
     <div class="mb-10 md:mb-16">
-      <div class="mb-4 flex items-center gap-2 font-mono text-[10px] md:text-xs font-bold text-primary">
+      <div
+        class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
+      >
         <span class="animate-pulse">●</span>
         <span>SYSTEM_TEAM_LOG</span>
       </div>
 
-      <div class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:pb-8 md:flex-row md:items-end">
+      <div
+        class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+      >
         <div>
-          <h2 class="text-4xl md:text-8xl font-black uppercase leading-none tracking-tight text-gray-900">
+          <h2
+            class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
+          >
             Community
-            <span class="block text-2xl md:text-6xl text-primary mt-1 md:mt-0">Members</span>
+            <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
+              >Members</span
+            >
           </h2>
         </div>
         <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-          <p class="font-bold uppercase tracking-widest text-gray-400 text-[10px] md:text-xs mb-1 md:mb-2">Community</p>
-          <p class="text-xs md:text-sm font-medium leading-relaxed text-gray-900">
+          <p
+            class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
+          >
+            Community
+          </p>
+          <p
+            class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
+          >
             People who build, mentor, and ship together.
           </p>
         </div>
       </div>
     </div>
-    
-    <div class="team-list">
-      {teamMembers.map((member) => (
-        <div class="team-item" style={`padding: ${rowPadding} 0;`}>
-          <div class="tags-column">
-            {member.tags.map(tag => (
-              <span class="member-tag">
-                {tag}
-              </span>
-            ))}
-          </div>
 
-          <!-- 
+    <div class="team-list">
+      {
+        teamMembers.map((member) => (
+          <div class="team-item" style={`padding: ${rowPadding} 0;`}>
+            <div class="tags-column">
+              {member.tags.map((tag) => (
+                <span class="member-tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* 
             IMAGE CONFIGURATION 
             - Centered in the row
             - Modify width/height here to change image size
-          -->
-          <div class="row-image-container">
-             <img src={member.image} alt={member.name} loading="lazy" decoding="async" />
-          </div>
+          */}
+            <div class="row-image-container">
+              <img
+                src={member.image}
+                alt={member.name}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
-          <div class="name-column">
-            <span class="member-name">{member.name}</span>
+            <div class="name-column">
+              <span class="member-name">{member.name}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
@@ -109,15 +229,15 @@ const rowPadding = "20px";
     Adjust these variables to control spacing and sizing 
   */
   :root {
-    --row-height: 150px; 
-    --name-indent: 26vw; 
-    
+    --row-height: 150px;
+    --name-indent: 26vw;
+
     /* Dynamic Image Dimensions */
     --image-width: 25vw;
     --image-height: 32vw;
-    
-    --tag-spacing: 24px; 
-    --name-spacing: 24px; 
+
+    --tag-spacing: 24px;
+    --name-spacing: 24px;
   }
 
   .team-section {
@@ -142,15 +262,15 @@ const rowPadding = "20px";
     border-bottom: 1px solid #000;
     cursor: default;
     position: relative;
-    min-height: 100px; 
+    min-height: 100px;
   }
 
   .tags-column {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    flex: 1.2; 
-    z-index: 2; 
+    flex: 1.2;
+    z-index: 2;
     padding-right: var(--tag-spacing);
   }
 
@@ -159,7 +279,9 @@ const rowPadding = "20px";
     border: 1px solid var(--primary);
     border-radius: 0; /* Sharp corners */
     font-size: 0.75rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -174,10 +296,10 @@ const rowPadding = "20px";
   }
 
   .name-column {
-    flex: 1; 
+    flex: 1;
     text-align: left;
-    padding-left: var(--name-indent); 
-    z-index: 2; 
+    padding-left: var(--name-indent);
+    z-index: 2;
   }
 
   .member-name {
@@ -200,15 +322,15 @@ const rowPadding = "20px";
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
     width: var(--image-width);
     height: var(--image-height);
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 1;
     opacity: 0;
-    display: none; 
+    display: none;
   }
-  
+
   .team-item:hover .row-image-container {
     opacity: 1;
     display: block;
@@ -219,14 +341,14 @@ const rowPadding = "20px";
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   }
 
   @media (max-width: 768px) {
     .team-item {
       display: grid;
       grid-template-columns: 80px 1fr;
-      grid-template-areas: 
+      grid-template-areas:
         "image name"
         "image tags";
       align-items: center;

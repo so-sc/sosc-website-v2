@@ -6,7 +6,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/ritham404.png",
     "year": "2024-25"
   },
@@ -17,7 +17,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/himanshukt03.png",
     "year": "2024-25"
   },
@@ -28,7 +28,7 @@
     "email": "pratheekshetty934@gmail.com",
     "linkedin": "www.linkedin.com/in/techshetty",
     "skills": ["Competitive Programming", "Backend Development", "JAVA"],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/techshetty.png",
     "year": "2024-25"
   },
@@ -39,18 +39,18 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/Shree-Pai.png",
     "year": "2024-25"
   },
   {
     "username": "askashika",
     "name": "Ashika",
-    "designation": "SOSWC Representative",
+    "designation": "Community Member",
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/askashika.png",
     "year": "2024-25"
   },
@@ -61,7 +61,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/aaronfernandes21.png",
     "year": "2024-25"
   },
@@ -72,7 +72,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/advaithsshetty.png",
     "year": "2024-25"
   },
@@ -83,7 +83,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "/github_avatar.svg",
     "year": "2024-25"
   },
@@ -94,7 +94,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/Apeksha-L-Naik.png",
     "year": "2024-25"
   },
@@ -105,7 +105,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/evitabarboza.png",
     "year": "2024-25"
   },
@@ -116,7 +116,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/neha-shetty-17.png",
     "year": "2024-25"
   },
@@ -127,7 +127,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/Nitheshalva.png",
     "year": "2024-25"
   },
@@ -138,7 +138,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/puvithk.png",
     "year": "2024-25"
   },
@@ -149,7 +149,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/msranjana.png",
     "year": "2024-25"
   },
@@ -160,7 +160,7 @@
     "email": "",
     "linkedin": "",
     "skills": [],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/rithuparnaks.png",
     "year": "2024-25"
   },
@@ -176,8 +176,52 @@
       "Photography",
       "web development(basics)"
     ],
-    "status": "alumni",
+    "status": "active",
     "image": "https://github.com/shreya-shen.png",
+    "year": "2024-25"
+  },
+  {
+    "username": "JustModo",
+    "name": "Yash Laxman",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/yash-l-051626287/",
+    "skills": [],
+    "status": "active",
+    "image": "/team-nobg/yash_laxman.jpg",
+    "year": "2024-25"
+  },
+   {
+    "username": "Koshin-S-Hegde",
+    "name": "Koshin S Hegde",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/koshin-hegde-96684425b/",
+    "skills": [],
+    "status": "active",
+    "image": "/team-nobg/koshin.jpg",
+    "year": "2024-25"
+  },
+   {
+    "username": "Manas-salian",
+    "name": "Manas S",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "http://www.linkedin.com/in/manassalian",
+    "skills": [],
+    "status": "active",
+    "image": "/team-nobg/manas_s.jpg",
+    "year": "2024-25"
+  },
+  {
+    "username": "Savinayrao123",
+    "name": "Savinay Rao",
+    "designation": "Community Member",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/savinay-rao-6a6bb7284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "skills": [],
+    "status": "active",
+    "image": "/team-nobg/savinay.jpg",
     "year": "2024-25"
   }
 ]

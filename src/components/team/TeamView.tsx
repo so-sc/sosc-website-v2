@@ -73,17 +73,21 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
   // Defaulting to "2024-25"
   const [selectedYear, setSelectedYear] = useState("2025-26");
 
-  const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Olde Teams"];
+  const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Older Communities"];
 
   const filteredMembers = team.filter((m) => {
-    if (selectedYear === "Olde Teams") return m.year === "-";
+    if (selectedYear === "Older Communities") return m.year === "-";
     return m.year.includes(selectedYear);
   });
 
   const coordinatorMembers = filteredMembers.filter(
     (m) => m.status === "coordinator",
   );
-  const alumniMembers = filteredMembers.filter((m) => m.status === "alumni");
+  const alumniMembers = filteredMembers.filter((m) => {
+    if (selectedYear === "Older Communities")
+      return m.status === "alumni" || m.status === "active";
+    return m.status === "alumni";
+  });
 
   const communityLeads = filteredMembers.filter(
     (m) => m.status === "active" && m.designation === "Community Lead",
@@ -98,6 +102,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
   const communityMembers = filteredMembers.filter(
     (m) =>
+      selectedYear !== "Older Communities" &&
       m.status === "active" &&
       m.designation !== "Community Lead" &&
       m.designation !== "Executive Member" &&
@@ -111,7 +116,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
       <div className="flex flex-wrap justify-center gap-4">
         {tabs.map((tab) => {
           const year =
-            tab === "Olde Teams" ? "Olde Teams" : tab.replace("Team ", "");
+            tab === "Older Communities" ? "Older Communities" : tab.replace("Team ", "");
           return (
             <button
               key={tab}
@@ -199,7 +204,10 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
         {alumniMembers.length > 0 && (
           <div>
             <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
-              <span className={themeGreen}>ALUMNI</span>
+              <span className={themeGreen}>
+                {selectedYear === "Older Communities" ? "OLDER" : "ALUMNI"}
+              </span>{" "}
+              {selectedYear === "Older Communities" ? "COMMUNITIES" : ""}
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {alumniMembers.map((member, idx) => (

@@ -188,10 +188,10 @@
     "linkedin": "https://www.linkedin.com/in/yash-l-051626287/",
     "skills": [],
     "status": "active",
-    "image": "/team-nobg/yash_laxman.jpg",
+    "image": "https://github.com/JustModo.png",
     "year": "2024-25"
   },
-   {
+  {
     "username": "Koshin-S-Hegde",
     "name": "Koshin S Hegde",
     "designation": "Community Member",
@@ -199,10 +199,10 @@
     "linkedin": "https://www.linkedin.com/in/koshin-hegde-96684425b/",
     "skills": [],
     "status": "active",
-    "image": "/team-nobg/koshin.jpg",
+    "image": "https://github.com/Koshin-S-Hegde.png",
     "year": "2024-25"
   },
-   {
+  {
     "username": "Manas-salian",
     "name": "Manas S",
     "designation": "Community Member",
@@ -210,7 +210,7 @@
     "linkedin": "http://www.linkedin.com/in/manassalian",
     "skills": [],
     "status": "active",
-    "image": "/team-nobg/manas_s.jpg",
+    "image": "https://github.com/Manas-salian.png",
     "year": "2024-25"
   },
   {
@@ -221,7 +221,7 @@
     "linkedin": "https://www.linkedin.com/in/savinay-rao-6a6bb7284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     "skills": [],
     "status": "active",
-    "image": "/team-nobg/savinay.jpg",
+    "image": "https://github.com/Savinayrao123.png",
     "year": "2024-25"
   }
 ]

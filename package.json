@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,astro,json}": [
-      "eslint --fix",
+      "biome check --write --no-errors-on-unmatched",
       "prettier --write"
     ]
   },

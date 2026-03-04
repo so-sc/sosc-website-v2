@@ -73,7 +73,12 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
   // Defaulting to "2024-25"
   const [selectedYear, setSelectedYear] = useState("2025-26");
 
-  const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Older Communities"];
+  const tabs = [
+    "Team 2025-26",
+    "Team 2024-25",
+    "Team 2023-24",
+    "Older Communities",
+  ];
 
   const filteredMembers = team.filter((m) => {
     if (selectedYear === "Older Communities") return m.year === "-";
@@ -116,7 +121,9 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
       <div className="flex flex-wrap justify-center gap-4">
         {tabs.map((tab) => {
           const year =
-            tab === "Older Communities" ? "Older Communities" : tab.replace("Team ", "");
+            tab === "Older Communities"
+              ? "Older Communities"
+              : tab.replace("Team ", "");
           return (
             <button
               key={tab}
@@ -180,7 +187,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
             <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
               <span className={themeGreen}>EXECUTIVE</span> MEMBER
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
               {executiveMembers.map((member, idx) => (
                 <MemberCard key={idx} member={member} />
               ))}
@@ -193,7 +200,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
             <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
               <span className={themeGreen}>COMMUNITY</span> MEMBER
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
               {communityMembers.map((member, idx) => (
                 <MemberCard key={idx} member={member} />
               ))}
@@ -209,7 +216,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
               </span>{" "}
               {selectedYear === "Older Communities" ? "COMMUNITIES" : ""}
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
               {alumniMembers.map((member, idx) => (
                 <MemberCard key={idx} member={member} />
               ))}

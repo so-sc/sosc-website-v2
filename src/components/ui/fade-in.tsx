@@ -1,8 +1,8 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,10 +40,10 @@ export default function FadeIn({
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     },
-    { scope: containerRef, dependencies: [delay, duration, yOffset] }
+    { scope: containerRef, dependencies: [delay, duration, yOffset] },
   );
 
   return (

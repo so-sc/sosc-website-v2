@@ -9,55 +9,55 @@ const isNoBg = image.includes("team-nobg");
 ---
 
 <div
-    class="group relative flex w-full flex-col items-center overflow-hidden rounded bg-[#F0FFF4] pb-6 text-center"
+  class="group relative flex w-full flex-col items-center overflow-hidden rounded bg-[#F0FFF4] pb-6 text-center"
 >
-    <!-- Social Icons -->
-    <div class="absolute top-4 right-4 z-50 flex flex-col gap-2">
-        {
-            username && (
-                <a
-                    href={`https://github.com/${username}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
-                >
-                    <Icon name="mdi:github" class="h-5 w-5" />
-                </a>
-            )
-        }
-        {
-            linkedin && (
-                <a
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
-                >
-                    <Icon name="mdi:linkedin" class="h-5 w-5" />
-                </a>
-            )
-        }
-    </div>
+  <!-- Social Icons -->
+  <div class="absolute top-4 right-4 z-50 flex flex-col gap-2">
+    {
+      username && (
+        <a
+          href={`https://github.com/${username}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+        >
+          <Icon name="mdi:github" class="h-5 w-5" />
+        </a>
+      )
+    }
+    {
+      linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+        >
+          <Icon name="mdi:linkedin" class="h-5 w-5" />
+        </a>
+      )
+    }
+  </div>
 
-    <!-- Image Container with Fixed Height -->
-    <div
-        class="relative mt-0 mb-0 flex h-64 w-full items-end justify-center overflow-hidden"
-    >
-        <Image
-            src={image}
-            alt={name}
-            class={isNoBg
-                ? "h-full w-full object-contain object-bottom mix-blend-multiply"
-                : "h-32 w-32 rounded-full object-cover mb-8 z-10"}
-            width={isNoBg ? 400 : 128}
-            height={isNoBg ? 400 : 128}
-        />
-    </div>
+  <!-- Image Container with Fixed Height -->
+  <div
+    class="relative mt-0 mb-0 flex h-64 w-full items-end justify-center overflow-hidden"
+  >
+    <Image
+      src={image}
+      alt={name}
+      class={isNoBg
+        ? "h-full w-full object-contain object-bottom mix-blend-multiply"
+        : "h-32 w-32 rounded-full object-cover mb-8 z-10"}
+      width={isNoBg ? 400 : 128}
+      height={isNoBg ? 400 : 128}
+    />
+  </div>
 
-    <div class={`z-20 w-full space-y-1 px-4 ${!isNoBg ? "-mt-6" : ""}`}>
-        <h3 class="text-lg font-bold tracking-wider text-[#3ce56e] uppercase">
-            {name}
-        </h3>
-        <p class="text-sm font-medium text-gray-600">{designation}</p>
-    </div>
+  <div class={`z-20 w-full space-y-1 px-4 ${!isNoBg ? "-mt-6" : ""}`}>
+    <h3 class="text-lg font-bold tracking-wider text-[#3ce56e] uppercase">
+      {name}
+    </h3>
+    <p class="text-sm font-medium text-gray-600">{designation}</p>
+  </div>
 </div>

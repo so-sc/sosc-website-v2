@@ -38,8 +38,11 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: ["gsap", "@gsap/react"],
+    server: {
+      allowedHosts: [
+        "untrekked-shalanda-agamically.ngrok-free.dev",
+        ".ngrok-free.dev",
+      ],
     },
   },
   integrations: [

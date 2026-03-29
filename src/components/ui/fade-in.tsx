@@ -1,11 +1,7 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from "react";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -22,33 +18,33 @@ export default function FadeIn({
 }: FadeInProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-      gsap.fromTo(
-        containerRef.current,
-        { opacity: 0, y: yOffset },
-        {
-          opacity: 1,
-          y: 0,
-          duration: duration,
+    let ctx: gsap.Context | undefined;
+
+    (async () => {
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(containerRef.current!, {
+          opacity: 0,
+          y: yOffset,
+          duration,
           ease: "power2.out",
-          delay: delay,
+          delay,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
-        },
-      );
-    },
-    { scope: containerRef, dependencies: [delay, duration, yOffset] },
-  );
+        });
+      });
+    })();
 
-  return (
-    <div ref={containerRef} style={{ opacity: 0 }}>
-      {children}
-    </div>
-  );
+    return () => ctx?.revert();
+  }, [delay, duration, yOffset]);
+
+  return <div ref={containerRef}>{children}</div>;
 }

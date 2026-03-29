@@ -1,12 +1,7 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef } from "react";
-
-// Ensure plugins are registered
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from "react";
 
 interface TextBlockAnimationProps {
   children: React.ReactNode;
@@ -20,58 +15,61 @@ export default function TextBlockAnimation({
   children,
   animateOnScroll = true,
   delay = 0,
-  blockColor = "#0ade4a", // Default to the site's green
+  blockColor = "#0ade4a",
   duration = 0.6,
 }: TextBlockAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (!containerRef.current || !blockRef.current || !contentRef.current)
-        return;
+  useEffect(() => {
+    if (!containerRef.current || !blockRef.current || !contentRef.current)
+      return;
 
-      // Initial State
-      gsap.set(contentRef.current, { opacity: 0 });
-      gsap.set(blockRef.current, { scaleX: 0, transformOrigin: "left center" });
+    let ctx: gsap.Context | undefined;
 
-      // Create Timeline
-      const tl = gsap.timeline({
-        defaults: { ease: "expo.inOut" },
-        scrollTrigger: animateOnScroll
-          ? {
-              trigger: containerRef.current,
-              start: "top 85%", // Triggers when top of element hits 85% viewport height
-              toggleActions: "play none none reverse",
-            }
-          : null,
-        delay: delay,
-      });
+    (async () => {
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
 
-      // Animation Sequence
-      // 1. Block scales IN from Left
-      tl.to(blockRef.current, {
-        scaleX: 1,
-        duration: duration,
-        transformOrigin: "left center",
-      })
-        // 2. Reveal Content (Instant)
-        .set(contentRef.current, {
-          opacity: 1,
-        })
-        // 3. Block scales OUT to Right
-        .to(blockRef.current, {
+      ctx = gsap.context(() => {
+        // Initial State
+        gsap.set(contentRef.current, { opacity: 0 });
+        gsap.set(blockRef.current, {
           scaleX: 0,
-          duration: duration,
-          transformOrigin: "right center",
+          transformOrigin: "left center",
         });
-    },
-    {
-      scope: containerRef,
-      dependencies: [animateOnScroll, delay, blockColor, duration],
-    },
-  );
+
+        // Create Timeline
+        const tl = gsap.timeline({
+          defaults: { ease: "expo.inOut" },
+          scrollTrigger: animateOnScroll
+            ? {
+                trigger: containerRef.current,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              }
+            : undefined,
+          delay,
+        });
+
+        // Animation Sequence
+        tl.to(blockRef.current, {
+          scaleX: 1,
+          duration,
+          transformOrigin: "left center",
+        })
+          .set(contentRef.current, { opacity: 1 })
+          .to(blockRef.current, {
+            scaleX: 0,
+            duration,
+            transformOrigin: "right center",
+          });
+      });
+    })();
+
+    return () => ctx?.revert();
+  }, [animateOnScroll, delay, blockColor, duration]);
 
   return (
     <div
@@ -79,9 +77,7 @@ export default function TextBlockAnimation({
       className="relative inline-block overflow-hidden"
       style={{ verticalAlign: "bottom" }}
     >
-      <div ref={contentRef} style={{ opacity: 0 }}>
-        {children}
-      </div>
+      <div ref={contentRef}>{children}</div>
       <div
         ref={blockRef}
         style={{

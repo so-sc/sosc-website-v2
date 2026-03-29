@@ -38,12 +38,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: [
-        "untrekked-shalanda-agamically.ngrok-free.dev",
-        ".ngrok-free.dev",
-      ],
-    },
   },
   integrations: [
     react(),

@@ -4,11 +4,12 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 interface TextBlockAnimationProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
   blockColor?: string;
   duration?: number;
+  [key: string]: any;
 }
 
 export default function TextBlockAnimation({
@@ -25,6 +26,7 @@ export default function TextBlockAnimation({
   useEffect(() => {
     if (!containerRef.current || !blockRef.current || !contentRef.current)
       return;
+    if (typeof window === "undefined") return;
 
     let ctx: gsap.Context | undefined;
 

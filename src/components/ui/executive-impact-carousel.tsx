@@ -7,6 +7,7 @@ import { type TeamMember } from "@/data/team/type";
 
 interface ExecutiveImpactCarouselProps {
   members: TeamMember[];
+  [key: string]: any;
 }
 
 const styles = `
@@ -129,7 +130,6 @@ const styles = `
 export default function ExecutiveImpactCarousel({
   members,
 }: ExecutiveImpactCarouselProps) {
-  // Distribute into 3 columns for all viewports (Mobile and Desktop)
   const columnCount = 3;
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -139,8 +139,6 @@ export default function ExecutiveImpactCarousel({
   const col2Members = safeMembers.filter((_, i) => i % columnCount === 1);
   const col3Members = safeMembers.filter((_, i) => i % columnCount === 2);
 
-  // Strategy: [Set1-2 (Buffer), Set3 (Visible), Set4 (Buffer)]
-  // 4x multiplication provides the perfect buffer for masonry stagger
   const multiply = (arr: TeamMember[]) => [...arr, ...arr, ...arr, ...arr];
 
   const col1 = multiply(col1Members);
@@ -149,6 +147,7 @@ export default function ExecutiveImpactCarousel({
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;
+    if (typeof window === "undefined") return;
 
     let ctx: gsap.Context | undefined;
 
@@ -157,7 +156,6 @@ export default function ExecutiveImpactCarousel({
       gsap.registerPlugin(ScrollTrigger);
 
       ctx = gsap.context(() => {
-        // Entrance: slide up and fade in
         gsap.from(".col-scroll__box", {
           y: 100,
           opacity: 0,
@@ -168,32 +166,26 @@ export default function ExecutiveImpactCarousel({
         });
 
         const sets = 4;
-        const setHeight = 100 / sets; // 25% per set
-        const itemsPerSet = 2; // Roughly (6 members / 3 cols)
-        const itemHeight = setHeight / itemsPerSet; // 12.5%
-        const staggerHeight = itemHeight * 0.75; // 75% of a card height for better visibility
+        const setHeight = 100 / sets;
+        const itemsPerSet = 2;
+        const itemHeight = setHeight / itemsPerSet;
+        const staggerHeight = itemHeight * 0.75;
 
-        // -- INITIAL POSITIONS --
-        // Start at Set 2 (25%) so we have Set 1 buffer above.
         gsap.set(".col-1 .col-scroll__list, .col-3 .col-scroll__list", {
           yPercent: -setHeight,
         });
 
-        // Col 2 Stagger: Shift down by exactly half a card
         gsap.set(".col-2 .col-scroll__list", {
           yPercent: -setHeight + staggerHeight,
         });
 
-        // -- SCROLL ANIMATIONS --
-
-        // Move UP
         const upTargets = [
           ".col-1 .col-scroll__list",
           ".col-3 .col-scroll__list",
         ];
 
         gsap.to(upTargets, {
-          yPercent: -2 * setHeight, // Move through exactly one set
+          yPercent: -2 * setHeight,
           ease: "none",
           scrollTrigger: {
             trigger: containerRef.current,
@@ -203,9 +195,8 @@ export default function ExecutiveImpactCarousel({
           },
         });
 
-        // Move DOWN (Staggered Column)
         gsap.to(".col-2 .col-scroll__list", {
-          yPercent: -setHeight + staggerHeight + setHeight, // End exactly one set later
+          yPercent: -setHeight + staggerHeight + setHeight,
           ease: "none",
           scrollTrigger: {
             trigger: containerRef.current,
@@ -234,7 +225,7 @@ export default function ExecutiveImpactCarousel({
           <div className="col-scroll__box col-1">
             <div className="col-scroll__list">
               {col1.map((member, i) => (
-                <MemberCard key={`c1-${member.id}-${i}`} member={member} />
+                <MemberCard key={`col1-${member.id}-${i}`} member={member} />
               ))}
             </div>
           </div>
@@ -243,7 +234,7 @@ export default function ExecutiveImpactCarousel({
           <div className="col-scroll__box col-2">
             <div className="col-scroll__list">
               {col2.map((member, i) => (
-                <MemberCard key={`c2-${member.id}-${i}`} member={member} />
+                <MemberCard key={`col2-${member.id}-${i}`} member={member} />
               ))}
             </div>
           </div>
@@ -253,7 +244,7 @@ export default function ExecutiveImpactCarousel({
             <div className="col-scroll__box col-3">
               <div className="col-scroll__list">
                 {col3.map((member, i) => (
-                  <MemberCard key={`c3-${member.id}-${i}`} member={member} />
+                  <MemberCard key={`col3-${member.id}-${i}`} member={member} />
                 ))}
               </div>
             </div>

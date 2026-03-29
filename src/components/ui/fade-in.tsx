@@ -4,10 +4,11 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 interface FadeInProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   delay?: number;
   duration?: number;
   yOffset?: number;
+  [key: string]: any;
 }
 
 export default function FadeIn({
@@ -20,6 +21,7 @@ export default function FadeIn({
 
   useEffect(() => {
     if (!containerRef.current) return;
+    if (typeof window === "undefined") return;
 
     let ctx: gsap.Context | undefined;
 

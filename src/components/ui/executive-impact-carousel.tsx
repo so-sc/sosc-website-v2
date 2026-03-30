@@ -1,6 +1,5 @@
 "use client";
 
-import gsap from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
 
 import { type TeamMember } from "@/data/team/type";
@@ -149,9 +148,11 @@ export default function ExecutiveImpactCarousel({
     if (!containerRef.current) return;
     if (typeof window === "undefined") return;
 
-    let ctx: gsap.Context | undefined;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let ctx: any;
 
     (async () => {
+      const gsap = (await import("gsap")).default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
 

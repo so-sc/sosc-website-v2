@@ -173,6 +173,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["*.astro", "**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off"
+          }
+        }
+      }
     }
   ],
   "assist": {

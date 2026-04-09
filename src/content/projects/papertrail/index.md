@@ -1,7 +1,7 @@
 ---
-title: D.A.S.H
+title: Papertrail
 description: A self-hosted, privacy-first documentation platform for generating meeting minutes, captions, and letters from audio or video content.
-cover: ./dash.webp
+cover: ./papertrail.webp
 date: 2026-01-15
 techStack:
   - Next.js
@@ -10,9 +10,10 @@ techStack:
   - Python
   - Whisper
   - FFmpeg
+  - Docker
 maintainers:
   - HithaBadikillaya
-status: in-progress
+status: completed
 category: Documentation
 tags:
   - documentation
@@ -21,15 +22,16 @@ tags:
   - local-first
   - student-tools
   - open-source
-github: https://github.com/HithaBadikillaya/D.A.S.H
-documentation: https://github.com/HithaBadikillaya/D.A.S.H#readme
+github: https://github.com/HithaBadikillaya/papertrail
+documentation: https://github.com/HithaBadikillaya/papertrail#readme
 community: true
 ---
 
-# D.A.S.H
+# Papertrail
 
-**D.A.S.H (Document And Social Hub)** is a **self-hosted, privacy-first documentation platform** designed to generate structured meeting minutes, social media captions, and formal letters from audio or video content.  
-Built with a **local-first philosophy**, D.A.S.H ensures temporary processing, template-driven workflows, and complete control over sensitive data.
+**Papertrail** is a tool that helps you turn audio, video, and notes into professional documents. You can use it to create social media captions, formal letters, and meeting summaries quickly and easily.
+
+The project is designed to be private and straightforward, working directly in your browser without requiring you to create an account or store your data permanently.
 
 Upload recordings from meetings, podcasts, or spoken content and convert them into clean, usable documentation without relying on third-party cloud storage.
 
@@ -49,7 +51,7 @@ Upload recordings from meetings, podcasts, or spoken content and convert them in
 
 ## Tech Stack
 
-D.A.S.H is built using modern web and AI tooling:
+Papertrail is built using web and AI tooling:
 
 - **Next.js** – Frontend framework for a fast and responsive UI
 - **Tailwind CSS** – Utility-first styling for clean and consistent design
@@ -72,7 +74,7 @@ D.A.S.H is built using modern web and AI tooling:
 
 ## Open Source & Community
 
-D.A.S.H is an **open-source project** developed under the **Sahyadri Open Source Community (SOSC)**.  
+Papertrail is an **open-source project** developed under the **Sahyadri Open Source Community (SOSC)**.  
 We welcome contributors, learners, and open-source enthusiasts to explore and improve the project.
 
 ---

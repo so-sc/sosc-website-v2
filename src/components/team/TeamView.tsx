@@ -138,31 +138,33 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
         )}
 
         {(coordinatorMembers.length > 0 || communityLeads.length > 0) && (
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-2 md:gap-12">
+          <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 md:grid md:grid-cols-2 md:gap-8 lg:gap-16">
             {coordinatorMembers.length > 0 && (
-              <div>
-                <h2 className="mb-4 text-center text-sm font-black tracking-wide uppercase md:mb-8 md:text-3xl">
-                  <span className={themeGreen}>CO-ORDINATOR</span> FACULTY
-                </h2>
-                <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+              <div className="flex flex-col items-center">
+                <div className="mb-8 flex h-16 items-end justify-center sm:h-20 md:h-24 lg:h-28">
+                  <h2 className="text-center text-2xl font-extrabold tracking-wide uppercase sm:text-3xl lg:text-4xl">
+                    <span className={themeGreen}>CO-ORDINATOR</span>
+                    <br className="hidden md:block" /> FACULTY
+                  </h2>
+                </div>
+                <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
                   {coordinatorMembers.map((member) => (
-                    <div key={member.username} className="w-full md:max-w-sm">
-                      <MemberCard member={member} />
-                    </div>
+                    <MemberCard key={member.username} member={member} />
                   ))}
                 </div>
               </div>
             )}
             {communityLeads.length > 0 && (
-              <div>
-                <h2 className="mb-4 text-center text-sm font-black tracking-wide uppercase md:mb-8 md:text-3xl">
-                  <span className={themeGreen}>COMMUNITY</span> LEAD
-                </h2>
-                <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+              <div className="flex flex-col items-center">
+                <div className="mb-8 flex h-16 items-end justify-center sm:h-20 md:h-24 lg:h-28">
+                  <h2 className="text-center text-2xl font-extrabold tracking-wide uppercase sm:text-3xl lg:text-4xl">
+                    <span className={themeGreen}>COMMUNITY</span>
+                    <br className="hidden md:block" /> LEAD
+                  </h2>
+                </div>
+                <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
                   {communityLeads.map((member) => (
-                    <div key={member.username} className="w-full md:max-w-sm">
-                      <MemberCard member={member} />
-                    </div>
+                    <MemberCard key={member.username} member={member} />
                   ))}
                 </div>
               </div>

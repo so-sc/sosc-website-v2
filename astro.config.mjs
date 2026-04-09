@@ -3,7 +3,6 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
 import icon from "astro-icon";
 
 const rehypeLazyImages = () => {
@@ -38,9 +37,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: ['untrekked-shalanda-agamically.ngrok-free.dev'],
-    },
   },
   integrations: [
     react(),

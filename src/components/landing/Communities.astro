@@ -60,7 +60,11 @@ import communities from "@/data/communities.json";
                 <img
                   src={c.logo}
                   alt={`${c.name} Logo`}
-                  class="h-auto w-full object-contain"
+                  class={
+                    c.id === "soswc"
+                      ? "mx-auto h-auto w-4/5 object-contain md:w-3/4"
+                      : "h-auto w-full object-contain"
+                  }
                 />
               </div>
 

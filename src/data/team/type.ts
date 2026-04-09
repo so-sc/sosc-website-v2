@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const teamMemberSchema = z.object({
+  id: z.string().optional(),
   username: z.string(),
   name: z.string(),
   designation: z.string().optional(),

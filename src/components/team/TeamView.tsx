@@ -1,35 +1,24 @@
 import { Github, Linkedin } from "lucide-react";
 import React, { useState } from "react";
+import { type TeamMember } from "@/data/team/type";
 import { cn } from "@/lib/utils";
-
-interface TeamMember {
-  username?: string;
-  name: string;
-  designation?: string;
-  email?: string | null;
-  linkedin?: string | null;
-  skills?: string[];
-  status: "coordinator" | "alumni" | "active";
-  image: string;
-  year: string;
-}
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
   const { image, name, designation, username, linkedin } = member;
   const isNoBg = image.includes("team-nobg");
 
   return (
-    <div className="group relative flex aspect-square w-full flex-col items-center justify-between overflow-hidden rounded bg-[#F0FFF4] pb-6 text-center transition-all hover:shadow-lg">
+    <div className="group relative flex aspect-[3/4] w-full flex-col items-center justify-between overflow-hidden rounded-none bg-[#F0FFF4] pb-4 text-center transition-all md:aspect-[4/5] md:pb-6">
       {/* Social Icons */}
-      <div className="absolute top-4 right-4 z-50 flex flex-col gap-2">
+      <div className="absolute top-2 right-2 z-50 flex flex-col gap-1.5 md:top-4 md:right-4 md:gap-2">
         {username && (
           <a
             href={`https://github.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
           >
-            <Github className="h-5 w-5" />
+            <Github className="h-4 w-4 md:h-5 md:w-5" />
           </a>
         )}
         {linkedin && (
@@ -37,31 +26,30 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
             href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e]"
+            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-4 w-4 md:h-5 md:w-5" />
           </a>
         )}
       </div>
 
       {/* Image Container */}
-      <div className="relative flex w-full flex-1 items-end justify-center overflow-hidden">
+      <div className="relative flex h-[75%] w-full items-end justify-center overflow-hidden">
         <img
           src={image}
           alt={name}
           className={cn(
-            isNoBg
-              ? "h-full w-full object-contain object-bottom mix-blend-multiply"
-              : "z-10 mb-4 h-32 w-32 rounded-full object-cover",
+            "h-full w-full rounded-none object-cover",
+            isNoBg && "object-contain object-bottom mix-blend-multiply",
           )}
         />
       </div>
 
-      <div className={cn("z-20 w-full space-y-1 px-4", !isNoBg && "-mt-4")}>
-        <h3 className="truncate text-lg font-bold tracking-wider text-[#3ce56e] uppercase">
+      <div className="z-20 flex w-full flex-1 flex-col justify-center space-y-0.5 px-4 pt-2 md:space-y-1">
+        <h3 className="text-sm font-bold text-[#3ce56e] md:text-base">
           {name}
         </h3>
-        <p className="truncate text-sm font-medium text-gray-600">
+        <p className="text-[10px] font-medium text-gray-600 md:text-xs">
           {designation}
         </p>
       </div>
@@ -118,7 +106,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
   return (
     <div className="space-y-12">
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center md:gap-4">
         {tabs.map((tab) => {
           const year =
             tab === "Older Communities"
@@ -129,7 +117,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
               key={tab}
               onClick={() => setSelectedYear(year)}
               className={cn(
-                "cursor-pointer rounded-full border-2 px-6 py-2 font-bold transition-all",
+                "cursor-pointer rounded-none border-2 px-3 py-2 text-xs font-bold transition-all md:px-6 md:text-base",
                 selectedYear === year
                   ? "border-[#3ce56e] bg-[#3ce56e] text-white"
                   : "border-gray-300 bg-transparent text-gray-600 hover:border-[#3ce56e] hover:text-[#3ce56e]",
@@ -160,8 +148,8 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
                   </h2>
                 </div>
                 <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
-                  {coordinatorMembers.map((member, idx) => (
-                    <MemberCard key={idx} member={member} />
+                  {coordinatorMembers.map((member) => (
+                    <MemberCard key={member.username} member={member} />
                   ))}
                 </div>
               </div>
@@ -175,8 +163,8 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
                   </h2>
                 </div>
                 <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
-                  {communityLeads.map((member, idx) => (
-                    <MemberCard key={idx} member={member} />
+                  {communityLeads.map((member) => (
+                    <MemberCard key={member.username} member={member} />
                   ))}
                 </div>
               </div>
@@ -186,12 +174,12 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
         {executiveMembers.length > 0 && (
           <div>
-            <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
+            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
               <span className={themeGreen}>EXECUTIVE</span> MEMBER
             </h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {executiveMembers.map((member, idx) => (
-                <MemberCard key={idx} member={member} />
+              {executiveMembers.map((member) => (
+                <MemberCard key={member.username} member={member} />
               ))}
             </div>
           </div>
@@ -199,12 +187,12 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
         {communityMembers.length > 0 && (
           <div>
-            <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
+            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
               <span className={themeGreen}>COMMUNITY</span> MEMBER
             </h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {communityMembers.map((member, idx) => (
-                <MemberCard key={idx} member={member} />
+              {communityMembers.map((member) => (
+                <MemberCard key={member.username} member={member} />
               ))}
             </div>
           </div>
@@ -212,15 +200,15 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
         {alumniMembers.length > 0 && (
           <div>
-            <h2 className="mb-8 text-3xl font-extrabold tracking-wide uppercase">
+            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
               <span className={themeGreen}>
                 {selectedYear === "Older Communities" ? "OLDER" : "ALUMNI"}
               </span>{" "}
               {selectedYear === "Older Communities" ? "COMMUNITIES" : ""}
             </h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {alumniMembers.map((member, idx) => (
-                <MemberCard key={idx} member={member} />
+              {alumniMembers.map((member) => (
+                <MemberCard key={member.username} member={member} />
               ))}
             </div>
           </div>

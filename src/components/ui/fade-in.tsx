@@ -1,19 +1,13 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useEffect, useRef } from "react";
 
 interface FadeInProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   delay?: number;
   duration?: number;
   yOffset?: number;
+  [key: string]: any;
 }
 
 export default function FadeIn({
@@ -24,33 +18,36 @@ export default function FadeIn({
 }: FadeInProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
+    if (typeof window === "undefined") return;
 
-      gsap.fromTo(
-        containerRef.current,
-        { opacity: 0, y: yOffset },
-        {
-          opacity: 1,
-          y: 0,
-          duration: duration,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let ctx: any;
+
+    (async () => {
+      const gsap = (await import("gsap")).default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(containerRef.current!, {
+          opacity: 0,
+          y: yOffset,
+          duration,
           ease: "power2.out",
-          delay: delay,
+          delay,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
-        },
-      );
-    },
-    { scope: containerRef, dependencies: [delay, duration, yOffset] },
-  );
+        });
+      });
+    })();
 
-  return (
-    <div ref={containerRef} style={{ opacity: 0 }}>
-      {children}
-    </div>
-  );
+    return () => ctx?.revert();
+  }, [delay, duration, yOffset]);
+
+  return <div ref={containerRef}>{children}</div>;
 }

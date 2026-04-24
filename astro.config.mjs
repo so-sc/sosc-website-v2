@@ -1,16 +1,13 @@
-// @ts-check
-
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
 import icon from "astro-icon";
 
 const rehypeLazyImages = () => {
-  return (/** @type {any} */ tree) => {
-    const visit = (/** @type {any} */ node) => {
+  return (tree) => {
+    const visit = (node) => {
       if (!node || typeof node !== "object") return;
       if (Array.isArray(node)) {
         node.forEach(visit);
@@ -19,8 +16,6 @@ const rehypeLazyImages = () => {
 
       if (node.type === "element" && node.tagName === "img") {
         node.properties ??= {};
-
-        // Respect explicitly-set attributes
         node.properties.loading ??= "lazy";
         node.properties.decoding ??= "async";
       }
@@ -32,7 +27,6 @@ const rehypeLazyImages = () => {
   };
 };
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://www.sosc.org.in",
   prefetch: {

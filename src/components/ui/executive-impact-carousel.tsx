@@ -157,15 +157,6 @@ export default function ExecutiveImpactCarousel({
       gsap.registerPlugin(ScrollTrigger);
 
       ctx = gsap.context(() => {
-        gsap.from(".col-scroll__box", {
-          y: 100,
-          opacity: 0,
-          duration: 1.5,
-          stagger: 0.2,
-          ease: "power3.out",
-          delay: 0.2,
-        });
-
         const sets = 4;
         const setHeight = 100 / sets;
         const itemsPerSet = 2;

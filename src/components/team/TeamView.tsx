@@ -8,7 +8,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
   const isNoBg = image.includes("team-nobg");
 
   return (
-    <div className="group relative flex aspect-[3/4] w-full flex-col items-center justify-between overflow-hidden rounded-none bg-[#F0FFF4] pb-4 text-center transition-all md:aspect-[4/5] md:pb-6">
+    <div className="group relative flex aspect-[3/4] w-full flex-col items-center justify-between overflow-hidden rounded-none border border-gray-200 bg-white pb-4 text-center transition-all md:aspect-[4/5] md:pb-6">
       {/* Social Icons */}
       <div className="absolute top-2 right-2 z-50 flex flex-col gap-1.5 md:top-4 md:right-4 md:gap-2">
         {username && (
@@ -61,15 +61,10 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
   // Defaulting to "2024-25"
   const [selectedYear, setSelectedYear] = useState("2025-26");
 
-  const tabs = [
-    "Team 2025-26",
-    "Team 2024-25",
-    "Team 2023-24",
-    "Older Communities",
-  ];
+  const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Older Alumni"];
 
   const filteredMembers = team.filter((m) => {
-    if (selectedYear === "Older Communities") return m.year === "-";
+    if (selectedYear === "Older Alumni") return m.year === "-";
     return m.year.includes(selectedYear);
   });
 
@@ -77,7 +72,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
     (m) => m.status === "coordinator",
   );
   const alumniMembers = filteredMembers.filter((m) => {
-    if (selectedYear === "Older Communities")
+    if (selectedYear === "Older Alumni")
       return m.status === "alumni" || m.status === "active";
     return m.status === "alumni";
   });
@@ -95,7 +90,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
 
   const communityMembers = filteredMembers.filter(
     (m) =>
-      selectedYear !== "Older Communities" &&
+      selectedYear !== "Older Alumni" &&
       m.status === "active" &&
       m.designation !== "Community Lead" &&
       m.designation !== "Executive Member" &&
@@ -109,9 +104,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
       <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center md:gap-4">
         {tabs.map((tab) => {
           const year =
-            tab === "Older Communities"
-              ? "Older Communities"
-              : tab.replace("Team ", "");
+            tab === "Older Alumni" ? "Older Alumni" : tab.replace("Team ", "");
           return (
             <button
               key={tab}
@@ -202,9 +195,9 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
           <div>
             <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
               <span className={themeGreen}>
-                {selectedYear === "Older Communities" ? "OLDER" : "ALUMNI"}
+                {selectedYear === "Older Alumni" ? "OLDER" : "ALUMNI"}
               </span>{" "}
-              {selectedYear === "Older Communities" ? "COMMUNITIES" : ""}
+              {selectedYear === "Older Alumni" ? "ALUMNI" : ""}
             </h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
               {alumniMembers.map((member) => (

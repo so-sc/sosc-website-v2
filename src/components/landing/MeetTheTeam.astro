@@ -139,18 +139,9 @@ const rowPadding = "20px";
 ---
 
 <section
-  class="team-section relative w-full bg-white px-6 pb-12 md:px-20 md:pb-24"
+  class="team-section relative w-full bg-white px-6 py-16 md:px-20 md:py-24"
 >
-  <!-- Added: Subtle Grid Background -->
-  <div class="pointer-events-none absolute inset-0">
-    <div
-      class="absolute inset-0 opacity-[0.35]"
-      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
-    >
-    </div>
-  </div>
-
-  <div class="container mx-auto px-4 md:px-6">
+  <div class="container mx-auto px-0">
     <div class="mb-10 md:mb-16">
       <div
         class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
@@ -243,6 +234,7 @@ const rowPadding = "20px";
   .team-section {
     background-color: #ffffff;
     min-height: 100vh;
+    z-index: 20;
   }
 
   .section-title {
@@ -326,7 +318,7 @@ const rowPadding = "20px";
     width: var(--image-width);
     height: var(--image-height);
     pointer-events: none;
-    z-index: 1;
+    z-index: 60;
     opacity: 0;
     display: none;
   }

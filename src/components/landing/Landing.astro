@@ -7,7 +7,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
 <div class="relative w-full">
   <div
     id="landing-spacer"
-    class="pointer-events-none -mb-[350vh] h-[350vh] w-full"
+    class="pointer-events-none mb-[-350vh] h-[350vh] w-full"
   >
   </div>
 
@@ -19,10 +19,10 @@ import HeroImg from "../../assets/sosc_hero.svg";
 
     <div
       id="hero-img-container"
-      class="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+      class="pointer-events-none absolute inset-x-0 top-0 flex h-[70vh] items-center justify-center select-none"
     >
       <div
-        class="absolute scale-[0.4] sm:scale-[0.6] md:scale-[0.8] lg:top-1/7 xl:scale-100 2xl:scale-100"
+        class="absolute scale-[0.4] sm:scale-[0.6] md:scale-[0.8] xl:scale-100 2xl:scale-100"
       >
         <div
           class="text-foreground/40 absolute -right-8 -bottom-16 flex flex-col items-end font-mono text-sm"
@@ -260,9 +260,32 @@ import HeroImg from "../../assets/sosc_hero.svg";
     }
 
     let cleanup: () => void;
-    document.addEventListener("astro:page-load", () => {
+    let ignoreNextAstroLoad = false;
+
+    const runInit = () => {
       if (cleanup) cleanup();
       cleanup = init() as () => void;
+    };
+
+    const runInitOnce = () => {
+      runInit();
+      ignoreNextAstroLoad = true;
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", runInitOnce, {
+        once: true,
+      });
+    } else {
+      runInitOnce();
+    }
+
+    document.addEventListener("astro:page-load", () => {
+      if (ignoreNextAstroLoad) {
+        ignoreNextAstroLoad = false;
+        return;
+      }
+      runInit();
     });
   </script>
 

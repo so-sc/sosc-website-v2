@@ -5,31 +5,23 @@ import { ArrowRight } from "@lucide/astro";
 <div class="relative z-0 h-[350vh] w-full bg-white">
   <section
     id="about"
-    class="sticky top-0 flex min-h-screen w-full flex-col justify-center overflow-hidden bg-white px-6 py-12 md:px-20 md:py-24"
+    class="sticky top-0 flex min-h-screen w-full flex-col justify-center overflow-hidden bg-white px-6 py-16 md:px-20 md:py-24"
   >
     <script>
       import "@lottiefiles/dotlottie-wc";
     </script>
-    <!-- Background accents (soft grid + glow) -->
+    <!-- Background accents (glow only) -->
     <div class="pointer-events-none absolute inset-0">
       <div
-        class="absolute inset-0 opacity-[0.35]"
-        style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px); background-size: 56px 56px;"
+        class="bg-primary/20 absolute top-10 -right-40 h-130 w-130 rounded-full blur-3xl"
       >
       </div>
       <div
-        class="bg-primary/20 absolute top-10 -right-40 h-[520px] w-[520px] rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="bg-primary/10 absolute bottom-0 -left-24 h-[340px] w-[340px] rounded-full blur-3xl"
+        class="bg-primary/10 absolute bottom-0 -left-24 h-85 w-85 rounded-full blur-3xl"
       >
       </div>
     </div>
-    <div
-      id="about-content"
-      class="relative z-10 container mx-auto px-4 md:px-6"
-    >
+    <div id="about-content" class="relative z-10 container mx-auto px-0">
       <!-- Header Section -->
       <div class="mb-10 md:mb-16">
         <div
@@ -107,9 +99,7 @@ import { ArrowRight } from "@lucide/astro";
             class="from-primary/20 absolute -inset-6 rounded-[2.5rem] bg-linear-to-br via-transparent to-transparent blur-2xl"
           >
           </div>
-          <div
-            class="relative mx-auto aspect-4/3 w-full max-w-[520px] scale-[1.4]"
-          >
+          <div class="relative mx-auto aspect-4/3 w-full max-w-130 scale-[1.4]">
             <dotlottie-wc
               src="/About Us Team.json"
               autoplay

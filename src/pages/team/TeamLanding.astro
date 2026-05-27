@@ -1,0 +1,128 @@
+---
+import { type TeamMember } from "@/data/team/type";
+import ExecutiveImpactCarousel from "../../components/ui/executive-impact-carousel";
+import FadeIn from "../../components/ui/fade-in";
+import TextBlockAnimation from "../../components/ui/text-block-animation";
+
+const members: TeamMember[] = [
+  {
+    id: "1",
+    username: "varsha-kotegar",
+    name: "Varsha",
+    designation: "Executive Member",
+    image: "/team/varsha.webp",
+    status: "active",
+    year: "2025-26",
+  },
+  {
+    id: "2",
+    username: "Manas-salian",
+    name: "Manas S",
+    designation: "Community Lead",
+    image: "/team/manas_s.webp",
+    status: "active",
+    year: "2025-26",
+  },
+  {
+    id: "3",
+    username: "HithaBadikillaya",
+    name: "Hitha Badikillaya S U",
+    designation: "Executive Member",
+    image: "/team/hitha_badikillaya_s_u.webp",
+    status: "active",
+    year: "2025-26",
+  },
+  {
+    id: "4",
+    username: "VivekNeer",
+    name: "Vivek Neeralagi",
+    designation: "Executive Member",
+    image: "/team/vivek_neeralagi.webp",
+    status: "active",
+    year: "2025-26",
+  },
+  {
+    id: "5",
+    username: "mustafa",
+    name: "Dr. Mustafa Basthikodi",
+    designation: "Faculty Co-ordinator",
+    image: "/team/mustafa_asthikodi.jpg",
+    status: "coordinator",
+    year: "2025-26",
+  },
+  {
+    id: "6",
+    username: "JustModo",
+    name: "Yash Laxman",
+    designation: "Executive Member",
+    image: "/team/yash_laxman.webp",
+    status: "active",
+    year: "2025-26",
+  },
+];
+---
+
+<section
+  class="relative w-full overflow-hidden bg-[#E6FDE2] md:h-screen md:max-h-[850px]"
+>
+  <div
+    class="relative flex h-[100svh] w-full flex-col md:grid md:h-full md:grid-cols-[minmax(350px,0.8fr)_1.2fr]"
+  >
+    <!-- Text (Foreground on mobile, Left column on desktop) -->
+    <div
+      class="pointer-events-none absolute bottom-0 left-0 z-20 flex w-full flex-col justify-end px-6 pb-4 sm:px-10 md:pointer-events-auto md:relative md:bottom-auto md:left-auto md:h-full md:justify-center md:bg-[#E6FDE2] lg:pl-10 xl:pl-24"
+    >
+      <!-- Dark gradient backdrop so text is perfectly readable regardless of cards -->
+      <div
+        class="pointer-events-none absolute inset-0 md:hidden"
+        style="background: linear-gradient(to top, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.6) 50%, transparent 100%);"
+      >
+      </div>
+      <div
+        class="pointer-events-auto flex flex-col text-5xl sm:text-6xl md:text-6xl lg:gap-3 lg:text-7xl"
+      >
+        <TextBlockAnimation client:load blockColor="#0ade4a">
+          <h2
+            class="w-full font-black text-white md:text-black md:drop-shadow-none"
+          >
+            MEET THE
+          </h2>
+        </TextBlockAnimation>
+
+        <TextBlockAnimation client:load delay={0.2} blockColor="#fff">
+          <h2
+            class="md:text-primary w-full font-black text-[#0ade4a] md:drop-shadow-none"
+          >
+            MINDS BEHIND
+          </h2>
+        </TextBlockAnimation>
+
+        <TextBlockAnimation client:load delay={0.45} blockColor="#0ade4a">
+          <h2
+            class="w-full font-black text-white md:text-black md:drop-shadow-none"
+          >
+            THE CODE
+          </h2>
+        </TextBlockAnimation>
+      </div>
+
+      <div
+        class="pointer-events-auto mt-3 mb-1 w-full max-w-[500px] text-lg font-medium text-gray-200 md:my-10 md:text-xl md:text-gray-800 md:drop-shadow-none"
+      >
+        <FadeIn client:load delay={0.65}>
+          <p>
+            From ideation to deployment, get to know the team building the
+            future at SOSC
+          </p>
+        </FadeIn>
+      </div>
+    </div>
+
+    <!-- Images Carousel (Background on mobile, Right column on desktop) -->
+    <div
+      class="absolute inset-0 z-0 flex h-full w-full items-center justify-center overflow-hidden bg-[#E6FDE2] px-2 md:relative md:z-auto lg:px-2 xl:px-4"
+    >
+      <ExecutiveImpactCarousel client:load members={members} />
+    </div>
+  </div>
+</section>

@@ -40,6 +40,8 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
         <img
           src={image}
           alt={name}
+          loading="lazy"
+          decoding="async"
           className={cn(
             "h-full w-full rounded-none object-cover",
             isNoBg && "object-contain object-bottom mix-blend-multiply",

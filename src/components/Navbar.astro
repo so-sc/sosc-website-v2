@@ -291,12 +291,12 @@ import SOSC from "@/assets/sosc_logo.svg";
     content: "";
     position: absolute;
     bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
+    left: 0;
+    width: 100%;
     height: 1.5px;
     background: #00ff88;
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
   }
 
   .pagination-item.is-active {
@@ -305,7 +305,7 @@ import SOSC from "@/assets/sosc_logo.svg";
   }
 
   .pagination-item.is-active::after {
-    width: 100%;
+    transform: scaleX(1);
   }
 
   /* Desktop Middle */
@@ -389,16 +389,17 @@ import SOSC from "@/assets/sosc_logo.svg";
     content: "";
     position: absolute;
     bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
+    left: 0;
+    width: 100%;
     height: 4px;
     background: linear-gradient(90deg, #00ff88, #00ccff);
-    transition: width 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   }
 
-  .horizontal-link:hover .link-text::after {
-    width: 100%;
+  .horizontal-link:hover .link-text::after,
+  .horizontal-link:focus-visible .link-text::after {
+    transform: scaleX(1);
   }
 
   /* Desktop Bottom */
@@ -533,7 +534,7 @@ import SOSC from "@/assets/sosc_logo.svg";
 
 <script>
   import EmblaCarousel from "embla-carousel";
-  import { toggleScrollLock } from "@/lib/utils";
+  import { toggleScrollLock } from "@/lib/scroll-lock";
 
   // Set by initNavbar on every page load; read by the once-only listener below
   let closeActiveMenu: (() => void) | null = null;

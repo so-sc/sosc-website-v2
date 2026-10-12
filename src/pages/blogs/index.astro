@@ -37,6 +37,7 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
         class="h-full w-full object-cover"
         width={1920}
         height={1080}
+        loading="eager"
       />
       <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       <div class="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-16">

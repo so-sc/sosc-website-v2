@@ -7,9 +7,6 @@ import { ArrowRight } from "@lucide/astro";
     id="about"
     class="sticky top-0 flex min-h-dvh w-full flex-col justify-center overflow-hidden bg-white px-6 py-16 md:px-20 md:py-24"
   >
-    <script>
-      import "@lottiefiles/dotlottie-wc";
-    </script>
     <!-- Background accents (glow only) -->
     <div class="pointer-events-none absolute inset-0">
       <div
@@ -101,8 +98,8 @@ import { ArrowRight } from "@lucide/astro";
           </div>
           <div class="relative mx-auto aspect-4/3 w-full max-w-130 scale-[1.4]">
             <dotlottie-wc
-              src="/About Us Team.json"
-              autoplay
+              id="about-lottie"
+              src="/about-us-team.lottie"
               loop
               class="h-full w-full"
               style="width: 100%; height: 100%;"
@@ -113,3 +110,17 @@ import { ArrowRight } from "@lucide/astro";
     </div>
   </section>
 </div>
+
+<script>
+  // The animation only shows from md up, so phones never download the ~680 KB player
+  function loadAboutLottie() {
+    const el = document.getElementById("about-lottie");
+    if (!el || !window.matchMedia("(min-width: 768px)").matches) return;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.setAttribute("autoplay", "");
+    }
+    import("@lottiefiles/dotlottie-wc");
+  }
+
+  document.addEventListener("astro:page-load", loadAboutLottie);
+</script>

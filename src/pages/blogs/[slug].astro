@@ -25,8 +25,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 });
 ---
 
-<Layout>
-  <main class="mx-auto max-w-4xl px-4 py-20 md:px-8">
+<Layout
+  title={`${title} | SOSC Blog`}
+  description={blog.data.description}
+  image={cover?.src}
+>
+  <div class="mx-auto max-w-4xl px-4 py-20 md:px-8">
     <!-- Top Back Button -->
     <div class="mb-8">
       <a
@@ -114,7 +118,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         Back to all blogs
       </a>
     </div>
-  </main>
+  </div>
 </Layout>
 
 <style>

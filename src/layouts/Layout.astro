@@ -4,6 +4,21 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/Footer.astro";
 import "lenis/dist/lenis.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Sahyadri Open Source Community (SOSC)",
+  description = "SOSC (Sahyadri Open-Source Community) brings together young tech enthusiasts in Mangalore through workshops, DevHost, Hackathons, and open-source collaboration.",
+  image = "/og-image.png",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -28,11 +43,8 @@ import "lenis/dist/lenis.css";
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>SOSC</title>
-    <meta
-      name="description"
-      content="SOSC (Sahyadri Open-Source Community) brings together young tech enthusiasts in Mangalore through workshops, DevHost, Hackathons, and open-source collaboration."
-    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <meta
       name="keywords"
       content="Sahyadri Open Source Community, SOSC, Mangalore, open-source, student workshops, DevHost, hackathon"
@@ -41,51 +53,46 @@ import "lenis/dist/lenis.css";
     <meta name="author" content="Sahyadri Open-Source Community" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.sosc.org.in/" />
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sahyadri Open-Source Community (SOSC)" />
-    <meta
-      property="og:description"
-      content="Tech-enthusiast community in Mangalore empowering students through workshops, hackathons, DevHost and open-source events."
-    />
-    <meta property="og:image" content="https://www.sosc.org.in/og-image.png" />
-    <meta property="og:image:alt" content="Description of SOSC event or logo" />
-    <meta property="og:url" content="https://www.sosc.org.in/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SOSC Mangalore" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Sahyadri Open-Source Community (SOSC)"
-    />
-    <meta
-      name="twitter:description"
-      content="Community-driven student group in Mangalore hosting DevHost, Hackathons, workshops & open-source events."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.sosc.org.in/twitter-image.png"
-    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:site" content="@sosc_sahyadri" />
     <ClientRouter />
     <script>
       import Lenis from "lenis";
 
-      const lenis = new Lenis({
-        autoRaf: true,
-        syncTouch: true,
-      });
+      // Native scrolling for visitors who ask for reduced motion
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const lenis = new Lenis({ autoRaf: true });
 
-      // Expose lenis to window for global access (e.g. scroll locking)
-      (window as any).lenis = lenis;
+        // Expose lenis to window for global access (e.g. scroll locking)
+        (window as any).lenis = lenis;
+      }
     </script>
   </head>
   <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-black focus:shadow-lg"
+      >Skip to content</a
+    >
     <Navbar />
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

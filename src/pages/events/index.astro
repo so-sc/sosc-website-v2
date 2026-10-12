@@ -17,8 +17,11 @@ const parsedEvents = events
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
-<Layout title="Events - SOSC">
-  <main class="mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-4 py-24 md:px-8">
+<Layout
+  title="Events | SOSC"
+  description="Workshops, hackathons, DevHost and talks hosted by the Sahyadri Open Source Community since 2017."
+>
+  <div class="mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-4 py-24 md:px-8">
     <div class="grid grid-cols-1 gap-8 md:gap-16 lg:grid-cols-12">
       <aside class="relative lg:col-span-4">
         <div class="sticky top-24 space-y-8">
@@ -63,5 +66,5 @@ const parsedEvents = events
         }
       </div>
     </div>
-  </main>
+  </div>
 </Layout>

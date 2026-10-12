@@ -16,9 +16,10 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
             href={`https://github.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${name} on GitHub`}
             className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
           >
-            <Github className="h-4 w-4 md:h-5 md:w-5" />
+            <Github className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
           </a>
         )}
         {linkedin && (
@@ -26,9 +27,10 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
             href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn`}
             className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
           >
-            <Linkedin className="h-4 w-4 md:h-5 md:w-5" />
+            <Linkedin className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
           </a>
         )}
       </div>
@@ -58,7 +60,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
 };
 
 export default function TeamView({ team }: { team: TeamMember[] }) {
-  // Defaulting to "2024-25"
+  // Defaulting to the current team
   const [selectedYear, setSelectedYear] = useState("2025-26");
 
   const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Older Alumni"];
@@ -109,6 +111,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
             <button
               key={tab}
               onClick={() => setSelectedYear(year)}
+              aria-pressed={selectedYear === year}
               className={cn(
                 "cursor-pointer rounded-none border-2 px-3 py-2 text-xs font-bold transition-all md:px-6 md:text-base",
                 selectedYear === year
@@ -122,11 +125,10 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
         })}
       </div>
 
-      <section className="text-foreground mx-auto max-w-7xl space-y-16 px-4 md:px-8">
+      <section className="text-foreground mx-auto max-w-7xl space-y-16">
         {filteredMembers.length === 0 && (
           <div className="py-20 text-center text-gray-500">
             <p className="text-xl">No members found for {selectedYear}</p>
-            <p className="mt-2 text-sm">(Data defaults to 2024-25)</p>
           </div>
         )}
 

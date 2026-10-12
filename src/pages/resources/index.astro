@@ -13,12 +13,15 @@ const sortedResources = resources.sort((a, b) => {
 });
 ---
 
-<Layout>
+<Layout
+  title="Resources | SOSC"
+  description="Guides, roadmaps, tools and repos curated by SOSC members to help you learn and contribute."
+>
   <div class="flex min-h-screen flex-col">
-    <main class="bg-background relative z-0 flex-1">
+    <div class="bg-background relative z-0 flex-1">
       <div class="bg-background text-foreground py-8">
         <ResourceBoard resources={sortedResources} />
       </div>
-    </main>
+    </div>
   </div>
 </Layout>

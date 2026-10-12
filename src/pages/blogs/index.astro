@@ -22,8 +22,11 @@ const parsedBlogs = blogs
 const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
 ---
 
-<Layout>
-  <main>
+<Layout
+  title="Blog | SOSC"
+  description="Stories, tutorials and lessons from members of the Sahyadri Open Source Community."
+>
+  <div>
     <!-- Featured Banner -->
     <div
       class="relative mb-8 h-[300px] w-full overflow-hidden bg-gray-900 md:h-[450px]"
@@ -146,5 +149,5 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
         </aside>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>

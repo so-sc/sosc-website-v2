@@ -134,7 +134,6 @@
 @layer base {
   * {
     border-color: var(--color-border);
-    outline-color: color-mix(in oklch, var(--color-ring), transparent 50%);
     /* scrollbar-width: none;
     -ms-overflow-style: none; */
   }
@@ -145,6 +144,22 @@
 
   html {
     scrollbar-gutter: stable;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  /* Stop decorative loops; state-change transitions stay as feedback */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .animate-pulse {
+      animation: none;
+    }
   }
 
   body {

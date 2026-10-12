@@ -5,6 +5,13 @@ location: Sahyadri College of Engineering and Management, Adyar
 cover: "./cover.jpg"
 ---
 
+import { Image } from "astro:assets";
+import photo1 from "./1.jpg";
+import photo2 from "./2.jpg";
+import photo3 from "./3.jpg";
+import photo4 from "./4.jpg";
+import photo5 from "./5.jpg";
+
 _Connecting Minds, Crafting Progress._
 
 Three days of dev talks, hands-on masterclasses, competitions, and a 36-hour hackathon, all under one roof at Sahyadri Campus, Adyar, from **6th to 8th November 2025**.
@@ -157,3 +164,33 @@ Compete on industry-relevant problem statements, collaborate with peers, and rec
 ---
 
 For more details, visit the [DevHost 2025 Website](https://devhost25.sosc.org.in/).
+
+## Media
+
+<div class="not-prose grid grid-cols-2 gap-3">
+  <Image
+    src={photo1}
+    alt="DevHost 2025 group photo"
+    class="col-span-2 w-full rounded-lg"
+  />
+  <Image
+    src={photo2}
+    alt="Sahyadri campus lit up at night"
+    class="aspect-[3/2] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={photo3}
+    alt="Participants hacking in the lab"
+    class="aspect-[3/2] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={photo4}
+    alt="Mentors discussing with a team"
+    class="aspect-[3/2] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={photo5}
+    alt="Participants working on laptops"
+    class="aspect-[3/2] w-full rounded-lg object-cover"
+  />
+</div>

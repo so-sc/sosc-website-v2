@@ -21,7 +21,7 @@ tags:
   - ai-safety
   - open-source
 github: https://github.com/Rajaykumar12/AblateBench
-documentation: https://github.com/Rajaykumar12/AblateBench/blob/main/README.md
+documentation: https://github.com/Rajaykumar12/AblateBench/blob/master/README.md
 community: false
 ---
 

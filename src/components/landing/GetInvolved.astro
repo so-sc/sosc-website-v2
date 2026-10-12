@@ -1,5 +1,6 @@
 ---
-import { ArrowRight, Github, Instagram } from "@lucide/astro";
+import { ArrowRight } from "@lucide/astro";
+import { Icon } from "astro-icon/components";
 import Section from "./Section.astro";
 
 // Equal-size buttons: same height, same width via the grid, same border
@@ -10,18 +11,12 @@ const secondaryClass = `${buttonClass} bg-white text-gray-900 hover:bg-gray-900 
 ---
 
 <Section id="get-involved" decor={["bl", "br"]} class="bg-white text-gray-900">
-  <div
-    class="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end"
-  >
+  <div class="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
     <div class="max-w-2xl">
-      <h2
-        class="text-5xl leading-none font-black tracking-tight uppercase md:text-7xl"
-      >
+      <h2 class="text-5xl leading-none font-black tracking-tight uppercase md:text-7xl">
         Build with <span class="text-primary-ink">us.</span>
       </h2>
-      <p
-        class="mt-6 text-base leading-relaxed font-medium text-gray-600 md:text-lg"
-      >
+      <p class="mt-6 text-base leading-relaxed font-medium text-gray-600 md:text-lg">
         Come to an event, pick up an issue, or ship your first PR. Every SOSC
         project is open, and everyone starts somewhere.
       </p>
@@ -41,7 +36,7 @@ const secondaryClass = `${buttonClass} bg-white text-gray-900 hover:bg-gray-900 
         rel="noopener noreferrer"
         class={secondaryClass}
       >
-        <Github class="h-4 w-4" aria-hidden="true" />
+        <Icon name="mdi:github" class="h-4 w-4" aria-hidden="true" />
         GitHub
       </a>
       <a
@@ -50,7 +45,7 @@ const secondaryClass = `${buttonClass} bg-white text-gray-900 hover:bg-gray-900 
         rel="noopener noreferrer"
         class={secondaryClass}
       >
-        <Instagram class="h-4 w-4" aria-hidden="true" />
+        <Icon name="mdi:instagram" class="h-4 w-4" aria-hidden="true" />
         Instagram
       </a>
     </div>

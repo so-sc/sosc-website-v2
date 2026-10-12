@@ -43,18 +43,16 @@ const formattedDate = date.toLocaleDateString("en-US", {
   hidden={deferred}
 >
   <div class="aspect-[16/10] overflow-hidden bg-gray-100 md:col-span-4">
-    {
-      cover && (
-        <Image
-          src={cover}
-          alt=""
-          width={640}
-          height={400}
-          format="webp"
-          class="h-full w-full object-cover"
-        />
-      )
-    }
+    {cover && (
+      <Image
+        src={cover}
+        alt=""
+        width={640}
+        height={400}
+        format="webp"
+        class="h-full w-full object-cover"
+      />
+    )}
   </div>
 
   <div class="flex flex-col md:col-span-8">
@@ -74,9 +72,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <time datetime={date.toISOString()}>{formattedDate}</time>
     </p>
 
-    <h2
-      class="group-hover:text-primary-ink mt-3 text-xl leading-tight font-black text-gray-900 transition-colors md:text-3xl"
-    >
+    <h2 class="group-hover:text-primary-ink mt-3 text-xl leading-tight font-black text-gray-900 transition-colors md:text-3xl">
       {title}
     </h2>
 
@@ -84,16 +80,14 @@ const formattedDate = date.toLocaleDateString("en-US", {
       {description}
     </p>
 
-    {
-      tagList.length > 0 && (
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {tagList.map((tag) => (
-            <li class="border border-gray-200 px-2 py-0.5 text-xs font-medium text-gray-600">
-              {tag}
-            </li>
-          ))}
-        </ul>
-      )
-    }
+    {tagList.length > 0 && (
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {tagList.map((tag) => (
+          <li class="border border-gray-200 px-2 py-0.5 text-xs font-medium text-gray-600">
+            {tag}
+          </li>
+        ))}
+      </ul>
+    )}
   </div>
 </a>

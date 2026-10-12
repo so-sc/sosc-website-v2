@@ -55,9 +55,7 @@ const FEED_BATCH = 10;
     <PageHeader title="Blog" count={`${posts.length} Posts`} />
 
     <!-- Search toolbar -->
-    <div
-      class="mt-10 flex flex-col gap-3 border-y border-gray-200 py-3 sm:flex-row sm:items-center sm:justify-between"
-    >
+    <div class="mt-10 flex flex-col gap-3 border-y border-gray-200 py-3 sm:flex-row sm:items-center sm:justify-between">
       <label class="flex flex-1 items-center gap-3">
         <Search class="h-4 w-4 shrink-0 text-gray-500" aria-hidden="true" />
         <span class="sr-only">Search posts</span>
@@ -79,85 +77,85 @@ const FEED_BATCH = 10;
     </div>
 
     <!-- Featured: the newest post as a lead story -->
-    {
-      featured && (
-        <a
-          href={`/blogs/${featured.link}`}
-          class="group mt-12 grid items-center gap-8 md:grid-cols-12 md:gap-12"
-          data-post
-          data-search={featured.searchText}
-        >
-          <div class="aspect-[16/10] overflow-hidden bg-gray-100 md:col-span-7">
-            {featured.cover && (
-              <Image
-                src={featured.cover}
-                alt=""
-                width={1200}
-                height={750}
-                format="webp"
-                loading="eager"
-                class="h-full w-full object-cover"
-              />
-            )}
-          </div>
+    {featured && (
+      <a
+        href={`/blogs/${featured.link}`}
+        class="group mt-12 grid items-center gap-8 md:grid-cols-12 md:gap-12"
+        data-post
+        data-search={featured.searchText}
+      >
+        <div class="aspect-[16/10] overflow-hidden bg-gray-100 md:col-span-7">
+          {featured.cover && (
+            <Image
+              src={featured.cover}
+              alt=""
+              width={1200}
+              height={750}
+              format="webp"
+              loading="eager"
+              class="h-full w-full object-cover"
+            />
+          )}
+        </div>
 
-          <div class="md:col-span-5">
-            <p class="flex items-center gap-2 text-xs font-medium text-gray-500">
-              <img
-                src={`https://github.com/${featured.author}.png?size=64`}
-                alt=""
-                width="28"
-                height="28"
-                class="h-7 w-7 rounded-full bg-gray-100"
-                onerror="this.onerror=null; this.src='/github_avatar.svg';"
-              />
-              <span class="font-bold text-gray-900">{featured.author}</span>
-              <span aria-hidden="true">·</span>
-              <time datetime={featured.date.toISOString()}>
-                {featured.date.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </time>
-            </p>
+        <div class="md:col-span-5">
+          <p class="flex items-center gap-2 text-xs font-medium text-gray-500">
+            <img
+              src={`https://github.com/${featured.author}.png?size=64`}
+              alt=""
+              width="28"
+              height="28"
+              class="h-7 w-7 rounded-full bg-gray-100"
+              onerror="this.onerror=null; this.src='/github_avatar.svg';"
+            />
+            <span class="font-bold text-gray-900">{featured.author}</span>
+            <span aria-hidden="true">·</span>
+            <time datetime={featured.date.toISOString()}>
+              {featured.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+          </p>
 
-            <h2 class="group-hover:text-primary-ink mt-4 text-3xl leading-tight font-black text-gray-900 transition-colors md:text-5xl">
-              {featured.title}
-            </h2>
+          <h2 class="group-hover:text-primary-ink mt-4 text-3xl leading-tight font-black text-gray-900 transition-colors md:text-5xl">
+            {featured.title}
+          </h2>
 
-            <p class="mt-4 line-clamp-3 leading-relaxed text-gray-600">
-              {featured.description}
-            </p>
+          <p class="mt-4 line-clamp-3 leading-relaxed text-gray-600">
+            {featured.description}
+          </p>
 
-            {featured.tagList.length > 0 && (
-              <ul class="mt-5 flex flex-wrap gap-2">
-                {featured.tagList.map((tag) => (
-                  <li class="border border-gray-200 px-2 py-0.5 text-xs font-medium text-gray-600">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            )}
+          {featured.tagList.length > 0 && (
+            <ul class="mt-5 flex flex-wrap gap-2">
+              {featured.tagList.map((tag) => (
+                <li class="border border-gray-200 px-2 py-0.5 text-xs font-medium text-gray-600">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
 
-            <span class="group-hover:text-primary-ink mt-8 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-gray-900 uppercase transition-colors">
-              Read article
-              <ArrowRight
-                class="h-4 w-4 transition-transform group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </span>
-          </div>
-        </a>
-      )
-    }
+          <span class="group-hover:text-primary-ink mt-8 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-gray-900 uppercase transition-colors">
+            Read article
+            <ArrowRight
+              class="h-4 w-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </span>
+        </div>
+      </a>
+    )}
 
     <!-- Everything else, newest first -->
     <div
       id="blog-feed"
       class="mt-16 divide-y divide-gray-200 border-t border-gray-900"
     >
-      {rest.map((post, i) => <BlogCard {...post} deferred={i >= FEED_BATCH} />)}
+      {rest.map((post, i) => (
+        <BlogCard {...post} deferred={i >= FEED_BATCH} />
+      ))}
     </div>
 
     <!-- Scrolling near this reveals the next batch of the feed -->
@@ -165,8 +163,8 @@ const FEED_BATCH = 10;
 
     <div id="blog-empty" class="py-20 text-center" hidden>
       <p class="text-gray-500">
-        No posts match <span id="blog-empty-tag" class="font-bold text-gray-900"
-        ></span> yet.
+        No posts match{" "}
+        <span id="blog-empty-tag" class="font-bold text-gray-900"></span> yet.
       </p>
       <button
         type="button"

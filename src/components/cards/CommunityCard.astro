@@ -30,29 +30,21 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
       loading="lazy"
     />
     <!-- Hover Overlay: Subtle green tint -->
-    <div
-      class="bg-primary/0 group-hover:bg-primary/10 absolute inset-0 transition-colors duration-300"
-    >
-    </div>
+    <div class="bg-primary/0 group-hover:bg-primary/10 absolute inset-0 transition-colors duration-300"></div>
   </div>
 
   <!-- Content -->
   <div class="flex flex-col pr-4">
-    <div
-      class="mb-3 flex items-center gap-3 text-xs font-bold tracking-widest uppercase"
-    >
-      <span
-        class="text-primary transition-colors duration-300 group-hover:text-gray-900"
-        >{category}</span
-      >
+    <div class="mb-3 flex items-center gap-3 text-xs font-bold tracking-widest uppercase">
+      <span class="text-primary transition-colors duration-300 group-hover:text-gray-900">
+        {category}
+      </span>
       <span class="text-gray-300">/</span>
       <span class="text-gray-500">{date}</span>
     </div>
 
     <!-- Title -->
-    <h3
-      class="group-hover:text-primary mb-4 text-2xl leading-[0.9] font-black text-gray-900 uppercase transition-colors duration-300 md:text-4xl"
-    >
+    <h3 class="group-hover:text-primary mb-4 text-2xl leading-[0.9] font-black text-gray-900 uppercase transition-colors duration-300 md:text-4xl">
       {title}
     </h3>
 
@@ -62,13 +54,10 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
     </p>
 
     <!-- Interactive Link: Simple text with arrow -->
-    <div
-      class="group-hover:text-primary mt-auto flex items-center gap-4 text-xs font-bold tracking-widest text-gray-900 uppercase"
-    >
-      <span
-        class="group-hover:border-primary border-b border-gray-200 pb-1 transition-colors"
-        >Read Entry</span
-      >
+    <div class="group-hover:text-primary mt-auto flex items-center gap-4 text-xs font-bold tracking-widest text-gray-900 uppercase">
+      <span class="group-hover:border-primary border-b border-gray-200 pb-1 transition-colors">
+        Read Entry
+      </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2"
@@ -80,14 +69,12 @@ const { title, category, image, date, shortDesc, fullDesc } = Astro.props;
           stroke-linecap="square"
           stroke-linejoin="miter"
           stroke-width="2"
-          d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        ></path>
       </svg>
     </div>
   </div>
 
   <!-- Decorative Border: Right side separator -->
-  <div
-    class="absolute top-0 right-[-2rem] hidden h-full w-px bg-gray-100 md:block"
-  >
-  </div>
+  <div class="absolute top-0 right-[-2rem] hidden h-full w-px bg-gray-100 md:block"></div>
 </button>

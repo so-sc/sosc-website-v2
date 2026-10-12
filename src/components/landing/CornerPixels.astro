@@ -6,9 +6,11 @@ type Corner = "tl" | "tr" | "bl" | "br";
 
 interface Props {
   corners: Corner[];
+  /** Use the page band's cell size (see TopPixels) so top and bottom match */
+  page?: boolean;
 }
 
-const { corners } = Astro.props;
+const { corners, page = false } = Astro.props;
 
 // Blocks in grid cells, measured from the corner: [col, row, opacity].
 // Dense at the corner, thinning out like the hero's fragmented edge.
@@ -44,31 +46,33 @@ const blocks: [number, number, number][] = [
 ];
 ---
 
-{
-  corners.map((corner) => (
-    <div
-      class:list={["section-decor", `section-decor--${corner}`]}
-      aria-hidden="true"
+{corners.map((corner) => (
+  <div
+    class:list={[
+      "section-decor",
+      `section-decor--${corner}`,
+      page && "section-decor--page",
+    ]}
+    aria-hidden="true"
+  >
+    <svg
+      class="section-decor__blocks"
+      viewBox="0 0 9 8"
+      style={`transform: scale(${corner.endsWith("r") ? -1 : 1}, ${corner.startsWith("b") ? -1 : 1})`}
     >
-      <svg
-        class="section-decor__blocks"
-        viewBox="0 0 9 8"
-        style={`transform: scale(${corner.endsWith("r") ? -1 : 1}, ${corner.startsWith("b") ? -1 : 1})`}
-      >
-        {blocks.map(([x, y, o]) => (
-          <rect
-            x={x}
-            y={y}
-            width="1"
-            height="1"
-            fill="var(--primary)"
-            opacity={o}
-          />
-        ))}
-      </svg>
-    </div>
-  ))
-}
+      {blocks.map(([x, y, o]) => (
+        <rect
+          x={x}
+          y={y}
+          width="1"
+          height="1"
+          fill="var(--primary)"
+          opacity={o}
+        />
+      ))}
+    </svg>
+  </div>
+))}
 
 <style>
   .section-decor {
@@ -87,6 +91,18 @@ const blocks: [number, number, number][] = [
     .section-decor {
       --cell: 48px;
       height: 40rem;
+    }
+  }
+
+  /* Same cells as TopPixels: 20px on phones, 40px from md up */
+  .section-decor--page {
+    --cell: 20px;
+    height: calc(var(--cell) * 14);
+  }
+
+  @media (min-width: 768px) {
+    .section-decor--page {
+      --cell: 40px;
     }
   }
 

@@ -87,14 +87,15 @@ const imageUrl = new URL(image, Astro.site);
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-black focus:shadow-lg"
-      >Skip to content</a
     >
+      Skip to content
+    </a>
     <PageLoader />
     <Navbar />
     <main id="main" class="relative overflow-clip">
       {decor && <TopPixels />}
-      {decor && <CornerPixels corners={["bl", "br"]} />}
-      <div class:list={["relative", decor && "pt-20 md:pt-36"]}>
+      {decor && <CornerPixels corners={["bl", "br"]} page />}
+      <div class:list={["relative", decor && "pt-20 pb-8 md:pt-36 md:pb-24"]}>
         <slot />
       </div>
     </main>

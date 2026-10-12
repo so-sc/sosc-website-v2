@@ -69,9 +69,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         <div class="ml-auto text-xs font-medium text-gray-500">
           <span>{formattedDate}</span>
           <span class="mx-2">in</span>
-          <span
-            class="decoration-primary/30 hover:text-primary-ink underline underline-offset-2 transition-colors"
-          >
+          <span class="decoration-primary/30 hover:text-primary-ink underline underline-offset-2 transition-colors">
             {tags}
           </span>
         </div>
@@ -83,20 +81,18 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
 
     <!-- Blog Cover -->
-    {
-      cover && (
-        <div class="mb-12 overflow-hidden bg-gray-50">
-          <Image
-            src={cover}
-            alt={title}
-            class="h-auto w-full object-cover"
-            loading="eager"
-            format="webp"
-            quality={80}
-          />
-        </div>
-      )
-    }
+    {cover && (
+      <div class="mb-12 overflow-hidden bg-gray-50">
+        <Image
+          src={cover}
+          alt={title}
+          class="h-auto w-full object-cover"
+          loading="eager"
+          format="webp"
+          quality={80}
+        />
+      </div>
+    )}
 
     <!-- Content -->
     <MarkdownLayout>

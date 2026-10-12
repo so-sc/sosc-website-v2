@@ -25,12 +25,12 @@ This website serves as a central hub for:
 1. **Install dependencies**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. **Start the development server**
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 ## Creating Content
@@ -40,7 +40,7 @@ This website serves as a central hub for:
 The easiest way to create new content is using our CLI tool:
 
 ```bash
-npm run add
+pnpm run add
 ```
 
 Select the content type (blog, event, project, or resource) and follow the prompts. The CLI automatically creates the proper folder structure and template.

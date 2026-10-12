@@ -33,9 +33,7 @@ const years = [...new Set(events.map((e) => e.date.getFullYear()))].map(
     <PageHeader title="Events" count={`${events.length} Total`} />
 
     <!-- Toolbar: search + jump to a year -->
-    <div
-      class="mt-10 flex flex-col gap-3 border-y border-gray-200 py-3 lg:flex-row lg:items-center lg:justify-between"
-    >
+    <div class="mt-10 flex flex-col gap-3 border-y border-gray-200 py-3 lg:flex-row lg:items-center lg:justify-between">
       <label class="flex flex-1 items-center gap-3">
         <Search class="h-4 w-4 shrink-0 text-gray-500" aria-hidden="true" />
         <span class="sr-only">Search events</span>
@@ -48,21 +46,19 @@ const years = [...new Set(events.map((e) => e.date.getFullYear()))].map(
         />
       </label>
       <label class="flex items-center gap-3">
-        <span class="text-xs font-bold tracking-widest text-gray-500 uppercase"
-          >Jump to year</span
-        >
+        <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">
+          Jump to year
+        </span>
         <select
           id="event-year"
           class="border border-gray-300 bg-white px-3 py-2 font-mono text-sm font-bold text-gray-900 transition-colors hover:border-gray-900"
         >
           <option value="">Year</option>
-          {
-            years.map(({ year }) => (
-              <option value={year} data-year-option={year}>
-                {year}
-              </option>
-            ))
-          }
+          {years.map(({ year }) => (
+            <option value={year} data-year-option={year}>
+              {year}
+            </option>
+          ))}
         </select>
       </label>
     </div>
@@ -70,43 +66,40 @@ const years = [...new Set(events.map((e) => e.date.getFullYear()))].map(
 
     <!-- Year archive -->
     <div class="mt-4">
-      {
-        years.map(({ year, events: yearEvents }) => (
-          <section
-            id={`year-${year}`}
-            class="year-group grid scroll-mt-24 gap-6 border-b border-gray-200 py-10 last:border-b-0 lg:grid-cols-12 lg:gap-8 lg:py-14"
-            data-year-group
-            aria-labelledby={`year-${year}-label`}
-          >
-            {/* Phones: sticky bar under the navbar. Desktop: giant outlined year pinned beside its events. */}
-            <header class="sticky top-14 z-10 -mx-4 flex items-baseline justify-between border-b border-gray-200 bg-white/95 px-4 py-2 lg:top-24 lg:col-span-3 lg:mx-0 lg:block lg:self-start lg:border-0 lg:bg-transparent lg:px-0 lg:py-0">
-              <h2
-                id={`year-${year}-label`}
-                class="text-primary text-3xl leading-none font-black tracking-tighter lg:text-[7.5rem]"
-              >
-                {year}
-              </h2>
-              <p class="font-mono text-xs font-bold tracking-widest text-gray-500 uppercase lg:mt-3">
-                <span data-year-count>{yearEvents.length}</span>{" "}
-                {yearEvents.length === 1 ? "event" : "events"}
-              </p>
-            </header>
+      {years.map(({ year, events: yearEvents }) => (
+        <section
+          id={`year-${year}`}
+          class="year-group grid scroll-mt-24 gap-6 border-b border-gray-200 py-10 last:border-b-0 lg:grid-cols-12 lg:gap-8 lg:py-14"
+          data-year-group
+          aria-labelledby={`year-${year}-label`}
+        >
+          {/* Phones: sticky bar under the navbar. Desktop: giant outlined year pinned beside its events. */}
+          <header class="sticky top-14 z-10 -mx-4 flex items-baseline justify-between border-b border-gray-200 bg-white/95 px-4 py-2 lg:top-24 lg:col-span-3 lg:mx-0 lg:block lg:self-start lg:border-0 lg:bg-transparent lg:px-0 lg:py-0">
+            <h2
+              id={`year-${year}-label`}
+              class="text-primary text-3xl leading-none font-black tracking-tighter lg:text-[7.5rem]"
+            >
+              {year}
+            </h2>
+            <p class="font-mono text-xs font-bold tracking-widest text-gray-500 uppercase lg:mt-3">
+              <span data-year-count>{yearEvents.length}</span>{" "}
+              {yearEvents.length === 1 ? "event" : "events"}
+            </p>
+          </header>
 
-            <div class="grid gap-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:col-span-9 xl:grid-cols-3">
-              {yearEvents.map((event) => (
-                <EventCard {...event} />
-              ))}
-            </div>
-          </section>
-        ))
-      }
+          <div class="grid gap-5 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:col-span-9 xl:grid-cols-3">
+            {yearEvents.map((event) => (
+              <EventCard {...event} />
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
 
     <div id="event-empty" class="py-20 text-center" hidden>
       <p class="text-gray-500">
-        No events match <span
-          id="event-empty-query"
-          class="font-bold text-gray-900"></span>
+        No events match{" "}
+        <span id="event-empty-query" class="font-bold text-gray-900"></span>
       </p>
       <button
         type="button"

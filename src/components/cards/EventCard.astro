@@ -35,28 +35,22 @@ const searchText = `${name} ${location} ${date.getFullYear()}`.toLowerCase();
   data-event
   data-search={searchText}
 >
-  <div
-    class="relative aspect-[4/3] overflow-hidden bg-gray-100 sm:aspect-video"
-  >
-    {
-      cover && (
-        <Image
-          src={cover}
-          alt=""
-          width={640}
-          height={360}
-          format="webp"
-          class="h-full w-full object-cover"
-        />
-      )
-    }
-    {
-      status && (
-        <span class="bg-primary text-primary-foreground absolute top-0 left-0 px-2 py-1 text-xs font-bold tracking-widest uppercase">
-          {status}
-        </span>
-      )
-    }
+  <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 sm:aspect-video">
+    {cover && (
+      <Image
+        src={cover}
+        alt=""
+        width={640}
+        height={360}
+        format="webp"
+        class="h-full w-full object-cover"
+      />
+    )}
+    {status && (
+      <span class="bg-primary text-primary-foreground absolute top-0 left-0 px-2 py-1 text-xs font-bold tracking-widest uppercase">
+        {status}
+      </span>
+    )}
   </div>
 
   <div class="sm:mt-4">
@@ -66,9 +60,7 @@ const searchText = `${name} ${location} ${date.getFullYear()}`.toLowerCase();
     >
       {formattedDate}
     </time>
-    <h3
-      class="group-hover:text-primary-ink mt-1.5 text-base leading-snug font-black text-gray-900 transition-colors sm:text-lg"
-    >
+    <h3 class="group-hover:text-primary-ink mt-1.5 text-base leading-snug font-black text-gray-900 transition-colors sm:text-lg">
       {name}
     </h3>
     <p class="mt-1 line-clamp-1 text-sm text-gray-500">{location}</p>

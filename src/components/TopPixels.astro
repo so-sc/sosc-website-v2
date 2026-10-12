@@ -46,27 +46,25 @@ for (let x = 0; x < COLS; x++) {
 }
 ---
 
-{
-  (["left", "right"] as const).map((side) => (
-    <div class:list={["top-pixels", `top-pixels--${side}`]} aria-hidden="true">
-      <svg
-        viewBox={`0 0 ${COLS} ${ROWS}`}
-        style={side === "right" ? "transform: scaleX(-1)" : undefined}
-      >
-        {blocks.map(({ x, y, o }) => (
-          <rect
-            x={x}
-            y={y}
-            width="1"
-            height="1"
-            fill="var(--primary)"
-            opacity={o}
-          />
-        ))}
-      </svg>
-    </div>
-  ))
-}
+{(["left", "right"] as const).map((side) => (
+  <div class:list={["top-pixels", `top-pixels--${side}`]} aria-hidden="true">
+    <svg
+      viewBox={`0 0 ${COLS} ${ROWS}`}
+      style={side === "right" ? "transform: scaleX(-1)" : undefined}
+    >
+      {blocks.map(({ x, y, o }) => (
+        <rect
+          x={x}
+          y={y}
+          width="1"
+          height="1"
+          fill="var(--primary)"
+          opacity={o}
+        />
+      ))}
+    </svg>
+  </div>
+))}
 
 <style>
   .top-pixels {

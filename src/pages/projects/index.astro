@@ -40,9 +40,7 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
   title="Projects | SOSC"
   description="Open-source projects built and maintained by the Sahyadri Open Source Community and its members."
 >
-  <section
-    class="text-foreground mx-auto max-w-7xl space-y-8 px-4 pt-28 pb-20 md:px-8"
-  >
+  <section class="text-foreground mx-auto max-w-7xl space-y-8 px-4 pt-28 pb-20 md:px-8">
     <PageHeader title="Projects" count={`${parsedProjects.length} Total`} />
     <div class="w-full py-3">
       <div class="flex flex-wrap items-center gap-6">
@@ -69,17 +67,13 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
 
           <div class="group custom-dropdown relative">
             <button class="flex items-center gap-3 py-1">
-              <span
-                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
-                >Category</span
-              >
-              <span
-                class="selected-label min-w-10 text-left text-sm font-medium uppercase"
-                >All</span
-              >
-              <ChevronDown
-                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
-              />
+              <span class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase">
+                Category
+              </span>
+              <span class="selected-label min-w-10 text-left text-sm font-medium uppercase">
+                All
+              </span>
+              <ChevronDown class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180" />
             </button>
 
             <div
@@ -88,34 +82,30 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                data-value="">All</button
+                data-value=""
               >
-              {
-                allCategories.map((category) => (
-                  <button
-                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                    data-value={category}
-                  >
-                    {category}
-                  </button>
-                ))
-              }
+                All
+              </button>
+              {allCategories.map((category) => (
+                <button
+                  class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                  data-value={category}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
           </div>
 
           <div class="group custom-dropdown relative">
             <button class="flex items-center gap-3 py-1">
-              <span
-                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
-                >Status</span
-              >
-              <span
-                class="selected-label min-w-10 text-left text-sm font-medium uppercase"
-                >All</span
-              >
-              <ChevronDown
-                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
-              />
+              <span class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase">
+                Status
+              </span>
+              <span class="selected-label min-w-10 text-left text-sm font-medium uppercase">
+                All
+              </span>
+              <ChevronDown class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180" />
             </button>
 
             <div
@@ -124,34 +114,30 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                data-value="">All</button
+                data-value=""
               >
-              {
-                allStatuses.map((status) => (
-                  <button
-                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                    data-value={status}
-                  >
-                    {status}
-                  </button>
-                ))
-              }
+                All
+              </button>
+              {allStatuses.map((status) => (
+                <button
+                  class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                  data-value={status}
+                >
+                  {status}
+                </button>
+              ))}
             </div>
           </div>
 
           <div class="group custom-dropdown relative">
             <button class="flex items-center gap-3 py-1">
-              <span
-                class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
-                >Tech</span
-              >
-              <span
-                class="selected-label min-w-[40px] text-left text-sm font-medium uppercase"
-                >All</span
-              >
-              <ChevronDown
-                class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180"
-              />
+              <span class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase">
+                Tech
+              </span>
+              <span class="selected-label min-w-[40px] text-left text-sm font-medium uppercase">
+                All
+              </span>
+              <ChevronDown class="text-muted-foreground h-3 w-3 transition-transform group-focus-within:rotate-180" />
             </button>
 
             <div
@@ -160,18 +146,18 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                data-value="">All</button
+                data-value=""
               >
-              {
-                allTechStack.map((tech) => (
-                  <button
-                    class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
-                    data-value={tech}
-                  >
-                    {tech}
-                  </button>
-                ))
-              }
+                All
+              </button>
+              {allTechStack.map((tech) => (
+                <button
+                  class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
+                  data-value={tech}
+                >
+                  {tech}
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -179,35 +165,11 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
     </div>
 
     <!-- Community Projects Section -->
-    {
-      communityProjects.length > 0 && (
-        <div class="space-y-4">
-          <h2 class="text-2xl font-bold">Community Projects</h2>
-          <div class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
-            {communityProjects.map((project) => (
-              <div
-                class="project-card"
-                data-category={project.category}
-                data-status={project.status}
-                data-tech={project.techStack.join(",")}
-              >
-                <ProjectCard {...project} />
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    }
-
-    <!-- Member Projects Grid -->
-    <div class="space-y-4">
-      <h2 class="text-2xl font-bold">Member Projects</h2>
-      <div
-        id="projects-grid"
-        class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {
-          regularProjects.map((project) => (
+    {communityProjects.length > 0 && (
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold">Community Projects</h2>
+        <div class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+          {communityProjects.map((project) => (
             <div
               class="project-card"
               data-category={project.category}
@@ -216,8 +178,28 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             >
               <ProjectCard {...project} />
             </div>
-          ))
-        }
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Member Projects Grid -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold">Member Projects</h2>
+      <div
+        id="projects-grid"
+        class="projects-grid-separators grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {regularProjects.map((project) => (
+          <div
+            class="project-card"
+            data-category={project.category}
+            data-status={project.status}
+            data-tech={project.techStack.join(",")}
+          >
+            <ProjectCard {...project} />
+          </div>
+        ))}
       </div>
     </div>
 

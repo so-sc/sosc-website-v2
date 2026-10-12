@@ -1,31 +1,11 @@
+import { satteri } from "@astrojs/markdown-satteri";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
-
-const rehypeLazyImages = () => {
-  return (tree) => {
-    const visit = (node) => {
-      if (!node || typeof node !== "object") return;
-      if (Array.isArray(node)) {
-        node.forEach(visit);
-        return;
-      }
-
-      if (node.type === "element" && node.tagName === "img") {
-        node.properties ??= {};
-        node.properties.loading ??= "lazy";
-        node.properties.decoding ??= "async";
-      }
-
-      if (Array.isArray(node.children)) node.children.forEach(visit);
-    };
-
-    visit(tree);
-  };
-};
+import imgAttr from "satteri-imgattr";
 
 export default defineConfig({
   site: "https://www.sosc.org.in",
@@ -33,15 +13,14 @@ export default defineConfig({
     prefetchAll: false,
   },
   markdown: {
-    rehypePlugins: [rehypeLazyImages],
+    processor: satteri({
+      mdastPlugins: [
+        imgAttr({ defaults: { loading: "lazy", decoding: "async" } }),
+      ],
+    }),
   },
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [
-    react(),
-    mdx({ rehypePlugins: [rehypeLazyImages] }),
-    sitemap({}),
-    icon(),
-  ],
+  integrations: [react(), mdx(), sitemap(), icon()],
 });

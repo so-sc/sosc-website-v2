@@ -39,22 +39,22 @@ It reproduces the difference-in-means technique from [Arditi et al. (2024)](http
 
 ### Direction Extraction & Ablation
 
-* **Difference-in-Means Directions** – Computes a per-layer refusal direction from harmful vs. harmless prompt activations
-* **Gram-Schmidt Purification** – Filters generic "a prompt was given" signal out of the refusal-specific direction
-* **Two Ablation Methods** – A reversible runtime hook and a permanent weight edit, tested to be numerically equivalent
-* **Layer/Coefficient Sweep** – Picks the operating point on the refusal-vs-capability tradeoff curve instead of guessing
+- **Difference-in-Means Directions** – Computes a per-layer refusal direction from harmful vs. harmless prompt activations
+- **Gram-Schmidt Purification** – Filters generic "a prompt was given" signal out of the refusal-specific direction
+- **Two Ablation Methods** – A reversible runtime hook and a permanent weight edit, tested to be numerically equivalent
+- **Layer/Coefficient Sweep** – Picks the operating point on the refusal-vs-capability tradeoff curve instead of guessing
 
 ### Evaluation Harness
 
-* **Two-Tier Refusal Grader** – Rule-based classification with an LLM-judge fallback for ambiguous responses
-* **Independent Capability Guard** – ARC-Easy as a quick sanity check, plus MMLU-Pro and harmless-prompt KL divergence
-* **12-Category Eval Set** – 292 category-labeled prompts for measuring refusal behaviour
+- **Two-Tier Refusal Grader** – Rule-based classification with an LLM-judge fallback for ambiguous responses
+- **Independent Capability Guard** – ARC-Easy as a quick sanity check, plus MMLU-Pro and harmless-prompt KL divergence
+- **12-Category Eval Set** – 292 category-labeled prompts for measuring refusal behaviour
 
 ### Architecture Coverage
 
-* **Llama & Qwen2.5** – Standard decoder architectures
-* **Qwen3.5–3.8 Hybrid Models** – Edits linear-attention output projections that a naive edit would miss
-* **Gemma 2/3 Sandwich-Norm Models** – Norm-aware orthogonalization, with tests that fail on the naive edit
+- **Llama & Qwen2.5** – Standard decoder architectures
+- **Qwen3.5–3.8 Hybrid Models** – Edits linear-attention output projections that a naive edit would miss
+- **Gemma 2/3 Sandwich-Norm Models** – Norm-aware orthogonalization, with tests that fail on the naive edit
 
 ---
 
@@ -64,18 +64,18 @@ It reproduces the difference-in-means technique from [Arditi et al. (2024)](http
 
 Purified direction from **layer 37 of 64**, coefficient 1.0, run on a single H100 for ~$8 of Modal compute.
 
-| Metric | Original | Abliterated |
-|---|---|---|
-| Refusal rate (292 prompts, 12 categories) | 99.3% | **0.0%** |
-| MMLU-Pro (490 questions, 14 subjects) | 65.1% | **61.8%** (−3.3pp) |
-| KL divergence on harmless prompts | — | **0.086 nats** |
-| ARC-Easy (100 questions) | 1.000 | 1.000 |
+| Metric                                    | Original | Abliterated        |
+| ----------------------------------------- | -------- | ------------------ |
+| Refusal rate (292 prompts, 12 categories) | 99.3%    | **0.0%**           |
+| MMLU-Pro (490 questions, 14 subjects)     | 65.1%    | **61.8%** (−3.3pp) |
+| KL divergence on harmless prompts         | —        | **0.086 nats**     |
+| ARC-Easy (100 questions)                  | 1.000    | 1.000              |
 
 ### Key Insights
 
-* **Purification matters** – Gram-Schmidt orthogonalization adds ~15pp of refusal suppression on Qwen2.5-7B at no capability cost
-* **Layer selection is dominant** – The winning layer transfers by relative depth (~57–58%) across model sizes
-* **Easy benchmarks hide the cost** – ARC-Easy reads 1.000 before and after; MMLU-Pro reveals the real 3.3pp drop
+- **Purification matters** – Gram-Schmidt orthogonalization adds ~15pp of refusal suppression on Qwen2.5-7B at no capability cost
+- **Layer selection is dominant** – The winning layer transfers by relative depth (~57–58%) across model sizes
+- **Easy benchmarks hide the cost** – ARC-Easy reads 1.000 before and after; MMLU-Pro reveals the real 3.3pp drop
 
 ---
 
@@ -94,24 +94,24 @@ Purified direction from **layer 37 of 64**, coefficient 1.0, run on a single H10
 
 ### Core
 
-* **Python 3.11** – Pipeline and evaluation code
-* **PyTorch** – Activation extraction, hooks, and weight edits
-* **Transformers** – Model loading across Llama, Qwen, and Gemma families
+- **Python 3.11** – Pipeline and evaluation code
+- **PyTorch** – Activation extraction, hooks, and weight edits
+- **Transformers** – Model loading across Llama, Qwen, and Gemma families
 
 ### Infrastructure
 
-* **Modal** – Serverless GPU orchestration (H100 / B200)
-* **Hugging Face Hub** – Model and dataset access, checkpoint publishing
+- **Modal** – Serverless GPU orchestration (H100 / B200)
+- **Hugging Face Hub** – Model and dataset access, checkpoint publishing
 
 ### Testing
 
-* **pytest** – 60 CPU-only unit tests, including architecture tests on tiny random models
+- **pytest** – 60 CPU-only unit tests, including architecture tests on tiny random models
 
 ---
 
 ## Project Goals
 
-* Make abliteration reproducible and measurable, not a one-off trick
-* Quantify the capability cost of refusal removal with benchmarks hard enough to show it
-* Support modern hybrid and sandwich-norm architectures correctly
-* Keep GPU runs cheap and predictable through bounded sweeps
+- Make abliteration reproducible and measurable, not a one-off trick
+- Quantify the capability cost of refusal removal with benchmarks hard enough to show it
+- Support modern hybrid and sandwich-norm architectures correctly
+- Keep GPU runs cheap and predictable through bounded sweeps

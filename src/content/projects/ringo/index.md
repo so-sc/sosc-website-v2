@@ -42,28 +42,28 @@ Ringo is **fully self-hostable**. Your documents are indexed and stored locally,
 
 ### Grounded, Checkable Answers
 
-* **Inline Citations** – Answers cite `[n]` markers that expand to show the source file, page or slide, and the passage itself
-* **Hallucination Filtering** – Citation numbers that don't match a retrieved passage are stripped server-side, even mid-stream
-* **Groundedness Caveat** – Answers produced without any matching context are flagged as possibly not grounded in your documents
+- **Inline Citations** – Answers cite `[n]` markers that expand to show the source file, page or slide, and the passage itself
+- **Hallucination Filtering** – Citation numbers that don't match a retrieved passage are stripped server-side, even mid-stream
+- **Groundedness Caveat** – Answers produced without any matching context are flagged as possibly not grounded in your documents
 
 ### Reads the Formats You Already Have
 
-* **Broad Document Support** – PDF, Word, PowerPoint, Excel, CSV, HTML and Markdown
-* **OCR on Images** – Text inside charts, diagrams and scanned pages is extracted with Tesseract and made searchable
-* **Structure Indexing** – Tables of contents, headings and slide titles are indexed, so "what sections are in this book?" just works
+- **Broad Document Support** – PDF, Word, PowerPoint, Excel, CSV, HTML and Markdown
+- **OCR on Images** – Text inside charts, diagrams and scanned pages is extracted with Tesseract and made searchable
+- **Structure Indexing** – Tables of contents, headings and slide titles are indexed, so "what sections are in this book?" just works
 
 ### Text, Voice and Images
 
-* **Voice Input** – Questions are transcribed locally with OpenAI Whisper
-* **Read-Aloud Answers** – On-demand text-to-speech via edge-tts
-* **Image Chat** – Upload an image and ask about it; follow-ups like "what's in that picture?" are routed back to the vision model
+- **Voice Input** – Questions are transcribed locally with OpenAI Whisper
+- **Read-Aloud Answers** – On-demand text-to-speech via edge-tts
+- **Image Chat** – Upload an image and ask about it; follow-ups like "what's in that picture?" are routed back to the vision model
 
 ### Built to Run Yourself
 
-* **One-Command Setup** – `docker compose up` brings up the whole stack
-* **Conversation Memory** – Redis-backed history, persisted to SQLite so it survives restarts
-* **Admin-Protected Documents** – Uploading and deleting documents requires an admin key
-* **Local Analytics** – Queries, latency and sources logged to SQLite and viewable in an admin dashboard
+- **One-Command Setup** – `docker compose up` brings up the whole stack
+- **Conversation Memory** – Redis-backed history, persisted to SQLite so it survives restarts
+- **Admin-Protected Documents** – Uploading and deleting documents requires an admin key
+- **Local Analytics** – Queries, latency and sources logged to SQLite and viewable in an admin dashboard
 
 ---
 
@@ -82,31 +82,31 @@ Ringo is **fully self-hostable**. Your documents are indexed and stored locally,
 
 ### Backend
 
-* **FastAPI** – High-performance Python API with SSE streaming and per-endpoint rate limiting
-* **Groq** – Fast text generation with automatic model tiering, plus a vision model for image chat
-* **ChromaDB** – Persistent vector storage
-* **HuggingFace** – Local embeddings (all-MiniLM-L6-v2) and cross-encoder reranking
-* **OpenAI Whisper** – Local audio transcription
-* **Redis** – Conversation memory and response caching
+- **FastAPI** – High-performance Python API with SSE streaming and per-endpoint rate limiting
+- **Groq** – Fast text generation with automatic model tiering, plus a vision model for image chat
+- **ChromaDB** – Persistent vector storage
+- **HuggingFace** – Local embeddings (all-MiniLM-L6-v2) and cross-encoder reranking
+- **OpenAI Whisper** – Local audio transcription
+- **Redis** – Conversation memory and response caching
 
 ### Frontend
 
-* **React + TypeScript** – Chat, settings and admin dashboard
-* **Vite** – Fast builds and dev server
+- **React + TypeScript** – Chat, settings and admin dashboard
+- **Vite** – Fast builds and dev server
 
 ### Infrastructure
 
-* **Docker Compose** – Single-command deployment, with the API proxied through the frontend
-* **GitHub Actions** – Tests, dependency CVE audit, lint and build on every push
+- **Docker Compose** – Single-command deployment, with the API proxied through the frontend
+- **GitHub Actions** – Tests, dependency CVE audit, lint and build on every push
 
 ---
 
 ## Project Goals
 
-* Make answers from your own documents trustworthy by making every claim checkable
-* Keep documents private by running everything on your own machine
-* Support the file formats people actually use, including the text inside images
-* Stay simple to run, with no subscription or vendor lock-in
+- Make answers from your own documents trustworthy by making every claim checkable
+- Keep documents private by running everything on your own machine
+- Support the file formats people actually use, including the text inside images
+- Stay simple to run, with no subscription or vendor lock-in
 
 ---
 

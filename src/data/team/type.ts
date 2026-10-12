@@ -11,6 +11,8 @@ export const teamMemberSchema = z.object({
   status: z.enum(["coordinator", "alumni", "active"]),
   image: z.string(),
   year: z.string().default("-"),
+  /** Build-time blurred data URI shown while the photo loads */
+  placeholder: z.string().optional(),
 });
 
 export const teamArraySchema = z.array(teamMemberSchema);

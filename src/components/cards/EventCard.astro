@@ -33,7 +33,7 @@ if (eventDate.toDateString() === today.toDateString()) {
     class="hidden h-full flex-col items-center justify-center pr-6 md:col-span-2 md:flex"
   >
     <span
-      class="group-hover:text-primary text-5xl leading-none font-black text-gray-400 transition-colors duration-500"
+      class="group-hover:text-primary text-5xl leading-none font-black text-gray-500 transition-colors duration-500"
     >
       {new Date(date).getDate().toString().padStart(2, "0")}
     </span>
@@ -77,7 +77,7 @@ if (eventDate.toDateString() === today.toDateString()) {
         {
           status && (
             <span
-              class={`rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${status === "Upcoming" ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-500 dark:bg-white/10 dark:text-gray-400"}`}
+              class={`rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase ${status === "Upcoming" ? "bg-primary/10 text-primary-ink" : "bg-gray-100 text-gray-500 dark:bg-white/10 dark:text-gray-400"}`}
             >
               {status}
             </span>

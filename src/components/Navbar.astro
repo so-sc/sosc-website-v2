@@ -5,7 +5,17 @@ import SOSC from "@/assets/sosc_logo.svg";
 ---
 
 <nav class="text-foreground fixed top-0 z-99 w-full" id="main-navbar">
-  <div class="flex h-14 w-full items-center justify-between px-4 md:px-8">
+  <!-- Solid surface that fades in once the page scrolls under the bar.
+       Kept as its own layer: a backdrop-filter on <nav> would trap the fixed menus. -->
+  <div
+    id="nav-surface"
+    class="pointer-events-none absolute inset-x-0 top-0 h-14 border-b border-gray-200 bg-white/85 opacity-0 backdrop-blur-md transition-opacity duration-300"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="relative flex h-14 w-full items-center justify-between px-4 md:px-8"
+  >
     <div
       class="relative z-50 text-xl font-bold transition-opacity duration-300"
       id="nav-logo"
@@ -54,13 +64,18 @@ import SOSC from "@/assets/sosc_logo.svg";
     <div class="menu-pagination">
       <div class="pagination-container" id="pagination-list">
         {
-          ["HOME", "BLOGS", "EVENTS", "PROJECTS", "RESOURCES", "TEAM"].map(
-            (item, index) => (
-              <button class="pagination-item" data-index={index}>
-                {item}
-              </button>
-            ),
-          )
+          [
+            { name: "HOME", path: "/" },
+            { name: "BLOGS", path: "/blogs" },
+            { name: "EVENTS", path: "/events" },
+            { name: "PROJECTS", path: "/projects" },
+            { name: "RESOURCES", path: "/resources" },
+            { name: "TEAM", path: "/team" },
+          ].map((item, index) => (
+            <a href={item.path} class="pagination-item" data-index={index}>
+              {item.name}
+            </a>
+          ))
         }
       </div>
     </div>
@@ -112,12 +127,10 @@ import SOSC from "@/assets/sosc_logo.svg";
     <!-- Bottom Section -->
     <div class="menu-bottom">
       <p class="ideals-text text-justify font-mono">
-        At Sahyadri Open-Source Community, we believe in breeding innovation
-        through collaboration, empowering students with cutting-edge technology,
-        and building a vibrant ecosystem where ideas transform into impactful
-        solutions. We champion open-source principles, encourage knowledge
-        sharing, and create opportunities for growth through workshops,
-        hackathons, and community-driven projects.
+        At Sahyadri Open-Source Community, we learn by building together.
+        Students turn ideas into working projects, share what they know, and
+        contribute back to open source through workshops, hackathons, and
+        community-driven projects.
       </p>
     </div>
   </div>
@@ -285,6 +298,11 @@ import SOSC from "@/assets/sosc_logo.svg";
     white-space: nowrap;
     position: relative;
     padding: 0.25rem 0;
+    text-decoration: none;
+  }
+
+  .pagination-item:hover {
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .pagination-item::after {
@@ -294,7 +312,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     left: 0;
     width: 100%;
     height: 1.5px;
-    background: #00ff88;
+    background: var(--primary);
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
@@ -392,7 +410,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #00ff88, #00ccff);
+    background: var(--primary);
     transform: scaleX(0);
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   }
@@ -536,7 +554,7 @@ import SOSC from "@/assets/sosc_logo.svg";
   import EmblaCarousel from "embla-carousel";
   import { toggleScrollLock } from "@/lib/scroll-lock";
 
-  // Set by initNavbar on every page load; read by the once-only listener below
+  // Set by initNavbar on every page load; read by the once-only listeners below
   let closeActiveMenu: (() => void) | null = null;
 
   function initNavbar() {
@@ -586,12 +604,14 @@ import SOSC from "@/assets/sosc_logo.svg";
       emblaApi.on("reInit", updateActivePagination);
       updateActivePagination();
 
-      paginationItems.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const indexAttr = btn.getAttribute("data-index");
-          const index = parseInt(indexAttr || "0");
-          emblaApi?.scrollTo(index);
-        });
+      // Pager items are real links: hovering or focusing previews the slide,
+      // clicking navigates in one step
+      paginationItems.forEach((item) => {
+        const index = parseInt(item.getAttribute("data-index") || "0");
+        const preview = () => emblaApi?.scrollTo(index);
+        item.addEventListener("mouseenter", preview);
+        item.addEventListener("focus", preview);
+        item.addEventListener("click", () => closeMenu());
       });
 
       // Link click closure
@@ -691,12 +711,26 @@ import SOSC from "@/assets/sosc_logo.svg";
     closeActiveMenu = () => {
       if (isMenuOpen) closeMenu();
     };
+
+    updateNavSurface();
+  }
+
+  // Fade the bar's surface in once content scrolls beneath it. On the home
+  // page, wait until the pixel-grid hero has fully played so no white bar
+  // sits over the animation.
+  function updateNavSurface() {
+    const spacer = document.getElementById("landing-spacer");
+    const threshold = spacer ? spacer.offsetHeight - window.innerHeight : 40;
+    document
+      .getElementById("nav-surface")
+      ?.classList.toggle("opacity-0", window.scrollY < threshold);
   }
 
   // Registered once; page swaps re-run initNavbar via astro:page-load
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeActiveMenu?.();
   });
+  window.addEventListener("scroll", updateNavSurface, { passive: true });
 
   // astro:page-load fires on the first load too, so this is the only init call
   document.addEventListener("astro:page-load", () => {

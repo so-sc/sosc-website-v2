@@ -3,6 +3,14 @@ import TeamLanding from "../../components/team/TeamLanding.astro";
 import TeamView from "../../components/team/TeamView";
 import { team } from "../../data/loader";
 import Layout from "../../layouts/Layout.astro";
+import { lqip } from "../../lib/lqip";
+
+const teamWithPlaceholders = await Promise.all(
+  team.map(async (member) => ({
+    ...member,
+    placeholder: await lqip(member.image),
+  })),
+);
 ---
 
 <Layout
@@ -10,7 +18,7 @@ import Layout from "../../layouts/Layout.astro";
   description="Meet the students who run the Sahyadri Open Source Community."
 >
   <TeamLanding />
-  <section class="text-foreground mx-auto max-w-7xl px-4 py-20 md:px-8">
-    <TeamView client:visible team={team} />
+  <section class="text-foreground mx-auto max-w-7xl px-4 pt-4 pb-20 md:px-8">
+    <TeamView client:visible team={teamWithPlaceholders} />
   </section>
 </Layout>

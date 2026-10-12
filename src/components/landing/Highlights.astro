@@ -1,61 +1,39 @@
 ---
+import { Pause, Play } from "@lucide/astro";
 import events from "../../data/highlights.json";
 import CommunityCard from "../cards/CommunityCard.astro";
+import Section from "./Section.astro";
+import SectionHeader from "./SectionHeader.astro";
 ---
 
-<section
-  class="relative w-full overflow-hidden bg-white px-6 py-16 md:px-20 md:py-24"
->
-  <!-- Header -->
-  <div class="relative z-10 w-full">
-    <div class="container mx-auto mb-10 md:mb-16">
-      <!-- Added: System Log -->
-      <div
-        class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
-      >
-        <span class="animate-pulse">●</span>
-        <span>SYSTEM_EVENTS_LOG</span>
-      </div>
+<Section id="highlights">
+  <SectionHeader
+    title="Community"
+    accent="Highlights"
+    blurb="Since 2018. Our impact is measured in code deployed, skills learned, and connections made."
+  >
+    <button
+      id="highlights-toggle"
+      slot="actions"
+      type="button"
+      aria-label="Pause highlights"
+      class="-m-2 flex h-8 w-8 items-center justify-center text-gray-400 transition-colors hover:text-gray-900"
+    >
+      <Pause id="highlights-icon-pause" class="h-4 w-4" aria-hidden="true" />
+      <Play
+        id="highlights-icon-play"
+        class="hidden h-4 w-4"
+        aria-hidden="true"
+      />
+    </button>
+  </SectionHeader>
 
-      <div
-        class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
-      >
-        <div>
-          <h2
-            class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
-          >
-            Community
-            <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
-              >Highlights</span
-            >
-          </h2>
-        </div>
-        <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-          <p
-            class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
-          >
-            Since 2018
-          </p>
-          <p
-            class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
-          >
-            Our impact is measured in code deployed, skills learned, and
-            connections made.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scroll Area -->
+  <!-- Scroll Area: clipped to the page container -->
   <div
     id="highlights-scroll-container"
-    class="no-scrollbar relative z-10 w-full overflow-x-auto border-b border-gray-100"
+    class="no-scrollbar relative w-full overflow-x-auto"
   >
-    <div
-      id="highlights-inner"
-      class="flex w-max gap-6 py-6 pr-6 pl-6 md:gap-10 md:py-10 md:pr-20 md:pl-20"
-    >
+    <div id="highlights-inner" class="flex w-max gap-6 md:gap-10">
       {
         /* Three copies make the loop seamless; only the middle one is exposed to assistive tech */
         [0, 1, 2].map((copy) => (
@@ -71,17 +49,6 @@ import CommunityCard from "../cards/CommunityCard.astro";
         ))
       }
     </div>
-  </div>
-
-  <div class="container mx-auto mt-4 flex justify-end">
-    <button
-      id="highlights-toggle"
-      type="button"
-      aria-pressed="false"
-      class="hover:border-primary hover:text-primary flex items-center gap-2 border border-gray-300 px-3 py-2 font-mono text-xs font-bold tracking-widest text-gray-600 uppercase transition-colors"
-    >
-      <span id="highlights-toggle-label">Pause</span>
-    </button>
   </div>
 
   <!-- Modal -->
@@ -104,7 +71,7 @@ import CommunityCard from "../cards/CommunityCard.astro";
           <!-- Category Tag -->
           <span
             id="modal-category"
-            class="bg-primary absolute top-0 left-0 px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase md:text-xs"
+            class="bg-primary text-primary-foreground absolute top-0 left-0 px-3 py-1 text-xs font-bold tracking-widest uppercase"
           >
             Category
           </span>
@@ -118,7 +85,7 @@ import CommunityCard from "../cards/CommunityCard.astro";
         <!-- Close Button -->
         <button
           id="close-modal"
-          class="hover:bg-primary absolute top-4 right-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors hover:text-white"
+          class="hover:bg-primary absolute top-4 right-4 z-20 bg-gray-100 p-3 text-gray-900 transition-colors"
           aria-label="Close"
         >
           <svg
@@ -141,7 +108,7 @@ import CommunityCard from "../cards/CommunityCard.astro";
           <div class="mb-4 flex items-center gap-4">
             <span
               id="modal-date"
-              class="font-mono text-[10px] font-bold text-gray-400 md:text-xs"
+              class="font-mono text-xs font-bold text-gray-500"
             >
               DATE
             </span>
@@ -168,7 +135,7 @@ import CommunityCard from "../cards/CommunityCard.astro";
       </div>
     </div>
   </dialog>
-</section>
+</Section>
 
 <style>
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -287,7 +254,8 @@ import CommunityCard from "../cards/CommunityCard.astro";
     );
     const inner = document.getElementById("highlights-inner");
     const toggle = document.getElementById("highlights-toggle");
-    const toggleLabel = document.getElementById("highlights-toggle-label");
+    const iconPause = document.getElementById("highlights-icon-pause");
+    const iconPlay = document.getElementById("highlights-icon-play");
 
     if (!scrollContainer || !inner) return;
 
@@ -299,8 +267,12 @@ import CommunityCard from "../cards/CommunityCard.astro";
     let resumeTimeout: ReturnType<typeof setTimeout>;
 
     const syncToggle = () => {
-      toggle?.setAttribute("aria-pressed", String(isStopped));
-      if (toggleLabel) toggleLabel.textContent = isStopped ? "Play" : "Pause";
+      toggle?.setAttribute(
+        "aria-label",
+        isStopped ? "Play highlights" : "Pause highlights",
+      );
+      iconPause?.classList.toggle("hidden", isStopped);
+      iconPlay?.classList.toggle("hidden", !isStopped);
     };
     syncToggle();
 

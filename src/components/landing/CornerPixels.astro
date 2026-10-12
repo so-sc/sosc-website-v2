@@ -1,0 +1,146 @@
+---
+/* The site's pixel motif in chosen corners: a faint grid that fades out from
+   the corner plus green blocks, echoing the dissolving edge of the pixel-grid
+   hero. Place inside a `relative overflow-hidden` parent. */
+type Corner = "tl" | "tr" | "bl" | "br";
+
+interface Props {
+  corners: Corner[];
+}
+
+const { corners } = Astro.props;
+
+// Blocks in grid cells, measured from the corner: [col, row, opacity].
+// Dense at the corner, thinning out like the hero's fragmented edge.
+const blocks: [number, number, number][] = [
+  [0, 0, 0.7],
+  [1, 0, 0.5],
+  [0, 1, 0.55],
+  [2, 0, 0.35],
+  [1, 1, 0.4],
+  [0, 2, 0.4],
+  [3, 0, 0.22],
+  [2, 1, 0.25],
+  [1, 2, 0.28],
+  [0, 3, 0.3],
+  [4, 0, 0.14],
+  [3, 1, 0.16],
+  [2, 2, 0.12],
+  [1, 3, 0.18],
+  [0, 4, 0.2],
+  [5, 1, 0.1],
+  [4, 2, 0.08],
+  [1, 4, 0.1],
+  [0, 5, 0.14],
+  [2, 4, 0.07],
+  [6, 0, 0.1],
+  [3, 3, 0.07],
+  [0, 6, 0.08],
+  [1, 6, 0.05],
+  [7, 1, 0.06],
+  [5, 3, 0.05],
+  [0, 7, 0.05],
+  [8, 0, 0.05],
+];
+---
+
+{
+  corners.map((corner) => (
+    <div
+      class:list={["section-decor", `section-decor--${corner}`]}
+      aria-hidden="true"
+    >
+      <svg
+        class="section-decor__blocks"
+        viewBox="0 0 9 8"
+        style={`transform: scale(${corner.endsWith("r") ? -1 : 1}, ${corner.startsWith("b") ? -1 : 1})`}
+      >
+        {blocks.map(([x, y, o]) => (
+          <rect
+            x={x}
+            y={y}
+            width="1"
+            height="1"
+            fill="var(--primary)"
+            opacity={o}
+          />
+        ))}
+      </svg>
+    </div>
+  ))
+}
+
+<style>
+  .section-decor {
+    --cell: 32px;
+    position: absolute;
+    width: min(56rem, 90%);
+    height: 40rem;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgb(0 0 0 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.08) 1px, transparent 1px);
+    background-size: var(--cell) var(--cell);
+  }
+
+  @media (min-width: 768px) {
+    .section-decor {
+      --cell: 48px;
+    }
+  }
+
+  /* Anchor the grid to the corner so the blocks sit exactly on its cells */
+  .section-decor--tl {
+    top: 0;
+    left: 0;
+    background-position: left top;
+    mask-image: radial-gradient(at left top, #000 10%, transparent 75%);
+  }
+
+  .section-decor--tr {
+    top: 0;
+    right: 0;
+    background-position: right top;
+    mask-image: radial-gradient(at right top, #000 10%, transparent 75%);
+  }
+
+  .section-decor--bl {
+    bottom: 0;
+    left: 0;
+    background-position: left bottom;
+    mask-image: radial-gradient(at left bottom, #000 10%, transparent 75%);
+  }
+
+  .section-decor--br {
+    bottom: 0;
+    right: 0;
+    background-position: right bottom;
+    mask-image: radial-gradient(at right bottom, #000 10%, transparent 75%);
+  }
+
+  .section-decor__blocks {
+    position: absolute;
+    width: calc(var(--cell) * 9);
+    height: calc(var(--cell) * 8);
+  }
+
+  .section-decor--tl .section-decor__blocks {
+    top: 0;
+    left: 0;
+  }
+
+  .section-decor--tr .section-decor__blocks {
+    top: 0;
+    right: 0;
+  }
+
+  .section-decor--bl .section-decor__blocks {
+    bottom: 0;
+    left: 0;
+  }
+
+  .section-decor--br .section-decor__blocks {
+    bottom: 0;
+    right: 0;
+  }
+</style>

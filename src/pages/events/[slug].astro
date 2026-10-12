@@ -30,12 +30,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   description={`${name}, hosted by SOSC on ${formattedDate} at ${location}.`}
   image={cover?.src}
 >
-  <div class="mx-auto max-w-4xl space-y-10 px-4 py-20">
+  <div class="mx-auto max-w-4xl px-4 pt-28 pb-20 md:px-8">
     <!-- Top Back Button -->
     <div class="mb-8">
       <a
         href="/events"
-        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
+        class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
         <Icon
           name="mdi:chevron-left"
@@ -45,39 +45,61 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       </a>
     </div>
 
-    <!-- Event Title & Info -->
-    <div class="space-y-4">
-      <p class="text-primary">{location}</p>
-      <h1 class="text-4xl font-bold">{name}</h1>
-      <p class="text-muted-foreground text-sm">{formattedDate}</p>
+    <!-- Event Header -->
+    <div class="mb-10 border-b border-gray-100 pb-10">
+      <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
+        {name}
+      </h1>
+      <div
+        class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-500"
+      >
+        <span class="inline-flex items-center gap-2">
+          <Icon
+            name="mdi:calendar-blank-outline"
+            class="h-4 w-4"
+            aria-hidden="true"
+          />
+          <time datetime={new Date(date).toISOString()}>{formattedDate}</time>
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <Icon
+            name="mdi:map-marker-outline"
+            class="h-4 w-4"
+            aria-hidden="true"
+          />
+          {location}
+        </span>
+      </div>
+    </div>
 
-      <div class="border-primary my-2 w-20 rounded-2xl border-4 border-b"></div>
-
-      <!-- Event Banner -->
-      {
-        cover && (
+    <!-- Event Cover -->
+    {
+      cover && (
+        <div class="mb-12 overflow-hidden bg-gray-50">
           <Image
             src={cover}
             alt={name}
-            class="h-auto w-full bg-gray-100 object-contain"
-            loading={"eager"}
+            class="mx-auto h-auto max-h-[70vh] w-full object-contain"
+            loading="eager"
             format="webp"
             quality={80}
           />
-        )
-      }
-    </div>
+        </div>
+      )
+    }
 
     <!-- Markdown Content -->
     <MarkdownLayout>
-      <Content />
+      <div class="prose-sosc">
+        <Content />
+      </div>
     </MarkdownLayout>
 
     <!-- Back to Events Link -->
     <div class="mt-16 border-t border-gray-200 pt-8">
       <a
         href="/events"
-        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
+        class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
         <Icon
           name="mdi:chevron-left"
@@ -88,51 +110,3 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
   </div>
 </Layout>
-
-<style>
-  /* Override prose styles for better heading spacing */
-  :global(.prose h1) {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose h2) {
-    margin-top: 1.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose h3) {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose h4) {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose h5) {
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose h6) {
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose p) {
-    margin-top: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  :global(.prose hr) {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  :global(.prose table) {
-    display: block;
-    overflow-x: auto;
-  }
-</style>

@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import slugify from "slugify";
 import BlogCard from "@/components/cards/BlogCard.astro";
+import PageHeader from "@/components/PageHeader.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const blogs = await getCollection("blogs");
@@ -27,14 +28,23 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
   description="Stories, tutorials and lessons from members of the Sahyadri Open Source Community."
 >
   <div>
+    <div class="mx-auto max-w-7xl px-4 pt-28 pb-10 md:px-8">
+      <PageHeader
+        title="Blog"
+        count={`${parsedBlogs.length} Posts`}
+        blurb="Stories, tutorials and lessons from SOSC members: what we built, what broke, and what we learned."
+      />
+    </div>
+
     <!-- Featured Banner -->
-    <div
-      class="relative mb-8 h-[300px] w-full overflow-hidden bg-gray-900 md:h-[450px]"
+    <a
+      href={`/blogs/${parsedBlogs[0].link}`}
+      class="group relative mb-8 block h-[300px] w-full overflow-hidden bg-gray-900 md:h-[450px]"
     >
       <Image
         src={parsedBlogs[0].cover}
-        alt="Featured Post"
-        class="h-full w-full object-cover"
+        alt=""
+        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
         width={1920}
         height={1080}
         loading="eager"
@@ -43,7 +53,7 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
       <div class="absolute inset-0 z-10 flex flex-col justify-end p-8 md:p-16">
         <div class="border-primary max-w-3xl border-l-4 pl-6">
           <p
-            class="text-primary mb-2 text-[10px] font-bold tracking-widest uppercase md:text-xs"
+            class="text-primary mb-2 text-xs font-bold tracking-widest uppercase"
           >
             Featured Article
           </p>
@@ -52,7 +62,7 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
           </h2>
         </div>
       </div>
-    </div>
+    </a>
 
     <div class="mx-auto max-w-7xl px-4 pb-10 md:px-8">
       <!-- Main Section -->
@@ -83,7 +93,7 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
                 ]
                   .slice(0, 15)
                   .map((tag) => (
-                    <span class="hover:border-primary hover:text-primary cursor-pointer border border-gray-100 bg-white px-2 py-1 text-[10px] text-gray-400 transition-colors">
+                    <span class="hover:border-primary hover:text-primary-ink cursor-pointer border border-gray-100 bg-white px-2 py-1 text-xs text-gray-500 transition-colors">
                       {tag}
                     </span>
                   ))
@@ -111,7 +121,7 @@ const allAuthors = [...new Set(blogs.map((b) => b.data.author))];
                       class="h-6 w-6 rounded-full border border-gray-200 transition-transform group-hover:scale-110"
                       onerror="this.onerror=null; this.src='/github_avatar.svg';"
                     />
-                    <span class="group-hover:text-primary text-[10px] font-bold text-gray-400 transition-colors">
+                    <span class="group-hover:text-primary-ink text-xs font-bold text-gray-500 transition-colors">
                       {author}
                     </span>
                   </a>

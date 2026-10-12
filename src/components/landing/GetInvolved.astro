@@ -1,0 +1,58 @@
+---
+import { ArrowRight, Github, Instagram } from "@lucide/astro";
+import Section from "./Section.astro";
+
+// Equal-size buttons: same height, same width via the grid, same border
+const buttonClass =
+  "group inline-flex h-12 items-center justify-center gap-2.5 border-2 border-gray-900 px-6 text-sm font-bold tracking-widest whitespace-nowrap uppercase transition-colors";
+const primaryClass = `${buttonClass} bg-gray-900 text-white hover:bg-black`;
+const secondaryClass = `${buttonClass} bg-white text-gray-900 hover:bg-gray-900 hover:text-white`;
+---
+
+<Section id="get-involved" decor={["bl", "br"]} class="bg-white text-gray-900">
+  <div
+    class="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end"
+  >
+    <div class="max-w-2xl">
+      <h2
+        class="text-5xl leading-none font-black tracking-tight uppercase md:text-7xl"
+      >
+        Build with <span class="text-primary-ink">us.</span>
+      </h2>
+      <p
+        class="mt-6 text-base leading-relaxed font-medium text-gray-600 md:text-lg"
+      >
+        Come to an event, pick up an issue, or ship your first PR. Every SOSC
+        project is open, and everyone starts somewhere.
+      </p>
+    </div>
+
+    <div class="grid w-full shrink-0 gap-3 sm:w-auto sm:grid-cols-3">
+      <a href="/events" class={primaryClass}>
+        See events
+        <ArrowRight
+          class="h-4 w-4 transition-transform group-hover:translate-x-1"
+          aria-hidden="true"
+        />
+      </a>
+      <a
+        href="https://github.com/so-sc"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={secondaryClass}
+      >
+        <Github class="h-4 w-4" aria-hidden="true" />
+        GitHub
+      </a>
+      <a
+        href="https://www.instagram.com/sosc.sahyadri"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={secondaryClass}
+      >
+        <Instagram class="h-4 w-4" aria-hidden="true" />
+        Instagram
+      </a>
+    </div>
+  </div>
+</Section>

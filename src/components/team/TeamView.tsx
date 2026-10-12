@@ -1,11 +1,23 @@
 import { Github, Linkedin } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { type TeamMember } from "@/data/team/type";
 import { cn } from "@/lib/utils";
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
-  const { image, name, designation, username, linkedin } = member;
+  const { image, name, designation, username, linkedin, placeholder } = member;
   const isNoBg = image.includes("team-nobg");
+  // GitHub avatars default to 460px; cards never show them that large
+  const src = image.startsWith("https://github.com/")
+    ? `${image}?size=256`
+    : image;
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // The photo may finish loading before this island hydrates, so onLoad never fires
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img?.complete && img.naturalWidth > 0) setLoaded(true);
+  }, []);
 
   return (
     <div className="group relative flex aspect-[3/4] w-full flex-col items-center justify-between overflow-hidden rounded-none border border-gray-200 bg-white pb-4 text-center transition-all md:aspect-[4/5] md:pb-6">
@@ -17,7 +29,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${name} on GitHub`}
-            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
+            className="bg-primary text-primary-foreground hover:bg-primary/85 flex h-8 w-8 cursor-pointer items-center justify-center rounded-none transition-colors"
           >
             <Github className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
           </a>
@@ -28,7 +40,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${name} on LinkedIn`}
-            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-none bg-[#3ce56e] text-white transition-colors hover:bg-[#2dc45e] md:h-8 md:w-8"
+            className="bg-primary text-primary-foreground hover:bg-primary/85 flex h-8 w-8 cursor-pointer items-center justify-center rounded-none transition-colors"
           >
             <Linkedin className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
           </a>
@@ -36,26 +48,35 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
       </div>
 
       {/* Image Container */}
-      <div className="relative flex h-[75%] w-full items-end justify-center overflow-hidden">
+      <div
+        className="relative flex h-[75%] w-full items-end justify-center overflow-hidden bg-gray-100 bg-cover bg-center"
+        style={
+          placeholder && !loaded
+            ? { backgroundImage: `url("${placeholder}")` }
+            : undefined
+        }
+      >
         <img
-          src={image}
+          ref={imgRef}
+          src={src}
           alt={name}
           loading="lazy"
           decoding="async"
+          onLoad={() => setLoaded(true)}
           className={cn(
-            "h-full w-full rounded-none object-cover",
+            // text-transparent keeps alt text for screen readers but never paints it
+            "h-full w-full rounded-none object-cover text-transparent transition-opacity duration-500",
+            loaded ? "opacity-100" : "opacity-0",
             isNoBg && "object-contain object-bottom mix-blend-multiply",
           )}
         />
       </div>
 
       <div className="z-20 flex w-full flex-1 flex-col justify-center space-y-0.5 px-4 pt-2 md:space-y-1">
-        <h3 className="text-sm font-bold text-[#3ce56e] md:text-base">
+        <h3 className="text-primary-ink text-sm font-bold md:text-base">
           {name}
         </h3>
-        <p className="text-[10px] font-medium text-gray-600 md:text-xs">
-          {designation}
-        </p>
+        <p className="text-xs font-medium text-gray-600">{designation}</p>
       </div>
     </div>
   );
@@ -101,7 +122,7 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
       m.designation !== "SOSWC Representative",
   );
 
-  const themeGreen = "text-[#3ce56e]";
+  const themeGreen = "text-primary-ink";
 
   return (
     <div className="space-y-12">
@@ -117,8 +138,8 @@ export default function TeamView({ team }: { team: TeamMember[] }) {
               className={cn(
                 "cursor-pointer rounded-none border-2 px-3 py-2 text-xs font-bold transition-all md:px-6 md:text-base",
                 selectedYear === year
-                  ? "border-[#3ce56e] bg-[#3ce56e] text-white"
-                  : "border-gray-300 bg-transparent text-gray-600 hover:border-[#3ce56e] hover:text-[#3ce56e]",
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "hover:border-primary hover:text-primary-ink border-gray-300 bg-transparent text-gray-600",
               )}
             >
               {tab}

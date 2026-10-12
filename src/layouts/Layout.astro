@@ -3,18 +3,24 @@ import Navbar from "@/components/Navbar.astro";
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/Footer.astro";
+import CornerPixels from "@/components/landing/CornerPixels.astro";
+import PageLoader from "@/components/PageLoader.astro";
+import TopPixels from "@/components/TopPixels.astro";
 import "lenis/dist/lenis.css";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  /** Pixel corners at the top and bottom of the page; the home page draws its own */
+  decor?: boolean;
 }
 
 const {
   title = "Sahyadri Open Source Community (SOSC)",
   description = "SOSC (Sahyadri Open-Source Community) brings together young tech enthusiasts in Mangalore through workshops, DevHost, Hackathons, and open-source collaboration.",
   image = "/og-image.jpg",
+  decor = true,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -83,9 +89,14 @@ const imageUrl = new URL(image, Astro.site);
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-black focus:shadow-lg"
       >Skip to content</a
     >
+    <PageLoader />
     <Navbar />
-    <main id="main">
-      <slot />
+    <main id="main" class="relative overflow-clip">
+      {decor && <TopPixels />}
+      {decor && <CornerPixels corners={["bl", "br"]} />}
+      <div class:list={["relative", decor && "pt-20 md:pt-36"]}>
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

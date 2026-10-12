@@ -21,6 +21,7 @@ github: https://github.com/so-sc/sosc-website
 demo: https://sosc.org.in
 documentation: https://github.com/so-sc/sosc-website#readme
 community: true
+order: 2
 ---
 
 # SOSC Website

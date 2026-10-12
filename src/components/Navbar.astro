@@ -2,6 +2,10 @@
 import { Image } from "astro:assets";
 import { Menu, X } from "lucide-react";
 import SOSC from "@/assets/sosc_logo.svg";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) =>
+  href === "/" ? path === "/" : path.startsWith(href);
 ---
 
 <nav class="text-foreground fixed top-0 z-99 w-full" id="main-navbar">
@@ -21,7 +25,13 @@ import SOSC from "@/assets/sosc_logo.svg";
       id="nav-logo"
     >
       <a href="/" aria-label="Go to home">
-        <Image src={SOSC} alt="SOSC Logo" class="h-6 w-fit" loading="eager" />
+        <Image
+          src={SOSC}
+          alt="SOSC Logo"
+          id="nav-logo-img"
+          class="h-6 w-fit brightness-0 transition-[filter] duration-300"
+          loading="eager"
+        />
       </a>
     </div>
     <!-- Fixed Toggle Button -->
@@ -126,7 +136,7 @@ import SOSC from "@/assets/sosc_logo.svg";
 
     <!-- Bottom Section -->
     <div class="menu-bottom">
-      <p class="ideals-text text-justify font-mono">
+      <p class="ideals-text font-mono">
         At Sahyadri Open-Source Community, we learn by building together.
         Students turn ideas into working projects, share what they know, and
         contribute back to open source through workshops, hackathons, and
@@ -156,6 +166,7 @@ import SOSC from "@/assets/sosc_logo.svg";
               href={item.path}
               class="mobile-link"
               style={`--delay: ${index * 50}ms`}
+              aria-current={isCurrent(item.path) ? "page" : undefined}
             >
               <span class="mobile-link-number">
                 {String(index + 1).padStart(2, "0")}
@@ -217,7 +228,8 @@ import SOSC from "@/assets/sosc_logo.svg";
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 3rem 3rem 1.5rem;
+    /* Clears the 56px bar; sides line up with the navbar's logo and toggle */
+    padding: 5rem 2rem 1.5rem;
     position: relative;
     z-index: 10;
     opacity: 0;
@@ -256,7 +268,7 @@ import SOSC from "@/assets/sosc_logo.svg";
     position: relative;
     z-index: 20;
     width: 100%;
-    padding: 0 3rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
@@ -289,9 +301,9 @@ import SOSC from "@/assets/sosc_logo.svg";
     background: transparent;
     border: none;
     color: rgba(255, 255, 255, 0.3);
-    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -319,7 +331,6 @@ import SOSC from "@/assets/sosc_logo.svg";
 
   .pagination-item.is-active {
     color: #fff;
-    transform: scale(1.05);
   }
 
   .pagination-item.is-active::after {
@@ -422,7 +433,7 @@ import SOSC from "@/assets/sosc_logo.svg";
 
   /* Desktop Bottom */
   .menu-bottom {
-    padding: 2rem 3rem 3rem;
+    padding: 2rem 2rem 2.5rem;
     position: relative;
     z-index: 10;
     opacity: 0;
@@ -440,9 +451,9 @@ import SOSC from "@/assets/sosc_logo.svg";
     font-size: clamp(0.75rem, 1.2vw, 1rem);
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.5);
-    max-width: 100%;
+    max-width: 52rem;
     margin: 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
   }
 
   /* ========================================= */
@@ -464,7 +475,8 @@ import SOSC from "@/assets/sosc_logo.svg";
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    padding: 0 1.5rem;
+    /* Sides match the navbar; top clears the bar, bottom clears home indicators */
+    padding: 4.5rem 1rem max(2rem, env(safe-area-inset-bottom));
   }
 
   @media (max-width: 768px) {
@@ -480,7 +492,7 @@ import SOSC from "@/assets/sosc_logo.svg";
   .mobile-content-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: left;
     position: relative;
     z-index: 2;
@@ -500,12 +512,11 @@ import SOSC from "@/assets/sosc_logo.svg";
   .mobile-menu-links {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .mobile-link {
     color: #fff;
-    font-size: 2.1rem;
     font-weight: 700;
     text-decoration: none;
     opacity: 0;
@@ -515,24 +526,31 @@ import SOSC from "@/assets/sosc_logo.svg";
       transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-delay: var(--delay, 0ms);
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 2rem 1fr;
     align-items: baseline;
-    gap: 1rem;
-    letter-spacing: 0.08em;
+    padding: clamp(0.6rem, 2.2vh, 1rem) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.06em;
   }
 
   .mobile-link-number {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
     font-weight: 500;
   }
 
   .mobile-link-text {
-    font-size: 2.3rem;
+    font-size: clamp(1.6rem, 4.5vh, 2.2rem);
+    line-height: 1.1;
   }
 
   .mobile-link:hover {
     color: rgba(255, 255, 255, 0.8);
+  }
+
+  .mobile-link[aria-current="page"] {
+    color: var(--primary);
   }
 
   /* On active, animate links in */
@@ -721,9 +739,14 @@ import SOSC from "@/assets/sosc_logo.svg";
   function updateNavSurface() {
     const spacer = document.getElementById("landing-spacer");
     const threshold = spacer ? spacer.offsetHeight - window.innerHeight : 40;
+    const clear = window.scrollY < threshold;
     document
       .getElementById("nav-surface")
-      ?.classList.toggle("opacity-0", window.scrollY < threshold);
+      ?.classList.toggle("opacity-0", clear);
+    // Without the white bar the logo can sit on green pixels, so it goes black
+    document
+      .getElementById("nav-logo-img")
+      ?.classList.toggle("brightness-0", clear);
   }
 
   // Registered once; page swaps re-run initNavbar via astro:page-load

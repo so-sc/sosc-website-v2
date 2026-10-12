@@ -2,19 +2,16 @@
 import { getCollection } from "astro:content";
 import slugify from "slugify";
 import ProjectCard from "@/components/cards/ProjectCard.astro";
+import { compareProjects } from "@/lib/projects";
 import Section from "./Section.astro";
 import SectionHeader from "./SectionHeader.astro";
 
-// Same ordering as the projects page: community projects first, then newest
 const featured = (await getCollection("projects"))
   .map(({ data }) => ({
     ...data,
     link: slugify(data.title, { lower: true, strict: true }),
   }))
-  .sort((a, b) => {
-    if (a.community !== b.community) return a.community ? -1 : 1;
-    return b.date.getTime() - a.date.getTime();
-  })
+  .sort(compareProjects)
   .slice(0, 3);
 ---
 

@@ -18,14 +18,14 @@ const sortedResources = resources.sort((a, b) => {
   description="Guides, roadmaps, tools and repos curated by SOSC members to help you learn and contribute."
 >
   <div class="flex min-h-dvh flex-col">
-    <div class="bg-background relative z-0 flex-1 pb-20">
+    <div class="relative flex-1 pb-20">
       <div class="mx-auto w-full max-w-7xl px-4 pt-28">
         <PageHeader
           title="Resources"
           count={`${sortedResources.length} Total`}
         />
       </div>
-      <div class="bg-background text-foreground">
+      <div class="text-foreground">
         <ResourceBoard resources={sortedResources} />
       </div>
     </div>

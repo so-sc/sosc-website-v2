@@ -15,11 +15,8 @@ const isCurrent = (href: string) =>
     id="nav-surface"
     class="pointer-events-none absolute inset-x-0 top-0 h-14 border-b border-gray-200 bg-white/85 opacity-0 backdrop-blur-md transition-opacity duration-300"
     aria-hidden="true"
-  >
-  </div>
-  <div
-    class="relative flex h-14 w-full items-center justify-between px-4 md:px-8"
-  >
+  ></div>
+  <div class="relative flex h-14 w-full items-center justify-between px-4 md:px-8">
     <div
       class="relative z-50 text-xl font-bold transition-opacity duration-300"
       id="nav-logo"
@@ -73,20 +70,18 @@ const isCurrent = (href: string) =>
     <!-- Pagination Row -->
     <div class="menu-pagination">
       <div class="pagination-container" id="pagination-list">
-        {
-          [
-            { name: "HOME", path: "/" },
-            { name: "BLOGS", path: "/blogs" },
-            { name: "EVENTS", path: "/events" },
-            { name: "PROJECTS", path: "/projects" },
-            { name: "RESOURCES", path: "/resources" },
-            { name: "TEAM", path: "/team" },
-          ].map((item, index) => (
-            <a href={item.path} class="pagination-item" data-index={index}>
-              {item.name}
-            </a>
-          ))
-        }
+        {[
+          { name: "HOME", path: "/" },
+          { name: "BLOGS", path: "/blogs" },
+          { name: "EVENTS", path: "/events" },
+          { name: "PROJECTS", path: "/projects" },
+          { name: "RESOURCES", path: "/resources" },
+          { name: "TEAM", path: "/team" },
+        ].map((item, index) => (
+          <a href={item.path} class="pagination-item" data-index={index}>
+            {item.name}
+          </a>
+        ))}
       </div>
     </div>
 
@@ -153,28 +148,26 @@ const isCurrent = (href: string) =>
     <div class="mobile-menu-background"></div>
     <div class="mobile-content-container">
       <div class="mobile-menu-links">
-        {
-          [
-            { name: "Home", path: "/" },
-            { name: "Blogs", path: "/blogs" },
-            { name: "Events", path: "/events" },
-            { name: "Projects", path: "/projects" },
-            { name: "Resources", path: "/resources" },
-            { name: "Team", path: "/team" },
-          ].map((item, index) => (
-            <a
-              href={item.path}
-              class="mobile-link"
-              style={`--delay: ${index * 50}ms`}
-              aria-current={isCurrent(item.path) ? "page" : undefined}
-            >
-              <span class="mobile-link-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span class="mobile-link-text">{item.name.toUpperCase()}</span>
-            </a>
-          ))
-        }
+        {[
+          { name: "Home", path: "/" },
+          { name: "Blogs", path: "/blogs" },
+          { name: "Events", path: "/events" },
+          { name: "Projects", path: "/projects" },
+          { name: "Resources", path: "/resources" },
+          { name: "Team", path: "/team" },
+        ].map((item, index) => (
+          <a
+            href={item.path}
+            class="mobile-link"
+            style={`--delay: ${index * 50}ms`}
+            aria-current={isCurrent(item.path) ? "page" : undefined}
+          >
+            <span class="mobile-link-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span class="mobile-link-text">{item.name.toUpperCase()}</span>
+          </a>
+        ))}
       </div>
 
       <p class="mobile-menu-bottom">

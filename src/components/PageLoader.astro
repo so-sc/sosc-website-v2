@@ -20,10 +20,14 @@ const paths = [
     aria-hidden="true"
   >
     <g transform="translate(-430.73 -150.07)">
-      {paths.map((d) => <path d={d} pathLength="1" />)}
+      {paths.map((d) => (
+        <path d={d} pathLength="1" />
+      ))}
     </g>
   </svg>
-  <p class="sr-only" role="status">Loading page</p>
+  <p class="sr-only" role="status">
+    Loading page
+  </p>
 </div>
 
 <style>

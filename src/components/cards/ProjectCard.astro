@@ -37,31 +37,29 @@ const statusColors: Record<string, string> = {
 ---
 
 <a
-  class={`bg-card group overflow-hidden cursor-pointer transition flex flex-col`}
+  class="group flex cursor-pointer flex-col overflow-hidden transition"
   href={`/projects/${link}`}
 >
   <!-- Cover Image with Title Overlay -->
   <div class="bg-muted relative h-48 overflow-hidden lg:h-56">
-    {
-      cover ? (
-        <Image
-          src={cover}
-          alt={title}
-          class="h-full w-full object-cover"
-          width={1280}
-          height={720}
-          format="webp"
-          loading="lazy"
-          quality={80}
-        />
-      ) : (
-        <div class="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
-          <span class="text-primary-ink/60 px-4 text-center text-2xl font-semibold">
-            {title}
-          </span>
-        </div>
-      )
-    }
+    {cover ? (
+      <Image
+        src={cover}
+        alt={title}
+        class="h-full w-full object-cover"
+        width={1280}
+        height={720}
+        format="webp"
+        loading="lazy"
+        quality={80}
+      />
+    ) : (
+      <div class="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
+        <span class="text-primary-ink/60 px-4 text-center text-2xl font-semibold">
+          {title}
+        </span>
+      </div>
+    )}
     <!-- Status Badge -->
     <span
       class={`absolute bottom-3 right-3 px-2 py-0 text-xs font-medium rounded-sm ${statusColors[status]}`}
@@ -79,51 +77,39 @@ const statusColors: Record<string, string> = {
         {title}
       </h3>
       <div class="flex -space-x-2">
-        {
-          maintainers
-            .slice(0, 3)
-            .map((maintainer) => (
-              <img
-                src={`https://github.com/${maintainer}.png`}
-                alt={maintainer}
-                class="border-card h-6 w-6 rounded-full border-2"
-                loading="lazy"
-                decoding="async"
-                onerror="this.onerror=null; this.src='/github_avatar.svg';"
-              />
-            ))
-        }
-        {
-          maintainers.length > 3 && (
-            <span class="border-card bg-muted text-muted-foreground flex h-6 w-6 items-center justify-center rounded-sm border-2 text-xs">
-              +{maintainers.length - 3}
-            </span>
-          )
-        }
+        {maintainers.slice(0, 3).map((maintainer) => (
+          <img
+            src={`https://github.com/${maintainer}.png`}
+            alt={maintainer}
+            class="border-card h-6 w-6 rounded-full border-2"
+            loading="lazy"
+            decoding="async"
+            onerror="this.onerror=null; this.src='/github_avatar.svg';"
+          />
+        ))}
+        {maintainers.length > 3 && (
+          <span class="border-card bg-muted text-muted-foreground flex h-6 w-6 items-center justify-center rounded-sm border-2 text-xs">
+            +{maintainers.length - 3}
+          </span>
+        )}
       </div>
     </div>
 
     <!-- Tags -->
     <div class="flex flex-wrap gap-1">
-      {
-        [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
-          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
-            {tag}
-          </span>
-        ))
-      }
-      {
-        techStack.length + (tags?.length || 0) > 7 && (
-          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
-            +{techStack.length + (tags?.length || 0) - 7}
-          </span>
-        )
-      }
+      {[...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
+        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
+          {tag}
+        </span>
+      ))}
+      {techStack.length + (tags?.length || 0) > 7 && (
+        <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
+          +{techStack.length + (tags?.length || 0) - 7}
+        </span>
+      )}
     </div>
 
     <!-- Description -->
-    <p class={`text-muted-foreground flex-1`}>
-      {description}
-    </p>
+    <p class={`text-muted-foreground flex-1`}>{description}</p>
   </div>
 </a>

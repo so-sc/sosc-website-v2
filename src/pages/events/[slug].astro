@@ -50,9 +50,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
       <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
         {name}
       </h1>
-      <div
-        class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-500"
-      >
+      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-500">
         <span class="inline-flex items-center gap-2">
           <Icon
             name="mdi:calendar-blank-outline"
@@ -73,20 +71,18 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
 
     <!-- Event Cover -->
-    {
-      cover && (
-        <div class="mb-12 overflow-hidden bg-gray-50">
-          <Image
-            src={cover}
-            alt={name}
-            class="mx-auto h-auto max-h-[70vh] w-full object-contain"
-            loading="eager"
-            format="webp"
-            quality={80}
-          />
-        </div>
-      )
-    }
+    {cover && (
+      <div class="mb-12 overflow-hidden bg-gray-50">
+        <Image
+          src={cover}
+          alt={name}
+          class="mx-auto h-auto max-h-[70vh] w-full object-contain"
+          loading="eager"
+          format="webp"
+          quality={80}
+        />
+      </div>
+    )}
 
     <!-- Markdown Content -->
     <MarkdownLayout>

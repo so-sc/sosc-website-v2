@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const events = defineCollection({
   loader: glob({
@@ -120,7 +121,7 @@ export const resources = defineCollection({
       "Misc",
     ]),
     tags: z.array(z.string()).optional(),
-    link: z.string().url(),
+    link: z.url(),
     contributor: z.string().optional(),
     date: z.string().optional(), // Using string for simple date format in JSON
   }),

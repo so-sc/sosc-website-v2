@@ -19,40 +19,38 @@ const latest = (await getCollection("events"))
   />
 
   <div class="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-    {
-      latest.map(({ data }) => (
-        <a
-          href={`/events/${slugify(data.name, { lower: true, strict: true })}`}
-          class="group flex flex-col"
+    {latest.map(({ data }) => (
+      <a
+        href={`/events/${slugify(data.name, { lower: true, strict: true })}`}
+        class="group flex flex-col"
+      >
+        <div class="aspect-video overflow-hidden bg-gray-100">
+          {data.cover && (
+            <Image
+              src={data.cover}
+              alt=""
+              width={800}
+              height={450}
+              format="webp"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          )}
+        </div>
+        <time
+          datetime={data.date.toISOString()}
+          class="mt-5 font-mono text-xs font-bold tracking-widest text-gray-500 uppercase"
         >
-          <div class="aspect-video overflow-hidden bg-gray-100">
-            {data.cover && (
-              <Image
-                src={data.cover}
-                alt=""
-                width={800}
-                height={450}
-                format="webp"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            )}
-          </div>
-          <time
-            datetime={data.date.toISOString()}
-            class="mt-5 font-mono text-xs font-bold tracking-widest text-gray-500 uppercase"
-          >
-            {data.date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </time>
-          <h3 class="group-hover:text-primary-ink mt-2 text-xl leading-tight font-black text-gray-900 uppercase transition-colors">
-            {data.name}
-          </h3>
-          <p class="mt-2 text-sm text-gray-500">{data.location}</p>
-        </a>
-      ))
-    }
+          {data.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </time>
+        <h3 class="group-hover:text-primary-ink mt-2 text-xl leading-tight font-black text-gray-900 uppercase transition-colors">
+          {data.name}
+        </h3>
+        <p class="mt-2 text-sm text-gray-500">{data.location}</p>
+      </a>
+    ))}
   </div>
 </Section>

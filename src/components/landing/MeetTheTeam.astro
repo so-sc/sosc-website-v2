@@ -156,35 +156,33 @@ const members = await Promise.all(
   />
 
   <div class="team-list">
-    {
-      members.map((member) => (
-        <div class="team-item">
-          <div class="tags-column">
-            {member.tags.map((tag) => (
-              <span class="member-tag">{tag}</span>
-            ))}
-          </div>
-
-          <div class="row-image-container">
-            <img
-              src={member.image}
-              alt={member.name}
-              loading="lazy"
-              decoding="async"
-              style={
-                member.placeholder
-                  ? `background-image: url("${member.placeholder}")`
-                  : undefined
-              }
-            />
-          </div>
-
-          <div class="name-column">
-            <span class="member-name">{member.name}</span>
-          </div>
+    {members.map((member) => (
+      <div class="team-item">
+        <div class="tags-column">
+          {member.tags.map((tag) => (
+            <span class="member-tag">{tag}</span>
+          ))}
         </div>
-      ))
-    }
+
+        <div class="row-image-container">
+          <img
+            src={member.image}
+            alt={member.name}
+            loading="lazy"
+            decoding="async"
+            style={
+              member.placeholder
+                ? `background-image: url("${member.placeholder}")`
+                : undefined
+            }
+          />
+        </div>
+
+        <div class="name-column">
+          <span class="member-name">{member.name}</span>
+        </div>
+      </div>
+    ))}
   </div>
 </Section>
 
@@ -252,9 +250,9 @@ const members = await Promise.all(
     }
   }
 
-  /* 
-    CENTERED IMAGE 
-    Appears only on hover 
+  /*
+    CENTERED IMAGE
+    Appears only on hover
   */
   .row-image-container {
     position: absolute;

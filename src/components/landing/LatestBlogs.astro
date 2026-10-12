@@ -19,43 +19,41 @@ const latest = (await getCollection("blogs"))
   />
 
   <div class="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-    {
-      latest.map(({ data }) => (
-        <a
-          href={`/blogs/${slugify(data.title, { lower: true, strict: true })}`}
-          class="group flex flex-col"
-        >
-          <div class="aspect-video overflow-hidden bg-gray-100">
-            {data.cover && (
-              <Image
-                src={data.cover}
-                alt=""
-                width={800}
-                height={450}
-                format="webp"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            )}
-          </div>
-          <p class="mt-5 text-xs font-medium text-gray-500">
-            <time datetime={data.date.toISOString()}>
-              {data.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-            </time>
-            <span class="mx-1">·</span>
-            {data.author}
-          </p>
-          <h3 class="group-hover:text-primary-ink mt-2 text-lg leading-snug font-black text-gray-900 transition-colors">
-            {data.title}
-          </h3>
-          <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500">
-            {data.description}
-          </p>
-        </a>
-      ))
-    }
+    {latest.map(({ data }) => (
+      <a
+        href={`/blogs/${slugify(data.title, { lower: true, strict: true })}`}
+        class="group flex flex-col"
+      >
+        <div class="aspect-video overflow-hidden bg-gray-100">
+          {data.cover && (
+            <Image
+              src={data.cover}
+              alt=""
+              width={800}
+              height={450}
+              format="webp"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          )}
+        </div>
+        <p class="mt-5 text-xs font-medium text-gray-500">
+          <time datetime={data.date.toISOString()}>
+            {data.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </time>
+          <span class="mx-1">·</span>
+          {data.author}
+        </p>
+        <h3 class="group-hover:text-primary-ink mt-2 text-lg leading-snug font-black text-gray-900 transition-colors">
+          {data.title}
+        </h3>
+        <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500">
+          {data.description}
+        </p>
+      </a>
+    ))}
   </div>
 </Section>

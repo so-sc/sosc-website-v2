@@ -1,113 +1,76 @@
 ---
 import { Image } from "astro:assets";
-import { ArrowRight, Calendar, MapPin } from "@lucide/astro";
+
+interface Props {
+  name: string;
+  date: Date;
+  location: string;
+  cover?: ImageMetadata;
+  link: string;
+}
 
 const { name, date, location, cover, link } = Astro.props;
-const formattedDate = new Date(date).toLocaleDateString("en-US", {
-  year: "numeric",
+
+const formattedDate = date.toLocaleDateString("en-US", {
   month: "short",
   day: "numeric",
 });
 
-const eventDate = new Date(date);
 const today = new Date();
 today.setHours(0, 0, 0, 0);
+const status =
+  date.toDateString() === today.toDateString()
+    ? "Today"
+    : date > today
+      ? "Upcoming"
+      : "";
 
-let status = "";
-
-if (eventDate.toDateString() === today.toDateString()) {
-  status = "Today";
-} else if (eventDate > today) {
-  status = "Upcoming";
-} else {
-  status = "";
-}
+const searchText = `${name} ${location} ${date.getFullYear()}`.toLowerCase();
 ---
 
+<!-- Phones: compact row (thumbnail beside text). sm+: column tile. -->
 <a
   href={`/events/${link}`}
-  class="group grid grid-cols-1 items-center gap-4 border-b border-gray-300 py-6 last:border-0 md:grid-cols-12 md:gap-8 md:py-12 dark:border-gray-100"
+  class="group grid grid-cols-[7rem_1fr] items-start gap-4 sm:grid-cols-1 sm:gap-0"
+  data-event
+  data-search={searchText}
 >
-  <!-- Graphical Date (Left) -->
   <div
-    class="hidden h-full flex-col items-center justify-center pr-6 md:col-span-2 md:flex"
-  >
-    <span
-      class="group-hover:text-primary text-5xl leading-none font-black text-gray-400 transition-colors duration-500"
-    >
-      {new Date(date).getDate().toString().padStart(2, "0")}
-    </span>
-    <span
-      class="mt-2 text-sm font-bold tracking-widest text-gray-500 uppercase"
-    >
-      {new Date(date).toLocaleString("default", { month: "short" })}
-    </span>
-  </div>
-
-  <!-- Image (Middle - Wider) -->
-  <div
-    class="relative aspect-video w-full overflow-hidden bg-gray-200 shadow-sm md:col-span-5 dark:bg-gray-800"
+    class="relative aspect-[4/3] overflow-hidden bg-gray-100 sm:aspect-video"
   >
     {
       cover && (
         <Image
           src={cover}
-          alt={name}
-          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          alt=""
+          width={640}
+          height={360}
           format="webp"
-          loading="lazy"
-          quality={90}
+          class="h-full w-full object-cover"
         />
+      )
+    }
+    {
+      status && (
+        <span class="bg-primary text-primary-foreground absolute top-0 left-0 px-2 py-1 text-xs font-bold tracking-widest uppercase">
+          {status}
+        </span>
       )
     }
   </div>
 
-  <!-- Content (Right) -->
-  <div class="flex flex-col gap-6 py-2 md:col-span-5">
-    <div>
-      <div class="mb-3 flex items-center justify-between">
-        <!-- New Date for Mobile -->
-        <div
-          class="text-primary flex items-center gap-2 text-xs font-bold tracking-widest uppercase md:hidden"
-        >
-          <Calendar size={14} />
-          <span>{formattedDate}</span>
-        </div>
-
-        {
-          status && (
-            <span
-              class={`rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${status === "Upcoming" ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-500 dark:bg-white/10 dark:text-gray-400"}`}
-            >
-              {status}
-            </span>
-          )
-        }
-      </div>
-
-      <h2
-        class="group-hover:text-primary mb-3 text-xl leading-tight font-black text-gray-900 transition-colors md:text-3xl dark:text-white"
-      >
-        {name}
-      </h2>
-
-      {
-        location && (
-          <div class="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-            <MapPin size={16} />
-            <span>{location}</span>
-          </div>
-        )
-      }
-    </div>
-
-    <div
-      class="group-hover:text-primary flex items-center gap-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition-colors dark:text-white"
+  <div class="sm:mt-4">
+    <time
+      datetime={date.toISOString()}
+      class="font-mono text-xs font-bold tracking-widest text-gray-500 uppercase"
     >
-      Read More <ArrowRight
-        size={14}
-        class="transition-transform duration-300 group-hover:translate-x-2"
-      />
-    </div>
+      {formattedDate}
+    </time>
+    <h3
+      class="group-hover:text-primary-ink mt-1.5 text-base leading-snug font-black text-gray-900 transition-colors sm:text-lg"
+    >
+      {name}
+    </h3>
+    <p class="mt-1 line-clamp-1 text-sm text-gray-500">{location}</p>
   </div>
 </a>

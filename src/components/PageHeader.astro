@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  /** Shown on the rule, e.g. "77 Total" */
+  count?: string;
+}
+
+const { title, count } = Astro.props;
+---
+
+<header>
+  <div>
+    <h1
+      class="text-[clamp(2.75rem,14vw,4rem)] leading-[0.85] font-black tracking-tighter text-gray-900 uppercase md:text-6xl lg:text-8xl"
+    >
+      {title}
+    </h1>
+    <div class="mt-6 flex items-center gap-4">
+      <span class="h-px flex-1 bg-gray-900"></span>
+      {
+        count && (
+          <span class="text-primary-ink font-mono text-sm font-bold tracking-widest uppercase">
+            {count}
+          </span>
+        )
+      }
+    </div>
+  </div>
+</header>

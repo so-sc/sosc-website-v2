@@ -56,7 +56,7 @@ const statusColors: Record<string, string> = {
         />
       ) : (
         <div class="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
-          <span class="text-primary/60 px-4 text-center text-2xl font-semibold">
+          <span class="text-primary-ink/60 px-4 text-center text-2xl font-semibold">
             {title}
           </span>
         </div>
@@ -73,7 +73,9 @@ const statusColors: Record<string, string> = {
   <!-- Content -->
   <div class="flex flex-1 flex-col space-y-3 py-4 pr-0 pl-0">
     <div class="flex items-center justify-between">
-      <h3 class={`font-semibold transition-colors group-hover:text-primary`}>
+      <h3
+        class={`font-semibold transition-colors group-hover:text-primary-ink`}
+      >
         {title}
       </h3>
       <div class="flex -space-x-2">
@@ -93,7 +95,7 @@ const statusColors: Record<string, string> = {
         }
         {
           maintainers.length > 3 && (
-            <span class="border-card bg-muted text-muted-foreground flex h-6 w-6 items-center justify-center rounded-sm border-2 text-[10px]">
+            <span class="border-card bg-muted text-muted-foreground flex h-6 w-6 items-center justify-center rounded-sm border-2 text-xs">
               +{maintainers.length - 3}
             </span>
           )
@@ -105,14 +107,14 @@ const statusColors: Record<string, string> = {
     <div class="flex flex-wrap gap-1">
       {
         [...techStack.slice(0, 4), ...(tags?.slice(0, 3) || [])].map((tag) => (
-          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[10px]">
+          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
             {tag}
           </span>
         ))
       }
       {
         techStack.length + (tags?.length || 0) > 7 && (
-          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[10px]">
+          <span class="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-xs">
             +{techStack.length + (tags?.length || 0) - 7}
           </span>
         )

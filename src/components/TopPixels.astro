@@ -1,0 +1,136 @@
+---
+// Pixel band across the top of a page: tall at both corners, tapering to a low
+// ragged strip in the middle. Each half is anchored to its own side so its
+// blocks land on that side's grid.
+const COLS = 30;
+const ROWS = 14;
+
+// Deterministic noise, so the band looks hand-made but never changes
+const noise = (x: number, y: number) => {
+  const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+  return n - Math.floor(n);
+};
+
+// Stepped strengths instead of a smooth ramp, so individual squares stand out
+const LEVELS = [1, 0.75, 0.5, 0.3, 0.15];
+
+const blocks: { x: number; y: number; o: number }[] = [];
+for (let x = 0; x < COLS; x++) {
+  const height = 3.8 + 5.2 * Math.exp(-x / 4) + 0.4 * Math.sin(x * 0.9);
+  // The solid part arcs with the band: deep at the corners, one row mid-page
+  const solid = Math.max(1, Math.round(height * 0.38));
+  for (let y = 0; y < Math.ceil(height); y++) {
+    if (y < solid) {
+      blocks.push({ x, y, o: 1 });
+      continue;
+    }
+    // The first row past the solid part is always there so the band flows
+    if (y > solid && y > height - 1.5 && noise(x, y) < 0.45) continue;
+    const along = (y - solid) / Math.max(1, height - solid) + (x / COLS) * 0.35;
+    const jitter = Math.round((noise(y, x) - 0.5) * 2.2); // knock a step up or down
+    const level = Math.min(
+      LEVELS.length - 1,
+      Math.max(1, Math.floor(along * LEVELS.length) + jitter),
+    );
+    blocks.push({ x, y, o: LEVELS[level] });
+  }
+  // Pale strays dripping below the tips on the sides
+  if (x < 6) {
+    for (let y = Math.ceil(height); y < Math.ceil(height) + 3; y++) {
+      const depth = y - Math.ceil(height);
+      if (noise(x + 17, y) < 0.55 - depth * 0.15) {
+        blocks.push({ x, y, o: noise(y, x + 17) < 0.5 ? 0.3 : 0.15 });
+      }
+    }
+  }
+}
+---
+
+{
+  (["left", "right"] as const).map((side) => (
+    <div class:list={["top-pixels", `top-pixels--${side}`]} aria-hidden="true">
+      <svg
+        viewBox={`0 0 ${COLS} ${ROWS}`}
+        style={side === "right" ? "transform: scaleX(-1)" : undefined}
+      >
+        {blocks.map(({ x, y, o }) => (
+          <rect
+            x={x}
+            y={y}
+            width="1"
+            height="1"
+            fill="var(--primary)"
+            opacity={o}
+          />
+        ))}
+      </svg>
+    </div>
+  ))
+}
+
+<style>
+  .top-pixels {
+    --cell: 20px;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: calc(var(--cell) * 14);
+    overflow: hidden;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgb(0 0 0 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.08) 1px, transparent 1px);
+    background-size: var(--cell) var(--cell);
+  }
+
+  @media (min-width: 768px) {
+    .top-pixels {
+      --cell: 40px;
+    }
+  }
+
+  /* Like the bottom corners: one fade from the corner over grid and blocks,
+     plus a top strip that stays solid across the middle of the page */
+  .top-pixels--left {
+    left: 0;
+    background-position: left top;
+    mask-image:
+      radial-gradient(ellipse 140% 100% at left top, #000 35%, transparent 85%),
+      linear-gradient(
+        to bottom,
+        #000 calc(var(--cell) * 2),
+        transparent calc(var(--cell) * 4)
+      );
+  }
+
+  .top-pixels--right {
+    right: 0;
+    background-position: right top;
+    mask-image:
+      radial-gradient(
+        ellipse 140% 100% at right top,
+        #000 35%,
+        transparent 85%
+      ),
+      linear-gradient(
+        to bottom,
+        #000 calc(var(--cell) * 2),
+        transparent calc(var(--cell) * 4)
+      );
+  }
+
+  .top-pixels svg {
+    position: absolute;
+    top: 0;
+    width: calc(var(--cell) * 30);
+    height: calc(var(--cell) * 14);
+  }
+
+  .top-pixels--left svg {
+    left: 0;
+  }
+
+  .top-pixels--right svg {
+    right: 0;
+  }
+</style>

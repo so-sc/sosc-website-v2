@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import slugify from "slugify";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import { compareProjects } from "@/lib/projects";
+import Section from "./Section.astro";
+import SectionHeader from "./SectionHeader.astro";
+
+const featured = (await getCollection("projects"))
+  .map(({ data }) => ({
+    ...data,
+    link: slugify(data.title, { lower: true, strict: true }),
+  }))
+  .sort(compareProjects)
+  .slice(0, 3);
+---
+
+<Section id="featured-projects">
+  <SectionHeader
+    title="What We"
+    accent="Build"
+    blurb="Open-source projects built and maintained by SOSC and its members."
+    link={{ href: "/projects", label: "All projects" }}
+  />
+
+  <div class="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+    {featured.map((project) => <ProjectCard {...project} />)}
+  </div>
+</Section>

@@ -1,19 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import { Hexagon, MapPin } from "@lucide/astro";
+import { ArrowDown, Hexagon, MapPin } from "@lucide/astro";
 import HeroImg from "../../assets/sosc_hero.svg";
 ---
 
 <div class="relative w-full">
   <div
     id="landing-spacer"
-    class="pointer-events-none mb-[-350vh] h-[350vh] w-full"
+    class="pointer-events-none mb-[-200vh] h-[200vh] w-full"
   >
   </div>
 
   <section
     id="hero-section"
-    class="pointer-events-none fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+    class="pointer-events-none fixed inset-0 z-50 flex h-dvh w-full flex-col items-center justify-center overflow-hidden"
   >
     <div id="landing-bg" class="absolute inset-0 -z-10 bg-white"></div>
 
@@ -72,6 +72,15 @@ import HeroImg from "../../assets/sosc_hero.svg";
       </h1>
     </div>
 
+    <div
+      id="scroll-cue"
+      class="text-foreground/60 absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-xs font-bold tracking-[0.3em] transition-opacity duration-300"
+      aria-hidden="true"
+    >
+      <span>SCROLL</span>
+      <ArrowDown size={16} />
+    </div>
+
     <div id="grid-flash-container" class="absolute inset-0 z-10"></div>
   </section>
 
@@ -83,6 +92,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
       const heroImg = document.getElementById("hero-img-container");
       const landingBg = document.getElementById("landing-bg");
       const heroSection = document.getElementById("hero-section");
+      const scrollCue = document.getElementById("scroll-cue");
 
       if (!container || !spacer) return;
 
@@ -147,8 +157,11 @@ import HeroImg from "../../assets/sosc_hero.svg";
         const h = window.innerHeight;
         const rows = Math.floor(h / BLOCK_SIZE);
 
-        const totalScrollable = rect.height - h; // 350vh - 100vh = 250vh of scrollable area
+        const totalScrollable = rect.height - h; // 200vh - 100vh = 100vh of scrollable area
         const progress = Math.max(0, Math.min(1, -rect.top / totalScrollable));
+
+        // The cue only matters before the visitor starts scrolling
+        if (scrollCue) scrollCue.style.opacity = progress > 0.02 ? "0" : "1";
 
         // Hide the fixed overlay completely if we are past the Landing section
         if (-rect.top > rect.height) {

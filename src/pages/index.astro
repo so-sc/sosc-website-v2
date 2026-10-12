@@ -1,16 +1,28 @@
 ---
 import About from "@/components/landing/About.astro";
 import Communities from "@/components/landing/Communities.astro";
+import FeaturedProjects from "@/components/landing/FeaturedProjects.astro";
+import GetInvolved from "@/components/landing/GetInvolved.astro";
 import Highlights from "@/components/landing/Highlights.astro";
 import Landing from "@/components/landing/Landing.astro";
+import LatestBlogs from "@/components/landing/LatestBlogs.astro";
+import LatestEvents from "@/components/landing/LatestEvents.astro";
 import MeetTheTeam from "@/components/landing/MeetTheTeam.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout
+  decor={false}
+  title="SOSC | Sahyadri Open Source Community"
+  description="SOSC brings together student developers in Mangalore through DevHost, hackathons, workshops, and open-source collaboration."
+>
   <Landing />
   <About />
+  <LatestEvents />
   <Highlights />
+  <FeaturedProjects />
   <Communities />
+  <LatestBlogs />
   <MeetTheTeam />
+  <GetInvolved />
 </Layout>

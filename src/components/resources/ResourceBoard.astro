@@ -7,23 +7,10 @@ interface Props {
 }
 
 const { resources } = Astro.props;
+// Only offer categories that actually have resources, so no pill leads to an empty list
 const CATEGORIES = [
   "All",
-  "AI/ML",
-  "App Dev",
-  "Blockchain",
-  "Cloud",
-  "Competitive Programming",
-  "Computer Science",
-  "Cybersecurity",
-  "Data Science",
-  "Design",
-  "Development",
-  "DevOps",
-  "Game Dev",
-  "Open Source",
-  "Web Dev",
-  "Misc",
+  ...[...new Set(resources.map((r) => r.data.category))].sort(),
 ];
 ---
 
@@ -47,7 +34,7 @@ const CATEGORIES = [
       {/* Left Scroll Button */}
       <button
         id="scroll-left"
-        class="hidden shrink-0 rounded-full border border-zinc-200 bg-white p-2 text-zinc-600 shadow-sm transition-all hover:border-[#0ade4a] hover:text-[#0ade4a] disabled:opacity-50 md:flex dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-[#0ade4a] dark:hover:text-[#0ade4a]"
+        class="hover:border-primary hover:text-primary-ink dark:hover:border-primary dark:hover:text-primary-ink hidden shrink-0 rounded-full border border-zinc-200 bg-white p-2 text-zinc-600 shadow-sm transition-all disabled:opacity-50 md:flex dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
         aria-label="Scroll left"
       >
         <ChevronLeft className="h-4 w-4" />
@@ -65,8 +52,8 @@ const CATEGORIES = [
                 class:list={[
                   "category-btn shrink-0 rounded-full border border-zinc-200 px-4 py-1.5 text-sm transition-all dark:border-zinc-800",
                   cat === "All"
-                    ? "border-[#0ade4a] bg-[#0ade4a] font-medium text-white"
-                    : "bg-transparent text-zinc-600 hover:border-[#0ade4a] hover:text-[#0ade4a] dark:text-zinc-400 dark:hover:border-[#0ade4a] dark:hover:text-[#0ade4a]",
+                    ? "border-primary bg-primary text-primary-foreground font-medium"
+                    : "hover:border-primary hover:text-primary-ink dark:hover:border-primary dark:hover:text-primary-ink bg-transparent text-zinc-600 dark:text-zinc-400",
                 ]}
               >
                 {cat}
@@ -84,7 +71,7 @@ const CATEGORIES = [
       {/* Right Scroll Button */}
       <button
         id="scroll-right"
-        class="hidden shrink-0 rounded-full border border-zinc-200 bg-white p-2 text-zinc-600 shadow-sm transition-all hover:border-[#0ade4a] hover:text-[#0ade4a] disabled:opacity-50 md:flex dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-[#0ade4a] dark:hover:text-[#0ade4a]"
+        class="hover:border-primary hover:text-primary-ink dark:hover:border-primary dark:hover:text-primary-ink hidden shrink-0 rounded-full border border-zinc-200 bg-white p-2 text-zinc-600 shadow-sm transition-all disabled:opacity-50 md:flex dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
         aria-label="Scroll right"
       >
         <ChevronRight className="h-4 w-4" />
@@ -94,7 +81,7 @@ const CATEGORIES = [
 
   <div class="flex flex-col" id="resource-list">
     <div
-      class="hidden grid-cols-12 gap-4 border-b border-zinc-100 pb-4 font-mono text-xs tracking-wider text-zinc-400 uppercase md:grid dark:border-zinc-800"
+      class="hidden grid-cols-12 gap-4 border-b border-zinc-100 pb-4 font-mono text-xs tracking-wider text-zinc-500 uppercase md:grid dark:border-zinc-800"
     >
       <div class="col-span-4">Resource</div>
       <div class="col-span-3">Description</div>
@@ -117,7 +104,7 @@ const CATEGORIES = [
           data-tags={resource.data.tags?.join(" ").toLowerCase() || ""}
         >
           <div class="col-span-4">
-            <h3 class="text-base font-medium text-zinc-900 transition-colors group-hover:text-[#0ade4a] dark:text-zinc-100 dark:group-hover:text-[#0ade4a]">
+            <h3 class="group-hover:text-primary-ink dark:group-hover:text-primary-ink text-base font-medium text-zinc-900 transition-colors dark:text-zinc-100">
               {resource.data.title}
             </h3>
             <div class="mt-2 line-clamp-2 text-sm text-zinc-500 md:hidden">
@@ -125,12 +112,12 @@ const CATEGORIES = [
             </div>
             <div class="mt-2 flex flex-wrap items-center gap-2 md:mt-1">
               {resource.data.type.map((t) => (
-                <span class="rounded-sm border border-zinc-200 px-1.5 py-0.5 font-mono text-[10px] text-zinc-500 uppercase dark:border-zinc-700">
+                <span class="rounded-sm border border-zinc-200 px-1.5 py-0.5 font-mono text-xs text-zinc-500 uppercase dark:border-zinc-700">
                   {t}
                 </span>
               ))}
               {/* Mobile only meta */}
-              <span class="text-xs text-zinc-400 md:hidden">
+              <span class="text-xs text-zinc-500 md:hidden">
                 {resource.data.date
                   ? new Date(resource.data.date).toLocaleDateString("en-US", {
                       month: "short",
@@ -165,7 +152,7 @@ const CATEGORIES = [
 
           <div class="col-span-1 hidden flex-wrap content-start gap-1 md:flex">
             {resource.data.tags?.slice(0, 2).map((tag: string) => (
-              <span class="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-400 dark:bg-zinc-800/50">
+              <span class="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-xs text-zinc-500 dark:bg-zinc-800/50">
                 #{tag}
               </span>
             ))}
@@ -178,7 +165,7 @@ const CATEGORIES = [
       ))
     }
 
-    <div id="no-results" class="hidden py-20 text-center text-zinc-400">
+    <div id="no-results" class="hidden py-20 text-center text-zinc-500">
       No resources found matching your criteria.
     </div>
   </div>
@@ -265,19 +252,19 @@ const CATEGORIES = [
         // Update active state
         categoryBtns.forEach((b) => {
           b.classList.remove(
-            "bg-[#0ade4a]",
+            "bg-primary",
             "text-white",
-            "border-[#0ade4a]",
+            "border-primary",
             "font-medium",
           );
           b.classList.add(
             "bg-transparent",
             "text-zinc-600",
-            "hover:text-[#0ade4a]",
-            "hover:border-[#0ade4a]",
+            "hover:text-primary-ink",
+            "hover:border-primary",
             "dark:text-zinc-400",
-            "dark:hover:text-[#0ade4a]",
-            "dark:hover:border-[#0ade4a]",
+            "dark:hover:text-primary-ink",
+            "dark:hover:border-primary",
           );
         });
 
@@ -285,16 +272,16 @@ const CATEGORIES = [
         activeBtn.classList.remove(
           "bg-transparent",
           "text-zinc-600",
-          "hover:text-[#0ade4a]",
-          "hover:border-[#0ade4a]",
+          "hover:text-primary-ink",
+          "hover:border-primary",
           "dark:text-zinc-400",
-          "dark:hover:text-[#0ade4a]",
-          "dark:hover:border-[#0ade4a]",
+          "dark:hover:text-primary-ink",
+          "dark:hover:border-primary",
         );
         activeBtn.classList.add(
-          "bg-[#0ade4a]",
+          "bg-primary",
           "text-white",
-          "border-[#0ade4a]",
+          "border-primary",
           "font-medium",
         );
 

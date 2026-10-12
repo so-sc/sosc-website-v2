@@ -1,99 +1,60 @@
 ---
 import communities from "@/data/communities.json";
+import Section from "./Section.astro";
+import SectionHeader from "./SectionHeader.astro";
 ---
 
-<div class="relative z-0 w-full bg-white px-6 py-16 md:px-20 md:py-24">
-  <section class="flex w-full flex-col justify-center">
-    <!-- Header Section (About-style) -->
-    <div class="relative z-10 container mx-auto mb-2 px-0">
-      <div class="mb-10 md:mb-16">
-        <div
-          class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
-        >
-          <span class="animate-pulse">●</span>
-          <span>SYSTEM_COMMUNITIES_LOG</span>
-        </div>
+<Section id="communities">
+  <SectionHeader
+    title="Communities"
+    accent="Participating"
+    blurb="The communities driving innovation and open source at Sahyadri."
+  />
 
-        <div
-          class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
+  <div class="divide-y divide-gray-200">
+    {
+      communities.map((c) => (
+        <article
+          class="grid grid-cols-[5.5rem_1fr] items-center gap-x-5 gap-y-6 py-10 first:pt-0 last:pb-0 md:grid-cols-12 md:items-start md:gap-x-12 md:gap-y-4"
+          id={`community-${c.id}`}
         >
-          <div>
-            <h2
-              class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
-            >
-              Communities
-              <span
-                class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
-              >
-                Participating
-              </span>
-            </h2>
+          {/* Identical square frame per logo, so a square mark and a wide
+              wordmark read as equals. Phones: small, beside the name.
+              Desktop: large, spanning the name and body. */}
+          <div class="flex aspect-square w-full items-center justify-center border border-gray-200 bg-white p-2.5 md:col-span-3 md:row-span-2 md:p-6">
+            <img
+              src={c.logo}
+              alt={`${c.name} logo`}
+              width="400"
+              height="400"
+              class="h-full w-full object-contain"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
-          <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-            <p
-              class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
-            >
-              Explore • Collaborate • Learn
-            </p>
-            <p
-              class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
-            >
-              The communities driving innovation and open-source at Sahyadri.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+          <h3 class="text-primary-ink text-3xl font-black uppercase sm:text-4xl md:col-span-9 md:text-5xl">
+            {c.name}
+          </h3>
 
-    <!-- Communities stacked vertically -->
-    <div class="container mx-auto space-y-12 px-0">
-      {
-        communities.map((c, idx) => (
-          <>
-            <article
-              class="flex w-full flex-col items-start gap-8 md:flex-row md:items-center"
-              id={`community-${c.id}`}
-            >
-              {/* Smaller Image on the left */}
-              <div class="w-full flex-shrink-0 md:w-1/4">
-                <img
-                  src={c.logo}
-                  alt={`${c.name} Logo`}
-                  class={
-                    c.id === "soswc"
-                      ? "mx-auto h-auto w-4/5 object-contain md:w-3/4"
-                      : "h-auto w-full object-contain"
-                  }
-                />
-              </div>
+          <div class="col-span-2 md:col-span-9 md:col-start-4">
+            <p class="max-w-3xl text-gray-600 md:text-lg">{c.description}</p>
 
-              {/* Content on the right */}
-              <div class="flex-1">
-                <h3 class="text-primary mb-4 text-4xl font-black md:text-5xl">
-                  {c.name}
-                </h3>
-                <p class="mb-6 text-gray-600 md:text-lg">{c.description}</p>
-
-                <div class="space-y-4">
-                  {c.points.map((point) => (
-                    <div class="border-primary border-l-2 pl-4">
-                      <p class="text-sm font-semibold text-gray-900">
-                        {point.title}
-                      </p>
-                      <p class="mt-1 text-sm text-gray-600">{point.content}</p>
-                    </div>
-                  ))}
+            <div class="mt-8 grid gap-6 sm:grid-cols-2">
+              {c.points.map((point) => (
+                <div class="border-t border-gray-900 pt-4">
+                  <p class="text-sm font-bold text-gray-900 uppercase">
+                    {point.title}
+                  </p>
+                  <p class="mt-2 text-sm leading-snug text-gray-600">
+                    {point.content}
+                  </p>
                 </div>
-              </div>
-            </article>
-
-            {idx !== communities.length - 1 && (
-              <div class="ml-0 h-px w-2/3 bg-gray-400 md:ml-[15%]" />
-            )}
-          </>
-        ))
-      }
-    </div>
-  </section>
-</div>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</Section>

@@ -25,13 +25,17 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 });
 ---
 
-<Layout>
-  <main class="mx-auto max-w-4xl px-4 py-20 md:px-8">
+<Layout
+  title={`${title} | SOSC Blog`}
+  description={blog.data.description}
+  image={cover?.src}
+>
+  <div class="mx-auto max-w-4xl px-4 pt-28 pb-20 md:px-8">
     <!-- Top Back Button -->
     <div class="mb-8">
       <a
         href="/blogs"
-        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
+        class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
         <Icon
           name="mdi:chevron-left"
@@ -56,17 +60,17 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
           <a
             href={`https://github.com/${author}`}
             target="_blank"
-            class="hover:text-primary text-lg font-bold text-gray-900 transition-colors"
+            class="hover:text-primary-ink text-lg font-bold text-gray-900 transition-colors"
           >
             {author}
           </a>
-          <span class="text-xs text-gray-400 italic">Contributor & Member</span>
+          <span class="text-xs text-gray-500 italic">Contributor & Member</span>
         </div>
-        <div class="ml-auto text-xs font-medium text-gray-400">
+        <div class="ml-auto text-xs font-medium text-gray-500">
           <span>{formattedDate}</span>
           <span class="mx-2">in</span>
           <span
-            class="decoration-primary/30 hover:text-primary underline underline-offset-2 transition-colors"
+            class="decoration-primary/30 hover:text-primary-ink underline underline-offset-2 transition-colors"
           >
             {tags}
           </span>
@@ -96,7 +100,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
     <!-- Content -->
     <MarkdownLayout>
-      <div class="prose-blog">
+      <div class="prose-sosc">
         <Content />
       </div>
     </MarkdownLayout>
@@ -105,7 +109,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     <div class="mt-16 border-t border-gray-200 pt-8">
       <a
         href="/blogs"
-        class="group hover:text-primary inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
+        class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
       >
         <Icon
           name="mdi:chevron-left"
@@ -114,61 +118,5 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
         Back to all blogs
       </a>
     </div>
-  </main>
+  </div>
 </Layout>
-
-<style>
-  /* Blog Prose Styling */
-  .prose-blog {
-    color: #4b5563;
-    font-size: 1.125rem;
-    line-height: 1.8;
-  }
-
-  .prose-blog :global(h2) {
-    font-size: 1.875rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #111827;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #3ce56e; /* primary color */
-    padding-left: 1.5rem;
-    line-height: 1;
-  }
-
-  .prose-blog :global(h3) {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #111827;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .prose-blog :global(p) {
-    margin-bottom: 1.5rem;
-  }
-
-  .prose-blog :global(img) {
-    margin: 3rem 0;
-    border: 1px solid #f3f4f6;
-  }
-
-  .prose-blog :global(pre) {
-    background: #111827 !important;
-    padding: 2rem !important;
-    margin: 2.5rem 0 !important;
-    border-radius: 0 !important;
-    font-size: 0.875rem !important;
-  }
-
-  /* Hide duplicate H1 */
-  :global(.prose > h1:first-child) {
-    display: none;
-  }
-
-  /* Utility for vertical text */
-  [writing-mode="vertical-lr"] {
-    writing-mode: vertical-lr;
-  }
-</style>

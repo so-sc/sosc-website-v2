@@ -8,9 +8,10 @@ export const teamMemberSchema = z.object({
   email: z.string().or(z.literal("")).optional(),
   linkedin: z.string().or(z.literal("")).optional(),
   skills: z.array(z.string()).default([]).optional(),
-  status: z.enum(["coordinator", "alumni", "active"]),
-  image: z.string(),
+  status: z.enum(["alumni", "active"]),
   year: z.string().default("-"),
+  /** Passout year, set by the loader from the batch file name */
+  graduation: z.number().optional(),
 });
 
 export const teamArraySchema = z.array(teamMemberSchema);

@@ -1,0 +1,107 @@
+---
+// Outline paths of the SOSC mark (src/assets/sosc_logo.svg), drawn on as the loader
+const paths = [
+  "M747.63,246a29.07,29.07,0,0,0,.16,3.06A95.49,95.49,0,0,1,729.6,302.3a96.62,96.62,0,0,1-14.88,16.23,96,96,0,0,1-125.65,0A96.62,96.62,0,0,0,604,302.3a73.93,73.93,0,0,0,121.7-51.13h0q.17-2.54.18-5.14t-.18-5.14h0A73.44,73.44,0,0,0,714.72,207a74,74,0,0,0-125.65,0,73.49,73.49,0,0,0-10.94,33.86h0c-.12,1.69-.18,3.41-.18,5.13s.06,3.44.18,5.13h0a52.14,52.14,0,1,1-66.22-55.29,11.27,11.27,0,0,1,14.33,10.85v.12A11.36,11.36,0,0,1,518,217.71a29.49,29.49,0,0,0,6.43,57.74A30,30,0,0,0,556,249.08a29,29,0,0,0,0-6.13,95.49,95.49,0,0,1,18.19-53.22,96.62,96.62,0,0,1,14.88-16.23,96,96,0,0,1,125.65,0,96.22,96.22,0,0,1,25.83,35.77A95.51,95.51,0,0,1,747.79,243,29.07,29.07,0,0,0,747.63,246Z",
+  "M704.21,240.87a52.14,52.14,0,0,0-103.77,0h0q.17,2.54.18,5.14t-.18,5.14h0A73.44,73.44,0,0,1,589.5,285a73.94,73.94,0,1,1-72.35-112.32,11,11,0,0,0,9.52-10.9h0a11,11,0,0,0-12.39-10.92,95.92,95.92,0,1,0,101,131.9,52.14,52.14,0,0,0,88.88-31.6Q704,248.61,704,246T704.21,240.87Zm-50.92,34.61A29.49,29.49,0,1,1,681.79,247,29.49,29.49,0,0,1,653.28,275.49Z",
+  "M829.68,245.25a52.16,52.16,0,0,1-37.73,50.89,11.32,11.32,0,0,1-14.4-10.91h0a11.4,11.4,0,0,1,8.29-10.91,29.49,29.49,0,0,0-8.08-57.8,29.86,29.86,0,0,0-5.44.46l-.68.13A29.87,29.87,0,0,0,747.79,243a95.51,95.51,0,0,0-7.24-33.68,52.14,52.14,0,0,1,89.13,36Z",
+  "M873.49,246a96,96,0,0,1-83.55,95.15,11,11,0,0,1-12.39-10.92h0a11,11,0,0,1,9.52-10.9A73.94,73.94,0,1,0,729.6,189.73a96.62,96.62,0,0,0-14.88-16.23A95.95,95.95,0,0,1,873.49,246Z",
+];
+---
+
+<div
+  id="page-loader"
+  class="pointer-events-none fixed inset-0 z-[90] flex items-center justify-center bg-white opacity-0 transition-opacity duration-200"
+  transition:persist
+  hidden
+>
+  <svg
+    viewBox="0 0 442.76 191.89"
+    class="loader-logo h-auto w-40 md:w-48"
+    aria-hidden="true"
+  >
+    <g transform="translate(-430.73 -150.07)">
+      {paths.map((d) => <path d={d} pathLength="1" />)}
+    </g>
+  </svg>
+  <p class="sr-only" role="status">Loading page</p>
+</div>
+
+<style>
+  .loader-logo path {
+    fill: var(--primary);
+    fill-opacity: 0;
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: fill-opacity 0.35s ease-out;
+  }
+
+  /* Draw the outline once each time the loader appears, then hold it */
+  #page-loader:not([hidden]) .loader-logo path {
+    animation: loader-draw 1s ease-in-out forwards;
+  }
+
+  /* Page is ready: fill the mark in before fading out */
+  #page-loader.is-filled .loader-logo path {
+    fill-opacity: 1;
+  }
+
+  @keyframes loader-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #page-loader:not([hidden]) .loader-logo path {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+
+<script>
+  // Matches the loader-draw animation; the outline always finishes before filling
+  const DRAW = 1000;
+  const FILL = 350;
+  const FADE = 200;
+  let hideTimer: ReturnType<typeof setTimeout> | undefined;
+  let shownAt = 0;
+
+  const loader = () => document.getElementById("page-loader");
+
+  // Shows on every navigation, so the logo always draws, fills and fades
+  const show = () => {
+    clearTimeout(hideTimer);
+    const el = loader();
+    if (!el) return;
+    if (el.hidden) {
+      el.classList.remove("is-filled");
+      el.hidden = false;
+      shownAt = performance.now();
+    }
+    requestAnimationFrame(() => el.classList.remove("opacity-0"));
+  };
+
+  const hide = () => {
+    const el = loader();
+    if (!el || el.hidden) return;
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const drawLeft = still
+      ? 0
+      : Math.max(0, DRAW - (performance.now() - shownAt));
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      el.classList.add("is-filled");
+      hideTimer = setTimeout(() => {
+        el.classList.add("opacity-0");
+        hideTimer = setTimeout(() => (el.hidden = true), FADE);
+      }, FILL);
+    }, drawLeft);
+  };
+
+  document.addEventListener("astro:before-preparation", show);
+  document.addEventListener("astro:after-swap", hide);
+  document.addEventListener("astro:page-load", hide);
+</script>

@@ -1,14 +1,18 @@
 ---
+import PageHeader from "../../components/PageHeader.astro";
 import TeamView from "../../components/team/TeamView";
-
-import { team } from "../../data/loader";
+import { coordinators, team } from "../../data/loader";
 import Layout from "../../layouts/Layout.astro";
-import TeamLanding from "./TeamLanding.astro";
 ---
 
-<Layout>
-  <TeamLanding />
-  <section class="text-foreground mx-auto max-w-7xl px-4 py-20 md:px-8">
-    <TeamView client:load team={team} />
-  </section>
+<Layout
+  title="Team | SOSC"
+  description="Meet the students who run the Sahyadri Open Source Community."
+>
+  <div class="text-foreground mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-8">
+    <PageHeader title="Team" count={`${team.length} People`} />
+    <div class="mt-10">
+      <TeamView client:visible team={team} coordinators={coordinators} />
+    </div>
+  </div>
 </Layout>

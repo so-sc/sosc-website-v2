@@ -1,64 +1,28 @@
 ---
 import { ArrowRight } from "@lucide/astro";
+import CornerPixels from "./CornerPixels.astro";
+import SectionHeader from "./SectionHeader.astro";
 ---
 
-<div class="relative z-0 h-[350vh] w-full bg-white">
+<!-- Height must match #landing-spacer in Landing.astro: About stays pinned while the hero plays over it -->
+<div class="relative z-0 h-[200vh] w-full bg-white">
   <section
     id="about"
-    class="sticky top-0 flex min-h-screen w-full flex-col justify-center overflow-hidden bg-white px-6 py-16 md:px-20 md:py-24"
+    class="sticky top-0 flex min-h-dvh w-full flex-col justify-center overflow-hidden bg-white pt-40 pb-12 md:pt-36 md:pb-18"
   >
-    <script>
-      import "@lottiefiles/dotlottie-wc";
-    </script>
-    <!-- Background accents (glow only) -->
-    <div class="pointer-events-none absolute inset-0">
-      <div
-        class="bg-primary/20 absolute top-10 -right-40 h-130 w-130 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="bg-primary/10 absolute bottom-0 -left-24 h-85 w-85 rounded-full blur-3xl"
-      >
-      </div>
-    </div>
-    <div id="about-content" class="relative z-10 container mx-auto px-0">
-      <!-- Header Section -->
-      <div class="mb-10 md:mb-16">
-        <div
-          class="text-primary mb-4 flex items-center gap-2 font-mono text-[10px] font-bold md:text-xs"
-        >
-          <span class="animate-pulse">●</span>
-          <span>SYSTEM_ABOUT_LOG</span>
-        </div>
-        <div
-          class="flex flex-col items-start justify-between border-b border-gray-900 pb-6 md:flex-row md:items-end md:pb-8"
-        >
-          <div>
-            <h2
-              class="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-8xl"
-            >
-              Open Source,
-              <span class="text-primary mt-1 block text-2xl md:mt-0 md:text-6xl"
-                >Together.</span
-              >
-            </h2>
-          </div>
-          <div class="mt-6 max-w-sm md:mt-0 md:text-right">
-            <p
-              class="mb-1 text-[10px] font-bold tracking-widest text-gray-400 uppercase md:mb-2 md:text-xs"
-            >
-              Open • Community • Mangalore
-            </p>
-            <p
-              class="text-xs leading-relaxed font-medium text-gray-900 md:text-sm"
-            >
-              A student-driven collective building real-world solutions.
-            </p>
-          </div>
-        </div>
-      </div>
+    <CornerPixels corners={["tl", "tr"]} />
+
+    <div
+      id="about-content"
+      class="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8"
+    >
+      <SectionHeader
+        title="Open Source,"
+        accent="Together."
+        blurb="A student-driven collective in Mangalore building real-world open-source software."
+      />
+
       <div class="grid items-center gap-12 md:grid-cols-2">
-        <!-- Left: copy -->
         <div>
           <p
             class="max-w-xl text-base leading-relaxed text-gray-600 md:text-lg"
@@ -67,42 +31,44 @@ import { ArrowRight } from "@lucide/astro";
             everyone learns, collaborates, and builds real-world open source
             solutions.
           </p>
-          <div class="mt-8 space-y-6">
-            <div class="border-primary border-l pl-4">
-              <p class="text-sm font-semibold text-gray-900">
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-2">
+            <div class="border-t border-gray-900 pt-4">
+              <p class="text-sm font-bold text-gray-900 uppercase">
                 Real-world Projects
               </p>
-              <p class="mt-1 text-sm leading-snug text-gray-600">
+              <p class="mt-2 text-sm leading-snug text-gray-600">
                 Build and contribute to impactful open source software.
               </p>
             </div>
-            <div class="border-primary border-l pl-4">
-              <p class="text-sm font-semibold text-gray-900">Community First</p>
-              <p class="mt-1 text-sm leading-snug text-gray-600">
+            <div class="border-t border-gray-900 pt-4">
+              <p class="text-sm font-bold text-gray-900 uppercase">
+                Community First
+              </p>
+              <p class="mt-2 text-sm leading-snug text-gray-600">
                 Learn together through collaboration and mentorship.
               </p>
             </div>
           </div>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="/projects"
-              class="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 text-sm font-semibold text-gray-900 shadow-sm transition-colors hover:bg-gray-50"
-            >
-              Explore Our Work
-              <ArrowRight class="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-        <!-- Right: logo/visual -->
-        <div class="relative hidden md:block">
-          <div
-            class="from-primary/20 absolute -inset-6 rounded-[2.5rem] bg-linear-to-br via-transparent to-transparent blur-2xl"
+
+          <a
+            href="/projects"
+            class="group hover:border-primary hover:text-primary-ink mt-10 inline-flex items-center gap-3 border border-gray-900 px-6 py-3 text-sm font-bold tracking-widest text-gray-900 uppercase transition-colors"
           >
-          </div>
+            Explore our work
+            <ArrowRight
+              class="h-4 w-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+
+        <!-- Right: visual -->
+        <div class="relative hidden md:block">
           <div class="relative mx-auto aspect-4/3 w-full max-w-130 scale-[1.4]">
             <dotlottie-wc
-              src="/About Us Team.json"
-              autoplay
+              id="about-lottie"
+              src="/about-us-team.lottie"
               loop
               class="h-full w-full"
               style="width: 100%; height: 100%;"
@@ -113,3 +79,17 @@ import { ArrowRight } from "@lucide/astro";
     </div>
   </section>
 </div>
+
+<script>
+  // The animation only shows from md up, so phones never download the ~680 KB player
+  function loadAboutLottie() {
+    const el = document.getElementById("about-lottie");
+    if (!el || !window.matchMedia("(min-width: 768px)").matches) return;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.setAttribute("autoplay", "");
+    }
+    import("@lottiefiles/dotlottie-wc");
+  }
+
+  document.addEventListener("astro:page-load", loadAboutLottie);
+</script>

@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import { ChevronDown, RotateCcw, Search } from "@lucide/astro";
 import slugify from "slugify";
 import ProjectCard from "@/components/cards/ProjectCard.astro";
+import PageHeader from "@/components/PageHeader.astro";
 import Layout from "@/layouts/Layout.astro";
+import { compareProjects } from "@/lib/projects";
 
 const projects = await getCollection("projects");
 
@@ -19,15 +21,11 @@ const parsedProjects = projects
     tags: data.tags,
     github: data.github,
     community: data.community,
+    order: data.order,
     date: data.date,
     link: slugify(data.title, { lower: true, strict: true }),
   }))
-  .sort((a, b) => {
-    // Community projects first, then by date
-    if (a.community && !b.community) return -1;
-    if (!a.community && b.community) return 1;
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  .sort(compareProjects);
 
 // Extract unique values for filters
 const allCategories = [...new Set(parsedProjects.map((p) => p.category))];
@@ -38,18 +36,23 @@ const communityProjects = parsedProjects.filter((p) => p.community);
 const regularProjects = parsedProjects.filter((p) => !p.community);
 ---
 
-<Layout>
+<Layout
+  title="Projects | SOSC"
+  description="Open-source projects built and maintained by the Sahyadri Open Source Community and its members."
+>
   <section
-    class="bg-background text-foreground mx-auto max-w-7xl space-y-8 px-4 py-16 md:px-8"
+    class="text-foreground mx-auto max-w-7xl space-y-8 px-4 pt-28 pb-20 md:px-8"
   >
-    <div class="bg-background w-full py-3">
+    <PageHeader title="Projects" count={`${parsedProjects.length} Total`} />
+    <div class="w-full py-3">
       <div class="flex flex-wrap items-center gap-6">
         <div class="flex min-w-[200px] flex-1 items-center gap-3">
-          <Search class="text-muted-foreground h-4 w-4" />
+          <Search class="text-muted-foreground h-4 w-4" aria-hidden="true" />
           <input
-            type="text"
+            type="search"
+            aria-label="Search projects"
             placeholder="SEARCH PROJECTS..."
-            class="placeholder:text-muted-foreground/40 w-full border-none bg-transparent text-xs tracking-widest uppercase outline-none focus:ring-0"
+            class="placeholder:text-muted-foreground/70 w-full border-none bg-transparent text-xs tracking-widest uppercase"
           />
         </div>
 
@@ -60,11 +63,12 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             id="clear-filters"
             class="text-destructive hidden items-center gap-1.5 text-[11px] font-bold tracking-widest transition-opacity hover:opacity-70"
           >
-            <RotateCcw class="h-3.5 w-3.5" />
+            <RotateCcw class="h-3.5 w-3.5" aria-hidden="true" />
+            RESET
           </button>
 
           <div class="group custom-dropdown relative">
-            <button class="flex items-center gap-3 py-1 focus:outline-none">
+            <button class="flex items-center gap-3 py-1">
               <span
                 class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
                 >Category</span
@@ -79,7 +83,8 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             </button>
 
             <div
-              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+              data-lenis-prevent
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden max-h-72 min-w-[180px] flex-col overflow-y-auto overscroll-contain border py-0 group-focus-within:block"
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
@@ -99,7 +104,7 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
           </div>
 
           <div class="group custom-dropdown relative">
-            <button class="flex items-center gap-3 py-1 focus:outline-none">
+            <button class="flex items-center gap-3 py-1">
               <span
                 class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
                 >Status</span
@@ -114,7 +119,8 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             </button>
 
             <div
-              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+              data-lenis-prevent
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden max-h-72 min-w-[180px] flex-col overflow-y-auto overscroll-contain border py-0 group-focus-within:block"
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
@@ -134,7 +140,7 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
           </div>
 
           <div class="group custom-dropdown relative">
-            <button class="flex items-center gap-3 py-1 focus:outline-none">
+            <button class="flex items-center gap-3 py-1">
               <span
                 class="text-muted-foreground text-[11px] font-bold tracking-wider uppercase"
                 >Tech</span
@@ -149,7 +155,8 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
             </button>
 
             <div
-              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden min-w-[180px] flex-col border py-0 group-focus-within:block"
+              data-lenis-prevent
+              class="border-border bg-background absolute top-[calc(100%+8px)] left-0 z-50 hidden max-h-72 min-w-[180px] flex-col overflow-y-auto overscroll-contain border py-0 group-focus-within:block"
             >
               <button
                 class="hover:bg-foreground hover:text-background border-border w-full border-b px-4 py-2 text-left text-[11px] font-bold uppercase transition-colors last:border-0"
@@ -240,7 +247,7 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
 
 <script>
   const searchInput = document.querySelector(
-    'input[type="text"]',
+    'input[type="search"]',
   ) as HTMLInputElement;
   const dropdowns = document.querySelectorAll(".custom-dropdown");
   const clearFiltersBtn = document.getElementById(

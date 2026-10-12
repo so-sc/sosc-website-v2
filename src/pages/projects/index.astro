@@ -46,11 +46,7 @@ const regularProjects = parsedProjects.filter((p) => !p.community);
   <section
     class="bg-background text-foreground mx-auto max-w-7xl space-y-8 px-4 pt-28 pb-20 md:px-8"
   >
-    <PageHeader
-      title="Projects"
-      count={`${parsedProjects.length} Total`}
-      blurb="Open-source projects built and maintained by SOSC and its members. Find one to use, learn from, or contribute to."
-    />
+    <PageHeader title="Projects" count={`${parsedProjects.length} Total`} />
     <div class="bg-background w-full py-3">
       <div class="flex flex-wrap items-center gap-6">
         <div class="flex min-w-[200px] flex-1 items-center gap-3">

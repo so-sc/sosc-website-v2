@@ -30,11 +30,7 @@ const years = [...new Set(events.map((e) => e.date.getFullYear()))].map(
   description="Workshops, hackathons, DevHost and talks hosted by the Sahyadri Open Source Community since 2017."
 >
   <div class="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-8">
-    <PageHeader
-      title="Events"
-      count={`${events.length} Total`}
-      blurb="Every workshop, hackathon and talk we've run, year by year. Join us to learn, build, and connect with the community."
-    />
+    <PageHeader title="Events" count={`${events.length} Total`} />
 
     <!-- Toolbar: search + jump to a year -->
     <div

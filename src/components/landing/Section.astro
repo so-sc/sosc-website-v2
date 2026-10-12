@@ -15,7 +15,11 @@ const { id, class: className, decor = [] } = Astro.props;
 
 <section
   id={id}
-  class:list={["relative w-full overflow-hidden py-12 md:py-18", className]}
+  class:list={[
+    "relative w-full py-12 md:py-18",
+    decor.length > 0 && "overflow-hidden",
+    className,
+  ]}
 >
   {decor.length > 0 && <CornerPixels corners={decor} />}
   <div class="relative mx-auto max-w-7xl px-4 md:px-8">

@@ -1,23 +1,10 @@
 import { Github, Linkedin } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import { type Coordinator } from "@/data/coordinatorType";
 import { type TeamMember } from "@/data/team/type";
-import { cn } from "@/lib/utils";
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
-  const { image, name, designation, username, linkedin, placeholder } = member;
-  const isNoBg = image.includes("team-nobg");
-  // GitHub avatars default to 460px; cards never show them that large
-  const src = image.startsWith("https://github.com/")
-    ? `${image}?size=256`
-    : image;
-  const [loaded, setLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  // The photo may finish loading before this island hydrates, so onLoad never fires
-  useEffect(() => {
-    const img = imgRef.current;
-    if (img?.complete && img.naturalWidth > 0) setLoaded(true);
-  }, []);
+  const { name, designation, username, linkedin } = member;
 
   return (
     <div className="group relative flex aspect-[3/4] w-full flex-col items-center justify-between overflow-hidden rounded-none border border-gray-200 bg-white pb-4 text-center transition-all md:aspect-[4/5] md:pb-6">
@@ -48,27 +35,22 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
       </div>
 
       {/* Image Container */}
-      <div
-        className="relative flex h-[75%] w-full items-end justify-center overflow-hidden bg-gray-100 bg-cover bg-center"
-        style={
-          placeholder && !loaded
-            ? { backgroundImage: `url("${placeholder}")` }
-            : undefined
-        }
-      >
+      <div className="relative h-[75%] w-full overflow-hidden">
+        <div
+          className="absolute inset-0 animate-pulse bg-gray-200"
+          aria-hidden="true"
+        />
         <img
-          ref={imgRef}
-          src={src}
+          src={`https://github.com/${username}.png?size=256`}
           alt={name}
           loading="lazy"
           decoding="async"
-          onLoad={() => setLoaded(true)}
-          className={cn(
-            // text-transparent keeps alt text for screen readers but never paints it
-            "h-full w-full rounded-none object-cover text-transparent transition-opacity duration-500",
-            loaded ? "opacity-100" : "opacity-0",
-            isNoBg && "object-contain object-bottom mix-blend-multiply",
-          )}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = "/github_avatar.svg";
+          }}
+          // Pulse shows through until the photo paints; alt text never renders
+          className="relative h-full w-full object-cover text-transparent"
         />
       </div>
 
@@ -82,154 +64,248 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
   );
 };
 
-export default function TeamView({ team }: { team: TeamMember[] }) {
-  // Defaulting to the current team
-  const [selectedYear, setSelectedYear] = useState("2025-26");
+const OLDER = "older";
 
-  const tabs = ["Team 2025-26", "Team 2024-25", "Team 2023-24", "Older Alumni"];
+type Group = { title: string; members: TeamMember[] };
 
-  const filteredMembers = team.filter((m) => {
-    if (selectedYear === "Older Alumni") return m.year === "-";
-    return m.year.includes(selectedYear);
-  });
+// Leadership is any titled role, so new or renamed titles need no code change
+function groupMembers(members: TeamMember[]): Group[] {
+  const role = (m: TeamMember) => (m.designation ?? "").trim().toLowerCase();
+  const isAlumni = (m: TeamMember) =>
+    m.status === "alumni" || role(m) === "alumni";
+  const isMember = (m: TeamMember) =>
+    !isAlumni(m) && (role(m) === "" || role(m) === "community member");
+  const isLead = (m: TeamMember) => !isAlumni(m) && !isMember(m);
 
-  const coordinatorMembers = filteredMembers.filter(
-    (m) => m.status === "coordinator",
+  const groups: Group[] = [
+    { title: "Leadership", members: members.filter(isLead) },
+    { title: "Community", members: members.filter(isMember) },
+    { title: "Alumni", members: members.filter(isAlumni) },
+  ];
+  return groups.filter((g) => g.members.length > 0);
+}
+
+// Every student not yet passed out, once each, as Leadership and Community
+function currentTeam(team: TeamMember[], finalYearPassout: number): Group[] {
+  const latest = new Map<string, TeamMember>();
+  for (const m of team) {
+    if (!m.graduation || m.graduation < finalYearPassout) continue;
+    const seen = latest.get(m.username);
+    if (!seen || m.year.localeCompare(seen.year) > 0) latest.set(m.username, m);
+  }
+  const students = [...latest.values()];
+  const leaders = groupMembers(students).find((g) => g.title === "Leadership");
+  const leaderSet = new Set(leaders?.members);
+
+  const groups: Group[] = [
+    ...(leaders ? [leaders] : []),
+    {
+      title: "Community",
+      members: students.filter((m) => !leaderSet.has(m)),
+    },
+  ];
+  return groups.filter((g) => g.members.length > 0);
+}
+
+function GroupGrids({
+  groups,
+  idPrefix,
+}: {
+  groups: Group[];
+  idPrefix: string;
+}) {
+  return (
+    <>
+      {groups.map((group) => {
+        const id = `${idPrefix}-${group.title.toLowerCase().replace(/\s+/g, "-")}`;
+        return (
+          <section
+            key={group.title}
+            className="border-b border-gray-200 py-10 last:border-b-0 md:py-12"
+            aria-labelledby={id}
+          >
+            <div className="mb-6 flex items-baseline justify-between gap-4 md:mb-8">
+              <h3
+                id={id}
+                className="text-2xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-4xl"
+              >
+                {group.title}
+              </h3>
+              <span className="text-primary-ink font-mono text-sm font-bold tracking-widest uppercase">
+                {group.members.length}
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
+              {group.members.map((member) => (
+                <MemberCard
+                  key={`${member.username}-${member.year}`}
+                  member={member}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </>
   );
-  const alumniMembers = filteredMembers.filter((m) => {
-    if (selectedYear === "Older Alumni")
-      return m.status === "alumni" || m.status === "active";
-    return m.status === "alumni";
-  });
+}
 
-  const communityLeads = filteredMembers.filter(
-    (m) => m.status === "active" && m.designation === "Community Lead",
+function CoordinatorCard({ coordinator }: { coordinator: Coordinator }) {
+  const { name, role, title, bio, image, linkedin } = coordinator;
+  return (
+    <article className="grid gap-6 border border-gray-200 bg-white p-5 md:grid-cols-12 md:gap-10 md:p-8">
+      <div className="mx-auto aspect-[4/5] w-full max-w-60 overflow-hidden bg-gray-100 md:col-span-4 md:max-w-none lg:col-span-3">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover object-top text-transparent"
+        />
+      </div>
+      <div className="flex flex-col justify-center md:col-span-8 lg:col-span-9">
+        <p className="text-primary-ink font-mono text-xs font-bold tracking-widest uppercase">
+          {role}
+        </p>
+        <h4 className="mt-2 text-2xl leading-tight font-black text-gray-900 md:text-4xl">
+          {name}
+        </h4>
+        <p className="mt-1 text-sm font-medium text-gray-500 md:text-base">
+          {title}
+        </p>
+        <p className="mt-5 max-w-3xl leading-relaxed text-gray-600">{bio}</p>
+        {linkedin && (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:border-primary hover:text-primary-ink mt-6 inline-flex w-fit items-center gap-2 border border-gray-900 px-4 py-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition-colors"
+          >
+            <Linkedin className="h-4 w-4" aria-hidden="true" />
+            LinkedIn
+          </a>
+        )}
+      </div>
+    </article>
   );
+}
 
-  const executiveMembers = filteredMembers.filter(
-    (m) =>
-      m.status === "active" &&
-      (m.designation === "Executive Member" ||
-        m.designation === "SOSWC Representative"),
+function SectionTitle({ title, accent }: { title: string; accent: string }) {
+  return (
+    <h2 className="text-4xl leading-none font-black tracking-tight text-gray-900 uppercase md:text-6xl">
+      {title} <span className="text-primary-ink">{accent}</span>
+    </h2>
   );
+}
 
-  const communityMembers = filteredMembers.filter(
-    (m) =>
-      selectedYear !== "Older Alumni" &&
-      m.status === "active" &&
-      m.designation !== "Community Lead" &&
-      m.designation !== "Executive Member" &&
-      m.designation !== "SOSWC Representative",
+export default function TeamView({
+  team,
+  coordinators,
+}: {
+  team: TeamMember[];
+  coordinators: Coordinator[];
+}) {
+  const years = [
+    ...new Set(team.map((m) => m.year).filter((y) => y && y !== "-")),
+  ].sort((a, b) => b.localeCompare(a));
+  // Leading year is the newest roster with leaders; junior batches join the current team
+  const leadingYear =
+    years.find((year) =>
+      groupMembers(team.filter((m) => m.year === year)).some(
+        (g) => g.title === "Leadership",
+      ),
+    ) ?? years[0];
+  // e.g. "2025-26" -> its 4th years pass out in 2027
+  const finalYearPassout = leadingYear
+    ? Number(leadingYear.split("-")[0]) + 2
+    : 0;
+  const current = leadingYear ? currentTeam(team, finalYearPassout) : [];
+  const currentCount = current.reduce((n, g) => n + g.members.length, 0);
+  const pastYears = years.filter((year) => year <= (leadingYear ?? ""));
+  const [selected, setSelected] = useState(pastYears[0] ?? OLDER);
+  const past = groupMembers(
+    team.filter((m) =>
+      selected === OLDER ? m.year === "-" : m.year === selected,
+    ),
   );
-
-  const themeGreen = "text-primary-ink";
+  const pastCount = past.reduce((n, g) => n + g.members.length, 0);
 
   return (
-    <div className="space-y-12">
-      <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center md:gap-4">
-        {tabs.map((tab) => {
-          const year =
-            tab === "Older Alumni" ? "Older Alumni" : tab.replace("Team ", "");
-          return (
-            <button
-              key={tab}
-              onClick={() => setSelectedYear(year)}
-              aria-pressed={selectedYear === year}
-              className={cn(
-                "cursor-pointer rounded-none border-2 px-3 py-2 text-xs font-bold transition-all md:px-6 md:text-base",
-                selectedYear === year
-                  ? "border-primary bg-primary text-primary-foreground"
-                  : "hover:border-primary hover:text-primary-ink border-gray-300 bg-transparent text-gray-600",
-              )}
+    <div>
+      <section aria-labelledby="current-team">
+        <div
+          id="current-team"
+          className="flex flex-col gap-2 border-b border-gray-900 pb-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <SectionTitle title="Current" accent="Team" />
+          <p className="font-mono text-xs font-bold tracking-widest text-gray-500 uppercase">
+            {leadingYear} · {currentCount}{" "}
+            {currentCount === 1 ? "person" : "people"}
+          </p>
+        </div>
+        {current.length === 0 ? (
+          <p className="py-16 text-center text-gray-500">
+            The current team hasn't been added yet.
+          </p>
+        ) : (
+          <GroupGrids groups={current} idPrefix="current" />
+        )}
+
+        {coordinators.length > 0 && (
+          <section
+            aria-labelledby="current-faculty"
+            className="border-t border-gray-200 py-10 md:py-12"
+          >
+            <h3
+              id="current-faculty"
+              className="mb-6 text-2xl leading-none font-black tracking-tight text-gray-900 uppercase md:mb-8 md:text-4xl"
             >
-              {tab}
-            </button>
-          );
-        })}
-      </div>
-
-      <section className="text-foreground mx-auto max-w-7xl space-y-16">
-        {filteredMembers.length === 0 && (
-          <div className="py-20 text-center text-gray-500">
-            <p className="text-xl">No members found for {selectedYear}</p>
-          </div>
-        )}
-
-        {(coordinatorMembers.length > 0 || communityLeads.length > 0) && (
-          <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 md:grid md:grid-cols-2 md:gap-8 lg:gap-16">
-            {coordinatorMembers.length > 0 && (
-              <div className="flex flex-col items-center">
-                <div className="mb-8 flex h-16 items-end justify-center sm:h-20 md:h-24 lg:h-28">
-                  <h2 className="text-center text-2xl font-extrabold tracking-wide uppercase sm:text-3xl lg:text-4xl">
-                    <span className={themeGreen}>CO-ORDINATOR</span>
-                    <br className="hidden md:block" /> FACULTY
-                  </h2>
-                </div>
-                <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
-                  {coordinatorMembers.map((member) => (
-                    <MemberCard key={member.username} member={member} />
-                  ))}
-                </div>
-              </div>
-            )}
-            {communityLeads.length > 0 && (
-              <div className="flex flex-col items-center">
-                <div className="mb-8 flex h-16 items-end justify-center sm:h-20 md:h-24 lg:h-28">
-                  <h2 className="text-center text-2xl font-extrabold tracking-wide uppercase sm:text-3xl lg:text-4xl">
-                    <span className={themeGreen}>COMMUNITY</span>
-                    <br className="hidden md:block" /> LEAD
-                  </h2>
-                </div>
-                <div className="w-[85%] max-w-[280px] sm:w-[50%] md:w-full md:max-w-[260px] lg:max-w-[280px]">
-                  {communityLeads.map((member) => (
-                    <MemberCard key={member.username} member={member} />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {executiveMembers.length > 0 && (
-          <div>
-            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
-              <span className={themeGreen}>EXECUTIVE</span> MEMBER
-            </h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {executiveMembers.map((member) => (
-                <MemberCard key={member.username} member={member} />
+              Faculty
+            </h3>
+            <div className="space-y-6">
+              {coordinators.map((c) => (
+                <CoordinatorCard key={c.name} coordinator={c} />
               ))}
             </div>
-          </div>
+          </section>
         )}
+      </section>
 
-        {communityMembers.length > 0 && (
-          <div>
-            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
-              <span className={themeGreen}>COMMUNITY</span> MEMBER
-            </h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {communityMembers.map((member) => (
-                <MemberCard key={member.username} member={member} />
+      <section aria-labelledby="past-teams" className="mt-16 md:mt-24">
+        <div id="past-teams" className="border-b border-gray-900 pb-4">
+          <SectionTitle title="Past" accent="Teams" />
+        </div>
+        <div className="flex flex-col gap-3 border-b border-gray-200 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <label className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">
+              Year
+            </span>
+            <select
+              value={selected}
+              onChange={(e) => setSelected(e.target.value)}
+              className="border border-gray-300 bg-white px-3 py-2 font-mono text-sm font-bold text-gray-900 transition-colors hover:border-gray-900"
+            >
+              {pastYears.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
               ))}
-            </div>
-          </div>
-        )}
-
-        {alumniMembers.length > 0 && (
-          <div>
-            <h2 className="mb-8 text-base font-black tracking-wide uppercase md:text-3xl">
-              <span className={themeGreen}>
-                {selectedYear === "Older Alumni" ? "OLDER" : "ALUMNI"}
-              </span>{" "}
-              {selectedYear === "Older Alumni" ? "ALUMNI" : ""}
-            </h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 lg:grid-cols-4">
-              {alumniMembers.map((member) => (
-                <MemberCard key={member.username} member={member} />
-              ))}
-            </div>
-          </div>
+              <option value={OLDER}>Older alumni</option>
+            </select>
+          </label>
+          <p
+            className="text-xs font-bold tracking-widest text-gray-500 uppercase"
+            aria-live="polite"
+          >
+            {pastCount} {pastCount === 1 ? "person" : "people"}
+          </p>
+        </div>
+        {past.length === 0 ? (
+          <p className="py-16 text-center text-gray-500">
+            No members listed for this year.
+          </p>
+        ) : (
+          <GroupGrids groups={past} idPrefix="past" />
         )}
       </section>
     </div>

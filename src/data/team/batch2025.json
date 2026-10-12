@@ -1,0 +1,210 @@
+[
+  {
+    "username": "AchalVenkatesh",
+    "name": "Achal Venkatesh K",
+    "designation": "Community Member",
+    "email": "thorsthorfinn2003@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/achal-venkatesh-k-366502220",
+    "skills": ["Public Speaking", "Problem Solving", "Math"],
+    "status": "active"
+  },
+  {
+    "username": "printAdityasn",
+    "name": "Aditya SN",
+    "designation": "Community Member",
+    "email": "adityas.cs21@sahyadri.edu.in",
+    "linkedin": "https://www.linkedin.com/in/aditya-sunil-nadiger-a10132229",
+    "skills": ["Photography", "Videography", "etc", "."],
+    "status": "active"
+  },
+  {
+    "username": "AkkilMG",
+    "name": "Akkil M G",
+    "designation": "Community Member",
+    "email": "akkilcharanmanyaganesh@gmail.com",
+    "linkedin": "https://linkedin.com/in/akkilmg",
+    "skills": ["Python", "Android", "Web"],
+    "status": "active"
+  },
+  {
+    "username": "Ananyapk25",
+    "name": "Ananya P K",
+    "designation": "Community Member",
+    "email": "ananyapk752@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ananya-pk-52409522b",
+    "skills": ["Public speaking", "Web"],
+    "status": "active"
+  },
+  {
+    "username": "dev-shetty",
+    "name": "Deveesh Shetty",
+    "designation": "President",
+    "email": "deveeshshetty@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/deveesh-shetty-908539214/",
+    "skills": ["Web Development", "Public Speaking", "Sketching"],
+    "status": "active"
+  },
+  {
+    "username": "hebbaaaa",
+    "name": "Heba Bashir Ibrahim",
+    "designation": "Community Member",
+    "email": "hebas2004@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/heba-bashir-a51227265",
+    "skills": ["Public Speaking", "Event Management"],
+    "status": "active"
+  },
+  {
+    "username": "thatcodechap",
+    "name": "Manjunath Bhat K",
+    "designation": "Community Member",
+    "email": "thatcodechap@outlook.com",
+    "linkedin": "https://www.linkedin.com/in/manjunath-bhat-802b401b0",
+    "skills": ["Fullstack"],
+    "status": "active"
+  },
+  {
+    "username": "NiharaPadil",
+    "name": "Nihara",
+    "designation": "Community Member",
+    "email": "niharapadilhr@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/nihara-padil-6177aa228",
+    "skills": ["Communication", "Problem solving", "Web", "Organising"],
+    "status": "active"
+  },
+  {
+    "username": "PratheekshaS",
+    "name": "Pratheeksha S",
+    "designation": "Community Member",
+    "email": "pratheekshas2003@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/pratheeksha-s-bangera-8a4a1a22a/",
+    "skills": ["Public Speaking", "Content Writing", "SEO", "Marketing"],
+    "status": "active"
+  },
+  {
+    "username": "CodereaperXE",
+    "name": "Rishab Budale",
+    "designation": "Community Member",
+    "email": "rishab.budale@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/rishab-budale",
+    "skills": ["Cybersecurity and Hardware"],
+    "status": "active"
+  },
+  {
+    "username": "siliconvolley",
+    "name": "Rishabh Laxmikanth",
+    "designation": "Community Member",
+    "email": "rishabhlaxmikanth@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/rishabh-laxmikanth-789541270/",
+    "skills": ["Web", "Machine Learning", "Python", "C++"],
+    "status": "active"
+  },
+  {
+    "username": "samanvitha-k",
+    "name": "Samanvitha K",
+    "designation": "Community Member",
+    "email": "samanvitha.0486@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/samanvitha-k-0209bb2a",
+    "skills": ["Leadership", "Problem Solving", "Communication"],
+    "status": "active"
+  },
+  {
+    "username": "SankshipthShetty",
+    "name": "Sankshipth Shetty",
+    "designation": "Community Member",
+    "email": "sankshipthshetty@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sankshipthshetty/",
+    "skills": [
+      "C++",
+      "Python",
+      "Competitive Programming",
+      "Web Development",
+      "Web3"
+    ],
+    "status": "active"
+  },
+  {
+    "username": "srajankumar",
+    "name": "Srajan Kumar",
+    "designation": "Community Member",
+    "email": "kumarsrajan02@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/kumarsrajan/",
+    "skills": ["C", "C++", "Web Development", "Design"],
+    "status": "active"
+  },
+  {
+    "username": "SRUJALL",
+    "name": "Srujal",
+    "designation": "Community Member",
+    "email": "srujalbiradar777@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/srujal-biradar-727895236",
+    "skills": [
+      "Front-end web",
+      "Instagram marketing",
+      "content writting",
+      "event management"
+    ],
+    "status": "active"
+  },
+  {
+    "username": "Srujan-rai",
+    "name": "Srujan rai",
+    "designation": "Community Member",
+    "email": "raisrujan@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/srujan-rai-8371551ba",
+    "skills": ["IOT", "Computer Vision"],
+    "status": "active"
+  },
+  {
+    "username": "SushruthRao",
+    "name": "Sushruth G Rao",
+    "designation": "Community Member",
+    "email": "ssushruth2003@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sushruth-rao-396342221/",
+    "skills": ["Cybersecurity"],
+    "status": "active"
+  },
+  {
+    "username": "tejas-gk",
+    "name": "Tejas G K",
+    "designation": "Community Member",
+    "email": "tejasgk250@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/tejas-gk/",
+    "skills": ["Web development"],
+    "status": "active"
+  },
+  {
+    "username": "tejasnayak1",
+    "name": "Tejas Nayak B",
+    "designation": "Community Member",
+    "email": "tejasnayak1@gmail.com",
+    "linkedin": "",
+    "skills": ["Public Speaking", "Event Management", "Organizing"],
+    "status": "active"
+  },
+  {
+    "username": "shettyvarshaa",
+    "name": "Varshaa Shetty",
+    "designation": "Community Member",
+    "email": "shettyvarshaa275@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/varshaa-shetty",
+    "skills": [
+      "Google Cloud",
+      "Front-end web",
+      "python",
+      "cp",
+      "c",
+      "java",
+      "touch typing"
+    ],
+    "status": "active"
+  },
+  {
+    "username": "Zeliq",
+    "name": "Zeliq Zayyan",
+    "designation": "Community Member",
+    "email": "zeliqzayyan@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/zeliq-zayyan-14b313193",
+    "skills": ["Data Analytics", "C-Programming", "Design", "UI/UX"],
+    "status": "active"
+  }
+]

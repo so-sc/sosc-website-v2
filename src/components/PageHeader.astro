@@ -3,13 +3,12 @@ interface Props {
   title: string;
   /** Shown on the rule, e.g. "77 Total" */
   count?: string;
-  blurb?: string;
 }
 
-const { title, count, blurb } = Astro.props;
+const { title, count } = Astro.props;
 ---
 
-<header class="space-y-8">
+<header>
   <div>
     <h1
       class="text-4xl leading-[0.8] font-black tracking-tighter text-gray-900 uppercase md:text-6xl lg:text-8xl"
@@ -27,12 +26,4 @@ const { title, count, blurb } = Astro.props;
       }
     </div>
   </div>
-
-  {
-    blurb && (
-      <p class="max-w-md text-sm leading-relaxed font-medium text-gray-500">
-        {blurb}
-      </p>
-    )
-  }
 </header>

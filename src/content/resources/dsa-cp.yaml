@@ -1,0 +1,483 @@
+title: DSA & Competitive Programming
+tagline: Solve problems fast, ace interviews, win contests.
+description: Data structures, algorithms and the practice platforms where you sharpen them.
+order: 9
+path:
+  - title: Core data structures
+    resources: [last-algorithms-course, visualgo]
+  - title: Learn the patterns
+    note: The handful of techniques behind most interview questions.
+    resources: [neetcode-roadmap, leetcode]
+  - title: Start doing contests
+    resources: [usaco-guide, codechef]
+  - title: Level up
+    resources: [cses-problem-set, cp-handbook]
+  - title: Compete seriously
+    resources: [codeforces, atcoder, cp-algorithms]
+resources:
+  - title: The Last Algorithms Course You'll Need
+    id: last-algorithms-course
+    link: https://frontendmasters.com/courses/algorithms/
+    description: ThePrimeagen's free course on arrays, lists, trees, graphs, maps, searching and sorting.
+    type: course
+    tags: [algorithms, interviews]
+  - title: VisuAlgo
+    id: visualgo
+    link: https://visualgo.net/
+    description: Watch data structures and algorithms run, step by step.
+    type: tool
+    tags: [visualization]
+  - title: NeetCode Roadmap
+    id: neetcode-roadmap
+    link: https://neetcode.io/roadmap
+    description: Interview problems grouped by pattern, with video solutions.
+    type: roadmap
+    tags: [interviews]
+  - title: LeetCode
+    id: leetcode
+    link: https://leetcode.com/
+    description: The standard platform for interview-style coding problems.
+    type: practice
+    tags: [interviews]
+  - title: USACO Guide
+    id: usaco-guide
+    link: https://usaco.guide/
+    description: A free, structured guide to competitive programming, from bronze to platinum.
+    type: guide
+    tags: [cp]
+  - title: CodeChef
+    id: codechef
+    link: https://www.codechef.com/
+    description: Beginner-friendly contests and a large Indian CP community.
+    type: practice
+    tags: [cp, contests]
+  - title: CSES Problem Set
+    id: cses-problem-set
+    link: https://cses.fi/problemset/
+    description: A classic collection of 300+ problems covering every core topic.
+    type: practice
+    tags: [cp]
+  - title: Competitive Programmer's Handbook
+    id: cp-handbook
+    link: https://cses.fi/book/book.pdf
+    description: A free book by Antti Laaksonen covering the algorithms contests use.
+    type: book
+    tags: [cp]
+  - title: Codeforces
+    id: codeforces
+    link: https://codeforces.com/
+    description: Frequent rated contests and a huge problem archive.
+    type: practice
+    tags: [cp, contests]
+  - title: AtCoder
+    id: atcoder
+    link: https://atcoder.jp/
+    description: Weekly contests known for clean, educational problems.
+    type: practice
+    tags: [cp, contests]
+  - title: CP-Algorithms
+    id: cp-algorithms
+    link: https://cp-algorithms.com/
+    description: Detailed write-ups of advanced algorithms with implementations.
+    type: docs
+    tags: [cp, algorithms]
+  - title: NeetCode 150
+    link: https://neetcode.io/practice
+    description: A curated list of 150 interview problems with free video explanations.
+    type: practice
+    tags: [interviews, leetcode]
+  - title: NeetCode YouTube
+    link: https://www.youtube.com/@NeetCode
+    description: Clear video walkthroughs of hundreds of LeetCode problems and patterns.
+    type: video
+    tags: [interviews, leetcode]
+  - title: Striver's A2Z DSA Sheet
+    link: https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet
+    description: A step-by-step DSA sheet from basics to advanced, with articles and videos for every problem.
+    type: roadmap
+    tags: [interviews, beginner-friendly]
+  - title: Striver's SDE Sheet
+    link: https://takeuforward.org/prep-hub/strivers-180-master-dsa-patterns
+    description: Striver's curated set of 180 must-do interview problems, grouped by pattern, for placement prep.
+    type: practice
+    tags: [interviews, placements]
+  - title: take U forward
+    link: https://www.youtube.com/@takeUforward
+    description: Striver's channel with full playlists on graphs, DP, trees and placement prep.
+    type: video
+    tags: [interviews, placements]
+  - title: Blind 75
+    link: https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
+    description: The original curated list of 75 LeetCode problems that cover the key interview patterns.
+    type: practice
+    tags: [interviews, leetcode]
+  - title: Grind 75
+    link: https://www.techinterviewhandbook.org/grind75/
+    description: A customizable week-by-week study plan of essential interview problems.
+    type: practice
+    tags: [interviews, leetcode]
+  - title: Tech Interview Handbook
+    link: https://www.techinterviewhandbook.org/
+    description: Free guide to coding interviews, algorithm cheatsheets and behavioural rounds.
+    type: guide
+    tags: [interviews]
+  - title: LeetCode Patterns
+    link: https://seanprashad.com/leetcode-patterns/
+    description: LeetCode problems grouped by pattern so you learn techniques, not answers.
+    type: practice
+    tags: [interviews, patterns]
+  - title: "Grokking the Coding Interview: Patterns"
+    link: https://www.designgurus.io/course/grokking-the-coding-interview
+    description: The paid course that popularised learning interview problems by pattern.
+    type: course
+    tags: [interviews, patterns]
+  - title: LeetCode Study Plans
+    link: https://leetcode.com/studyplan/
+    description: Official guided problem sets like LeetCode 75 and Top Interview 150.
+    type: practice
+    tags: [interviews, leetcode]
+  - title: Abdul Bari Algorithms
+    link: https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O
+    description: Famous whiteboard lectures on algorithm design and analysis, loved by Indian students.
+    type: video
+    tags: [algorithms, beginner-friendly]
+  - title: William Fiset
+    link: https://www.youtube.com/@WilliamFiset-videos
+    description: Clear animated videos on graph theory and data structures with Java code.
+    type: video
+    tags: [graphs, data-structures]
+  - title: Errichto Algorithms
+    link: https://www.youtube.com/@Errichto
+    description: A top competitive programmer explaining techniques and solving contests live.
+    type: video
+    tags: [cp]
+  - title: Colin Galen
+    link: https://www.youtube.com/@ColinGalen
+    description: Advice and problem-solving videos on getting better at competitive programming.
+    type: video
+    tags: [cp]
+  - title: CodeNCode
+    link: https://www.youtube.com/@CodeNCode
+    description: Long topic-wise playlists on CP topics from number theory to segment trees.
+    type: video
+    tags: [cp]
+  - title: Aditya Verma DP Playlist
+    link: https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go
+    description: A hugely popular Hindi playlist that teaches dynamic programming by pattern.
+    type: video
+    tags: [dynamic-programming]
+  - title: Love Babbar DSA Sheet
+    link: https://www.geeksforgeeks.org/dsa/dsa-sheet-by-love-babbar/
+    description: A well-known 450-problem sheet for placement DSA practice.
+    type: practice
+    tags: [interviews, placements]
+  - title: Back To Back SWE
+    link: https://www.youtube.com/@BackToBackSWE
+    description: Deep explanations of classic interview problems focusing on intuition.
+    type: video
+    tags: [interviews]
+  - title: MIT 6.006 Lectures (2011)
+    link: https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb
+    description: Erik Demaine and Srini Devadas' classic recorded algorithms lectures.
+    type: video
+    tags: [algorithms]
+  - title: Algorithms Specialization (Stanford)
+    link: https://www.coursera.org/specializations/algorithms
+    description: Tim Roughgarden's four-course series on divide and conquer, graphs, greedy and DP.
+    type: course
+    tags: [algorithms]
+  - title: Algorithms, Part I (Princeton)
+    link: https://www.coursera.org/learn/algorithms-part1
+    description: Sedgewick's free Coursera course on fundamental data structures and sorting in Java.
+    type: course
+    tags: [algorithms, java]
+  - title: Algorithms, 4th Edition
+    link: https://algs4.cs.princeton.edu/home/
+    description: The Sedgewick and Wayne textbook site with Java code, visualizations and exercises.
+    type: book
+    tags: [algorithms, java]
+  - title: Introduction to Algorithms (CLRS)
+    link: https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/
+    description: The definitive algorithms reference textbook used in universities worldwide.
+    type: book
+    tags: [algorithms]
+  - title: The Algorithm Design Manual
+    link: https://www.algorist.com/
+    description: Skiena's practical book on designing algorithms, with a catalogue of problems.
+    type: book
+    tags: [algorithms]
+  - title: Algorithms by Dasgupta, Papadimitriou and Vazirani
+    link: https://people.eecs.berkeley.edu/~vazirani/algorithms.html
+    description: A short, elegant algorithms textbook available as free chapter drafts.
+    type: book
+    tags: [algorithms]
+  - title: Grokking Algorithms
+    link: https://www.manning.com/books/grokking-algorithms-second-edition
+    description: An illustrated, beginner-friendly introduction to common algorithms.
+    type: book
+    tags: [algorithms, beginner-friendly]
+  - title: Guide to Competitive Programming
+    link: https://link.springer.com/book/10.1007/978-3-031-61794-2
+    description: Antti Laaksonen's expanded book on algorithms for programming contests.
+    type: book
+    tags: [cp]
+  - title: Competitive Programming 4 (CP4)
+    link: https://cpbook.net/
+    description: Steven and Felix Halim's book of techniques for ICPC and IOI-style contests.
+    type: book
+    tags: [cp, icpc]
+  - title: Algorithms Live
+    link: https://www.youtube.com/@AlgorithmsLive
+    description: Recorded lectures on contest algorithms by experienced competitive programmers.
+    type: video
+    tags: [cp]
+  - title: Codeforces EDU
+    link: https://codeforces.com/edu/courses
+    description: Free interactive courses on binary search, segment trees, DSU and more with practice.
+    type: course
+    tags: [cp]
+  - title: AtCoder Problems
+    link: https://kenkoooo.com/atcoder/
+    description: Track your AtCoder progress and practise past problems by difficulty.
+    type: tool
+    tags: [cp, atcoder]
+  - title: AtCoder Library
+    link: https://github.com/atcoder/ac-library
+    description: AtCoder's official C++ library of contest data structures and algorithms.
+    type: repo
+    tags: [cp, cpp]
+  - title: KACTL
+    link: https://github.com/kth-competitive-programming/kactl
+    description: KTH's famous ICPC team notebook of compact, tested algorithm implementations.
+    type: repo
+    tags: [cp, icpc, cpp]
+  - title: CP Templates by bqi343
+    link: https://github.com/bqi343/cp-notebook
+    description: Benjamin Qi's widely used competitive programming notebook in C++.
+    type: repo
+    tags: [cp, cpp]
+  - title: HackerRank
+    link: https://www.hackerrank.com/
+    description: Practice tracks for algorithms, data structures and languages, widely used in hiring.
+    type: practice
+    tags: [interviews, beginner-friendly]
+  - title: HackerEarth
+    link: https://www.hackerearth.com/practice/
+    description: Topic-wise tutorials and practice problems plus hiring challenges.
+    type: practice
+    tags: [cp, beginner-friendly]
+  - title: SPOJ
+    link: https://www.spoj.com/
+    description: A classic online judge with thousands of problems in many languages.
+    type: practice
+    tags: [cp]
+  - title: Kattis
+    link: https://open.kattis.com/
+    description: An online judge used by ICPC with a large archive of contest problems.
+    type: practice
+    tags: [cp, icpc]
+  - title: Project Euler
+    link: https://projecteuler.net/
+    description: Maths-heavy programming puzzles that reward clever algorithms.
+    type: practice
+    tags: [math, puzzles]
+  - title: Advent of Code
+    link: https://adventofcode.com/
+    description: A yearly December puzzle calendar loved by programmers of every level.
+    type: practice
+    tags: [puzzles]
+  - title: GeeksforGeeks DSA
+    link: https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/
+    description: Articles and practice problems on every DSA topic, popular for placements.
+    type: guide
+    tags: [data-structures, placements]
+  - title: Programiz DSA
+    link: https://www.programiz.com/dsa
+    description: Beginner-friendly explanations of data structures and algorithms with code.
+    type: guide
+    tags: [data-structures, beginner-friendly]
+  - title: TopCoder
+    link: https://www.topcoder.com/
+    description: One of the oldest competitive programming platforms, with SRM contests.
+    type: practice
+    tags: [cp, contests]
+  - title: CodeChef Learn
+    link: https://www.codechef.com/learn
+    description: CodeChef's guided DSA and language courses with built-in practice.
+    type: course
+    tags: [cp, beginner-friendly]
+  - title: Codeforces Problemset
+    link: https://codeforces.com/problemset
+    description: Filter thousands of past contest problems by rating and tag.
+    type: practice
+    tags: [cp]
+  - title: Codeforces Catalog
+    link: https://codeforces.com/catalog
+    description: Community-curated blogs and tutorials on CP topics, organised by subject.
+    type: guide
+    tags: [cp]
+  - title: CLIST
+    link: https://clist.by/
+    description: A calendar of upcoming programming contests across every platform.
+    type: tool
+    tags: [contests]
+  - title: Codeforces Visualizer (cfviz)
+    link: https://cfviz.netlify.app/
+    description: Charts of your Codeforces ratings, solved tags and problem difficulty.
+    type: tool
+    tags: [cp, codeforces]
+  - title: A2 Online Judge Ladders
+    link: https://a2oj.netlify.app/
+    description: Classic Codeforces problem ladders grouped by rating, for steady improvement.
+    type: practice
+    tags: [cp, codeforces]
+  - title: ICPC
+    link: https://icpc.global/
+    description: The International Collegiate Programming Contest, the biggest team contest for students.
+    type: community
+    tags: [icpc, contests]
+  - title: ICPC India
+    link: https://www.codechef.com/icpc
+    description: Information and preliminary rounds for ICPC regionals in India, hosted on CodeChef.
+    type: community
+    tags: [icpc, india]
+  - title: Google Code Jam Archive
+    link: https://zibada.guru/gcj/
+    description: An archive of past Google Code Jam and Kick Start problems and analyses.
+    type: practice
+    tags: [contests]
+  - title: Data Structure Visualizations (USFCA)
+    link: https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+    description: Interactive animations of trees, heaps, hashing, graphs and sorting.
+    type: tool
+    tags: [visualization]
+  - title: Python Tutor
+    link: https://pythontutor.com/
+    description: Step through code and see memory, pointers and the call stack visually.
+    type: tool
+    tags: [visualization, debugging]
+  - title: Graph Editor (CS Academy)
+    link: https://csacademy.com/app/graph_editor/
+    description: Draw and visualise graphs quickly, handy for debugging graph problems.
+    type: tool
+    tags: [graphs, visualization]
+  - title: Big-O Cheat Sheet
+    link: https://www.bigocheatsheet.com/
+    description: Time and space complexities of common data structures and sorting algorithms.
+    type: cheatsheet
+    tags: [complexity]
+  - title: The Algorithms
+    link: https://github.com/TheAlgorithms
+    description: Open-source implementations of algorithms in Python, Java, C++ and many other languages.
+    type: repo
+    tags: [algorithms, open-source]
+  - title: Awesome Competitive Programming
+    link: https://github.com/lnishan/awesome-competitive-programming
+    description: A curated list of CP books, judges, courses and algorithm resources.
+    type: repo
+    tags: [cp, awesome-list]
+  - title: Awesome Algorithms
+    link: https://github.com/tayllan/awesome-algorithms
+    description: A curated list of places to learn and practise algorithms.
+    type: repo
+    tags: [algorithms, awesome-list]
+  - title: Interactive Coding Challenges
+    link: https://github.com/donnemartin/interactive-coding-challenges
+    description: Interview problems as Python notebooks with tests and solutions.
+    type: repo
+    tags: [interviews, python]
+  - title: Cracking the Coding Interview
+    link: https://www.crackingthecodinginterview.com/
+    description: Gayle McDowell's classic book of 189 interview questions and solutions.
+    type: book
+    tags: [interviews]
+  - title: Elements of Programming Interviews
+    link: https://elementsofprogramminginterviews.com/
+    description: A tough, thorough interview problem book in Python, Java or C++.
+    type: book
+    tags: [interviews]
+  - title: Exponent (Aced) Interview Prep
+    link: https://www.youtube.com/@tryexponent
+    description: Mock interviews with engineers covering coding and system design rounds.
+    type: video
+    tags: [interviews]
+  - title: Pramp
+    link: https://www.pramp.com/
+    description: Free peer-to-peer mock coding interviews.
+    type: practice
+    tags: [interviews]
+  - title: Codeforces Blog Guide for Beginners
+    link: https://codeforces.com/blog/entry/66909
+    description: A popular Codeforces post on how to practise and improve as a beginner.
+    type: article
+    tags: [cp, beginner-friendly]
+  - title: Errichto's Competitive Programming Guide
+    link: https://github.com/Errichto/youtube
+    description: Errichto's notes, links and lecture materials for learning CP.
+    type: repo
+    tags: [cp]
+  - title: Luogu
+    link: https://www.luogu.com.cn/
+    description: A huge Chinese online judge with problems from many Olympiads.
+    type: practice
+    tags: [cp, olympiad]
+  - title: DMOJ
+    link: https://dmoj.ca/
+    description: A modern open-source online judge with problems from Canadian contests.
+    type: practice
+    tags: [cp]
+  - title: Leetcode Company-wise Questions
+    link: https://github.com/liquidslr/leetcode-company-wise-problems
+    description: LeetCode problems grouped by the companies that ask them.
+    type: repo
+    tags: [interviews]
+  - title: InterviewBit
+    link: https://www.interviewbit.com/
+    description: A structured interview-prep track with timed problems, popular in India.
+    type: practice
+    tags: [interviews, placements]
+  - title: Coding Ninjas Studio
+    link: https://www.naukri.com/code360
+    description: Practice problems, guided paths and contests aimed at Indian placement season.
+    type: practice
+    tags: [interviews, placements]
+  - title: Codewars
+    link: https://www.codewars.com/
+    description: Solve community-made kata in many languages and see others' solutions.
+    type: practice
+    tags: [practice, beginner-friendly]
+  - title: OI Wiki
+    link: https://oi-wiki.org/
+    description: A comprehensive Chinese wiki on Olympiad and contest algorithms.
+    type: docs
+    tags: [cp, olympiad]
+  - title: Codeforces Gym
+    link: https://codeforces.com/gyms
+    description: Practise past ICPC regionals and training contests in virtual mode.
+    type: practice
+    tags: [icpc, contests]
+  - title: MIT 6.006 Dynamic Programming Lecture
+    link: https://www.youtube.com/watch?v=OQ5jsbhAv_M
+    description: Erik Demaine's famous intro lecture on dynamic programming.
+    type: video
+    tags: [dynamic-programming]
+  - title: Dynamic Programming – freeCodeCamp
+    link: https://www.youtube.com/watch?v=oBt53YbR9Kk
+    description: A five-hour beginner course on memoization and tabulation in JavaScript.
+    type: video
+    tags: [dynamic-programming, beginner-friendly]
+  - title: Graph Algorithms – freeCodeCamp
+    link: https://www.youtube.com/watch?v=09_LlHjoEiY
+    description: William Fiset's full graph theory course covering BFS, DFS, shortest paths and flows.
+    type: video
+    tags: [graphs]
+  - title: Data Structures – freeCodeCamp
+    link: https://www.youtube.com/watch?v=RBSGKlAvoiM
+    description: An eight-hour beginner course on arrays, lists, trees, heaps and hash tables.
+    type: video
+    tags: [data-structures, beginner-friendly]
+  - title: Algorithms and Data Structures Tutorial (freeCodeCamp)
+    link: https://www.youtube.com/watch?v=8hly31xKli0
+    description: A five-hour Python course on searching, sorting, recursion and complexity.
+    type: video
+    tags: [algorithms, python]

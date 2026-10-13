@@ -1,0 +1,452 @@
+title: Open Source
+tagline: Contribute to software the whole world uses.
+description: Make your first pull request, find projects that want help, and join programs like GSoC and Hacktoberfest.
+order: 8
+path:
+  - title: Git and GitHub
+    resources: [github-skills]
+  - title: Make your first pull request
+    note: A safe practice repo built for exactly this.
+    resources: [first-contributions]
+  - title: Find a project
+    resources: [good-first-issue, up-for-grabs, sosc-github]
+  - title: Contribute well
+    resources: [open-source-guide, conventional-commits]
+  - title: Join a program
+    resources: [hacktoberfest, gsoc, lfx-mentorship]
+resources:
+  - title: GitHub Skills
+    id: github-skills
+    link: https://skills.github.com/
+    description: Short interactive courses that teach GitHub inside real repositories.
+    type: course
+    tags: [git, github]
+  - title: First Contributions
+    id: first-contributions
+    link: https://github.com/firstcontributions/first-contributions
+    description: A step-by-step practice repo for making your very first open-source contribution.
+    type: repo
+    tags: [git, github]
+  - title: Good First Issue
+    id: good-first-issue
+    link: https://goodfirstissue.dev/
+    description: Curated beginner-friendly issues from popular open-source projects.
+    type: tool
+    tags: [issues]
+  - title: Up For Grabs
+    id: up-for-grabs
+    link: https://up-for-grabs.net/
+    description: Projects with tasks set aside for new contributors.
+    type: tool
+    tags: [issues]
+  - title: SOSC on GitHub
+    id: sosc-github
+    link: https://github.com/so-sc
+    description: Our own projects. Ask on any issue and a member will help you get started.
+    type: community
+    tags: [sosc]
+  - title: Open Source Guides
+    id: open-source-guide
+    link: https://opensource.guide/
+    description: GitHub's guides to contributing, maintaining and building open-source communities.
+    type: guide
+    tags: [community]
+  - title: Conventional Commits
+    id: conventional-commits
+    link: https://www.conventionalcommits.org/
+    description: A simple convention for commit messages that many projects expect.
+    type: guide
+    tags: [git]
+  - title: Hacktoberfest
+    id: hacktoberfest
+    link: https://hacktoberfest.com/
+    description: A month-long celebration of open source every October.
+    type: community
+    tags: [events]
+  - title: Google Summer of Code
+    id: gsoc
+    link: https://summerofcode.withgoogle.com/
+    description: A paid summer program working on open-source projects with mentors.
+    type: community
+    tags: [programs, mentorship]
+  - title: LFX Mentorship
+    id: lfx-mentorship
+    link: https://mentorship.lfx.linuxfoundation.org/
+    description: Paid mentorships on Linux Foundation and CNCF projects.
+    type: community
+    tags: [programs, mentorship]
+  - title: Choose a License
+    link: https://choosealicense.com/
+    description: Pick the right open-source license for your project, in plain English.
+    type: guide
+    tags: [licensing]
+  - title: How to Contribute to Open Source
+    link: https://opensource.guide/how-to-contribute/
+    description: GitHub's guide to finding a project, making your first contribution and what to expect after.
+    type: guide
+    tags: [contributing, beginner-friendly]
+  - title: GitHub Docs, Contributing to Projects
+    link: https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project
+    description: The official fork, clone, branch and pull request walkthrough.
+    type: docs
+    tags: [github, pull-requests]
+  - title: GitHub Flow
+    link: https://docs.github.com/en/get-started/using-github/github-flow
+    description: The simple branch-based workflow most open-source projects use.
+    type: docs
+    tags: [github, workflow]
+  - title: About Pull Requests
+    link: https://docs.github.com/en/pull-requests/reference/pull-requests
+    description: How pull requests work, from drafts to reviews and merging.
+    type: docs
+    tags: [github, pull-requests]
+  - title: Syncing a Fork
+    link: https://docs.github.com/en/pull-requests/how-tos/work-with-forks/syncing-a-fork
+    description: Keep your fork up to date with the original project, a step everyone forgets.
+    type: docs
+    tags: [github, git]
+  - title: GitHub Explore
+    link: https://github.com/explore
+    description: Trending repositories, topics and collections to find projects you care about.
+    type: tool
+    tags: [discovery, github]
+  - title: GitHub Topics, good-first-issue
+    link: https://github.com/topics/good-first-issue
+    description: Repositories tagged as welcoming to first-time contributors.
+    type: tool
+    tags: [issues, discovery]
+  - title: First Timers Only
+    link: https://www.firsttimersonly.com/
+    description: Explains first-timers-only issues and links to places to find them.
+    type: guide
+    tags: [issues, beginner-friendly]
+  - title: CodeTriage
+    link: https://www.codetriage.com/
+    description: Get a popular project's open issues in your inbox each day to help triage.
+    type: tool
+    tags: [issues, triage]
+  - title: Awesome for Beginners
+    link: https://github.com/MunGell/awesome-for-beginners
+    description: A long-maintained list of projects with beginner-friendly issues, sorted by language.
+    type: repo
+    tags: [issues, awesome-list]
+  - title: Awesome
+    link: https://github.com/sindresorhus/awesome
+    description: The original awesome list of awesome lists, a map of the open-source world.
+    type: repo
+    tags: [awesome-list, discovery]
+  - title: Outreachy
+    link: https://www.outreachy.org/
+    description: Paid remote internships in open source for people underrepresented in tech.
+    type: community
+    tags: [programs, internships, mentorship]
+  - title: MLH Fellowship
+    link: https://fellowship.mlh.com/
+    description: A remote, paid fellowship where students contribute to open-source projects in small teams.
+    type: community
+    tags: [programs, fellowship]
+  - title: Season of KDE
+    link: https://mentorship.kde.org/sok/
+    description: KDE's mentorship program for new contributors to its desktop apps and tools.
+    type: community
+    tags: [programs, mentorship]
+  - title: Google Season of Docs
+    link: https://developers.google.com/season-of-docs
+    description: A Google program that pairs technical writers with open-source projects.
+    type: community
+    tags: [programs, documentation]
+  - title: GSoC Guides
+    link: https://google.github.io/gsocguides/student/
+    description: The official GSoC contributor guide on picking an org, writing a proposal and working with mentors.
+    type: guide
+    tags: [gsoc, proposals]
+  - title: GSoC Organizations Archive
+    link: https://summerofcode.withgoogle.com/archive
+    description: Past GSoC orgs and projects, useful for picking an org early and studying accepted ideas.
+    type: tool
+    tags: [gsoc, discovery]
+  - title: GSoC Organizations Finder
+    link: https://www.gsocorganizations.dev/
+    description: Filter past GSoC organisations by technology, years participated and number of slots.
+    type: tool
+    tags: [gsoc, discovery]
+  - title: Linux Foundation Free Training
+    link: https://training.linuxfoundation.org/resources/?_sft_content_type=free-course
+    description: Free courses from the Linux Foundation, including Open Source Licensing Basics and Beginner's Guide to Open Source.
+    type: course
+    tags: [linux-foundation, courses]
+  - title: CNCF Mentoring
+    link: https://github.com/cncf/mentoring
+    description: All Cloud Native Computing Foundation mentorship programs, including LFX and GSoC slots.
+    type: repo
+    tags: [programs, cloud-native, mentorship]
+  - title: Summer of Bitcoin
+    link: https://www.summerofbitcoin.org/
+    description: A paid summer internship for university students to work on Bitcoin open-source projects.
+    type: community
+    tags: [programs, internships]
+  - title: GirlScript Summer of Code
+    link: https://gssoc.girlscript.org/
+    description: A popular Indian three-month open-source program for beginners.
+    type: community
+    tags: [programs, india, beginner-friendly]
+  - title: FOSS United
+    link: https://fossunited.org/
+    description: An Indian non-profit running FOSS meetups, IndiaFOSS and grants for open-source projects.
+    type: community
+    tags: [community, india, events]
+  - title: Open Source Initiative
+    link: https://opensource.org/
+    description: The steward of the Open Source Definition and the list of approved licenses.
+    type: docs
+    tags: [licensing, osi]
+  - title: OSI Approved Licenses
+    link: https://opensource.org/licenses
+    description: The official list of open-source licenses, with full texts.
+    type: docs
+    tags: [licensing]
+  - title: tl;drLegal
+    link: https://www.tldrlegal.com/
+    description: Software licenses explained in plain English, what you can, can't and must do.
+    type: cheatsheet
+    tags: [licensing]
+  - title: SPDX License List
+    link: https://spdx.org/licenses/
+    description: Standard short identifiers for every common license, used in package files.
+    type: docs
+    tags: [licensing, spdx]
+  - title: GNU Licenses
+    link: https://www.gnu.org/licenses/licenses.html
+    description: The GPL family of licenses and the Free Software Foundation's take on software freedom.
+    type: docs
+    tags: [licensing, gpl]
+  - title: Creative Commons Licenses
+    link: https://creativecommons.org/cc-licenses/
+    description: The licenses to use for docs, images and other non-code work.
+    type: docs
+    tags: [licensing]
+  - title: REUSE
+    link: https://reuse.software/
+    description: FSFE's simple rules and tool for clearly marking licenses and copyright in every file.
+    type: tool
+    tags: [licensing]
+  - title: Developer Certificate of Origin
+    link: https://developercertificate.org/
+    description: The short sign-off text many projects require on every commit.
+    type: docs
+    tags: [dco, contributing]
+  - title: Contributor Covenant
+    link: https://www.contributor-covenant.org/
+    description: The most widely used code of conduct for open-source projects.
+    type: guide
+    tags: [code-of-conduct, community]
+  - title: Starting an Open Source Project
+    link: https://opensource.guide/starting-a-project/
+    description: How to launch your own project with a README, license, and contributing guide.
+    type: guide
+    tags: [maintainership]
+  - title: Best Practices for Maintainers
+    link: https://opensource.guide/best-practices/
+    description: Setting expectations, automating chores and avoiding burnout as a maintainer.
+    type: guide
+    tags: [maintainership]
+  - title: Make a README
+    link: https://www.makeareadme.com/
+    description: What a good README contains, with a template to start from.
+    type: guide
+    tags: [documentation, readme]
+  - title: Awesome README
+    link: https://github.com/matiassingers/awesome-readme
+    description: A curated list of great READMEs to learn from.
+    type: repo
+    tags: [documentation, readme]
+  - title: Keep a Changelog
+    link: https://keepachangelog.com/en/1.1.0/
+    description: A simple, widely used format for writing human-friendly changelogs.
+    type: guide
+    tags: [documentation, releases]
+  - title: Semantic Versioning
+    link: https://semver.org/
+    description: The MAJOR.MINOR.PATCH rules for version numbers that most packages follow.
+    type: docs
+    tags: [releases, versioning]
+  - title: Producing Open Source Software
+    link: https://producingoss.com/
+    description: Karl Fogel's free book on how successful open-source projects are run.
+    type: book
+    tags: [maintainership, community]
+  - title: Working in Public
+    link: https://press.stripe.com/working-in-public
+    description: Nadia Eghbal's book on how open-source maintainers and communities really work today.
+    type: book
+    tags: [maintainership, community]
+  - title: The Cathedral and the Bazaar
+    link: http://www.catb.org/~esr/writings/cathedral-bazaar/
+    description: Eric Raymond's classic essay on the open-source development model.
+    type: article
+    tags: [history, essays]
+  - title: Forge Your Future with Open Source
+    link: https://pragprog.com/titles/vbopens/forge-your-future-with-open-source/
+    description: A practical book on finding a project and making your first contributions.
+    type: book
+    tags: [contributing, beginner-friendly]
+  - title: How to Write a Git Commit Message
+    link: https://cbea.ms/git-commit/
+    description: The seven rules of a great commit message, a widely shared classic.
+    type: article
+    tags: [git, commits]
+  - title: Git Rebase Interactive Guide
+    link: https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
+    description: Pro Git's chapter on squashing, rewording and cleaning up commits before a PR.
+    type: docs
+    tags: [git, rebase]
+  - title: Git Docs
+    link: https://git-scm.com/docs
+    description: The official reference for every Git command.
+    type: docs
+    tags: [git, reference]
+  - title: GitHub CLI
+    link: https://cli.github.com/
+    description: Create, review and check out pull requests and issues from the terminal.
+    type: tool
+    tags: [github, cli]
+  - title: GitHub Desktop
+    link: https://github.com/apps/desktop
+    description: A free GUI for Git and GitHub if you're not ready for the terminal.
+    type: tool
+    tags: [git, github]
+  - title: GitHub Actions Docs
+    link: https://docs.github.com/en/actions
+    description: Automate tests and checks on every pull request with GitHub's built-in CI.
+    type: docs
+    tags: [github, ci]
+  - title: pre-commit
+    link: https://pre-commit.com/
+    description: Run linters and formatters automatically before each commit, common in big projects.
+    type: tool
+    tags: [git, tooling]
+  - title: GitLab Docs, Contribute to GitLab
+    link: https://docs.gitlab.com/development/contributing/
+    description: How to contribute to GitLab itself, one of the largest open-source codebases.
+    type: docs
+    tags: [gitlab, contributing]
+  - title: Mozilla Contribute
+    link: https://www.mozilla.org/en-US/contribute/
+    description: Ways to help Mozilla with code, docs, localization and testing.
+    type: community
+    tags: [mozilla, contributing]
+  - title: Kubernetes Contributor Guide
+    link: https://www.kubernetes.dev/docs/guide/
+    description: A detailed guide to contributing to Kubernetes, a model for large projects.
+    type: guide
+    tags: [kubernetes, contributing]
+  - title: Python Developer's Guide
+    link: https://devguide.python.org/
+    description: How to contribute to CPython, with a gentle getting-started section.
+    type: guide
+    tags: [python, contributing]
+  - title: Linux Kernel Newbies
+    link: https://kernelnewbies.org/
+    description: A community and wiki for people starting out with Linux kernel development.
+    type: community
+    tags: [linux, kernel]
+  - title: Wikimedia How to Contribute
+    link: https://www.mediawiki.org/wiki/How_to_contribute
+    description: Ways to contribute code, docs and translations to Wikipedia's software.
+    type: guide
+    tags: [wikimedia, contributing]
+  - title: Translatewiki.net
+    link: https://translatewiki.net/
+    description: Translate open-source software into your language, including Kannada and Hindi.
+    type: community
+    tags: [translation, contributing]
+  - title: Open Source Friday
+    link: https://opensourcefriday.com/
+    description: GitHub's initiative encouraging people to give a little time to open source every Friday.
+    type: community
+    tags: [community]
+  - title: The Changelog
+    link: https://changelog.com/podcast
+    description: A long-running podcast with the people who build and maintain open-source software.
+    type: podcast
+    tags: [podcast, news]
+  - title: Eddie Jaoude
+    link: https://www.youtube.com/@eddiejaoude
+    description: A YouTube channel all about open source, GitHub and getting started contributing.
+    type: video
+    tags: [github, contributing]
+  - title: freeCodeCamp Git and GitHub Crash Course
+    link: https://www.youtube.com/watch?v=RGOj5yH7evk
+    description: A one-hour beginner video on Git and GitHub from freeCodeCamp.
+    type: video
+    tags: [git, github]
+  - title: Kunal Kushwaha Complete Git and GitHub Tutorial
+    link: https://www.youtube.com/watch?v=apGV9Kg7ics
+    description: A popular long-form video on Git, GitHub and contributing to open source.
+    type: video
+    tags: [git, github, open-source]
+  - title: GitHub Sponsors
+    link: https://github.com/open-source/sponsors
+    description: How developers and maintainers get funded directly by the community.
+    type: tool
+    tags: [funding, maintainership]
+  - title: Open Collective
+    link: https://opencollective.com/
+    description: Transparent funding for open-source projects and communities.
+    type: tool
+    tags: [funding]
+  - title: CHAOSS
+    link: https://chaoss.community/
+    description: A Linux Foundation project defining how to measure open-source community health.
+    type: community
+    tags: [community, metrics]
+  - title: TODO Group
+    link: https://todogroup.org/
+    description: Guides for companies running open-source program offices (OSPOs).
+    type: guide
+    tags: [ospo]
+  - title: OpenSSF Scorecard
+    link: https://scorecard.dev/
+    description: Automated security health checks for open-source projects.
+    type: tool
+    tags: [security, maintainership]
+  - title: All Contributors
+    link: https://allcontributors.org/
+    description: A spec and bot for recognising every kind of contribution, not just code.
+    type: tool
+    tags: [recognition, maintainership]
+  - title: GitHub Codespaces
+    link: https://github.com/features/codespaces
+    description: Open any repository in a cloud VS Code environment, free hours for students.
+    type: tool
+    tags: [github, environments]
+  - title: Apache Software Foundation, Get Involved
+    link: https://community.apache.org/contributors/
+    description: How to start contributing to Apache projects and join their mailing lists.
+    type: guide
+    tags: [apache, contributing]
+  - title: The Apache Way
+    link: https://www.apache.org/theapacheway/
+    description: How the Apache Software Foundation runs community-led projects.
+    type: article
+    tags: [apache, governance]
+  - title: Free Software Foundation
+    link: https://www.fsf.org/
+    description: The organisation behind the GPL and the free software movement.
+    type: community
+    tags: [free-software, licensing]
+  - title: Open Source Design
+    link: https://opensourcedesign.net/
+    description: A community connecting designers with open-source projects that need them.
+    type: community
+    tags: [design, contributing]
+  - title: Write the Docs
+    link: https://www.writethedocs.org/
+    description: A global community for documentation, with guides on writing good docs.
+    type: community
+    tags: [documentation]
+  - title: Diátaxis
+    link: https://diataxis.fr/
+    description: A framework for structuring docs into tutorials, how-tos, reference and explanation.
+    type: guide
+    tags: [documentation]

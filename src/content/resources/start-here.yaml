@@ -1,0 +1,445 @@
+title: Start Here
+tagline: The first steps, whatever you end up building.
+description: The tools, habits and big-picture maps every track assumes you have. Work through the path once, then pick a track.
+order: 0
+path:
+  - title: See the whole map
+    note: Get a feel for what's out there before you commit to anything.
+    resources: [roadmap-sh, cs50x]
+  - title: Get comfortable with your tools
+    note: The terminal, your editor and the command line come up everywhere.
+    resources: [missing-semester, linux-command-line]
+  - title: Learn Git
+    note: Every team, internship and open-source project uses it.
+    resources: [learn-git-branching, pro-git]
+  - title: Learn how to learn
+    note: How to study effectively and how to ask for help so people answer.
+    resources: [learning-how-to-learn, smart-questions]
+  - title: Grab the free stuff
+    note: Then pick a track below and keep going.
+    resources: [github-student-pack]
+resources:
+  - title: Roadmap.sh
+    id: roadmap-sh
+    link: https://roadmap.sh
+    description: Interactive roadmaps for every role and skill, showing what to learn and in what order.
+    type: roadmap
+    tags: [career, roadmaps]
+  - title: CS50x, Harvard's Introduction to Computer Science
+    id: cs50x
+    link: https://cs50.harvard.edu/x/
+    description: The best-known intro to programming and CS. C, Python, SQL and the web, with real problem sets.
+    type: course
+    tags: [programming, c, python]
+  - title: The Missing Semester of Your CS Education
+    id: missing-semester
+    link: https://missing.csail.mit.edu/
+    description: MIT's short course on the shell, editors, Git, debugging and the other tools classes skip.
+    type: course
+    tags: [terminal, shell, tools]
+  - title: Learn Git Branching
+    id: learn-git-branching
+    link: https://learngitbranching.js.org/
+    description: A visual, in-browser game that teaches Git branching, merging and rebasing.
+    type: practice
+    tags: [git]
+  - title: Pro Git
+    id: pro-git
+    link: https://git-scm.com/book/en/v2
+    description: The free official Git book, from first commit to internals.
+    type: book
+    tags: [git]
+  - title: Learning How to Learn
+    id: learning-how-to-learn
+    link: https://www.coursera.org/learn/learning-how-to-learn
+    description: A popular short course on focus, memory and beating procrastination. Free to audit.
+    type: course
+    tags: [study]
+  - title: How To Ask Questions The Smart Way
+    id: smart-questions
+    link: http://www.catb.org/~esr/faqs/smart-questions.html
+    description: The classic essay on asking technical questions that actually get answered.
+    type: article
+    tags: [community, help]
+  - title: GitHub Student Developer Pack
+    id: github-student-pack
+    link: https://education.github.com/pack
+    description: Free developer tools for students, with offers from JetBrains, DigitalOcean, Namecheap and many more.
+    type: tool
+    tags: [github, students]
+  - title: freeCodeCamp
+    link: https://www.freecodecamp.org/learn
+    description: Free, self-paced curricula with certifications in web development, Python, data and more.
+    type: course
+    tags: [programming, web]
+  - title: The Odin Project Foundations
+    link: https://www.theodinproject.com/paths/foundations
+    description: A free, project-based introduction to programming, Git, the command line and the web.
+    type: course
+    tags: [programming, web, beginner-friendly]
+  - title: CS50P, Introduction to Programming with Python
+    link: https://cs50.harvard.edu/python/
+    description: Harvard's beginner Python course with lectures and problem sets, no prior experience needed.
+    type: course
+    tags: [python, beginner-friendly]
+  - title: Python for Everybody
+    link: https://www.py4e.com/
+    description: Dr. Chuck's free beginner Python course and book, aimed at people who have never coded.
+    type: course
+    tags: [python, beginner-friendly]
+  - title: Automate the Boring Stuff with Python
+    link: https://automatetheboringstuff.com/
+    description: A free book that teaches Python by automating everyday tasks with files, spreadsheets and the web.
+    type: book
+    tags: [python, automation, beginner-friendly]
+  - title: Think Python
+    link: https://allendowney.github.io/ThinkPython/
+    description: A free, gentle introduction to Python and to thinking like a programmer.
+    type: book
+    tags: [python, beginner-friendly]
+  - title: Scratch
+    link: https://scratch.mit.edu/
+    description: MIT's block-based language for learning programming ideas without worrying about syntax.
+    type: tool
+    tags: [programming, beginner-friendly]
+  - title: Exercism
+    link: https://exercism.org/
+    description: Free coding exercises in 70+ languages with optional feedback from human mentors.
+    type: practice
+    tags: [programming, practice]
+  - title: Codewars
+    link: https://www.codewars.com/
+    description: Small coding challenges ranked by difficulty, with other people's solutions to learn from.
+    type: practice
+    tags: [programming, practice]
+  - title: CS50 YouTube Channel
+    link: https://www.youtube.com/@cs50
+    description: Every CS50 lecture and seminar, free to watch.
+    type: video
+    tags: [programming, cs]
+  - title: freeCodeCamp YouTube Channel
+    link: https://www.youtube.com/@freecodecamp
+    description: Hundreds of free full-length courses on programming, web, data and more.
+    type: video
+    tags: [programming, courses]
+  - title: Fireship
+    link: https://www.youtube.com/@Fireship
+    description: Fast, fun videos explaining tools and technologies, including the famous "in 100 seconds" series.
+    type: video
+    tags: [programming, overview]
+  - title: Teach Yourself Computer Science
+    link: https://teachyourselfcs.com/
+    description: An opinionated list of the nine CS subjects worth learning and the best book and lectures for each.
+    type: guide
+    tags: [cs, self-study]
+  - title: OSSU Computer Science
+    link: https://github.com/ossu/computer-science
+    description: A free, complete computer science degree path built entirely from online courses.
+    type: repo
+    tags: [cs, self-study]
+  - title: Teach Yourself Programming in Ten Years
+    link: https://www.norvig.com/21-days.html
+    description: Peter Norvig's classic essay on why real skill takes time and how to build it.
+    type: article
+    tags: [learning, career]
+  - title: The Linux Command Line
+    id: linux-command-line
+    link: https://linuxcommand.org/tlcl.php
+    description: William Shotts' free book that takes you from first commands to shell scripting.
+    type: book
+    tags: [linux, terminal, bash]
+  - title: OverTheWire Bandit
+    link: https://overthewire.org/wargames/bandit/
+    description: A game where you learn Linux commands by finding passwords to reach the next level.
+    type: practice
+    tags: [linux, terminal, security]
+  - title: explainshell
+    link: https://explainshell.com/
+    description: Paste a shell command and see what each part and flag does.
+    type: tool
+    tags: [terminal, shell]
+  - title: tldr pages
+    link: https://tldr.sh/
+    description: Short, example-first help pages for common command-line tools.
+    type: cheatsheet
+    tags: [terminal, cli]
+  - title: Bash Guide for Beginners
+    link: https://tldp.org/LDP/Bash-Beginners-Guide/html/
+    description: A long-standing free guide to Bash commands and shell scripting.
+    type: guide
+    tags: [bash, shell, linux]
+  - title: The Art of Command Line
+    link: https://github.com/jlevy/the-art-of-command-line
+    description: A one-page tour of the command-line tricks that make you fluent in the terminal.
+    type: repo
+    tags: [terminal, shell, cheatsheet]
+  - title: ShellCheck
+    link: https://www.shellcheck.net/
+    description: Paste a shell script and get warnings about bugs and bad habits.
+    type: tool
+    tags: [bash, shell]
+  - title: Ubuntu Command Line for Beginners
+    link: https://ubuntu.com/tutorials/command-line-for-beginners
+    description: Ubuntu's official hands-on intro to the terminal.
+    type: guide
+    tags: [linux, terminal, ubuntu]
+  - title: Install WSL
+    link: https://learn.microsoft.com/en-us/windows/wsl/install
+    description: Run a real Linux environment on Windows, the easiest way to get a terminal on a college laptop.
+    type: docs
+    tags: [linux, windows, wsl]
+  - title: Arch Wiki
+    link: https://wiki.archlinux.org/
+    description: The most detailed Linux wiki around, useful whatever distribution you run.
+    type: docs
+    tags: [linux, reference]
+  - title: Visual Studio Code Docs
+    link: https://code.visualstudio.com/docs
+    description: Official guides for the most popular code editor, from setup to debugging.
+    type: docs
+    tags: [editor, vscode]
+  - title: VS Code Tips and Tricks
+    link: https://code.visualstudio.com/docs/editing/getting-started/tips-and-tricks
+    description: Keyboard shortcuts and features that make you much faster in VS Code.
+    type: cheatsheet
+    tags: [editor, vscode]
+  - title: Vim Adventures
+    link: https://vim-adventures.com/
+    description: A game that teaches Vim keyboard movement. The first levels are free.
+    type: practice
+    tags: [vim, editor]
+  - title: OpenVim
+    link: https://openvim.com/
+    description: An interactive in-browser tutorial for learning Vim basics.
+    type: practice
+    tags: [vim, editor]
+  - title: Neovim
+    link: https://neovim.io/
+    description: A modern, extensible fork of Vim with a big plugin ecosystem.
+    type: tool
+    tags: [vim, editor]
+  - title: Oh My Git!
+    link: https://ohmygit.org/
+    description: An open-source game that visualises what Git does as you play cards.
+    type: practice
+    tags: [git]
+  - title: Git Immersion
+    link: https://gitimmersion.com/
+    description: A guided tour of Git through a series of hands-on labs.
+    type: guide
+    tags: [git]
+  - title: Oh Shit, Git!?!
+    link: https://ohshitgit.com/
+    description: Plain-English fixes for the Git mistakes everyone makes.
+    type: cheatsheet
+    tags: [git]
+  - title: GitHub Git Cheat Sheet
+    link: https://education.github.com/git-cheat-sheet-education.pdf
+    description: GitHub's one-page reference of the Git commands you'll use daily.
+    type: cheatsheet
+    tags: [git, github]
+  - title: Atlassian Git Tutorials
+    link: https://www.atlassian.com/git/tutorials
+    description: Clear illustrated tutorials on Git basics, branching and team workflows.
+    type: guide
+    tags: [git]
+  - title: Visualizing Git Concepts
+    link: https://git-school.github.io/visualizing-git/
+    description: Type Git commands and watch the commit graph change.
+    type: tool
+    tags: [git]
+  - title: GitHub Docs Get Started
+    link: https://docs.github.com/en/get-started
+    description: GitHub's official guides to accounts, repositories and your first workflow.
+    type: docs
+    tags: [github, git]
+  - title: Markdown Guide
+    link: https://www.markdownguide.org/
+    description: A free reference for Markdown, the format used in READMEs, notes and docs.
+    type: cheatsheet
+    tags: [markdown, docs]
+  - title: Stack Overflow
+    link: https://stackoverflow.com/
+    description: The biggest Q&A site for programming. Search before you ask, and you'll usually find it.
+    type: community
+    tags: [help, community]
+  - title: How to Ask a Good Question
+    link: https://stackoverflow.com/help/how-to-ask
+    description: Stack Overflow's short guide to writing questions that get good answers.
+    type: guide
+    tags: [help, community]
+  - title: Rubber Duck Debugging
+    link: https://rubberduckdebugging.com/
+    description: The classic trick of explaining your code out loud, line by line, to find the bug.
+    type: article
+    tags: [debugging, learning]
+  - title: The Feynman Technique
+    link: https://fs.blog/feynman-technique/
+    description: Learn anything by trying to explain it simply and filling the gaps you find.
+    type: article
+    tags: [learning, study]
+  - title: Anki
+    link: https://apps.ankiweb.net/
+    description: Free spaced-repetition flashcards for remembering what you study.
+    type: tool
+    tags: [study, memory]
+  - title: Learn in Public
+    link: https://www.swyx.io/learn-in-public
+    description: Swyx's well-known essay on learning faster by sharing what you learn as you go.
+    type: article
+    tags: [learning, career]
+  - title: Harvard CS50 Discord and Communities
+    link: https://cs50.harvard.edu/x/communities/
+    description: Discord, Reddit and other communities where CS50 students help each other.
+    type: community
+    tags: [community, help]
+  - title: r/learnprogramming
+    link: https://www.reddit.com/r/learnprogramming/
+    description: A large, friendly subreddit for beginners, with a FAQ worth reading first.
+    type: community
+    tags: [community, help]
+  - title: Khan Academy Computing
+    link: https://www.khanacademy.org/computing
+    description: Free beginner lessons on programming, algorithms and how the internet works.
+    type: course
+    tags: [programming, beginner-friendly]
+  - title: Harvard CS50 for Everyone
+    link: https://pll.harvard.edu/catalog?keywords=cs50
+    description: The full list of free CS50 courses, from Python and web to AI and cybersecurity.
+    type: course
+    tags: [programming, cs]
+  - title: NPTEL
+    link: https://nptel.ac.in/
+    description: Free courses from the IITs and IISc, with optional certification exams.
+    type: course
+    tags: [cs, india]
+  - title: MIT OpenCourseWare
+    link: https://ocw.mit.edu/
+    description: Free lecture notes, videos and assignments from thousands of real MIT courses.
+    type: course
+    tags: [cs, self-study]
+  - title: Crash Course Computer Science
+    link: https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo
+    description: A fast, friendly 40-episode video series on how computers actually work.
+    type: video
+    tags: [cs, overview]
+  - title: Code by Charles Petzold
+    link: https://www.charlespetzold.com/code/
+    description: The classic book on how computers work, built up from switches and telegraphs.
+    type: book
+    tags: [cs, hardware]
+  - title: How the Internet Works
+    link: https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works
+    description: MDN's short explanation of what happens when you open a web page.
+    type: article
+    tags: [web, networking]
+  - title: Replit
+    link: https://replit.com/
+    description: Write and run code in the browser, no installs needed.
+    type: tool
+    tags: [programming, browser]
+  - title: Google Colab
+    link: https://colab.research.google.com/
+    description: Free Python notebooks in the browser, with free GPU time.
+    type: tool
+    tags: [python, notebooks]
+  - title: JetBrains Free Educational Licenses
+    link: https://www.jetbrains.com/academy/student-pack/
+    description: Free access to all JetBrains IDEs, like IntelliJ and PyCharm, for students.
+    type: tool
+    tags: [students, editor]
+  - title: Microsoft Azure for Students
+    link: https://azure.microsoft.com/en-us/free/students
+    description: Free Azure cloud credits for students, no credit card required.
+    type: tool
+    tags: [students, cloud]
+  - title: AWS Educate
+    link: https://aws.amazon.com/education/awseducate/
+    description: Free self-paced cloud training and labs from AWS for students.
+    type: course
+    tags: [students, cloud]
+  - title: Google Cloud Skills Boost
+    link: https://www.cloudskillsboost.google/
+    description: Google's hands-on cloud labs, with free credits often offered to students.
+    type: practice
+    tags: [students, cloud]
+  - title: Notion for Education
+    link: https://www.notion.com/product/notion-for-education
+    description: Free Notion Plus for students for notes, planning and project wikis.
+    type: tool
+    tags: [students, productivity]
+  - title: Figma for Education
+    link: https://www.figma.com/education/
+    description: Free professional Figma plans for students and educators.
+    type: tool
+    tags: [students, design]
+  - title: Free Programming Books
+    link: https://github.com/EbookFoundation/free-programming-books
+    description: A huge list of free books and courses for almost every language and topic.
+    type: repo
+    tags: [books, self-study]
+  - title: Build Your Own X
+    link: https://github.com/codecrafters-io/build-your-own-x
+    description: Guides for building your own Git, database, shell, game and more from scratch.
+    type: repo
+    tags: [projects, programming]
+  - title: Project Based Learning
+    link: https://github.com/practical-tutorials/project-based-learning
+    description: A curated list of project tutorials sorted by programming language.
+    type: repo
+    tags: [projects, programming]
+  - title: App Ideas
+    link: https://github.com/florinpop17/app-ideas
+    description: A big list of project ideas sorted by difficulty, for when you don't know what to build.
+    type: repo
+    tags: [projects]
+  - title: The Pragmatic Programmer
+    link: https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
+    description: A classic book of practical habits for becoming a better developer.
+    type: book
+    tags: [career, craft]
+  - title: Hacker News
+    link: https://news.ycombinator.com/
+    description: A long-running tech news site with deep discussions in the comments.
+    type: community
+    tags: [news, community]
+  - title: DEV Community
+    link: https://dev.to/
+    description: A friendly community where developers share articles and beginner tips.
+    type: community
+    tags: [community, articles]
+  - title: Python Tutor
+    link: https://pythontutor.com/
+    description: Visualise your code running step by step to see what each line does. Works with Python, C, Java and JS.
+    type: tool
+    tags: [python, debugging, beginner-friendly]
+  - title: W3Schools
+    link: https://www.w3schools.com/
+    description: Quick, simple tutorials and references with an in-browser editor for trying code.
+    type: guide
+    tags: [web, programming, beginner-friendly]
+  - title: Codecademy
+    link: https://www.codecademy.com/
+    description: Interactive beginner lessons in the browser; many intro courses are free.
+    type: course
+    tags: [programming, beginner-friendly]
+  - title: Ubuntu Desktop Install Guide
+    link: https://ubuntu.com/tutorials/install-ubuntu-desktop
+    description: Ubuntu's official step-by-step guide to installing Linux on your laptop.
+    type: guide
+    tags: [linux, ubuntu]
+  - title: Kunal Kushwaha
+    link: https://www.youtube.com/@KunalKushwaha
+    description: Popular Indian YouTuber with long free courses on DSA in Java, DevOps and open source.
+    type: video
+    tags: [programming, open-source, india]
+  - title: Apna College
+    link: https://www.youtube.com/@ApnaCollegeOfficial
+    description: Hindi and English programming tutorials popular with Indian engineering students.
+    type: video
+    tags: [programming, india]
+  - title: CodeWithHarry
+    link: https://www.youtube.com/@CodeWithHarry
+    description: Beginner-friendly Hindi tutorials on Python, web development and more.
+    type: video
+    tags: [programming, india]

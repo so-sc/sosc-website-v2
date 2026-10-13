@@ -1,0 +1,443 @@
+title: App Development
+tagline: Ship apps for Android, iOS or both at once.
+description: Native Android and iOS, plus cross-platform frameworks like Flutter and React Native.
+order: 3
+path:
+  - title: Pick a platform
+    note: Native Android, or one codebase for both with Flutter.
+    resources: [android-roadmap, flutter-roadmap]
+  - title: Learn the language
+    resources: [kotlin-docs, dart-language]
+  - title: Build your first app
+    resources: [android-basics-compose, flutter-get-started, swiftui-100]
+  - title: Design it properly
+    resources: [material-3, apple-hig]
+  - title: Try React Native
+    resources: [react-native, expo-docs]
+resources:
+  - title: Android Developer Roadmap
+    id: android-roadmap
+    link: https://roadmap.sh/android
+    description: What to learn to become an Android developer, in order.
+    type: roadmap
+    tags: [android]
+  - title: Flutter Roadmap
+    id: flutter-roadmap
+    link: https://roadmap.sh/flutter
+    description: The learning map for cross-platform apps with Flutter.
+    type: roadmap
+    tags: [flutter]
+  - title: Kotlin Docs
+    id: kotlin-docs
+    link: https://kotlinlang.org/docs/home.html
+    description: The official Kotlin docs, with a guided tour of the language.
+    type: docs
+    tags: [kotlin, android]
+  - title: Dart Language Tour
+    id: dart-language
+    link: https://dart.dev/language
+    description: Everything you need to know about Dart before writing Flutter.
+    type: docs
+    tags: [dart, flutter]
+  - title: Android Basics with Compose
+    id: android-basics-compose
+    link: https://developer.android.com/courses/android-basics-compose/course
+    description: Google's free course for building Android apps with Jetpack Compose, no experience needed.
+    type: course
+    tags: [android, kotlin, compose]
+  - title: Flutter, Get Started
+    id: flutter-get-started
+    link: https://docs.flutter.dev/get-started
+    description: Install Flutter and build your first app, with codelabs to follow.
+    type: docs
+    tags: [flutter]
+  - title: 100 Days of SwiftUI
+    id: swiftui-100
+    link: https://www.hackingwithswift.com/100/swiftui
+    description: A free, day-by-day course on building iOS apps with Swift and SwiftUI.
+    type: course
+    tags: [ios, swift]
+  - title: Material Design 3
+    id: material-3
+    link: https://m3.material.io/
+    description: Google's design system for Android, with components, guidelines and theming.
+    type: docs
+    tags: [design, android]
+  - title: Human Interface Guidelines
+    id: apple-hig
+    link: https://developer.apple.com/design/human-interface-guidelines
+    description: Apple's guidance for designing apps that feel at home on iOS.
+    type: docs
+    tags: [design, ios]
+  - title: React Native
+    id: react-native
+    link: https://reactnative.dev/docs/getting-started
+    description: Build native apps for both platforms with React.
+    type: docs
+    tags: [react-native, javascript]
+  - title: Expo
+    id: expo-docs
+    link: https://docs.expo.dev/
+    description: The fastest way to build, run and ship React Native apps.
+    type: docs
+    tags: [react-native, expo]
+  - title: Android Developers
+    link: https://developer.android.com/
+    description: Google's official home for Android docs, guides, samples and tools.
+    type: docs
+    tags: [android]
+  - title: Jetpack Compose Tutorial
+    link: https://developer.android.com/develop/ui/compose/tutorial
+    description: The official quick tutorial for building Android UI with Jetpack Compose.
+    type: docs
+    tags: [android, compose, kotlin]
+  - title: Jetpack Compose Pathway
+    link: https://developer.android.com/courses/jetpack-compose/course
+    description: Google's free course on Compose layouts, state, theming and animation.
+    type: course
+    tags: [android, compose]
+  - title: Android Codelabs
+    link: https://developer.android.com/get-started/codelabs
+    description: Short hands-on tutorials covering every part of Android development.
+    type: practice
+    tags: [android]
+  - title: Now in Android
+    link: https://github.com/android/nowinandroid
+    description: Google's fully featured sample app showing modern Android architecture.
+    type: repo
+    tags: [android, compose, architecture]
+  - title: Guide to App Architecture
+    link: https://developer.android.com/topic/architecture
+    description: Google's recommended way to structure Android apps with layers and state.
+    type: docs
+    tags: [android, architecture]
+  - title: Kotlin Koans
+    link: https://kotlinlang.org/docs/koans.html
+    description: Small exercises that teach Kotlin syntax and idioms in the browser.
+    type: practice
+    tags: [kotlin]
+  - title: Kotlin Playground
+    link: https://play.kotlinlang.org/
+    description: Write and run Kotlin code in the browser, no setup needed.
+    type: tool
+    tags: [kotlin]
+  - title: Philipp Lackner
+    link: https://www.youtube.com/@PhilippLackner
+    description: A popular YouTube channel on Kotlin, Compose and Android best practices.
+    type: video
+    tags: [android, kotlin, compose]
+  - title: Android Developers YouTube
+    link: https://www.youtube.com/@AndroidDevelopers
+    description: Google's official channel with talks and tutorials on Android.
+    type: video
+    tags: [android]
+  - title: Android Weekly
+    link: https://androidweekly.net/
+    description: A free weekly newsletter of Android articles, libraries and news.
+    type: article
+    tags: [android, newsletter]
+  - title: Awesome Android
+    link: https://github.com/JStumpp/awesome-android
+    description: A curated list of Android libraries and resources.
+    type: repo
+    tags: [android, awesome-list]
+  - title: Swift Docs
+    link: https://www.swift.org/documentation/
+    description: The official Swift documentation and The Swift Programming Language book.
+    type: docs
+    tags: [swift, ios]
+  - title: The Swift Programming Language
+    link: https://docs.swift.org/swift-book/
+    description: Apple's free book covering every part of the Swift language.
+    type: book
+    tags: [swift]
+  - title: SwiftUI Tutorials
+    link: https://developer.apple.com/tutorials/swiftui
+    description: Apple's step-by-step tutorials for building apps with SwiftUI.
+    type: course
+    tags: [swiftui, ios]
+  - title: Develop in Swift Tutorials
+    link: https://developer.apple.com/tutorials/develop-in-swift
+    description: Apple's beginner-friendly path for learning Swift, SwiftUI and Xcode.
+    type: course
+    tags: [swift, swiftui, beginner-friendly]
+  - title: Apple Developer Documentation
+    link: https://developer.apple.com/documentation/
+    description: The reference for every Apple framework, from SwiftUI to UIKit.
+    type: docs
+    tags: [ios, swift]
+  - title: Stanford CS193p
+    link: https://cs193p.stanford.edu/
+    description: Stanford's free lecture course on developing iOS apps with SwiftUI.
+    type: course
+    tags: [ios, swiftui]
+  - title: Hacking with Swift
+    link: https://www.hackingwithswift.com/
+    description: Paul Hudson's huge free library of Swift and SwiftUI tutorials and examples.
+    type: guide
+    tags: [swift, swiftui, ios]
+  - title: Kodeco
+    link: https://www.kodeco.com/
+    description: Tutorials, books and courses on iOS, Android and Flutter (formerly raywenderlich.com).
+    type: course
+    tags: [ios, android, flutter]
+  - title: Sean Allen
+    link: https://www.youtube.com/@seanallen
+    description: A YouTube channel on Swift, SwiftUI and getting your first iOS job.
+    type: video
+    tags: [ios, swift]
+  - title: iOS Developer Roadmap
+    link: https://roadmap.sh/ios
+    description: What to learn to become an iOS developer, in order.
+    type: roadmap
+    tags: [ios]
+  - title: iOS Dev Weekly
+    link: https://iosdevweekly.com/
+    description: A hand-picked weekly newsletter on Swift and Apple platform development.
+    type: article
+    tags: [ios, newsletter]
+  - title: Awesome iOS
+    link: https://github.com/vsouza/awesome-ios
+    description: A curated list of iOS libraries, tools and learning resources.
+    type: repo
+    tags: [ios, awesome-list]
+  - title: Swift Playgrounds
+    link: https://developer.apple.com/swift-playground/
+    description: Apple's app for learning Swift and building apps on iPad or Mac.
+    type: tool
+    tags: [swift, beginner-friendly]
+  - title: Flutter Docs
+    link: https://docs.flutter.dev/
+    description: The official Flutter documentation, with UI, state and deployment guides.
+    type: docs
+    tags: [flutter, dart]
+  - title: Flutter Learning Resources
+    link: https://docs.flutter.dev/reference/learning-resources
+    description: Official codelabs, tutorials and sample apps for learning Flutter hands-on.
+    type: practice
+    tags: [flutter]
+  - title: Flutter YouTube
+    link: https://www.youtube.com/@flutterdev
+    description: The official Flutter channel, home of Widget of the Week.
+    type: video
+    tags: [flutter]
+  - title: Flutter Widget Catalog
+    link: https://docs.flutter.dev/ui/widgets
+    description: A visual catalog of every core Flutter widget.
+    type: cheatsheet
+    tags: [flutter, ui]
+  - title: pub.dev
+    link: https://pub.dev/
+    description: The package repository for Dart and Flutter.
+    type: tool
+    tags: [flutter, dart]
+  - title: DartPad
+    link: https://dartpad.dev/
+    description: Run Dart and Flutter code in the browser.
+    type: tool
+    tags: [dart, flutter]
+  - title: Awesome Flutter
+    link: https://github.com/Solido/awesome-flutter
+    description: A curated list of Flutter libraries, tools, tutorials and articles.
+    type: repo
+    tags: [flutter, awesome-list]
+  - title: Flutter Samples
+    link: https://github.com/flutter/samples
+    description: Official sample apps showing Flutter features and patterns.
+    type: repo
+    tags: [flutter]
+  - title: Riverpod
+    link: https://riverpod.dev/
+    description: A popular state management library for Flutter apps.
+    type: docs
+    tags: [flutter, state-management]
+  - title: Bloc Library
+    link: https://bloclibrary.dev/
+    description: Docs for the Bloc pattern, widely used for state management in Flutter.
+    type: docs
+    tags: [flutter, state-management]
+  - title: Code With Andrea
+    link: https://codewithandrea.com/
+    description: In-depth Flutter articles and tutorials on architecture and state.
+    type: article
+    tags: [flutter, dart]
+  - title: Expo Tutorial
+    link: https://docs.expo.dev/tutorial/introduction/
+    description: Build a complete React Native app with Expo, from setup to publishing.
+    type: course
+    tags: [expo, react-native]
+  - title: React Native Directory
+    link: https://reactnative.directory/
+    description: Search React Native libraries with platform support and health info.
+    type: tool
+    tags: [react-native]
+  - title: React Navigation
+    link: https://reactnavigation.org/
+    description: The standard library for routing and navigation in React Native apps.
+    type: docs
+    tags: [react-native, navigation]
+  - title: Expo Router
+    link: https://docs.expo.dev/router/introduction/
+    description: File-based routing for React Native and web apps built with Expo.
+    type: docs
+    tags: [expo, react-native, navigation]
+  - title: Awesome React Native
+    link: https://github.com/jondot/awesome-react-native
+    description: A curated list of React Native components, tools and articles.
+    type: repo
+    tags: [react-native, awesome-list]
+  - title: React Native Roadmap
+    link: https://roadmap.sh/react-native
+    description: The learning map for building mobile apps with React Native.
+    type: roadmap
+    tags: [react-native]
+  - title: Kotlin Multiplatform
+    link: https://kotlinlang.org/docs/multiplatform.html
+    description: Share Kotlin code across Android, iOS, desktop and web.
+    type: docs
+    tags: [kotlin, multiplatform]
+  - title: Compose Multiplatform
+    link: https://kotlinlang.org/compose-multiplatform/
+    description: JetBrains' UI framework for sharing Compose UIs across Android, iOS and desktop.
+    type: docs
+    tags: [kotlin, compose, multiplatform]
+  - title: Firebase
+    link: https://firebase.google.com/docs
+    description: Google's app backend with auth, databases, storage and push notifications.
+    type: docs
+    tags: [firebase, backend]
+  - title: Get started with Firebase for Flutter
+    link: https://firebase.google.com/codelabs/firebase-get-to-know-flutter
+    description: A codelab that adds auth and Firestore to a Flutter app.
+    type: practice
+    tags: [firebase, flutter]
+  - title: Supabase Mobile Quickstarts
+    link: https://supabase.com/docs/guides/getting-started/quickstarts/flutter
+    description: Connect a Flutter, React Native or native app to a Supabase Postgres backend.
+    type: docs
+    tags: [supabase, backend, flutter]
+  - title: Appwrite
+    link: https://appwrite.io/docs
+    description: An open-source backend for mobile apps with auth, database and storage.
+    type: docs
+    tags: [backend, open-source]
+  - title: Google Play Console Help
+    link: https://support.google.com/googleplay/android-developer/
+    description: How to publish, update and manage apps on Google Play.
+    type: docs
+    tags: [android, publishing]
+  - title: App Store Review Guidelines
+    link: https://developer.apple.com/app-store/review/guidelines/
+    description: The rules your iOS app must follow to get onto the App Store.
+    type: docs
+    tags: [ios, publishing]
+  - title: Fastlane
+    link: https://docs.fastlane.tools/
+    description: Automate building, screenshots and releasing iOS and Android apps.
+    type: tool
+    tags: [publishing, automation]
+  - title: EAS Build
+    link: https://docs.expo.dev/build/introduction/
+    description: Expo's cloud service for building and submitting apps to the stores.
+    type: tool
+    tags: [expo, publishing]
+  - title: Mobbin
+    link: https://mobbin.com/
+    description: A huge library of real mobile app screens for design inspiration.
+    type: tool
+    tags: [design, ui]
+  - title: Figma
+    link: https://www.figma.com/
+    description: The collaborative design tool used to mock up app screens and prototypes.
+    type: tool
+    tags: [design, prototyping]
+  - title: Material Symbols
+    link: https://fonts.google.com/icons
+    description: Thousands of free icons that match Material Design.
+    type: tool
+    tags: [design, icons]
+  - title: SF Symbols
+    link: https://developer.apple.com/sf-symbols/
+    description: Apple's library of icons that fit iOS's system font.
+    type: tool
+    tags: [design, icons, ios]
+  - title: Android Studio
+    link: https://developer.android.com/studio
+    description: The official IDE for Android development, with emulator and profiler.
+    type: tool
+    tags: [android, ide]
+  - title: Xcode
+    link: https://developer.apple.com/xcode/
+    description: Apple's IDE for building, testing and shipping iOS apps.
+    type: tool
+    tags: [ios, ide]
+  - title: Room
+    link: https://developer.android.com/training/data-storage/room
+    description: Android's official library for storing data locally in SQLite.
+    type: docs
+    tags: [android, database]
+  - title: Hilt
+    link: https://developer.android.com/training/dependency-injection/hilt-android
+    description: Google's recommended dependency injection library for Android.
+    type: docs
+    tags: [android, dependency-injection]
+  - title: Kotlin Coroutines Guide
+    link: https://kotlinlang.org/docs/coroutines-guide.html
+    description: The official guide to async programming with coroutines and flows.
+    type: docs
+    tags: [kotlin, concurrency]
+  - title: Kotlin for Java Developers
+    link: https://www.coursera.org/learn/kotlin-for-java-developers
+    description: JetBrains' free-to-audit Coursera course for programmers moving to Kotlin.
+    type: course
+    tags: [kotlin]
+  - title: Exercism Kotlin Track
+    link: https://exercism.org/tracks/kotlin
+    description: Free Kotlin exercises with optional mentor feedback.
+    type: practice
+    tags: [kotlin]
+  - title: Exercism Swift Track
+    link: https://exercism.org/tracks/swift
+    description: Free Swift exercises with optional mentor feedback.
+    type: practice
+    tags: [swift]
+  - title: Exercism Dart Track
+    link: https://exercism.org/tracks/dart
+    description: Free Dart exercises with optional mentor feedback.
+    type: practice
+    tags: [dart]
+  - title: Swift by Sundell
+    link: https://www.swiftbysundell.com/
+    description: Weekly articles and tips on Swift and Apple platform development.
+    type: article
+    tags: [swift, ios]
+  - title: r/androiddev
+    link: https://www.reddit.com/r/androiddev/
+    description: A large Reddit community for Android developers.
+    type: community
+    tags: [android, community]
+  - title: r/FlutterDev
+    link: https://www.reddit.com/r/FlutterDev/
+    description: The main Reddit community for Flutter developers.
+    type: community
+    tags: [flutter, community]
+  - title: Kotlin Slack
+    link: https://kotlinlang.org/community/
+    description: Join the Kotlin Slack, user groups and community events.
+    type: community
+    tags: [kotlin, community]
+  - title: Fragmented
+    link: https://fragmentedpodcast.com/
+    description: A long-running podcast about Android development.
+    type: podcast
+    tags: [android]
+  - title: Flutter Gems
+    link: https://fluttergems.dev/
+    description: A categorized directory of useful Flutter and Dart packages.
+    type: tool
+    tags: [flutter]
+  - title: Point-Free
+    link: https://www.pointfree.co/
+    description: Advanced Swift video series, creators of The Composable Architecture.
+    type: video
+    tags: [swift, architecture]

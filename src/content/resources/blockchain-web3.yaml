@@ -1,0 +1,353 @@
+title: Blockchain & Web3
+tagline: Learn how blockchains work and build on them.
+description: From hashes and consensus to writing, testing and securing smart contracts. Developer-focused, no trading or tokens to buy.
+order: 13
+path:
+  - title: How blockchains work
+    note: Hashes, blocks and consensus before any code.
+    resources: [bitcoin-whitepaper, ethereum-org-learn, anders-blockchain-demo]
+  - title: Write your first contract
+    resources: [cryptozombies, solidity-docs]
+  - title: Learn a real dev workflow
+    note: Structured courses that use modern tooling.
+    resources: [cyfrin-updraft, foundry-book]
+  - title: Think like an attacker
+    resources: [ethernaut, damn-vulnerable-defi]
+  - title: Build and ship
+    resources: [ethglobal]
+resources:
+  - title: "Bitcoin: A Peer-to-Peer Electronic Cash System"
+    id: bitcoin-whitepaper
+    link: https://bitcoin.org/bitcoin.pdf
+    description: Satoshi's original nine-page whitepaper. Short, readable and the starting point for everything else.
+    type: article
+    tags: [bitcoin, fundamentals]
+  - title: Ethereum.org Learn Hub
+    id: ethereum-org-learn
+    link: https://ethereum.org/learn/
+    description: Plain-language explainers on Ethereum, wallets, accounts and how the network works.
+    type: guide
+    tags: [ethereum, fundamentals]
+  - title: Blockchain Demo by Anders Brownworth
+    id: anders-blockchain-demo
+    link: https://andersbrownworth.com/blockchain/
+    description: An interactive visual demo of hashes, blocks and chains that makes the core idea click in minutes.
+    type: tool
+    tags: [fundamentals, visual]
+  - title: But how does bitcoin actually work? (3Blue1Brown)
+    link: https://www.youtube.com/watch?v=bBC-nXj3Ng4
+    description: A beautifully animated walkthrough of digital signatures, ledgers and proof of work.
+    type: video
+    tags: [bitcoin, cryptography, fundamentals]
+  - title: Ethereum Developer Docs
+    link: https://ethereum.org/developers/docs/
+    description: The official technical docs on the EVM, transactions, gas, accounts and smart contracts.
+    type: docs
+    tags: [ethereum, evm]
+  - title: Ethereum Whitepaper
+    link: https://ethereum.org/whitepaper/
+    description: Vitalik Buterin's original design for a general-purpose programmable blockchain.
+    type: article
+    tags: [ethereum, fundamentals]
+  - title: Bitcoin Developer Guides
+    link: https://developer.bitcoin.org/devguide/
+    description: Official guides to Bitcoin's blockchain, transactions, wallets and P2P network.
+    type: docs
+    tags: [bitcoin]
+  - title: Mastering Bitcoin
+    link: https://github.com/bitcoinbook/bitcoinbook
+    description: Andreas Antonopoulos's classic technical book on Bitcoin, free to read on GitHub.
+    type: book
+    tags: [bitcoin, book]
+  - title: Mastering Ethereum
+    link: https://github.com/ethereumbook/ethereumbook
+    description: The companion book for Ethereum, covering the EVM, Solidity and smart contract security. Free on GitHub.
+    type: book
+    tags: [ethereum, solidity, book]
+  - title: Bitcoin and Cryptocurrency Technologies (Princeton)
+    link: https://bitcoinbook.cs.princeton.edu/
+    description: The Princeton textbook and course on how cryptocurrencies work, from hash functions to mining.
+    type: book
+    tags: [bitcoin, fundamentals, cryptography]
+  - title: MIT 15.S12 Blockchain and Money
+    link: https://ocw.mit.edu/courses/15-s12-blockchain-and-money-fall-2018/
+    description: Gary Gensler's MIT lecture series on blockchain technology and its uses, free on OpenCourseWare.
+    type: course
+    tags: [fundamentals, mit]
+  - title: Berkeley RDI Blockchain Courses
+    link: https://rdi.berkeley.edu/
+    description: UC Berkeley's blockchain fundamentals and decentralized finance lectures, with free recordings.
+    type: course
+    tags: [fundamentals, university]
+  - title: CryptoZombies
+    id: cryptozombies
+    link: https://cryptozombies.io/
+    description: Learn Solidity by building a zombie game, one interactive lesson at a time. Great first step.
+    type: practice
+    tags: [solidity, beginner]
+  - title: Solidity Documentation
+    id: solidity-docs
+    link: https://docs.soliditylang.org/en/latest/
+    description: The official language docs, with clear examples and a security considerations section.
+    type: docs
+    tags: [solidity]
+  - title: Solidity by Example
+    link: https://solidity-by-example.org/
+    description: Short, runnable Solidity snippets for nearly every common pattern and language feature.
+    type: cheatsheet
+    tags: [solidity, examples]
+  - title: Cyfrin Updraft
+    id: cyfrin-updraft
+    link: https://updraft.cyfrin.io/courses
+    description: Free, in-depth courses by Patrick Collins on Solidity, Foundry, DeFi and smart contract auditing.
+    type: course
+    tags: [solidity, foundry, security]
+  - title: Alchemy University
+    link: https://www.alchemy.com/university
+    description: A free Ethereum developer bootcamp covering cryptography, Solidity and dapp building.
+    type: course
+    tags: [ethereum, solidity, dapps]
+  - title: Patrick Collins Solidity Course (freeCodeCamp)
+    link: https://www.youtube.com/watch?v=umepbfKp5rI
+    description: A famous 32-hour video course on blockchain, Solidity and full-stack web3 with JavaScript.
+    type: video
+    tags: [solidity, full-stack]
+  - title: Speedrun Ethereum
+    link: https://speedrunethereum.com/
+    description: Build a series of hands-on dapp challenges with Scaffold-ETH and get feedback from the community.
+    type: practice
+    tags: [ethereum, projects]
+  - title: Scaffold-ETH 2
+    link: https://scaffoldeth.io/
+    description: An open-source starter kit for building Ethereum dapps quickly with Next.js and Foundry or Hardhat.
+    type: tool
+    tags: [ethereum, dapps, starter]
+  - title: Remix IDE
+    link: https://remix.ethereum.org/
+    description: A browser-based IDE to write, compile, deploy and debug Solidity contracts with nothing to install.
+    type: tool
+    tags: [solidity, ide]
+  - title: Foundry
+    id: foundry-book
+    link: https://getfoundry.sh/
+    description: Docs for Foundry, the fast Rust-based toolkit for writing, testing and deploying Solidity contracts.
+    type: docs
+    tags: [foundry, testing]
+  - title: Hardhat
+    link: https://hardhat.org/docs/getting-started
+    description: Docs for Hardhat, the popular JavaScript and TypeScript environment for Ethereum development.
+    type: docs
+    tags: [hardhat, javascript]
+  - title: OpenZeppelin Contracts
+    link: https://docs.openzeppelin.com/contracts/
+    description: Audited, reusable contract building blocks like ERC-20, ERC-721 and access control.
+    type: docs
+    tags: [solidity, security, standards]
+  - title: Ethers.js
+    link: https://docs.ethers.org/
+    description: A compact JavaScript library for talking to Ethereum from your app or scripts.
+    type: docs
+    tags: [javascript, ethereum]
+  - title: Viem
+    link: https://viem.sh/
+    description: A modern, typed TypeScript library for interacting with Ethereum.
+    type: docs
+    tags: [typescript, ethereum]
+  - title: Ethereum Improvement Proposals
+    link: https://eips.ethereum.org/
+    description: The official list of EIPs and ERCs, the standards behind tokens, NFTs and protocol upgrades.
+    type: docs
+    tags: [ethereum, standards]
+  - title: EVM Codes
+    link: https://www.evm.codes/
+    description: An interactive reference for every EVM opcode, with gas costs and a playground.
+    type: cheatsheet
+    tags: [evm, reference]
+  - title: Ethernaut
+    id: ethernaut
+    link: https://ethernaut.openzeppelin.com/
+    description: OpenZeppelin's wargame where each level is a vulnerable contract you have to hack.
+    type: practice
+    tags: [security, solidity, ctf]
+  - title: Damn Vulnerable DeFi
+    id: damn-vulnerable-defi
+    link: https://www.damnvulnerabledefi.xyz/
+    description: Offensive security challenges based on real DeFi bugs like flash loans and oracle manipulation.
+    type: practice
+    tags: [security, defi, ctf]
+  - title: Capture the Ether
+    link: https://capturetheether.com/
+    description: A classic set of Ethereum security puzzles that teach common smart contract pitfalls.
+    type: practice
+    tags: [security, ctf]
+  - title: SWC Registry
+    link: https://swcregistry.io/
+    description: A catalogue of known smart contract weaknesses with explanations and example code.
+    type: docs
+    tags: [security, solidity]
+  - title: Smart Contract Security Field Guide
+    link: https://scsfg.io/
+    description: A practical guide to common smart contract vulnerabilities and how to prevent them.
+    type: guide
+    tags: [security, solidity]
+  - title: Solcurity Standard
+    link: https://github.com/transmissions11/solcurity
+    description: A widely used checklist for reviewing Solidity code for security and quality.
+    type: cheatsheet
+    tags: [security, auditing]
+  - title: Slither
+    link: https://github.com/crytic/slither
+    description: Trail of Bits' static analyzer that finds bugs in Solidity code automatically.
+    type: tool
+    tags: [security, tools]
+  - title: Building Secure Contracts
+    link: https://secure-contracts.com/
+    description: Trail of Bits' guidelines and tool tutorials for writing and testing secure smart contracts.
+    type: guide
+    tags: [security, testing]
+  - title: Code4rena
+    link: https://code4rena.com/
+    description: Competitive audit contests where you can read real reports and practice finding bugs.
+    type: practice
+    tags: [security, auditing]
+  - title: Solana Developer Docs
+    link: https://solana.com/docs
+    description: Official docs on Solana's accounts, programs and transactions, with quickstarts.
+    type: docs
+    tags: [solana, rust]
+  - title: Anchor
+    link: https://www.anchor-lang.com/docs
+    description: The most popular framework for writing Solana programs in Rust.
+    type: docs
+    tags: [solana, rust]
+  - title: The Rust Book
+    link: https://doc.rust-lang.org/book/
+    description: The official Rust book. Learn Rust here before building on Solana or Polkadot.
+    type: book
+    tags: [rust]
+  - title: Polkadot SDK Docs
+    link: https://docs.polkadot.com/
+    description: Official developer docs for building on Polkadot and with the Substrate-based Polkadot SDK.
+    type: docs
+    tags: [polkadot, substrate, rust]
+  - title: Cosmos SDK Docs
+    link: https://docs.cosmos.network/
+    description: Docs for the Cosmos SDK, a Go framework for building your own application-specific blockchain.
+    type: docs
+    tags: [cosmos, go]
+  - title: Chainlink Docs
+    link: https://docs.chain.link/
+    description: Learn how oracles bring off-chain data like prices and randomness into smart contracts.
+    type: docs
+    tags: [oracles, ethereum]
+  - title: IPFS Docs
+    link: https://docs.ipfs.tech/
+    description: Learn content-addressed, peer-to-peer file storage, often used alongside blockchains.
+    type: docs
+    tags: [ipfs, storage]
+  - title: The Graph Docs
+    link: https://thegraph.com/docs/
+    description: Index and query blockchain data with GraphQL subgraphs.
+    type: docs
+    tags: [indexing, graphql]
+  - title: Crypto 101
+    link: https://www.crypto101.io/
+    description: A free introductory book on cryptography for programmers, from XOR to public keys.
+    type: book
+    tags: [cryptography, book]
+  - title: Cryptography I (Stanford, Coursera)
+    link: https://www.coursera.org/learn/crypto
+    description: Dan Boneh's famous course on the cryptographic primitives blockchains are built on.
+    type: course
+    tags: [cryptography, university]
+  - title: A Graduate Course in Applied Cryptography
+    link: https://toc.cryptobook.us/
+    description: Boneh and Shoup's free, rigorous textbook for when you want the math behind the primitives.
+    type: book
+    tags: [cryptography, book]
+  - title: Etherscan
+    link: https://etherscan.io/
+    description: The main Ethereum block explorer. Inspect transactions, addresses and verified contract code.
+    type: tool
+    tags: [explorer, ethereum]
+  - title: Sepolia Etherscan
+    link: https://sepolia.etherscan.io/
+    description: Explorer for the Sepolia testnet, where you deploy and test contracts for free.
+    type: tool
+    tags: [explorer, testnet]
+  - title: mempool.space
+    link: https://mempool.space/
+    description: An open-source Bitcoin explorer that visualizes blocks, fees and the mempool live.
+    type: tool
+    tags: [explorer, bitcoin]
+  - title: Solana Explorer
+    link: https://explorer.solana.com/
+    description: The official explorer for Solana transactions, accounts and programs.
+    type: tool
+    tags: [explorer, solana]
+  - title: MetaMask Docs
+    link: https://docs.metamask.io/
+    description: Connect your dapp to the most widely used Ethereum wallet.
+    type: docs
+    tags: [wallets, dapps]
+  - title: ETHGlobal
+    id: ethglobal
+    link: https://ethglobal.com/
+    description: Online and in-person Ethereum hackathons with workshops, mentors and a showcase of past projects.
+    type: community
+    tags: [hackathons]
+  - title: ETHIndia
+    link: https://ethindia.co/
+    description: India's largest Ethereum hackathon, held yearly in Bengaluru.
+    type: community
+    tags: [hackathons, india]
+  - title: Devfolio
+    link: https://devfolio.co/
+    description: India's hackathon platform, home to many web3 and general student hackathons.
+    type: community
+    tags: [hackathons, india]
+  - title: Ethereum Stack Exchange
+    link: https://ethereum.stackexchange.com/
+    description: Q&A site for Ethereum developers. Search here when a contract or tool misbehaves.
+    type: community
+    tags: [ethereum, q-and-a]
+  - title: Bitcoin Stack Exchange
+    link: https://bitcoin.stackexchange.com/
+    description: Q&A site for Bitcoin developers and enthusiasts.
+    type: community
+    tags: [bitcoin, q-and-a]
+  - title: Ethereum Research
+    link: https://ethresear.ch/
+    description: The forum where protocol researchers discuss scaling, consensus and future upgrades.
+    type: community
+    tags: [ethereum, research]
+  - title: Awesome Ethereum Security
+    link: https://github.com/crytic/awesome-ethereum-security
+    description: A curated list of smart contract security tools, guides and CTFs.
+    type: repo
+    tags: [security, awesome-list]
+  - title: Awesome Solidity
+    link: https://github.com/bkrem/awesome-solidity
+    description: A curated list of Solidity resources, libraries and tools.
+    type: repo
+    tags: [solidity, awesome-list]
+  - title: Blockchain Developer Roadmap
+    link: https://roadmap.sh/blockchain
+    description: A visual roadmap of what to learn to become a blockchain developer.
+    type: roadmap
+    tags: [roadmap]
+  - title: Ethereum Foundation Blog
+    link: https://blog.ethereum.org/
+    description: Official announcements and research updates on Ethereum's protocol and ecosystem.
+    type: article
+    tags: [ethereum, news]
+  - title: Zero Knowledge Podcast
+    link: https://zeroknowledge.fm/
+    description: Technical interviews on zero-knowledge proofs, cryptography and decentralized systems.
+    type: podcast
+    tags: [zk, cryptography]
+  - title: ZK MOOC (Berkeley)
+    link: https://zk-learning.org/
+    description: A free university course on zero-knowledge proofs, with lectures from leading researchers.
+    type: course
+    tags: [zk, cryptography, university]

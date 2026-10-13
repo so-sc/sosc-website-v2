@@ -1,0 +1,675 @@
+title: Game Development
+tagline: Make games people want to play.
+description: Pick an engine, ship your first game in a jam, then go deeper into patterns and graphics.
+order: 11
+path:
+  - title: Pick an engine
+    note: Godot is free and open source. Unity has the most tutorials.
+    resources: [godot-docs, unity-learn]
+  - title: Make your first game
+    resources: [brackeys]
+  - title: Grab free assets
+    resources: [kenney]
+  - title: Ship it in a game jam
+    resources: [itch-jams]
+  - title: Go deeper
+    resources: [game-programming-patterns, red-blob-games, learnopengl]
+resources:
+  - title: Godot, Getting Started
+    id: godot-docs
+    link: https://docs.godotengine.org/en/stable/getting_started/introduction/index.html
+    description: The official guide to the free, open-source Godot engine, with step-by-step first games.
+    type: docs
+    tags: [godot]
+  - title: Unity Learn
+    id: unity-learn
+    link: https://learn.unity.com/
+    description: Free official pathways from your first scene to complete games.
+    type: course
+    tags: [unity, c-sharp]
+  - title: Brackeys
+    id: brackeys
+    link: https://www.youtube.com/@Brackeys
+    description: Hugely popular, beginner-friendly game dev tutorials, now covering Godot.
+    type: video
+    tags: [godot, unity]
+  - title: Kenney Assets
+    id: kenney
+    link: https://kenney.nl/assets
+    description: Thousands of free, public-domain game assets.
+    type: tool
+    tags: [assets]
+  - title: itch.io Game Jams
+    id: itch-jams
+    link: https://itch.io/jams
+    description: Join a jam, build a small game in a weekend, and get feedback.
+    type: community
+    tags: [jams]
+  - title: Game Programming Patterns
+    id: game-programming-patterns
+    link: https://gameprogrammingpatterns.com/
+    description: A free book on the design patterns behind game code.
+    type: book
+    tags: [architecture]
+  - title: Red Blob Games
+    id: red-blob-games
+    link: https://www.redblobgames.com/
+    description: Interactive explanations of pathfinding, hex grids and procedural generation.
+    type: guide
+    tags: [algorithms]
+  - title: LearnOpenGL
+    id: learnopengl
+    link: https://learnopengl.com/
+    description: Learn modern graphics programming from the ground up.
+    type: guide
+    tags: [graphics, opengl]
+  - title: Unreal Engine Learning
+    link: https://dev.epicgames.com/community/unreal-engine/learning
+    description: Epic's official courses and tutorials for Unreal Engine.
+    type: course
+    tags: [unreal]
+  - title: raylib
+    link: https://www.raylib.com/
+    description: A simple C library for making games without an engine.
+    type: tool
+    tags: [c]
+  - title: Game Developer Roadmap
+    link: https://roadmap.sh/game-developer
+    description: The path from gameplay programming to engines and graphics.
+    type: roadmap
+    tags: [career]
+  - title: Godot Engine
+    link: https://godotengine.org/
+    description: The free, open-source engine for 2D and 3D games, lightweight and beginner-friendly.
+    type: tool
+    tags: [godot, open-source]
+  - title: "Godot: Your First 2D Game"
+    link: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html
+    description: The official step-by-step tutorial that walks you through a complete small 2D game.
+    type: guide
+    tags: [godot, beginner-friendly]
+  - title: GDQuest
+    link: https://www.gdquest.com/
+    description: Free and paid Godot tutorials, interactive lessons and open-source demos.
+    type: course
+    tags: [godot]
+  - title: GDQuest on YouTube
+    link: https://www.youtube.com/@Gdquest
+    description: Clear, well-produced Godot tutorials and game dev tips.
+    type: video
+    tags: [godot]
+  - title: Unity Manual
+    link: https://docs.unity3d.com/Manual/index.html
+    description: The official reference for every Unity feature, from scenes to scripting.
+    type: docs
+    tags: [unity, c-sharp]
+  - title: Unreal Engine Documentation
+    link: https://dev.epicgames.com/documentation/en-us/unreal-engine
+    description: Official Unreal Engine docs covering Blueprints, C++, rendering and more.
+    type: docs
+    tags: [unreal, c++]
+  - title: Bevy
+    link: https://bevy.org/
+    description: A free, open-source data-driven game engine built in Rust around an ECS.
+    type: tool
+    tags: [bevy, rust, ecs]
+  - title: Bevy Quick Start
+    link: https://bevy.org/learn/quick-start/introduction/
+    description: The official introduction to setting up Bevy and building your first app.
+    type: docs
+    tags: [bevy, rust]
+  - title: Unofficial Bevy Cheat Book
+    link: https://bevy-cheatbook.github.io/
+    description: A community reference explaining Bevy concepts and common patterns.
+    type: guide
+    tags: [bevy, rust]
+  - title: GameMaker
+    link: https://gamemaker.io/en
+    description: A 2D engine famous for indie hits like Undertale, free for non-commercial use.
+    type: tool
+    tags: [gamemaker, 2d]
+  - title: GameMaker Manual
+    link: https://manual.gamemaker.io/
+    description: The official manual for GameMaker's editor and GML scripting language.
+    type: docs
+    tags: [gamemaker]
+  - title: Defold
+    link: https://defold.com/
+    description: A free, source-available engine for lightweight 2D and 3D games scripted in Lua.
+    type: tool
+    tags: [defold, lua]
+  - title: SDL
+    link: https://www.libsdl.org/
+    description: The cross-platform C library for windows, input, audio and graphics used by countless games.
+    type: tool
+    tags: [sdl, c]
+  - title: Lazy Foo' SDL Tutorials
+    link: https://lazyfoo.net/tutorials/SDL/
+    description: The classic step-by-step guide to making games with SDL and C++.
+    type: guide
+    tags: [sdl, c++]
+  - title: raylib Cheatsheet
+    link: https://www.raylib.com/cheatsheet/cheatsheet.html
+    description: Every raylib function on one page, handy while you code.
+    type: cheatsheet
+    tags: [raylib, c]
+  - title: LÖVE
+    link: https://love2d.org/
+    description: A simple, free framework for making 2D games in Lua.
+    type: tool
+    tags: [love2d, lua, 2d]
+  - title: Pygame
+    link: https://www.pygame.org/docs/
+    description: The popular Python library for making 2D games, with docs and tutorials.
+    type: docs
+    tags: [pygame, python]
+  - title: Pygame Community Edition
+    link: https://pyga.me/
+    description: An actively maintained fork of Pygame with new features and faster releases.
+    type: docs
+    tags: [pygame, python]
+  - title: Phaser
+    link: https://phaser.io/
+    description: A fast, free framework for making 2D games that run in the browser.
+    type: tool
+    tags: [phaser, javascript, web]
+  - title: MonoGame
+    link: https://monogame.net/
+    description: The open-source C# framework behind Stardew Valley and Celeste.
+    type: tool
+    tags: [monogame, c-sharp]
+  - title: PICO-8
+    link: https://www.lexaloffle.com/pico-8.php
+    description: A tiny fantasy console with built-in code, sprite and music editors. Paid, but a cult favourite.
+    type: tool
+    tags: [pico-8, lua, retro]
+  - title: TIC-80
+    link: https://tic80.com/
+    description: A free, open-source fantasy console for making tiny retro games.
+    type: tool
+    tags: [lua, retro, open-source]
+  - title: Ren'Py
+    link: https://www.renpy.org/
+    description: The free engine behind most visual novels, scripted in simple Python.
+    type: tool
+    tags: [visual-novel, python]
+  - title: CS50's Introduction to Game Development
+    link: https://cs50.harvard.edu/games/
+    description: Harvard's free course recreating classics like Pong, Mario and Zelda in LÖVE and Unity.
+    type: course
+    tags: [beginner-friendly, love2d, unity]
+  - title: Handmade Hero
+    link: https://www.youtube.com/@MollyRocket
+    description: Casey Muratori's legendary series building a complete game from scratch in C, no engine.
+    type: video
+    tags: [c, engine-dev]
+  - title: Sebastian Lague
+    link: https://www.youtube.com/@SebastianLague
+    description: Beautiful "coding adventure" videos on procedural generation, simulation and graphics.
+    type: video
+    tags: [unity, procedural-generation]
+  - title: Game Maker's Toolkit
+    link: https://www.youtube.com/@GMTK
+    description: Mark Brown's acclaimed video essays on game design, and host of the yearly GMTK Game Jam.
+    type: video
+    tags: [game-design, jams]
+  - title: Extra Credits
+    link: https://www.youtube.com/@ExtraCredits
+    description: Animated explainers on game design concepts and industry topics.
+    type: video
+    tags: [game-design]
+  - title: Freya Holmér
+    link: https://www.youtube.com/@Acegikmo
+    description: Gorgeous, deep lectures on splines, shaders and math for game developers.
+    type: video
+    tags: [math, shaders]
+  - title: The Cherno
+    link: https://www.youtube.com/@TheCherno
+    description: C++ series and a long-running game engine build from a former EA engineer.
+    type: video
+    tags: [c++, engine-dev]
+  - title: Code Monkey
+    link: https://www.youtube.com/@CodeMonkeyUnity
+    description: Hundreds of practical Unity and C# tutorials, plus free full courses.
+    type: video
+    tags: [unity, c-sharp]
+  - title: Jonas Tyroller
+    link: https://www.youtube.com/@JonasTyroller
+    description: Devlogs and honest advice on game design and finishing indie games.
+    type: video
+    tags: [game-design, indie]
+  - title: HeartBeast
+    link: https://www.youtube.com/@uheartbeast
+    description: Beginner-friendly 2D game tutorials in Godot and GameMaker.
+    type: video
+    tags: [godot, gamemaker, 2d]
+  - title: javidx9
+    link: https://www.youtube.com/@javidx9
+    description: One Lone Coder's videos on building games and engines from scratch in C++.
+    type: video
+    tags: [c++, algorithms]
+  - title: Acerola
+    link: https://www.youtube.com/@Acerola_t
+    description: Entertaining deep dives into shaders, rendering and graphics techniques.
+    type: video
+    tags: [shaders, graphics]
+  - title: DaFluffyPotato
+    link: https://www.youtube.com/@DaFluffyPotato
+    description: Pygame tutorials and devlogs from an indie developer who ships in Python.
+    type: video
+    tags: [pygame, python]
+  - title: ThinMatrix
+    link: https://www.youtube.com/@ThinMatrix
+    description: Devlogs and OpenGL tutorials from a developer building his own 3D engine and games.
+    type: video
+    tags: [opengl, devlog]
+  - title: GameFromScratch
+    link: https://gamefromscratch.com/
+    description: News and reviews covering game engines, frameworks and tools, especially open source.
+    type: article
+    tags: [engines, news]
+  - title: GDC on YouTube
+    link: https://www.youtube.com/c/Gdconf
+    description: Hundreds of free talks from the Game Developers Conference on design, art, code and postmortems.
+    type: video
+    tags: [gdc, talks, postmortems]
+  - title: GDC Vault (Free)
+    link: https://gdcvault.com/free
+    description: Free recordings of GDC talks and classic game postmortems.
+    type: video
+    tags: [gdc, talks, postmortems]
+  - title: "Juice It or Lose It"
+    link: https://www.youtube.com/watch?v=Fy0aCDmgnxg
+    description: A famous short talk showing how small effects make a simple game feel great.
+    type: video
+    tags: [game-feel, talks]
+  - title: The Art of Screenshake
+    link: https://www.youtube.com/watch?v=AJdEqssNZ-U
+    description: Jan Willem Nijman of Vlambeer on the tiny tricks that make action games feel punchy.
+    type: video
+    tags: [game-feel, talks]
+  - title: Noclip
+    link: https://www.youtube.com/@NoclipDocs
+    description: Documentaries on how famous games were made, straight from the developers.
+    type: video
+    tags: [documentary, postmortems]
+  - title: Ludum Dare
+    link: https://ldjam.com/
+    description: One of the oldest game jams, held online twice a year over a weekend.
+    type: community
+    tags: [jams]
+  - title: Global Game Jam
+    link: https://globalgamejam.org/
+    description: The world's largest game jam, held in-person at sites around the world each January.
+    type: community
+    tags: [jams]
+  - title: itch.io
+    link: https://itch.io/
+    description: The go-to place to publish indie games, find tools and share your jam entries.
+    type: tool
+    tags: [publishing, indie]
+  - title: The Art of Game Design
+    link: https://schellgames.com/art-of-game-design
+    description: Jesse Schell's classic book on game design through 100+ "lenses". Paid.
+    type: book
+    tags: [game-design, classic]
+  - title: A Theory of Fun for Game Design
+    link: https://www.theoryoffun.com/
+    description: Raph Koster's short, illustrated classic on why games are fun.
+    type: book
+    tags: [game-design, classic]
+  - title: The Level Design Book
+    link: https://book.leveldesignbook.com/
+    description: A free, in-depth online book on designing levels for 3D games.
+    type: book
+    tags: [level-design]
+  - title: Game Design Concepts
+    link: https://gamedesignconcepts.wordpress.com/
+    description: Ian Schreiber's free 20-lesson course on the fundamentals of game design.
+    type: course
+    tags: [game-design, beginner-friendly]
+  - title: "MDA: A Formal Approach to Game Design"
+    link: https://users.cs.northwestern.edu/~hunicke/MDA.pdf
+    description: The influential paper on mechanics, dynamics and aesthetics in games.
+    type: article
+    tags: [game-design, theory]
+  - title: Lost Garden
+    link: https://lostgarden.com/
+    description: Daniel Cook's essays on game design, systems and prototyping.
+    type: article
+    tags: [game-design]
+  - title: Game Developer
+    link: https://www.gamedeveloper.com/
+    description: The industry news site formerly known as Gamasutra, with design articles and postmortems.
+    type: article
+    tags: [news, postmortems]
+  - title: How To Market A Game
+    link: https://howtomarketagame.com/
+    description: Chris Zukowski's data-driven advice on marketing indie games on Steam.
+    type: article
+    tags: [marketing, steam, indie]
+  - title: Steamworks Documentation
+    link: https://partner.steamgames.com/doc/home
+    description: Official docs for releasing and selling your game on Steam.
+    type: docs
+    tags: [steam, publishing]
+  - title: Game UI Database
+    link: https://www.gameuidatabase.com/
+    description: Thousands of screenshots of menus and HUDs from real games, searchable by screen type.
+    type: tool
+    tags: [ui, inspiration]
+  - title: 3D Math Primer for Graphics and Game Development
+    link: https://gamemath.com/
+    description: A free online book on the vectors, matrices and rotations behind 3D games.
+    type: book
+    tags: [math, 3d]
+  - title: Essence of Linear Algebra
+    link: https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+    description: 3Blue1Brown's visual series on the vector and matrix math games rely on.
+    type: video
+    tags: [math, linear-algebra]
+  - title: Easings.net
+    link: https://easings.net/
+    description: A visual cheat sheet of easing functions for smooth animation and tweens.
+    type: cheatsheet
+    tags: [animation, math]
+  - title: The Nature of Code
+    link: https://natureofcode.com/
+    description: Daniel Shiffman's free book on simulating forces, particles and steering behaviours in code.
+    type: book
+    tags: [physics, simulation]
+  - title: Gaffer On Games
+    link: https://gafferongames.com/
+    description: Glenn Fiedler's classic articles on game physics and multiplayer networking.
+    type: article
+    tags: [physics, networking]
+  - title: Fix Your Timestep!
+    link: https://gafferongames.com/post/fix_your_timestep/
+    description: The essential article on game loops and stable physics updates.
+    type: article
+    tags: [game-loop, physics]
+  - title: Box2D
+    link: https://box2d.org/
+    description: The famous open-source 2D physics engine, used in Angry Birds and many engines.
+    type: tool
+    tags: [physics, 2d, c]
+  - title: Jolt Physics
+    link: https://github.com/jrouwe/JoltPhysics
+    description: The open-source 3D physics engine used in Horizon Forbidden West and Godot.
+    type: repo
+    tags: [physics, 3d, c++]
+  - title: Amit's A* Pages
+    link: http://theory.stanford.edu/~amitp/GameProgramming/
+    description: The classic, in-depth explanation of A* pathfinding and its variants for games.
+    type: article
+    tags: [pathfinding, algorithms]
+  - title: Hexagonal Grids
+    link: https://www.redblobgames.com/grids/hexagons/
+    description: The definitive interactive guide to coordinates and algorithms on hex grids.
+    type: guide
+    tags: [algorithms, grids]
+  - title: Game AI Pro
+    link: http://www.gameaipro.com/
+    description: Free chapters from the Game AI Pro books, written by industry AI programmers.
+    type: book
+    tags: [ai, behavior-trees]
+  - title: Procedural Content Generation in Games
+    link: https://www.pcgbook.com/
+    description: A free academic book on generating levels, terrain and content with algorithms.
+    type: book
+    tags: [procedural-generation]
+  - title: Game Engine Architecture
+    link: https://www.gameenginebook.com/
+    description: Jason Gregory's (Naughty Dog) reference on how real game engines are built. Paid.
+    type: book
+    tags: [engine-dev, c++, classic]
+  - title: The Book of Shaders
+    link: https://thebookofshaders.com/
+    description: A gentle, interactive guide to writing fragment shaders.
+    type: book
+    tags: [shaders, glsl]
+  - title: Shadertoy
+    link: https://www.shadertoy.com/
+    description: Write and share shaders in the browser, and learn from thousands of others.
+    type: practice
+    tags: [shaders, glsl]
+  - title: Inigo Quilez Articles
+    link: https://iquilezles.org/articles/
+    description: Articles on signed distance functions, noise and raymarching from Shadertoy's co-creator.
+    type: article
+    tags: [shaders, graphics, math]
+  - title: Godot Shaders
+    link: https://godotshaders.com/
+    description: A community library of free shaders for Godot, with source to learn from.
+    type: tool
+    tags: [godot, shaders]
+  - title: Catlike Coding
+    link: https://catlikecoding.com/
+    description: Thorough Unity tutorials on rendering, procedural meshes and custom render pipelines.
+    type: guide
+    tags: [unity, graphics]
+  - title: Scratchapixel
+    link: https://www.scratchapixel.com/
+    description: Free lessons teaching computer graphics and rendering from first principles.
+    type: guide
+    tags: [graphics, rendering]
+  - title: Ray Tracing in One Weekend
+    link: https://raytracing.github.io/
+    description: The famous free book series where you write your own ray tracer.
+    type: book
+    tags: [graphics, ray-tracing, c++]
+  - title: Vulkan Tutorial
+    link: https://vulkan-tutorial.com/
+    description: The standard tutorial for drawing your first triangle and beyond with Vulkan.
+    type: guide
+    tags: [vulkan, graphics]
+  - title: Learn Wgpu
+    link: https://sotrh.github.io/learn-wgpu/
+    description: Learn modern graphics programming in Rust with wgpu.
+    type: guide
+    tags: [wgpu, rust, graphics]
+  - title: Real-Time Rendering Resources
+    link: https://www.realtimerendering.com/
+    description: The companion site to the famous rendering book, with links to free graphics resources.
+    type: guide
+    tags: [graphics, rendering]
+  - title: OpenGameArt
+    link: https://opengameart.org/
+    description: A huge library of free sprites, tiles, music and sound effects.
+    type: tool
+    tags: [assets, art]
+  - title: Free Assets on itch.io
+    link: https://itch.io/game-assets/free
+    description: Thousands of free sprites, tilesets, fonts and sounds from indie artists.
+    type: tool
+    tags: [assets]
+  - title: Quaternius
+    link: https://quaternius.com/
+    description: Free low-poly 3D model packs, often rigged and animated.
+    type: tool
+    tags: [assets, 3d]
+  - title: Poly Haven
+    link: https://polyhaven.com/
+    description: Free CC0 HDRIs, textures and 3D models of high quality.
+    type: tool
+    tags: [assets, 3d, textures]
+  - title: ambientCG
+    link: https://ambientcg.com/
+    description: Free public-domain PBR materials and textures.
+    type: tool
+    tags: [assets, textures]
+  - title: Mixamo
+    link: https://www.mixamo.com/
+    description: Adobe's free auto-rigger and library of character animations.
+    type: tool
+    tags: [animation, 3d]
+  - title: Game-icons.net
+    link: https://game-icons.net/
+    description: Thousands of free game icons you can recolour and download as SVG.
+    type: tool
+    tags: [assets, icons]
+  - title: Freesound
+    link: https://freesound.org/
+    description: A collaborative database of Creative Commons sound effects and recordings.
+    type: tool
+    tags: [audio, assets]
+  - title: Sonniss GDC Audio Bundle
+    link: https://sonniss.com/gameaudiogdc
+    description: Gigabytes of royalty-free professional sound effects released free every year.
+    type: tool
+    tags: [audio, assets]
+  - title: Incompetech
+    link: https://incompetech.com/
+    description: Kevin MacLeod's library of royalty-free music used in thousands of games and videos.
+    type: tool
+    tags: [audio, music]
+  - title: Audacity
+    link: https://www.audacityteam.org/
+    description: The free, open-source audio editor for recording and cleaning up sounds.
+    type: tool
+    tags: [audio, open-source]
+  - title: jsfxr
+    link: https://sfxr.me/
+    description: Generate retro sound effects like jumps and explosions in your browser.
+    type: tool
+    tags: [audio, retro]
+  - title: Bfxr
+    link: https://www.bfxr.net/
+    description: An expanded sfxr for quickly making game sound effects.
+    type: tool
+    tags: [audio, retro]
+  - title: ChipTone
+    link: https://sfbgames.itch.io/chiptone
+    description: A free tool from SFB Games for generating chiptune sound effects.
+    type: tool
+    tags: [audio, retro]
+  - title: BeepBox
+    link: https://www.beepbox.co/
+    description: Make chiptune music in your browser, no installs needed.
+    type: tool
+    tags: [audio, music]
+  - title: LMMS
+    link: https://lmms.io/
+    description: A free, open-source music production app for composing game soundtracks.
+    type: tool
+    tags: [audio, music, open-source]
+  - title: FMOD
+    link: https://www.fmod.com/
+    description: Industry-standard adaptive audio middleware, free for small indie projects.
+    type: tool
+    tags: [audio, middleware]
+  - title: Aseprite
+    link: https://www.aseprite.org/
+    description: The most popular pixel art and animation editor. Paid, or compile it yourself for free.
+    type: tool
+    tags: [pixel-art, animation]
+  - title: LibreSprite
+    link: https://libresprite.github.io/
+    description: A free, open-source fork of Aseprite for pixel art and animation.
+    type: tool
+    tags: [pixel-art, open-source]
+  - title: Piskel
+    link: https://www.piskelapp.com/
+    description: A free online editor for pixel art sprites and animations.
+    type: tool
+    tags: [pixel-art, beginner-friendly]
+  - title: Pixelorama
+    link: https://orama-interactive.itch.io/pixelorama
+    description: A free, open-source pixel art editor built with Godot.
+    type: tool
+    tags: [pixel-art, open-source]
+  - title: Lospec
+    link: https://lospec.com/
+    description: Pixel art palettes, tutorials and tools in one place.
+    type: tool
+    tags: [pixel-art, palettes]
+  - title: Saint11 Pixel Art Tutorials
+    link: https://saint11.art/blog/pixel-art-tutorials/
+    description: Bite-sized animated pixel art tips from Celeste's artist, Pedro Medeiros.
+    type: guide
+    tags: [pixel-art]
+  - title: MortMort
+    link: https://www.youtube.com/@MortMort
+    description: Friendly pixel art tutorials and critiques for beginners.
+    type: video
+    tags: [pixel-art]
+  - title: Krita
+    link: https://krita.org/
+    description: A free, open-source painting app for concept art, textures and sprites.
+    type: tool
+    tags: [art, open-source]
+  - title: Blender
+    link: https://www.blender.org/
+    description: The free, open-source 3D suite for modeling, rigging and animating game assets.
+    type: tool
+    tags: [3d, modeling, open-source]
+  - title: Blender Guru
+    link: https://www.youtube.com/@blenderguru
+    description: Home of the famous Blender donut tutorial for absolute beginners.
+    type: video
+    tags: [blender, 3d, beginner-friendly]
+  - title: Tiled
+    link: https://www.mapeditor.org/
+    description: A free, flexible tile map editor that works with most engines.
+    type: tool
+    tags: [level-design, tilemaps]
+  - title: LDtk
+    link: https://ldtk.io/
+    description: A modern, free 2D level editor from the director of Dead Cells.
+    type: tool
+    tags: [level-design, tilemaps]
+  - title: Magic Tools
+    link: https://github.com/ellisonleao/magictools
+    description: A huge curated list of game development resources, tools and assets.
+    type: repo
+    tags: [awesome-list]
+  - title: Awesome Godot
+    link: https://github.com/Calinou/awesome-godot
+    description: A curated list of Godot plugins, projects, demos and tutorials.
+    type: repo
+    tags: [godot, awesome-list]
+  - title: GameDev Resources
+    link: https://github.com/Kavex/GameDev-Resources
+    description: A big categorized list of free game dev tools, assets and learning material.
+    type: repo
+    tags: [awesome-list, assets]
+  - title: r/gamedev
+    link: https://www.reddit.com/r/gamedev/
+    description: The largest game dev community for questions, devlogs and feedback.
+    type: community
+    tags: [community]
+  - title: r/godot
+    link: https://www.reddit.com/r/godot/
+    description: An active, friendly community for Godot help and showcase.
+    type: community
+    tags: [godot]
+  - title: Godot Forum
+    link: https://forum.godotengine.org/
+    description: The official Godot forum for questions and discussion.
+    type: community
+    tags: [godot]
+  - title: Unity Discussions
+    link: https://discussions.unity.com/
+    description: Unity's official forums for help with scripting, rendering and more.
+    type: community
+    tags: [unity]
+  - title: GameDev.net
+    link: https://www.gamedev.net/
+    description: A long-running community of game developers with forums, articles and blogs.
+    type: community
+    tags: [community]
+  - title: Handmade Network
+    link: https://handmade.network/
+    description: A community of programmers building software and games from scratch, inspired by Handmade Hero.
+    type: community
+    tags: [c, engine-dev]
+  - title: 80 Level
+    link: https://80.lv/
+    description: Articles and breakdowns of how game artists create environments, characters and effects.
+    type: article
+    tags: [art, 3d]
+  - title: Designer Notes
+    link: https://www.designer-notes.com/
+    description: Soren Johnson's podcast interviewing veteran game designers about their careers.
+    type: podcast
+    tags: [game-design, interviews]

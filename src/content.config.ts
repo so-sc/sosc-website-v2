@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import slugify from "slugify";
 
 const events = defineCollection({
   loader: glob({
@@ -63,73 +64,84 @@ const projects = defineCollection({
     }),
 });
 
-export const resources = defineCollection({
-  loader: glob({
-    pattern: "**/*.json",
-    base: "./src/content/resources",
-  }),
-  schema: z.object({
+export const RESOURCE_TYPES = [
+  "course",
+  "guide",
+  "docs",
+  "video",
+  "book",
+  "roadmap",
+  "cheatsheet",
+  "practice",
+  "tool",
+  "repo",
+  "article",
+  "podcast",
+  "community",
+] as const;
+
+const resource = z
+  .object({
     title: z.string(),
-    description: z.string(),
-    type: z
-      .union([
-        z.enum([
-          "guide",
-          "article",
-          "video",
-          "roadmap",
-          "tools",
-          "repo",
-          "misc",
-          "course",
-          "book",
-          "cheatsheet",
-          "podcast",
-        ]),
-        z.array(
-          z.enum([
-            "guide",
-            "article",
-            "video",
-            "roadmap",
-            "tools",
-            "repo",
-            "misc",
-            "course",
-            "book",
-            "cheatsheet",
-            "podcast",
-          ]),
-        ),
-      ])
-      .transform((v) => (Array.isArray(v) ? v : [v])),
-    category: z.enum([
-      "AI/ML",
-      "App Dev",
-      "Blockchain",
-      "Cloud",
-      "Competitive Programming",
-      "Computer Science",
-      "Cybersecurity",
-      "Data Science",
-      "Design",
-      "Development",
-      "DevOps",
-      "Game Dev",
-      "Open Source",
-      "Web Dev",
-      "Misc",
-    ]),
-    tags: z.array(z.string()).optional(),
+    id: z.string().optional(),
     link: z.url(),
-    contributor: z.string().optional(),
-    date: z.string().optional(), // Using string for simple date format in JSON
-  }),
+    description: z.string(),
+    type: z.enum(RESOURCE_TYPES),
+    tags: z.array(z.string()).default([]),
+  })
+  .transform((r) => ({
+    ...r,
+    id: r.id ?? slugify(r.title, { lower: true, strict: true }),
+  }));
+
+const tracks = defineCollection({
+  loader: glob({ pattern: "*.yaml", base: "./src/content/resources" }),
+  schema: z
+    .object({
+      title: z.string(),
+      tagline: z.string(),
+      description: z.string(),
+      order: z.number(),
+      path: z
+        .array(
+          z.object({
+            title: z.string(),
+            note: z.string().optional(),
+            resources: z.array(z.string()).min(1),
+          }),
+        )
+        .default([]),
+      resources: z.array(resource).min(1),
+    })
+    .superRefine((track, ctx) => {
+      const ids = new Set<string>();
+      track.resources.forEach((r, i) => {
+        if (ids.has(r.id)) {
+          ctx.addIssue({
+            code: "custom",
+            path: ["resources", i, "id"],
+            message: `Duplicate resource id "${r.id}". Give one of them a unique \`id\`.`,
+          });
+        }
+        ids.add(r.id);
+      });
+      track.path.forEach((step, s) => {
+        step.resources.forEach((id, i) => {
+          if (!ids.has(id)) {
+            ctx.addIssue({
+              code: "custom",
+              path: ["path", s, "resources", i],
+              message: `Unknown resource id "${id}" in step "${step.title}". Known ids: ${[...ids].join(", ")}`,
+            });
+          }
+        });
+      });
+    }),
 });
 
 export const collections = {
   events,
   blogs,
   projects,
-  resources,
+  tracks,
 };

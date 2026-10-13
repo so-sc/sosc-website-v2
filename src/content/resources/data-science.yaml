@@ -1,0 +1,471 @@
+title: Data Science
+tagline: Find the story hidden in the numbers.
+description: Python, SQL, statistics and visualization. The toolkit for analysing real data.
+order: 5
+path:
+  - title: Python
+    resources: [py4e]
+  - title: SQL
+    note: Most real data lives in a database.
+    resources: [sqlbolt, select-star-sql]
+  - title: Statistics
+    resources: [seeing-theory, statquest]
+  - title: Wrangle data
+    resources: [kaggle-pandas, python-ds-handbook]
+  - title: Visualize and practise
+    resources: [data-to-viz, kaggle-datasets]
+resources:
+  - title: Python for Everybody
+    id: py4e
+    link: https://www.py4e.com/
+    description: Dr. Chuck's gentle intro to Python and data, with free videos and a book.
+    type: course
+    tags: [python]
+  - title: SQLBolt
+    id: sqlbolt
+    link: https://sqlbolt.com/
+    description: Interactive SQL lessons with exercises right in the page.
+    type: practice
+    tags: [sql]
+  - title: Select Star SQL
+    id: select-star-sql
+    link: https://selectstarsql.com/
+    description: An interactive book that teaches SQL by exploring a real dataset.
+    type: guide
+    tags: [sql]
+  - title: Seeing Theory
+    id: seeing-theory
+    link: https://seeing-theory.brown.edu/
+    description: A visual introduction to probability and statistics.
+    type: guide
+    tags: [statistics]
+  - title: StatQuest
+    id: statquest
+    link: https://www.youtube.com/@statquest
+    description: Clear, friendly videos on statistics and machine learning concepts.
+    type: video
+    tags: [statistics, ml]
+  - title: Kaggle Learn, Pandas
+    id: kaggle-pandas
+    link: https://www.kaggle.com/learn/pandas
+    description: Hands-on pandas lessons for cleaning and reshaping data.
+    type: course
+    tags: [python, pandas]
+  - title: Python Data Science Handbook
+    id: python-ds-handbook
+    link: https://jakevdp.github.io/PythonDataScienceHandbook/
+    description: The free book on NumPy, pandas, Matplotlib and scikit-learn.
+    type: book
+    tags: [python, numpy, pandas]
+  - title: From Data to Viz
+    id: data-to-viz
+    link: https://www.data-to-viz.com/
+    description: Pick the right chart for your data with this decision tree.
+    type: guide
+    tags: [visualization]
+  - title: Kaggle Datasets
+    id: kaggle-datasets
+    link: https://www.kaggle.com/datasets
+    description: Thousands of free datasets to practise on.
+    type: tool
+    tags: [datasets]
+  - title: R for Data Science
+    link: https://r4ds.hadley.nz/
+    description: The free book on doing data science with R and the tidyverse.
+    type: book
+    tags: [r]
+  - title: Jupyter
+    link: https://jupyter.org/
+    description: Notebooks that mix code, charts and notes. The data scientist's workbench.
+    type: tool
+    tags: [python, notebooks]
+  - title: Data Analyst Roadmap
+    link: https://roadmap.sh/data-analyst
+    description: What to learn to become a data analyst, step by step.
+    type: roadmap
+    tags: [career]
+  - title: NumPy User Guide
+    link: https://numpy.org/doc/stable/user/index.html
+    description: Official guide to arrays, broadcasting and fast numerical computing in Python.
+    type: docs
+    tags: [numpy, python]
+  - title: NumPy for Absolute Beginners
+    link: https://numpy.org/doc/stable/user/absolute_beginners.html
+    description: The official gentle start to NumPy arrays.
+    type: guide
+    tags: [numpy, beginner-friendly]
+  - title: pandas User Guide
+    link: https://pandas.pydata.org/docs/user_guide/index.html
+    description: Official docs for loading, cleaning, reshaping and grouping tabular data.
+    type: docs
+    tags: [pandas, python]
+  - title: 10 Minutes to pandas
+    link: https://pandas.pydata.org/docs/user_guide/10min.html
+    description: A quick tour of the pandas features you will use every day.
+    type: guide
+    tags: [pandas, beginner-friendly]
+  - title: pandas Cheat Sheet
+    link: https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
+    description: The official two-page pandas reference.
+    type: cheatsheet
+    tags: [pandas]
+  - title: Python for Data Analysis
+    link: https://wesmckinney.com/book/
+    description: Free online edition of the book by the creator of pandas.
+    type: book
+    tags: [pandas, numpy, python]
+  - title: Polars User Guide
+    link: https://docs.pola.rs/
+    description: Docs for Polars, a very fast DataFrame library written in Rust.
+    type: docs
+    tags: [polars, python]
+  - title: Matplotlib Tutorials
+    link: https://matplotlib.org/stable/tutorials/index.html
+    description: Official tutorials for Python's foundational plotting library.
+    type: docs
+    tags: [matplotlib, visualization]
+  - title: Matplotlib Cheatsheets
+    link: https://matplotlib.org/cheatsheets/
+    description: Official cheatsheets and handouts for Matplotlib.
+    type: cheatsheet
+    tags: [matplotlib, visualization]
+  - title: Seaborn Tutorial
+    link: https://seaborn.pydata.org/tutorial.html
+    description: Make attractive statistical charts with a few lines of Python.
+    type: docs
+    tags: [seaborn, visualization]
+  - title: Plotly Python
+    link: https://plotly.com/python/
+    description: Interactive charts and dashboards in Python, with many examples.
+    type: docs
+    tags: [plotly, visualization]
+  - title: Streamlit
+    link: https://streamlit.io/
+    description: Turn Python data scripts into shareable web apps.
+    type: tool
+    tags: [python, dashboards]
+  - title: Python Graph Gallery
+    link: https://python-graph-gallery.com/
+    description: Hundreds of chart examples with reproducible Python code.
+    type: guide
+    tags: [visualization, matplotlib]
+  - title: Fundamentals of Data Visualization
+    link: https://clauswilke.com/dataviz/
+    description: Claus Wilke's free book on making informative, honest figures.
+    type: book
+    tags: [visualization]
+  - title: Storytelling with Data
+    link: https://www.storytellingwithdata.com/
+    description: Blog, books and challenges on communicating clearly with charts.
+    type: guide
+    tags: [visualization, storytelling]
+  - title: Kaggle Learn, Data Visualization
+    link: https://www.kaggle.com/learn/data-visualization
+    description: Short hands-on lessons on charting with Seaborn.
+    type: course
+    tags: [visualization, seaborn]
+  - title: Kaggle Learn, Intro to SQL
+    link: https://www.kaggle.com/learn/intro-to-sql
+    description: Learn SQL by querying BigQuery datasets in the browser.
+    type: course
+    tags: [sql]
+  - title: Mode SQL Tutorial
+    link: https://www.thoughtspot.com/sql-tutorial
+    description: A thorough SQL tutorial written for data analysts.
+    type: guide
+    tags: [sql]
+  - title: SQLZoo
+    link: https://sqlzoo.net/
+    description: Interactive SQL exercises from basic to advanced.
+    type: practice
+    tags: [sql]
+  - title: SQL Murder Mystery
+    link: https://mystery.knightlab.com/
+    description: Solve a crime by writing SQL queries. A fun way to practise.
+    type: practice
+    tags: [sql, beginner-friendly]
+  - title: PostgreSQL Exercises
+    link: https://pgexercises.com/
+    description: Practise querying a real PostgreSQL database online.
+    type: practice
+    tags: [sql, postgresql]
+  - title: LeetCode SQL 50
+    link: https://leetcode.com/studyplan/top-sql-50/
+    description: A study plan of 50 classic SQL interview problems.
+    type: practice
+    tags: [sql, interviews]
+  - title: DataLemur
+    link: https://datalemur.com/
+    description: SQL and data science interview questions asked by real companies.
+    type: practice
+    tags: [sql, interviews]
+  - title: StrataScratch
+    link: https://www.stratascratch.com/
+    description: Real data science interview questions in SQL and Python.
+    type: practice
+    tags: [sql, interviews]
+  - title: Use The Index, Luke
+    link: https://use-the-index-luke.com/
+    description: A free guide to SQL indexing and query performance.
+    type: guide
+    tags: [sql, performance]
+  - title: Khan Academy Statistics and Probability
+    link: https://www.khanacademy.org/math/statistics-probability
+    description: Free lessons and exercises covering stats from the ground up.
+    type: course
+    tags: [statistics, probability, beginner-friendly]
+  - title: OpenIntro Statistics
+    link: https://www.openintro.org/book/os/
+    description: A free, widely used introductory statistics textbook.
+    type: book
+    tags: [statistics]
+  - title: Think Stats
+    link: https://greenteapress.com/wp/think-stats-3e/
+    description: Allen Downey's free book on statistics using Python.
+    type: book
+    tags: [statistics, python]
+  - title: Think Bayes
+    link: https://greenteapress.com/wp/think-bayes/
+    description: A free intro to Bayesian statistics with Python code.
+    type: book
+    tags: [statistics, bayesian]
+  - title: Harvard Stat 110
+    link: https://projects.iq.harvard.edu/stat110/home
+    description: Joe Blitzstein's famous probability course with free lectures and book.
+    type: course
+    tags: [probability]
+  - title: Practical Statistics for Data Scientists
+    link: https://www.oreilly.com/library/view/practical-statistics-for/9781492072935/
+    description: The statistics concepts data scientists actually use, with R and Python.
+    type: book
+    tags: [statistics]
+  - title: Statistical Rethinking
+    link: https://github.com/rmcelreath/stat_rethinking_2024
+    description: Richard McElreath's acclaimed Bayesian stats course with free lectures.
+    type: course
+    tags: [statistics, bayesian]
+  - title: Data Science from Scratch Notebooks
+    link: https://github.com/joelgrus/data-science-from-scratch
+    description: Code for Joel Grus's book that implements data science tools from scratch in Python.
+    type: repo
+    tags: [python, statistics]
+  - title: Harvard CS109 Data Science
+    link: https://cs109.github.io/2015/
+    description: Harvard's data science course materials with lectures and labs.
+    type: course
+    tags: [python, statistics]
+  - title: IBM Data Science Professional Certificate
+    link: https://www.coursera.org/professional-certificates/ibm-data-science
+    description: A beginner course series on Python, SQL and data analysis. Free to audit.
+    type: course
+    tags: [python, sql, beginner-friendly]
+  - title: Google Data Analytics Certificate
+    link: https://www.coursera.org/professional-certificates/google-data-analytics
+    description: A beginner path covering spreadsheets, SQL, Tableau and R.
+    type: course
+    tags: [sql, analytics]
+  - title: freeCodeCamp Data Analysis with Python
+    link: https://www.freecodecamp.org/learn/data-analysis-with-python/
+    description: A free certification with NumPy, pandas and visualization projects.
+    type: course
+    tags: [python, pandas]
+  - title: Data Science for Beginners (Microsoft)
+    link: https://github.com/microsoft/Data-Science-For-Beginners
+    description: A 10-week, 20-lesson curriculum on data science basics.
+    type: course
+    tags: [beginner-friendly, python]
+  - title: Data Engineering Zoomcamp
+    link: https://github.com/DataTalksClub/data-engineering-zoomcamp
+    description: A free course on pipelines, warehouses, Spark and streaming.
+    type: course
+    tags: [data-engineering]
+  - title: Data Engineer Roadmap
+    link: https://roadmap.sh/data-engineer
+    description: What to learn to become a data engineer, step by step.
+    type: roadmap
+    tags: [career, data-engineering]
+  - title: Data Engineering Wiki
+    link: https://dataengineering.wiki/
+    description: A community wiki of data engineering concepts and tools.
+    type: guide
+    tags: [data-engineering]
+  - title: Apache Spark
+    link: https://spark.apache.org/docs/latest/
+    description: Docs for the engine that processes large datasets across clusters.
+    type: docs
+    tags: [spark, big-data]
+  - title: Apache Airflow
+    link: https://airflow.apache.org/docs/
+    description: Schedule and orchestrate data pipelines as Python code.
+    type: docs
+    tags: [airflow, data-engineering]
+  - title: dbt Docs
+    link: https://docs.getdbt.com/
+    description: Transform data in your warehouse with SQL and software engineering practices.
+    type: docs
+    tags: [dbt, sql]
+  - title: DuckDB
+    link: https://duckdb.org/docs/
+    description: A fast in-process SQL database for analytics on local files.
+    type: docs
+    tags: [duckdb, sql]
+  - title: Designing Data-Intensive Applications
+    link: https://dataintensive.net/
+    description: Martin Kleppmann's classic on how data systems really work.
+    type: book
+    tags: [data-engineering, databases]
+  - title: Tableau Public
+    link: https://public.tableau.com/
+    description: Free Tableau for building and sharing interactive dashboards.
+    type: tool
+    tags: [bi, visualization]
+  - title: Power BI Learning
+    link: https://learn.microsoft.com/en-us/training/powerplatform/power-bi
+    description: Microsoft's free learning paths for Power BI.
+    type: course
+    tags: [bi, power-bi]
+  - title: Metabase
+    link: https://www.metabase.com/
+    description: Open-source BI tool to explore data and build dashboards.
+    type: tool
+    tags: [bi, dashboards]
+  - title: Apache Superset
+    link: https://superset.apache.org/
+    description: Open-source data exploration and visualization platform.
+    type: tool
+    tags: [bi, dashboards]
+  - title: Looker Studio
+    link: https://lookerstudio.google.com/
+    description: Google's free tool for building reports and dashboards.
+    type: tool
+    tags: [bi, dashboards]
+  - title: UCI Machine Learning Repository
+    link: https://archive.ics.uci.edu/
+    description: A classic collection of datasets used in teaching and research.
+    type: tool
+    tags: [datasets]
+  - title: Google Dataset Search
+    link: https://datasetsearch.research.google.com/
+    description: A search engine for datasets across the web.
+    type: tool
+    tags: [datasets]
+  - title: Our World in Data
+    link: https://ourworldindata.org/
+    description: Research and open data on the world's biggest problems.
+    type: tool
+    tags: [datasets, visualization]
+  - title: data.gov.in
+    link: https://www.data.gov.in/
+    description: India's open government data platform.
+    type: tool
+    tags: [datasets, india]
+  - title: Awesome Public Datasets
+    link: https://github.com/awesomedata/awesome-public-datasets
+    description: A curated list of high-quality open datasets by topic.
+    type: repo
+    tags: [datasets, awesome-list]
+  - title: TidyTuesday
+    link: https://github.com/rfordatascience/tidytuesday
+    description: A weekly dataset for practising wrangling and visualization.
+    type: practice
+    tags: [datasets, visualization]
+  - title: Awesome Data Science
+    link: https://github.com/academic/awesome-datascience
+    description: A curated list of data science learning resources and tools.
+    type: repo
+    tags: [awesome-list]
+  - title: Data Science Cheatsheets
+    link: https://github.com/FavioVazquez/ds-cheatsheets
+    description: A collection of cheatsheets for Python, SQL, stats and ML.
+    type: cheatsheet
+    tags: [cheatsheet]
+  - title: Stanford Probability Cheatsheet
+    link: https://stanford.edu/~shervine/teaching/cme-106/
+    description: Compact cheatsheets for probability and statistics.
+    type: cheatsheet
+    tags: [statistics, probability]
+  - title: JupyterLab Docs
+    link: https://jupyterlab.readthedocs.io/en/latest/
+    description: Guide to the JupyterLab notebook interface.
+    type: docs
+    tags: [notebooks]
+  - title: Anaconda Distribution
+    link: https://www.anaconda.com/download
+    description: A Python distribution bundling the data science stack.
+    type: tool
+    tags: [python, setup]
+  - title: uv
+    link: https://docs.astral.sh/uv/
+    description: A very fast Python package and project manager.
+    type: tool
+    tags: [python, setup]
+  - title: Corey Schafer pandas Tutorials
+    link: https://www.youtube.com/playlist?list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS
+    description: A clear, popular YouTube series on pandas.
+    type: video
+    tags: [pandas, python]
+  - title: Alex The Analyst
+    link: https://www.youtube.com/@AlexTheAnalyst
+    description: YouTube tutorials and a bootcamp for aspiring data analysts.
+    type: video
+    tags: [sql, analytics, career]
+  - title: Ken Jee
+    link: https://www.youtube.com/@KenJee_ds
+    description: Data science career advice and project walkthroughs.
+    type: video
+    tags: [career]
+  - title: Data Skeptic
+    link: https://dataskeptic.com/
+    description: A long-running podcast on data science, statistics and ML.
+    type: podcast
+    tags: [podcast]
+  - title: DataTalks.Club
+    link: https://datatalks.club/
+    description: A free community for data people with courses, podcasts and Slack.
+    type: community
+    tags: [community]
+  - title: r/datascience
+    link: https://www.reddit.com/r/datascience/
+    description: A community for data science discussion and career questions.
+    type: community
+    tags: [community, career]
+  - title: Data Analysis with Python (Real Python)
+    link: https://realpython.com/learning-paths/data-science-python-core-skills/
+    description: Real Python's learning path for core data science skills.
+    type: guide
+    tags: [python, pandas]
+  - title: Excel Skills for Business (Macquarie)
+    link: https://www.coursera.org/specializations/excel
+    description: A well-reviewed course on spreadsheets for analysis.
+    type: course
+    tags: [excel, analytics]
+  - title: Kaggle Learn, Data Cleaning
+    link: https://www.kaggle.com/learn/data-cleaning
+    description: Kaggle's lessons on handling missing values, scaling and messy data.
+    type: course
+    tags: [data-cleaning, pandas]
+  - title: Guess the Correlation
+    link: https://guessthecorrelation.com/
+    description: A game that trains your intuition for correlation.
+    type: practice
+    tags: [statistics]
+  - title: The Data Visualisation Catalogue
+    link: https://datavizcatalogue.com/
+    description: A library of chart types with what each one is good for.
+    type: guide
+    tags: [visualization]
+  - title: Altair
+    link: https://altair-viz.github.io/
+    description: Declarative statistical visualization for Python.
+    type: docs
+    tags: [visualization, python]
+  - title: Observable
+    link: https://observablehq.com/
+    description: Data notebooks and D3 examples for interactive visualization.
+    type: tool
+    tags: [visualization, javascript]
+  - title: D3.js
+    link: https://d3js.org/
+    description: The JavaScript library behind many famous web visualizations.
+    type: docs
+    tags: [visualization, javascript]

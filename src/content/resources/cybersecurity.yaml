@@ -1,0 +1,672 @@
+title: Cybersecurity
+tagline: Learn to break things so you can defend them.
+description: Linux, web security and capture-the-flag practice, with the tools security folks use every day.
+order: 6
+path:
+  - title: Linux first
+    note: Most security work happens on the command line.
+    resources: [bandit]
+  - title: Learn by playing
+    resources: [picoctf, tryhackme]
+  - title: Web security
+    resources: [owasp-top-10, portswigger-academy]
+  - title: Build your toolbox
+    resources: [cyberchef, hacktricks]
+  - title: Compete
+    resources: [ctftime, hack-the-box, pwn-college]
+resources:
+  - title: OverTheWire, Bandit
+    id: bandit
+    link: https://overthewire.org/wargames/bandit/
+    description: A wargame that teaches Linux basics by making you hunt for passwords over SSH.
+    type: practice
+    tags: [linux, ctf]
+  - title: picoCTF
+    id: picoctf
+    link: https://picoctf.org/
+    description: Carnegie Mellon's beginner-friendly CTF, with a year-round practice gym.
+    type: practice
+    tags: [ctf]
+  - title: TryHackMe
+    id: tryhackme
+    link: https://tryhackme.com/
+    description: Guided, browser-based hacking rooms. Many paths are free.
+    type: practice
+    tags: [labs, pentesting]
+  - title: OWASP Top 10
+    id: owasp-top-10
+    link: https://owasp.org/www-project-top-ten/
+    description: The ten most critical web application security risks, explained.
+    type: guide
+    tags: [web, appsec]
+  - title: PortSwigger Web Security Academy
+    id: portswigger-academy
+    link: https://portswigger.net/web-security
+    description: Free, hands-on labs for every major web vulnerability, from the makers of Burp Suite.
+    type: course
+    tags: [web, appsec]
+  - title: CyberChef
+    id: cyberchef
+    link: https://gchq.github.io/CyberChef/
+    description: The "cyber Swiss Army knife". Encode, decode, encrypt and analyse data in the browser.
+    type: tool
+    tags: [encoding, forensics]
+  - title: HackTricks
+    id: hacktricks
+    link: https://book.hacktricks.wiki/en/index.html
+    description: A huge open knowledge base of pentesting techniques, tools and methodology.
+    type: cheatsheet
+    tags: [pentesting]
+  - title: CTFtime
+    id: ctftime
+    link: https://ctftime.org/
+    description: The calendar and rankings for capture-the-flag competitions worldwide.
+    type: community
+    tags: [ctf]
+  - title: Hack The Box
+    id: hack-the-box
+    link: https://www.hackthebox.com/
+    description: Realistic machines and challenges to hack, with free tiers.
+    type: practice
+    tags: [labs, pentesting]
+  - title: pwn.college
+    id: pwn-college
+    link: https://pwn.college/
+    description: Arizona State's free course on binary exploitation and systems security.
+    type: course
+    tags: [binary, exploitation]
+  - title: GTFOBins
+    link: https://gtfobins.github.io/
+    description: Unix binaries that can be abused to escalate privileges or bypass restrictions.
+    type: cheatsheet
+    tags: [linux, privilege-escalation]
+  - title: Cyber Security Roadmap
+    link: https://roadmap.sh/cyber-security
+    description: A map of the skills and roles in security.
+    type: roadmap
+    tags: [career]
+  - title: OverTheWire Wargames
+    link: https://overthewire.org/wargames/
+    description: The full set of wargames after Bandit, covering web, binary exploitation, crypto and more.
+    type: practice
+    tags: [ctf, linux, wargames]
+  - title: Under The Wire
+    link: https://underthewire.tech/
+    description: Wargames that teach PowerShell and Windows internals over SSH.
+    type: practice
+    tags: [windows, powershell, wargames]
+  - title: CMD Challenge
+    link: https://cmdchallenge.com/
+    description: Bite-sized shell puzzles you solve in the browser to sharpen your command-line skills.
+    type: practice
+    tags: [linux, bash, beginner-friendly]
+  - title: Professor Messer's Security+ Course
+    link: https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/
+    description: A complete free video course for the CompTIA Security+ exam, great for security fundamentals.
+    type: video
+    tags: [certification, security-plus, fundamentals]
+  - title: Google Cybersecurity Certificate
+    link: https://www.coursera.org/professional-certificates/google-cybersecurity
+    description: Google's beginner program on SOC work, Linux, SQL, Python and incident response.
+    type: course
+    tags: [beginner-friendly, soc, career]
+  - title: ISC2 Certified in Cybersecurity
+    link: https://www.isc2.org/certifications/cc
+    description: An entry-level certification whose official training and exam are often offered free.
+    type: course
+    tags: [certification, fundamentals]
+  - title: Cisco Introduction to Cybersecurity
+    link: https://www.netacad.com/courses/introduction-to-cybersecurity
+    description: A short free Cisco NetAcad course on threats, attacks and staying safe online.
+    type: course
+    tags: [beginner-friendly, fundamentals]
+  - title: OWASP Juice Shop
+    link: https://owasp.org/www-project-juice-shop/
+    description: A deliberately insecure modern web shop packed with hacking challenges to practise on.
+    type: practice
+    tags: [web, appsec, vulnerable-app]
+  - title: DVWA
+    link: https://github.com/digininja/DVWA
+    description: Damn Vulnerable Web Application, a classic PHP app for practising common web attacks locally.
+    type: practice
+    tags: [web, vulnerable-app]
+  - title: OWASP Cheat Sheet Series
+    link: https://cheatsheetseries.owasp.org/
+    description: Concise, practical guidance on securing specific parts of an application.
+    type: cheatsheet
+    tags: [appsec, secure-coding]
+  - title: OWASP Web Security Testing Guide
+    link: https://owasp.org/www-project-web-security-testing-guide/
+    description: The standard methodology for testing the security of web applications.
+    type: guide
+    tags: [web, pentesting, methodology]
+  - title: OWASP API Security Top 10
+    link: https://api-security.owasp.org/
+    description: The most common security risks specific to APIs, with examples and fixes.
+    type: guide
+    tags: [api, appsec]
+  - title: OWASP ASVS
+    link: https://owasp.org/www-project-application-security-verification-standard/
+    description: A checklist of security requirements for designing and reviewing web applications.
+    type: docs
+    tags: [appsec, secure-coding]
+  - title: Hacksplaining
+    link: https://www.hacksplaining.com/
+    description: Short interactive lessons that show how common web vulnerabilities work and how to fix them.
+    type: course
+    tags: [web, beginner-friendly]
+  - title: Snyk Learn
+    link: https://learn.snyk.io/
+    description: Free interactive lessons on vulnerabilities and secure coding across many languages.
+    type: course
+    tags: [secure-coding, appsec]
+  - title: Stanford CS253, Web Security
+    link: https://web.stanford.edu/class/cs253/
+    description: Stanford's web security course with lecture slides and videos on browser and server attacks.
+    type: course
+    tags: [web, university]
+  - title: MIT 6.858, Computer Systems Security
+    link: https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/
+    description: MIT's classic course on designing and attacking secure systems, with lectures and labs.
+    type: course
+    tags: [systems, university]
+  - title: PayloadsAllTheThings
+    link: https://github.com/swisskyrepo/PayloadsAllTheThings
+    description: A huge collection of payloads and bypasses for web application security testing.
+    type: repo
+    tags: [web, pentesting, payloads]
+  - title: SecLists
+    link: https://github.com/danielmiessler/SecLists
+    description: The go-to collection of wordlists for usernames, passwords, URLs and fuzzing.
+    type: repo
+    tags: [wordlists, pentesting]
+  - title: Hacker101
+    link: https://www.hacker101.com/
+    description: HackerOne's free video lessons and CTF for aspiring bug bounty hunters.
+    type: course
+    tags: [bug-bounty, web]
+  - title: HackerOne
+    link: https://www.hackerone.com/
+    description: The largest bug bounty platform, with public programs and disclosed reports to learn from.
+    type: community
+    tags: [bug-bounty]
+  - title: Bugcrowd
+    link: https://www.bugcrowd.com/
+    description: A major bug bounty platform with public programs and learning material for hunters.
+    type: community
+    tags: [bug-bounty]
+  - title: Intigriti
+    link: https://www.intigriti.com/
+    description: A European bug bounty platform known for its monthly XSS challenges.
+    type: community
+    tags: [bug-bounty]
+  - title: Real-World Bug Hunting
+    link: https://nostarch.com/bughunting
+    description: A field guide to web hacking built around real, paid bug bounty reports.
+    type: book
+    tags: [bug-bounty, web]
+  - title: PentesterLab
+    link: https://pentesterlab.com/
+    description: Hands-on web pentesting exercises, with a set of free badges to start.
+    type: practice
+    tags: [web, pentesting]
+  - title: Hack The Box Academy
+    link: https://academy.hackthebox.com/
+    description: Structured modules on pentesting, web, Active Directory and more, with free tiers.
+    type: course
+    tags: [pentesting, labs]
+  - title: VulnHub
+    link: https://www.vulnhub.com/
+    description: Downloadable vulnerable virtual machines to practise pentesting offline.
+    type: practice
+    tags: [pentesting, labs]
+  - title: Root Me
+    link: https://www.root-me.org/
+    description: Hundreds of free challenges across web, crypto, forensics, networking and reversing.
+    type: practice
+    tags: [ctf]
+  - title: Google CTF
+    link: https://capturetheflag.withgoogle.com/
+    description: Google's annual CTF, with a Beginner's Quest and past challenges to try.
+    type: practice
+    tags: [ctf]
+  - title: SANS Holiday Hack Challenge
+    link: https://www.sans.org/mlp/holiday-hack-challenge/
+    description: A free, story-driven yearly CTF with talks, suitable for beginners and experts.
+    type: practice
+    tags: [ctf, beginner-friendly]
+  - title: CTF Wiki
+    link: https://ctf-wiki.org/
+    description: A wiki covering the techniques behind every major CTF category.
+    type: guide
+    tags: [ctf]
+  - title: Trail of Bits CTF Field Guide
+    link: https://trailofbits.github.io/ctf/
+    description: A classic guide to getting started in CTFs, from forensics to exploitation.
+    type: guide
+    tags: [ctf, beginner-friendly]
+  - title: Awesome CTF
+    link: https://github.com/apsdehal/awesome-ctf
+    description: A curated list of CTF frameworks, tools, resources and practice sites.
+    type: repo
+    tags: [ctf, awesome-list]
+  - title: Awesome Hacking
+    link: https://github.com/Hack-with-Github/Awesome-Hacking
+    description: A collection of awesome lists for hackers, pentesters and security researchers.
+    type: repo
+    tags: [awesome-list, pentesting]
+  - title: Awesome Security
+    link: https://github.com/sbilly/awesome-security
+    description: A curated list of security software, libraries, documents and resources.
+    type: repo
+    tags: [awesome-list]
+  - title: Kali Linux Documentation
+    link: https://www.kali.org/docs/
+    description: Official docs for installing and using Kali, the standard pentesting distro.
+    type: docs
+    tags: [linux, pentesting, tools]
+  - title: Burp Suite Community Edition
+    link: https://portswigger.net/burp/communitydownload
+    description: The free edition of the standard proxy for intercepting and testing web traffic.
+    type: tool
+    tags: [burp-suite, web, tools]
+  - title: Wireshark
+    link: https://www.wireshark.org/
+    description: The standard network protocol analyser for capturing and inspecting packets.
+    type: tool
+    tags: [wireshark, networking, tools]
+  - title: Nmap Network Scanning
+    link: https://nmap.org/book/
+    description: The official Nmap book by its author, with much of it free online.
+    type: book
+    tags: [nmap, networking, tools]
+  - title: Ghidra
+    link: https://github.com/NationalSecurityAgency/ghidra
+    description: The NSA's free and open source reverse engineering suite with a decompiler.
+    type: tool
+    tags: [ghidra, reverse-engineering, tools]
+  - title: IDA Free
+    link: https://hex-rays.com/ida-free
+    description: The free edition of IDA, the industry-standard disassembler and decompiler.
+    type: tool
+    tags: [reverse-engineering, tools]
+  - title: radare2
+    link: https://rada.re/n/
+    description: A free, scriptable command-line framework for reverse engineering binaries.
+    type: tool
+    tags: [reverse-engineering, tools]
+  - title: x64dbg
+    link: https://x64dbg.com/
+    description: An open source Windows debugger widely used for reversing and malware analysis.
+    type: tool
+    tags: [debugger, windows, reverse-engineering]
+  - title: Metasploit Unleashed
+    link: https://www.offsec.com/metasploit-unleashed/
+    description: OffSec's free course on using the Metasploit Framework.
+    type: course
+    tags: [metasploit, pentesting]
+  - title: Hashcat
+    link: https://hashcat.net/hashcat/
+    description: The fastest password recovery tool, using your GPU to crack hashes.
+    type: tool
+    tags: [passwords, cracking, tools]
+  - title: John the Ripper
+    link: https://www.openwall.com/john/
+    description: A classic open source password cracker supporting hundreds of hash types.
+    type: tool
+    tags: [passwords, cracking, tools]
+  - title: ffuf
+    link: https://github.com/ffuf/ffuf
+    description: A fast web fuzzer for discovering hidden directories, files and parameters.
+    type: tool
+    tags: [web, fuzzing, tools]
+  - title: Exploit Database
+    link: https://www.exploit-db.com/
+    description: An archive of public exploits and vulnerable software, maintained by OffSec.
+    type: tool
+    tags: [exploits, pentesting]
+  - title: CVE Program
+    link: https://www.cve.org/
+    description: The official catalogue of publicly disclosed security vulnerabilities.
+    type: docs
+    tags: [vulnerabilities]
+  - title: Shodan
+    link: https://www.shodan.io/
+    description: A search engine for internet-connected devices, used in recon and research.
+    type: tool
+    tags: [osint, recon]
+  - title: Have I Been Pwned
+    link: https://haveibeenpwned.com/
+    description: Check whether an email address has appeared in a known data breach.
+    type: tool
+    tags: [breaches, privacy]
+  - title: Nightmare
+    link: https://guyinatuxedo.github.io/
+    description: An intro to binary exploitation and reversing taught through past CTF challenges.
+    type: course
+    tags: [binary, exploitation, ctf]
+  - title: ROP Emporium
+    link: https://ropemporium.com/
+    description: Challenges that teach return-oriented programming one technique at a time.
+    type: practice
+    tags: [binary, exploitation]
+  - title: Exploit Education
+    link: https://exploit.education/
+    description: Free VMs like Phoenix and Nebula for learning memory corruption and privilege escalation.
+    type: practice
+    tags: [binary, exploitation]
+  - title: pwnable.kr
+    link: https://pwnable.kr/
+    description: A long-running wargame of binary exploitation challenges, from easy to brutal.
+    type: practice
+    tags: [binary, exploitation, wargames]
+  - title: pwnable.tw
+    link: https://pwnable.tw/
+    description: Harder binary exploitation challenges for when you outgrow the basics.
+    type: practice
+    tags: [binary, exploitation, wargames]
+  - title: pwntools
+    link: https://docs.pwntools.com/
+    description: The Python library CTF players use to write exploits and talk to remote services.
+    type: tool
+    tags: [binary, python, tools]
+  - title: pwndbg
+    link: https://github.com/pwndbg/pwndbg
+    description: A GDB plugin that makes debugging and exploit development far more pleasant.
+    type: tool
+    tags: [debugger, binary, tools]
+  - title: Hacking, The Art of Exploitation
+    link: https://nostarch.com/hacking2.htm
+    description: A classic book on C, assembly, memory corruption and networking from a hacker's view.
+    type: book
+    tags: [binary, exploitation, classic]
+  - title: Reverse Engineering for Beginners
+    link: https://beginners.re/
+    description: Dennis Yurichev's free book on reading compiled code across architectures.
+    type: book
+    tags: [reverse-engineering, assembly]
+  - title: crackmes.one
+    link: https://crackmes.one/
+    description: Community-made crackme programs to practise reverse engineering.
+    type: practice
+    tags: [reverse-engineering]
+  - title: Microcorruption
+    link: https://microcorruption.com/
+    description: A browser-based embedded security CTF where you debug and exploit a fake lock.
+    type: practice
+    tags: [reverse-engineering, embedded]
+  - title: OpenSecurityTraining2
+    link: https://p.ost2.fyi/
+    description: Free in-depth courses on assembly, reversing, firmware and OS internals.
+    type: course
+    tags: [reverse-engineering, assembly, low-level]
+  - title: Malware Unicorn RE101
+    link: https://malwareunicorn.org/workshops/re101.html
+    description: A free workshop introducing reverse engineering of Windows malware.
+    type: course
+    tags: [malware, reverse-engineering]
+  - title: Practical Malware Analysis
+    link: https://nostarch.com/malware
+    description: The classic hands-on book on dissecting malicious software.
+    type: book
+    tags: [malware, reverse-engineering, classic]
+  - title: Awesome Malware Analysis
+    link: https://github.com/rshipp/awesome-malware-analysis
+    description: A curated list of malware analysis tools and resources.
+    type: repo
+    tags: [malware, awesome-list]
+  - title: Sysinternals
+    link: https://learn.microsoft.com/en-us/sysinternals/
+    description: Microsoft's free Windows utilities for inspecting processes, files and the registry.
+    type: tool
+    tags: [windows, forensics, tools]
+  - title: Volatility 3
+    link: https://github.com/volatilityfoundation/volatility3
+    description: The leading open source framework for memory forensics.
+    type: tool
+    tags: [forensics, memory, tools]
+  - title: Autopsy
+    link: https://www.autopsy.com/
+    description: A free digital forensics platform for analysing disk images.
+    type: tool
+    tags: [forensics, tools]
+  - title: 13Cubed
+    link: https://www.youtube.com/@13Cubed
+    description: A YouTube channel with clear, practical videos on digital forensics and incident response.
+    type: video
+    tags: [forensics, dfir]
+  - title: The DFIR Report
+    link: https://thedfirreport.com/
+    description: Detailed write-ups of real intrusions, from initial access to ransomware.
+    type: article
+    tags: [dfir, threat-intel, blue-team]
+  - title: Awesome Incident Response
+    link: https://github.com/meirwah/awesome-incident-response
+    description: A curated list of tools and resources for incident response.
+    type: repo
+    tags: [dfir, awesome-list, blue-team]
+  - title: SANS Posters and Cheat Sheets
+    link: https://www.sans.org/posters/
+    description: Free posters and cheat sheets on forensics, incident response and more.
+    type: cheatsheet
+    tags: [dfir, blue-team]
+  - title: MITRE ATT&CK
+    link: https://attack.mitre.org/
+    description: The knowledge base of real-world attacker tactics and techniques used by defenders.
+    type: docs
+    tags: [blue-team, threat-intel]
+  - title: Blue Team Labs Online
+    link: https://blueteamlabs.online/
+    description: Defensive challenges and investigations on forensics, threat hunting and incident response.
+    type: practice
+    tags: [blue-team, dfir]
+  - title: CyberDefenders
+    link: https://cyberdefenders.org/
+    description: Blue team labs where you investigate real-looking incidents with SOC tools.
+    type: practice
+    tags: [blue-team, soc]
+  - title: LetsDefend
+    link: https://letsdefend.io/
+    description: A simulated SOC where you triage alerts and investigate incidents.
+    type: practice
+    tags: [blue-team, soc]
+  - title: Splunk Boss of the SOC
+    link: https://bots.splunk.com/
+    description: Splunk's blue team CTF datasets for practising log investigation.
+    type: practice
+    tags: [blue-team, siem, splunk]
+  - title: Sigma
+    link: https://github.com/SigmaHQ/sigma
+    description: An open, generic format for writing detection rules that work across SIEMs.
+    type: repo
+    tags: [detection, blue-team, siem]
+  - title: Security Onion Docs
+    link: https://docs.securityonion.net/
+    description: Docs for a free platform for threat hunting, monitoring and log management.
+    type: docs
+    tags: [blue-team, monitoring]
+  - title: Wazuh
+    link: https://wazuh.com/
+    description: An open source SIEM and XDR platform you can run in a home lab.
+    type: tool
+    tags: [siem, blue-team, tools]
+  - title: Zeek
+    link: https://zeek.org/
+    description: An open source network monitor that turns traffic into rich logs.
+    type: tool
+    tags: [networking, monitoring, blue-team]
+  - title: Suricata
+    link: https://suricata.io/
+    description: An open source intrusion detection and prevention engine.
+    type: tool
+    tags: [ids, networking, blue-team]
+  - title: flAWS
+    link: http://flaws.cloud/
+    description: A free challenge that teaches common AWS security mistakes level by level.
+    type: practice
+    tags: [cloud, aws]
+  - title: flAWS 2
+    link: http://flaws2.cloud/
+    description: The sequel to flAWS, with attacker and defender paths through AWS.
+    type: practice
+    tags: [cloud, aws, blue-team]
+  - title: CloudGoat
+    link: https://github.com/RhinoSecurityLabs/cloudgoat
+    description: A vulnerable-by-design AWS environment for practising cloud attacks.
+    type: practice
+    tags: [cloud, aws]
+  - title: HackTricks Cloud
+    link: https://cloud.hacktricks.wiki/
+    description: HackTricks for AWS, GCP, Azure, Kubernetes and CI/CD security.
+    type: cheatsheet
+    tags: [cloud, kubernetes]
+  - title: Pwned Labs
+    link: https://pwnedlabs.io/
+    description: Cloud security labs on AWS, Azure and GCP, with free starter labs.
+    type: practice
+    tags: [cloud]
+  - title: Cryptopals
+    link: https://cryptopals.com/
+    description: Hands-on challenges where you break real cryptography by writing code.
+    type: practice
+    tags: [cryptography]
+  - title: CryptoHack
+    link: https://cryptohack.org/
+    description: A fun platform to learn modern cryptography by solving challenges.
+    type: practice
+    tags: [cryptography, ctf]
+  - title: Cryptography I
+    link: https://www.coursera.org/learn/crypto
+    description: Dan Boneh's famous Stanford course on how cryptographic primitives work.
+    type: course
+    tags: [cryptography, university]
+  - title: Crypto 101
+    link: https://www.crypto101.io/
+    description: A free introductory book on cryptography for programmers.
+    type: book
+    tags: [cryptography, beginner-friendly]
+  - title: Serious Cryptography
+    link: https://nostarch.com/serious-cryptography-2nd-edition
+    description: A practical introduction to modern encryption and how it fails.
+    type: book
+    tags: [cryptography]
+  - title: Security Engineering
+    link: https://www.cl.cam.ac.uk/archive/rja14/book.html
+    description: Ross Anderson's classic book on building dependable systems, free to read online.
+    type: book
+    tags: [fundamentals, classic]
+  - title: OSINT Framework
+    link: https://osintframework.com/
+    description: A clickable map of open source intelligence tools grouped by what you're looking for.
+    type: tool
+    tags: [osint, recon]
+  - title: Awesome OSINT
+    link: https://github.com/jivoi/awesome-osint
+    description: A curated list of OSINT tools and resources.
+    type: repo
+    tags: [osint, awesome-list]
+  - title: Bellingcat Online Investigations Toolkit
+    link: https://bellingcat.gitbook.io/toolkit
+    description: Bellingcat's catalogue of tools for open source investigations.
+    type: tool
+    tags: [osint]
+  - title: ired.team
+    link: https://www.ired.team/
+    description: Red team notes on offensive techniques, Active Directory and Windows internals.
+    type: guide
+    tags: [red-team, active-directory, windows]
+  - title: GOAD
+    link: https://github.com/Orange-Cyberdefense/GOAD
+    description: Game of Active Directory, a vulnerable AD lab you can build at home.
+    type: practice
+    tags: [active-directory, labs, windows]
+  - title: IppSec
+    link: https://www.youtube.com/@ippsec
+    description: Detailed video walkthroughs of retired Hack The Box machines.
+    type: video
+    tags: [pentesting, writeups]
+  - title: ippsec.rocks
+    link: https://ippsec.rocks/
+    description: Search every IppSec video by technique to jump to the exact moment.
+    type: tool
+    tags: [pentesting, writeups]
+  - title: 0xdf hacks stuff
+    link: https://0xdf.gitlab.io/
+    description: Thorough written write-ups for Hack The Box machines and CTF challenges.
+    type: article
+    tags: [writeups, pentesting]
+  - title: InfoSec Write-ups
+    link: https://infosecwriteups.com/
+    description: A large collection of community write-ups on bug bounties, CTFs and security.
+    type: article
+    tags: [writeups, bug-bounty]
+  - title: LiveOverflow
+    link: https://www.youtube.com/@LiveOverflow
+    description: Deep, curious videos on binary exploitation, web hacking and CTFs.
+    type: video
+    tags: [binary, ctf]
+  - title: John Hammond
+    link: https://www.youtube.com/@_JohnHammond
+    description: CTF walkthroughs, malware analysis and security news on YouTube.
+    type: video
+    tags: [ctf, malware]
+  - title: NetworkChuck
+    link: https://www.youtube.com/@NetworkChuck
+    description: Energetic beginner videos on networking, Linux and hacking.
+    type: video
+    tags: [beginner-friendly, networking]
+  - title: NahamSec
+    link: https://www.youtube.com/@NahamSec
+    description: Videos and streams on recon and bug bounty hunting.
+    type: video
+    tags: [bug-bounty, web]
+  - title: TCM Security
+    link: https://www.youtube.com/@TCMSecurityAcademy
+    description: Free full-length courses on ethical hacking, Python and pentesting.
+    type: video
+    tags: [pentesting, beginner-friendly]
+  - title: HackerSploit
+    link: https://www.youtube.com/@HackerSploit
+    description: Tutorials on pentesting tools, Linux and red and blue team techniques.
+    type: video
+    tags: [pentesting, tools]
+  - title: David Bombal
+    link: https://www.youtube.com/@davidbombal
+    description: Networking and cybersecurity tutorials and interviews with practitioners.
+    type: video
+    tags: [networking, career]
+  - title: pwn.college on YouTube
+    link: https://www.youtube.com/@pwncollege
+    description: Lecture videos that accompany the pwn.college modules.
+    type: video
+    tags: [binary, exploitation]
+  - title: Darknet Diaries
+    link: https://darknetdiaries.com/
+    description: A gripping podcast of true stories from the dark side of the internet.
+    type: podcast
+    tags: [stories]
+  - title: Risky Business
+    link: https://risky.biz/
+    description: A long-running weekly podcast on security news and analysis.
+    type: podcast
+    tags: [news]
+  - title: tl;dr sec
+    link: https://tldrsec.com/
+    description: A weekly newsletter of the best security tools, talks and articles.
+    type: article
+    tags: [newsletter, appsec]
+  - title: Krebs on Security
+    link: https://krebsonsecurity.com/
+    description: Brian Krebs' investigative journalism on cybercrime and breaches.
+    type: article
+    tags: [news]
+  - title: Phrack
+    link: https://phrack.org/
+    description: The legendary hacker zine, publishing deep technical articles since 1985.
+    type: article
+    tags: [exploitation, classic]
+  - title: r/netsec
+    link: https://www.reddit.com/r/netsec/
+    description: A subreddit for technical security news, research and tools.
+    type: community
+    tags: [news, research]

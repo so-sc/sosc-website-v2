@@ -43,7 +43,7 @@ The easiest way to create new content is using our CLI tool:
 pnpm run add
 ```
 
-Select the content type (blog, event, project, or resource) and follow the prompts. The CLI automatically creates the proper folder structure and template.
+Select the content type (blog or event) and follow the prompts. The CLI automatically creates the proper folder structure and template.
 
 ## Manual Creation
 
@@ -82,6 +82,19 @@ cover: "./event-banner.png"
 ```
 
 _Note: Place image assets in the same folder as the markdown file and reference them relatively._
+
+#### Adding a resource:
+
+Resources live in one YAML file per track in `src/content/resources/` (for example `web-dev.yaml`). Append an entry under `resources:`:
+
+```yaml
+- title: The Modern JavaScript Tutorial
+  link: https://javascript.info/
+  description: A thorough JavaScript tutorial, from basics to advanced topics.
+  type: guide
+```
+
+Every track page also has a "Suggest a resource" link to [CONTRIBUTING.md](CONTRIBUTING.md).
 
 For complete details on all content types including Projects and Resources, refer to [CONTENT_GUIDELINES.md](CONTENT_GUIDELINES.md).
 

@@ -1,0 +1,345 @@
+---
+import { ArrowLeft, ArrowRight, Search } from "@lucide/astro";
+import { Icon } from "astro-icon/components";
+import ResourceRow from "@/components/resources/ResourceRow.astro";
+import Layout from "@/layouts/Layout.astro";
+import {
+  CONTRIBUTING_URL,
+  getTracks,
+  RESOURCE_TYPES,
+  type Track,
+  TYPE_LABELS,
+} from "@/lib/resources";
+
+export async function getStaticPaths() {
+  const tracks = await getTracks();
+  return tracks.map((track) => ({
+    params: { track: track.slug },
+    props: { track, tracks },
+  }));
+}
+
+interface Props {
+  track: Track;
+  tracks: Track[];
+}
+
+const { track, tracks } = Astro.props;
+const byId = new Map(track.resources.map((r) => [r.id, r]));
+const library = track.resources;
+const types = RESOURCE_TYPES.map((type) => ({
+  type,
+  count: library.filter((r) => r.type === type).length,
+})).filter((t) => t.count > 0);
+const otherTracks = tracks.filter((t) => t.slug !== track.slug);
+---
+
+<Layout
+  title={`${track.title} | SOSC Resources`}
+  description={`${track.tagline} ${track.description}`}
+>
+  <div class="mx-auto max-w-4xl px-4 pt-24 pb-16 md:px-8 md:pt-28 md:pb-20">
+    <a
+      href="/resources"
+      class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
+    >
+      <ArrowLeft
+        class="size-4 transition-transform group-hover:-translate-x-1"
+        aria-hidden="true"
+      />
+      All resources
+    </a>
+
+    <header class="mt-6 border-b border-gray-100 pb-8 md:mt-8 md:pb-10">
+      <h1 class="text-3xl leading-[1.05] font-black tracking-tight text-balance text-gray-900 sm:text-4xl md:text-5xl">
+        {track.title}
+      </h1>
+      <p class="mt-3 text-lg font-medium text-gray-900 md:text-xl">
+        {track.tagline}
+      </p>
+      <p class="mt-2 max-w-2xl text-base text-gray-600">{track.description}</p>
+      <p class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
+        <span>{library.length} resources</span>
+        <a
+          href={CONTRIBUTING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="decoration-primary inline-flex items-center gap-1.5 font-bold text-gray-900 underline decoration-2 underline-offset-4"
+        >
+          <Icon name="mdi:github" class="size-4" aria-hidden="true" />
+          Suggest a resource
+        </a>
+      </p>
+    </header>
+
+    {track.path.length > 0 && (
+      <section class="mt-10 md:mt-14" aria-labelledby="path-heading">
+        <h2
+          id="path-heading"
+          class="text-2xl font-black tracking-tight text-gray-900 uppercase md:text-3xl"
+        >
+          Learning path
+        </h2>
+        <p class="mt-2 text-sm text-gray-600 md:text-base">
+          Work through these in order. Each step builds on the last.
+        </p>
+        <ol class="path mt-8">
+          {track.path.map((step, i) => (
+            <li class="path__step">
+              <span class="path__marker" aria-hidden="true">
+                {i + 1}
+              </span>
+              <div class="min-w-0 pb-10">
+                <h3 class="text-lg leading-tight font-black text-gray-900 md:text-xl">
+                  <span class="sr-only">Step {i + 1}: </span>
+                  {step.title}
+                </h3>
+                {step.note && (
+                  <p class="mt-1 text-sm text-gray-600 md:text-base">
+                    {step.note}
+                  </p>
+                )}
+                <div class="mt-3 border-t border-gray-200">
+                  {step.resources.map((id) => (
+                    <ResourceRow resource={byId.get(id)!} />
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    <section class="mt-8 md:mt-12" aria-labelledby="library-heading">
+      <h2
+        id="library-heading"
+        class="text-2xl font-black tracking-tight text-gray-900 uppercase md:text-3xl"
+      >
+        Everything in {track.title}
+      </h2>
+
+      <div class="z-10 -mx-4 mt-5 md:sticky md:top-14 border-y border-gray-200 bg-white/95 px-4 backdrop-blur-sm md:mx-0 md:px-0">
+        <label class="flex items-center gap-3 py-2.5">
+          <Search class="size-4 shrink-0 text-gray-500" aria-hidden="true" />
+          <span class="sr-only">Search this track</span>
+          <input
+            id="library-search"
+            type="search"
+            placeholder={`Search ${track.title}…`}
+            autocomplete="off"
+            class="w-full bg-transparent py-1 text-sm font-medium text-gray-900 placeholder:text-gray-500"
+          />
+        </label>
+        <div
+          class="scrollbar-none flex gap-2 overflow-x-auto border-t border-gray-200 py-2.5"
+          role="group"
+          aria-label="Format"
+        >
+          {types.map(({ type, count }) => (
+            <button
+              type="button"
+              class="chip"
+              data-type={type}
+              aria-pressed="false"
+            >
+              {TYPE_LABELS[type][1]}
+              <span class="chip__count">{count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <p id="library-count" class="sr-only" aria-live="polite"></p>
+      <div id="library">
+        {library.map((resource) => (
+          <ResourceRow resource={resource} />
+        ))}
+      </div>
+      <div id="library-empty" class="py-16 text-center" hidden>
+        <p class="text-gray-500">Nothing here matches those filters.</p>
+        <button
+          type="button"
+          id="library-reset"
+          class="mt-4 text-sm font-bold tracking-widest text-gray-900 uppercase underline underline-offset-4"
+        >
+          Reset filters
+        </button>
+      </div>
+    </section>
+
+    <nav
+      class="mt-16 border-t-2 border-gray-900 pt-6"
+      aria-label="Other tracks"
+    >
+      <h2 class="text-sm font-bold tracking-widest text-gray-500 uppercase">
+        Other tracks
+      </h2>
+      <ul class="mt-4 grid gap-x-8 sm:grid-cols-2">
+        {otherTracks.map((t) => (
+          <li>
+            <a
+              href={`/resources/${t.slug}`}
+              class="group flex items-center justify-between gap-3 border-b border-gray-200 py-3 font-bold text-gray-900"
+            >
+              {t.title}
+              <ArrowRight
+                class="size-4 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-gray-900"
+                aria-hidden="true"
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</Layout>
+
+<style>
+  .path__step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1.5rem;
+    }
+
+    &:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      top: 2.25rem;
+      bottom: 0.25rem;
+      left: calc(1rem - 1px);
+      width: 2px;
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--color-gray-300) 0 6px,
+        transparent 6px 10px
+      );
+
+      @media (min-width: 768px) {
+        top: 2.75rem;
+        left: calc(1.25rem - 1px);
+      }
+    }
+  }
+
+  .path__marker {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    @media (min-width: 768px) {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  .chip {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3125rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    cursor: pointer;
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
+  }
+
+  .chip {
+    border: 1px solid var(--color-gray-300);
+
+    &:hover {
+      border-color: var(--color-gray-900);
+    }
+
+    &[aria-pressed="true"] {
+      border-color: var(--color-gray-900);
+      background: var(--color-gray-900);
+      color: white;
+    }
+  }
+
+  .chip__count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+</style>
+
+<script>
+  function initTrackLibrary() {
+    const input = document.getElementById(
+      "library-search",
+    ) as HTMLInputElement | null;
+    const rows = document.querySelectorAll<HTMLElement>(
+      "#library [data-resource]",
+    );
+    const typeChips =
+      document.querySelectorAll<HTMLButtonElement>(".chip[data-type]");
+    const empty = document.getElementById("library-empty");
+    const count = document.getElementById("library-count");
+    if (!input || !rows.length) return;
+
+    const params = new URLSearchParams(location.search);
+    input.value = params.get("q") ?? "";
+    let type = params.get("type") ?? "";
+
+    const apply = () => {
+      const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      rows.forEach((row) => {
+        const d = row.dataset;
+        const match =
+          (!type || d.type === type) &&
+          words.every((w) => d.search?.includes(w));
+        row.hidden = !match;
+        if (match) shown++;
+      });
+      typeChips.forEach((c) =>
+        c.setAttribute("aria-pressed", String(c.dataset.type === type)),
+      );
+      if (empty) empty.hidden = shown > 0;
+      if (count) count.textContent = `${shown} resources shown`;
+
+      const url = new URL(location.href);
+      for (const key of ["q", "type"]) {
+        url.searchParams.delete(key);
+      }
+      if (input.value.trim()) url.searchParams.set("q", input.value.trim());
+      if (type) url.searchParams.set("type", type);
+      history.replaceState(history.state, "", url);
+    };
+
+    input.addEventListener("input", apply);
+    typeChips.forEach((chip) =>
+      chip.addEventListener("click", () => {
+        type = type === chip.dataset.type ? "" : (chip.dataset.type ?? "");
+        apply();
+      }),
+    );
+    document.getElementById("library-reset")?.addEventListener("click", () => {
+      input.value = "";
+      type = "";
+      apply();
+    });
+
+    apply();
+  }
+
+  document.addEventListener("astro:page-load", initTrackLibrary);
+</script>

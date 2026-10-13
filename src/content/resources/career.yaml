@@ -1,0 +1,442 @@
+title: Careers & Interviews
+tagline: Land the internship, then the job.
+description: Resumes, interview prep, job boards and hackathons for students heading into their first tech role. Start early; most of this takes months, not weeks.
+order: 15
+path:
+  - title: Write a one-page resume
+    note: Keep it simple, show projects and impact.
+    resources: [resume-guide]
+  - title: Practise coding problems
+    note: Learn the patterns, not hundreds of random questions.
+    resources: [neetcode, leetcode]
+  - title: Learn system design basics
+    resources: [system-design-primer]
+  - title: Prepare for the whole interview
+    note: Behavioural rounds and negotiation matter too.
+    resources: [tech-interview-handbook]
+  - title: Build and show your work
+    note: Hackathons give you projects, teammates and contacts.
+    resources: [devfolio, mlh]
+resources:
+  - title: Tech Interview Handbook
+    id: tech-interview-handbook
+    link: https://www.techinterviewhandbook.org/
+    description: A free, complete guide to coding interviews, from resumes and prep plans to negotiation.
+    type: guide
+    tags: [interviews, resume]
+  - title: The Tech Resume Inside Out
+    link: https://thetechresume.com/
+    description: Gergely Orosz's guide to writing a developer resume that gets interviews.
+    type: book
+    tags: [resume]
+  - title: Tech Interview Handbook, Resume Guide
+    id: resume-guide
+    link: https://www.techinterviewhandbook.org/resume/
+    description: Practical resume advice for software engineers, with a free template.
+    type: guide
+    tags: [resume]
+  - title: Jake's Resume Template
+    link: https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+    description: The one-page LaTeX resume template most students in tech end up using.
+    type: tool
+    tags: [resume, latex]
+  - title: Overleaf CV Templates
+    link: https://www.overleaf.com/gallery/tagged/cv
+    description: Hundreds of free LaTeX resume and CV templates you can edit in the browser.
+    type: tool
+    tags: [resume, latex]
+  - title: RenderCV
+    link: https://github.com/rendercv/rendercv
+    description: Write your resume in YAML and get a clean, typeset PDF.
+    type: repo
+    tags: [resume, tool]
+  - title: Reactive Resume
+    link: https://rxresu.me/
+    description: A free, open-source, privacy-friendly resume builder.
+    type: tool
+    tags: [resume, open-source]
+  - title: r/EngineeringResumes Wiki
+    link: https://www.reddit.com/r/EngineeringResumes/wiki/index/
+    description: A detailed community guide to engineering resumes, with templates and examples.
+    type: guide
+    tags: [resume, community]
+  - title: NeetCode
+    id: neetcode
+    link: https://neetcode.io/
+    description: The NeetCode 150 list of interview problems, with clear video solutions and a roadmap.
+    type: practice
+    tags: [dsa, interviews]
+  - title: LeetCode
+    id: leetcode
+    link: https://leetcode.com/
+    description: The standard platform for practising coding interview problems.
+    type: practice
+    tags: [dsa, interviews]
+  - title: Grind 75
+    link: https://www.techinterviewhandbook.org/grind75/
+    description: A customisable weekly study plan of the 75 most useful interview questions.
+    type: practice
+    tags: [dsa, interviews]
+  - title: Blind 75
+    link: https://leetcode.com/discuss/post/460599/blind-75-leetcode-questions-by-krishnade-9xev/
+    description: The original famous list of 75 LeetCode questions that cover the key patterns.
+    type: practice
+    tags: [dsa, interviews]
+  - title: Striver's A2Z DSA Sheet
+    link: https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet
+    description: A step-by-step DSA sheet with videos, hugely popular with Indian placement candidates.
+    type: practice
+    tags: [dsa, placements, india]
+  - title: GeeksforGeeks
+    link: https://www.geeksforgeeks.org/
+    description: Articles, practice problems and company-wise interview experiences, widely used for placements.
+    type: guide
+    tags: [dsa, placements, india]
+  - title: InterviewBit
+    link: https://www.interviewbit.com/
+    description: Structured interview prep with timed problems, popular for Indian campus placements.
+    type: practice
+    tags: [dsa, interviews, india]
+  - title: HackerRank
+    link: https://www.hackerrank.com/
+    description: Coding practice in the same format many companies use for online assessments.
+    type: practice
+    tags: [dsa, assessments]
+  - title: Cracking the Coding Interview
+    link: https://www.crackingthecodinginterview.com/
+    description: Gayle Laakmann McDowell's classic book of interview problems and how to approach them.
+    type: book
+    tags: [interviews, dsa]
+  - title: Pramp
+    link: https://www.pramp.com/
+    description: Free peer-to-peer mock interviews with other candidates.
+    type: practice
+    tags: [mock-interviews]
+  - title: interviewing.io
+    link: https://interviewing.io/
+    description: Anonymous mock interviews with engineers, plus a library of recorded real interviews.
+    type: practice
+    tags: [mock-interviews]
+  - title: System Design Primer
+    id: system-design-primer
+    link: https://github.com/donnemartin/system-design-primer
+    description: The most popular free resource for learning to design large-scale systems.
+    type: repo
+    tags: [system-design]
+  - title: ByteByteGo
+    link: https://bytebytego.com/
+    description: Alex Xu's system design guides and diagrams, from the author of System Design Interview.
+    type: course
+    tags: [system-design]
+  - title: ByteByteGo YouTube
+    link: https://www.youtube.com/@ByteByteGo
+    description: Short animated videos explaining how real systems and protocols work.
+    type: video
+    tags: [system-design]
+  - title: Hello Interview System Design
+    link: https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
+    description: A free, well-structured crash course on how system design interviews work.
+    type: guide
+    tags: [system-design, interviews]
+  - title: Gaurav Sen
+    link: https://www.youtube.com/@gkcs
+    description: Clear YouTube explanations of system design concepts by an Indian engineer.
+    type: video
+    tags: [system-design, india]
+  - title: Designing Data-Intensive Applications
+    link: https://dataintensive.net/
+    description: The classic book on databases, replication and distributed systems behind modern apps.
+    type: book
+    tags: [system-design, databases]
+  - title: Awesome System Design Resources
+    link: https://github.com/ashishps1/awesome-system-design-resources
+    description: A curated list of free system design articles, videos and concepts.
+    type: repo
+    tags: [system-design, awesome-list]
+  - title: Awesome Low Level Design
+    link: https://github.com/ashishps1/awesome-low-level-design
+    description: Object-oriented design and design-pattern interview problems with solutions.
+    type: repo
+    tags: [lld, interviews]
+  - title: Refactoring Guru Design Patterns
+    link: https://refactoring.guru/design-patterns
+    description: Illustrated explanations of the classic design patterns, often asked in LLD rounds.
+    type: guide
+    tags: [design-patterns, lld]
+  - title: Tech Interview Handbook, Behavioral Interviews
+    link: https://www.techinterviewhandbook.org/behavioral-interview/
+    description: How to prepare stories and answer behavioural questions using the STAR format.
+    type: guide
+    tags: [behavioral, interviews]
+  - title: The STAR Method
+    link: https://www.themuse.com/advice/star-interview-method
+    description: A short explainer on structuring behavioural answers as situation, task, action, result.
+    type: article
+    tags: [behavioral]
+  - title: Amazon Leadership Principles
+    link: https://www.amazon.jobs/content/en/our-workplace/leadership-principles
+    description: The principles Amazon's behavioural interviews are built around, useful practice for any company.
+    type: article
+    tags: [behavioral]
+  - title: Google Careers, How We Hire
+    link: https://www.google.com/about/careers/applications/how-we-hire/
+    description: Google's own explanation of its hiring process and how to prepare.
+    type: guide
+    tags: [interviews, hiring]
+  - title: Google STEP Internship
+    link: https://buildyourfuture.withgoogle.com/programs/step
+    description: Google's internship for first- and second-year undergraduates.
+    type: community
+    tags: [internships]
+  - title: Microsoft Students and Graduates
+    link: https://careers.microsoft.com/v2/global/en/students
+    description: Microsoft's internships and new-grad roles, including India openings.
+    type: community
+    tags: [internships, jobs]
+  - title: Internshala
+    link: https://internshala.com/
+    description: India's biggest internship portal, with lots of student-friendly and remote roles.
+    type: tool
+    tags: [internships, india]
+  - title: LinkedIn Jobs
+    link: https://www.linkedin.com/jobs/
+    description: The main job board for tech roles, with filters for internships and entry level.
+    type: tool
+    tags: [jobs, internships]
+  - title: Wellfound
+    link: https://wellfound.com/
+    description: Startup jobs and internships with salary info upfront, formerly AngelList Talent.
+    type: tool
+    tags: [jobs, startups]
+  - title: Naukri
+    link: https://www.naukri.com/
+    description: India's largest job site, widely used for fresher and campus hiring.
+    type: tool
+    tags: [jobs, india]
+  - title: Instahyre
+    link: https://www.instahyre.com/
+    description: An Indian hiring platform where companies reach out to candidates directly.
+    type: tool
+    tags: [jobs, india]
+  - title: Cutshort
+    link: https://cutshort.io/
+    description: Indian tech jobs matched to your skills, popular with startups.
+    type: tool
+    tags: [jobs, india, startups]
+  - title: Y Combinator Work at a Startup
+    link: https://www.workatastartup.com/
+    description: Apply to YC-backed startups with one profile, including internships.
+    type: tool
+    tags: [jobs, startups]
+  - title: Simplify New Grad Positions
+    link: https://github.com/SimplifyJobs/New-Grad-Positions
+    description: A frequently updated GitHub list of new-grad software roles.
+    type: repo
+    tags: [jobs, new-grad]
+  - title: Simplify Summer Internships
+    link: https://github.com/SimplifyJobs/Summer2027-Internships
+    description: A community-maintained list of tech internships, updated daily.
+    type: repo
+    tags: [internships]
+  - title: Glassdoor
+    link: https://www.glassdoor.co.in/
+    description: Company reviews, salaries and real interview questions shared by candidates.
+    type: tool
+    tags: [salaries, interviews]
+  - title: AmbitionBox
+    link: https://www.ambitionbox.com/
+    description: Indian company reviews, salaries and interview experiences.
+    type: tool
+    tags: [salaries, india]
+  - title: levels.fyi
+    link: https://www.levels.fyi/
+    description: Verified tech salaries by company and level, including India.
+    type: tool
+    tags: [salaries, negotiation]
+  - title: Ten Rules for Negotiating a Job Offer
+    link: https://haseebq.com/my-ten-rules-for-negotiating-a-job-offer/
+    description: Haseeb Qureshi's widely shared guide to negotiating offers.
+    type: article
+    tags: [negotiation]
+  - title: Devfolio
+    id: devfolio
+    link: https://devfolio.co/
+    description: India's main hackathon platform, hosting events like ETHIndia and college hackathons.
+    type: community
+    tags: [hackathons, india]
+  - title: Major League Hacking
+    id: mlh
+    link: https://www.mlh.com/
+    description: The student hackathon league, with weekend events and global hack weeks all year.
+    type: community
+    tags: [hackathons]
+  - title: Unstop
+    link: https://unstop.com/
+    description: Indian platform for hackathons, coding contests, case competitions and internships.
+    type: community
+    tags: [hackathons, competitions, india]
+  - title: Devpost
+    link: https://devpost.com/
+    description: Find online and in-person hackathons worldwide and showcase what you built.
+    type: community
+    tags: [hackathons, portfolio]
+  - title: Smart India Hackathon
+    link: https://sih.gov.in/
+    description: The national government hackathon where student teams solve real ministry problems.
+    type: community
+    tags: [hackathons, india]
+  - title: GitHub Profile README
+    link: https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme
+    description: Turn your GitHub profile into a mini portfolio with a profile README.
+    type: docs
+    tags: [portfolio, github]
+  - title: GitHub Pages
+    link: https://pages.github.com/
+    description: Host your portfolio site for free straight from a repository.
+    type: tool
+    tags: [portfolio, hosting]
+  - title: Awesome Developer Portfolios
+    link: https://github.com/emmabostian/developer-portfolios
+    description: Hundreds of real developer portfolio sites for inspiration.
+    type: repo
+    tags: [portfolio, inspiration]
+  - title: Awesome GitHub Profile README
+    link: https://github.com/abhisheknaiidu/awesome-github-profile-readme
+    description: A curated list of creative GitHub profile READMEs.
+    type: repo
+    tags: [portfolio, github]
+  - title: LinkedIn Profile Checklist for Students
+    link: https://www.linkedin.com/help/linkedin/answer/a554351
+    description: LinkedIn's own tips for building a profile that recruiters find.
+    type: guide
+    tags: [linkedin, networking]
+  - title: Hashnode
+    link: https://hashnode.com/
+    description: Start a free developer blog on your own domain to show what you're learning.
+    type: tool
+    tags: [blogging, portfolio]
+  - title: The Missing README
+    link: https://nostarch.com/missing-readme
+    description: A guide to the habits and practices new software engineers need in their first job.
+    type: book
+    tags: [first-job, career]
+  - title: The Software Engineer's Guidebook
+    link: https://www.engguidebook.com/
+    description: Gergely Orosz's book on growing as an engineer, from junior to senior.
+    type: book
+    tags: [career, growth]
+  - title: The Pragmatic Engineer Newsletter
+    link: https://newsletter.pragmaticengineer.com/
+    description: The most-read newsletter on big tech, hiring and engineering careers.
+    type: article
+    tags: [newsletter, career]
+  - title: Soft Skills Engineering
+    link: https://softskills.audio/
+    description: A funny weekly podcast answering listener questions about non-technical career problems.
+    type: podcast
+    tags: [podcast, soft-skills]
+  - title: Hacker News Who Is Hiring
+    link: https://news.ycombinator.com/submitted?id=whoishiring
+    description: Monthly threads of job and internship posts from startups worldwide.
+    type: tool
+    tags: [jobs, startups]
+  - title: Codeforces
+    link: https://codeforces.com/
+    description: The top competitive programming platform; a good rating stands out on a resume.
+    type: practice
+    tags: [competitive-programming]
+  - title: CodeChef
+    link: https://www.codechef.com/
+    description: Indian competitive programming platform with monthly contests and learning paths.
+    type: practice
+    tags: [competitive-programming, india]
+  - title: Meta Hacker Cup
+    link: https://www.facebook.com/codingcompetitions/hacker-cup
+    description: Meta's yearly global programming competition.
+    type: practice
+    tags: [competitive-programming]
+  - title: ICPC
+    link: https://icpc.global/
+    description: The oldest and biggest university programming contest, with Indian regionals each year.
+    type: community
+    tags: [competitive-programming]
+  - title: Coding Interview University
+    link: https://github.com/jwasham/coding-interview-university
+    description: A huge self-study plan for becoming a software engineer, one of GitHub's most-starred repos.
+    type: repo
+    tags: [interviews, cs]
+  - title: Awesome Interview Questions
+    link: https://github.com/DopplerHQ/awesome-interview-questions
+    description: Interview questions sorted by language and technology.
+    type: repo
+    tags: [interviews, awesome-list]
+  - title: Front End Interview Handbook
+    link: https://www.frontendinterviewhandbook.com/
+    description: A free guide to front-end interviews covering JavaScript, CSS and UI questions.
+    type: guide
+    tags: [frontend, interviews]
+  - title: DevOps Exercises
+    link: https://github.com/bregman-arie/devops-exercises
+    description: Thousands of DevOps, cloud and Linux interview questions with answers.
+    type: repo
+    tags: [devops, interviews]
+  - title: Machine Learning Interviews
+    link: https://github.com/alirezadir/AIMLInterviews
+    description: A guide to preparing for ML engineer and research interviews.
+    type: repo
+    tags: [machine-learning, interviews]
+  - title: SQL Interview Questions on DataLemur
+    link: https://datalemur.com/
+    description: Real SQL and data interview questions from tech companies, many free.
+    type: practice
+    tags: [sql, data, interviews]
+  - title: IndiaBix
+    link: https://www.indiabix.com/
+    description: Free aptitude, reasoning and verbal practice for campus placement tests.
+    type: practice
+    tags: [aptitude, placements, india]
+  - title: PrepInsta
+    link: https://prepinsta.com/
+    description: Company-specific placement papers and aptitude prep for Indian campus drives.
+    type: practice
+    tags: [aptitude, placements, india]
+  - title: TCS NQT
+    link: https://www.tcsion.com/hub/national-qualifier-test/
+    description: TCS's National Qualifier Test, used by many Indian companies for fresher hiring.
+    type: practice
+    tags: [placements, india, assessments]
+  - title: Google Career Certificates
+    link: https://grow.google/certificates/
+    description: Job-focused certificate programs in IT support, data, UX and more.
+    type: course
+    tags: [certifications]
+  - title: Hacker News, Ask HN Career Threads
+    link: https://hn.algolia.com/?q=ask+hn+career
+    description: Searchable advice threads from experienced engineers on careers and job hunting.
+    type: community
+    tags: [career, advice]
+  - title: r/cscareerquestions
+    link: https://www.reddit.com/r/cscareerquestions/
+    description: The largest community for software career questions, from internships to offers.
+    type: community
+    tags: [career, community]
+  - title: r/developersIndia
+    link: https://www.reddit.com/r/developersIndia/
+    description: India's largest developer subreddit, full of job hunt, salary and placement discussions.
+    type: community
+    tags: [career, india, community]
+  - title: Clément Mihailescu Interview Tips
+    link: https://www.youtube.com/@clem
+    description: A former Google engineer's YouTube channel with mock interviews and career advice.
+    type: video
+    tags: [interviews]
+  - title: take U forward
+    link: https://www.youtube.com/@takeUforward
+    description: Striver's YouTube channel with DSA playlists and placement prep for Indian students.
+    type: video
+    tags: [dsa, placements, india]
+  - title: LeetCode Discuss, Interview Experiences
+    link: https://leetcode.com/discuss/interview-experience
+    description: Thousands of first-hand interview write-ups, filterable by company.
+    type: community
+    tags: [interviews, experiences]

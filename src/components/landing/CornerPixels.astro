@@ -94,10 +94,40 @@ const blocks: [number, number, number][] = [
     }
   }
 
-  /* Same cells as TopPixels: 20px on phones, 40px from md up */
+  /* Same cells, width and fade as TopPixels: 20px on phones, 40px from md up.
+     Half the page each, so the two corners never overlap */
   .section-decor--page {
     --cell: 20px;
+    width: 50%;
     height: calc(var(--cell) * 14);
+  }
+
+  .section-decor--page.section-decor--bl {
+    mask-image:
+      radial-gradient(
+        ellipse 140% 100% at left bottom,
+        #000 35%,
+        transparent 85%
+      ),
+      linear-gradient(
+        to top,
+        #000 calc(var(--cell) * 2),
+        transparent calc(var(--cell) * 4)
+      );
+  }
+
+  .section-decor--page.section-decor--br {
+    mask-image:
+      radial-gradient(
+        ellipse 140% 100% at right bottom,
+        #000 35%,
+        transparent 85%
+      ),
+      linear-gradient(
+        to top,
+        #000 calc(var(--cell) * 2),
+        transparent calc(var(--cell) * 4)
+      );
   }
 
   @media (min-width: 768px) {

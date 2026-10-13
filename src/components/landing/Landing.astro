@@ -12,7 +12,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
 
   <section
     id="hero-section"
-    class="pointer-events-none fixed inset-0 z-50 flex h-dvh w-full flex-col items-center justify-center overflow-hidden"
+    class="pointer-events-none fixed inset-0 z-50 flex h-lvh w-full flex-col items-center justify-center overflow-hidden"
   >
     <div id="landing-bg" class="absolute inset-0 -z-10 bg-white"></div>
 
@@ -66,7 +66,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
 
     <div
       id="scroll-cue"
-      class="text-foreground/60 absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-xs font-bold tracking-[0.3em] transition-opacity duration-300"
+      class="text-foreground/60 fixed bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 font-mono text-xs font-bold tracking-[0.3em] transition-opacity duration-300"
       aria-hidden="true"
     >
       <span>SCROLL</span>
@@ -99,6 +99,11 @@ import HeroImg from "../../assets/sosc_hero.svg";
       }
 
       let blocks: Block[] = [];
+      let builtWidth = 0;
+
+      // The spacer is 200vh, and vh is the large viewport on phones: a height
+      // that stays put while the browser's URL bar slides in and out
+      const viewHeight = () => spacer!.offsetHeight / 2;
 
       function initGrid() {
         if (!container) return;
@@ -106,7 +111,8 @@ import HeroImg from "../../assets/sosc_hero.svg";
         blocks = [];
 
         const w = window.innerWidth;
-        const h = window.innerHeight;
+        const h = viewHeight();
+        builtWidth = w;
 
         // Responsive block sizing
         BLOCK_SIZE = w < 768 ? 40 : 50;
@@ -146,7 +152,7 @@ import HeroImg from "../../assets/sosc_hero.svg";
         if (!spacer || !blocks.length) return;
 
         const rect = spacer.getBoundingClientRect();
-        const h = window.innerHeight;
+        const h = viewHeight();
         const rows = Math.floor(h / BLOCK_SIZE);
 
         const totalScrollable = rect.height - h; // 200vh - 100vh = 100vh of scrollable area
@@ -254,12 +260,17 @@ import HeroImg from "../../assets/sosc_hero.svg";
         });
       }
 
-      window.addEventListener("resize", initGrid);
+      // Height-only resizes are the mobile URL bar; the grid already covers it
+      const onResize = () => {
+        if (window.innerWidth !== builtWidth) initGrid();
+      };
+
+      window.addEventListener("resize", onResize);
       window.addEventListener("scroll", updateBlocks);
       initGrid();
 
       return () => {
-        window.removeEventListener("resize", initGrid);
+        window.removeEventListener("resize", onResize);
         window.removeEventListener("scroll", updateBlocks);
       };
     }

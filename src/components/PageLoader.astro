@@ -75,8 +75,10 @@ const paths = [
 
   const loader = () => document.getElementById("page-loader");
 
-  // Shows on every navigation, so the logo always draws, fills and fades
-  const show = () => {
+  // Only navbar links get the loader; detail pages and back/forward swap straight in
+  const show = (e: Event) => {
+    const source = (e as Event & { sourceElement?: Element }).sourceElement;
+    if (!source?.closest("#main-navbar")) return;
     clearTimeout(hideTimer);
     const el = loader();
     if (!el) return;

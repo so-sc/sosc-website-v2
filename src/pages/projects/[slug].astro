@@ -53,9 +53,9 @@ const statusLabels: Record<string, string> = {
   description={description}
   image={project.data.cover?.src}
 >
-  <div class="mx-auto max-w-4xl px-4 pt-28 pb-20 md:px-8">
+  <div class="mx-auto max-w-3xl px-4 pt-24 pb-16 md:px-8 md:pt-28 md:pb-20">
     <!-- Top Back Button -->
-    <div class="mb-8">
+    <div class="mb-6 md:mb-8">
       <a
         href="/projects"
         class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
@@ -69,22 +69,53 @@ const statusLabels: Record<string, string> = {
     </div>
 
     <!-- Project Header -->
-    <div class="mb-10 border-b border-gray-100 pb-10">
-      <!-- Maintainers & Meta Row -->
-      <div class="mb-6 flex flex-wrap items-center gap-4">
-        <div class="flex items-center">
+    <div class="mb-8 border-b border-gray-100 pb-8 md:mb-10 md:pb-10">
+      <div class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">
+        <span class="flex items-center gap-2">
+          <span class="bg-primary size-2" aria-hidden="true"></span>
+          Project
+        </span>
+        <span class="text-gray-300" aria-hidden="true">
+          /
+        </span>
+        <span>{category}</span>
+        <span
+          class:list={[
+            "px-2 py-0.5 tracking-wider",
+            status === "active" && "bg-green-50 text-green-700",
+            status === "maintained" && "bg-blue-50 text-blue-700",
+            status === "archived" && "bg-gray-100 text-gray-600",
+            status === "completed" && "bg-yellow-50 text-yellow-700",
+            status === "in-progress" && "bg-orange-50 text-orange-700",
+          ]}
+        >
+          {statusLabels[status]}
+        </span>
+      </div>
+
+      <h1 class="text-3xl leading-[1.1] font-black tracking-tight text-balance text-gray-900 sm:text-4xl md:text-5xl">
+        {title}
+      </h1>
+
+      <p class="mt-3 text-base leading-relaxed text-gray-600 md:mt-4 md:text-lg">
+        {description}
+      </p>
+
+      <!-- Maintainers & Date -->
+      <div class="mt-5 flex items-center gap-3 md:mt-6">
+        <div class="flex shrink-0 items-center">
           {maintainers.slice(0, 3).map((maintainer, i) => (
             <a
               href={`https://github.com/${maintainer}`}
               target="_blank"
               rel="noopener noreferrer"
               class="group relative"
-              style={i > 0 ? "margin-left: -0.75rem;" : ""}
+              style={i > 0 ? "margin-left: -0.625rem;" : ""}
             >
               <img
                 src={`https://github.com/${maintainer}.png`}
                 alt={maintainer}
-                class="h-12 w-12 rounded-full border-2 border-white bg-gray-50 transition-transform group-hover:z-10 group-hover:scale-105"
+                class="size-9 rounded-full border-2 border-white bg-gray-50 transition-transform group-hover:z-10 group-hover:scale-105 md:size-10"
                 loading="eager"
                 decoding="async"
                 onerror="this.onerror=null; this.src='/github_avatar.svg';"
@@ -93,21 +124,22 @@ const statusLabels: Record<string, string> = {
           ))}
           {maintainers.length > 3 && (
             <span
-              class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-xs font-medium text-gray-500"
-              style="margin-left: -0.75rem;"
+              class="flex size-9 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-xs font-medium text-gray-500 md:size-10"
+              style="margin-left: -0.625rem;"
             >
               +{maintainers.length - 3}
             </span>
           )}
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-2">
+        <div class="flex min-w-0 flex-col text-sm leading-snug">
+          <div class="flex flex-wrap items-center gap-x-2">
             {maintainers.slice(0, 2).map((maintainer, i) => (
               <>
                 <a
                   href={`https://github.com/${maintainer}`}
                   target="_blank"
-                  class="hover:text-primary-ink text-sm font-bold text-gray-900 transition-colors"
+                  rel="noopener noreferrer"
+                  class="hover:text-primary-ink truncate font-bold text-gray-900 transition-colors"
                 >
                   @{maintainer}
                 </a>
@@ -122,53 +154,29 @@ const statusLabels: Record<string, string> = {
               </span>
             )}
           </div>
-          <span class="text-xs text-gray-500 italic">Maintainers</span>
-        </div>
-        <div class="ml-auto flex flex-wrap items-center gap-3 text-xs text-gray-500">
-          <span class="font-medium">{formattedDate}</span>
-          <span class="text-gray-200">|</span>
-          <span class="decoration-primary/30 underline underline-offset-2">
-            {category}
-          </span>
-          <span
-            class:list={[
-              "rounded-full px-2 py-0.5 text-xs font-bold tracking-wider uppercase",
-              status === "active" && "bg-green-50 text-green-600",
-              status === "maintained" && "bg-blue-50 text-blue-600",
-              status === "archived" && "bg-gray-100 text-gray-500",
-              status === "completed" && "bg-yellow-50 text-yellow-600",
-              status === "in-progress" && "bg-orange-50 text-orange-600",
-            ]}
-          >
-            {statusLabels[status]}
+          <span class="text-xs text-gray-500">
+            Maintainers ·{" "}
+            <time datetime={new Date(date).toISOString()}>{formattedDate}</time>
           </span>
         </div>
       </div>
 
-      <!-- Title -->
-      <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
-        {title}
-      </h1>
-
-      <!-- Description -->
-      <p class="mt-4 text-lg text-gray-500">{description}</p>
-
       <!-- Tech Stack & Tags -->
-      <div class="mt-6 flex flex-wrap gap-2">
+      <div class="mt-5 flex flex-wrap gap-1.5 md:mt-6 md:gap-2">
         {techStack.map((tech) => (
-          <span class="hover:border-primary hover:text-primary-ink border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition-colors">
+          <span class="hover:border-primary hover:text-primary-ink border border-gray-200 bg-white px-2.5 py-1 text-xs font-medium text-gray-600 transition-colors">
             {tech}
           </span>
         ))}
         {tags.map((tag) => (
-          <span class="bg-primary/10 text-primary-ink px-3 py-1 text-xs font-medium">
-            {tag}
+          <span class="bg-primary/10 px-2.5 py-1 text-xs font-medium text-gray-700">
+            #{tag}
           </span>
         ))}
       </div>
 
       <!-- Action Links -->
-      <div class="mt-6 flex flex-wrap items-center gap-4">
+      <div class="mt-5 flex flex-wrap items-center gap-3 md:mt-6 md:gap-4">
         {github && (
           <a
             href={github}
@@ -207,7 +215,7 @@ const statusLabels: Record<string, string> = {
 
     <!-- Project Cover -->
     {cover && (
-      <div class="mb-12 overflow-hidden bg-gray-50">
+      <div class="mb-8 overflow-hidden bg-gray-50 md:mb-12">
         <Image
           src={cover}
           alt={title}
@@ -221,13 +229,11 @@ const statusLabels: Record<string, string> = {
 
     <!-- Project Markdown Content -->
     <MarkdownLayout>
-      <div class="prose-sosc">
-        <Content />
-      </div>
+      <Content />
     </MarkdownLayout>
 
     <!-- Back to Projects Link -->
-    <div class="mt-16 border-t border-gray-100 pt-8">
+    <div class="mt-12 border-t border-gray-100 pt-6 md:mt-16 md:pt-8">
       <a
         href="/projects"
         class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"

@@ -30,9 +30,9 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
   description={`${name}, hosted by SOSC on ${formattedDate} at ${location}.`}
   image={cover?.src}
 >
-  <div class="mx-auto max-w-4xl px-4 pt-28 pb-20 md:px-8">
+  <div class="mx-auto max-w-3xl px-4 pt-24 pb-16 md:px-8 md:pt-28 md:pb-20">
     <!-- Top Back Button -->
-    <div class="mb-8">
+    <div class="mb-6 md:mb-8">
       <a
         href="/events"
         class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"
@@ -46,11 +46,15 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
     </div>
 
     <!-- Event Header -->
-    <div class="mb-10 border-b border-gray-100 pb-10">
-      <h1 class="text-4xl leading-tight font-black text-gray-900 md:text-6xl">
+    <div class="mb-8 border-b border-gray-100 pb-8 md:mb-10 md:pb-10">
+      <p class="mb-3 flex items-center gap-2 font-mono text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">
+        <span class="bg-primary size-2" aria-hidden="true"></span>
+        Event
+      </p>
+      <h1 class="text-3xl leading-[1.1] font-black tracking-tight text-balance text-gray-900 sm:text-4xl md:text-5xl">
         {name}
       </h1>
-      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-gray-500">
+      <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-gray-500 md:mt-6">
         <span class="inline-flex items-center gap-2">
           <Icon
             name="mdi:calendar-blank-outline"
@@ -72,7 +76,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
     <!-- Event Cover -->
     {cover && (
-      <div class="mb-12 overflow-hidden bg-gray-50">
+      <div class="mb-8 overflow-hidden bg-gray-50 md:mb-12">
         <Image
           src={cover}
           alt={name}
@@ -86,13 +90,11 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", {
 
     <!-- Markdown Content -->
     <MarkdownLayout>
-      <div class="prose-sosc">
-        <Content />
-      </div>
+      <Content />
     </MarkdownLayout>
 
     <!-- Back to Events Link -->
-    <div class="mt-16 border-t border-gray-200 pt-8">
+    <div class="mt-12 border-t border-gray-200 pt-6 md:mt-16 md:pt-8">
       <a
         href="/events"
         class="group hover:text-primary-ink inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 uppercase transition-colors"

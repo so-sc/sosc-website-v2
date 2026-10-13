@@ -1,0 +1,611 @@
+title: Web Development
+tagline: Build sites and apps that run in the browser.
+description: From your first HTML page to full-stack apps. Front end, back end and the frameworks in between.
+order: 2
+path:
+  - title: HTML and CSS
+    note: Structure and style. Make layouts click with a game.
+    resources: [mdn-learn, flexbox-froggy]
+  - title: JavaScript
+    resources: [javascript-info]
+  - title: Build real projects
+    note: Guided projects that leave you with a portfolio.
+    resources: [odin-project]
+  - title: A framework
+    resources: [react-docs, astro-docs]
+  - title: Go full stack
+    resources: [full-stack-open, nodejs-learn]
+resources:
+  - title: MDN Learn Web Development
+    id: mdn-learn
+    link: https://developer.mozilla.org/en-US/docs/Learn_web_development
+    description: Mozilla's structured course on HTML, CSS and JavaScript, from zero.
+    type: course
+    tags: [html, css, javascript]
+  - title: Flexbox Froggy
+    id: flexbox-froggy
+    link: https://flexboxfroggy.com/
+    description: A tiny game that teaches CSS flexbox in 24 levels.
+    type: practice
+    tags: [css]
+  - title: A Complete Guide to Flexbox
+    link: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    description: The visual reference for every flexbox property.
+    type: cheatsheet
+    tags: [css]
+  - title: The Modern JavaScript Tutorial
+    id: javascript-info
+    link: https://javascript.info/
+    description: A thorough, well-written JavaScript tutorial, from basics to advanced topics.
+    type: guide
+    tags: [javascript]
+  - title: The Odin Project
+    id: odin-project
+    link: https://www.theodinproject.com/
+    description: A free full-stack curriculum where you learn by building projects.
+    type: course
+    tags: [full-stack, projects]
+  - title: React
+    id: react-docs
+    link: https://react.dev/learn
+    description: The official React docs, with an interactive tutorial for thinking in components.
+    type: docs
+    tags: [react, javascript]
+  - title: Astro
+    id: astro-docs
+    link: https://docs.astro.build/
+    description: The framework this website is built with. Great for content sites.
+    type: docs
+    tags: [astro]
+  - title: Full Stack Open
+    id: full-stack-open
+    link: https://fullstackopen.com/en/
+    description: University of Helsinki's course on React, Node, GraphQL, TypeScript and testing.
+    type: course
+    tags: [react, node, full-stack]
+  - title: Node.js Learn
+    id: nodejs-learn
+    link: https://nodejs.org/en/learn
+    description: The official guides to running JavaScript on the server.
+    type: docs
+    tags: [node, backend]
+  - title: web.dev Learn
+    link: https://web.dev/learn
+    description: Google's in-depth courses on CSS, accessibility, performance and more.
+    type: course
+    tags: [css, performance, accessibility]
+  - title: Frontend Developer Roadmap
+    link: https://roadmap.sh/frontend
+    description: Everything a front-end developer can learn, in a sensible order.
+    type: roadmap
+    tags: [frontend]
+  - title: Backend Developer Roadmap
+    link: https://roadmap.sh/backend
+    description: The step-by-step map for servers, APIs and databases.
+    type: roadmap
+    tags: [backend]
+  - title: Can I use
+    link: https://caniuse.com/
+    description: Check which browsers support a web feature before you use it.
+    type: tool
+    tags: [browsers]
+  - title: MDN Web Docs
+    link: https://developer.mozilla.org/en-US/
+    description: The reference for HTML, CSS, JavaScript and every Web API, maintained by Mozilla.
+    type: docs
+    tags: [html, css, javascript]
+  - title: freeCodeCamp
+    link: https://www.freecodecamp.org/learn/
+    description: A free, project-based curriculum with certifications in web design, JavaScript and back end.
+    type: course
+    tags: [html, css, javascript, beginner-friendly]
+  - title: CS50's Web Programming with Python and JavaScript
+    link: https://cs50.harvard.edu/web/
+    description: Harvard's free course on Django, JavaScript, SQL and building real web apps.
+    type: course
+    tags: [django, python, javascript]
+  - title: Eloquent JavaScript
+    link: https://eloquentjavascript.net/
+    description: A free classic book that teaches programming through JavaScript, with exercises.
+    type: book
+    tags: [javascript]
+  - title: You Don't Know JS Yet
+    link: https://github.com/getify/You-Dont-Know-JS
+    description: Kyle Simpson's free book series that digs into how JavaScript really works.
+    type: book
+    tags: [javascript]
+  - title: JavaScript30
+    link: https://javascript30.com/
+    description: Build 30 small things in 30 days with vanilla JavaScript, no frameworks.
+    type: course
+    tags: [javascript, projects]
+  - title: TypeScript Handbook
+    link: https://www.typescriptlang.org/docs/handbook/intro.html
+    description: The official guide to TypeScript's type system, from basics to advanced types.
+    type: docs
+    tags: [typescript]
+  - title: Total TypeScript Tutorials
+    link: https://www.totaltypescript.com/tutorials
+    description: Free interactive TypeScript exercises by Matt Pocock, from beginner to wizard.
+    type: course
+    tags: [typescript]
+  - title: Type Challenges
+    link: https://github.com/type-challenges/type-challenges
+    description: Puzzles that sharpen your understanding of TypeScript's type system.
+    type: practice
+    tags: [typescript]
+  - title: CSS Grid Garden
+    link: https://cssgridgarden.com/
+    description: A game for learning CSS grid by watering your carrot garden.
+    type: practice
+    tags: [css, grid]
+  - title: A Complete Guide to CSS Grid
+    link: https://css-tricks.com/complete-guide-css-grid-layout/
+    description: The visual reference for every CSS grid property.
+    type: cheatsheet
+    tags: [css, grid]
+  - title: Kevin Powell
+    link: https://www.youtube.com/@KevinPowell
+    description: A YouTube channel that makes CSS finally make sense, with layout tips and tutorials.
+    type: video
+    tags: [css]
+  - title: Frontend Mentor
+    link: https://www.frontendmentor.io/
+    description: Build real front-end projects from professional designs and get community feedback.
+    type: practice
+    tags: [frontend, projects, css]
+  - title: CSSBattle
+    link: https://cssbattle.dev/
+    description: Recreate target images with the smallest CSS possible, a fun way to sharpen skills.
+    type: practice
+    tags: [css]
+  - title: Web Dev Simplified
+    link: https://www.youtube.com/@WebDevSimplified
+    description: Clear YouTube tutorials on JavaScript, React, CSS and web concepts.
+    type: video
+    tags: [javascript, react, css]
+  - title: Fireship
+    link: https://www.youtube.com/@Fireship
+    description: Fast, fun videos explaining web tech, frameworks and tools in 100 seconds and more.
+    type: video
+    tags: [javascript, frameworks]
+  - title: Traversy Media
+    link: https://www.youtube.com/@TraversyMedia
+    description: Long-running YouTube channel with crash courses on nearly every web technology.
+    type: video
+    tags: [javascript, full-stack]
+  - title: Net Ninja
+    link: https://www.youtube.com/@NetNinja
+    description: Bite-sized YouTube playlists on JavaScript, React, Vue, Node, Firebase and more.
+    type: video
+    tags: [javascript, react, node]
+  - title: Vue.js
+    link: https://vuejs.org/guide/introduction.html
+    description: The official Vue guide, an approachable framework for building user interfaces.
+    type: docs
+    tags: [vue, javascript]
+  - title: Svelte Tutorial
+    link: https://svelte.dev/tutorial
+    description: Svelte's interactive in-browser tutorial covering Svelte and SvelteKit.
+    type: course
+    tags: [svelte, javascript]
+  - title: Angular
+    link: https://angular.dev/
+    description: The official Angular docs and tutorials for Google's full-featured framework.
+    type: docs
+    tags: [angular, typescript]
+  - title: Next.js Learn
+    link: https://nextjs.org/learn
+    description: The official free course for building a full-stack app with Next.js and React.
+    type: course
+    tags: [nextjs, react]
+  - title: Next.js Docs
+    link: https://nextjs.org/docs
+    description: Reference docs for routing, data fetching and rendering in Next.js.
+    type: docs
+    tags: [nextjs, react]
+  - title: Nuxt
+    link: https://nuxt.com/docs
+    description: Docs for Nuxt, the full-stack framework built on Vue.
+    type: docs
+    tags: [nuxt, vue]
+  - title: React Router
+    link: https://reactrouter.com/
+    description: Docs for React Router, the routing library and framework for React apps.
+    type: docs
+    tags: [react, routing]
+  - title: Solid
+    link: https://www.solidjs.com/
+    description: A fast, reactive UI library with a JSX syntax and an interactive tutorial.
+    type: docs
+    tags: [solid, javascript]
+  - title: Tailwind CSS
+    link: https://tailwindcss.com/docs
+    description: Docs for the utility-first CSS framework used across modern web projects.
+    type: docs
+    tags: [css, tailwind]
+  - title: Bootstrap
+    link: https://getbootstrap.com/
+    description: The classic CSS framework for responsive layouts and ready-made components.
+    type: docs
+    tags: [css, bootstrap]
+  - title: shadcn/ui
+    link: https://ui.shadcn.com/
+    description: Beautiful, accessible React components you copy into your project and own.
+    type: tool
+    tags: [react, tailwind, components]
+  - title: Express
+    link: https://expressjs.com/
+    description: The minimal, classic web framework for Node.js servers and APIs.
+    type: docs
+    tags: [express, node, backend]
+  - title: Fastify
+    link: https://fastify.dev/
+    description: A fast, low-overhead web framework for Node.js.
+    type: docs
+    tags: [node, backend]
+  - title: Django Tutorial
+    link: https://docs.djangoproject.com/en/stable/intro/tutorial01/
+    description: Django's official tutorial that walks you through building a polls app.
+    type: docs
+    tags: [django, python, backend]
+  - title: Django Girls Tutorial
+    link: https://tutorial.djangogirls.org/en/
+    description: A friendly beginner tutorial that builds a blog with Python and Django.
+    type: guide
+    tags: [django, python, beginner-friendly]
+  - title: Flask
+    link: https://flask.palletsprojects.com/
+    description: Docs for Flask, the lightweight Python web framework.
+    type: docs
+    tags: [flask, python, backend]
+  - title: The Flask Mega-Tutorial
+    link: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+    description: Miguel Grinberg's long-running series that builds a full Flask app step by step.
+    type: guide
+    tags: [flask, python]
+  - title: FastAPI
+    link: https://fastapi.tiangolo.com/
+    description: Docs and tutorial for FastAPI, a modern Python framework for building APIs.
+    type: docs
+    tags: [fastapi, python, api]
+  - title: Spring Guides
+    link: https://spring.io/guides
+    description: Short official guides for building web apps and APIs with Spring Boot in Java.
+    type: guide
+    tags: [spring, java, backend]
+  - title: Go by Example
+    link: https://gobyexample.com/
+    description: Learn Go through short, annotated example programs.
+    type: guide
+    tags: [go, backend]
+  - title: Let's Go
+    link: https://lets-go.alexedwards.net/
+    description: A well-loved book on building production web apps in Go.
+    type: book
+    tags: [go, backend]
+  - title: Laravel
+    link: https://laravel.com/docs
+    description: Docs for Laravel, the popular PHP framework for full-stack web apps.
+    type: docs
+    tags: [php, laravel, backend]
+  - title: Ruby on Rails Guides
+    link: https://guides.rubyonrails.org/
+    description: Official guides for building web apps with Ruby on Rails.
+    type: docs
+    tags: [ruby, rails, backend]
+  - title: SQLBolt
+    link: https://sqlbolt.com/
+    description: Interactive lessons that teach SQL right in your browser.
+    type: practice
+    tags: [sql, databases]
+  - title: PostgreSQL Tutorial
+    link: https://neon.com/postgresql/tutorial
+    description: Step-by-step PostgreSQL tutorials with practical examples.
+    type: guide
+    tags: [postgresql, sql, databases]
+  - title: MongoDB University
+    link: https://learn.mongodb.com/
+    description: Free official courses on MongoDB and document databases.
+    type: course
+    tags: [mongodb, databases]
+  - title: Prisma
+    link: https://www.prisma.io/docs
+    description: Docs for Prisma, a type-safe ORM for Node.js and TypeScript.
+    type: docs
+    tags: [orm, typescript, databases]
+  - title: Drizzle ORM
+    link: https://orm.drizzle.team/
+    description: A lightweight TypeScript ORM that stays close to SQL.
+    type: docs
+    tags: [orm, typescript, sql]
+  - title: Supabase
+    link: https://supabase.com/docs
+    description: An open-source Postgres backend with auth, storage and realtime built in.
+    type: docs
+    tags: [postgresql, backend, auth]
+  - title: GraphQL
+    link: https://graphql.org/learn/
+    description: The official introduction to GraphQL queries, schemas and servers.
+    type: docs
+    tags: [graphql, api]
+  - title: How to GraphQL
+    link: https://www.howtographql.com/
+    description: A free full-stack tutorial for learning GraphQL from basics to production.
+    type: course
+    tags: [graphql, api]
+  - title: Microsoft REST API Guidelines
+    link: https://github.com/microsoft/api-guidelines
+    description: Microsoft's widely cited guidelines for designing clean, consistent REST APIs.
+    type: guide
+    tags: [api, rest]
+  - title: Postman
+    link: https://www.postman.com/
+    description: A tool for building, testing and documenting HTTP APIs.
+    type: tool
+    tags: [api, testing]
+  - title: Public APIs
+    link: https://github.com/public-apis/public-apis
+    description: A huge list of free APIs to use in your side projects.
+    type: repo
+    tags: [api, projects]
+  - title: JSONPlaceholder
+    link: https://jsonplaceholder.typicode.com/
+    description: A free fake REST API for prototyping and practising fetch requests.
+    type: tool
+    tags: [api, javascript]
+  - title: OWASP Top Ten
+    link: https://owasp.org/projects/top-ten
+    description: The most critical web application security risks every developer should know.
+    type: guide
+    tags: [security, web]
+  - title: OWASP Cheat Sheet Series
+    link: https://cheatsheetseries.owasp.org/
+    description: Concise, practical security guidance on auth, sessions, input validation and more.
+    type: cheatsheet
+    tags: [security, auth]
+  - title: Auth.js
+    link: https://authjs.dev/
+    description: Open-source authentication for Next.js and other web frameworks.
+    type: docs
+    tags: [auth, nextjs]
+  - title: JWT.io
+    link: https://jwt.io/
+    description: Decode, verify and learn about JSON Web Tokens.
+    type: tool
+    tags: [auth, jwt]
+  - title: Vitest
+    link: https://vitest.dev/
+    description: A fast unit testing framework powered by Vite.
+    type: docs
+    tags: [testing, javascript]
+  - title: Jest
+    link: https://jestjs.io/
+    description: The popular JavaScript testing framework with a simple API.
+    type: docs
+    tags: [testing, javascript]
+  - title: Playwright
+    link: https://playwright.dev/
+    description: End-to-end testing across Chromium, Firefox and WebKit.
+    type: docs
+    tags: [testing, e2e]
+  - title: Testing Library
+    link: https://testing-library.com/
+    description: Test UI components the way users actually use them.
+    type: docs
+    tags: [testing, react]
+  - title: Vite
+    link: https://vite.dev/
+    description: The fast dev server and build tool behind most modern front-end projects.
+    type: tool
+    tags: [tooling, javascript]
+  - title: Chrome DevTools
+    link: https://developer.chrome.com/docs/devtools
+    description: Official docs for debugging, profiling and inspecting pages in Chrome.
+    type: docs
+    tags: [debugging, tooling]
+  - title: PageSpeed Insights
+    link: https://pagespeed.web.dev/
+    description: Measure your site's performance and Core Web Vitals and get fixes.
+    type: tool
+    tags: [performance]
+  - title: The A11Y Project
+    link: https://www.a11yproject.com/
+    description: A community-driven checklist and guides for making accessible websites.
+    type: guide
+    tags: [accessibility]
+  - title: WAI Web Accessibility Tutorials
+    link: https://www.w3.org/WAI/tutorials/
+    description: W3C's tutorials on accessible page structure, menus, images, tables and forms.
+    type: guide
+    tags: [accessibility]
+  - title: Vercel
+    link: https://vercel.com/docs
+    description: Deploy front-end and full-stack apps from a Git repo in minutes.
+    type: docs
+    tags: [deployment, hosting]
+  - title: Netlify
+    link: https://docs.netlify.com/
+    description: Host static sites and serverless functions with free Git-based deploys.
+    type: docs
+    tags: [deployment, hosting]
+  - title: GitHub Pages
+    link: https://pages.github.com/
+    description: Free hosting for static websites straight from a GitHub repo.
+    type: docs
+    tags: [deployment, hosting, github]
+  - title: Cloudflare Pages
+    link: https://www.cloudflare.com/products/pages/
+    description: Free, fast static and full-stack hosting on Cloudflare's network.
+    type: docs
+    tags: [deployment, hosting]
+  - title: Full-Stack Developer Roadmap
+    link: https://roadmap.sh/full-stack
+    description: A step-by-step map for becoming a full-stack developer.
+    type: roadmap
+    tags: [full-stack]
+  - title: JavaScript Roadmap
+    link: https://roadmap.sh/javascript
+    description: Every JavaScript concept to learn, laid out in order.
+    type: roadmap
+    tags: [javascript]
+  - title: React Roadmap
+    link: https://roadmap.sh/react
+    description: What to learn in the React ecosystem, step by step.
+    type: roadmap
+    tags: [react]
+  - title: App Ideas
+    link: https://github.com/florinpop17/app-ideas
+    description: A collection of project ideas sorted by difficulty to build your portfolio.
+    type: repo
+    tags: [projects]
+  - title: Awesome Lists
+    link: https://github.com/sindresorhus/awesome
+    description: The original awesome list, linking curated lists for nearly every web topic.
+    type: repo
+    tags: [awesome-list]
+  - title: Build Your Own X
+    link: https://github.com/codecrafters-io/build-your-own-x
+    description: Tutorials for rebuilding technologies from scratch, from web servers to frameworks.
+    type: repo
+    tags: [projects]
+  - title: Patterns.dev
+    link: https://www.patterns.dev/
+    description: Free book on design, rendering and performance patterns for modern web apps.
+    type: book
+    tags: [javascript, react, performance]
+  - title: Web Almanac
+    link: https://almanac.httparchive.org/
+    description: HTTP Archive's yearly report on the state of the web.
+    type: article
+    tags: [performance, web]
+  - title: JavaScript Weekly
+    link: https://javascriptweekly.com/
+    description: A popular weekly newsletter rounding up JavaScript news and articles.
+    type: article
+    tags: [javascript, newsletter]
+  - title: Syntax
+    link: https://syntax.fm/
+    description: A long-running podcast on web development by Wes Bos and Scott Tolinski.
+    type: podcast
+    tags: [javascript, web]
+  - title: dev.to
+    link: https://dev.to/
+    description: A large community of developers writing about web dev and more.
+    type: community
+    tags: [community]
+  - title: Reactiflux
+    link: https://www.reactiflux.com/
+    description: A big Discord community for React and JavaScript developers.
+    type: community
+    tags: [react, community]
+  - title: Exercism JavaScript Track
+    link: https://exercism.org/tracks/javascript
+    description: Free JavaScript exercises with optional human mentoring.
+    type: practice
+    tags: [javascript]
+  - title: HTTP Cats
+    link: https://http.cat/
+    description: A fun visual reference for every HTTP status code.
+    type: cheatsheet
+    tags: [http]
+  - title: HTTP Overview
+    link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+    description: MDN's guide to how HTTP requests, responses and headers work.
+    type: docs
+    tags: [http, backend]
+  - title: Josh W. Comeau's Blog
+    link: https://www.joshwcomeau.com/
+    description: Interactive, deeply explained articles on CSS, React and animation.
+    type: article
+    tags: [css, react]
+  - title: Every Layout
+    link: https://every-layout.dev/
+    description: Robust CSS layout primitives explained from first principles.
+    type: book
+    tags: [css, layout]
+  - title: TanStack Query
+    link: https://tanstack.com/query/latest
+    description: The go-to library for fetching, caching and syncing server data in React and more.
+    type: docs
+    tags: [react, data-fetching]
+  - title: Zod
+    link: https://zod.dev/
+    description: TypeScript-first schema validation for forms, APIs and config.
+    type: docs
+    tags: [typescript, validation]
+  - title: Socket.IO
+    link: https://socket.io/docs/v4/
+    description: Docs for realtime, bidirectional communication between browsers and servers.
+    type: docs
+    tags: [websockets, node, realtime]
+  - title: tRPC
+    link: https://trpc.io/
+    description: End-to-end typesafe APIs for TypeScript without schemas or codegen.
+    type: docs
+    tags: [typescript, api]
+  - title: Hono
+    link: https://hono.dev/
+    description: A small, fast web framework that runs on Node, Bun, Deno and edge runtimes.
+    type: docs
+    tags: [backend, typescript]
+  - title: Bun
+    link: https://bun.sh/docs
+    description: Docs for Bun, the fast all-in-one JavaScript runtime, bundler and package manager.
+    type: docs
+    tags: [javascript, runtime]
+  - title: Deno
+    link: https://docs.deno.com/
+    description: A secure JavaScript and TypeScript runtime with built-in tooling.
+    type: docs
+    tags: [javascript, typescript, runtime]
+  - title: Regex101
+    link: https://regex101.com/
+    description: Build, test and debug regular expressions with live explanations.
+    type: tool
+    tags: [regex, tooling]
+  - title: Excalidraw
+    link: https://excalidraw.com/
+    description: A hand-drawn style whiteboard for sketching app ideas and architecture.
+    type: tool
+    tags: [design, diagrams]
+  - title: Web Security Academy
+    link: https://portswigger.net/web-security
+    description: Free hands-on labs on XSS, SQL injection, CSRF and other web vulnerabilities.
+    type: course
+    tags: [security]
+  - title: Docker Get Started
+    link: https://docs.docker.com/get-started/
+    description: Containerize and run your web app with Docker's official guide.
+    type: docs
+    tags: [docker, deployment]
+  - title: Render
+    link: https://render.com/docs
+    description: Deploy web services, databases and background workers with a free tier.
+    type: docs
+    tags: [deployment, hosting, backend]
+  - title: Lighthouse
+    link: https://developer.chrome.com/docs/lighthouse/overview
+    description: Audit performance, accessibility, SEO and best practices from DevTools.
+    type: tool
+    tags: [performance, accessibility]
+  - title: State of JS
+    link: https://stateofjs.com/
+    description: A yearly survey showing what JavaScript tools developers actually use and like.
+    type: article
+    tags: [javascript]
+  - title: Codecademy Learn HTML
+    link: https://www.codecademy.com/learn/learn-html
+    description: An interactive beginner course on HTML with in-browser exercises.
+    type: course
+    tags: [html, beginner-friendly]
+  - title: Scrimba
+    link: https://scrimba.com/
+    description: Interactive screencast courses where you edit the code inside the video.
+    type: course
+    tags: [javascript, react, frontend]
+  - title: Learn X in Y Minutes
+    link: https://learnxinyminutes.com/
+    description: Whirlwind tours of a language's syntax on a single page.
+    type: cheatsheet
+    tags: [javascript, typescript]

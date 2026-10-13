@@ -1,0 +1,575 @@
+title: Programming Languages
+tagline: Learn a language properly, then pick up the next one.
+description: Official tutorials, free books and practice sites for the languages students use most. Learn one well first, the rest come faster.
+order: 12
+path:
+  - title: Pick a first language
+    note: Python is the easiest start; C if your syllabus needs it.
+    resources: [python-tutorial, cs50p]
+  - title: Learn it properly
+    note: Work through a complete book or tutorial, not just videos.
+    resources: [automate-boring-stuff, learncpp]
+  - title: Practise every day
+    resources: [exercism]
+  - title: Learn a second language
+    note: A different style teaches you something new.
+    resources: [javascript-info, rust-book, tour-of-go]
+resources:
+  - title: The Python Tutorial
+    id: python-tutorial
+    link: https://docs.python.org/3/tutorial/
+    description: The official Python tutorial covering the core language, from basics to classes.
+    type: docs
+    tags: [python, beginner-friendly]
+  - title: CS50's Introduction to Programming with Python
+    id: cs50p
+    link: https://cs50.harvard.edu/python/
+    description: Harvard's free beginner course on Python with lectures and problem sets.
+    type: course
+    tags: [python, beginner-friendly]
+  - title: Automate the Boring Stuff with Python
+    id: automate-boring-stuff
+    link: https://automatetheboringstuff.com/
+    description: A free book that teaches Python through practical automation projects.
+    type: book
+    tags: [python, beginner-friendly]
+  - title: Learn C++
+    id: learncpp
+    link: https://www.learncpp.com/
+    description: The most thorough free C++ tutorial on the web, kept up to date with modern C++.
+    type: guide
+    tags: [cpp, beginner-friendly]
+  - title: Exercism
+    id: exercism
+    link: https://exercism.org/
+    description: Free coding exercises in 70+ languages with optional human mentoring.
+    type: practice
+    tags: [practice, mentoring]
+  - title: The Modern JavaScript Tutorial
+    id: javascript-info
+    link: https://javascript.info/
+    description: A complete, modern JavaScript tutorial from basics to advanced topics.
+    type: guide
+    tags: [javascript, beginner-friendly]
+  - title: The Rust Programming Language
+    id: rust-book
+    link: https://doc.rust-lang.org/book/
+    description: The official Rust book, the standard way to learn the language.
+    type: book
+    tags: [rust]
+  - title: A Tour of Go
+    id: tour-of-go
+    link: https://go.dev/tour/
+    description: An interactive in-browser tour of Go's syntax, types and concurrency.
+    type: course
+    tags: [go, interactive]
+  - title: Python Documentation
+    link: https://docs.python.org/3/
+    description: The official Python reference for the language and standard library.
+    type: docs
+    tags: [python]
+  - title: Think Python
+    link: https://allendowney.github.io/ThinkPython/
+    description: Allen Downey's free beginner book on Python and thinking like a programmer.
+    type: book
+    tags: [python, beginner-friendly]
+  - title: Python Crash Course
+    link: https://nostarch.com/python-crash-course-3rd-edition
+    description: A best-selling beginner Python book with three hands-on projects.
+    type: book
+    tags: [python, beginner-friendly]
+  - title: Real Python
+    link: https://realpython.com/
+    description: Thousands of practical Python tutorials, from basics to web and data work.
+    type: guide
+    tags: [python]
+  - title: Corey Schafer Python Tutorials
+    link: https://www.youtube.com/@coreyms
+    description: Clear, well-paced YouTube tutorials on Python fundamentals and libraries.
+    type: video
+    tags: [python]
+  - title: Python for Everybody
+    link: https://www.py4e.com/
+    description: Dr Chuck's free beginner Python course with videos, book and exercises.
+    type: course
+    tags: [python, beginner-friendly]
+  - title: University of Helsinki Python MOOC
+    link: https://programming-25.mooc.fi/
+    description: A free, rigorous intro programming course in Python with auto-graded exercises.
+    type: course
+    tags: [python, beginner-friendly]
+  - title: Fluent Python
+    link: https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/
+    description: The go-to book for writing idiomatic, advanced Python.
+    type: book
+    tags: [python, advanced]
+  - title: Dev.java Learn
+    link: https://dev.java/learn/
+    description: Oracle's official modern Java tutorials, from first program to advanced features.
+    type: docs
+    tags: [java]
+  - title: The Java Tutorials
+    link: https://docs.oracle.com/javase/tutorial/
+    description: Oracle's classic Java tutorial trail covering the language and core libraries.
+    type: docs
+    tags: [java]
+  - title: Java Programming MOOC
+    link: https://java-programming.mooc.fi/
+    description: University of Helsinki's free Java course with hundreds of graded exercises.
+    type: course
+    tags: [java, beginner-friendly]
+  - title: Baeldung
+    link: https://www.baeldung.com/
+    description: Practical articles on Java, Spring and the JVM ecosystem.
+    type: guide
+    tags: [java, spring]
+  - title: Head First Java
+    link: https://www.oreilly.com/library/view/head-first-java/9781492091646/
+    description: A visual, beginner-friendly book for learning Java and object-oriented programming.
+    type: book
+    tags: [java, beginner-friendly]
+  - title: Beej's Guide to C Programming
+    link: https://beej.us/guide/bgc/
+    description: A free, friendly guide to C with a full library reference.
+    type: book
+    tags: [c]
+  - title: The C Programming Language (K&R)
+    link: https://en.wikipedia.org/wiki/The_C_Programming_Language
+    description: Kernighan and Ritchie's short classic, still the best-known book on C.
+    type: book
+    tags: [c]
+  - title: Modern C
+    link: https://gustedt.gitlabpages.inria.fr/modern-c/
+    description: Jens Gustedt's free book on writing C the modern, standards-based way.
+    type: book
+    tags: [c]
+  - title: cppreference
+    link: https://en.cppreference.com/
+    description: The community reference for C and C++ language features and standard libraries.
+    type: docs
+    tags: [cpp, c]
+  - title: C++ Core Guidelines
+    link: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+    description: Stroustrup and Sutter's guidelines for writing safe, modern C++.
+    type: guide
+    tags: [cpp, best-practices]
+  - title: The Cherno C++ Series
+    link: https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
+    description: A long, popular YouTube series on C++ from a game engine developer.
+    type: video
+    tags: [cpp]
+  - title: Learn X in Y Minutes
+    link: https://learnxinyminutes.com/
+    description: Quick, code-first tours of the syntax of hundreds of languages.
+    type: cheatsheet
+    tags: [syntax, cheatsheet]
+  - title: MDN JavaScript Guide
+    link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+    description: Mozilla's official JavaScript guide and reference.
+    type: docs
+    tags: [javascript]
+  - title: Eloquent JavaScript
+    link: https://eloquentjavascript.net/
+    description: A free, beautifully written book on JavaScript and programming.
+    type: book
+    tags: [javascript]
+  - title: You Don't Know JS Yet
+    link: https://github.com/getify/You-Dont-Know-JS
+    description: A free book series that digs into how JavaScript really works.
+    type: book
+    tags: [javascript, advanced]
+  - title: TypeScript Handbook
+    link: https://www.typescriptlang.org/docs/handbook/intro.html
+    description: The official guide to TypeScript's type system and everyday use.
+    type: docs
+    tags: [typescript]
+  - title: TypeScript Playground
+    link: https://www.typescriptlang.org/play/
+    description: Write TypeScript in the browser and see the compiled JavaScript and types.
+    type: tool
+    tags: [typescript, playground]
+  - title: Total TypeScript
+    link: https://www.totaltypescript.com/
+    description: Matt Pocock's TypeScript tutorials, including a free beginner book and workshops.
+    type: course
+    tags: [typescript]
+  - title: Type Challenges
+    link: https://github.com/type-challenges/type-challenges
+    description: Puzzles that teach TypeScript's type system from easy to extreme.
+    type: practice
+    tags: [typescript]
+  - title: Go by Example
+    link: https://gobyexample.com/
+    description: Annotated example programs covering every major Go feature.
+    type: guide
+    tags: [go]
+  - title: Effective Go
+    link: https://go.dev/doc/effective_go
+    description: The official guide to writing clear, idiomatic Go.
+    type: docs
+    tags: [go, best-practices]
+  - title: Learn Go with Tests
+    link: https://quii.gitbook.io/learn-go-with-tests
+    description: Learn Go by writing tests first, from basics to building an app.
+    type: book
+    tags: [go, testing]
+  - title: Go Playground
+    link: https://go.dev/play/
+    description: Run and share Go code in the browser.
+    type: tool
+    tags: [go, playground]
+  - title: Rust by Example
+    link: https://doc.rust-lang.org/rust-by-example/
+    description: Learn Rust through runnable, annotated examples.
+    type: guide
+    tags: [rust]
+  - title: Rustlings
+    link: https://github.com/rust-lang/rustlings
+    description: Small exercises that get you reading and writing Rust code.
+    type: practice
+    tags: [rust]
+  - title: Comprehensive Rust
+    link: https://google.github.io/comprehensive-rust/
+    description: Google's free multi-day Rust course used to train Android engineers.
+    type: course
+    tags: [rust]
+  - title: Rust Playground
+    link: https://play.rust-lang.org/
+    description: Compile and run Rust in the browser and share snippets.
+    type: tool
+    tags: [rust, playground]
+  - title: Kotlin Docs
+    link: https://kotlinlang.org/docs/home.html
+    description: The official Kotlin documentation with a getting-started tour.
+    type: docs
+    tags: [kotlin]
+  - title: Kotlin Koans
+    link: https://play.kotlinlang.org/koans/overview
+    description: Short in-browser exercises that teach Kotlin syntax and idioms.
+    type: practice
+    tags: [kotlin, interactive]
+  - title: The Swift Programming Language
+    link: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/
+    description: Apple's official Swift book, from a guided tour to the full reference.
+    type: book
+    tags: [swift]
+  - title: Hacking with Swift
+    link: https://www.hackingwithswift.com/
+    description: Paul Hudson's free Swift and SwiftUI tutorials, including 100 Days of Swift.
+    type: course
+    tags: [swift, ios]
+  - title: C# Documentation
+    link: https://learn.microsoft.com/en-us/dotnet/csharp/
+    description: Microsoft's official C# docs and interactive tutorials.
+    type: docs
+    tags: [csharp, dotnet]
+  - title: Microsoft Learn C# for Beginners
+    link: https://dotnet.microsoft.com/en-us/learn/csharp
+    description: Free beginner videos and courses on C# from Microsoft.
+    type: course
+    tags: [csharp, beginner-friendly]
+  - title: SQLBolt
+    link: https://sqlbolt.com/
+    description: Interactive lessons that teach SQL queries in the browser.
+    type: practice
+    tags: [sql, interactive]
+  - title: SQLZoo
+    link: https://sqlzoo.net/
+    description: Long-running interactive SQL tutorials and quizzes.
+    type: practice
+    tags: [sql, interactive]
+  - title: SQL Tutorial for Data Analysis
+    link: https://www.thoughtspot.com/sql-tutorial
+    description: A practical SQL tutorial for data analysis, from basic to advanced.
+    type: guide
+    tags: [sql, data]
+  - title: PostgreSQL Exercises
+    link: https://pgexercises.com/
+    description: Practise SQL against a real PostgreSQL database in the browser.
+    type: practice
+    tags: [sql, postgresql]
+  - title: SQL Murder Mystery
+    link: https://mystery.knightlab.com/
+    description: Solve a murder case by writing SQL queries, a fun way to practise.
+    type: practice
+    tags: [sql, game]
+  - title: The Linux Command Line
+    link: https://linuxcommand.org/tlcl.php
+    description: William Shotts' free book on the shell and writing Bash scripts.
+    type: book
+    tags: [bash, linux]
+  - title: Bash Guide (Greg's Wiki)
+    link: https://mywiki.wooledge.org/BashGuide
+    description: A careful guide to Bash that teaches the right way to write scripts.
+    type: guide
+    tags: [bash]
+  - title: ShellCheck
+    link: https://www.shellcheck.net/
+    description: Paste a shell script and get warnings about bugs and bad practices.
+    type: tool
+    tags: [bash, linting]
+  - title: explainshell
+    link: https://explainshell.com/
+    description: Paste a command line and see what each part does, from the man pages.
+    type: tool
+    tags: [bash, shell]
+  - title: Learn You a Haskell for Great Good
+    link: https://learnyouahaskell.github.io/
+    description: A fun, illustrated free book for learning Haskell from scratch.
+    type: book
+    tags: [haskell, functional]
+  - title: Haskell MOOC
+    link: https://haskell.mooc.fi/
+    description: University of Helsinki's free Haskell course with graded exercises.
+    type: course
+    tags: [haskell, functional]
+  - title: "OCaml Programming: Correct + Efficient + Beautiful"
+    link: https://cs3110.github.io/textbook/cover.html
+    description: Cornell's free functional programming textbook and videos using OCaml.
+    type: book
+    tags: [ocaml, functional]
+  - title: Elixir Getting Started
+    link: https://hexdocs.pm/elixir/introduction.html
+    description: The official guide to Elixir's syntax, processes and tooling.
+    type: docs
+    tags: [elixir, functional]
+  - title: Exercism Language Tracks
+    link: https://exercism.org/tracks
+    description: Pick any language and work through a structured syllabus of exercises.
+    type: practice
+    tags: [practice]
+  - title: Codecademy Catalog
+    link: https://www.codecademy.com/catalog
+    description: Interactive beginner courses for most popular languages, many free.
+    type: course
+    tags: [interactive, beginner-friendly]
+  - title: freeCodeCamp YouTube
+    link: https://www.youtube.com/@freecodecamp
+    description: Hundreds of free full-length language courses, from Python to Rust.
+    type: video
+    tags: [beginner-friendly]
+  - title: Programming with Mosh
+    link: https://www.youtube.com/@programmingwithmosh
+    description: Popular beginner tutorials on Python, JavaScript, Java, C# and SQL.
+    type: video
+    tags: [beginner-friendly]
+  - title: Bro Code
+    link: https://www.youtube.com/@BroCodez
+    description: Free full-length beginner courses on many languages, short and to the point.
+    type: video
+    tags: [beginner-friendly]
+  - title: Fireship
+    link: https://www.youtube.com/@Fireship
+    description: Fast "in 100 seconds" overviews of languages and tools before you dive in.
+    type: video
+    tags: [overview]
+  - title: CodeWithHarry
+    link: https://www.youtube.com/@CodeWithHarry
+    description: Hindi beginner courses on Python, C, C++, Java and JavaScript.
+    type: video
+    tags: [beginner-friendly, hindi]
+  - title: Apna College
+    link: https://www.youtube.com/@ApnaCollegeOfficial
+    description: Hindi lectures on C++, Java and placement preparation for college students.
+    type: video
+    tags: [cpp, java, hindi]
+  - title: W3Schools
+    link: https://www.w3schools.com/
+    description: Quick beginner tutorials and try-it editors for many languages.
+    type: guide
+    tags: [beginner-friendly, reference]
+  - title: DevDocs
+    link: https://devdocs.io/
+    description: Fast, searchable offline-capable docs for hundreds of languages and libraries.
+    type: tool
+    tags: [reference, docs]
+  - title: Rosetta Code
+    link: https://rosettacode.org/
+    description: The same tasks solved in hundreds of languages, great for comparing syntax.
+    type: repo
+    tags: [comparison, examples]
+  - title: Compiler Explorer
+    link: https://godbolt.org/
+    description: See the assembly your C, C++, Rust or Go code compiles to, instantly.
+    type: tool
+    tags: [c, cpp, compilers]
+  - title: OneCompiler
+    link: https://onecompiler.com/
+    description: Run code in 60+ languages from the browser with no setup.
+    type: tool
+    tags: [playground]
+  - title: Replit
+    link: https://replit.com/
+    description: An online IDE to write and run code in many languages from the browser.
+    type: tool
+    tags: [playground, ide]
+  - title: Python Tutor
+    link: https://pythontutor.com/
+    description: Visualise Python, Java, C and JavaScript code running step by step.
+    type: tool
+    tags: [visualization, python]
+  - title: Codewars
+    link: https://www.codewars.com/
+    description: Solve community kata in dozens of languages and learn from others' solutions.
+    type: practice
+    tags: [practice]
+  - title: HackerRank Language Tracks
+    link: https://www.hackerrank.com/domains/python
+    description: Language-focused practice for Python, Java, C++, SQL and more.
+    type: practice
+    tags: [practice, python]
+  - title: Awesome Python
+    link: https://github.com/vinta/awesome-python
+    description: A curated list of the best Python libraries, frameworks and resources.
+    type: repo
+    tags: [python, awesome-list]
+  - title: Awesome Go
+    link: https://github.com/avelino/awesome-go
+    description: A curated list of Go libraries, tools and learning resources.
+    type: repo
+    tags: [go, awesome-list]
+  - title: Awesome Rust
+    link: https://github.com/rust-unofficial/awesome-rust
+    description: A curated list of Rust code, tools and learning resources.
+    type: repo
+    tags: [rust, awesome-list]
+  - title: Awesome C++
+    link: https://github.com/fffaraz/awesome-cpp
+    description: A curated list of C++ libraries, frameworks and resources.
+    type: repo
+    tags: [cpp, awesome-list]
+  - title: QuickRef.ME
+    link: https://quickref.me/
+    description: Compact cheatsheets for many languages and command-line tools.
+    type: cheatsheet
+    tags: [cheatsheet]
+  - title: Hyperpolyglot
+    link: https://hyperpolyglot.org/
+    description: Side-by-side syntax comparisons between related programming languages.
+    type: cheatsheet
+    tags: [comparison]
+  - title: Rust Cheat Sheet
+    link: https://cheats.rs/
+    description: A dense, well-organised reference of Rust syntax and idioms.
+    type: cheatsheet
+    tags: [rust]
+  - title: Kotlin for Java Developers
+    link: https://www.coursera.org/learn/kotlin-for-java-developers
+    description: JetBrains' free course that teaches Kotlin to people who know Java.
+    type: course
+    tags: [kotlin, java]
+  - title: Go Documentation
+    link: https://go.dev/doc/
+    description: Official Go docs, tutorials and the language spec.
+    type: docs
+    tags: [go]
+  - title: The Rust Standard Library
+    link: https://doc.rust-lang.org/std/
+    description: The official reference for Rust's standard library types and traits.
+    type: docs
+    tags: [rust]
+  - title: Rust Reddit
+    link: https://www.reddit.com/r/rust/
+    description: A friendly, active community for Rust news and questions.
+    type: community
+    tags: [rust]
+  - title: Python Discord
+    link: https://www.pythondiscord.com/
+    description: A large, welcoming Discord server for Python learners and help.
+    type: community
+    tags: [python, community]
+  - title: Talk Python To Me
+    link: https://talkpython.fm/
+    description: A long-running podcast on Python and its ecosystem.
+    type: podcast
+    tags: [python]
+  - title: Python Weekly
+    link: https://www.pythonweekly.com/
+    description: A free weekly newsletter of Python articles, projects and news.
+    type: article
+    tags: [python, newsletter]
+  - title: JavaScript Weekly
+    link: https://javascriptweekly.com/
+    description: A weekly newsletter of JavaScript news, articles and libraries.
+    type: article
+    tags: [javascript, newsletter]
+  - title: Golang Weekly
+    link: https://golangweekly.com/
+    description: A weekly newsletter of Go articles, news and projects.
+    type: article
+    tags: [go, newsletter]
+  - title: This Week in Rust
+    link: https://this-week-in-rust.org/
+    description: The weekly roundup of Rust community news, blog posts and crates.
+    type: article
+    tags: [rust, newsletter]
+  - title: Seven Languages in Seven Weeks
+    link: https://pragprog.com/titles/btlang/seven-languages-in-seven-weeks/
+    description: A tour of seven languages and paradigms, from Prolog to Haskell.
+    type: book
+    tags: [paradigms]
+  - title: Programming Languages (Dan Grossman)
+    link: https://www.coursera.org/learn/programming-languages
+    description: A famous course on functional programming and language design using ML, Racket and Ruby.
+    type: course
+    tags: [functional, paradigms]
+  - title: How to Design Programs
+    link: https://htdp.org/
+    description: A free classic book that teaches systematic program design using Racket.
+    type: book
+    tags: [racket, functional]
+  - title: roadmap.sh Python
+    link: https://roadmap.sh/python
+    description: A visual roadmap of what to learn in Python, with linked resources.
+    type: roadmap
+    tags: [python]
+  - title: roadmap.sh Java
+    link: https://roadmap.sh/java
+    description: A step-by-step roadmap for learning Java and its ecosystem.
+    type: roadmap
+    tags: [java]
+  - title: roadmap.sh C++
+    link: https://roadmap.sh/cpp
+    description: A visual roadmap of C++ topics from basics to modern features.
+    type: roadmap
+    tags: [cpp]
+  - title: roadmap.sh Rust
+    link: https://roadmap.sh/rust
+    description: A visual roadmap for learning Rust, with links for each topic.
+    type: roadmap
+    tags: [rust]
+  - title: roadmap.sh Go
+    link: https://roadmap.sh/golang
+    description: A visual roadmap for learning Go and its tooling.
+    type: roadmap
+    tags: [go]
+  - title: Dart Language Tour
+    link: https://dart.dev/language
+    description: The official tour of Dart, the language behind Flutter.
+    type: docs
+    tags: [dart, flutter]
+  - title: Ruby in Twenty Minutes
+    link: https://www.ruby-lang.org/en/documentation/quickstart/
+    description: The official quick start for Ruby, a friendly scripting language.
+    type: guide
+    tags: [ruby]
+  - title: PHP Manual
+    link: https://www.php.net/manual/en/
+    description: The official PHP documentation with a getting-started tutorial.
+    type: docs
+    tags: [php]
+  - title: Zig Learn
+    link: https://ziglang.org/learn/
+    description: The official starting point for Zig, a modern systems language.
+    type: docs
+    tags: [zig]
+  - title: Stack Overflow Developer Survey
+    link: https://survey.stackoverflow.co/
+    description: See which languages developers use and love each year before choosing one.
+    type: article
+    tags: [trends]
+  - title: TIOBE Index
+    link: https://www.tiobe.com/tiobe-index/
+    description: A monthly ranking of programming language popularity.
+    type: article
+    tags: [trends]

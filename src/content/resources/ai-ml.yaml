@@ -1,0 +1,649 @@
+title: AI & Machine Learning
+tagline: Teach computers to learn from data.
+description: From the intuition behind neural networks to training models and building with LLMs.
+order: 4
+path:
+  - title: Build intuition
+    note: What a neural network is, before any maths.
+    resources: [3b1b-neural-networks, google-ml-crash-course]
+  - title: Classic machine learning
+    resources: [ml-specialization, kaggle-learn, scikit-learn]
+  - title: The maths you need
+    resources: [mml-book]
+  - title: Deep learning
+    resources: [fastai, d2l, pytorch-tutorials]
+  - title: Language models
+    resources: [karpathy-zero-to-hero, hf-llm-course, hugging-face]
+resources:
+  - title: 3Blue1Brown, Neural Networks
+    id: 3b1b-neural-networks
+    link: https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
+    description: Beautifully animated videos explaining neural networks, backprop and transformers.
+    type: video
+    tags: [neural-networks, intuition]
+  - title: Google Machine Learning Crash Course
+    id: google-ml-crash-course
+    link: https://developers.google.com/machine-learning/crash-course
+    description: A fast-paced, practical intro with videos, visualizations and exercises.
+    type: course
+    tags: [ml]
+  - title: Machine Learning Specialization
+    id: ml-specialization
+    link: https://www.coursera.org/specializations/machine-learning-introduction
+    description: Andrew Ng's beginner-friendly ML course. Free to audit.
+    type: course
+    tags: [ml, python]
+  - title: Kaggle Learn
+    id: kaggle-learn
+    link: https://www.kaggle.com/learn
+    description: Short, hands-on micro-courses that run in the browser.
+    type: course
+    tags: [ml, python, practice]
+  - title: scikit-learn User Guide
+    id: scikit-learn
+    link: https://scikit-learn.org/stable/user_guide.html
+    description: The docs for Python's standard classic-ML library, with worked examples.
+    type: docs
+    tags: [python, ml]
+  - title: Mathematics for Machine Learning
+    id: mml-book
+    link: https://mml-book.github.io/
+    description: A free book on the linear algebra, calculus and probability behind ML.
+    type: book
+    tags: [maths]
+  - title: Practical Deep Learning for Coders
+    id: fastai
+    link: https://course.fast.ai/
+    description: fast.ai's top-down course. Train real models from lesson one.
+    type: course
+    tags: [deep-learning, pytorch]
+  - title: Dive into Deep Learning
+    id: d2l
+    link: https://d2l.ai/
+    description: An interactive deep learning book with runnable code for every chapter.
+    type: book
+    tags: [deep-learning]
+  - title: PyTorch Tutorials
+    id: pytorch-tutorials
+    link: https://docs.pytorch.org/tutorials/
+    description: Official tutorials for building and training models with PyTorch.
+    type: docs
+    tags: [pytorch]
+  - title: "Neural Networks: Zero to Hero"
+    id: karpathy-zero-to-hero
+    link: https://karpathy.ai/zero-to-hero.html
+    description: Andrej Karpathy builds neural networks and a GPT from scratch, in code.
+    type: video
+    tags: [llm, deep-learning]
+  - title: Hugging Face LLM Course
+    id: hf-llm-course
+    link: https://huggingface.co/learn/llm-course
+    description: Learn transformers, fine-tuning and building with open models.
+    type: course
+    tags: [llm, transformers]
+  - title: Hugging Face
+    id: hugging-face
+    link: https://huggingface.co/
+    description: The hub for open models, datasets and demos. Build, train and deploy with open-source ML.
+    type: tool
+    tags: [models, datasets]
+  - title: AI Engineer Roadmap
+    link: https://roadmap.sh/ai-engineer
+    description: A step-by-step map for building products with AI models.
+    type: roadmap
+    tags: [career]
+  - title: Stanford CS229, Machine Learning
+    link: https://cs229.stanford.edu/
+    description: Stanford's classic ML course with lecture notes covering the theory behind core algorithms.
+    type: course
+    tags: [ml, maths, stanford]
+  - title: Stanford CS229 Lectures (Andrew Ng)
+    link: https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU
+    description: Full recorded lectures of Stanford's machine learning course taught by Andrew Ng.
+    type: video
+    tags: [ml, stanford]
+  - title: Stanford CS231n, Deep Learning for Computer Vision
+    link: https://cs231n.stanford.edu/
+    description: The famous computer vision course with excellent notes on CNNs and training networks.
+    type: course
+    tags: [computer-vision, deep-learning, stanford]
+  - title: CS231n Course Notes
+    link: https://cs231n.github.io/
+    description: Clear written notes on neural networks, backprop and convolutional networks.
+    type: guide
+    tags: [computer-vision, cnn]
+  - title: Stanford CS224n, NLP with Deep Learning
+    link: https://web.stanford.edu/class/cs224n/
+    description: Stanford's NLP course covering word vectors, RNNs, attention and transformers.
+    type: course
+    tags: [nlp, transformers, stanford]
+  - title: MIT 6.S191, Introduction to Deep Learning
+    link: https://introtodeeplearning.com/
+    description: MIT's fast-paced intro to deep learning with lectures and hands-on labs.
+    type: course
+    tags: [deep-learning, mit]
+  - title: Deep Learning Specialization
+    link: https://www.coursera.org/specializations/deep-learning
+    description: Andrew Ng's five-course series on neural networks, CNNs and sequence models. Free to audit.
+    type: course
+    tags: [deep-learning]
+  - title: DeepLearning.AI Short Courses
+    link: https://www.deeplearning.ai/courses
+    description: Free one-to-two hour courses on LLMs, RAG, agents and prompt engineering.
+    type: course
+    tags: [llm, agents, rag]
+  - title: Deep Learning (Goodfellow, Bengio, Courville)
+    link: https://www.deeplearningbook.org/
+    description: The classic deep learning textbook, free to read online.
+    type: book
+    tags: [deep-learning, maths]
+  - title: Neural Networks and Deep Learning (Nielsen)
+    link: http://neuralnetworksanddeeplearning.com/
+    description: A free, gentle online book that builds a neural network from first principles.
+    type: book
+    tags: [neural-networks, beginner-friendly]
+  - title: An Introduction to Statistical Learning
+    link: https://www.statlearning.com/
+    description: The friendly, free textbook on classic ML methods, with R and Python editions.
+    type: book
+    tags: [ml, statistics]
+  - title: The Elements of Statistical Learning
+    link: https://hastie.su.domains/ElemStatLearn/
+    description: The deeper, more mathematical companion to ISL. Free PDF.
+    type: book
+    tags: [ml, statistics, maths]
+  - title: Understanding Deep Learning
+    link: https://udlbook.github.io/udlbook/
+    description: Simon Prince's modern, free deep learning textbook with Python notebooks.
+    type: book
+    tags: [deep-learning]
+  - title: Probabilistic Machine Learning (Murphy)
+    link: https://probml.github.io/pml-book/
+    description: Kevin Murphy's comprehensive books on ML from a probabilistic view. Free PDFs.
+    type: book
+    tags: [ml, probability]
+  - title: Hands-On Machine Learning (Géron) Notebooks
+    link: https://github.com/ageron/handson-ml3
+    description: Companion notebooks for the popular book on scikit-learn, Keras and TensorFlow.
+    type: repo
+    tags: [ml, scikit-learn, tensorflow]
+  - title: Essence of Linear Algebra
+    link: https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+    description: 3Blue1Brown's visual series that makes vectors and matrices click.
+    type: video
+    tags: [maths, linear-algebra]
+  - title: Essence of Calculus
+    link: https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr
+    description: 3Blue1Brown's visual intro to derivatives, integrals and the chain rule.
+    type: video
+    tags: [maths, calculus]
+  - title: Mathematics for Machine Learning Specialization
+    link: https://www.coursera.org/specializations/mathematics-machine-learning
+    description: Imperial College's course on linear algebra, calculus and PCA for ML. Free to audit.
+    type: course
+    tags: [maths]
+  - title: MIT 18.06 Linear Algebra (Gilbert Strang)
+    link: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/
+    description: The legendary linear algebra course with full video lectures.
+    type: course
+    tags: [maths, linear-algebra, mit]
+  - title: The Matrix Calculus You Need For Deep Learning
+    link: https://explained.ai/matrix-calculus/
+    description: A clear explainer of the matrix derivatives used in backpropagation.
+    type: article
+    tags: [maths, calculus]
+  - title: The Illustrated Transformer
+    link: https://jalammar.github.io/illustrated-transformer/
+    description: Jay Alammar's famous visual walkthrough of how transformers work.
+    type: article
+    tags: [transformers, nlp]
+  - title: Attention Is All You Need
+    link: https://arxiv.org/abs/1706.03762
+    description: The 2017 paper that introduced the transformer architecture.
+    type: article
+    tags: [transformers, papers]
+  - title: The Annotated Transformer
+    link: https://nlp.seas.harvard.edu/annotated-transformer/
+    description: The transformer paper rebuilt line by line in PyTorch with explanations.
+    type: article
+    tags: [transformers, pytorch]
+  - title: Let's build GPT from scratch
+    link: https://www.youtube.com/watch?v=kCc8FmEb1nY
+    description: Karpathy codes a small GPT step by step, explaining attention along the way.
+    type: video
+    tags: [llm, transformers]
+  - title: nanoGPT
+    link: https://github.com/karpathy/nanoGPT
+    description: The simplest repo for training and fine-tuning medium-sized GPTs.
+    type: repo
+    tags: [llm, pytorch]
+  - title: LLM Visualization
+    link: https://bbycroft.net/llm
+    description: An interactive 3D walkthrough of every step inside a GPT model.
+    type: tool
+    tags: [llm, transformers, intuition]
+  - title: Transformer Explainer
+    link: https://poloclub.github.io/transformer-explainer/
+    description: Run GPT-2 in your browser and see how each part of the transformer works.
+    type: tool
+    tags: [transformers, intuition]
+  - title: LLM Course (Maxime Labonne)
+    link: https://github.com/mlabonne/llm-course
+    description: A popular roadmap and notebooks for LLM fundamentals, fine-tuning and deployment.
+    type: repo
+    tags: [llm, fine-tuning]
+  - title: Prompt Engineering Guide
+    link: https://www.promptingguide.ai/
+    description: Techniques, examples and papers for prompting LLMs effectively.
+    type: guide
+    tags: [prompt-engineering, llm]
+  - title: Anthropic Prompt Engineering Docs
+    link: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview
+    description: Practical prompting techniques from the makers of Claude.
+    type: docs
+    tags: [prompt-engineering, llm]
+  - title: OpenAI Cookbook
+    link: https://developers.openai.com/cookbook
+    description: Example code and guides for common tasks with the OpenAI API.
+    type: guide
+    tags: [llm, api]
+  - title: Building Effective Agents
+    link: https://www.anthropic.com/engineering/building-effective-agents
+    description: Anthropic's guide to simple, composable patterns for LLM agents.
+    type: article
+    tags: [agents, llm]
+  - title: Hugging Face Agents Course
+    link: https://huggingface.co/learn/agents-course
+    description: A free course on building AI agents with open-source tools.
+    type: course
+    tags: [agents, llm]
+  - title: Hugging Face Diffusion Models Course
+    link: https://huggingface.co/learn/diffusion-course
+    description: Learn how image-generating diffusion models work and train your own.
+    type: course
+    tags: [diffusion, generative-ai]
+  - title: Hugging Face Deep RL Course
+    link: https://huggingface.co/learn/deep-rl-course
+    description: A free hands-on course on deep reinforcement learning.
+    type: course
+    tags: [reinforcement-learning]
+  - title: Hugging Face Computer Vision Course
+    link: https://huggingface.co/learn/computer-vision-course
+    description: A community course on modern computer vision with open models.
+    type: course
+    tags: [computer-vision]
+  - title: Hugging Face Transformers Docs
+    link: https://huggingface.co/docs/transformers/index
+    description: Docs for the library that loads and fine-tunes thousands of pretrained models.
+    type: docs
+    tags: [transformers, nlp, pytorch]
+  - title: "Reinforcement Learning: An Introduction"
+    link: http://incompleteideas.net/book/the-book-2nd.html
+    description: Sutton and Barto's classic RL textbook, free online.
+    type: book
+    tags: [reinforcement-learning]
+  - title: Spinning Up in Deep RL
+    link: https://spinningup.openai.com/en/latest/
+    description: OpenAI's educational guide to deep reinforcement learning with code.
+    type: guide
+    tags: [reinforcement-learning]
+  - title: David Silver's RL Course
+    link: https://www.davidsilver.uk/teaching/
+    description: DeepMind's David Silver teaches the foundations of reinforcement learning.
+    type: course
+    tags: [reinforcement-learning]
+  - title: Gymnasium
+    link: https://gymnasium.farama.org/
+    description: The standard library of environments for training RL agents.
+    type: tool
+    tags: [reinforcement-learning, python]
+  - title: PyTorch Documentation
+    link: https://docs.pytorch.org/docs/stable/index.html
+    description: The official API reference for PyTorch.
+    type: docs
+    tags: [pytorch]
+  - title: Learn PyTorch for Deep Learning
+    link: https://www.learnpytorch.io/
+    description: A free beginner-friendly online book and video course on PyTorch.
+    type: course
+    tags: [pytorch, beginner-friendly]
+  - title: TensorFlow Tutorials
+    link: https://www.tensorflow.org/tutorials
+    description: Official tutorials for building models with TensorFlow and Keras.
+    type: docs
+    tags: [tensorflow, keras]
+  - title: Keras
+    link: https://keras.io/
+    description: A high-level deep learning API with many clear code examples.
+    type: docs
+    tags: [keras, deep-learning]
+  - title: JAX
+    link: https://docs.jax.dev/
+    description: Google's library for fast, composable numerical computing and autodiff.
+    type: docs
+    tags: [jax, python]
+  - title: PyTorch Lightning
+    link: https://lightning.ai/docs/pytorch/stable/
+    description: A wrapper that removes boilerplate from PyTorch training loops.
+    type: docs
+    tags: [pytorch]
+  - title: XGBoost
+    link: https://xgboost.readthedocs.io/
+    description: The gradient boosting library that wins countless tabular-data competitions.
+    type: docs
+    tags: [ml, gradient-boosting]
+  - title: LightGBM
+    link: https://lightgbm.readthedocs.io/
+    description: Microsoft's fast gradient boosting framework for tabular data.
+    type: docs
+    tags: [ml, gradient-boosting]
+  - title: LangChain
+    link: https://docs.langchain.com/
+    description: A framework for building LLM apps with chains, tools and agents.
+    type: docs
+    tags: [llm, agents, python]
+  - title: LlamaIndex
+    link: https://developers.llamaindex.ai/python/framework/
+    description: A framework for connecting your own data to LLMs, popular for RAG.
+    type: docs
+    tags: [rag, llm]
+  - title: Ollama
+    link: https://ollama.com/
+    description: Run open LLMs like Llama and Gemma locally with one command.
+    type: tool
+    tags: [llm, local]
+  - title: llama.cpp
+    link: https://github.com/ggml-org/llama.cpp
+    description: Fast LLM inference in C/C++ that runs on laptops and phones.
+    type: repo
+    tags: [llm, local]
+  - title: LM Studio
+    link: https://lmstudio.ai/
+    description: A desktop app to download and chat with local LLMs.
+    type: tool
+    tags: [llm, local]
+  - title: vLLM
+    link: https://docs.vllm.ai/
+    description: A high-throughput engine for serving LLMs in production.
+    type: docs
+    tags: [llm, deployment]
+  - title: Unsloth
+    link: https://github.com/unslothai/unsloth
+    description: Fine-tune open LLMs faster with less memory, with free Colab notebooks.
+    type: repo
+    tags: [llm, fine-tuning]
+  - title: Gradio
+    link: https://www.gradio.app/
+    description: Build a web demo for your ML model in a few lines of Python.
+    type: tool
+    tags: [python, demos]
+  - title: Google Colab
+    link: https://colab.research.google.com/
+    description: Free Jupyter notebooks in the browser with GPU access.
+    type: tool
+    tags: [notebooks, gpu]
+  - title: Kaggle Competitions
+    link: https://www.kaggle.com/competitions
+    description: Real ML challenges with datasets, leaderboards and public notebooks.
+    type: practice
+    tags: [competitions, practice]
+  - title: Hugging Face Papers
+    link: https://huggingface.co/papers/trending
+    description: Trending ML research papers each day, with linked models, code and discussion.
+    type: tool
+    tags: [papers, research]
+  - title: arXiv Machine Learning
+    link: https://arxiv.org/list/cs.LG/recent
+    description: Where new machine learning research papers appear first.
+    type: tool
+    tags: [papers, research]
+  - title: Distill
+    link: https://distill.pub/
+    description: Interactive, beautifully explained research articles on ML concepts.
+    type: article
+    tags: [research, intuition]
+  - title: Lil'Log
+    link: https://lilianweng.github.io/
+    description: Lilian Weng's in-depth posts on transformers, agents, diffusion and RL.
+    type: article
+    tags: [llm, research]
+  - title: Chris Olah's Blog
+    link: https://colah.github.io/
+    description: Classic visual explanations, including the famous LSTM post.
+    type: article
+    tags: [deep-learning, intuition]
+  - title: Andrej Karpathy's YouTube
+    link: https://www.youtube.com/@AndrejKarpathy
+    description: Long-form lectures building and explaining neural networks and LLMs.
+    type: video
+    tags: [llm, deep-learning]
+  - title: Two Minute Papers
+    link: https://www.youtube.com/@TwoMinutePapers
+    description: Short, enthusiastic videos on the latest AI research.
+    type: video
+    tags: [research]
+  - title: Yannic Kilcher
+    link: https://www.youtube.com/@YannicKilcher
+    description: Detailed paper walkthroughs and ML news.
+    type: video
+    tags: [papers, research]
+  - title: The Batch
+    link: https://www.deeplearning.ai/the-batch/
+    description: DeepLearning.AI's weekly newsletter on AI news and ideas.
+    type: article
+    tags: [news]
+  - title: Lex Fridman Podcast
+    link: https://lexfridman.com/podcast/
+    description: Long conversations with AI researchers and engineers.
+    type: podcast
+    tags: [ai, interviews]
+  - title: Latent Space
+    link: https://www.latent.space/
+    description: Podcast and newsletter for AI engineers building with LLMs.
+    type: podcast
+    tags: [llm, ai-engineering]
+  - title: Made With ML
+    link: https://madewithml.com/
+    description: Learn to design, develop, deploy and iterate on production ML systems.
+    type: course
+    tags: [mlops]
+  - title: MLOps Zoomcamp
+    link: https://github.com/DataTalksClub/mlops-zoomcamp
+    description: A free course on putting ML models into production.
+    type: course
+    tags: [mlops]
+  - title: Full Stack Deep Learning
+    link: https://fullstackdeeplearning.com/
+    description: Lectures on shipping deep learning and LLM products end to end.
+    type: course
+    tags: [mlops, llm]
+  - title: MLflow
+    link: https://mlflow.org/
+    description: Open-source platform for tracking experiments and managing models.
+    type: tool
+    tags: [mlops]
+  - title: Weights & Biases
+    link: https://wandb.ai/site/
+    description: Track experiments and visualize training runs. Free for students.
+    type: tool
+    tags: [mlops]
+  - title: Machine Learning Zoomcamp
+    link: https://github.com/DataTalksClub/machine-learning-zoomcamp
+    description: A free, project-based ML engineering course from DataTalks.Club.
+    type: course
+    tags: [ml, python]
+  - title: ML for Beginners (Microsoft)
+    link: https://github.com/microsoft/ML-For-Beginners
+    description: A 12-week, 26-lesson curriculum on classic machine learning.
+    type: course
+    tags: [ml, beginner-friendly]
+  - title: AI for Beginners (Microsoft)
+    link: https://github.com/microsoft/AI-For-Beginners
+    description: A 12-week curriculum on neural networks, CV and NLP.
+    type: course
+    tags: [ai, beginner-friendly]
+  - title: Generative AI for Beginners (Microsoft)
+    link: https://github.com/microsoft/generative-ai-for-beginners
+    description: Lessons on building generative AI apps with LLMs.
+    type: course
+    tags: [llm, generative-ai]
+  - title: AI Agents for Beginners (Microsoft)
+    link: https://github.com/microsoft/ai-agents-for-beginners
+    description: Lessons on designing and building AI agents.
+    type: course
+    tags: [agents, beginner-friendly]
+  - title: Awesome Machine Learning
+    link: https://github.com/josephmisiti/awesome-machine-learning
+    description: A huge curated list of ML frameworks, libraries and software.
+    type: repo
+    tags: [awesome-list]
+  - title: Awesome Deep Learning
+    link: https://github.com/ChristosChristofidis/awesome-deep-learning
+    description: A curated list of deep learning tutorials, projects and communities.
+    type: repo
+    tags: [awesome-list, deep-learning]
+  - title: Awesome LLM
+    link: https://github.com/Hannibal046/Awesome-LLM
+    description: A curated list of LLM papers, frameworks and resources.
+    type: repo
+    tags: [awesome-list, llm]
+  - title: ML Papers Explained
+    link: https://github.com/dair-ai/ML-Papers-Explained
+    description: Short explanations of key ideas in landmark ML papers.
+    type: repo
+    tags: [papers]
+  - title: Stanford ML Cheatsheets
+    link: https://stanford.edu/~shervine/teaching/cs-229/
+    description: Compact cheatsheets for supervised, unsupervised and deep learning.
+    type: cheatsheet
+    tags: [ml, cheatsheet]
+  - title: Machine Learning Glossary (Google)
+    link: https://developers.google.com/machine-learning/glossary
+    description: Definitions for hundreds of ML terms.
+    type: guide
+    tags: [ml, glossary]
+  - title: Rules of Machine Learning
+    link: https://developers.google.com/machine-learning/guides/rules-of-ml
+    description: Google's best practices for ML engineering.
+    type: guide
+    tags: [mlops, best-practices]
+  - title: A Recipe for Training Neural Networks
+    link: https://karpathy.github.io/2019/04/25/recipe/
+    description: Karpathy's practical process for training networks without pain.
+    type: article
+    tags: [deep-learning, best-practices]
+  - title: TensorFlow Playground
+    link: https://playground.tensorflow.org/
+    description: Tinker with a small neural network right in your browser.
+    type: tool
+    tags: [neural-networks, intuition]
+  - title: CNN Explainer
+    link: https://poloclub.github.io/cnn-explainer/
+    description: An interactive visualization of how convolutional networks classify images.
+    type: tool
+    tags: [cnn, computer-vision]
+  - title: OpenCV
+    link: https://docs.opencv.org/4.x/d9/df8/tutorial_root.html
+    description: Tutorials for the most popular computer vision library.
+    type: docs
+    tags: [computer-vision, opencv]
+  - title: Ultralytics YOLO
+    link: https://docs.ultralytics.com/
+    description: Docs for YOLO, the go-to model for real-time object detection.
+    type: docs
+    tags: [computer-vision, object-detection]
+  - title: spaCy
+    link: https://spacy.io/
+    description: Industrial-strength NLP in Python, with a free course.
+    type: docs
+    tags: [nlp, python]
+  - title: "Speech and Language Processing (Jurafsky & Martin)"
+    link: https://web.stanford.edu/~jurafsky/slp3/
+    description: The standard NLP textbook, free draft online.
+    type: book
+    tags: [nlp]
+  - title: Hugging Face Open LLM Leaderboard
+    link: https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard
+    description: Compare open-source LLMs on standard benchmarks.
+    type: tool
+    tags: [llm, benchmarks]
+  - title: LMArena
+    link: https://arena.ai/
+    description: Compare chatbots side by side and see crowd-sourced rankings.
+    type: tool
+    tags: [llm, benchmarks]
+  - title: r/MachineLearning
+    link: https://www.reddit.com/r/MachineLearning/
+    description: A large community for ML research news and discussion.
+    type: community
+    tags: [community]
+  - title: r/LocalLLaMA
+    link: https://www.reddit.com/r/LocalLLaMA/
+    description: The community for running and fine-tuning open LLMs locally.
+    type: community
+    tags: [llm, local, community]
+  - title: Hugging Face Discord
+    link: https://hf.co/join/discord
+    description: Chat with the open-source ML community.
+    type: community
+    tags: [community]
+  - title: Model Context Protocol
+    link: https://modelcontextprotocol.io/
+    description: The open standard for connecting LLM apps to tools and data.
+    type: docs
+    tags: [agents, llm]
+  - title: Pinecone Learning Center
+    link: https://www.pinecone.io/learn/
+    description: Guides on embeddings, vector search and retrieval-augmented generation.
+    type: guide
+    tags: [rag, embeddings]
+  - title: Sentence Transformers
+    link: https://sbert.net/
+    description: Compute text embeddings for semantic search and RAG.
+    type: docs
+    tags: [embeddings, nlp]
+  - title: Chroma
+    link: https://docs.trychroma.com/
+    description: An open-source vector database that is easy to start with.
+    type: tool
+    tags: [rag, vector-database]
+  - title: FAISS
+    link: https://github.com/facebookresearch/faiss
+    description: Meta's library for fast similarity search over vectors.
+    type: repo
+    tags: [embeddings, vector-search]
+  - title: Machine Learning Mastery
+    link: https://machinelearningmastery.com/start-here/
+    description: Practical step-by-step tutorials for applied ML in Python.
+    type: guide
+    tags: [ml, python]
+  - title: Interpretable Machine Learning
+    link: https://christophm.github.io/interpretable-ml-book/
+    description: A free book on making black-box models explainable.
+    type: book
+    tags: [interpretability]
+  - title: Designing Machine Learning Systems
+    link: https://www.oreilly.com/library/view/designing-machine-learning-systems/9781098107956/
+    description: Chip Huyen's book on building reliable ML systems in production.
+    type: book
+    tags: [mlops]
+  - title: Chip Huyen's Blog
+    link: https://huyenchip.com/blog/
+    description: Essays on ML systems, LLM engineering and MLOps.
+    type: article
+    tags: [mlops, llm]
+  - title: Deep Learning Tuning Playbook
+    link: https://github.com/google-research/tuning_playbook
+    description: Google's guide to tuning hyperparameters of deep learning models.
+    type: guide
+    tags: [deep-learning, best-practices]
+  - title: Anthropic Courses
+    link: https://github.com/anthropics/courses
+    description: Free notebooks on the Claude API, prompting and tool use.
+    type: course
+    tags: [prompt-engineering, llm]
+  - title: Machine Learning Engineering (Stas Bekman)
+    link: https://github.com/stas00/ml-engineering
+    description: An open book on training and serving large models on real hardware.
+    type: book
+    tags: [llm, mlops]

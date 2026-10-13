@@ -1,0 +1,561 @@
+title: UI/UX Design
+tagline: Design interfaces people enjoy using.
+description: The principles, tools and references for designing clear, accessible products.
+order: 10
+path:
+  - title: Principles first
+    resources: [laws-of-ux, nn-heuristics]
+  - title: Learn Figma
+    resources: [figma-youtube]
+  - title: Visual design
+    resources: [refactoring-ui, practical-typography, coolors]
+  - title: Design for everyone
+    resources: [webaim-contrast, inclusive-components]
+  - title: Study real products
+    resources: [mobbin, dribbble]
+resources:
+  - title: Laws of UX
+    id: laws-of-ux
+    link: https://lawsofux.com/
+    description: The psychology principles behind good interfaces, one card at a time.
+    type: guide
+    tags: [ux, psychology]
+  - title: 10 Usability Heuristics
+    id: nn-heuristics
+    link: https://www.nngroup.com/articles/ten-usability-heuristics/
+    description: Nielsen Norman Group's classic rules of thumb for usable design.
+    type: article
+    tags: [ux]
+  - title: Figma on YouTube
+    id: figma-youtube
+    link: https://www.youtube.com/@Figma
+    description: Official tutorials, from your first frame to auto layout and prototyping.
+    type: video
+    tags: [figma]
+  - title: Refactoring UI
+    id: refactoring-ui
+    link: https://www.refactoringui.com/
+    description: Practical tactics for designing good-looking interfaces without a design background.
+    type: book
+    tags: [ui, visual-design]
+  - title: Practical Typography
+    id: practical-typography
+    link: https://practicaltypography.com/
+    description: Matthew Butterick's free online book on making text look good.
+    type: book
+    tags: [typography]
+  - title: Coolors
+    id: coolors
+    link: https://coolors.co/
+    description: Generate and explore colour palettes in seconds.
+    type: tool
+    tags: [color]
+  - title: WebAIM Contrast Checker
+    id: webaim-contrast
+    link: https://webaim.org/resources/contrastchecker/
+    description: Check that your text colours are readable for everyone.
+    type: tool
+    tags: [accessibility, color]
+  - title: Inclusive Components
+    id: inclusive-components
+    link: https://inclusive-components.design/
+    description: How to build common UI patterns so they work for everyone.
+    type: guide
+    tags: [accessibility]
+  - title: Mobbin
+    id: mobbin
+    link: https://mobbin.com/
+    description: A library of real app screens and flows for reference. Free tier available.
+    type: tool
+    tags: [inspiration]
+  - title: Dribbble
+    id: dribbble
+    link: https://dribbble.com/
+    description: Where designers share work. Good for inspiration and feedback.
+    type: community
+    tags: [inspiration]
+  - title: UX Design Roadmap
+    link: https://roadmap.sh/ux-design
+    description: The skills a UX designer learns, in order.
+    type: roadmap
+    tags: [career]
+  - title: Material Design 3
+    link: https://m3.material.io/
+    description: Google's open design system with guidelines, components and theming for every platform.
+    type: docs
+    tags: [design-systems, material, android]
+  - title: Apple Human Interface Guidelines
+    link: https://developer.apple.com/design/human-interface-guidelines/
+    description: Apple's official guidance for designing apps on iPhone, iPad, Mac, Watch and Vision Pro.
+    type: docs
+    tags: [design-systems, ios, apple]
+  - title: Fluent 2 Design System
+    link: https://fluent2.microsoft.design/
+    description: Microsoft's design language, with principles, tokens and components for Windows and the web.
+    type: docs
+    tags: [design-systems, microsoft]
+  - title: Carbon Design System
+    link: https://www.carbondesignsystem.com/
+    description: IBM's open-source design system, known for clear docs on components, patterns and accessibility.
+    type: docs
+    tags: [design-systems, ibm]
+  - title: Shopify Polaris
+    link: https://shopify.dev/docs/api/polaris
+    description: Shopify's design system, a good example of components, content guidelines and tokens done well.
+    type: docs
+    tags: [design-systems, shopify]
+  - title: Atlassian Design System
+    link: https://atlassian.design/
+    description: The foundations, components and content rules behind Jira, Confluence and Trello.
+    type: docs
+    tags: [design-systems]
+  - title: GOV.UK Design System
+    link: https://design-system.service.gov.uk/
+    description: Battle-tested, accessible patterns from the UK government, backed by real user research.
+    type: docs
+    tags: [design-systems, accessibility]
+  - title: The Component Gallery
+    link: https://component.gallery/
+    description: Compare how dozens of design systems build the same UI component, from buttons to tabs.
+    type: tool
+    tags: [design-systems, components]
+  - title: Atomic Design
+    link: https://atomicdesign.bradfrost.com/
+    description: Brad Frost's free book on building interfaces from atoms up to full pages, the basis of modern design systems.
+    type: book
+    tags: [design-systems]
+  - title: Figma Help Center
+    link: https://help.figma.com/hc/en-us
+    description: Official Figma docs and beginner courses covering frames, auto layout, components and prototyping.
+    type: docs
+    tags: [figma]
+  - title: Figma Design Basics
+    link: https://www.figma.com/resource-library/design-basics/
+    description: Figma's free articles on core design concepts like hierarchy, layout and colour.
+    type: guide
+    tags: [figma, ui, beginner-friendly]
+  - title: Figma Community
+    link: https://www.figma.com/community
+    description: Thousands of free UI kits, templates, icon sets and plugins to remix and learn from.
+    type: community
+    tags: [figma, ui-kits]
+  - title: Figma Forum
+    link: https://forum.figma.com/
+    description: Ask Figma questions and get help from other designers and Figma staff.
+    type: community
+    tags: [figma]
+  - title: Penpot
+    link: https://penpot.app/
+    description: A free, open-source design and prototyping tool that runs in the browser and can be self-hosted.
+    type: tool
+    tags: [open-source, prototyping]
+  - title: Google UX Design Certificate
+    link: https://www.coursera.org/professional-certificates/google-ux-design
+    description: Google's beginner UX program on Coursera, free to audit, covering research, wireframes and Figma.
+    type: course
+    tags: [ux, beginner-friendly, figma]
+  - title: Interaction Design Foundation Literature
+    link: https://ixdf.org/literature
+    description: A huge free library of articles and an encyclopedia covering UX, HCI and interaction design.
+    type: guide
+    tags: [ux, interaction-design]
+  - title: Gestalt Principles
+    link: https://ixdf.org/literature/topics/gestalt-principles
+    description: How people perceive grouping, proximity and similarity, and how to use it in layouts.
+    type: article
+    tags: [visual-design, psychology]
+  - title: Nielsen Norman Group Articles
+    link: https://www.nngroup.com/articles/
+    description: Research-backed articles on usability, UX research and interaction design from the field's leading firm.
+    type: article
+    tags: [ux, research]
+  - title: NN/g on YouTube
+    link: https://www.youtube.com/@NNgroup
+    description: Short, practical videos on UX principles and research methods from Nielsen Norman Group.
+    type: video
+    tags: [ux, research]
+  - title: When to Use Which UX Research Methods
+    link: https://www.nngroup.com/articles/which-ux-research-methods/
+    description: A map of 20 research methods and when each one actually helps.
+    type: article
+    tags: [ux-research]
+  - title: The Design of Everyday Things
+    link: https://jnd.org/books/the-design-of-everyday-things-revised-and-expanded-edition/
+    description: Don Norman's classic on affordances, feedback and why everyday objects confuse us.
+    type: book
+    tags: [ux, classic]
+  - title: Don't Make Me Think
+    link: https://sensible.com/dont-make-me-think/
+    description: Steve Krug's short, funny classic on web usability and simple usability testing.
+    type: book
+    tags: [ux, usability, classic]
+  - title: The Elements of User Experience
+    link: http://www.jjg.net/elements/
+    description: Jesse James Garrett's model of the five planes of UX, from strategy to surface.
+    type: book
+    tags: [ux, classic]
+  - title: The Design Sprint
+    link: https://www.gv.com/sprint/
+    description: Google Ventures' five-day process for prototyping and testing ideas with real users.
+    type: guide
+    tags: [ux-research, prototyping]
+  - title: UX Myths
+    link: https://uxmyths.com/
+    description: Common UX misconceptions debunked with research, like the three-click rule.
+    type: article
+    tags: [ux]
+  - title: Growth.Design Case Studies
+    link: https://growth.design/case-studies
+    description: Comic-style breakdowns of real product UX and the psychology behind it.
+    type: article
+    tags: [ux, psychology, case-studies]
+  - title: UI Patterns
+    link: https://ui-patterns.com/
+    description: A catalogue of common UI design patterns with the problem each one solves.
+    type: guide
+    tags: [ui, patterns]
+  - title: Checklist Design
+    link: https://www.checklist.design/
+    description: Checklists of what every page, component and flow should include.
+    type: cheatsheet
+    tags: [ui, patterns]
+  - title: Hack Design
+    link: https://www.hackdesign.org/
+    description: A free, curated design course of lessons from working designers.
+    type: course
+    tags: [ui, ux, beginner-friendly]
+  - title: UX Tools
+    link: https://www.uxtools.co/
+    description: Practical UX lessons, challenges and an annual survey of the tools designers use.
+    type: guide
+    tags: [ux, tools]
+  - title: UX Peak
+    link: https://www.uxpeak.com/
+    description: Daily design challenges and a gallery of UI concepts to practise on.
+    type: practice
+    tags: [ui, practice]
+  - title: Smashing Magazine
+    link: https://www.smashingmagazine.com/
+    description: Long-running magazine with in-depth articles on UX, UI, accessibility and front-end.
+    type: article
+    tags: [ux, ui, front-end]
+  - title: UX Collective
+    link: https://uxdesign.cc/
+    description: One of the largest UX publications, with essays, case studies and a weekly newsletter.
+    type: article
+    tags: [ux, newsletter]
+  - title: Sidebar
+    link: https://sidebar.io/
+    description: The five best design links of the day, curated by Sacha Greif.
+    type: article
+    tags: [newsletter, inspiration]
+  - title: 99% Invisible
+    link: https://99percentinvisible.org/
+    description: A beloved podcast about the hidden design of everyday objects, buildings and systems.
+    type: podcast
+    tags: [design-thinking]
+  - title: Web Typography
+    link: https://book.webtypography.net/
+    description: Richard Rutter's free book on choosing, setting and pairing type for the web.
+    type: book
+    tags: [typography, web]
+  - title: Google Fonts
+    link: https://fonts.google.com/
+    description: Over 1,500 free, open-source font families ready for web and print.
+    type: tool
+    tags: [typography, fonts]
+  - title: Fontshare
+    link: https://www.fontshare.com/
+    description: High-quality free fonts from Indian Type Foundry for personal and commercial use.
+    type: tool
+    tags: [typography, fonts]
+  - title: Typewolf
+    link: https://www.typewolf.com/
+    description: Font recommendations, pairings and real-world examples of type in use.
+    type: guide
+    tags: [typography, fonts]
+  - title: Type Scale
+    link: https://typescale.com/
+    description: Preview and generate a harmonious set of font sizes for your design.
+    type: tool
+    tags: [typography]
+  - title: Fontjoy
+    link: https://fontjoy.com/
+    description: Generate font pairings with machine learning and preview them instantly.
+    type: tool
+    tags: [typography, fonts]
+  - title: Adobe Color
+    link: https://color.adobe.com/
+    description: Build palettes from colour harmony rules or images, with built-in accessibility checks.
+    type: tool
+    tags: [color]
+  - title: Realtime Colors
+    link: https://www.realtimecolors.com/
+    description: Preview your palette and fonts on a real website layout as you tweak them.
+    type: tool
+    tags: [color, typography]
+  - title: Color Hunt
+    link: https://colorhunt.co/
+    description: A free, community-curated collection of thousands of colour palettes.
+    type: tool
+    tags: [color, inspiration]
+  - title: Happy Hues
+    link: https://www.happyhues.co/
+    description: Curated palettes shown applied to a full page, so you see how colours work together.
+    type: tool
+    tags: [color]
+  - title: Radix Colors
+    link: https://www.radix-ui.com/colors
+    description: An open-source colour system with accessible scales for light and dark mode.
+    type: tool
+    tags: [color, design-systems]
+  - title: Leonardo
+    link: https://leonardocolor.io/
+    description: Adobe's open-source tool for generating colour scales based on target contrast ratios.
+    type: tool
+    tags: [color, accessibility]
+  - title: WCAG Quick Reference
+    link: https://www.w3.org/WAI/WCAG22/quickref/
+    description: The official, filterable checklist of Web Content Accessibility Guidelines.
+    type: cheatsheet
+    tags: [accessibility, wcag]
+  - title: The A11Y Project
+    link: https://www.a11yproject.com/
+    description: A community resource with a checklist and plain-language guides to digital accessibility.
+    type: guide
+    tags: [accessibility]
+  - title: WebAIM
+    link: https://webaim.org/
+    description: Long-standing articles and tools on making the web accessible, from screen readers to forms.
+    type: guide
+    tags: [accessibility]
+  - title: Who Can Use
+    link: https://www.whocanuse.com/
+    description: See how a colour pair looks to people with different kinds of vision.
+    type: tool
+    tags: [accessibility, color]
+  - title: Learn Accessibility
+    link: https://web.dev/learn/accessibility
+    description: Google's free web.dev course on designing and building accessible websites.
+    type: course
+    tags: [accessibility, web]
+  - title: Inclusive Design Principles
+    link: https://inclusivedesignprinciples.info/
+    description: Seven short principles for designing products that work for as many people as possible.
+    type: guide
+    tags: [accessibility, inclusive-design]
+  - title: Microsoft Inclusive Design
+    link: https://inclusive.microsoft.design/
+    description: Microsoft's free toolkit and methods for designing with people who are excluded.
+    type: guide
+    tags: [accessibility, inclusive-design]
+  - title: Material Motion
+    link: https://m3.material.io/styles/motion/overview/how-it-works
+    description: Google's guidance on easing, duration and transitions that make interfaces feel natural.
+    type: docs
+    tags: [motion, animation]
+  - title: Rive
+    link: https://rive.app/
+    description: Design interactive animations and state machines that run in apps, games and websites.
+    type: tool
+    tags: [motion, animation]
+  - title: LottieFiles
+    link: https://lottiefiles.com/
+    description: Free lightweight animations you can drop into apps and sites, plus tools to make your own.
+    type: tool
+    tags: [motion, animation]
+  - title: Framer
+    link: https://www.framer.com/
+    description: Design and publish interactive websites with real animations, no code needed.
+    type: tool
+    tags: [prototyping, web]
+  - title: Excalidraw
+    link: https://excalidraw.com/
+    description: A free hand-drawn style whiteboard, great for wireframes and user flows.
+    type: tool
+    tags: [wireframing, open-source]
+  - title: Storybook
+    link: https://storybook.js.org/
+    description: The standard tool for building and documenting UI components in isolation.
+    type: tool
+    tags: [design-systems, components]
+  - title: Behance
+    link: https://www.behance.net/
+    description: Adobe's platform for full design case studies and portfolios.
+    type: community
+    tags: [inspiration, portfolio]
+  - title: Awwwards
+    link: https://www.awwwards.com/
+    description: Award-winning websites, judged daily on design, usability and creativity.
+    type: tool
+    tags: [inspiration, web]
+  - title: Land-book
+    link: https://land-book.com/
+    description: A large gallery of landing pages and websites sorted by style and industry.
+    type: tool
+    tags: [inspiration, web]
+  - title: Lapa Ninja
+    link: https://www.lapa.ninja/
+    description: Thousands of landing page examples to study layout and copy.
+    type: tool
+    tags: [inspiration, web]
+  - title: Page Flows
+    link: https://pageflows.com/
+    description: Recorded user flows from real apps, like onboarding and checkout.
+    type: tool
+    tags: [inspiration, ux]
+  - title: Refero
+    link: https://refero.design/
+    description: A searchable library of real web and mobile UI screens for reference.
+    type: tool
+    tags: [inspiration, ui]
+  - title: Collect UI
+    link: https://collectui.com/
+    description: Daily UI inspiration sorted into categories like login, pricing and settings.
+    type: tool
+    tags: [inspiration, ui]
+  - title: Siteinspire
+    link: https://www.siteinspire.com/
+    description: A hand-picked showcase of well-designed websites.
+    type: tool
+    tags: [inspiration, web]
+  - title: Lucide
+    link: https://lucide.dev/
+    description: A clean, consistent open-source icon set with packages for every framework.
+    type: tool
+    tags: [icons, open-source]
+  - title: Heroicons
+    link: https://heroicons.com/
+    description: Free, hand-crafted SVG icons from the makers of Tailwind CSS.
+    type: tool
+    tags: [icons]
+  - title: Phosphor Icons
+    link: https://phosphoricons.com/
+    description: A flexible icon family with six weights and thousands of icons.
+    type: tool
+    tags: [icons]
+  - title: Material Symbols
+    link: https://fonts.google.com/icons
+    description: Google's free icon library with adjustable weight, fill and size.
+    type: tool
+    tags: [icons, material]
+  - title: Feather Icons
+    link: https://feathericons.com/
+    description: Simple, beautiful open-source icons on a 24px grid.
+    type: tool
+    tags: [icons]
+  - title: Tabler Icons
+    link: https://tabler.io/icons
+    description: Over 5,000 free MIT-licensed SVG icons with Figma support.
+    type: tool
+    tags: [icons, open-source]
+  - title: Iconify
+    link: https://icon-sets.iconify.design/
+    description: Search over 200,000 icons from 150+ open-source icon sets in one place.
+    type: tool
+    tags: [icons]
+  - title: Font Awesome
+    link: https://fontawesome.com/
+    description: The classic icon library with a large free tier.
+    type: tool
+    tags: [icons]
+  - title: Remix Icon
+    link: https://remixicon.com/
+    description: Open-source neutral-style icons in line and fill variants.
+    type: tool
+    tags: [icons, open-source]
+  - title: unDraw
+    link: https://undraw.co/
+    description: Free, open-licence illustrations you can recolour to match your brand.
+    type: tool
+    tags: [illustrations]
+  - title: Humaaans
+    link: https://www.humaaans.com/
+    description: Mix-and-match illustrations of people by Pablo Stanley.
+    type: tool
+    tags: [illustrations]
+  - title: Open Peeps
+    link: https://www.openpeeps.com/
+    description: A free hand-drawn illustration library of people you can combine.
+    type: tool
+    tags: [illustrations]
+  - title: Storyset
+    link: https://storyset.com/
+    description: Free customizable and animatable illustrations from Freepik.
+    type: tool
+    tags: [illustrations, animation]
+  - title: DrawKit
+    link: https://www.drawkit.com/
+    description: Hand-drawn vector illustrations and icons, many of them free.
+    type: tool
+    tags: [illustrations]
+  - title: Unsplash
+    link: https://unsplash.com/
+    description: Free high-resolution photos for mockups and real projects.
+    type: tool
+    tags: [photos]
+  - title: Pexels
+    link: https://www.pexels.com/
+    description: Free stock photos and videos shared by creators.
+    type: tool
+    tags: [photos, video]
+  - title: DesignCourse
+    link: https://www.youtube.com/@DesignCourse
+    description: Gary Simon's channel on UI/UX design, Figma and front-end development.
+    type: video
+    tags: [ui, figma]
+  - title: The Futur
+    link: https://www.youtube.com/@TheFutur
+    description: Lessons on design, branding, typography and the business of being a designer.
+    type: video
+    tags: [visual-design, career]
+  - title: Flux Academy
+    link: https://www.youtube.com/@FluxAcademy
+    description: Web design tutorials, critiques and career advice for aspiring designers.
+    type: video
+    tags: [web, ui]
+  - title: AJ&Smart
+    link: https://www.youtube.com/@AJSmart
+    description: UX process, design sprints and workshop facilitation from a product design studio.
+    type: video
+    tags: [ux, design-sprint]
+  - title: Kole Jain
+    link: https://www.youtube.com/@KoleJain
+    description: Practical UI design tips and redesigns of real apps.
+    type: video
+    tags: [ui, figma]
+  - title: Mizko
+    link: https://www.youtube.com/@Mizko
+    description: Product design lessons, Figma workflows and design career advice.
+    type: video
+    tags: [ui, figma, career]
+  - title: Jesse Showalter
+    link: https://www.youtube.com/@JesseShowalter
+    description: UI/UX tutorials, livestreams and portfolio advice.
+    type: video
+    tags: [ui, ux]
+  - title: Juxtopposed
+    link: https://www.youtube.com/@Juxtopposed
+    description: Engaging videos on UI design, web design and creative interfaces.
+    type: video
+    tags: [ui, web]
+  - title: Charli Marie
+    link: https://www.youtube.com/@CharliMarieTV
+    description: A designer's take on web design, Figma workflows and life in the industry.
+    type: video
+    tags: [ui, career]
+  - title: r/UXDesign
+    link: https://www.reddit.com/r/UXDesign/
+    description: A large community for UX questions, portfolio reviews and career talk.
+    type: community
+    tags: [ux, career]
+  - title: ADPList
+    link: https://adplist.org/
+    description: Book free mentorship calls with designers from companies around the world.
+    type: community
+    tags: [mentorship, career]
+  - title: Uxcel
+    link: https://uxcel.com/
+    description: Bite-sized interactive UX and UI lessons and skill tests, with a free tier.
+    type: practice
+    tags: [ux, ui, beginner-friendly]

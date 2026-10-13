@@ -1,0 +1,349 @@
+title: Embedded & IoT
+tagline: Make hardware that senses, thinks and talks.
+description: From blinking an LED to firmware, real-time operating systems and connected devices. Electronics, microcontrollers, PCBs and robotics.
+order: 14
+path:
+  - title: Electronics basics
+    note: Voltage, current and reading a circuit.
+    resources: [sparkfun-learn, tinkercad-circuits]
+  - title: Your first microcontroller
+    note: Blink an LED, read a sensor. Try it in a simulator first.
+    resources: [arduino-docs, wokwi]
+  - title: Connect it to the internet
+    resources: [random-nerd-tutorials, mqtt-org]
+  - title: Go deeper into firmware
+    note: Embedded C, registers and real-time operating systems.
+    resources: [esp-idf-docs, freertos-docs]
+  - title: Design your own board
+    resources: [kicad-docs, phils-lab]
+resources:
+  - title: SparkFun Learn
+    id: sparkfun-learn
+    link: https://learn.sparkfun.com/
+    description: Hundreds of beginner-friendly tutorials on electronics basics, sensors, soldering and more.
+    type: guide
+    tags: [electronics, beginner]
+  - title: Adafruit Learning System
+    link: https://learn.adafruit.com/
+    description: Thousands of well-illustrated project guides for Arduino, CircuitPython, Raspberry Pi and sensors.
+    type: guide
+    tags: [electronics, projects, circuitpython]
+  - title: All About Circuits Textbook
+    link: https://www.allaboutcircuits.com/textbook/
+    description: A free online textbook covering DC, AC, semiconductors and digital circuits.
+    type: book
+    tags: [electronics, theory]
+  - title: The Art of Electronics
+    link: https://artofelectronics.net/
+    description: Horowitz and Hill's classic practical electronics reference, loved by engineers for decades.
+    type: book
+    tags: [electronics, book]
+  - title: Falstad Circuit Simulator
+    link: https://www.falstad.com/circuit/
+    description: A browser circuit simulator that animates current flow so you can see how circuits behave.
+    type: tool
+    tags: [electronics, simulator]
+  - title: Tinkercad Circuits
+    id: tinkercad-circuits
+    link: https://www.tinkercad.com/circuits
+    description: Build and simulate breadboard circuits and Arduino code in the browser, free.
+    type: tool
+    tags: [simulator, arduino, beginner]
+  - title: Wokwi
+    id: wokwi
+    link: https://wokwi.com/
+    description: Simulate Arduino, ESP32, Raspberry Pi Pico and STM32 projects in the browser with real parts.
+    type: tool
+    tags: [simulator, esp32, arduino]
+  - title: Arduino Docs
+    id: arduino-docs
+    link: https://docs.arduino.cc/
+    description: Official tutorials, language reference and hardware docs for every Arduino board.
+    type: docs
+    tags: [arduino, microcontrollers]
+  - title: Arduino Language Reference
+    link: https://docs.arduino.cc/language-reference/
+    description: Every Arduino function, from digitalWrite to Serial, with examples.
+    type: cheatsheet
+    tags: [arduino, reference]
+  - title: Arduino Project Hub
+    link: https://projecthub.arduino.cc/
+    description: Thousands of community projects with code and wiring to learn from or remix.
+    type: guide
+    tags: [arduino, projects]
+  - title: Arduino Forum
+    link: https://forum.arduino.cc/
+    description: The official forum. Huge, active and the best place to ask when your sketch misbehaves.
+    type: community
+    tags: [arduino, q-and-a]
+  - title: Random Nerd Tutorials
+    id: random-nerd-tutorials
+    link: https://randomnerdtutorials.com/
+    description: Detailed, free ESP32, ESP8266 and Arduino tutorials for web servers, sensors and IoT projects.
+    type: guide
+    tags: [esp32, iot, projects]
+  - title: ESP-IDF Programming Guide
+    id: esp-idf-docs
+    link: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/
+    description: Espressif's official ESP32 framework docs, with FreeRTOS, Wi-Fi, Bluetooth and peripheral APIs.
+    type: docs
+    tags: [esp32, esp-idf, c]
+  - title: Arduino Core for ESP32
+    link: https://github.com/espressif/arduino-esp32
+    description: Program ESP32 boards using the familiar Arduino API.
+    type: repo
+    tags: [esp32, arduino]
+  - title: PlatformIO
+    link: https://platformio.org/
+    description: A VS Code-based toolchain for building and uploading firmware to over a thousand boards.
+    type: tool
+    tags: [tools, ide]
+  - title: Raspberry Pi Documentation
+    link: https://www.raspberrypi.com/documentation/
+    description: Official docs for every Raspberry Pi, the Pico microcontroller, GPIO and the OS.
+    type: docs
+    tags: [raspberry-pi, linux]
+  - title: Raspberry Pi Projects
+    link: https://projects.raspberrypi.org/
+    description: Free step-by-step projects from the Raspberry Pi Foundation, from beginner to advanced.
+    type: guide
+    tags: [raspberry-pi, projects, beginner]
+  - title: Raspberry Pi Pico C/C++ SDK
+    link: https://github.com/raspberrypi/pico-sdk
+    description: The official SDK for programming the RP2040 and RP2350 chips in C.
+    type: repo
+    tags: [raspberry-pi, pico, c]
+  - title: MicroPython Docs
+    link: https://docs.micropython.org/
+    description: Run Python on microcontrollers. Docs and quick references for ESP32, Pico and more.
+    type: docs
+    tags: [micropython, python]
+  - title: CircuitPython
+    link: https://circuitpython.org/
+    description: Adafruit's beginner-friendly Python for microcontrollers, with libraries for hundreds of sensors.
+    type: docs
+    tags: [circuitpython, python, beginner]
+  - title: Embedded Systems - Shape The World
+    link: https://users.ece.utexas.edu/~valvano/Volume1/E-Book/
+    description: Jonathan Valvano's free UT Austin textbook on embedded systems with ARM microcontrollers.
+    type: book
+    tags: [embedded-c, arm, book]
+  - title: Modern Embedded Systems Programming (Quantum Leaps)
+    link: https://www.youtube.com/playlist?list=PLPW8O6W-1chwyTzI3BHwBLbGQoPFxPAPM
+    description: Miro Samek's acclaimed video course on embedded C, ARM Cortex-M, interrupts and RTOS from first principles.
+    type: video
+    tags: [embedded-c, arm, rtos]
+  - title: Interrupt by Memfault
+    link: https://interrupt.memfault.com/
+    description: In-depth articles by firmware engineers on debugging, build systems, testing and best practices.
+    type: article
+    tags: [firmware, best-practices]
+  - title: Embedded Artistry
+    link: https://embeddedartistry.com/
+    description: Practical guides and a curated reading list for embedded software developers.
+    type: article
+    tags: [firmware, career]
+  - title: Making Embedded Systems
+    link: https://www.oreilly.com/library/view/making-embedded-systems/9781098151539/
+    description: Elecia White's well-loved book on embedded software design patterns and good practices.
+    type: book
+    tags: [firmware, book]
+  - title: Awesome Embedded Systems
+    link: https://github.com/nhivp/Awesome-Embedded
+    description: A huge curated list of embedded courses, books, tools and communities.
+    type: repo
+    tags: [embedded-c, awesome-list]
+  - title: FreeRTOS Docs
+    id: freertos-docs
+    link: https://www.freertos.org/Documentation/00-Overview
+    description: Docs for the most popular real-time OS for microcontrollers, with tasks, queues and semaphores.
+    type: docs
+    tags: [rtos, freertos]
+  - title: Introduction to RTOS (Digi-Key)
+    link: https://www.youtube.com/playlist?list=PLEBQazB0HUyQ4hAPU1cJED6t3DU0h34bz
+    description: Shawn Hymel's short video series teaching FreeRTOS concepts on an ESP32.
+    type: video
+    tags: [rtos, freertos, esp32]
+  - title: Zephyr Project Docs
+    link: https://docs.zephyrproject.org/latest/
+    description: Docs for Zephyr, the Linux Foundation's open-source RTOS supporting hundreds of boards.
+    type: docs
+    tags: [rtos, zephyr]
+  - title: The Embedded Rust Book
+    link: https://docs.rust-embedded.org/book/
+    description: The official introduction to writing Rust on bare-metal microcontrollers.
+    type: book
+    tags: [rust, embedded]
+  - title: The Discovery Book
+    link: https://docs.rust-embedded.org/discovery/
+    description: A hands-on beginner's guide to embedded Rust on a micro:bit board.
+    type: book
+    tags: [rust, beginner]
+  - title: Embassy
+    link: https://embassy.dev/
+    description: A modern async framework for embedded Rust on STM32, nRF, RP2040 and more.
+    type: docs
+    tags: [rust, async]
+  - title: KiCad Documentation
+    id: kicad-docs
+    link: https://docs.kicad.org/
+    description: Docs for KiCad, the free and open-source tool for drawing schematics and designing PCBs.
+    type: docs
+    tags: [pcb, kicad]
+  - title: KiCad
+    link: https://www.kicad.org/
+    description: Download KiCad and find its getting-started guide and community links.
+    type: tool
+    tags: [pcb, kicad]
+  - title: Phil's Lab
+    id: phils-lab
+    link: https://www.youtube.com/@PhilsLab
+    description: Clear, professional videos on PCB design, STM32 firmware and DSP using KiCad.
+    type: video
+    tags: [pcb, stm32, youtube]
+  - title: Robert Feranec
+    link: https://www.youtube.com/@RobertFeranec
+    description: Long-form PCB layout and high-speed hardware design lessons from an experienced designer.
+    type: video
+    tags: [pcb, youtube]
+  - title: GreatScott!
+    link: https://www.youtube.com/@greatscottlab
+    description: Fun electronics projects and the classic "Electronic Basics" series explaining components.
+    type: video
+    tags: [electronics, youtube]
+  - title: DroneBot Workshop
+    link: https://www.youtube.com/@Dronebotworkshop
+    description: Long, very thorough tutorials on Arduino, ESP32, Raspberry Pi, motors and sensors.
+    type: video
+    tags: [arduino, esp32, youtube]
+  - title: Andreas Spiess
+    link: https://www.youtube.com/@AndreasSpiess
+    description: "The guy with the Swiss accent: IoT, ESP32, LoRa and wireless experiments explained clearly."
+    type: video
+    tags: [iot, esp32, lora]
+  - title: EEVblog
+    link: https://www.youtube.com/@EEVblog
+    description: Dave Jones on electronics design, test gear, teardowns and the fundamentals.
+    type: video
+    tags: [electronics, youtube]
+  - title: Ben Eater
+    link: https://www.youtube.com/@BenEater
+    description: Builds an 8-bit computer and a 6502 computer on breadboards. Best way to see how hardware really works.
+    type: video
+    tags: [digital-logic, computer-architecture]
+  - title: Low Level Learning
+    link: https://www.youtube.com/@LowLevelTV
+    description: Short videos on C, assembly, Raspberry Pi Pico and how code runs on real hardware.
+    type: video
+    tags: [embedded-c, low-level]
+  - title: MQTT.org
+    id: mqtt-org
+    link: https://mqtt.org/
+    description: The home of MQTT, the lightweight publish/subscribe protocol behind most IoT devices.
+    type: docs
+    tags: [mqtt, iot, protocols]
+  - title: HiveMQ MQTT Essentials
+    link: https://www.hivemq.com/mqtt/
+    description: A clear article series explaining MQTT topics, QoS, retained messages and security.
+    type: guide
+    tags: [mqtt, iot]
+  - title: Eclipse Mosquitto
+    link: https://mosquitto.org/
+    description: A small open-source MQTT broker you can run on a laptop or a Raspberry Pi.
+    type: tool
+    tags: [mqtt, broker]
+  - title: Node-RED
+    link: https://nodered.org/
+    description: A visual, flow-based tool for wiring IoT devices, APIs and dashboards together.
+    type: tool
+    tags: [iot, low-code]
+  - title: Home Assistant
+    link: https://www.home-assistant.io/
+    description: Open-source home automation that connects thousands of devices. Great for home IoT projects.
+    type: tool
+    tags: [iot, home-automation]
+  - title: ESPHome
+    link: https://esphome.io/
+    description: Build custom firmware for ESP32 and ESP8266 devices from simple YAML configs.
+    type: tool
+    tags: [esp32, home-automation]
+  - title: Edge Impulse
+    link: https://www.edgeimpulse.com/
+    description: Train and deploy machine learning models on microcontrollers. Free for developers.
+    type: tool
+    tags: [tinyml, machine-learning]
+  - title: TinyML (HarvardX)
+    link: https://www.edx.org/certificates/professional-certificate/harvardx-tiny-machine-learning
+    description: Harvard's course series on running machine learning on tiny, low-power devices.
+    type: course
+    tags: [tinyml, machine-learning]
+  - title: ROS 2 Documentation
+    link: https://docs.ros.org/en/rolling/
+    description: Official docs and tutorials for ROS 2, the standard open-source framework for robots.
+    type: docs
+    tags: [ros, robotics]
+  - title: The Robotics Back-End
+    link: https://roboticsbackend.com/
+    description: Practical ROS 2 and Raspberry Pi tutorials aimed at beginners.
+    type: guide
+    tags: [ros, robotics, beginner]
+  - title: Articulated Robotics
+    link: https://www.youtube.com/@ArticulatedRobotics
+    description: A popular video series that builds a mobile robot from scratch with ROS 2.
+    type: video
+    tags: [ros, robotics, youtube]
+  - title: Gazebo
+    link: https://gazebosim.org/
+    description: An open-source robot simulator that works hand in hand with ROS 2.
+    type: tool
+    tags: [robotics, simulator]
+  - title: Nand2Tetris
+    link: https://www.nand2tetris.org/
+    description: Build a computer from logic gates up to an OS. Ideal grounding for embedded work.
+    type: course
+    tags: [digital-logic, computer-architecture]
+  - title: Digital Design and Computer Architecture
+    link: https://www.youtube.com/@OnurMutluLectures
+    description: Onur Mutlu's ETH Zurich lectures on digital logic, Verilog and computer architecture.
+    type: video
+    tags: [digital-logic, fpga, university]
+  - title: HDLBits
+    link: https://hdlbits.01xz.net/
+    description: Small Verilog exercises with instant feedback. The easiest way to start with FPGAs.
+    type: practice
+    tags: [verilog, fpga]
+  - title: Hackaday
+    link: https://hackaday.com/
+    description: Daily posts on hardware hacks and projects, plus Hackaday.io for sharing your own builds.
+    type: community
+    tags: [projects, news]
+  - title: Hackster.io
+    link: https://www.hackster.io/
+    description: A huge community of hardware projects with code, schematics and contests.
+    type: community
+    tags: [projects, iot]
+  - title: Electrical Engineering Stack Exchange
+    link: https://electronics.stackexchange.com/
+    description: Q&A for circuit design, components and embedded questions.
+    type: community
+    tags: [electronics, q-and-a]
+  - title: r/embedded
+    link: https://www.reddit.com/r/embedded/
+    description: An active community of firmware and embedded engineers discussing projects, tools and careers.
+    type: community
+    tags: [embedded, career]
+  - title: r/arduino
+    link: https://www.reddit.com/r/arduino/
+    description: A friendly, busy subreddit for Arduino projects and beginner questions.
+    type: community
+    tags: [arduino, beginner]
+  - title: The Amp Hour
+    link: https://theamphour.com/
+    description: A long-running podcast on electronics design, hardware startups and engineering life.
+    type: podcast
+    tags: [electronics, podcast]
+  - title: Embedded.fm
+    link: https://embedded.fm/
+    description: A weekly podcast about embedded systems, hosted by Elecia and Christopher White.
+    type: podcast
+    tags: [embedded, podcast]

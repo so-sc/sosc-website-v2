@@ -53,13 +53,15 @@ git commit -m "ADD: docker resource for beginners"
 
 ## Content Contributions
 
-All website content is written in Markdown or JSON and lives inside:
+All website content is written in Markdown, YAML or JSON and lives inside:
 
 src/content/
 
 Before adding content, read `CONTENT_GUIDELINES.md` carefully.
 
 PRs not following the guidelines may be requested for changes.
+
+Team profiles (`src/data/team/`) are only updated when the executive team changes, so please don't open PRs to add or edit team members.
 
 ## Pull Request Checklist
 

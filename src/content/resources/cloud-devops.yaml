@@ -1,0 +1,557 @@
+title: Cloud & DevOps
+tagline: Deploy, scale and automate everything.
+description: Linux servers, containers, CI/CD and the major cloud platforms.
+order: 7
+path:
+  - title: Linux and servers
+    resources: [linux-upskill]
+  - title: Containers
+    resources: [docker-get-started, docker-for-beginners]
+  - title: Automate with CI/CD
+    resources: [github-actions, twelve-factor]
+  - title: Pick a cloud
+    note: All three have free student tiers and learning paths.
+    resources: [aws-skill-builder, google-cloud-skills, microsoft-learn-azure]
+  - title: Orchestrate and codify
+    resources: [kubernetes-basics, terraform-tutorials]
+resources:
+  - title: Linux Upskill Challenge
+    id: linux-upskill
+    link: https://linuxupskillchallenge.org/
+    description: A month of daily tasks running your own Linux server.
+    type: course
+    tags: [linux, servers]
+  - title: Docker, Get Started
+    id: docker-get-started
+    link: https://docs.docker.com/get-started/
+    description: The official guide to building and running your first containers.
+    type: docs
+    tags: [docker]
+  - title: Docker for Beginners
+    id: docker-for-beginners
+    link: https://www.youtube.com/watch?v=fqMOX6JJhGo
+    description: A full video course on understanding and using Docker.
+    type: video
+    tags: [docker]
+  - title: GitHub Actions
+    id: github-actions
+    link: https://docs.github.com/en/actions
+    description: Automate tests, builds and deployments right from your repo.
+    type: docs
+    tags: [ci-cd, github]
+  - title: The Twelve-Factor App
+    id: twelve-factor
+    link: https://12factor.net/
+    description: Twelve principles for building apps that deploy and scale cleanly.
+    type: guide
+    tags: [architecture]
+  - title: AWS Skill Builder
+    id: aws-skill-builder
+    link: https://skillbuilder.aws/
+    description: Amazon's free training, from cloud basics to certification prep.
+    type: course
+    tags: [aws]
+  - title: Google Cloud Skills Boost
+    id: google-cloud-skills
+    link: https://www.cloudskillsboost.google/
+    description: Hands-on labs and learning paths for Google Cloud.
+    type: course
+    tags: [gcp]
+  - title: Microsoft Learn, Azure
+    id: microsoft-learn-azure
+    link: https://learn.microsoft.com/en-us/training/azure/
+    description: Free Azure modules and learning paths with sandboxes.
+    type: course
+    tags: [azure]
+  - title: Kubernetes Basics
+    id: kubernetes-basics
+    link: https://kubernetes.io/docs/tutorials/kubernetes-basics/
+    description: The official interactive intro to deploying and scaling apps on Kubernetes.
+    type: course
+    tags: [kubernetes]
+  - title: Terraform Tutorials
+    id: terraform-tutorials
+    link: https://developer.hashicorp.com/terraform/tutorials
+    description: Learn infrastructure as code by provisioning real cloud resources.
+    type: course
+    tags: [terraform, iac]
+  - title: DevOps Roadmap
+    link: https://roadmap.sh/devops
+    description: The step-by-step map to becoming a DevOps engineer.
+    type: roadmap
+    tags: [career]
+  - title: The Missing Semester of Your CS Education
+    link: https://missing.csail.mit.edu/
+    description: MIT's short course on the shell, scripting, Git, editors and other everyday tools.
+    type: course
+    tags: [linux, shell, beginner-friendly]
+  - title: The Linux Command Line
+    link: https://linuxcommand.org/tlcl.php
+    description: William Shotts' free book that takes you from first commands to shell scripting.
+    type: book
+    tags: [linux, shell, beginner-friendly]
+  - title: Introduction to Linux (LFS101)
+    link: https://training.linuxfoundation.org/training/introduction-to-linux/
+    description: The Linux Foundation's free self-paced course on using and administering Linux.
+    type: course
+    tags: [linux, beginner-friendly]
+  - title: OverTheWire, Bandit
+    link: https://overthewire.org/wargames/bandit/
+    description: A wargame that teaches Linux command-line basics over SSH.
+    type: practice
+    tags: [linux, shell]
+  - title: BashGuide
+    link: https://mywiki.wooledge.org/BashGuide
+    description: The well-respected guide to writing correct Bash scripts.
+    type: guide
+    tags: [bash, shell]
+  - title: explainshell
+    link: https://explainshell.com/
+    description: Paste a shell command and see what each part and flag does.
+    type: tool
+    tags: [shell, linux]
+  - title: ShellCheck
+    link: https://www.shellcheck.net/
+    description: A linter that finds bugs and pitfalls in your shell scripts.
+    type: tool
+    tags: [bash, shell]
+  - title: SadServers
+    link: https://sadservers.com/
+    description: Fix broken Linux servers in the browser, like real troubleshooting interviews.
+    type: practice
+    tags: [linux, troubleshooting]
+  - title: Linux Performance
+    link: https://www.brendangregg.com/linuxperf.html
+    description: Brendan Gregg's famous diagrams, tools and talks on Linux performance analysis.
+    type: guide
+    tags: [linux, performance]
+  - title: Cloudflare Learning Center
+    link: https://www.cloudflare.com/learning/
+    description: Plain-language explainers on DNS, CDNs, HTTP, TLS and how the internet works.
+    type: guide
+    tags: [networking, dns, beginner-friendly]
+  - title: How DNS Works
+    link: https://howdns.works/
+    description: A fun illustrated comic explaining what happens when you look up a domain.
+    type: article
+    tags: [dns, networking, beginner-friendly]
+  - title: Professor Messer's Network+ Course
+    link: https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/
+    description: A complete free video course on networking fundamentals for CompTIA Network+.
+    type: video
+    tags: [networking, certification]
+  - title: Beej's Guide to Network Programming
+    link: https://beej.us/guide/bgnet/
+    description: The classic friendly guide to sockets and network programming.
+    type: book
+    tags: [networking, sockets]
+  - title: Wizard Zines
+    link: https://wizardzines.com/
+    description: Julia Evans' illustrated zines on networking, Linux, DNS and debugging.
+    type: book
+    tags: [linux, networking, dns]
+  - title: Docker Tutorial for Beginners, TechWorld with Nana
+    link: https://www.youtube.com/watch?v=3c-iBn73dDE
+    description: A three-hour full course on Docker concepts, images, volumes and Compose.
+    type: video
+    tags: [docker]
+  - title: Docker Curriculum
+    link: https://docker-curriculum.com/
+    description: A hands-on tutorial that takes you from your first container to a deployed app.
+    type: guide
+    tags: [docker, beginner-friendly]
+  - title: Dockerfile Best Practices
+    link: https://docs.docker.com/build/building/best-practices/
+    description: Official advice for writing small, fast and secure container images.
+    type: docs
+    tags: [docker]
+  - title: Docker Compose
+    link: https://docs.docker.com/compose/
+    description: Official docs for defining and running multi-container apps with one file.
+    type: docs
+    tags: [docker, compose]
+  - title: Play with Docker
+    link: https://labs.play-with-docker.com/
+    description: A free Docker playground in the browser, no install needed.
+    type: practice
+    tags: [docker]
+  - title: Podman
+    link: https://podman.io/
+    description: A daemonless, rootless container engine that works like Docker.
+    type: tool
+    tags: [containers]
+  - title: dive
+    link: https://github.com/wagoodman/dive
+    description: Explore each layer of a Docker image to find ways to shrink it.
+    type: tool
+    tags: [docker]
+  - title: Awesome Docker
+    link: https://github.com/veggiemonk/awesome-docker
+    description: A curated list of Docker resources and projects.
+    type: repo
+    tags: [docker, awesome-list]
+  - title: Docker Roadmap
+    link: https://roadmap.sh/docker
+    description: A step-by-step map of what to learn about containers and Docker.
+    type: roadmap
+    tags: [docker]
+  - title: Kubernetes Documentation
+    link: https://kubernetes.io/docs/home/
+    description: The official docs with concepts, tasks and reference for Kubernetes.
+    type: docs
+    tags: [kubernetes]
+  - title: Kubernetes Tutorial for Beginners, TechWorld with Nana
+    link: https://www.youtube.com/watch?v=X48VuDVv0do
+    description: A four-hour full course covering Kubernetes architecture, objects and Helm.
+    type: video
+    tags: [kubernetes]
+  - title: Introduction to Kubernetes (LFS158)
+    link: https://training.linuxfoundation.org/training/introduction-to-kubernetes/
+    description: The Linux Foundation's free self-paced intro to Kubernetes.
+    type: course
+    tags: [kubernetes]
+  - title: Kubernetes The Hard Way
+    link: https://github.com/kelseyhightower/kubernetes-the-hard-way
+    description: Kelsey Hightower's guide to building a cluster by hand to understand every piece.
+    type: guide
+    tags: [kubernetes]
+  - title: minikube
+    link: https://minikube.sigs.k8s.io/docs/
+    description: Run a local Kubernetes cluster on your laptop for learning and testing.
+    type: tool
+    tags: [kubernetes]
+  - title: kind
+    link: https://kind.sigs.k8s.io/
+    description: Run Kubernetes clusters inside Docker containers, great for testing and CI.
+    type: tool
+    tags: [kubernetes, docker]
+  - title: K3s
+    link: https://k3s.io/
+    description: A lightweight Kubernetes distribution perfect for Raspberry Pis and home labs.
+    type: tool
+    tags: [kubernetes, homelab]
+  - title: Helm
+    link: https://helm.sh/docs/
+    description: The package manager for Kubernetes, for installing and templating apps.
+    type: docs
+    tags: [kubernetes, helm]
+  - title: k9s
+    link: https://k9scli.io/
+    description: A terminal UI for navigating and managing Kubernetes clusters.
+    type: tool
+    tags: [kubernetes]
+  - title: Learnk8s
+    link: https://learnk8s.io/
+    description: In-depth, well-illustrated articles on how Kubernetes really works.
+    type: article
+    tags: [kubernetes]
+  - title: Kubernetes Failure Stories
+    link: https://k8s.af/
+    description: A compiled list of public Kubernetes outage post-mortems to learn from.
+    type: article
+    tags: [kubernetes, sre]
+  - title: Kubernetes Roadmap
+    link: https://roadmap.sh/kubernetes
+    description: A step-by-step map of what to learn about Kubernetes.
+    type: roadmap
+    tags: [kubernetes]
+  - title: CKA Course Notes, KodeKloud
+    link: https://github.com/kodekloudhub/certified-kubernetes-administrator-course
+    description: Free notes and diagrams from KodeKloud's popular CKA prep course.
+    type: repo
+    tags: [kubernetes, certification]
+  - title: CNCF Certification Curriculum
+    link: https://github.com/cncf/curriculum
+    description: The official exam curricula for KCNA, CKA, CKAD and CKS.
+    type: repo
+    tags: [kubernetes, certification]
+  - title: Awesome Kubernetes
+    link: https://github.com/ramitsurana/awesome-kubernetes
+    description: A curated list of Kubernetes tools, guides and resources.
+    type: repo
+    tags: [kubernetes, awesome-list]
+  - title: CNCF Landscape
+    link: https://landscape.cncf.io/
+    description: An interactive map of every cloud native project and where it fits.
+    type: tool
+    tags: [cloud-native]
+  - title: Killercoda
+    link: https://killercoda.com/
+    description: Free interactive browser labs for Linux, Kubernetes and DevOps tools.
+    type: practice
+    tags: [kubernetes, linux, labs]
+  - title: iximiuz Labs
+    link: https://labs.iximiuz.com/
+    description: Hands-on playgrounds and challenges on containers, Kubernetes and networking.
+    type: practice
+    tags: [containers, kubernetes, labs]
+  - title: KodeKloud
+    link: https://kodekloud.com/
+    description: DevOps courses with built-in labs, popular for certification prep.
+    type: course
+    tags: [kubernetes, certification, labs]
+  - title: TechWorld with Nana
+    link: https://www.youtube.com/@TechWorldwithNana
+    description: Clear, well-produced DevOps tutorials on Docker, Kubernetes, CI/CD and more.
+    type: video
+    tags: [kubernetes, docker, ci-cd]
+  - title: DevOps Toolkit
+    link: https://www.youtube.com/@DevOpsToolkit
+    description: Viktor Farcic's reviews and tutorials of cloud native and DevOps tools.
+    type: video
+    tags: [kubernetes, cloud-native]
+  - title: Jeff Geerling
+    link: https://www.youtube.com/@JeffGeerling
+    description: Videos on Ansible, Raspberry Pi clusters and home lab projects.
+    type: video
+    tags: [ansible, homelab]
+  - title: 90DaysOfDevOps
+    link: https://github.com/MichaelCade/90DaysOfDevOps
+    description: A community journey through DevOps fundamentals, one topic per day.
+    type: repo
+    tags: [beginner-friendly]
+  - title: DevOps Exercises
+    link: https://github.com/bregman-arie/devops-exercises
+    description: Thousands of questions and exercises across Linux, cloud, containers and CI/CD.
+    type: repo
+    tags: [interviews, practice]
+  - title: GitHub Actions Tutorials
+    link: https://docs.github.com/en/actions/tutorials
+    description: Step-by-step guides to building, testing and deploying with GitHub Actions.
+    type: docs
+    tags: [ci-cd, github]
+  - title: GitLab CI/CD
+    link: https://docs.gitlab.com/ci/
+    description: Official docs for building pipelines with GitLab CI.
+    type: docs
+    tags: [ci-cd, gitlab]
+  - title: Jenkins Documentation
+    link: https://www.jenkins.io/doc/
+    description: Docs for the classic open source automation server and its pipelines.
+    type: docs
+    tags: [ci-cd, jenkins]
+  - title: Argo CD
+    link: https://argo-cd.readthedocs.io/
+    description: GitOps continuous delivery for Kubernetes, driven by your Git repo.
+    type: docs
+    tags: [gitops, kubernetes, ci-cd]
+  - title: Terraform Documentation
+    link: https://developer.hashicorp.com/terraform/docs
+    description: The language reference and CLI docs for Terraform.
+    type: docs
+    tags: [terraform, iac]
+  - title: OpenTofu
+    link: https://opentofu.org/
+    description: The open source, community-driven fork of Terraform.
+    type: tool
+    tags: [terraform, iac]
+  - title: Terraform Up and Running
+    link: https://www.terraformupandrunning.com/
+    description: Yevgeniy Brikman's popular book on writing infrastructure as code with Terraform.
+    type: book
+    tags: [terraform, iac]
+  - title: Ansible Getting Started
+    link: https://docs.ansible.com/ansible/latest/getting_started/index.html
+    description: The official intro to automating servers with Ansible playbooks.
+    type: docs
+    tags: [ansible, iac]
+  - title: Ansible for DevOps
+    link: https://www.ansiblefordevops.com/
+    description: Jeff Geerling's well-loved book on server and deployment automation with Ansible.
+    type: book
+    tags: [ansible, iac]
+  - title: Pulumi Documentation
+    link: https://www.pulumi.com/docs/
+    description: Infrastructure as code using real languages like Python, TypeScript and Go.
+    type: docs
+    tags: [pulumi, iac]
+  - title: Vagrant
+    link: https://developer.hashicorp.com/vagrant
+    description: Spin up reproducible virtual machines for local development and labs.
+    type: tool
+    tags: [virtualization, iac]
+  - title: AWS Free Tier
+    link: https://aws.amazon.com/free/
+    description: What you can run on AWS for free while learning.
+    type: docs
+    tags: [aws, free-tier]
+  - title: Google Cloud Free Program
+    link: https://cloud.google.com/free
+    description: Google Cloud's free trial credits and always-free products.
+    type: docs
+    tags: [gcp, free-tier]
+  - title: Azure for Students
+    link: https://azure.microsoft.com/en-us/free/students
+    description: Free Azure credits and services for students, no credit card needed.
+    type: docs
+    tags: [azure, free-tier, students]
+  - title: Oracle Cloud Always Free
+    link: https://www.oracle.com/cloud/free/
+    description: A generous always-free tier, popular for hosting small servers and side projects.
+    type: docs
+    tags: [free-tier, servers]
+  - title: AWS Educate
+    link: https://aws.amazon.com/education/awseducate/
+    description: Free AWS training and labs for students, no credit card needed.
+    type: course
+    tags: [aws, students]
+  - title: AWS Cloud Practitioner Course, freeCodeCamp
+    link: https://www.youtube.com/watch?v=NhDYbskXRgc
+    description: Andrew Brown's free full-length course for the AWS Cloud Practitioner exam.
+    type: video
+    tags: [aws, certification]
+  - title: AZ-900 Azure Fundamentals
+    link: https://learn.microsoft.com/en-us/training/courses/az-900t00
+    description: Microsoft's free learning path for the Azure Fundamentals certification.
+    type: course
+    tags: [azure, certification]
+  - title: AWS Well-Architected
+    link: https://aws.amazon.com/architecture/well-architected/
+    description: AWS's guidance on designing reliable, secure and cost-effective systems.
+    type: guide
+    tags: [aws, architecture]
+  - title: The Open Guide to AWS
+    link: https://github.com/open-guides/og-aws
+    description: A community guide to AWS services, with practical tips and gotchas.
+    type: guide
+    tags: [aws]
+  - title: AWS Roadmap
+    link: https://roadmap.sh/aws
+    description: A map of the core AWS services worth learning first.
+    type: roadmap
+    tags: [aws]
+  - title: The Cloud Resume Challenge
+    link: https://cloudresumechallenge.dev/
+    description: A project that has you build and deploy your resume site with real cloud tooling.
+    type: practice
+    tags: [project, aws, career]
+  - title: AWS Lambda
+    link: https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
+    description: Official docs for running code without managing servers on AWS.
+    type: docs
+    tags: [serverless, aws]
+  - title: Cloudflare Workers
+    link: https://developers.cloudflare.com/workers/
+    description: Deploy serverless code to the edge, with a generous free plan.
+    type: docs
+    tags: [serverless, edge]
+  - title: Serverless Land
+    link: https://serverlessland.com/
+    description: AWS's hub of serverless patterns, workshops and examples.
+    type: guide
+    tags: [serverless, aws]
+  - title: Prometheus
+    link: https://prometheus.io/docs/introduction/overview/
+    description: Official docs for the standard open source metrics and alerting system.
+    type: docs
+    tags: [observability, monitoring]
+  - title: Grafana Tutorials
+    link: https://grafana.com/tutorials/
+    description: Hands-on tutorials for building dashboards and alerts with Grafana.
+    type: course
+    tags: [observability, monitoring]
+  - title: Grafana Loki
+    link: https://grafana.com/docs/loki/latest/
+    description: Docs for a lightweight log aggregation system that pairs with Grafana.
+    type: docs
+    tags: [observability, logging]
+  - title: OpenTelemetry
+    link: https://opentelemetry.io/docs/
+    description: The vendor-neutral standard for traces, metrics and logs.
+    type: docs
+    tags: [observability, tracing]
+  - title: Google SRE Books
+    link: https://sre.google/books/
+    description: Google's Site Reliability Engineering books, free to read online.
+    type: book
+    tags: [sre, reliability]
+  - title: Awesome SRE
+    link: https://github.com/dastergon/awesome-sre
+    description: A curated list of Site Reliability Engineering resources.
+    type: repo
+    tags: [sre, awesome-list]
+  - title: Post-mortems
+    link: https://github.com/danluu/post-mortems
+    description: Dan Luu's collection of public outage post-mortems from many companies.
+    type: repo
+    tags: [sre, reliability]
+  - title: DORA
+    link: https://dora.dev/
+    description: Research on what makes software delivery teams fast and reliable.
+    type: article
+    tags: [devops, metrics]
+  - title: The Phoenix Project
+    link: https://itrevolution.com/product/the-phoenix-project/
+    description: The classic novel that explains DevOps through a struggling IT team.
+    type: book
+    tags: [devops, culture]
+  - title: System Design Primer
+    link: https://github.com/donnemartin/system-design-primer
+    description: Learn how to design large-scale systems, with diagrams and examples.
+    type: repo
+    tags: [system-design, architecture]
+  - title: Caddy
+    link: https://caddyserver.com/docs/
+    description: A web server and reverse proxy with automatic HTTPS out of the box.
+    type: docs
+    tags: [web-server, https]
+  - title: NGINX Beginner's Guide
+    link: https://nginx.org/en/docs/beginners_guide.html
+    description: The official intro to configuring NGINX as a web server and proxy.
+    type: docs
+    tags: [web-server, nginx]
+  - title: Let's Encrypt
+    link: https://letsencrypt.org/
+    description: Free TLS certificates for any domain, with docs on how HTTPS works.
+    type: tool
+    tags: [https, tls]
+  - title: Tailscale Docs
+    link: https://tailscale.com/kb
+    description: Docs for a zero-config VPN that's handy for reaching your home lab securely.
+    type: docs
+    tags: [networking, vpn, homelab]
+  - title: DigitalOcean Tutorials
+    link: https://www.digitalocean.com/community/tutorials
+    description: Thousands of clear tutorials on setting up Linux servers and services.
+    type: guide
+    tags: [linux, servers]
+  - title: Proxmox VE
+    link: https://www.proxmox.com/
+    description: A free, open source hypervisor that powers countless home labs.
+    type: tool
+    tags: [homelab, virtualization]
+  - title: Awesome Selfhosted
+    link: https://github.com/awesome-selfhosted/awesome-selfhosted
+    description: A huge list of free software you can host on your own servers.
+    type: repo
+    tags: [homelab, self-hosting, awesome-list]
+  - title: r/homelab
+    link: https://www.reddit.com/r/homelab/
+    description: A community for building and showing off home server setups.
+    type: community
+    tags: [homelab]
+  - title: r/selfhosted
+    link: https://www.reddit.com/r/selfhosted/
+    description: A community for running your own services instead of relying on SaaS.
+    type: community
+    tags: [homelab, self-hosting]
+  - title: Last Week in AWS
+    link: https://www.lastweekinaws.com/
+    description: Corey Quinn's witty weekly newsletter on AWS news.
+    type: article
+    tags: [aws, newsletter]
+  - title: DevOps Weekly
+    link: https://www.devopsweekly.com/
+    description: A long-running weekly newsletter of DevOps news and articles.
+    type: article
+    tags: [newsletter]
+  - title: SRE Weekly
+    link: https://sreweekly.com/
+    description: A weekly newsletter on reliability, incidents and operations.
+    type: article
+    tags: [sre, newsletter]
+  - title: Kubernetes Podcast from Google
+    link: https://kubernetespodcast.com/
+    description: Weekly interviews and news from the Kubernetes and cloud native world.
+    type: podcast
+    tags: [kubernetes]

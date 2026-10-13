@@ -20,7 +20,7 @@ src/content/
 │   └── <project-slug>/
 │       └── index.md
 ├── resources/
-│   └── <resource-name>.json
+│   └── <track>.yaml
 ```
 
 ### General Rules
@@ -138,41 +138,49 @@ Explain how others can contribute to the project. Include a link to the reposito
 
 ---
 
-## Resource Guidelines (JSON)
+## Resource Guidelines (YAML)
 
-Resources are stored as individual JSON files.
+Resources are grouped into **tracks** (Web Development, AI & Machine Learning, Cybersecurity…). Each track is one YAML file, and each file becomes a page at `/resources/<track>`.
 
 ### Location
 
 ```
-src/content/resources/
+src/content/resources/<track>.yaml
 ```
 
-### Resource JSON Format
+### Adding a resource
 
-```json
-{
-  "title": "Docker for Beginners",
-  "description": "A comprehensive guide to understanding and using Docker.",
-  "type": "video",
-  "category": "DevOps",
-  "tags": ["docker", "containers"],
-  "link": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
-  "contributor": "community",
-  "date": "2024-03-22"
-}
+Open the track's file and append an entry under `resources:`. Copy an existing entry and edit it:
+
+```yaml
+- title: The Modern JavaScript Tutorial
+  link: https://javascript.info/
+  description: A thorough, well-written JavaScript tutorial, from basics to advanced topics.
+  type: guide
+  tags: [javascript]
 ```
 
 ### Field Rules
 
-- **type**: `guide` | `article` | `video` | `roadmap` | `tools` | `repo` | `misc` | `course` | `book` | `cheatsheet` | `podcast` | `community` | `challenge` | `job-board`.
-  - You can specify a single string or an array of strings (e.g. | `["course", "video"]`).
-- **category**: `AI/ML` | `App Dev` | `Blockchain` | `Cloud` | `Competitive Programming` | `Computer Science` | `Cybersecurity` | `Data Science` | `Design` | `Development` | `DevOps` | `Game Dev` | `Open Source` | `Web Dev` | `Misc`.
-- **contributor**: `community` | `external`
-- **date**: Must follow the format `YYYY-MM-DD`.
-- One resource per file.
-- All fields are mandatory.
+- **title**, **link**, **description**: required. Keep the description to one sentence on what the reader gets.
+- **type**: `course` | `guide` | `docs` | `video` | `book` | `roadmap` | `cheatsheet` | `practice` | `tool` | `repo` | `article` | `podcast` | `community`.
+- **tags**: optional, lowercase, used by search.
+- **id**: optional. Only needed when the learning path refers to the resource. Defaults to the title in kebab-case.
+
+### Learning paths
+
+The `path:` list at the top of each file is the ordered "start here" route for that track. Each step has a `title`, an optional `note`, and `resources:`, a list of ids from the same file. Keep paths to 3–6 steps.
+
+### Adding a track
+
+Create `src/content/resources/<track>.yaml` with `title`, `tagline`, `description`, `order` (position on the hub), an optional `path`, and `resources`.
+
+### Checks
+
+`pnpm build` validates every file. A typo in `type`, a broken URL, a duplicate id or a path step pointing at a missing id fails the build, and the error names the file and the entry.
+
 - No promotional or affiliate links.
+- Prefer free resources.
 
 ### Images & Assets
 
@@ -184,7 +192,7 @@ src/content/resources/
 - Promotional content.
 - Offensive or political material.
 - Copyrighted content without permission.
-- Invalid Markdown or malformed JSON.
+- Invalid Markdown or malformed YAML.
 
 ---
 

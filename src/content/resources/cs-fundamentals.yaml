@@ -1,0 +1,482 @@
+title: CS Fundamentals
+tagline: How computers, systems and algorithms actually work.
+description: The theory behind everything else. Hardware, operating systems, networks and algorithms, from free university-grade material.
+order: 1
+path:
+  - title: How computers work
+    note: From logic gates to a working machine.
+    resources: [crash-course-cs, nand2tetris]
+  - title: Programming foundations
+    resources: [cs50x]
+  - title: Systems
+    note: Operating systems and networking, the layer your code runs on.
+    resources: [ostep, beej-networking]
+  - title: Algorithms
+    resources: [mit-6006]
+  - title: Build your own curriculum
+    note: Self-taught degree plans when you want to go all the way.
+    resources: [teach-yourself-cs, ossu]
+resources:
+  - title: Crash Course Computer Science
+    id: crash-course-cs
+    link: https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo
+    description: Forty short, friendly videos covering how computers work, from transistors to the internet.
+    type: video
+    tags: [hardware, overview]
+  - title: Nand2Tetris
+    id: nand2tetris
+    link: https://www.nand2tetris.org/
+    description: Build a computer from NAND gates up to an OS and a game, one layer at a time.
+    type: course
+    tags: [hardware, architecture]
+  - title: CS50x
+    id: cs50x
+    link: https://cs50.harvard.edu/x/
+    description: Harvard's intro to computer science and programming.
+    type: course
+    tags: [programming]
+  - title: "Operating Systems: Three Easy Pieces"
+    id: ostep
+    link: https://pages.cs.wisc.edu/~remzi/OSTEP/
+    description: A free, readable textbook on virtualization, concurrency and persistence.
+    type: book
+    tags: [os]
+  - title: Beej's Guide to Network Programming
+    id: beej-networking
+    link: https://beej.us/guide/bgnet/
+    description: Sockets and networking explained with humour and working C code.
+    type: book
+    tags: [networking, c]
+  - title: MIT 6.006 Introduction to Algorithms
+    id: mit-6006
+    link: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/
+    description: Full MIT lectures, notes and problem sets on core algorithms and data structures.
+    type: course
+    tags: [algorithms]
+  - title: Teach Yourself Computer Science
+    id: teach-yourself-cs
+    link: https://teachyourselfcs.com/
+    description: An opinionated list of the best book and lecture series for each CS subject.
+    type: guide
+    tags: [curriculum]
+  - title: OSSU Computer Science
+    id: ossu
+    link: https://github.com/ossu/computer-science
+    description: A complete, free CS degree path built from online courses.
+    type: repo
+    tags: [curriculum]
+  - title: CMU 15-445 Database Systems
+    link: https://15445.courses.cs.cmu.edu/
+    description: How databases work inside, from storage to query execution, with recorded lectures.
+    type: course
+    tags: [databases]
+  - title: Designing Data-Intensive Applications
+    link: https://dataintensive.net/
+    description: The go-to book on how real systems store, replicate and process data.
+    type: book
+    tags: [systems, databases]
+  - title: The Missing Semester of Your CS Education
+    link: https://missing.csail.mit.edu/
+    description: MIT's short course on the shell, Git, editors, debugging and other tools classes never teach.
+    type: course
+    tags: [tools, shell, git]
+  - title: MIT 6.042J Mathematics for Computer Science
+    link: https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/
+    description: Proofs, graphs, counting and probability for CS, with full lectures and the free textbook.
+    type: course
+    tags: [discrete-math, math]
+  - title: Mathematics for Computer Science (Book)
+    link: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf
+    description: The free MIT textbook on discrete maths, proofs and probability used across many CS programs.
+    type: book
+    tags: [discrete-math, math]
+  - title: MIT 6.046J Design and Analysis of Algorithms
+    link: https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/
+    description: MIT's follow-up to 6.006 covering advanced algorithm design, with full video lectures.
+    type: course
+    tags: [algorithms]
+  - title: MIT 6.004 Computation Structures
+    link: https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/
+    description: Digital logic, processors and memory hierarchies, building up to a working computer.
+    type: course
+    tags: [architecture, hardware]
+  - title: MIT 6.824 Distributed Systems
+    link: https://pdos.csail.mit.edu/6.824/
+    description: The classic distributed systems course with Raft and key-value store labs in Go.
+    type: course
+    tags: [distributed-systems, go]
+  - title: MIT 6.828 / 6.1810 Operating System Engineering
+    link: https://pdos.csail.mit.edu/6.828/
+    description: Learn OS internals by hacking on xv6, a small Unix-like teaching kernel.
+    type: course
+    tags: [os, c]
+  - title: xv6 Book
+    link: https://pdos.csail.mit.edu/6.828/2024/xv6/book-riscv-rev4.pdf
+    description: A short, readable walkthrough of a real Unix-like kernel and its source code.
+    type: book
+    tags: [os, risc-v]
+  - title: MIT 6.045 Automata, Computability and Complexity
+    link: https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/
+    description: Theory of computation from finite automata to Turing machines and P vs NP.
+    type: course
+    tags: [theory, automata]
+  - title: MIT 18.404J Theory of Computation
+    link: https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/
+    description: Michael Sipser's own lectures on automata, computability and complexity.
+    type: course
+    tags: [theory, automata]
+  - title: MIT 6.001 Structure and Interpretation of Computer Programs
+    link: https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/
+    description: The legendary MIT course on abstraction and program design using Scheme.
+    type: course
+    tags: [programming, functional]
+  - title: Structure and Interpretation of Computer Programs
+    link: https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html
+    description: The classic SICP textbook, free online, on how to think about programs.
+    type: book
+    tags: [programming, scheme]
+  - title: CS 61A Structure and Interpretation of Computer Programs
+    link: https://cs61a.org/
+    description: Berkeley's intro to programming and abstraction in Python, with labs and projects.
+    type: course
+    tags: [python, programming]
+  - title: Composing Programs
+    link: https://composingprograms.com/
+    description: The free textbook behind CS 61A, a Python take on SICP.
+    type: book
+    tags: [python, programming]
+  - title: CS 61B Data Structures
+    link: https://sp24.datastructur.es/
+    description: Berkeley's data structures course in Java, with lectures, labs and projects.
+    type: course
+    tags: [data-structures, java]
+  - title: CS 61C Great Ideas in Computer Architecture
+    link: https://cs61c.org/
+    description: Berkeley's machine structures course covering C, RISC-V, caches and parallelism.
+    type: course
+    tags: [architecture, c, risc-v]
+  - title: CMU 15-213 Introduction to Computer Systems
+    link: https://www.cs.cmu.edu/~213/
+    description: CMU's famous systems course with the bomb, attack and malloc labs.
+    type: course
+    tags: [systems, c]
+  - title: "Computer Systems: A Programmer's Perspective"
+    link: https://csapp.cs.cmu.edu/
+    description: The CS:APP textbook on how programs run on real hardware, used in 15-213.
+    type: book
+    tags: [systems, c]
+  - title: CMU 15-721 Advanced Database Systems
+    link: https://15721.courses.cs.cmu.edu/
+    description: Andy Pavlo's graduate course on modern analytical database internals.
+    type: course
+    tags: [databases]
+  - title: CMU Database Group YouTube
+    link: https://www.youtube.com/@CMUDatabaseGroup
+    description: Recorded database lectures and talks from Andy Pavlo's group at CMU.
+    type: video
+    tags: [databases]
+  - title: Stanford CS144 Introduction to Computer Networking
+    link: https://cs144.github.io/
+    description: Build a TCP implementation from scratch while learning how the internet works.
+    type: course
+    tags: [networking]
+  - title: Stanford CS143 Compilers
+    link: https://web.stanford.edu/class/cs143/
+    description: Lexing, parsing, semantic analysis and code generation, building a compiler for a small language.
+    type: course
+    tags: [compilers]
+  - title: Stanford CS106B Programming Abstractions
+    link: https://web.stanford.edu/class/cs106b/
+    description: Stanford's second programming course on recursion, data structures and abstractions in C++.
+    type: course
+    tags: [data-structures, cpp]
+  - title: Crafting Interpreters
+    link: https://craftinginterpreters.com/
+    description: Build two complete interpreters for a scripting language, free online and beautifully written.
+    type: book
+    tags: [compilers, interpreters]
+  - title: Writing a C Compiler
+    link: https://nostarch.com/writing-c-compiler
+    description: A hands-on book that walks you through building a real C compiler step by step.
+    type: book
+    tags: [compilers, c]
+  - title: Build Your Own Lisp
+    link: https://buildyourownlisp.com/
+    description: Learn C by building your own small programming language.
+    type: book
+    tags: [compilers, c]
+  - title: "Computer Networking: A Top-Down Approach"
+    link: https://gaia.cs.umass.edu/kurose_ross/index.php
+    description: The Kurose and Ross networking textbook site with free lectures, slides and Wireshark labs.
+    type: book
+    tags: [networking]
+  - title: "Computer Networks: A Systems Approach"
+    link: https://book.systemsapproach.org/
+    description: A free, open-source networking textbook by Peterson and Davie.
+    type: book
+    tags: [networking]
+  - title: High Performance Browser Networking
+    link: https://hpbn.co/
+    description: Free book on TCP, TLS, HTTP/2, WebSockets and what makes the web fast.
+    type: book
+    tags: [networking, web]
+  - title: How DNS Works
+    link: https://howdns.works/
+    description: A short illustrated comic that explains DNS lookups from start to finish.
+    type: article
+    tags: [networking, dns]
+  - title: Julia Evans' Zines
+    link: https://wizardzines.com/
+    description: Friendly illustrated zines on networking, Linux, Git and debugging.
+    type: guide
+    tags: [networking, linux]
+  - title: Ben Eater
+    link: https://www.youtube.com/@BenEater
+    description: Build an 8-bit computer on breadboards and learn exactly how CPUs work.
+    type: video
+    tags: [hardware, architecture]
+  - title: "Code: The Hidden Language of Computer Hardware and Software"
+    link: https://www.charlespetzold.com/code/
+    description: Charles Petzold's classic, approachable book on how computers work from first principles.
+    type: book
+    tags: [hardware, beginner-friendly]
+  - title: Computer Organization and Design RISC-V Edition
+    link: https://shop.elsevier.com/books/computer-organization-and-design-risc-v-edition/patterson/978-0-12-820331-6
+    description: Patterson and Hennessy's standard textbook on processor design and the hardware/software interface.
+    type: book
+    tags: [architecture, risc-v]
+  - title: Onur Mutlu Lectures
+    link: https://www.youtube.com/@OnurMutluLectures
+    description: Full computer architecture courses from ETH Zurich and CMU, recorded and free.
+    type: video
+    tags: [architecture]
+  - title: CPUlator
+    link: https://cpulator.01xz.net/
+    description: A browser-based simulator for ARM, MIPS and RISC-V assembly programs.
+    type: tool
+    tags: [assembly, architecture]
+  - title: Compiler Explorer
+    link: https://godbolt.org/
+    description: Type code and instantly see the assembly that dozens of compilers produce.
+    type: tool
+    tags: [compilers, assembly]
+  - title: Operating Systems by Neso Academy
+    link: https://www.youtube.com/playlist?list=PLBlnK6fEyqRiVhbXDGLXDk_OQAeuVcp2O
+    description: A popular, beginner-friendly video series covering a full university OS syllabus.
+    type: video
+    tags: [os, beginner-friendly]
+  - title: Gate Smashers
+    link: https://www.youtube.com/@GateSmashers
+    description: Hindi video lectures on OS, DBMS, networks and theory of computation for GATE and exams.
+    type: video
+    tags: [os, databases, gate]
+  - title: NPTEL Computer Science
+    link: https://nptel.ac.in/courses
+    description: Free IIT and IISc video courses on every core CS subject, with optional certification.
+    type: course
+    tags: [university, india]
+  - title: OSDev Wiki
+    link: https://wiki.osdev.org/
+    description: The community wiki for writing your own operating system from bootloader up.
+    type: docs
+    tags: [os, low-level]
+  - title: Writing an OS in Rust
+    link: https://os.phil-opp.com/
+    description: A blog series that builds a small x86 kernel in Rust, step by step.
+    type: guide
+    tags: [os, rust]
+  - title: The Little Book of Semaphores
+    link: https://greenteapress.com/wp/semaphores/
+    description: A free book of concurrency puzzles that teaches synchronization patterns.
+    type: book
+    tags: [concurrency, os]
+  - title: Linux Kernel Labs
+    link: https://linux-kernel-labs.github.io/
+    description: University lectures and hands-on labs for learning Linux kernel development.
+    type: course
+    tags: [os, linux]
+  - title: Database System Concepts
+    link: https://db-book.com/
+    description: The Silberschatz textbook site with slides and exercises on relational databases.
+    type: book
+    tags: [databases, sql]
+  - title: Use The Index, Luke
+    link: https://use-the-index-luke.com/
+    description: A free guide to SQL indexing and query performance for developers.
+    type: guide
+    tags: [databases, sql]
+  - title: Architecture of a Database System
+    link: https://dsf.berkeley.edu/papers/fntdb07-architecture.pdf
+    description: A classic paper giving a tour of how relational databases are built inside.
+    type: article
+    tags: [databases]
+  - title: Build Your Own Redis
+    link: https://build-your-own.org/redis/
+    description: Build a Redis-like server in C++ and learn network programming and data structures.
+    type: book
+    tags: [databases, networking]
+  - title: Let's Build a Simple Database
+    link: https://cstack.github.io/db_tutorial/
+    description: Write a SQLite clone in C to learn how databases store and query data.
+    type: guide
+    tags: [databases, c]
+  - title: Build Your Own X
+    link: https://github.com/codecrafters-io/build-your-own-x
+    description: A huge list of tutorials for rebuilding Git, Docker, databases, OSes and more from scratch.
+    type: repo
+    tags: [projects, systems]
+  - title: CodeCrafters
+    link: https://codecrafters.io/
+    description: Guided challenges to build Redis, Git, SQLite and an HTTP server yourself.
+    type: practice
+    tags: [projects, systems]
+  - title: The System Design Primer
+    link: https://github.com/donnemartin/system-design-primer
+    description: The most popular open guide to designing large-scale systems, with exercises.
+    type: repo
+    tags: [system-design]
+  - title: ByteByteGo
+    link: https://www.youtube.com/@ByteByteGo
+    description: Short animated videos explaining system design concepts and real architectures.
+    type: video
+    tags: [system-design]
+  - title: High Scalability
+    link: https://highscalability.com/
+    description: Long-running blog of real-world architecture write-ups from big companies.
+    type: article
+    tags: [system-design]
+  - title: Awesome Scalability
+    link: https://github.com/binhnguyennus/awesome-scalability
+    description: A curated reading list of articles on scalability, reliability and performance.
+    type: repo
+    tags: [system-design, awesome-list]
+  - title: Hello Interview System Design
+    link: https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
+    description: A free, practical guide to system design interviews with core concepts and worked examples.
+    type: guide
+    tags: [system-design, interviews]
+  - title: Distributed Systems Lecture Series (Martin Kleppmann)
+    link: https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB
+    description: Cambridge lectures on consensus, replication, time and consistency by the DDIA author.
+    type: video
+    tags: [distributed-systems]
+  - title: Distributed Systems for Fun and Profit
+    link: http://book.mixu.net/distsys/
+    description: A short free book covering the key ideas behind distributed systems.
+    type: book
+    tags: [distributed-systems]
+  - title: The Raft Consensus Algorithm
+    link: https://raft.github.io/
+    description: The Raft paper, visualization and implementations, the easiest way into consensus.
+    type: article
+    tags: [distributed-systems, consensus]
+  - title: Papers We Love
+    link: https://github.com/papers-we-love/papers-we-love
+    description: A community repo of classic and influential computer science papers.
+    type: repo
+    tags: [papers, research]
+  - title: Introduction to the Theory of Computation (Sipser)
+    link: https://math.mit.edu/~sipser/book.html
+    description: The standard textbook on automata, computability and complexity.
+    type: book
+    tags: [theory, automata]
+  - title: Discrete Mathematics by Kimberly Brehm
+    link: https://www.youtube.com/playlist?list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz
+    description: A clear YouTube course on logic, sets, counting, relations and graphs.
+    type: video
+    tags: [discrete-math]
+  - title: "Discrete Mathematics: An Open Introduction"
+    link: https://discrete.openmathbooks.org/dmoi3/
+    description: A free, open textbook on counting, logic, graph theory and proofs.
+    type: book
+    tags: [discrete-math]
+  - title: Book of Proof
+    link: https://richardhammack.github.io/BookOfProof/
+    description: A free introduction to writing mathematical proofs, ideal before theory courses.
+    type: book
+    tags: [math, proofs]
+  - title: Open Data Structures
+    link: https://opendatastructures.org/
+    description: A free textbook on data structures with analysis and code in Java, C++ and pseudocode.
+    type: book
+    tags: [data-structures]
+  - title: Algorithms by Jeff Erickson
+    link: https://jeffe.cs.illinois.edu/teaching/algorithms/
+    description: A free, rigorous algorithms textbook from UIUC with lecture notes.
+    type: book
+    tags: [algorithms]
+  - title: What Every Programmer Should Know About Memory
+    link: https://akkadia.org/drepper/cpumemory.pdf
+    description: Ulrich Drepper's deep dive into caches, RAM and how memory affects performance.
+    type: article
+    tags: [architecture, performance]
+  - title: Latency Numbers Every Programmer Should Know
+    link: https://colin-scott.github.io/personal_website/research/interactive_latency.html
+    description: An interactive chart of how long common operations take, from L1 cache to cross-continent.
+    type: cheatsheet
+    tags: [performance, system-design]
+  - title: Computer Science Distilled
+    link: https://code.energy/computer-science-distilled/
+    description: A short, illustrated book on core CS ideas for beginners.
+    type: book
+    tags: [beginner-friendly, overview]
+  - title: Developer Roadmaps Computer Science
+    link: https://roadmap.sh/computer-science
+    description: A visual roadmap of CS topics with links to learn each one.
+    type: roadmap
+    tags: [curriculum]
+  - title: Coding Interview University
+    link: https://github.com/jwasham/coding-interview-university
+    description: A popular multi-month CS study plan covering everything from hardware to algorithms.
+    type: repo
+    tags: [curriculum, interviews]
+  - title: Computer Science Video Courses
+    link: https://github.com/Developer-Y/cs-video-courses
+    description: A huge index of university CS lecture videos available online.
+    type: repo
+    tags: [university, curriculum]
+  - title: Free Programming Books
+    link: https://github.com/EbookFoundation/free-programming-books
+    description: The largest list of free programming and CS books in many languages.
+    type: repo
+    tags: [books, awesome-list]
+  - title: Low Level
+    link: https://www.youtube.com/@LowLevelTV
+    description: Videos on C, assembly, memory safety and how software meets hardware.
+    type: video
+    tags: [low-level, security]
+  - title: Core Dumped
+    link: https://www.youtube.com/@CoreDumpped
+    description: Animated videos explaining OS concepts like processes, scheduling and memory.
+    type: video
+    tags: [os, beginner-friendly]
+  - title: Computerphile
+    link: https://www.youtube.com/@Computerphile
+    description: Short videos with researchers explaining CS ideas from compilers to cryptography.
+    type: video
+    tags: [overview]
+  - title: Spanning Tree
+    link: https://www.youtube.com/@SpanningTree
+    description: Beautifully animated short explainers on algorithms and core CS concepts.
+    type: video
+    tags: [algorithms, beginner-friendly]
+  - title: Branch Education
+    link: https://www.youtube.com/@BranchEducation
+    description: Detailed 3D animations of how CPUs, GPUs, SSDs and the internet physically work.
+    type: video
+    tags: [hardware]
+  - title: Hussein Nasser
+    link: https://www.youtube.com/@hnasr
+    description: In-depth videos on backend engineering, databases, protocols and networking.
+    type: video
+    tags: [databases, networking]
+  - title: The Architecture of Open Source Applications
+    link: https://aosabook.org/
+    description: Free books where authors explain the design of famous open source systems.
+    type: book
+    tags: [architecture, system-design]
+  - title: Linux From Scratch
+    link: https://www.linuxfromscratch.org/
+    description: Build a complete Linux system yourself from source to see how every piece fits.
+    type: guide
+    tags: [linux, os]

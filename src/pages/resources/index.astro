@@ -1,33 +1,270 @@
 ---
-import { getCollection } from "astro:content";
+import { ArrowRight, Search } from "@lucide/astro";
 import PageHeader from "@/components/PageHeader.astro";
-import ResourceBoard from "../../components/resources/ResourceBoard.astro";
-import Layout from "../../layouts/Layout.astro";
+import ResourceRow from "@/components/resources/ResourceRow.astro";
+import Layout from "@/layouts/Layout.astro";
+import {
+  getTracks,
+  RESOURCE_TYPES,
+  type Resource,
+  TYPE_LABELS,
+} from "@/lib/resources";
 
-const resources = await getCollection("resources");
+const tracks = await getTracks();
+const start = tracks.find((t) => t.slug === "start-here");
+const others = tracks.filter((t) => t !== start);
+const all = tracks.flatMap((t) => t.resources);
 
-// Sort resources by newest first
-const sortedResources = resources.sort((a, b) => {
-  if (!a.data.date || !b.data.date) return 0;
-  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
-});
+const typeCounts = RESOURCE_TYPES.map((type) => ({
+  type,
+  count: all.filter((r) => r.type === type).length,
+}))
+  .filter((t) => t.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const template: Resource = {
+  title: "",
+  id: "",
+  link: "https://sosc.org.in",
+  description: "",
+  type: "guide",
+  tags: [],
+};
 ---
 
 <Layout
   title="Resources | SOSC"
-  description="Guides, roadmaps, tools and repos curated by SOSC members to help you learn and contribute."
+  description="Learning paths, guides, roadmaps and tools picked by SOSC members to help you get into tech."
 >
-  <div class="flex min-h-dvh flex-col">
-    <div class="relative flex-1 pb-20">
-      <div class="mx-auto w-full max-w-7xl px-4 pt-28">
-        <PageHeader
-          title="Resources"
-          count={`${sortedResources.length} Total`}
+  <div class="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-8">
+    <PageHeader title="Resources" count={`${all.length} Total`} />
+
+    <div class="mt-8 flex flex-col gap-3 border-y border-gray-200 py-3 md:mt-10 lg:flex-row lg:items-center lg:justify-between">
+      <label class="flex flex-1 items-center gap-3">
+        <Search class="size-4 shrink-0 text-gray-500" aria-hidden="true" />
+        <span class="sr-only">Search all resources</span>
+        <input
+          id="resource-search"
+          type="search"
+          placeholder="Search Python, React, CTF, interviews…"
+          autocomplete="off"
+          class="w-full bg-transparent py-1.5 text-sm font-medium text-gray-900 placeholder:text-gray-500"
         />
+      </label>
+      <label class="flex items-center gap-3">
+        <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">
+          Format
+        </span>
+        <select
+          id="resource-type"
+          class="border border-gray-300 bg-white px-3 py-2 font-mono text-sm font-bold text-gray-900 transition-colors hover:border-gray-900"
+        >
+          <option value="">All formats</option>
+          {typeCounts.map(({ type }) => (
+            <option value={type}>{TYPE_LABELS[type][1]}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+
+    <section id="results" class="mx-auto max-w-4xl" hidden aria-live="polite">
+      <div class="flex items-center justify-between gap-4 py-4">
+        <p id="results-count" class="text-sm font-bold text-gray-900"></p>
+        <button
+          type="button"
+          id="results-clear"
+          class="text-sm font-bold tracking-wider text-gray-500 uppercase underline-offset-4 hover:text-gray-900 hover:underline"
+        >
+          Clear
+        </button>
       </div>
-      <div class="text-foreground">
-        <ResourceBoard resources={sortedResources} />
-      </div>
+      <div id="results-list" class="border-t border-gray-200"></div>
+      <p id="results-empty" class="py-16 text-center text-gray-500" hidden>
+        Nothing matches that yet. Try a broader word, or pick a track below.
+      </p>
+    </section>
+
+    <template id="row-template">
+      <ResourceRow resource={template} track={others[0]} />
+    </template>
+
+    <div id="browse">
+      {start && (
+        <a
+          href={`/resources/${start.slug}`}
+          class="group mt-8 flex flex-col gap-4 border border-gray-200 p-5 transition-colors hover:border-gray-900 md:mt-10 lg:flex-row lg:items-center lg:gap-10 lg:px-6"
+        >
+          <div class="shrink-0 lg:w-72">
+            <h2 class="flex items-center gap-2.5 text-lg font-black tracking-tight text-gray-900 md:text-xl">
+              <span class="bg-primary size-2.5 shrink-0" aria-hidden="true" />
+              New to tech? Start here
+            </h2>
+            <p class="mt-1 pl-5 text-sm text-gray-600">{start.tagline}</p>
+          </div>
+          <ol class="flex flex-1 flex-wrap gap-x-5 gap-y-2 pl-5 text-sm font-medium text-gray-800 lg:pl-0">
+            {start.path.map((step, i) => (
+              <li class="flex items-baseline gap-1.5">
+                <span class="font-mono text-xs text-gray-400">{i + 1}</span>
+                {step.title}
+              </li>
+            ))}
+          </ol>
+          <span class="inline-flex shrink-0 items-center gap-1.5 pl-5 text-sm font-bold text-gray-900 lg:pl-0">
+            Follow the path
+            <ArrowRight
+              class="size-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </span>
+        </a>
+      )}
+
+      <section class="mt-14 md:mt-20" aria-labelledby="tracks-heading">
+        <div class="flex items-baseline justify-between border-b-2 border-gray-900 pb-3">
+          <h2
+            id="tracks-heading"
+            class="text-2xl font-black tracking-tight text-gray-900 uppercase md:text-3xl"
+          >
+            Tracks
+          </h2>
+          <span class="text-sm text-gray-500">Pick what you want to build</span>
+        </div>
+        <ul class="grid md:grid-cols-2 md:gap-x-12">
+          {others.map((track) => {
+            return (
+              <li>
+                <a
+                  href={`/resources/${track.slug}`}
+                  class="group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-gray-200 py-5 md:py-6"
+                >
+                  <div class="min-w-0">
+                    <h3 class="flex items-center gap-3 text-xl font-black tracking-tight text-gray-900 md:text-2xl">
+                      <span
+                        class="bg-primary size-2.5 shrink-0 transition-transform group-hover:scale-150"
+                        aria-hidden="true"
+                      />
+                      {track.title}
+                    </h3>
+                    <p class="mt-1 pl-5.5 text-sm text-gray-600">
+                      {track.tagline}
+                    </p>
+                    <div class="mt-3 flex items-center gap-3 pl-5.5">
+                      <span class="text-xs text-gray-500">
+                        {track.resources.length} resources · {track.path.length}{" "}
+                        steps
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowRight
+                    class="size-5 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-gray-900"
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   </div>
 </Layout>
+
+<script>
+  type Item = {
+    title: string;
+    description: string;
+    link: string;
+    domain: string;
+    type: string;
+    typeLabel: string;
+    track: string;
+    search: string;
+  };
+
+  let data: Promise<Item[]> | undefined;
+  const load = () =>
+    (data ??= fetch("/resources/search.json").then((r) => r.json()));
+
+  function initResourceHub() {
+    const input = document.getElementById(
+      "resource-search",
+    ) as HTMLInputElement | null;
+    const select = document.getElementById(
+      "resource-type",
+    ) as HTMLSelectElement | null;
+    const results = document.getElementById("results");
+    const browse = document.getElementById("browse");
+    const list = document.getElementById("results-list");
+    const count = document.getElementById("results-count");
+    const empty = document.getElementById("results-empty");
+    const template = document.getElementById(
+      "row-template",
+    ) as HTMLTemplateElement | null;
+    if (!input || !select || !results || !browse || !list || !template) return;
+
+    const params = new URLSearchParams(location.search);
+    input.value = params.get("q") ?? "";
+    let type = params.get("type") ?? "";
+
+    const row = (item: Item) => {
+      const el = template.content.firstElementChild!.cloneNode(
+        true,
+      ) as HTMLAnchorElement;
+      const slot = (name: string) =>
+        el.querySelector<HTMLElement>(`[data-slot="${name}"]`)!;
+      el.href = item.link;
+      slot("title").textContent = item.title;
+      slot("description").textContent = item.description;
+      slot("domain").textContent = item.domain;
+      slot("track").textContent = item.track;
+      slot("type").textContent = item.typeLabel;
+      return el;
+    };
+
+    const apply = async () => {
+      const q = input.value.trim().toLowerCase();
+      select.value = type;
+
+      const url = new URL(location.href);
+      url.searchParams.delete("q");
+      url.searchParams.delete("type");
+      if (q) url.searchParams.set("q", q);
+      if (type) url.searchParams.set("type", type);
+      history.replaceState(history.state, "", url);
+
+      const active = Boolean(q || type);
+      results.hidden = !active;
+      browse.hidden = active;
+      if (!active) return;
+
+      const words = q.split(/\s+/).filter(Boolean);
+      const items = (await load()).filter(
+        (item) =>
+          (!type || item.type === type) &&
+          words.every((w) => item.search.includes(w)),
+      );
+      list.replaceChildren(...items.map(row));
+      if (count) {
+        count.textContent = `${items.length} ${items.length === 1 ? "resource" : "resources"}`;
+      }
+      if (empty) empty.hidden = items.length > 0;
+    };
+
+    input.addEventListener("focus", load, { once: true });
+    input.addEventListener("input", apply);
+    select.addEventListener("change", () => {
+      type = select.value;
+      apply();
+    });
+    document.getElementById("results-clear")?.addEventListener("click", () => {
+      input.value = "";
+      type = "";
+      apply();
+      input.focus();
+    });
+
+    apply();
+  }
+
+  document.addEventListener("astro:page-load", initResourceHub);
+</script>

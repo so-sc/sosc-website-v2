@@ -1,0 +1,67 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+import {
+  domain,
+  type Resource,
+  searchText,
+  type Track,
+  TYPE_LABELS,
+} from "@/lib/resources";
+
+interface Props {
+  resource: Resource;
+  track?: Track;
+}
+
+const { resource, track } = Astro.props;
+---
+
+<a
+  href={resource.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="resource-row group hover:bg-primary/5 grid grid-cols-[1fr_auto] gap-x-4 border-b border-gray-200 py-4 transition-colors md:gap-x-8 md:px-3 md:py-5"
+  data-resource
+  data-type={resource.type}
+  data-search={searchText(resource, track)}
+>
+  <div class="min-w-0">
+    <h3 class="text-base leading-snug font-bold text-gray-900">
+      <span
+        data-slot="title"
+        class="decoration-primary decoration-2 underline-offset-4 group-hover:underline"
+      >
+        {resource.title}
+      </span>
+      <ArrowUpRight
+        class="ml-0.5 inline size-4 align-[-2px] text-gray-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gray-900"
+        aria-hidden="true"
+      />
+    </h3>
+    <p data-slot="description" class="mt-1 line-clamp-2 text-sm text-gray-600">
+      {resource.description}
+    </p>
+    <p class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500">
+      <span data-slot="domain">{domain(resource.link)}</span>
+      <span data-slot="track" class="font-medium text-gray-700" hidden={!track}>
+        {track?.title}
+      </span>
+    </p>
+  </div>
+
+  <div class="pt-0.5">
+    <span
+      data-slot="type"
+      class="border border-gray-300 px-1.5 py-0.5 text-[0.6875rem] font-bold tracking-wider text-gray-700 uppercase"
+    >
+      {TYPE_LABELS[resource.type][0]}
+    </span>
+  </div>
+</a>
+
+<style is:global>
+  .resource-row {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 7rem;
+  }
+</style>

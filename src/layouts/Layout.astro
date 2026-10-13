@@ -80,6 +80,12 @@ const imageUrl = new URL(image, Astro.site);
 
         // Expose lenis to window for global access (e.g. scroll locking)
         (window as any).lenis = lenis;
+
+        // A smooth scroll still gliding when a link is clicked would carry on
+        // into the new page and drag it back down. Stop it before the swap so
+        // Astro's own scroll (top, back/forward restore, #anchor) sticks.
+        document.addEventListener("astro:before-swap", () => lenis.reset());
+        document.addEventListener("astro:after-swap", () => lenis.resize());
       }
     </script>
   </head>

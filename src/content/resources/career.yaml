@@ -117,6 +117,11 @@ resources:
     description: Anonymous mock interviews with engineers, plus a library of recorded real interviews.
     type: practice
     tags: [mock-interviews]
+  - title: Nyrion
+    link: https://nyrion.ai/
+    description: Mock coding interviews with an AI assistant in the editor, and an interviewer who asks about the code you accepted.
+    type: practice
+    tags: [mock-interviews, ai]
   - title: System Design Primer
     id: system-design-primer
     link: https://github.com/donnemartin/system-design-primer

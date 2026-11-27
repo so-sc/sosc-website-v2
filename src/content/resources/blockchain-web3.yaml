@@ -351,3 +351,9 @@ resources:
     description: A free university course on zero-knowledge proofs, with lectures from leading researchers.
     type: course
     tags: [zk, cryptography, university]
+  - title: Bitcoin PSBT signing over QR
+    id: bitcoin-psbt-signing-over-qr
+    link: https://bittool.com/docs/signing/bitcoin/
+    description: BitTool’s developer documentation explains how a wallet sends a partially signed Bitcoin transaction to an offline signer over QR, then verifies the returned transaction before finalizing it.
+    type: docs
+    tags: [bitcoin, psbt, offline-signing]
